@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.sirius.expression/src" modelPluginID="org.eclipse.sirius.expression"
+    modelName="Expression" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>expression.ecore</foreignModel>
+  <genPackages prefix="Expression" disposableProviderFactory="true" ecorePackage="expression.ecore#/">
+    <genDataTypes ecoreDataType="expression.ecore#//Void"/>
+    <genDataTypes ecoreDataType="expression.ecore#//Object"/>
+    <genDataTypes ecoreDataType="expression.ecore#//Predicate"/>
+    <genClasses ecoreClass="expression.ecore#//ExpressionPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionPackage/expressionClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionPackage/ePackage"/>
+    </genClasses>
+    <genClasses ecoreClass="expression.ecore#//ExpressionDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//ExpressionDescription/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//ExpressionDescription/upperBound"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/variables"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/returnType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//ExpressionDescription/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/contextableElements"/>
+    </genClasses>
+    <genClasses ecoreClass="expression.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Variable/documentation"/>
+    </genClasses>
+    <genClasses ecoreClass="expression.ecore#//ExpressionClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionClass/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionClass/expressionDescriptions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//ExpressionClass/label"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

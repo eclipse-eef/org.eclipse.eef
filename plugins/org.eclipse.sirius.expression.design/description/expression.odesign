@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="expression" version="10.0.0.201505222000">
+  <ownedViewpoints name="Design">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Design" domainClass="expression.ExpressionPackage" enablePopupBars="true">
+      <metamodel href="../../org.eclipse.sirius.expression/model/expression.ecore#/"/>
+      <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="Expressions" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='ExpressionClass']/@subContainerMappings[name='ExpressionDescription']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='EClass']/@subNodeMappings[name='Expression']" targetFinderExpression="feature:expression">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ExpressionClass" semanticCandidatesExpression="feature:expressionClasses" domainClass="expression.ExpressionClass">
+          <subContainerMappings name="ExpressionDescription" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@toolSections.0/@ownedTools[name='ExpressionDescriptionEdit']" semanticCandidatesExpression="feature:expressionDescriptions" domainClass="expression.ExpressionDescription">
+            <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" labelExpression="aql:self.label + '['+ self.lowerBound+'..'+self.upperBound+']:'+self.returnType.name">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="Variable" labelDirectEdit="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@additionalLayers[name='Variables']/@toolSections.0/@ownedTools[name='VariableEdit']" semanticCandidatesExpression="feature:variables" domainClass="expression.Variable">
+            <style xsi:type="style:FlatContainerStyleDescription" showIcon="false">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" labelExpression="feature:label">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EClass" semanticCandidatesExpression="aql:self.ePackage.eClassifiers->filter(ecore::EClass)" domainClass="ecore.EClass">
+          <subNodeMappings name="Expression" semanticCandidatesExpression="aql:self.eAllContents(ecore::EAttribute)->select(e|e.name.contains('Expression'))" domainClass="ecore.EAttribute">
+            <style xsi:type="style:SquareDescription" showIcon="false" sizeComputationExpression="5" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ExpressionClassCreate" label="ExpressionClass" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='ExpressionClass']" extraMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='EClass']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.eContainer().target">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="expression.ExpressionClass" referenceName="expressionClasses">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:containerView.target.name"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ExpressionDescriptionCreate" label="ExpressionDescription" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='ExpressionClass']/@subContainerMappings[name='ExpressionDescription']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="expression.ExpressionDescription" referenceName="expressionDescriptions"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="ExpressionDescriptionEdit">
+            <mask mask="{0}[{1}..{2}]:{3}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="var:arg0"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="lowerBound" valueExpression="var:arg1"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="upperBound" valueExpression="var:arg2"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ExpressionDescriptionToExpression" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@edgeMappings[name='Expressions']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="expression" valueExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="label" valueExpression="aql:target.name"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+      <additionalLayers name="Variables">
+        <edgeMappings name="Variables" sourceMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='ExpressionClass']/@subContainerMappings[name='ExpressionDescription']" targetMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='ExpressionClass']/@subContainerMappings[name='Variable']" targetFinderExpression="feature:variables">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ExpressionToVariable" edgeMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@additionalLayers[name='Variables']/@edgeMappings[name='Variables']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="variables" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="VariableCreate" label="Variable" containerMappings="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Design']/@defaultLayer/@containerMappings[name='ExpressionClass']/@subContainerMappings[name='Variable']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="expression.Variable" referenceName="variables"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="VariableEdit">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:arg0"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </additionalLayers>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="ExpressionToVariables" domainClass="expression.ExpressionPackage">
+      <metamodel href="../../org.eclipse.sirius.expression/model/expression.ecore#/"/>
+      <ownedLineMappings name="ExpressionClass" domainClass="expression.ExpressionClass" semanticCandidatesExpression="feature:expressionClasses" headerLabelExpression="feature:label">
+        <ownedSubLines name="ExpressionDescription" domainClass="expression.ExpressionDescription" semanticCandidatesExpression="feature:expressionDescriptions" headerLabelExpression="feature:label"/>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Variables" headerLabelExpression="aql:self.eContainer().label+'\n'+self.name" initialWidth="100" domainClass="expression.Variable"/>
+      <intersection name="Variables" lineMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='ExpressionToVariables']/@ownedLineMappings[name='ExpressionClass']/@ownedSubLines[name='ExpressionDescription']" columnMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='ExpressionToVariables']/@ownedColumnMappings.0" labelExpression="x" columnFinderExpression="feature:variables">
+        <directEdit>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
+          <variables name="columnSemantic" documentation="The semantic element corresponding to the column (only available for Intersection Mapping)."/>
+          <variables name="root" documentation="The semantic element of the table."/>
+          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:arg0&lt;>''">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="variables" valueExpression="var:columnSemantic"/>
+            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:arg0=''">
+              <subModelOperations xsi:type="tool_1:Unset" featureName="variables" elementExpression="var:columnSemantic"/>
+            </subModelOperations>
+          </firstModelOperation>
+          <mask mask="{0}"/>
+        </directEdit>
+      </intersection>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="ExpressionToContextableElements" domainClass="expression.ExpressionPackage">
+      <metamodel href="../../org.eclipse.sirius.expression/model/expression.ecore#/"/>
+      <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      <ownedLineMappings name="ExpressionClass" domainClass="expression.ExpressionClass" semanticCandidatesExpression="feature:expressionClasses" headerLabelExpression="feature:label">
+        <ownedSubLines name="ExpressionDescription" domainClass="expression.ExpressionDescription" semanticCandidatesExpression="feature:expressionDescriptions" headerLabelExpression="feature:label"/>
+      </ownedLineMappings>
+      <ownedColumnMappings name="ContextableElement" headerLabelExpression="feature:name" domainClass="ecore.EClass" semanticCandidatesExpression="aql:self.ePackage.eClassifiers->filter(ecore::EClass)"/>
+      <intersection name="ContextableElements" lineMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='ExpressionToContextableElements']/@ownedLineMappings[name='ExpressionClass']/@ownedSubLines[name='ExpressionDescription']" columnMapping="//@ownedViewpoints[name='Design']/@ownedRepresentations[name='ExpressionToContextableElements']/@ownedColumnMappings.0" labelExpression="x" columnFinderExpression="aql:self.contextableElements">
+        <directEdit>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
+          <variables name="columnSemantic" documentation="The semantic element corresponding to the column (only available for Intersection Mapping)."/>
+          <variables name="root" documentation="The semantic element of the table."/>
+          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="[arg0&lt;>''/]">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="contextableElements" valueExpression="var:columnSemantic"/>
+            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="[arg0=''/]">
+              <subModelOperations xsi:type="tool_1:Unset" featureName="contextableElements" elementExpression="var:columnSemantic"/>
+            </subModelOperations>
+          </firstModelOperation>
+          <mask mask="{0}"/>
+        </directEdit>
+      </intersection>
+    </ownedRepresentations>
+    <ownedJavaExtensions/>
+  </ownedViewpoints>
+</description:Group>
