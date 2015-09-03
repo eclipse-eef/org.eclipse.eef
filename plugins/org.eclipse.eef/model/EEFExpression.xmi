@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<expression:ExpressionPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expression="http://www.eclipse.org/sirius/expression" xsi:schemaLocation="http://www.eclipse.org/sirius/expression ../../org.eclipse.sirius.expression/model/expression.ecore">
+  <expressionClasses label="View">
+    <variables name="viewSemanticCandidate"/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0" label="labelExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFView/labelExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Page">
+    <variables name="pageSemanticCandidate" documentation="The variable representing the page context."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0" label="semanticCandidateExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFPage/semanticCandidateExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0" label="labelExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFPage/labelExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Group">
+    <variables name="groupSemanticCandidate" documentation="The variable representing the candidate."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0" label="labelExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFGroup/labelExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+    </expressionDescriptions>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0" label="semanticCandidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFGroup/semanticCandidatesExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Container">
+    <variables name="containerSemanticCandidate" documentation="The variable representing the candidate."/>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.2/@variables.0" label="semanticCandidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFContainer/semanticCandidatesExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Widget">
+    <variables name="featureCandidate" documentation="Represents a structural feature candidate."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="labelExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFWidget/labelExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+    </expressionDescriptions>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.4/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="featureCandidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFWidget/featureCandidatesExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Checkbox">
+    <variables name="newValue" documentation="The variable containing the new updated value."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFCheckbox/valueExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFCheckbox"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.5/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="editExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFCheckbox/editExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFCheckbox"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Select">
+    <variables name="newValue" documentation="The variable containing the new updated value."/>
+    <variables name="candidate" documentation="Represents the candidate."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFSelect/valueExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFSelect"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.6/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="editExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFSelect/editExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFSelect"/>
+    </expressionDescriptions>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="candidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFSelect/candidatesExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFSelect"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.6/@variables.1 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="candidateDisplayExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFSelect/candidateDisplayExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFSelect"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Label">
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFLabel/valueExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFLabel"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Radio">
+    <variables name="newValue" documentation="The variable containing the new updated value."/>
+    <variables name="candidate" documentation="Represents the candidate."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFRadio/valueExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFRadio"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.8/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="editExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFRadio/editExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFRadio"/>
+    </expressionDescriptions>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="candidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFRadio/candidatesExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFRadio"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.8/@variables.1 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="candidateDisplayExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFRadio/candidateDisplayExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFRadio"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Link">
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="onClickExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFLink/onClickExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="../../org.eclipse.sirius.expression/model/expression.ecore#//Void"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFLink"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Image">
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFImage/valueExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="../../org.eclipse.sirius.expression/model/expression.ecore#//Object"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFImage"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Tree">
+    <variables name="newValue" documentation="The variable containing the new updated values."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.11/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="editExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFTree/editExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFTree"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFTree/valueExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFTree"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="TreeDialogSelect">
+    <variables name="treeDialogSelectSemanticCandidate" documentation="Represents the semantic candidate."/>
+    <variables name="candidate"/>
+    <variables name="newValue"/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.12/@variables.0 //@expressionClasses.12/@variables.1 //@expressionClasses.12/@variables.2 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="semanticCandidateExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFTreeDialogSelect/semanticCandidateExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFTreeDialogSelect"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="ImagePicker">
+    <variables name="newValue" documentation="The variable containing the new updated value."/>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="candidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFImagePicker/candidatesExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="../../org.eclipse.sirius.expression/model/expression.ecore#//Object"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFImagePicker"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.13/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="editExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFImagePicker/editExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="../../org.eclipse.sirius.expression/model/expression.ecore#//Object"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFImagePicker"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFImagePicker/valueExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="../../org.eclipse.sirius.expression/model/expression.ecore#//Object"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFImagePicker"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Column">
+    <variables name="columnSemanticCandidate"/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="headerExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFColumn/headerExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFColumn"/>
+    </expressionDescriptions>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.14/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="contextCandidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFColumn/contextCandidatesExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFColumn"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Line">
+    <variables name="lineSemanticCandidate"/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="headerExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFLine/headerExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFLine"/>
+    </expressionDescriptions>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.15/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="semanticCandidatesExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFLine/semanticCandidatesExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFLine"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Table">
+    <variables name="newValue" documentation="The variable containing the new updated value."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFTable/valueExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFTable"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.16/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="editExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFTable/editExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFTable"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="InterpretedTreeDescription">
+    <variables name="parent" documentation="The variable representing the parent element while computing the children expression in the Tree."/>
+    <variables name="candidate" documentation="The variable representing the candidate element while computing the candidate display expression."/>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="rootsExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFInterpretedTreeDescription/rootsExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFInterpretedTreeDescription"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.17/@variables.1 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="candidateDisplayExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFInterpretedTreeDescription/candidateDisplayExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFInterpretedTreeDescription"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="selectablePredicateExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFInterpretedTreeDescription/selectablePredicateExpression"/>
+      <returnType xsi:type="ecore:EDataType" href="../../org.eclipse.sirius.expression/model/expression.ecore#//Predicate"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFInterpretedTreeDescription"/>
+    </expressionDescriptions>
+    <expressionDescriptions upperBound="-1" variables="//@expressionClasses.0/@variables.0 //@expressionClasses.17/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0" label="childrenExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFInterpretedTreeDescription/childrenExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFInterpretedTreeDescription"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <expressionClasses label="Text">
+    <variables name="newValue" documentation="The variable containing the new updated value."/>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="valueExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFText/valueExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFText"/>
+    </expressionDescriptions>
+    <expressionDescriptions variables="//@expressionClasses.0/@variables.0 //@expressionClasses.18/@variables.0 //@expressionClasses.1/@variables.0 //@expressionClasses.2/@variables.0 //@expressionClasses.3/@variables.0 //@expressionClasses.4/@variables.0" label="editExpression">
+      <expression xsi:type="ecore:EAttribute" href="eef.ecore#//EEFText/editExpression"/>
+      <returnType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      <contextableElements href="eef.ecore#//EEFView"/>
+      <contextableElements href="eef.ecore#//EEFPage"/>
+      <contextableElements href="eef.ecore#//EEFGroup"/>
+      <contextableElements href="eef.ecore#//EEFContainer"/>
+      <contextableElements href="eef.ecore#//EEFWidget"/>
+      <contextableElements href="eef.ecore#//EEFText"/>
+    </expressionDescriptions>
+  </expressionClasses>
+  <ePackage href="eef.ecore#/"/>
+</expression:ExpressionPackage>

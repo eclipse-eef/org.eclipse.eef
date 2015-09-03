@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eef:View xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eef="http://www.eclipse.org/eef"
+    xsi:schemaLocation="http://www.eclipse.org/eef ../../org.eclipse.eef/model/eef.ecore"
+    identifier="org.eclipse.eef.ecore"
+    labelExpression="aql:self.name">
+  <ePackageNsUris>http://www.eclipse.org/emf/2002/Ecore</ePackageNsUris>
+  <groups identifier="org.eclipse.eef.ecore.eclass"
+      labelExpression="aql:'EClass'"
+      domainClass="ecore.EClass"
+      semanticCandidatesExpression="">
+    <container
+        identifier="org.eclipse.eef.ecore.eclass.container">
+      <widgets
+          xsi:type="eef:Table"
+          identifier="org.eclipse.eef.ecore.eclass.eallcontent"
+          labelExpression="aql:'EAllContent'"
+          contextCandidatesExpression=""
+          valueExpression="aql:self.getRelatedObjects()"
+          editExpression="aql:self.updateRelatedObjects(selection)"
+          tableDescription="//@tableDescriptions.0">
+        <editVariable
+            name="selection"/>
+      </widgets>
+      <widgets
+          xsi:type="eef:Text"
+          identifier="org.eclipse.eef.ecore.tabledescription.name"
+          labelExpression=""
+          contextCandidatesExpression=""
+          valueExpression="aql:self.name"
+          editExpression="aql:self.eSet(self.eClass().getEStructuralFeature('name'), newName)">
+        <editVariable
+            name="newName"/>
+      </widgets>
+      <widgets
+          xsi:type="eef:Text"
+          identifier="org.eclipse.eef.ecore.tabledescription.type"
+          labelExpression=""
+          contextCandidatesExpression=""
+          valueExpression="aql:self.eType"
+          editExpression="aql:self.eSet(self.eClass().getEStructuralFeature('eType'), newType)">
+        <editVariable
+            name="newType"/>
+      </widgets>
+      <widgets
+          xsi:type="eef:Checkbox"
+          identifier="org.eclipse.eef.ecore.tabledescription.derived"
+          labelExpression=""
+          valueExpression="aql:self.derived"
+          editExpression="aql:self.eSet(self.eClass().getEStructuralFeature('derived'), newDerived)">
+        <editVariable
+            name="newDerived"/>
+      </widgets>
+    </container>
+  </groups>
+  <pages identifier="org.eclipse.eef.ecore.general"
+      labelExpression="aql:'General'"
+      domainClass="ecore.EClass"
+      semanticCandidateExpression=""/>
+  <tableDescriptions
+      xsi:type="eef:InterpretedTableDescription"
+      identifier="org.eclipse.eef.ecore.tabledescription">
+    <columns
+        headerExpression="aql:'Name'"
+        cellWidget="//@groups.0/@container/@widgets.1"
+        contextCandidatesExpression=""/>
+    <columns
+        headerExpression="aql:'EType'"
+        cellWidget="//@groups.0/@container/@widgets.2"
+        contextCandidatesExpression=""/>
+    <columns
+        headerExpression="aql:'Derived'"
+        cellWidget="//@groups.0/@container/@widgets.3"/>
+    <line headerExpression=""
+        semanticCandidatesExpression="aql:self.getRelatedObjects()"
+        domainClass="ecore::EClass"/>
+  </tableDescriptions>
+  <inputVariable
+      name="self"/>
+</eef:View>
