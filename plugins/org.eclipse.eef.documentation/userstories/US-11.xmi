@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eef:View xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eef="http://www.eclipse.org/eef"
+    xsi:schemaLocation="http://www.eclipse.org/eef ../../org.eclipse.eef/model/eef.ecore"
+    identifier="org.eclipse.eef.ecore"
+    labelExpression="aql:self.name">
+  <ePackageNsUris>http://www.eclipse.org/emf/2002/Ecore</ePackageNsUris>
+  <groups identifier="org.eclipse.eef.ecore.enamedelement"
+      labelExpression="aql:'ENamedElement'"
+      domainClass="ecore.ENamedElement"
+      semanticCandidatesExpression="">
+    <container
+        identifier="org.eclipse.eef.ecore.enamedelement.container"
+        domainClass="ecore.ENamedElement">
+      <widgets
+          xsi:type="eef:Text"
+          identifier="org.eclipse.eef.ecore.enamedelement.name"
+          labelExpression="aql:'Name'"
+          valueExpression="aql:self.name"
+          editExpression="aql:self.eSet(self.eClass().getEStructuralFeature('name'), newName)">
+        <editVariable
+            name="newName"/>
+      </widgets>
+      <widgets
+          xsi:type="eef:Label"
+          identifier="org.eclipse.eef.ecore.enamedelement.description"
+          labelExpression="aql:'Description'"
+          valueExpression="aql:'This is the label description.'"/>
+      <widgets
+          xsi:type="eef:Link"
+          identifier="org.eclipse.eef.ecore.enamedelement.opendocumentation"
+          labelExpression="aql:'Open documentation'"
+          onClickExpression="aql:self.openDocumentation()"/>
+      <widgets
+          xsi:type="eef:Image"
+          identifier="org.eclipse.eef.ecore.enamedelement.image"
+          labelExpression="aql:'The EClass image'"
+          valueExpression="aql:'platform:/plugins/org/eclipse/emf/icons/obj16/EClass.gif'"/>
+    </container>
+  </groups>
+  <groups identifier="org.eclipse.eef.ecore.eclass"
+      labelExpression="aql:'EClass'"
+      domainClass="ecore.EClass"
+      semanticCandidatesExpression="">
+    <container
+        identifier="org.eclipse.eef.ecore.eclass.container">
+      <widgets
+          xsi:type="eef:Checkbox"
+          identifier="org.eclipse.eef.ecore.eclass.abstract"
+          labelExpression="aql:'Abstract'"
+          valueExpression="aql:self.isAbstract"
+          editExpression="aql:self.eSet(self.eClass().getEStructuralFeature('abstract'), newAbstract)">
+        <editVariable
+            name="newAbstract"/>
+      </widgets>
+      <widgets
+          xsi:type="eef:ImagePicker"
+          identifier="org.eclipse.eef.ecore.eclass.imagepicker"
+          labelExpression="aql:'Image picker'"
+          contextCandidatesExpression=""
+          valueExpression="aql:'platform:/plugins/org.eclipse.emf/icons/obj16/EClass.gif'"
+          editExpression="aql:self.updateImage(newImage)"
+          candidatesExpression="aql:self.getCandidateImages()">
+        <editVariable
+            name="newImage"/>
+      </widgets>
+      <widgets
+          xsi:type="eef:Radio"
+          identifier="org.eclipse.eef.ecore.eclass.visibility"
+          labelExpression="aql:'Visibility'"
+          contextCandidatesExpression=""
+          valueExpression="aql:self.getVisibility()"
+          editExpression="aql:self.updateVisibility(newVisibility)"
+          candidatesExpression="aql:Sequence{'public','protected', 'private'}"
+          candidateDisplayExpression="aql:visibility+' class'">
+        <editVariable
+            name="newVisibility"/>
+        <candidateVariable
+            name="visibility"/>
+      </widgets>
+    </container>
+  </groups>
+  <pages identifier="org.eclipse.eef.ecore.general"
+      labelExpression="aql:'General'"
+      domainClass="ecore.EClass"
+      semanticCandidateExpression=""/>
+  <inputVariable
+      name="self"/>
+</eef:View>
