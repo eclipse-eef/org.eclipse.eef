@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015 Obeo.&#xA;All rights reserved. This program and the accompanying materials &#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.htm&#xA;Contributors: Obeo - initial API and implementation"
+    modelDirectory="/org.eclipse.eef/src-gen" creationIcons="false" editDirectory="/org.eclipse.eef.edit/src-gen"
+    editorDirectory="/org.eclipse.eef.editor/src-gen" modelPluginID="org.eclipse.eef"
+    modelName="Eef" nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
+    containmentProxies="true" complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.eclipse.sirius.context/model/context.genmodel#//context"
+    importOrganizing="true" cleanup="true">
+  <foreignModel>eef.ecore</foreignModel>
+  <genPackages prefix="Eef" basePackage="org.eclipse.eef" disposableProviderFactory="true"
+      ecorePackage="eef.ecore#/">
+    <genDataTypes ecoreDataType="eef.ecore#//Expression"/>
+    <genDataTypes ecoreDataType="eef.ecore#//TypeName"/>
+    <genClasses ecoreClass="eef.ecore#//EEFViewDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFViewDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFViewDescription/labelExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFViewDescription/ePackageNsUris"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/groups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/pages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/javaExtensions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/importedViews"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/treeStructures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/tableStructures"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFPageDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/labelExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/domainClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/semanticCandidateExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFPageDescription/groups"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFPageDescription/extendedPage"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFGroupDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/labelExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/domainClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/semanticCandidatesExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFGroupDescription/container"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFContainerDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/semanticCandidatesExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/domainClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/layoutColumnCount"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFContainerDescription/containers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFContainerDescription/widgets"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFWidgetDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/labelExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/featureCandidatesExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFJavaExtensionDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFJavaExtensionDescription/qualifiedName"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFTreeStructureDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTreeStructureDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTreeStructureDescription/multiple"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFInterpretedTableStructureDescription">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFInterpretedTableStructureDescription/columns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFInterpretedTableStructureDescription/line"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFCellWidgetDescription"/>
+    <genClasses ecoreClass="eef.ecore#//EEFAdapterFactoryTreeStructureDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFAdapterFactoryTreeStructureDescription/adapterFactoryProvider"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFInterpretedTreeStructureDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFInterpretedTreeStructureDescription/rootsExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFInterpretedTreeStructureDescription/childrenExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFInterpretedTreeStructureDescription/selectablePredicateExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFInterpretedTreeStructureDescription/candidateDisplayExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFTextDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTextDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTextDescription/editExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTextDescription/lineCount"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFCheckboxDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFCheckboxDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFCheckboxDescription/editExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFSelectDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/editExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/candidatesExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/multiple"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/candidateDisplayExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFLabelDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFLabelDescription/valueExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFRadioDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFRadioDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFRadioDescription/editExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFRadioDescription/candidatesExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFRadioDescription/candidateDisplayExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFTreeDialogSelectDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTreeDialogSelectDescription/semanticCandidateExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTreeDialogSelectDescription/defaultFilter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTreeDialogSelectDescription/domainClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFTreeDialogSelectDescription/tree"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFLinkDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFLinkDescription/onClickExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFImageDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFImageDescription/valueExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFTreeDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTreeDescription/valueExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFTreeDescription/treeStructure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTreeDescription/editExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFImagePickerDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFImagePickerDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFImagePickerDescription/editExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFImagePickerDescription/candidatesExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFTableDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableDescription/editExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFTableDescription/tableStructure"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFColumnDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFColumnDescription/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFColumnDescription/headerExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFColumnDescription/cellWidget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFColumnDescription/contextCandidatesExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFLineDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFLineDescription/headerExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFLineDescription/semanticCandidatesExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFLineDescription/domainClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFLineDescription/subLines"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFTableStructureDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/multiple"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/identifier"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFAdapterFactoryTableStructureDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFAdapterFactoryTableStructureDescription/adapterFactoryProvider"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="eef.ecore#//ContextableElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//ContextableElement/requiredContextVariables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//ContextableElement/excludedContextVariables"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
