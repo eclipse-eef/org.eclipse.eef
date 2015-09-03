@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eef:View xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eef="http://www.eclipse.org/eef"
+    xsi:schemaLocation="http://www.eclipse.org/eef ../../org.eclipse.eef/model/eef.ecore"
+    identifier="org.eclipse.eef.ecore"
+    labelExpression="aql:self.name">
+  <ePackageNsUris>http://www.eclipse.org/emf/2002/Ecore</ePackageNsUris>
+  <groups identifier="org.eclipse.eef.ecore.eclass"
+      labelExpression="aql:'EClass'"
+      domainClass="ecore.EClass"
+      semanticCandidatesExpression="">
+    <container
+        identifier="org.eclipse.eef.ecore.eclass.container">
+      <widgets
+          xsi:type="eef:Tree"
+          identifier="org.eclipse.eef.ecore.eclass.eallcontent"
+          labelExpression="aql:'EAllContent'"
+          contextCandidatesExpression=""
+          valueExpression="aql:self.getRelatedObjects()"
+          treeDescription="//@treeDescriptions.0"
+          editExpression="aql:self.updateRelatedObjects(selection)">
+        <editVariable
+            name="selection"/>
+      </widgets>
+    </container>
+  </groups>
+  <pages identifier="org.eclipse.eef.ecore.general"
+      labelExpression="aql:'General'"
+      domainClass="ecore.EClass"
+      semanticCandidateExpression=""/>
+  <treeDescriptions
+      xsi:type="eef:InterpretedTreeDescription"
+      identifier="org.eclipse.eef.ecore.treedescription"
+      rootsExpression="aql:containerContext"
+      childrenExpression="aql:parent.eContents()"
+      selectablePredicateExpression="aql:candidate.ancestors.contains(containerContext)"
+      candidateDisplayExpression="aql:candidate.name">
+    <parentVariable
+        name="parent"/>
+    <candidateVariable
+        name="candidate"/>
+    <containerSemanticCandidateVariable
+        name="containerContext"/>
+  </treeDescriptions>
+  <inputVariable
+      name="self"/>
+</eef:View>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eef" nsURI="http://www.eclipse.org/eef" nsPrefix="eef">
+  <eClassifiers xsi:type="ecore:EClass" name="View">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ePackageNsUris" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//Group" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pages" lowerBound="1" upperBound="-1"
+        eType="#//Page" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="javaExtensions" upperBound="-1"
+        eType="#//JavaExtension" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedViews" upperBound="-1"
+        eType="#//View"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treeDescriptions" upperBound="-1"
+        eType="#//TreeDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableDescriptions" upperBound="-1"
+        eType="#//TableDescription" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputVariable" eType="#//Variable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Page">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainClass" eType="#//TypeName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticCandidateExpression"
+        eType="#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//Group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendedPage" eType="#//Page"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Group">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value=""/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="if empty -> section else not"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainClass" eType="#//TypeName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticCandidatesExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
+        eType="#//Container" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticCandidateVariable"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageSemanticCandidateVariable"
+        eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticCandidatesExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainClass" eType="#//TypeName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutColumnCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
+        eType="#//Container" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="widgets" lowerBound="1"
+        upperBound="-1" eType="#//Widget" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticCandidateVariable"
+        eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextCandidatesExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextCandidateVariable"
+        eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Expression" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="TypeName" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JavaExtension">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TreeDescription" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="New documentation note"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterpretedTableDescription" eSuperTypes="#//TableDescription">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="kjhgjhgb&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
+        eType="#//Column" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="line" eType="#//Line" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CellWidget" abstract="true" eSuperTypes="#//Widget"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdapterFactoryTreeDescription" eSuperTypes="#//TreeDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adapterFactoryProvider"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterpretedTreeDescription" eSuperTypes="#//TreeDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootsExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="childrenExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectablePredicateExpression"
+        eType="#//PredicateExpression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="candidateVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="candidateDisplayExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerSemanticCandidateVariable"
+        upperBound="-1" eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Checkbox" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editVariable" eType="#//Variable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Select" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="candidatesExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="candidateVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="candidateDisplayExpression"
+        eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Radio" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="candidatesExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="candidateVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="candidateDisplayExpression"
+        eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TreeDialogSelect" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticCandidateExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFilter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="*"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="candidateVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainClass" eType="#//TypeName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticCandidateVariable"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tree" eType="#//Tree"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onClickExpression" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tree" eSuperTypes="#//CellWidget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treeDescription" eType="#//TreeDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editVariable" eType="#//Variable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImagePicker" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editVariable" eType="#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="candidatesExpression" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableDescription" eType="#//TableDescription"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Column">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cellWidget" eType="#//CellWidget"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contextCandidatesExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextCandidateVariable"
+        eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticCandidatesExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainClass" eType="#//TypeName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticCandidateVariable"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subLines" upperBound="-1"
+        eType="#//Line" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableDescription" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdapterFactoryTableDescription" eSuperTypes="#//TableDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adapterFactoryProvider"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PredicateExpression" instanceClassName="java.lang.String"/>
+</ecore:EPackage>

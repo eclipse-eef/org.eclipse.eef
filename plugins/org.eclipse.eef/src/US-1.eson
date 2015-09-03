@@ -1,0 +1,5 @@
+import eef.*
+
+View{
+	identifier:"toto"
+}
