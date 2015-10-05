@@ -15,7 +15,7 @@
       <!-- @generated expression -->
       <factory
             uri="http://www.eclipse.org/sirius/expression"
-            class="org.eclipse.sirius.expression.expression.provider.ExpressionItemProviderAdapterFactory"
+            class="org.eclipse.sirius.expression.provider.ExpressionItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

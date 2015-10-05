@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.eefViewDescriptionProvider">
+      <descriptor
+            class="org.eclipse.sirius.editor.properties.internal.EEFViewDescriptionProvider"
+            description="The EEF View Provider for Sirius"
+            id="org.eclipse.sirius.editor.properties.eefViewProvider"
+            label="EEF View Provider">
+      </descriptor>
+   </extension>
+</plugin>

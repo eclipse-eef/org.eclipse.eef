@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Custom ODesign Editor"
+            extensions="odesign"
+            icon="icons/sample.gif"
+            contributorClass="org.eclipse.sirius.editor.tools.internal.presentation.CustomSiriusActionBarContributor"
+            class="org.eclipse.sirius.editor.custom.editors.CustomEditor"
+            id="org.eclipse.sirius.editor.custom.editors.CustomODesignEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.eclipse.sirius.editor.editorPlugin.CustomSiriusEditorContributor"
+            tabDescriptorProvider="org.eclipse.sirius.editor.properties.api.EEFTabDescriptorProvider">
+         <propertyCategory></propertyCategory>
+      </propertyContributor>
+   </extension>
+
+</plugin>

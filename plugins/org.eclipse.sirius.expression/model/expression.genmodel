@@ -5,10 +5,10 @@
     editDirectory="/org.eclipse.sirius.expression.edit/src-gen" editorDirectory="/org.eclipse.sirius.expression.editor/src-gen"
     modelPluginID="org.eclipse.sirius.expression" modelName="Expression" nonNLSMarkers="true"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory=""
-    importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="7.0"
+    importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="6.0"
     copyrightFields="false" language="" operationReflection="true" importOrganizing="true">
   <foreignModel>expression.ecore</foreignModel>
-  <genPackages prefix="Expression" basePackage="org.eclipse.sirius.expression" disposableProviderFactory="true"
+  <genPackages prefix="Expression" basePackage="org.eclipse.sirius" disposableProviderFactory="true"
       ecorePackage="expression.ecore#/">
     <genDataTypes ecoreDataType="expression.ecore#//Void"/>
     <genDataTypes ecoreDataType="expression.ecore#//Object"/>

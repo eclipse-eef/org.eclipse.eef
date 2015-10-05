@@ -1,0 +1,36 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Obeo - initial API and implementation
+ *******************************************************************************/
+package org.eclipse.eef.core.api;
+
+import org.eclipse.eef.EEFTextDescription;
+
+/**
+ * The {@link EEFText} is used to manage the state of a Text widget.
+ *
+ * @author sbegaudeau
+ */
+public interface EEFText extends EEFWidget {
+	/**
+	 * Returns the description of the {@link EEFText}.
+	 *
+	 * @return The {@link EEFTextDescription}
+	 */
+	EEFTextDescription getDescription();
+
+	/**
+	 * Returns the value of the {@link EEFText}.
+	 *
+	 * @param consumer
+	 *            A functional interface used as a callback for asynchronous support
+	 */
+	void getValue(IConsumer<String> consumer);
+
+}

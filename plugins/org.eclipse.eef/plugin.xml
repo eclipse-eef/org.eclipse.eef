@@ -16,7 +16,7 @@
       <!-- @generated eef -->
       <package
             uri="http://www.eclipse.org/eef"
-            class="org.eclipse.eef.eef.EefPackage"
+            class="org.eclipse.eef.EefPackage"
             genModel="model/eef.genmodel"/>
    </extension>
 

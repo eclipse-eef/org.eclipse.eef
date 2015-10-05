@@ -15,7 +15,7 @@
       <!-- @generated expression -->
       <package
             uri="http://www.eclipse.org/sirius/expression"
-            class="org.eclipse.sirius.expression.expression.ExpressionPackage"
+            class="org.eclipse.sirius.expression.ExpressionPackage"
             genModel="model/expression.genmodel"/>
    </extension>
 

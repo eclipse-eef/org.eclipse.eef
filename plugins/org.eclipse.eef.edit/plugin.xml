@@ -16,7 +16,7 @@
       <!-- @generated eef -->
       <factory
             uri="http://www.eclipse.org/eef"
-            class="org.eclipse.eef.eef.provider.EefItemProviderAdapterFactory"
+            class="org.eclipse.eef.provider.EefItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
