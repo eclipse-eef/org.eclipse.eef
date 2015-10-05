@@ -4,3 +4,4 @@ screenshots
 *~
 *.rej
 *.bak
+.DS_Store
