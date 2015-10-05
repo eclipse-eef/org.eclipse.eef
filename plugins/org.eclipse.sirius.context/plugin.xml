@@ -15,7 +15,7 @@
       <!-- @generated context -->
       <package
             uri="http://www.eclipse.org/sirius/context"
-            class="org.eclipse.sirius.context.context.ContextPackage"
+            class="org.eclipse.sirius.context.ContextPackage"
             genModel="model/context.genmodel"/>
    </extension>
 

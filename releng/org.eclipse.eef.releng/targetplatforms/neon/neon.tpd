@@ -1,0 +1,13 @@
+target "Eclipse Neon"
+
+with source requirements
+
+location "http://download.eclipse.org/releases/neon" {
+	org.eclipse.platform.feature.group lazy
+	org.eclipse.sdk.feature.group lazy
+	org.eclipse.acceleo.query.feature.group lazy
+	org.eclipse.sirius.aql.feature.group lazy
+	org.eclipse.sirius.specifier.feature.group lazy
+	org.eclipse.uml2.uml.feature.group lazy
+	org.eclipse.uml2.uml.editor lazy
+}

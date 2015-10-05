@@ -15,7 +15,7 @@
       <!-- @generated context -->
       <factory
             uri="http://www.eclipse.org/sirius/context"
-            class="org.eclipse.sirius.context.context.provider.ContextItemProviderAdapterFactory"
+            class="org.eclipse.sirius.context.provider.ContextItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
