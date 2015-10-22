@@ -147,11 +147,8 @@
         <details key="documentation" value="Defines if a collapsible group must be collapsed by default or not."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validationExpression" eType="#//Expression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines if a group value is valid or not."/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validation" eType="#//EEFValidation"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFContainerDescription" eSuperTypes="#//ContextableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -224,11 +221,8 @@
         <details key="documentation" value="The help of the Widget visible by the end-users."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validationExpression" eType="#//Expression">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines if the widget value is valid or not."/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validation" eType="#//EEFValidation"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Expression" instanceClassName="java.lang.String">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -631,6 +625,10 @@
         <details key="documentation" value="Used to identify a specific table structure."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="addExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="removeExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="downExpression" eType="#//Expression"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFAdapterFactoryTableStructureDescription"
       eSuperTypes="#//EEFTableStructureDescription">
@@ -1093,5 +1091,21 @@
         <details key="documentation" value="Defines the style."/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFQuickFix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageExpression" eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="canHandleStatusExpression"
+        eType="#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixExpression" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFValidation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validationExpression" eType="#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines if the widget value is valid or not."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quickfixes" upperBound="-1"
+        eType="#//EEFQuickFix" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
