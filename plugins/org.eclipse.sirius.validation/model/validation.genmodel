@@ -19,6 +19,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//SiriusStatus/message"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//SiriusStatus/severity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute validation.ecore#//SiriusStatus/exception"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference validation.ecore#//SiriusStatus/substatus"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

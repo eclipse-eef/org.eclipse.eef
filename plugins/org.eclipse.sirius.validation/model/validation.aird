@@ -5,7 +5,17 @@
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_GCVmIHZ6EeWNw9dm3R5WbA">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_GDkVMHZ6EeWNw9dm3R5WbA" name="validation">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_GDkVMXZ6EeWNw9dm3R5WbA" source="DANNOTATION_CUSTOMIZATION_KEY">
-        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_GDkVMnZ6EeWNw9dm3R5WbA"/>
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_GDkVMnZ6EeWNw9dm3R5WbA">
+          <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_7c78YHc3EeW-z8ier_HMeQ" sourceArrow="FillDiamond" routingStyle="manhattan">
+            <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_7c78YXc3EeW-z8ier_HMeQ" showIcon="false" labelExpression="service:render">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+            <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_7c78Ync3EeW-z8ier_HMeQ" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
+              <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            </endLabelStyleDescription>
+          </computedStyleDescriptions>
+        </data>
       </ownedAnnotationEntries>
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_GDk8QHZ6EeWNw9dm3R5WbA" source="GMF_DIAGRAMS">
         <data xmi:type="notation:Diagram" xmi:id="_GDk8QXZ6EeWNw9dm3R5WbA" type="Sirius" element="_GDkVMHZ6EeWNw9dm3R5WbA" measurementUnit="Pixel">
@@ -69,9 +79,25 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yh4DknZ6EeWNw9dm3R5WbA" x="980" y="70" width="140" height="50"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_GDk8QnZ6EeWNw9dm3R5WbA"/>
+          <edges xmi:type="notation:Edge" xmi:id="_7dQFcHc3EeW-z8ier_HMeQ" type="4001" element="_7c6HMHc3EeW-z8ier_HMeQ" source="_GyB9sHZ6EeWNw9dm3R5WbA" target="_GyB9sHZ6EeWNw9dm3R5WbA">
+            <children xmi:type="notation:Node" xmi:id="_7djAYHc3EeW-z8ier_HMeQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7djAYXc3EeW-z8ier_HMeQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_7dnR0Hc3EeW-z8ier_HMeQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7dnR0Xc3EeW-z8ier_HMeQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_7dqVIHc3EeW-z8ier_HMeQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7dqVIXc3EeW-z8ier_HMeQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_7dQsgHc3EeW-z8ier_HMeQ" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_7dQsgXc3EeW-z8ier_HMeQ" fontColor="7490599" fontName="Droid Sans" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7dQsgnc3EeW-z8ier_HMeQ" points="[2, 41, 2, 41]$[2, 41, 2, 41]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7dumkHc3EeW-z8ier_HMeQ" id="(0.975,0.59)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7dvNoHc3EeW-z8ier_HMeQ" id="(0.975,0.59)"/>
+          </edges>
         </data>
       </ownedAnnotationEntries>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Gx6o8HZ6EeWNw9dm3R5WbA" name="SiriusStatus" tooltipText="" width="12" height="10">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Gx6o8HZ6EeWNw9dm3R5WbA" name="SiriusStatus" tooltipText="" outgoingEdges="_7c6HMHc3EeW-z8ier_HMeQ" incomingEdges="_7c6HMHc3EeW-z8ier_HMeQ" width="12" height="10">
         <target xmi:type="ecore:EClass" href="validation.ecore#//SiriusStatus"/>
         <semanticElements xmi:type="ecore:EClass" href="validation.ecore#//SiriusStatus"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -168,6 +194,19 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EDataType']/@subNodeMappings[name='EC_DataType_InstanceClassName']"/>
         </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7c6HMHc3EeW-z8ier_HMeQ" name="[0..*] substatus" sourceNode="_Gx6o8HZ6EeWNw9dm3R5WbA" targetNode="_Gx6o8HZ6EeWNw9dm3R5WbA">
+        <target xmi:type="ecore:EReference" href="validation.ecore#//SiriusStatus/substatus"/>
+        <semanticElements xmi:type="ecore:EReference" href="validation.ecore#//SiriusStatus/substatus"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_7c8jcHc3EeW-z8ier_HMeQ" description="_7c78YHc3EeW-z8ier_HMeQ" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_7c8jcXc3EeW-z8ier_HMeQ" showIcon="false">
+            <customFeatures>labelSize</customFeatures>
+          </centerLabelStyle>
+          <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_7c8jcnc3EeW-z8ier_HMeQ" showIcon="false" labelColor="39,76,114">
+            <customFeatures>labelSize</customFeatures>
+          </endLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
       </ownedDiagramElements>
       <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_GDkVNXZ6EeWNw9dm3R5WbA"/>
