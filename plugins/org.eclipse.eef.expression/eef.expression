@@ -532,7 +532,7 @@ package eef{
 	}
 	
 	class eef.EEFValidation{
-		exp eef.EEFValidation.validationExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EBoolean [0..1]{
+		exp eef.EEFValidation.validationExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, optional containerSemanticCandidate) : ecore.EBoolean [0..1]{
 			variableContainers=[
 				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
 			]
@@ -540,22 +540,22 @@ package eef{
 	}
 	
 	class eef.EEFQuickFix{
-		exp eef.EEFQuickFix.canHandleStatusExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EBoolean [0..1]{
+		exp eef.EEFQuickFix.canHandleStatusExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, optional containerSemanticCandidate) : ecore.EBoolean [0..1]{
 			variableContainers=[
 				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
 			]
 		}
-		exp eef.EEFQuickFix.fixExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : expression.Void [0..1]{
+		exp eef.EEFQuickFix.fixExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, optional containerSemanticCandidate) : expression.Void [0..1]{
 			variableContainers=[
 				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
 			]
 		}
-		exp eef.EEFQuickFix.messageExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1]{
+		exp eef.EEFQuickFix.messageExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, optional containerSemanticCandidate) : ecore.EString [0..1]{
 			variableContainers=[
 				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
 			]
 		}
-		exp eef.EEFQuickFix.titleExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1]{
+		exp eef.EEFQuickFix.titleExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, optional containerSemanticCandidate) : ecore.EString [0..1]{
 			variableContainers=[
 				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
 			]
