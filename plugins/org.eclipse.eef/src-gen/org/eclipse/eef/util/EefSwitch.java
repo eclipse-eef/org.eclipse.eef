@@ -76,16 +76,12 @@ public class EefSwitch<T> extends Switch<T> {
 			EEFViewDescription eefViewDescription = (EEFViewDescription) theEObject;
 			T result = caseEEFViewDescription(eefViewDescription);
 			if (result == null)
-				result = caseContextableElement(eefViewDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case EefPackage.EEF_PAGE_DESCRIPTION: {
 			EEFPageDescription eefPageDescription = (EEFPageDescription) theEObject;
 			T result = caseEEFPageDescription(eefPageDescription);
-			if (result == null)
-				result = caseContextableElement(eefPageDescription);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -94,8 +90,6 @@ public class EefSwitch<T> extends Switch<T> {
 			EEFGroupDescription eefGroupDescription = (EEFGroupDescription) theEObject;
 			T result = caseEEFGroupDescription(eefGroupDescription);
 			if (result == null)
-				result = caseContextableElement(eefGroupDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -103,16 +97,12 @@ public class EefSwitch<T> extends Switch<T> {
 			EEFContainerDescription eefContainerDescription = (EEFContainerDescription) theEObject;
 			T result = caseEEFContainerDescription(eefContainerDescription);
 			if (result == null)
-				result = caseContextableElement(eefContainerDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case EefPackage.EEF_WIDGET_DESCRIPTION: {
 			EEFWidgetDescription eefWidgetDescription = (EEFWidgetDescription) theEObject;
 			T result = caseEEFWidgetDescription(eefWidgetDescription);
-			if (result == null)
-				result = caseContextableElement(eefWidgetDescription);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -146,8 +136,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefCellWidgetDescription);
 			if (result == null)
-				result = caseContextableElement(eefCellWidgetDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -177,8 +165,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefTextDescription);
 			if (result == null)
-				result = caseContextableElement(eefTextDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -189,8 +175,6 @@ public class EefSwitch<T> extends Switch<T> {
 				result = caseEEFCellWidgetDescription(eefCheckboxDescription);
 			if (result == null)
 				result = caseEEFWidgetDescription(eefCheckboxDescription);
-			if (result == null)
-				result = caseContextableElement(eefCheckboxDescription);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -203,8 +187,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefSelectDescription);
 			if (result == null)
-				result = caseContextableElement(eefSelectDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -216,8 +198,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefLabelDescription);
 			if (result == null)
-				result = caseContextableElement(eefLabelDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -226,8 +206,6 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFRadioDescription(eefRadioDescription);
 			if (result == null)
 				result = caseEEFWidgetDescription(eefRadioDescription);
-			if (result == null)
-				result = caseContextableElement(eefRadioDescription);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -240,8 +218,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefTreeDialogSelectDescription);
 			if (result == null)
-				result = caseContextableElement(eefTreeDialogSelectDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -252,8 +228,6 @@ public class EefSwitch<T> extends Switch<T> {
 				result = caseEEFCellWidgetDescription(eefLinkDescription);
 			if (result == null)
 				result = caseEEFWidgetDescription(eefLinkDescription);
-			if (result == null)
-				result = caseContextableElement(eefLinkDescription);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -266,8 +240,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefImageDescription);
 			if (result == null)
-				result = caseContextableElement(eefImageDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -279,8 +251,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefTreeDescription);
 			if (result == null)
-				result = caseContextableElement(eefTreeDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -290,8 +260,6 @@ public class EefSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseEEFWidgetDescription(eefImagePickerDescription);
 			if (result == null)
-				result = caseContextableElement(eefImagePickerDescription);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -300,8 +268,6 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFTableDescription(eefTableDescription);
 			if (result == null)
 				result = caseEEFWidgetDescription(eefTableDescription);
-			if (result == null)
-				result = caseContextableElement(eefTableDescription);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -332,13 +298,6 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFAdapterFactoryTableStructureDescription(eefAdapterFactoryTableStructureDescription);
 			if (result == null)
 				result = caseEEFTableStructureDescription(eefAdapterFactoryTableStructureDescription);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case EefPackage.CONTEXTABLE_ELEMENT: {
-			ContextableElement contextableElement = (ContextableElement) theEObject;
-			T result = caseContextableElement(contextableElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -655,6 +614,20 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFColumnStyleCustomization(eefColumnStyleCustomization);
 			if (result == null)
 				result = caseEEFStyleCustomization(eefColumnStyleCustomization);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case EefPackage.EEF_QUICK_FIX: {
+			EEFQuickFix eefQuickFix = (EEFQuickFix) theEObject;
+			T result = caseEEFQuickFix(eefQuickFix);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case EefPackage.EEF_VALIDATION: {
+			EEFValidation eefValidation = (EEFValidation) theEObject;
+			T result = caseEEFValidation(eefValidation);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1051,21 +1024,6 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFAdapterFactoryTableStructureDescription(EEFAdapterFactoryTableStructureDescription object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Contextable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Contextable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContextableElement(ContextableElement object) {
 		return null;
 	}
 
@@ -1606,6 +1564,36 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFColumnStyleCustomization(EEFColumnStyleCustomization object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Quick Fix</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Quick Fix</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFQuickFix(EEFQuickFix object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Validation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Validation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFValidation(EEFValidation object) {
 		return null;
 	}
 

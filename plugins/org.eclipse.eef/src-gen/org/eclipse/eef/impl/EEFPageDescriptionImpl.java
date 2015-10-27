@@ -16,6 +16,7 @@ import org.eclipse.eef.EefPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,7 +24,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +38,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getUserDefinedVariables <em>User Defined Variables</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
@@ -43,7 +49,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class EEFPageDescriptionImpl extends ContextableElementImpl implements EEFPageDescription {
+public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container implements EEFPageDescription {
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -63,6 +69,36 @@ public class EEFPageDescriptionImpl extends ContextableElementImpl implements EE
 	 * @ordered
 	 */
 	protected String identifier = IDENTIFIER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUserDefinedVariables() <em>User Defined Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserDefinedVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<org.eclipse.sirius.expression.UserDefinedVariable> userDefinedVariables;
 
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
@@ -184,6 +220,44 @@ public class EEFPageDescriptionImpl extends ContextableElementImpl implements EE
 		identifier = newIdentifier;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER, oldIdentifier, identifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPreconditionExpression() {
+		return preconditionExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPreconditionExpression(String newPreconditionExpression) {
+		String oldPreconditionExpression = preconditionExpression;
+		preconditionExpression = newPreconditionExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression,
+					preconditionExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<org.eclipse.sirius.expression.UserDefinedVariable> getUserDefinedVariables() {
+		if (userDefinedVariables == null) {
+			userDefinedVariables = new EObjectContainmentEList.Resolving<org.eclipse.sirius.expression.UserDefinedVariable>(
+					org.eclipse.sirius.expression.UserDefinedVariable.class, this, EefPackage.EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES);
+		}
+		return userDefinedVariables;
 	}
 
 	/**
@@ -317,10 +391,28 @@ public class EEFPageDescriptionImpl extends ContextableElementImpl implements EE
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case EefPackage.EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return ((InternalEList<?>) getUserDefinedVariables()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER:
 			return getIdentifier();
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return getPreconditionExpression();
+		case EefPackage.EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return getUserDefinedVariables();
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 			return getLabelExpression();
 		case EefPackage.EEF_PAGE_DESCRIPTION__DOMAIN_CLASS:
@@ -348,6 +440,13 @@ public class EEFPageDescriptionImpl extends ContextableElementImpl implements EE
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER:
 			setIdentifier((String) newValue);
+			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression((String) newValue);
+			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
+			getUserDefinedVariables().addAll((Collection<? extends org.eclipse.sirius.expression.UserDefinedVariable>) newValue);
 			return;
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
@@ -380,6 +479,12 @@ public class EEFPageDescriptionImpl extends ContextableElementImpl implements EE
 		case EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER:
 			setIdentifier(IDENTIFIER_EDEFAULT);
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
+			return;
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression(LABEL_EXPRESSION_EDEFAULT);
 			return;
@@ -409,6 +514,11 @@ public class EEFPageDescriptionImpl extends ContextableElementImpl implements EE
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER:
 			return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+					: !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+		case EefPackage.EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return userDefinedVariables != null && !userDefinedVariables.isEmpty();
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 			return LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__DOMAIN_CLASS:
@@ -437,6 +547,8 @@ public class EEFPageDescriptionImpl extends ContextableElementImpl implements EE
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (identifier: "); //$NON-NLS-1$
 		result.append(identifier);
+		result.append(", preconditionExpression: "); //$NON-NLS-1$
+		result.append(preconditionExpression);
 		result.append(", labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
 		result.append(", domainClass: "); //$NON-NLS-1$

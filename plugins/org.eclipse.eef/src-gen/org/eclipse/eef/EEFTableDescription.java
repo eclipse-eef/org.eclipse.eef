@@ -41,7 +41,7 @@ public interface EEFTableDescription extends EEFWidgetDescription {
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTableDescription_ValueExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getValueExpression();
@@ -66,7 +66,7 @@ public interface EEFTableDescription extends EEFWidgetDescription {
 	 * @return the value of the '<em>Edit Expression</em>' attribute.
 	 * @see #setEditExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTableDescription_EditExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getEditExpression();

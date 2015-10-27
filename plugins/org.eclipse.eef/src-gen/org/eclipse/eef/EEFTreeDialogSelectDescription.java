@@ -42,7 +42,7 @@ public interface EEFTreeDialogSelectDescription extends EEFCellWidgetDescription
 	 * @return the value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #setSemanticCandidateExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTreeDialogSelectDescription_SemanticCandidateExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getSemanticCandidateExpression();

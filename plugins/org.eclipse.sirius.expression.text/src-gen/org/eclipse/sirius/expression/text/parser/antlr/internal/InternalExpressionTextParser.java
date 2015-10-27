@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExpressionTextParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ML_COMMENT", "RULE_INT", "RULE_WS", "'package'", "'{'", "'}'", "'class'", "'.'", "'var'", "':'", "'exp'", "'('", "','", "')'", "'['", "'..'", "']'", "'variableContainers'", "'='", "'optional'", "'-'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ML_COMMENT", "RULE_INT", "RULE_WS", "'package'", "'{'", "'}'", "'class'", "'.'", "'var'", "':'", "'exp'", "'('", "','", "')'", "'['", "'..'", "']'", "'userDefinedVariableContainers'", "'='", "'optional'", "'-'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -788,7 +788,7 @@ public class InternalExpressionTextParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSiriusExpressionDescription"
-    // InternalExpressionText.g:345:1: ruleSiriusExpressionDescription returns [EObject current=null] : (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'variableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' ) ;
+    // InternalExpressionText.g:345:1: ruleSiriusExpressionDescription returns [EObject current=null] : (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'userDefinedVariableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' ) ;
     public final EObject ruleSiriusExpressionDescription() throws RecognitionException {
         EObject current = null;
 
@@ -819,11 +819,11 @@ public class InternalExpressionTextParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // InternalExpressionText.g:348:28: ( (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'variableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' ) )
-            // InternalExpressionText.g:349:1: (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'variableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' )
+            // InternalExpressionText.g:348:28: ( (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'userDefinedVariableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' ) )
+            // InternalExpressionText.g:349:1: (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'userDefinedVariableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' )
             {
-            // InternalExpressionText.g:349:1: (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'variableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' )
-            // InternalExpressionText.g:349:3: otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'variableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}'
+            // InternalExpressionText.g:349:1: (otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'userDefinedVariableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}' )
+            // InternalExpressionText.g:349:3: otherlv_0= 'exp' ( ( ruleFQN ) ) otherlv_2= '(' ( ( (lv_parameters_3_0= ruleSiriusParameter ) ) (otherlv_4= ',' ( (lv_parameters_5_0= ruleSiriusParameter ) ) )* )? otherlv_6= ')' otherlv_7= ':' ( ( ruleFQN ) ) otherlv_9= '[' ( (lv_lowerBound_10_0= ruleBound ) ) otherlv_11= '..' ( (lv_upperBound_12_0= ruleBound ) ) otherlv_13= ']' otherlv_14= '{' otherlv_15= 'userDefinedVariableContainers' otherlv_16= '=' otherlv_17= '[' ( ( ( ruleFQN ) ) (otherlv_19= ',' ( ( ruleFQN ) ) )* )? otherlv_21= ']' otherlv_22= '}'
             {
             otherlv_0=(Token)match(input,15,FOLLOW_3); 
 
@@ -1084,7 +1084,7 @@ public class InternalExpressionTextParser extends AbstractInternalAntlrParser {
                 
             otherlv_15=(Token)match(input,22,FOLLOW_20); 
 
-                	newLeafNode(otherlv_15, grammarAccess.getSiriusExpressionDescriptionAccess().getVariableContainersKeyword_13());
+                	newLeafNode(otherlv_15, grammarAccess.getSiriusExpressionDescriptionAccess().getUserDefinedVariableContainersKeyword_13());
                 
             otherlv_16=(Token)match(input,23,FOLLOW_15); 
 

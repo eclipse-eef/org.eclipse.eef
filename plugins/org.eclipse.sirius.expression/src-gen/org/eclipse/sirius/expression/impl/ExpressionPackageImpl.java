@@ -22,6 +22,7 @@ import org.eclipse.sirius.expression.SiriusExpressionDescription;
 import org.eclipse.sirius.expression.SiriusExpressionPackage;
 import org.eclipse.sirius.expression.SiriusParameter;
 import org.eclipse.sirius.expression.SiriusVariable;
+import org.eclipse.sirius.expression.UserDefinedVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,6 +71,13 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass userDefinedVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType voidEDataType = null;
 
 	/**
@@ -85,6 +93,13 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * @generated
 	 */
 	private EDataType predicateEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType expressionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -344,6 +359,24 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getUserDefinedVariable() {
+		return userDefinedVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUserDefinedVariable_ValueExpression() {
+		return (EAttribute)userDefinedVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getVoid() {
 		return voidEDataType;
 	}
@@ -364,6 +397,15 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 */
 	public EDataType getPredicate() {
 		return predicateEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getExpression() {
+		return expressionEDataType;
 	}
 
 	/**
@@ -420,10 +462,14 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		createEAttribute(siriusParameterEClass, SIRIUS_PARAMETER__OPTIONAL);
 		createEReference(siriusParameterEClass, SIRIUS_PARAMETER__VARIABLE);
 
+		userDefinedVariableEClass = createEClass(USER_DEFINED_VARIABLE);
+		createEAttribute(userDefinedVariableEClass, USER_DEFINED_VARIABLE__VALUE_EXPRESSION);
+
 		// Create data types
 		voidEDataType = createEDataType(VOID);
 		objectEDataType = createEDataType(OBJECT);
 		predicateEDataType = createEDataType(PREDICATE);
+		expressionEDataType = createEDataType(EXPRESSION);
 	}
 
 	/**
@@ -457,6 +503,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		userDefinedVariableEClass.getESuperTypes().add(this.getSiriusVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(siriusExpressionPackageEClass, SiriusExpressionPackage.class, "SiriusExpressionPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -485,10 +532,14 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		initEAttribute(getSiriusParameter_Optional(), ecorePackage.getEBoolean(), "optional", null, 0, 1, SiriusParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(getSiriusParameter_Variable(), this.getSiriusVariable(), null, "variable", null, 0, 1, SiriusParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
+		initEClass(userDefinedVariableEClass, UserDefinedVariable.class, "UserDefinedVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getUserDefinedVariable_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, UserDefinedVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+
 		// Initialize data types
 		initEDataType(voidEDataType, Void.class, "Void", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEDataType(objectEDataType, Object.class, "Object", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEDataType(predicateEDataType, Object.class, "Predicate", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEDataType(expressionEDataType, String.class, "Expression", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);

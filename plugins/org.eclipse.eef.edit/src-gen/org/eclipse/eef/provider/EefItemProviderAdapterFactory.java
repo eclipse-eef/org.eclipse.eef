@@ -1343,6 +1343,52 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFQuickFix} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EEFQuickFixItemProvider eefQuickFixItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFQuickFix}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFQuickFixAdapter() {
+		if (eefQuickFixItemProvider == null) {
+			eefQuickFixItemProvider = new EEFQuickFixItemProvider(this);
+		}
+
+		return eefQuickFixItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFValidation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EEFValidationItemProvider eefValidationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFValidation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFValidationAdapter() {
+		if (eefValidationItemProvider == null) {
+			eefValidationItemProvider = new EEFValidationItemProvider(this);
+		}
+
+		return eefValidationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1557,6 +1603,10 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 			eefColumnConditionalStyleItemProvider.dispose();
 		if (eefColumnStyleCustomizationItemProvider != null)
 			eefColumnStyleCustomizationItemProvider.dispose();
+		if (eefQuickFixItemProvider != null)
+			eefQuickFixItemProvider.dispose();
+		if (eefValidationItemProvider != null)
+			eefValidationItemProvider.dispose();
 	}
 
 }

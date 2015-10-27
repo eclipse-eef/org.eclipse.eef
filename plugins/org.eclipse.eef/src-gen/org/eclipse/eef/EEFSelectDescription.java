@@ -43,7 +43,7 @@ public interface EEFSelectDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_ValueExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getValueExpression();
@@ -68,7 +68,7 @@ public interface EEFSelectDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Edit Expression</em>' attribute.
 	 * @see #setEditExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_EditExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getEditExpression();
@@ -93,7 +93,7 @@ public interface EEFSelectDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Candidates Expression</em>' attribute.
 	 * @see #setCandidatesExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_CandidatesExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getCandidatesExpression();
@@ -143,7 +143,7 @@ public interface EEFSelectDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Candidate Display Expression</em>' attribute.
 	 * @see #setCandidateDisplayExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_CandidateDisplayExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getCandidateDisplayExpression();

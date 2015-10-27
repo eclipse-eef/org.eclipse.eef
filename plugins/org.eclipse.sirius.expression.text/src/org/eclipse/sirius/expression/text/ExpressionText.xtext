@@ -25,7 +25,7 @@ SiriusVariable:
 
 SiriusExpressionDescription:
 	'exp' expression=[ecore::EAttribute|FQN] '(' (parameters+=SiriusParameter(',' parameters+=SiriusParameter)*)? ')' ':' returnType=[ecore::EClassifier|FQN] '[' lowerBound=Bound '..' upperBound=Bound  ']' '{'
-		'variableContainers' '=' '[' 
+		'userDefinedVariableContainers' '=' '[' 
 			(variableContainers+=[ecore::EClass|FQN](',' variableContainers+=[ecore::EClass|FQN])*)?
 		']'
 	'}'

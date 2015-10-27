@@ -484,9 +484,9 @@ ruleSiriusExpressionDescription returns [EObject current=null]
     {
     	newLeafNode(otherlv_14, grammarAccess.getSiriusExpressionDescriptionAccess().getLeftCurlyBracketKeyword_12());
     }
-	otherlv_15='variableContainers' 
+	otherlv_15='userDefinedVariableContainers' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getSiriusExpressionDescriptionAccess().getVariableContainersKeyword_13());
+    	newLeafNode(otherlv_15, grammarAccess.getSiriusExpressionDescriptionAccess().getUserDefinedVariableContainersKeyword_13());
     }
 	otherlv_16='=' 
     {

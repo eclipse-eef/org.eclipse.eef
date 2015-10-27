@@ -101,6 +101,13 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ExpressionPackage.USER_DEFINED_VARIABLE: {
+				UserDefinedVariable userDefinedVariable = (UserDefinedVariable)theEObject;
+				T result = caseUserDefinedVariable(userDefinedVariable);
+				if (result == null) result = caseSiriusVariable(userDefinedVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -177,6 +184,21 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSiriusParameter(SiriusParameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>User Defined Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>User Defined Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUserDefinedVariable(UserDefinedVariable object) {
 		return null;
 	}
 

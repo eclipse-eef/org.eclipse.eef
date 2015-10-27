@@ -14,6 +14,7 @@
     <genDataTypes ecoreDataType="expression.ecore#//Void"/>
     <genDataTypes ecoreDataType="expression.ecore#//Object"/>
     <genDataTypes ecoreDataType="expression.ecore#//Predicate"/>
+    <genDataTypes ecoreDataType="expression.ecore#//Expression"/>
     <genClasses ecoreClass="expression.ecore#//SiriusExpressionPackage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionPackage/expressionClasses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionPackage/ePackage"/>
@@ -39,6 +40,9 @@
     <genClasses ecoreClass="expression.ecore#//SiriusParameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//SiriusParameter/optional"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusParameter/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="expression.ecore#//UserDefinedVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//UserDefinedVariable/valueExpression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

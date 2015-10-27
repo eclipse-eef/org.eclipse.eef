@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eef" nsURI="http://www.eclipse.org/eef" nsPrefix="eef">
-  <eClassifiers xsi:type="ecore:EClass" name="EEFViewDescription" eSuperTypes="#//ContextableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFViewDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A View is the root concept of the EEF metamodel. A View defines groups of widgets, semantic mappings and related metamodels."/>
     </eAnnotations>
@@ -9,6 +9,19 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific View instance."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preconditionExpression"
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the condition on which the View will be visible."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDefinedVariables" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.sirius.expression/model/expression.ecore#//UserDefinedVariable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the variables defined by the end user."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
@@ -65,7 +78,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFPageDescription" eSuperTypes="#//ContextableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFPageDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A Page is a tab represented in a View. "/>
     </eAnnotations>
@@ -73,6 +86,19 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific Page instance."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preconditionExpression"
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the condition on which the Page will be visible."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDefinedVariables" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.sirius.expression/model/expression.ecore#//UserDefinedVariable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the variables defined by the end user."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
@@ -104,7 +130,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFGroupDescription" eSuperTypes="#//ContextableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFGroupDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A Group is used to structure the user interface within a Page. It groups multiple widgets together."/>
     </eAnnotations>
@@ -112,6 +138,19 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific Group in a Page."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preconditionExpression"
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the condition on which the Group will be visible."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDefinedVariables" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.sirius.expression/model/expression.ecore#//UserDefinedVariable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the variables defined by the end user."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
@@ -149,9 +188,13 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="validation" eType="#//EEFValidation"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the validation rule of the Group."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFContainerDescription" eSuperTypes="#//ContextableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFContainerDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Holds the widgets of a Group."/>
     </eAnnotations>
@@ -159,6 +202,19 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific Container in a Group."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preconditionExpression"
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the condition on which the Container will be visible."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDefinedVariables" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.sirius.expression/model/expression.ecore#//UserDefinedVariable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the variables defined by the end user."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semanticCandidateExpression"
@@ -191,8 +247,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFWidgetDescription" abstract="true"
-      eSuperTypes="#//ContextableElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFWidgetDescription" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Graphical element."/>
     </eAnnotations>
@@ -200,6 +255,19 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific widget."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preconditionExpression"
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the condition on which the Widget will be visible."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDefinedVariables" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.sirius.expression/model/expression.ecore#//UserDefinedVariable"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the variables defined by the end user."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
@@ -223,7 +291,11 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="validation" eType="#//EEFValidation"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains the validation rule of the Widget."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="TypeName" instanceClassName="java.lang.String">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -621,10 +693,26 @@
         <details key="documentation" value="Used to identify a specific table structure."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="addExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="removeExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="downExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="addExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the behavior executed when the add button is clicked."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="removeExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the behavior executed when the remove button is clicked."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the behavior executed when the up button is clicked."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="downExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the behavior executed when the down button is clicked."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFAdapterFactoryTableStructureDescription"
       eSuperTypes="#//EEFTableStructureDescription">
@@ -635,25 +723,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The qualified name of the adapter factory Java class."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContextableElement" abstract="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Represents an element which can provide a context."/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredContextVariables"
-        upperBound="-1" eType="ecore:EClass ../../org.eclipse.sirius.context/model/context.ecore#//ContextVariable"
-        containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines variables associated to the required contexts."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="excludedContextVariables"
-        upperBound="-1" eType="ecore:EClass ../../org.eclipse.sirius.context/model/context.ecore#//ContextVariable"
-        containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines variables associated to the excluded contexts."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -760,9 +829,17 @@
       <details key="documentation" value="Represents a style that can be applied on checkbox widgets."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColorExpression"
-        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the background color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foregroundColorExpression"
-        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the foreground color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFCheckboxConditionalStyle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1019,9 +1096,17 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerBackgroundColorExpression"
-        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the header background color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerForegroundColorExpression"
-        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the header foreground color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFLineConditionalStyle" eSuperTypes="#//EEFConditionalStyle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1062,9 +1147,17 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerBackgroundColorExpression"
-        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the header background color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerForegroundColorExpression"
-        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the header foreground color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFColumnConditionalStyle" eSuperTypes="#//EEFConditionalStyle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1089,19 +1182,45 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFQuickFix">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents a quickfix."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the quickfix title."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the quickfix message."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="canHandleStatusExpression"
-        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression"/>
+        eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines if a quickfix can be applied."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the behavior that will be executed when the quick fix is applied."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFValidation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents a validation."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validationExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Defines if the widget value is valid or not."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="quickfixes" upperBound="-1"
-        eType="#//EEFQuickFix" containment="true"/>
+        eType="#//EEFQuickFix" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Contains all the quickfixes associated to a validation."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

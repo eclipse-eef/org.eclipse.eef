@@ -5,15 +5,16 @@
     editorDirectory="/org.eclipse.eef.editor/src-gen" modelPluginID="org.eclipse.eef"
     modelName="Eef" nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
-    containmentProxies="true" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.sirius.context/model/context.genmodel#//context"
+    containmentProxies="true" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.sirius.expression/model/expression.genmodel#//expression"
     importOrganizing="true" cleanup="true">
   <foreignModel>eef.ecore</foreignModel>
   <genPackages prefix="Eef" basePackage="org.eclipse" disposableProviderFactory="true"
       ecorePackage="eef.ecore#/">
-    <genDataTypes ecoreDataType="eef.ecore#//Expression"/>
     <genDataTypes ecoreDataType="eef.ecore#//TypeName"/>
     <genClasses ecoreClass="eef.ecore#//EEFViewDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFViewDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFViewDescription/preconditionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/userDefinedVariables"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFViewDescription/labelExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFViewDescription/ePackageNsUris"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFViewDescription/groups"/>
@@ -26,6 +27,8 @@
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFPageDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/preconditionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFPageDescription/userDefinedVariables"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/labelExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/domainClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFPageDescription/semanticCandidateExpression"/>
@@ -34,16 +37,20 @@
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFGroupDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/preconditionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFGroupDescription/userDefinedVariables"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/labelExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/domainClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/semanticCandidateExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFGroupDescription/container"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/collapsibleExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/collapsedByDefaultExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupDescription/validationExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFGroupDescription/validation"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFContainerDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/preconditionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFContainerDescription/userDefinedVariables"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/semanticCandidateExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/domainClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/layoutColumnCount"/>
@@ -52,11 +59,13 @@
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFWidgetDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/preconditionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFWidgetDescription/userDefinedVariables"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/labelExpression"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFWidgetDescription/labelStyle"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/tooltipExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/helpExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/validationExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFWidgetDescription/validation"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFJavaExtensionDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFJavaExtensionDescription/qualifiedName"/>
@@ -150,13 +159,13 @@
     <genClasses ecoreClass="eef.ecore#//EEFTableStructureDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/multiple"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/addExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/removeExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/upExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTableStructureDescription/downExpression"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFAdapterFactoryTableStructureDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFAdapterFactoryTableStructureDescription/adapterFactoryProvider"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="eef.ecore#//ContextableElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//ContextableElement/requiredContextVariables"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//ContextableElement/excludedContextVariables"/>
     </genClasses>
     <genClasses image="false" ecoreClass="eef.ecore#//EEFStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFStyle/fontExpression"/>
@@ -272,6 +281,16 @@
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFColumnStyleCustomization">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFColumnStyleCustomization/style"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFQuickFix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFQuickFix/titleExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFQuickFix/messageExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFQuickFix/canHandleStatusExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFQuickFix/fixExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFValidation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFValidation/validationExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFValidation/quickfixes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

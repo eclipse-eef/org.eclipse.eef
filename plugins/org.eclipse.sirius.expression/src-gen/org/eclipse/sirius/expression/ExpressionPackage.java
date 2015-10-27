@@ -347,6 +347,70 @@ public interface ExpressionPackage extends EPackage {
 	int SIRIUS_PARAMETER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.sirius.expression.impl.UserDefinedVariableImpl <em>User Defined Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.sirius.expression.impl.UserDefinedVariableImpl
+	 * @see org.eclipse.sirius.expression.impl.ExpressionPackageImpl#getUserDefinedVariable()
+	 * @generated
+	 */
+	int USER_DEFINED_VARIABLE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED_VARIABLE__NAME = SIRIUS_VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED_VARIABLE__DOCUMENTATION = SIRIUS_VARIABLE__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>EType</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED_VARIABLE__ETYPE = SIRIUS_VARIABLE__ETYPE;
+
+	/**
+	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED_VARIABLE__VALUE_EXPRESSION = SIRIUS_VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>User Defined Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED_VARIABLE_FEATURE_COUNT = SIRIUS_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>User Defined Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_DEFINED_VARIABLE_OPERATION_COUNT = SIRIUS_VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Void</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -354,7 +418,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see org.eclipse.sirius.expression.impl.ExpressionPackageImpl#getVoid()
 	 * @generated
 	 */
-	int VOID = 5;
+	int VOID = 6;
 
 	/**
 	 * The meta object id for the '<em>Object</em>' data type.
@@ -364,7 +428,7 @@ public interface ExpressionPackage extends EPackage {
 	 * @see org.eclipse.sirius.expression.impl.ExpressionPackageImpl#getObject()
 	 * @generated
 	 */
-	int OBJECT = 6;
+	int OBJECT = 7;
 
 	/**
 	 * The meta object id for the '<em>Predicate</em>' data type.
@@ -374,7 +438,18 @@ public interface ExpressionPackage extends EPackage {
 	 * @see org.eclipse.sirius.expression.impl.ExpressionPackageImpl#getPredicate()
 	 * @generated
 	 */
-	int PREDICATE = 7;
+	int PREDICATE = 8;
+
+
+	/**
+	 * The meta object id for the '<em>Expression</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see org.eclipse.sirius.expression.impl.ExpressionPackageImpl#getExpression()
+	 * @generated
+	 */
+	int EXPRESSION = 9;
 
 
 	/**
@@ -604,6 +679,27 @@ public interface ExpressionPackage extends EPackage {
 	EReference getSiriusParameter_Variable();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.sirius.expression.UserDefinedVariable <em>User Defined Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>User Defined Variable</em>'.
+	 * @see org.eclipse.sirius.expression.UserDefinedVariable
+	 * @generated
+	 */
+	EClass getUserDefinedVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.sirius.expression.UserDefinedVariable#getValueExpression <em>Value Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value Expression</em>'.
+	 * @see org.eclipse.sirius.expression.UserDefinedVariable#getValueExpression()
+	 * @see #getUserDefinedVariable()
+	 * @generated
+	 */
+	EAttribute getUserDefinedVariable_ValueExpression();
+
+	/**
 	 * Returns the meta object for data type '{@link java.lang.Void <em>Void</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -635,6 +731,17 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getPredicate();
+
+	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Expression</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 * @generated
+	 */
+	EDataType getExpression();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -838,6 +945,24 @@ public interface ExpressionPackage extends EPackage {
 		EReference SIRIUS_PARAMETER__VARIABLE = eINSTANCE.getSiriusParameter_Variable();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.sirius.expression.impl.UserDefinedVariableImpl <em>User Defined Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.sirius.expression.impl.UserDefinedVariableImpl
+		 * @see org.eclipse.sirius.expression.impl.ExpressionPackageImpl#getUserDefinedVariable()
+		 * @generated
+		 */
+		EClass USER_DEFINED_VARIABLE = eINSTANCE.getUserDefinedVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USER_DEFINED_VARIABLE__VALUE_EXPRESSION = eINSTANCE.getUserDefinedVariable_ValueExpression();
+
+		/**
 		 * The meta object literal for the '<em>Void</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -866,6 +991,16 @@ public interface ExpressionPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType PREDICATE = eINSTANCE.getPredicate();
+
+		/**
+		 * The meta object literal for the '<em>Expression</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see org.eclipse.sirius.expression.impl.ExpressionPackageImpl#getExpression()
+		 * @generated
+		 */
+		EDataType EXPRESSION = eINSTANCE.getExpression();
 
 	}
 

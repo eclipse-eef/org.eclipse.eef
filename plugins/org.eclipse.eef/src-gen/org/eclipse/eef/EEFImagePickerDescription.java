@@ -41,7 +41,7 @@ public interface EEFImagePickerDescription extends EEFWidgetDescription {
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFImagePickerDescription_ValueExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getValueExpression();
@@ -66,7 +66,7 @@ public interface EEFImagePickerDescription extends EEFWidgetDescription {
 	 * @return the value of the '<em>Edit Expression</em>' attribute.
 	 * @see #setEditExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFImagePickerDescription_EditExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getEditExpression();
@@ -91,7 +91,7 @@ public interface EEFImagePickerDescription extends EEFWidgetDescription {
 	 * @return the value of the '<em>Candidates Expression</em>' attribute.
 	 * @see #setCandidatesExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFImagePickerDescription_CandidatesExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getCandidatesExpression();

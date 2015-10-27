@@ -39,7 +39,7 @@ public interface EEFLinkDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>On Click Expression</em>' attribute.
 	 * @see #setOnClickExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFLinkDescription_OnClickExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getOnClickExpression();

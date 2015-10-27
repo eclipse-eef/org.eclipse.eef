@@ -71,7 +71,7 @@ public interface EEFLineDescription extends EObject {
 	 * @return the value of the '<em>Semantic Candidates Expression</em>' attribute.
 	 * @see #setSemanticCandidatesExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFLineDescription_SemanticCandidatesExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getSemanticCandidatesExpression();
