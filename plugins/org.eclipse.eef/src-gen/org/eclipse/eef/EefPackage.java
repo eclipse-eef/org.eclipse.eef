@@ -63,43 +63,6 @@ public interface EefPackage extends EPackage {
 	EefPackage eINSTANCE = org.eclipse.eef.impl.EefPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.ContextableElementImpl <em>Contextable Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.eef.impl.ContextableElementImpl
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getContextableElement()
-	 * @generated
-	 */
-	int CONTEXTABLE_ELEMENT = 26;
-
-	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES = 0;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES = 1;
-
-	/**
-	 * The number of structural features of the '<em>Contextable Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXTABLE_ELEMENT_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFViewDescriptionImpl <em>EEF View Description</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,31 +73,31 @@ public interface EefPackage extends EPackage {
 	int EEF_VIEW_DESCRIPTION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_VIEW_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_VIEW_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__IDENTIFIER = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EEF_VIEW_DESCRIPTION__IDENTIFIER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -143,7 +106,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>EPackage Ns Uris</b></em>' attribute list.
@@ -152,7 +115,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__EPACKAGE_NS_URIS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EEF_VIEW_DESCRIPTION__EPACKAGE_NS_URIS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
@@ -161,7 +124,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__GROUPS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EEF_VIEW_DESCRIPTION__GROUPS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Pages</b></em>' containment reference list.
@@ -170,7 +133,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__PAGES = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int EEF_VIEW_DESCRIPTION__PAGES = 6;
 
 	/**
 	 * The feature id for the '<em><b>Java Extensions</b></em>' containment reference list.
@@ -179,7 +142,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__JAVA_EXTENSIONS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int EEF_VIEW_DESCRIPTION__JAVA_EXTENSIONS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Imported Views</b></em>' reference list.
@@ -188,7 +151,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__IMPORTED_VIEWS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 6;
+	int EEF_VIEW_DESCRIPTION__IMPORTED_VIEWS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Tree Structures</b></em>' containment reference list.
@@ -197,7 +160,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__TREE_STRUCTURES = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 7;
+	int EEF_VIEW_DESCRIPTION__TREE_STRUCTURES = 9;
 
 	/**
 	 * The feature id for the '<em><b>Table Structures</b></em>' containment reference list.
@@ -206,7 +169,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__TABLE_STRUCTURES = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 8;
+	int EEF_VIEW_DESCRIPTION__TABLE_STRUCTURES = 10;
 
 	/**
 	 * The feature id for the '<em><b>Style Customizations</b></em>' reference list.
@@ -215,7 +178,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__STYLE_CUSTOMIZATIONS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 9;
+	int EEF_VIEW_DESCRIPTION__STYLE_CUSTOMIZATIONS = 11;
 
 	/**
 	 * The number of structural features of the '<em>EEF View Description</em>' class.
@@ -224,7 +187,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION_FEATURE_COUNT = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 10;
+	int EEF_VIEW_DESCRIPTION_FEATURE_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFPageDescriptionImpl <em>EEF Page Description</em>}' class.
@@ -237,31 +200,31 @@ public interface EefPackage extends EPackage {
 	int EEF_PAGE_DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_PAGE_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_PAGE_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__IDENTIFIER = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EEF_PAGE_DESCRIPTION__IDENTIFIER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -270,7 +233,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Domain Class</b></em>' attribute.
@@ -279,7 +242,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__DOMAIN_CLASS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EEF_PAGE_DESCRIPTION__DOMAIN_CLASS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Candidate Expression</b></em>' attribute.
@@ -288,7 +251,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Groups</b></em>' reference list.
@@ -297,7 +260,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__GROUPS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int EEF_PAGE_DESCRIPTION__GROUPS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Extended Page</b></em>' reference.
@@ -306,7 +269,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__EXTENDED_PAGE = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int EEF_PAGE_DESCRIPTION__EXTENDED_PAGE = 7;
 
 	/**
 	 * The number of structural features of the '<em>EEF Page Description</em>' class.
@@ -315,7 +278,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 6;
+	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl <em>EEF Group Description</em>}' class.
@@ -328,31 +291,31 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_GROUP_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_GROUP_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__IDENTIFIER = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EEF_GROUP_DESCRIPTION__IDENTIFIER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -361,7 +324,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Domain Class</b></em>' attribute.
@@ -370,7 +333,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__DOMAIN_CLASS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EEF_GROUP_DESCRIPTION__DOMAIN_CLASS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Candidate Expression</b></em>' attribute.
@@ -379,7 +342,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' containment reference.
@@ -388,7 +351,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__CONTAINER = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int EEF_GROUP_DESCRIPTION__CONTAINER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Collapsible Expression</b></em>' attribute.
@@ -397,7 +360,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__COLLAPSIBLE_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int EEF_GROUP_DESCRIPTION__COLLAPSIBLE_EXPRESSION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Collapsed By Default Expression</b></em>' attribute.
@@ -406,16 +369,16 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 6;
+	int EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION = 8;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 7;
+	int EEF_GROUP_DESCRIPTION__VALIDATION = 9;
 
 	/**
 	 * The number of structural features of the '<em>EEF Group Description</em>' class.
@@ -424,7 +387,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 8;
+	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl <em>EEF Container Description</em>}' class.
@@ -437,31 +400,31 @@ public interface EefPackage extends EPackage {
 	int EEF_CONTAINER_DESCRIPTION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_CONTAINER_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_CONTAINER_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__IDENTIFIER = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EEF_CONTAINER_DESCRIPTION__IDENTIFIER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Candidate Expression</b></em>' attribute.
@@ -470,7 +433,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EEF_CONTAINER_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Domain Class</b></em>' attribute.
@@ -479,7 +442,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__DOMAIN_CLASS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EEF_CONTAINER_DESCRIPTION__DOMAIN_CLASS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Layout Column Count</b></em>' attribute.
@@ -488,7 +451,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__LAYOUT_COLUMN_COUNT = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EEF_CONTAINER_DESCRIPTION__LAYOUT_COLUMN_COUNT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Containers</b></em>' containment reference list.
@@ -497,7 +460,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__CONTAINERS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int EEF_CONTAINER_DESCRIPTION__CONTAINERS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Widgets</b></em>' containment reference list.
@@ -506,7 +469,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__WIDGETS = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int EEF_CONTAINER_DESCRIPTION__WIDGETS = 7;
 
 	/**
 	 * The number of structural features of the '<em>EEF Container Description</em>' class.
@@ -515,7 +478,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION_FEATURE_COUNT = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 6;
+	int EEF_CONTAINER_DESCRIPTION_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl <em>EEF Widget Description</em>}' class.
@@ -528,31 +491,31 @@ public interface EefPackage extends EPackage {
 	int EEF_WIDGET_DESCRIPTION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__IDENTIFIER = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int EEF_WIDGET_DESCRIPTION__IDENTIFIER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -561,7 +524,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Label Style</b></em>' reference.
@@ -570,7 +533,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__LABEL_STYLE = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EEF_WIDGET_DESCRIPTION__LABEL_STYLE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Tooltip Expression</b></em>' attribute.
@@ -579,7 +542,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__TOOLTIP_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 3;
+	int EEF_WIDGET_DESCRIPTION__TOOLTIP_EXPRESSION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Help Expression</b></em>' attribute.
@@ -588,16 +551,16 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 4;
+	int EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 5;
+	int EEF_WIDGET_DESCRIPTION__VALIDATION = 7;
 
 	/**
 	 * The number of structural features of the '<em>EEF Widget Description</em>' class.
@@ -606,7 +569,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = CONTEXTABLE_ELEMENT_FEATURE_COUNT + 6;
+	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFJavaExtensionDescriptionImpl <em>EEF Java Extension Description</em>}' class.
@@ -702,13 +665,49 @@ public interface EefPackage extends EPackage {
 	int EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Add Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Remove Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Up Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Down Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION = 5;
+
+	/**
 	 * The number of structural features of the '<em>EEF Table Structure Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TABLE_STRUCTURE_DESCRIPTION_FEATURE_COUNT = 2;
+	int EEF_TABLE_STRUCTURE_DESCRIPTION_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFInterpretedTableStructureDescriptionImpl <em>EEF Interpreted Table Structure Description</em>}' class.
@@ -737,6 +736,42 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_INTERPRETED_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER = EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Add Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_INTERPRETED_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Remove Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_INTERPRETED_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Up Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_INTERPRETED_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Down Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_INTERPRETED_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Columns</b></em>' containment reference list.
@@ -776,24 +811,6 @@ public interface EefPackage extends EPackage {
 	int EEF_CELL_WIDGET_DESCRIPTION = 8;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -801,6 +818,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER = EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -839,13 +874,13 @@ public interface EefPackage extends EPackage {
 	int EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION = EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION = EEF_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_CELL_WIDGET_DESCRIPTION__VALIDATION = EEF_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The number of structural features of the '<em>EEF Cell Widget Description</em>' class.
@@ -986,24 +1021,6 @@ public interface EefPackage extends EPackage {
 	int EEF_TEXT_DESCRIPTION = 11;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TEXT_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TEXT_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1011,6 +1028,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_TEXT_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1049,13 +1084,13 @@ public interface EefPackage extends EPackage {
 	int EEF_TEXT_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TEXT_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_TEXT_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -1149,24 +1184,6 @@ public interface EefPackage extends EPackage {
 	int EEF_CHECKBOX_DESCRIPTION = 12;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_CHECKBOX_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_CHECKBOX_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1174,6 +1191,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_CHECKBOX_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1212,13 +1247,13 @@ public interface EefPackage extends EPackage {
 	int EEF_CHECKBOX_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CHECKBOX_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_CHECKBOX_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -1258,24 +1293,6 @@ public interface EefPackage extends EPackage {
 	int EEF_SELECT_DESCRIPTION = 13;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_SELECT_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_SELECT_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1283,6 +1300,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_SELECT_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1321,13 +1356,13 @@ public interface EefPackage extends EPackage {
 	int EEF_SELECT_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SELECT_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_SELECT_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -1394,24 +1429,6 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION = 14;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_LABEL_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_LABEL_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1419,6 +1436,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_LABEL_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1457,13 +1492,13 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LABEL_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_LABEL_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -1494,24 +1529,6 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_DESCRIPTION = 15;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_RADIO_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_RADIO_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1519,6 +1536,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_RADIO_DESCRIPTION__IDENTIFIER = EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1557,13 +1592,13 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_DESCRIPTION__HELP_EXPRESSION = EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_RADIO_DESCRIPTION__VALIDATION_EXPRESSION = EEF_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_RADIO_DESCRIPTION__VALIDATION = EEF_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -1621,24 +1656,6 @@ public interface EefPackage extends EPackage {
 	int EEF_TREE_DIALOG_SELECT_DESCRIPTION = 16;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1646,6 +1663,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1684,13 +1719,13 @@ public interface EefPackage extends EPackage {
 	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_TREE_DIALOG_SELECT_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Candidate Expression</b></em>' attribute.
@@ -1748,24 +1783,6 @@ public interface EefPackage extends EPackage {
 	int EEF_LINK_DESCRIPTION = 17;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_LINK_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_LINK_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1773,6 +1790,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_LINK_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LINK_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LINK_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1811,13 +1846,13 @@ public interface EefPackage extends EPackage {
 	int EEF_LINK_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LINK_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_LINK_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>On Click Expression</b></em>' attribute.
@@ -1848,24 +1883,6 @@ public interface EefPackage extends EPackage {
 	int EEF_IMAGE_DESCRIPTION = 18;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_IMAGE_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_IMAGE_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1873,6 +1890,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_IMAGE_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_IMAGE_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_IMAGE_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -1911,13 +1946,13 @@ public interface EefPackage extends EPackage {
 	int EEF_IMAGE_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_IMAGE_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_IMAGE_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -1948,24 +1983,6 @@ public interface EefPackage extends EPackage {
 	int EEF_TREE_DESCRIPTION = 19;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TREE_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TREE_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1973,6 +1990,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_TREE_DESCRIPTION__IDENTIFIER = EEF_CELL_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TREE_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TREE_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_CELL_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -2011,13 +2046,13 @@ public interface EefPackage extends EPackage {
 	int EEF_TREE_DESCRIPTION__HELP_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TREE_DESCRIPTION__VALIDATION_EXPRESSION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_TREE_DESCRIPTION__VALIDATION = EEF_CELL_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -2066,24 +2101,6 @@ public interface EefPackage extends EPackage {
 	int EEF_IMAGE_PICKER_DESCRIPTION = 20;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_IMAGE_PICKER_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_IMAGE_PICKER_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2091,6 +2108,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_IMAGE_PICKER_DESCRIPTION__IDENTIFIER = EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_IMAGE_PICKER_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_IMAGE_PICKER_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -2129,13 +2164,13 @@ public interface EefPackage extends EPackage {
 	int EEF_IMAGE_PICKER_DESCRIPTION__HELP_EXPRESSION = EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_IMAGE_PICKER_DESCRIPTION__VALIDATION_EXPRESSION = EEF_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_IMAGE_PICKER_DESCRIPTION__VALIDATION = EEF_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -2184,24 +2219,6 @@ public interface EefPackage extends EPackage {
 	int EEF_TABLE_DESCRIPTION = 21;
 
 	/**
-	 * The feature id for the '<em><b>Required Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TABLE_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__REQUIRED_CONTEXT_VARIABLES;
-
-	/**
-	 * The feature id for the '<em><b>Excluded Context Variables</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_TABLE_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES = EEF_WIDGET_DESCRIPTION__EXCLUDED_CONTEXT_VARIABLES;
-
-	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2209,6 +2226,24 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_TABLE_DESCRIPTION__IDENTIFIER = EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TABLE_DESCRIPTION__PRECONDITION_EXPRESSION = EEF_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TABLE_DESCRIPTION__USER_DEFINED_VARIABLES = EEF_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute.
@@ -2247,13 +2282,13 @@ public interface EefPackage extends EPackage {
 	int EEF_TABLE_DESCRIPTION__HELP_EXPRESSION = EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * The feature id for the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TABLE_DESCRIPTION__VALIDATION_EXPRESSION = EEF_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION;
+	int EEF_TABLE_DESCRIPTION__VALIDATION = EEF_WIDGET_DESCRIPTION__VALIDATION;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute.
@@ -2421,6 +2456,42 @@ public interface EefPackage extends EPackage {
 	int EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER = EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER;
 
 	/**
+	 * The feature id for the '<em><b>Add Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Remove Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Up Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Down Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION = EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Adapter Factory Provider</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2446,7 +2517,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFStyle()
 	 * @generated
 	 */
-	int EEF_STYLE = 27;
+	int EEF_STYLE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -2474,7 +2545,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CONDITIONAL_STYLE = 28;
+	int EEF_CONDITIONAL_STYLE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -2502,7 +2573,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFStyleCustomization()
 	 * @generated
 	 */
-	int EEF_STYLE_CUSTOMIZATION = 29;
+	int EEF_STYLE_CUSTOMIZATION = 28;
 
 	/**
 	 * The number of structural features of the '<em>EEF Style Customization</em>' class.
@@ -2521,7 +2592,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupStyle()
 	 * @generated
 	 */
-	int EEF_GROUP_STYLE = 30;
+	int EEF_GROUP_STYLE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -2558,7 +2629,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupConditionalStyle()
 	 * @generated
 	 */
-	int EEF_GROUP_CONDITIONAL_STYLE = 31;
+	int EEF_GROUP_CONDITIONAL_STYLE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -2595,7 +2666,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupStyleCustomization()
 	 * @generated
 	 */
-	int EEF_GROUP_STYLE_CUSTOMIZATION = 32;
+	int EEF_GROUP_STYLE_CUSTOMIZATION = 31;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2623,7 +2694,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_STYLE = 33;
+	int EEF_TEXT_STYLE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -2669,7 +2740,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_CONDITIONAL_STYLE = 34;
+	int EEF_TEXT_CONDITIONAL_STYLE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -2706,7 +2777,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextStyleCustomization()
 	 * @generated
 	 */
-	int EEF_TEXT_STYLE_CUSTOMIZATION = 35;
+	int EEF_TEXT_STYLE_CUSTOMIZATION = 34;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2734,7 +2805,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_STYLE = 36;
+	int EEF_CHECKBOX_STYLE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -2780,7 +2851,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_CONDITIONAL_STYLE = 37;
+	int EEF_CHECKBOX_CONDITIONAL_STYLE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2808,7 +2879,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxStyleCustomization()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_STYLE_CUSTOMIZATION = 38;
+	int EEF_CHECKBOX_STYLE_CUSTOMIZATION = 37;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2836,7 +2907,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_STYLE = 39;
+	int EEF_LABEL_STYLE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -2882,7 +2953,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_CONDITIONAL_STYLE = 40;
+	int EEF_LABEL_CONDITIONAL_STYLE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -2919,7 +2990,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelStyleCustomization()
 	 * @generated
 	 */
-	int EEF_LABEL_STYLE_CUSTOMIZATION = 41;
+	int EEF_LABEL_STYLE_CUSTOMIZATION = 40;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -2947,7 +3018,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_STYLE = 42;
+	int EEF_RADIO_STYLE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -2993,7 +3064,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_CONDITIONAL_STYLE = 43;
+	int EEF_RADIO_CONDITIONAL_STYLE = 42;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -3030,7 +3101,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioStyleCustomization()
 	 * @generated
 	 */
-	int EEF_RADIO_STYLE_CUSTOMIZATION = 44;
+	int EEF_RADIO_STYLE_CUSTOMIZATION = 43;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3058,7 +3129,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLinkStyle()
 	 * @generated
 	 */
-	int EEF_LINK_STYLE = 45;
+	int EEF_LINK_STYLE = 44;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -3113,7 +3184,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLinkConditionalStyle()
 	 * @generated
 	 */
-	int EEF_LINK_CONDITIONAL_STYLE = 46;
+	int EEF_LINK_CONDITIONAL_STYLE = 45;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -3150,7 +3221,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLinkStyleCustomization()
 	 * @generated
 	 */
-	int EEF_LINK_STYLE_CUSTOMIZATION = 47;
+	int EEF_LINK_STYLE_CUSTOMIZATION = 46;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3178,7 +3249,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_STYLE = 48;
+	int EEF_SELECT_STYLE = 47;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -3224,7 +3295,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_CONDITIONAL_STYLE = 49;
+	int EEF_SELECT_CONDITIONAL_STYLE = 48;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -3261,7 +3332,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectStyleCustomization()
 	 * @generated
 	 */
-	int EEF_SELECT_STYLE_CUSTOMIZATION = 50;
+	int EEF_SELECT_STYLE_CUSTOMIZATION = 49;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3289,7 +3360,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTreeStyle()
 	 * @generated
 	 */
-	int EEF_TREE_STYLE = 51;
+	int EEF_TREE_STYLE = 50;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -3317,7 +3388,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTreeConditionalStyle()
 	 * @generated
 	 */
-	int EEF_TREE_CONDITIONAL_STYLE = 52;
+	int EEF_TREE_CONDITIONAL_STYLE = 51;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -3354,7 +3425,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTreeStyleCustomization()
 	 * @generated
 	 */
-	int EEF_TREE_STYLE_CUSTOMIZATION = 53;
+	int EEF_TREE_STYLE_CUSTOMIZATION = 52;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3382,7 +3453,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTableStyle()
 	 * @generated
 	 */
-	int EEF_TABLE_STYLE = 54;
+	int EEF_TABLE_STYLE = 53;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -3410,7 +3481,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTableConditionalStyle()
 	 * @generated
 	 */
-	int EEF_TABLE_CONDITIONAL_STYLE = 55;
+	int EEF_TABLE_CONDITIONAL_STYLE = 54;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -3447,7 +3518,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTableStyleCustomization()
 	 * @generated
 	 */
-	int EEF_TABLE_STYLE_CUSTOMIZATION = 56;
+	int EEF_TABLE_STYLE_CUSTOMIZATION = 55;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3475,7 +3546,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLineStyle()
 	 * @generated
 	 */
-	int EEF_LINE_STYLE = 57;
+	int EEF_LINE_STYLE = 56;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -3539,7 +3610,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLineConditionalStyle()
 	 * @generated
 	 */
-	int EEF_LINE_CONDITIONAL_STYLE = 58;
+	int EEF_LINE_CONDITIONAL_STYLE = 57;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -3576,7 +3647,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLineStyleCustomization()
 	 * @generated
 	 */
-	int EEF_LINE_STYLE_CUSTOMIZATION = 59;
+	int EEF_LINE_STYLE_CUSTOMIZATION = 58;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3604,7 +3675,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFColumnStyle()
 	 * @generated
 	 */
-	int EEF_COLUMN_STYLE = 60;
+	int EEF_COLUMN_STYLE = 59;
 
 	/**
 	 * The feature id for the '<em><b>Font Expression</b></em>' attribute.
@@ -3668,7 +3739,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFColumnConditionalStyle()
 	 * @generated
 	 */
-	int EEF_COLUMN_CONDITIONAL_STYLE = 61;
+	int EEF_COLUMN_CONDITIONAL_STYLE = 60;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -3705,7 +3776,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFColumnStyleCustomization()
 	 * @generated
 	 */
-	int EEF_COLUMN_STYLE_CUSTOMIZATION = 62;
+	int EEF_COLUMN_STYLE_CUSTOMIZATION = 61;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -3726,14 +3797,96 @@ public interface EefPackage extends EPackage {
 	int EEF_COLUMN_STYLE_CUSTOMIZATION_FEATURE_COUNT = EEF_STYLE_CUSTOMIZATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '<em>Expression</em>' data type.
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFQuickFixImpl <em>EEF Quick Fix</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.String
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getExpression()
+	 * @see org.eclipse.eef.impl.EEFQuickFixImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFQuickFix()
 	 * @generated
 	 */
-	int EXPRESSION = 63;
+	int EEF_QUICK_FIX = 62;
+
+	/**
+	 * The feature id for the '<em><b>Title Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_QUICK_FIX__TITLE_EXPRESSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_QUICK_FIX__MESSAGE_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Can Handle Status Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_QUICK_FIX__CAN_HANDLE_STATUS_EXPRESSION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Fix Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_QUICK_FIX__FIX_EXPRESSION = 3;
+
+	/**
+	 * The number of structural features of the '<em>EEF Quick Fix</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_QUICK_FIX_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationImpl <em>EEF Validation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.eef.impl.EEFValidationImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidation()
+	 * @generated
+	 */
+	int EEF_VALIDATION = 63;
+
+	/**
+	 * The feature id for the '<em><b>Validation Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION__VALIDATION_EXPRESSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Quickfixes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION__QUICKFIXES = 1;
+
+	/**
+	 * The number of structural features of the '<em>EEF Validation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '<em>Type Name</em>' data type.
@@ -3765,6 +3918,28 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFViewDescription_Identifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFViewDescription#getPreconditionExpression <em>Precondition Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFViewDescription#getPreconditionExpression()
+	 * @see #getEEFViewDescription()
+	 * @generated
+	 */
+	EAttribute getEEFViewDescription_PreconditionExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFViewDescription#getUserDefinedVariables <em>User Defined Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>User Defined Variables</em>'.
+	 * @see org.eclipse.eef.EEFViewDescription#getUserDefinedVariables()
+	 * @see #getEEFViewDescription()
+	 * @generated
+	 */
+	EReference getEEFViewDescription_UserDefinedVariables();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}'.
@@ -3887,6 +4062,28 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFPageDescription_Identifier();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFPageDescription#getPreconditionExpression()
+	 * @see #getEEFPageDescription()
+	 * @generated
+	 */
+	EAttribute getEEFPageDescription_PreconditionExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFPageDescription#getUserDefinedVariables <em>User Defined Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>User Defined Variables</em>'.
+	 * @see org.eclipse.eef.EEFPageDescription#getUserDefinedVariables()
+	 * @see #getEEFPageDescription()
+	 * @generated
+	 */
+	EReference getEEFPageDescription_UserDefinedVariables();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3963,6 +4160,28 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupDescription_Identifier();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getPreconditionExpression()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EAttribute getEEFGroupDescription_PreconditionExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFGroupDescription#getUserDefinedVariables <em>User Defined Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>User Defined Variables</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getUserDefinedVariables()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EReference getEEFGroupDescription_UserDefinedVariables();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4029,15 +4248,15 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupDescription_CollapsedByDefaultExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupDescription#getValidationExpression <em>Validation Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFGroupDescription#getValidation <em>Validation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Validation Expression</em>'.
-	 * @see org.eclipse.eef.EEFGroupDescription#getValidationExpression()
+	 * @return the meta object for the containment reference '<em>Validation</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getValidation()
 	 * @see #getEEFGroupDescription()
 	 * @generated
 	 */
-	EAttribute getEEFGroupDescription_ValidationExpression();
+	EReference getEEFGroupDescription_Validation();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFContainerDescription <em>EEF Container Description</em>}'.
@@ -4059,6 +4278,28 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFContainerDescription_Identifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFContainerDescription#getPreconditionExpression <em>Precondition Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFContainerDescription#getPreconditionExpression()
+	 * @see #getEEFContainerDescription()
+	 * @generated
+	 */
+	EAttribute getEEFContainerDescription_PreconditionExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFContainerDescription#getUserDefinedVariables <em>User Defined Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>User Defined Variables</em>'.
+	 * @see org.eclipse.eef.EEFContainerDescription#getUserDefinedVariables()
+	 * @see #getEEFContainerDescription()
+	 * @generated
+	 */
+	EReference getEEFContainerDescription_UserDefinedVariables();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFContainerDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}'.
@@ -4137,6 +4378,28 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFWidgetDescription_Identifier();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetDescription#getPreconditionExpression <em>Precondition Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFWidgetDescription#getPreconditionExpression()
+	 * @see #getEEFWidgetDescription()
+	 * @generated
+	 */
+	EAttribute getEEFWidgetDescription_PreconditionExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFWidgetDescription#getUserDefinedVariables <em>User Defined Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>User Defined Variables</em>'.
+	 * @see org.eclipse.eef.EEFWidgetDescription#getUserDefinedVariables()
+	 * @see #getEEFWidgetDescription()
+	 * @generated
+	 */
+	EReference getEEFWidgetDescription_UserDefinedVariables();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4181,15 +4444,15 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFWidgetDescription_HelpExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetDescription#getValidationExpression <em>Validation Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFWidgetDescription#getValidation <em>Validation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Validation Expression</em>'.
-	 * @see org.eclipse.eef.EEFWidgetDescription#getValidationExpression()
+	 * @return the meta object for the containment reference '<em>Validation</em>'.
+	 * @see org.eclipse.eef.EEFWidgetDescription#getValidation()
 	 * @see #getEEFWidgetDescription()
 	 * @generated
 	 */
-	EAttribute getEEFWidgetDescription_ValidationExpression();
+	EReference getEEFWidgetDescription_Validation();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFJavaExtensionDescription <em>EEF Java Extension Description</em>}'.
@@ -4986,6 +5249,50 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFTableStructureDescription_Identifier();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTableStructureDescription#getAddExpression <em>Add Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Add Expression</em>'.
+	 * @see org.eclipse.eef.EEFTableStructureDescription#getAddExpression()
+	 * @see #getEEFTableStructureDescription()
+	 * @generated
+	 */
+	EAttribute getEEFTableStructureDescription_AddExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTableStructureDescription#getRemoveExpression <em>Remove Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Remove Expression</em>'.
+	 * @see org.eclipse.eef.EEFTableStructureDescription#getRemoveExpression()
+	 * @see #getEEFTableStructureDescription()
+	 * @generated
+	 */
+	EAttribute getEEFTableStructureDescription_RemoveExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTableStructureDescription#getUpExpression <em>Up Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Up Expression</em>'.
+	 * @see org.eclipse.eef.EEFTableStructureDescription#getUpExpression()
+	 * @see #getEEFTableStructureDescription()
+	 * @generated
+	 */
+	EAttribute getEEFTableStructureDescription_UpExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTableStructureDescription#getDownExpression <em>Down Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Down Expression</em>'.
+	 * @see org.eclipse.eef.EEFTableStructureDescription#getDownExpression()
+	 * @see #getEEFTableStructureDescription()
+	 * @generated
+	 */
+	EAttribute getEEFTableStructureDescription_DownExpression();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFAdapterFactoryTableStructureDescription <em>EEF Adapter Factory Table Structure Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5005,38 +5312,6 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFAdapterFactoryTableStructureDescription_AdapterFactoryProvider();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.ContextableElement <em>Contextable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Contextable Element</em>'.
-	 * @see org.eclipse.eef.ContextableElement
-	 * @generated
-	 */
-	EClass getContextableElement();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.ContextableElement#getRequiredContextVariables <em>Required Context Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Required Context Variables</em>'.
-	 * @see org.eclipse.eef.ContextableElement#getRequiredContextVariables()
-	 * @see #getContextableElement()
-	 * @generated
-	 */
-	EReference getContextableElement_RequiredContextVariables();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.ContextableElement#getExcludedContextVariables <em>Excluded Context Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Excluded Context Variables</em>'.
-	 * @see org.eclipse.eef.ContextableElement#getExcludedContextVariables()
-	 * @see #getContextableElement()
-	 * @generated
-	 */
-	EReference getContextableElement_ExcludedContextVariables();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFStyle <em>EEF Style</em>}'.
@@ -5905,15 +6180,90 @@ public interface EefPackage extends EPackage {
 	EReference getEEFColumnStyleCustomization_Style();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.String <em>Expression</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFQuickFix <em>EEF Quick Fix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Expression</em>'.
-	 * @see java.lang.String
-	 * @model instanceClass="java.lang.String"
+	 * @return the meta object for class '<em>EEF Quick Fix</em>'.
+	 * @see org.eclipse.eef.EEFQuickFix
 	 * @generated
 	 */
-	EDataType getExpression();
+	EClass getEEFQuickFix();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFQuickFix#getTitleExpression <em>Title Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title Expression</em>'.
+	 * @see org.eclipse.eef.EEFQuickFix#getTitleExpression()
+	 * @see #getEEFQuickFix()
+	 * @generated
+	 */
+	EAttribute getEEFQuickFix_TitleExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFQuickFix#getMessageExpression <em>Message Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message Expression</em>'.
+	 * @see org.eclipse.eef.EEFQuickFix#getMessageExpression()
+	 * @see #getEEFQuickFix()
+	 * @generated
+	 */
+	EAttribute getEEFQuickFix_MessageExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFQuickFix#getCanHandleStatusExpression <em>Can Handle Status Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Can Handle Status Expression</em>'.
+	 * @see org.eclipse.eef.EEFQuickFix#getCanHandleStatusExpression()
+	 * @see #getEEFQuickFix()
+	 * @generated
+	 */
+	EAttribute getEEFQuickFix_CanHandleStatusExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFQuickFix#getFixExpression <em>Fix Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fix Expression</em>'.
+	 * @see org.eclipse.eef.EEFQuickFix#getFixExpression()
+	 * @see #getEEFQuickFix()
+	 * @generated
+	 */
+	EAttribute getEEFQuickFix_FixExpression();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFValidation <em>EEF Validation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>EEF Validation</em>'.
+	 * @see org.eclipse.eef.EEFValidation
+	 * @generated
+	 */
+	EClass getEEFValidation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFValidation#getValidationExpression <em>Validation Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Validation Expression</em>'.
+	 * @see org.eclipse.eef.EEFValidation#getValidationExpression()
+	 * @see #getEEFValidation()
+	 * @generated
+	 */
+	EAttribute getEEFValidation_ValidationExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFValidation#getQuickfixes <em>Quickfixes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Quickfixes</em>'.
+	 * @see org.eclipse.eef.EEFValidation#getQuickfixes()
+	 * @see #getEEFValidation()
+	 * @generated
+	 */
+	EReference getEEFValidation_Quickfixes();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Type Name</em>}'.
@@ -5965,6 +6315,22 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_VIEW_DESCRIPTION__IDENTIFIER = eINSTANCE.getEEFViewDescription_Identifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION = eINSTANCE.getEEFViewDescription_PreconditionExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>User Defined Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES = eINSTANCE.getEEFViewDescription_UserDefinedVariables();
 
 		/**
 		 * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature.
@@ -6057,6 +6423,22 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_PAGE_DESCRIPTION__IDENTIFIER = eINSTANCE.getEEFPageDescription_Identifier();
 
 		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION = eINSTANCE.getEEFPageDescription_PreconditionExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>User Defined Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES = eINSTANCE.getEEFPageDescription_UserDefinedVariables();
+
+		/**
 		 * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6115,6 +6497,22 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_GROUP_DESCRIPTION__IDENTIFIER = eINSTANCE.getEEFGroupDescription_Identifier();
 
 		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION = eINSTANCE.getEEFGroupDescription_PreconditionExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>User Defined Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES = eINSTANCE.getEEFGroupDescription_UserDefinedVariables();
+
+		/**
 		 * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6163,12 +6561,12 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION = eINSTANCE.getEEFGroupDescription_CollapsedByDefaultExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Validation Expression</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Validation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION = eINSTANCE.getEEFGroupDescription_ValidationExpression();
+		EReference EEF_GROUP_DESCRIPTION__VALIDATION = eINSTANCE.getEEFGroupDescription_Validation();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl <em>EEF Container Description</em>}' class.
@@ -6187,6 +6585,22 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_CONTAINER_DESCRIPTION__IDENTIFIER = eINSTANCE.getEEFContainerDescription_Identifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION = eINSTANCE.getEEFContainerDescription_PreconditionExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>User Defined Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES = eINSTANCE.getEEFContainerDescription_UserDefinedVariables();
 
 		/**
 		 * The meta object literal for the '<em><b>Semantic Candidate Expression</b></em>' attribute feature.
@@ -6247,6 +6661,22 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_WIDGET_DESCRIPTION__IDENTIFIER = eINSTANCE.getEEFWidgetDescription_Identifier();
 
 		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION = eINSTANCE.getEEFWidgetDescription_PreconditionExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>User Defined Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EEF_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES = eINSTANCE.getEEFWidgetDescription_UserDefinedVariables();
+
+		/**
 		 * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6279,12 +6709,12 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION = eINSTANCE.getEEFWidgetDescription_HelpExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Validation Expression</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Validation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION = eINSTANCE.getEEFWidgetDescription_ValidationExpression();
+		EReference EEF_WIDGET_DESCRIPTION__VALIDATION = eINSTANCE.getEEFWidgetDescription_Validation();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFJavaExtensionDescriptionImpl <em>EEF Java Extension Description</em>}' class.
@@ -6925,6 +7355,38 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER = eINSTANCE.getEEFTableStructureDescription_Identifier();
 
 		/**
+		 * The meta object literal for the '<em><b>Add Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION = eINSTANCE.getEEFTableStructureDescription_AddExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION = eINSTANCE.getEEFTableStructureDescription_RemoveExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Up Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION = eINSTANCE.getEEFTableStructureDescription_UpExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Down Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION = eINSTANCE.getEEFTableStructureDescription_DownExpression();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFAdapterFactoryTableStructureDescriptionImpl <em>EEF Adapter Factory Table Structure Description</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6942,32 +7404,6 @@ public interface EefPackage extends EPackage {
 		 */
 		EAttribute EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION__ADAPTER_FACTORY_PROVIDER = eINSTANCE
 				.getEEFAdapterFactoryTableStructureDescription_AdapterFactoryProvider();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.ContextableElementImpl <em>Contextable Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.eef.impl.ContextableElementImpl
-		 * @see org.eclipse.eef.impl.EefPackageImpl#getContextableElement()
-		 * @generated
-		 */
-		EClass CONTEXTABLE_ELEMENT = eINSTANCE.getContextableElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Required Context Variables</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES = eINSTANCE.getContextableElement_RequiredContextVariables();
-
-		/**
-		 * The meta object literal for the '<em><b>Excluded Context Variables</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES = eINSTANCE.getContextableElement_ExcludedContextVariables();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFStyleImpl <em>EEF Style</em>}' class.
@@ -7698,14 +8134,72 @@ public interface EefPackage extends EPackage {
 		EReference EEF_COLUMN_STYLE_CUSTOMIZATION__STYLE = eINSTANCE.getEEFColumnStyleCustomization_Style();
 
 		/**
-		 * The meta object literal for the '<em>Expression</em>' data type.
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFQuickFixImpl <em>EEF Quick Fix</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.String
-		 * @see org.eclipse.eef.impl.EefPackageImpl#getExpression()
+		 * @see org.eclipse.eef.impl.EEFQuickFixImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFQuickFix()
 		 * @generated
 		 */
-		EDataType EXPRESSION = eINSTANCE.getExpression();
+		EClass EEF_QUICK_FIX = eINSTANCE.getEEFQuickFix();
+
+		/**
+		 * The meta object literal for the '<em><b>Title Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_QUICK_FIX__TITLE_EXPRESSION = eINSTANCE.getEEFQuickFix_TitleExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_QUICK_FIX__MESSAGE_EXPRESSION = eINSTANCE.getEEFQuickFix_MessageExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Can Handle Status Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_QUICK_FIX__CAN_HANDLE_STATUS_EXPRESSION = eINSTANCE.getEEFQuickFix_CanHandleStatusExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Fix Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_QUICK_FIX__FIX_EXPRESSION = eINSTANCE.getEEFQuickFix_FixExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFValidationImpl <em>EEF Validation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.eef.impl.EEFValidationImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidation()
+		 * @generated
+		 */
+		EClass EEF_VALIDATION = eINSTANCE.getEEFValidation();
+
+		/**
+		 * The meta object literal for the '<em><b>Validation Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_VALIDATION__VALIDATION_EXPRESSION = eINSTANCE.getEEFValidation_ValidationExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Quickfixes</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EEF_VALIDATION__QUICKFIXES = eINSTANCE.getEEFValidation_Quickfixes();
 
 		/**
 		 * The meta object literal for the '<em>Type Name</em>' data type.

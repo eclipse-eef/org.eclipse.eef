@@ -10,6 +10,10 @@ package org.eclipse.eef;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.sirius.expression.UserDefinedVariable;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>EEF View Description</b></em>'.
@@ -24,6 +28,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getUserDefinedVariables <em>User Defined Variables</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFViewDescription#getEPackageNsUris <em>EPackage Ns Uris</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFViewDescription#getGroups <em>Groups</em>}</li>
@@ -39,7 +45,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface EEFViewDescription extends ContextableElement {
+public interface EEFViewDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,6 +72,46 @@ public interface EEFViewDescription extends ContextableElement {
 	void setIdentifier(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the condition on which the View will be visible.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #setPreconditionExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_PreconditionExpression()
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
+	 * @generated
+	 */
+	String getPreconditionExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 */
+	void setPreconditionExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.sirius.expression.UserDefinedVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Contains the variables defined by the end user.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>User Defined Variables</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_UserDefinedVariables()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<UserDefinedVariable> getUserDefinedVariables();
+
+	/**
 	 * Returns the value of the '<em><b>Label Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,7 +121,7 @@ public interface EEFViewDescription extends ContextableElement {
 	 * @return the value of the '<em>Label Expression</em>' attribute.
 	 * @see #setLabelExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_LabelExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getLabelExpression();

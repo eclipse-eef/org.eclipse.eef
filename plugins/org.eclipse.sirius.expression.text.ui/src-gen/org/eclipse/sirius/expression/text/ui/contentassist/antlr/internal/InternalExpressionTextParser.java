@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExpressionTextParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_WS", "'package'", "'{'", "'}'", "'class'", "'.'", "'var'", "':'", "'exp'", "'('", "')'", "'['", "'..'", "']'", "'variableContainers'", "'='", "','", "'-'", "'optional'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_WS", "'package'", "'{'", "'}'", "'class'", "'.'", "'var'", "':'", "'exp'", "'('", "')'", "'['", "'..'", "']'", "'userDefinedVariableContainers'", "'='", "','", "'-'", "'optional'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -3347,21 +3347,21 @@ public class InternalExpressionTextParser extends AbstractInternalContentAssistP
 
 
     // $ANTLR start "rule__SiriusExpressionDescription__Group__13__Impl"
-    // InternalExpressionText.g:1296:1: rule__SiriusExpressionDescription__Group__13__Impl : ( 'variableContainers' ) ;
+    // InternalExpressionText.g:1296:1: rule__SiriusExpressionDescription__Group__13__Impl : ( 'userDefinedVariableContainers' ) ;
     public final void rule__SiriusExpressionDescription__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // InternalExpressionText.g:1300:1: ( ( 'variableContainers' ) )
-            // InternalExpressionText.g:1301:1: ( 'variableContainers' )
+            // InternalExpressionText.g:1300:1: ( ( 'userDefinedVariableContainers' ) )
+            // InternalExpressionText.g:1301:1: ( 'userDefinedVariableContainers' )
             {
-            // InternalExpressionText.g:1301:1: ( 'variableContainers' )
-            // InternalExpressionText.g:1302:1: 'variableContainers'
+            // InternalExpressionText.g:1301:1: ( 'userDefinedVariableContainers' )
+            // InternalExpressionText.g:1302:1: 'userDefinedVariableContainers'
             {
-             before(grammarAccess.getSiriusExpressionDescriptionAccess().getVariableContainersKeyword_13()); 
+             before(grammarAccess.getSiriusExpressionDescriptionAccess().getUserDefinedVariableContainersKeyword_13()); 
             match(input,21,FOLLOW_2); 
-             after(grammarAccess.getSiriusExpressionDescriptionAccess().getVariableContainersKeyword_13()); 
+             after(grammarAccess.getSiriusExpressionDescriptionAccess().getUserDefinedVariableContainersKeyword_13()); 
 
             }
 

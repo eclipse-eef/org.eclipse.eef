@@ -48,7 +48,7 @@ public interface EEFTextDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_ValueExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getValueExpression();
@@ -73,7 +73,7 @@ public interface EEFTextDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Edit Expression</em>' attribute.
 	 * @see #setEditExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_EditExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getEditExpression();
@@ -98,7 +98,7 @@ public interface EEFTextDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Read Only Expression</em>' attribute.
 	 * @see #setReadOnlyExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_ReadOnlyExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getReadOnlyExpression();
@@ -123,7 +123,7 @@ public interface EEFTextDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Content Assist Expression</em>' attribute.
 	 * @see #setContentAssistExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_ContentAssistExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getContentAssistExpression();
@@ -148,7 +148,7 @@ public interface EEFTextDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Placeholder Expression</em>' attribute.
 	 * @see #setPlaceholderExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_PlaceholderExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getPlaceholderExpression();

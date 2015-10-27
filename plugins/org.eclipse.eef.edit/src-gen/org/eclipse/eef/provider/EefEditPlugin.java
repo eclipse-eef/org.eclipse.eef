@@ -12,7 +12,9 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.sirius.context.provider.ContextEditPlugin;
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
+import org.eclipse.sirius.expression.provider.ExpressionEditPlugin;
 
 /**
  * This is the central singleton for the Eef edit plugin.
@@ -44,7 +46,7 @@ public final class EefEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public EefEditPlugin() {
-		super(new ResourceLocator[] { ContextEditPlugin.INSTANCE, });
+		super(new ResourceLocator[] { EcoreEditPlugin.INSTANCE, ExpressionEditPlugin.INSTANCE, });
 	}
 
 	/**

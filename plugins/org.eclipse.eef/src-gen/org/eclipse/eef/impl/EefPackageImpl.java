@@ -8,7 +8,6 @@
  */
 package org.eclipse.eef.impl;
 
-import org.eclipse.eef.ContextableElement;
 import org.eclipse.eef.EEFAdapterFactoryTableStructureDescription;
 import org.eclipse.eef.EEFAdapterFactoryTreeStructureDescription;
 import org.eclipse.eef.EEFCellWidgetDescription;
@@ -44,6 +43,7 @@ import org.eclipse.eef.EEFLinkDescription;
 import org.eclipse.eef.EEFLinkStyle;
 import org.eclipse.eef.EEFLinkStyleCustomization;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFQuickFix;
 import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
@@ -69,6 +69,7 @@ import org.eclipse.eef.EEFTreeDialogSelectDescription;
 import org.eclipse.eef.EEFTreeStructureDescription;
 import org.eclipse.eef.EEFTreeStyle;
 import org.eclipse.eef.EEFTreeStyleCustomization;
+import org.eclipse.eef.EEFValidation;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefFactory;
@@ -82,7 +83,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.eclipse.sirius.context.ContextPackage;
+import org.eclipse.sirius.expression.ExpressionPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -272,13 +273,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefAdapterFactoryTableStructureDescriptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass contextableElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -537,7 +531,14 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType expressionEDataType = null;
+	private EClass eefQuickFixEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eefValidationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -595,7 +596,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ContextPackage.eINSTANCE.eClass();
+		ExpressionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theEefPackage.createPackageContents();
@@ -637,7 +638,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFViewDescription_LabelExpression() {
+	public EAttribute getEEFViewDescription_PreconditionExpression() {
 		return (EAttribute) eefViewDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -647,8 +648,28 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFViewDescription_UserDefinedVariables() {
+		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFViewDescription_LabelExpression() {
+		return (EAttribute) eefViewDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getEEFViewDescription_EPackageNsUris() {
-		return (EAttribute) eefViewDescriptionEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) eefViewDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -658,26 +679,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 */
 	@Override
 	public EReference getEEFViewDescription_Groups() {
-		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEEFViewDescription_Pages() {
-		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEEFViewDescription_JavaExtensions() {
 		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -687,7 +688,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFViewDescription_ImportedViews() {
+	public EReference getEEFViewDescription_Pages() {
 		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -697,7 +698,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFViewDescription_TreeStructures() {
+	public EReference getEEFViewDescription_JavaExtensions() {
 		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -707,7 +708,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFViewDescription_TableStructures() {
+	public EReference getEEFViewDescription_ImportedViews() {
 		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -717,8 +718,28 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFViewDescription_StyleCustomizations() {
+	public EReference getEEFViewDescription_TreeStructures() {
 		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFViewDescription_TableStructures() {
+		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFViewDescription_StyleCustomizations() {
+		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -747,7 +768,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFPageDescription_LabelExpression() {
+	public EAttribute getEEFPageDescription_PreconditionExpression() {
 		return (EAttribute) eefPageDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -757,8 +778,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFPageDescription_DomainClass() {
-		return (EAttribute) eefPageDescriptionEClass.getEStructuralFeatures().get(2);
+	public EReference getEEFPageDescription_UserDefinedVariables() {
+		return (EReference) eefPageDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -767,7 +788,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFPageDescription_SemanticCandidateExpression() {
+	public EAttribute getEEFPageDescription_LabelExpression() {
 		return (EAttribute) eefPageDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -777,8 +798,28 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEEFPageDescription_DomainClass() {
+		return (EAttribute) eefPageDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFPageDescription_SemanticCandidateExpression() {
+		return (EAttribute) eefPageDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getEEFPageDescription_Groups() {
-		return (EReference) eefPageDescriptionEClass.getEStructuralFeatures().get(4);
+		return (EReference) eefPageDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -788,7 +829,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 */
 	@Override
 	public EReference getEEFPageDescription_ExtendedPage() {
-		return (EReference) eefPageDescriptionEClass.getEStructuralFeatures().get(5);
+		return (EReference) eefPageDescriptionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -817,7 +858,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFGroupDescription_LabelExpression() {
+	public EAttribute getEEFGroupDescription_PreconditionExpression() {
 		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -827,8 +868,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFGroupDescription_DomainClass() {
-		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(2);
+	public EReference getEEFGroupDescription_UserDefinedVariables() {
+		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -837,7 +878,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFGroupDescription_SemanticCandidateExpression() {
+	public EAttribute getEEFGroupDescription_LabelExpression() {
 		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -847,8 +888,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFGroupDescription_Container() {
-		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(4);
+	public EAttribute getEEFGroupDescription_DomainClass() {
+		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -857,7 +898,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFGroupDescription_CollapsibleExpression() {
+	public EAttribute getEEFGroupDescription_SemanticCandidateExpression() {
 		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -867,8 +908,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFGroupDescription_CollapsedByDefaultExpression() {
-		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(6);
+	public EReference getEEFGroupDescription_Container() {
+		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -877,8 +918,28 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFGroupDescription_ValidationExpression() {
+	public EAttribute getEEFGroupDescription_CollapsibleExpression() {
 		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupDescription_CollapsedByDefaultExpression() {
+		return (EAttribute) eefGroupDescriptionEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFGroupDescription_Validation() {
+		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -907,7 +968,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFContainerDescription_SemanticCandidateExpression() {
+	public EAttribute getEEFContainerDescription_PreconditionExpression() {
 		return (EAttribute) eefContainerDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -917,8 +978,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFContainerDescription_DomainClass() {
-		return (EAttribute) eefContainerDescriptionEClass.getEStructuralFeatures().get(2);
+	public EReference getEEFContainerDescription_UserDefinedVariables() {
+		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -927,7 +988,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFContainerDescription_LayoutColumnCount() {
+	public EAttribute getEEFContainerDescription_SemanticCandidateExpression() {
 		return (EAttribute) eefContainerDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -937,8 +998,28 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEEFContainerDescription_DomainClass() {
+		return (EAttribute) eefContainerDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFContainerDescription_LayoutColumnCount() {
+		return (EAttribute) eefContainerDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getEEFContainerDescription_Containers() {
-		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(4);
+		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -948,7 +1029,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 */
 	@Override
 	public EReference getEEFContainerDescription_Widgets() {
-		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(5);
+		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -977,7 +1058,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFWidgetDescription_LabelExpression() {
+	public EAttribute getEEFWidgetDescription_PreconditionExpression() {
 		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -987,7 +1068,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFWidgetDescription_LabelStyle() {
+	public EReference getEEFWidgetDescription_UserDefinedVariables() {
 		return (EReference) eefWidgetDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -997,7 +1078,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFWidgetDescription_TooltipExpression() {
+	public EAttribute getEEFWidgetDescription_LabelExpression() {
 		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1007,8 +1088,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFWidgetDescription_HelpExpression() {
-		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(4);
+	public EReference getEEFWidgetDescription_LabelStyle() {
+		return (EReference) eefWidgetDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1017,8 +1098,28 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFWidgetDescription_ValidationExpression() {
+	public EAttribute getEEFWidgetDescription_TooltipExpression() {
 		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFWidgetDescription_HelpExpression() {
+		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFWidgetDescription_Validation() {
+		return (EReference) eefWidgetDescriptionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1767,6 +1868,46 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEEFTableStructureDescription_AddExpression() {
+		return (EAttribute) eefTableStructureDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTableStructureDescription_RemoveExpression() {
+		return (EAttribute) eefTableStructureDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTableStructureDescription_UpExpression() {
+		return (EAttribute) eefTableStructureDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTableStructureDescription_DownExpression() {
+		return (EAttribute) eefTableStructureDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFAdapterFactoryTableStructureDescription() {
 		return eefAdapterFactoryTableStructureDescriptionEClass;
 	}
@@ -1779,36 +1920,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EAttribute getEEFAdapterFactoryTableStructureDescription_AdapterFactoryProvider() {
 		return (EAttribute) eefAdapterFactoryTableStructureDescriptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getContextableElement() {
-		return contextableElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getContextableElement_RequiredContextVariables() {
-		return (EReference) contextableElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getContextableElement_ExcludedContextVariables() {
-		return (EReference) contextableElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2637,8 +2748,78 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EDataType getExpression() {
-		return expressionEDataType;
+	public EClass getEEFQuickFix() {
+		return eefQuickFixEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFQuickFix_TitleExpression() {
+		return (EAttribute) eefQuickFixEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFQuickFix_MessageExpression() {
+		return (EAttribute) eefQuickFixEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFQuickFix_CanHandleStatusExpression() {
+		return (EAttribute) eefQuickFixEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFQuickFix_FixExpression() {
+		return (EAttribute) eefQuickFixEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFValidation() {
+		return eefValidationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFValidation_ValidationExpression() {
+		return (EAttribute) eefValidationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFValidation_Quickfixes() {
+		return (EReference) eefValidationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2683,6 +2864,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		// Create classes and their features
 		eefViewDescriptionEClass = createEClass(EEF_VIEW_DESCRIPTION);
 		createEAttribute(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION);
+		createEReference(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES);
 		createEAttribute(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION);
 		createEAttribute(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__EPACKAGE_NS_URIS);
 		createEReference(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__GROUPS);
@@ -2695,6 +2878,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		eefPageDescriptionEClass = createEClass(EEF_PAGE_DESCRIPTION);
 		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION);
+		createEReference(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__USER_DEFINED_VARIABLES);
 		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION);
 		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__DOMAIN_CLASS);
 		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
@@ -2703,16 +2888,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		eefGroupDescriptionEClass = createEClass(EEF_GROUP_DESCRIPTION);
 		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION);
+		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES);
 		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION);
 		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__DOMAIN_CLASS);
 		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
 		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__CONTAINER);
 		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__COLLAPSIBLE_EXPRESSION);
 		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION);
-		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION);
+		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__VALIDATION);
 
 		eefContainerDescriptionEClass = createEClass(EEF_CONTAINER_DESCRIPTION);
 		createEAttribute(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION);
+		createEReference(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES);
 		createEAttribute(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
 		createEAttribute(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__DOMAIN_CLASS);
 		createEAttribute(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__LAYOUT_COLUMN_COUNT);
@@ -2721,11 +2910,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		eefWidgetDescriptionEClass = createEClass(EEF_WIDGET_DESCRIPTION);
 		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__PRECONDITION_EXPRESSION);
+		createEReference(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__USER_DEFINED_VARIABLES);
 		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
 		createEReference(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__LABEL_STYLE);
 		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__TOOLTIP_EXPRESSION);
 		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION);
-		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__VALIDATION_EXPRESSION);
+		createEReference(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__VALIDATION);
 
 		eefJavaExtensionDescriptionEClass = createEClass(EEF_JAVA_EXTENSION_DESCRIPTION);
 		createEAttribute(eefJavaExtensionDescriptionEClass, EEF_JAVA_EXTENSION_DESCRIPTION__QUALIFIED_NAME);
@@ -2820,13 +3011,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefTableStructureDescriptionEClass = createEClass(EEF_TABLE_STRUCTURE_DESCRIPTION);
 		createEAttribute(eefTableStructureDescriptionEClass, EEF_TABLE_STRUCTURE_DESCRIPTION__MULTIPLE);
 		createEAttribute(eefTableStructureDescriptionEClass, EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefTableStructureDescriptionEClass, EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION);
+		createEAttribute(eefTableStructureDescriptionEClass, EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION);
+		createEAttribute(eefTableStructureDescriptionEClass, EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION);
+		createEAttribute(eefTableStructureDescriptionEClass, EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION);
 
 		eefAdapterFactoryTableStructureDescriptionEClass = createEClass(EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION);
 		createEAttribute(eefAdapterFactoryTableStructureDescriptionEClass, EEF_ADAPTER_FACTORY_TABLE_STRUCTURE_DESCRIPTION__ADAPTER_FACTORY_PROVIDER);
-
-		contextableElementEClass = createEClass(CONTEXTABLE_ELEMENT);
-		createEReference(contextableElementEClass, CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES);
-		createEReference(contextableElementEClass, CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES);
 
 		eefStyleEClass = createEClass(EEF_STYLE);
 		createEAttribute(eefStyleEClass, EEF_STYLE__FONT_EXPRESSION);
@@ -2946,8 +3137,17 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefColumnStyleCustomizationEClass = createEClass(EEF_COLUMN_STYLE_CUSTOMIZATION);
 		createEReference(eefColumnStyleCustomizationEClass, EEF_COLUMN_STYLE_CUSTOMIZATION__STYLE);
 
+		eefQuickFixEClass = createEClass(EEF_QUICK_FIX);
+		createEAttribute(eefQuickFixEClass, EEF_QUICK_FIX__TITLE_EXPRESSION);
+		createEAttribute(eefQuickFixEClass, EEF_QUICK_FIX__MESSAGE_EXPRESSION);
+		createEAttribute(eefQuickFixEClass, EEF_QUICK_FIX__CAN_HANDLE_STATUS_EXPRESSION);
+		createEAttribute(eefQuickFixEClass, EEF_QUICK_FIX__FIX_EXPRESSION);
+
+		eefValidationEClass = createEClass(EEF_VALIDATION);
+		createEAttribute(eefValidationEClass, EEF_VALIDATION__VALIDATION_EXPRESSION);
+		createEReference(eefValidationEClass, EEF_VALIDATION__QUICKFIXES);
+
 		// Create data types
-		expressionEDataType = createEDataType(EXPRESSION);
 		typeNameEDataType = createEDataType(TYPE_NAME);
 	}
 
@@ -2976,18 +3176,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ContextPackage theContextPackage = (ContextPackage) EPackage.Registry.INSTANCE.getEPackage(ContextPackage.eNS_URI);
+		ExpressionPackage theExpressionPackage = (ExpressionPackage) EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		eefViewDescriptionEClass.getESuperTypes().add(this.getContextableElement());
-		eefPageDescriptionEClass.getESuperTypes().add(this.getContextableElement());
-		eefGroupDescriptionEClass.getESuperTypes().add(this.getContextableElement());
-		eefContainerDescriptionEClass.getESuperTypes().add(this.getContextableElement());
-		eefWidgetDescriptionEClass.getESuperTypes().add(this.getContextableElement());
 		eefInterpretedTableStructureDescriptionEClass.getESuperTypes().add(this.getEEFTableStructureDescription());
 		eefCellWidgetDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefAdapterFactoryTreeStructureDescriptionEClass.getESuperTypes().add(this.getEEFTreeStructureDescription());
@@ -3042,8 +3237,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFViewDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 1, 1, EEFViewDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFViewDescription_LabelExpression(), this.getExpression(), "labelExpression", null, 0, 1, EEFViewDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFViewDescription_PreconditionExpression(), theExpressionPackage.getExpression(), "preconditionExpression", null, 0, 1, //$NON-NLS-1$
+				EEFViewDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFViewDescription_UserDefinedVariables(), theExpressionPackage.getUserDefinedVariable(), null, "userDefinedVariables", //$NON-NLS-1$
+				null, 0, -1, EEFViewDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFViewDescription_LabelExpression(), theExpressionPackage.getExpression(), "labelExpression", null, 0, 1, //$NON-NLS-1$
+				EEFViewDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEEFViewDescription_EPackageNsUris(), ecorePackage.getEString(), "ePackageNsUris", null, 0, -1, EEFViewDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEEFViewDescription_Groups(), this.getEEFGroupDescription(), null, "groups", null, 0, -1, EEFViewDescription.class, //$NON-NLS-1$
@@ -3070,12 +3270,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFPageDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 1, 1, EEFPageDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFPageDescription_LabelExpression(), this.getExpression(), "labelExpression", null, 0, 1, EEFPageDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFPageDescription_PreconditionExpression(), theExpressionPackage.getExpression(), "preconditionExpression", null, 0, 1, //$NON-NLS-1$
+				EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFPageDescription_UserDefinedVariables(), theExpressionPackage.getUserDefinedVariable(), null, "userDefinedVariables", //$NON-NLS-1$
+				null, 0, -1, EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFPageDescription_LabelExpression(), theExpressionPackage.getExpression(), "labelExpression", null, 0, 1, //$NON-NLS-1$
+				EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEEFPageDescription_DomainClass(), this.getTypeName(), "domainClass", null, 0, 1, EEFPageDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFPageDescription_SemanticCandidateExpression(), this.getExpression(), "semanticCandidateExpression", "", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
-				EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFPageDescription_SemanticCandidateExpression(), theExpressionPackage.getExpression(), "semanticCandidateExpression", "", //$NON-NLS-1$//$NON-NLS-2$
+				0, 1, EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getEEFPageDescription_Groups(), this.getEEFGroupDescription(), null, "groups", null, 0, -1, EEFPageDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEEFPageDescription_ExtendedPage(), this.getEEFPageDescription(), null, "extendedPage", null, 0, 1, EEFPageDescription.class, //$NON-NLS-1$
@@ -3085,28 +3291,41 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFGroupDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 1, 1, EEFGroupDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFGroupDescription_LabelExpression(), this.getExpression(), "labelExpression", null, 0, 1, EEFGroupDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_PreconditionExpression(), theExpressionPackage.getExpression(), "preconditionExpression", null, 0, 1, //$NON-NLS-1$
+				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFGroupDescription_UserDefinedVariables(), theExpressionPackage.getUserDefinedVariable(), null, "userDefinedVariables", //$NON-NLS-1$
+				null, 0, -1, EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_LabelExpression(), theExpressionPackage.getExpression(), "labelExpression", null, 0, 1, //$NON-NLS-1$
+				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEEFGroupDescription_DomainClass(), this.getTypeName(), "domainClass", null, 0, 1, EEFGroupDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFGroupDescription_SemanticCandidateExpression(), this.getExpression(), "semanticCandidateExpression", null, 0, 1, //$NON-NLS-1$
-				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_SemanticCandidateExpression(), theExpressionPackage.getExpression(), "semanticCandidateExpression", //$NON-NLS-1$
+				null, 0, 1, EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getEEFGroupDescription_Container(), this.getEEFContainerDescription(), null, "container", null, 1, 1, //$NON-NLS-1$
 				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFGroupDescription_CollapsibleExpression(), this.getExpression(), "collapsibleExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFGroupDescription_CollapsibleExpression(), theExpressionPackage.getExpression(), "collapsibleExpression", null, 0, 1, //$NON-NLS-1$
 				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFGroupDescription_CollapsedByDefaultExpression(), this.getExpression(), "collapsedByDefaultExpression", null, 0, 1, //$NON-NLS-1$
-				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFGroupDescription_ValidationExpression(), this.getExpression(), "validationExpression", null, 0, 1, //$NON-NLS-1$
-				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_CollapsedByDefaultExpression(), theExpressionPackage.getExpression(), "collapsedByDefaultExpression", //$NON-NLS-1$
+				null, 0, 1, EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getEEFGroupDescription_Validation(), this.getEEFValidation(), null, "validation", null, 0, 1, EEFGroupDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefContainerDescriptionEClass, EEFContainerDescription.class, "EEFContainerDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFContainerDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 1, 1, EEFContainerDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFContainerDescription_SemanticCandidateExpression(), this.getExpression(), "semanticCandidateExpression", null, 0, 1, //$NON-NLS-1$
-				EEFContainerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+		initEAttribute(getEEFContainerDescription_PreconditionExpression(), theExpressionPackage.getExpression(), "preconditionExpression", null, 0, //$NON-NLS-1$
+				1, EEFContainerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getEEFContainerDescription_UserDefinedVariables(), theExpressionPackage.getUserDefinedVariable(), null, "userDefinedVariables", //$NON-NLS-1$
+				null, 0, -1, EEFContainerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFContainerDescription_SemanticCandidateExpression(), theExpressionPackage.getExpression(), "semanticCandidateExpression", //$NON-NLS-1$
+				null, 0, 1, EEFContainerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEAttribute(getEEFContainerDescription_DomainClass(), this.getTypeName(), "domainClass", null, 0, 1, EEFContainerDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3124,16 +3343,21 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFWidgetDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 1, 1, EEFWidgetDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFWidgetDescription_LabelExpression(), this.getExpression(), "labelExpression", null, 0, 1, EEFWidgetDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetDescription_PreconditionExpression(), theExpressionPackage.getExpression(), "preconditionExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFWidgetDescription_UserDefinedVariables(), theExpressionPackage.getUserDefinedVariable(), null, "userDefinedVariables", //$NON-NLS-1$
+				null, 0, -1, EEFWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetDescription_LabelExpression(), theExpressionPackage.getExpression(), "labelExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEEFWidgetDescription_LabelStyle(), this.getEEFLabelStyle(), null, "labelStyle", null, 0, 1, EEFWidgetDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFWidgetDescription_TooltipExpression(), this.getExpression(), "tooltipExpression", null, 0, 1, EEFWidgetDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFWidgetDescription_HelpExpression(), this.getExpression(), "helpExpression", null, 0, 1, EEFWidgetDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFWidgetDescription_ValidationExpression(), this.getExpression(), "validationExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFWidgetDescription_TooltipExpression(), theExpressionPackage.getExpression(), "tooltipExpression", null, 0, 1, //$NON-NLS-1$
 				EEFWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetDescription_HelpExpression(), theExpressionPackage.getExpression(), "helpExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFWidgetDescription_Validation(), this.getEEFValidation(), null, "validation", null, 0, 1, EEFWidgetDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefJavaExtensionDescriptionEClass, EEFJavaExtensionDescription.class, "EEFJavaExtensionDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3170,30 +3394,30 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		initEClass(eefInterpretedTreeStructureDescriptionEClass, EEFInterpretedTreeStructureDescription.class,
 				"EEFInterpretedTreeStructureDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFInterpretedTreeStructureDescription_RootsExpression(), this.getExpression(), "rootsExpression", null, 0, 1, //$NON-NLS-1$
-				EEFInterpretedTreeStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getEEFInterpretedTreeStructureDescription_RootsExpression(), theExpressionPackage.getExpression(), "rootsExpression", null, 0, //$NON-NLS-1$
+				1, EEFInterpretedTreeStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFInterpretedTreeStructureDescription_ChildrenExpression(), this.getExpression(), "childrenExpression", null, 0, 1, //$NON-NLS-1$
-				EEFInterpretedTreeStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFInterpretedTreeStructureDescription_SelectablePredicateExpression(), this.getExpression(),
-				"selectablePredicateExpression", null, 0, 1, EEFInterpretedTreeStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFInterpretedTreeStructureDescription_CandidateDisplayExpression(), this.getExpression(), "candidateDisplayExpression", //$NON-NLS-1$
+		initEAttribute(getEEFInterpretedTreeStructureDescription_ChildrenExpression(), theExpressionPackage.getExpression(), "childrenExpression", //$NON-NLS-1$
 				null, 0, 1, EEFInterpretedTreeStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFInterpretedTreeStructureDescription_SelectablePredicateExpression(), theExpressionPackage.getExpression(),
+				"selectablePredicateExpression", null, 0, 1, EEFInterpretedTreeStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFInterpretedTreeStructureDescription_CandidateDisplayExpression(), theExpressionPackage.getExpression(),
+				"candidateDisplayExpression", null, 0, 1, EEFInterpretedTreeStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefTextDescriptionEClass, EEFTextDescription.class, "EEFTextDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFTextDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFTextDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFTextDescription_EditExpression(), this.getExpression(), "editExpression", null, 0, 1, EEFTextDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFTextDescription_ReadOnlyExpression(), this.getExpression(), "readOnlyExpression", null, 0, 1, EEFTextDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFTextDescription_ContentAssistExpression(), this.getExpression(), "contentAssistExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFTextDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
 				EEFTextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFTextDescription_PlaceholderExpression(), this.getExpression(), "placeholderExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFTextDescription_EditExpression(), theExpressionPackage.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextDescription_ReadOnlyExpression(), theExpressionPackage.getExpression(), "readOnlyExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextDescription_ContentAssistExpression(), theExpressionPackage.getExpression(), "contentAssistExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextDescription_PlaceholderExpression(), theExpressionPackage.getExpression(), "placeholderExpression", null, 0, 1, //$NON-NLS-1$
 				EEFTextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEEFTextDescription_LineCount(), ecorePackage.getEInt(), "lineCount", "1", 0, 1, EEFTextDescription.class, !IS_TRANSIENT, //$NON-NLS-1$//$NON-NLS-2$
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3205,45 +3429,47 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		initEClass(eefCheckboxDescriptionEClass, EEFCheckboxDescription.class, "EEFCheckboxDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFCheckboxDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFCheckboxDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFCheckboxDescription_EditExpression(), this.getExpression(), "editExpression", null, 0, 1, EEFCheckboxDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFCheckboxDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFCheckboxDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFCheckboxDescription_EditExpression(), theExpressionPackage.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFCheckboxDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefSelectDescriptionEClass, EEFSelectDescription.class, "EEFSelectDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFSelectDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFSelectDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFSelectDescription_EditExpression(), this.getExpression(), "editExpression", null, 0, 1, EEFSelectDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFSelectDescription_CandidatesExpression(), this.getExpression(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFSelectDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFSelectDescription_EditExpression(), theExpressionPackage.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFSelectDescription_CandidatesExpression(), theExpressionPackage.getExpression(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
 				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEEFSelectDescription_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, EEFSelectDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFSelectDescription_CandidateDisplayExpression(), this.getExpression(), "candidateDisplayExpression", null, 0, 1, //$NON-NLS-1$
-				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFSelectDescription_CandidateDisplayExpression(), theExpressionPackage.getExpression(), "candidateDisplayExpression", null, //$NON-NLS-1$
+				0, 1, EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(eefLabelDescriptionEClass, EEFLabelDescription.class, "EEFLabelDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFLabelDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFLabelDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLabelDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLabelDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefRadioDescriptionEClass, EEFRadioDescription.class, "EEFRadioDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFRadioDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFRadioDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFRadioDescription_EditExpression(), this.getExpression(), "editExpression", null, 0, 1, EEFRadioDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFRadioDescription_CandidatesExpression(), this.getExpression(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFRadioDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
 				EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFRadioDescription_CandidateDisplayExpression(), this.getExpression(), "candidateDisplayExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFRadioDescription_EditExpression(), theExpressionPackage.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
 				EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFRadioDescription_CandidatesExpression(), theExpressionPackage.getExpression(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
+				EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFRadioDescription_CandidateDisplayExpression(), theExpressionPackage.getExpression(), "candidateDisplayExpression", null, //$NON-NLS-1$
+				0, 1, EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(eefTreeDialogSelectDescriptionEClass, EEFTreeDialogSelectDescription.class, "EEFTreeDialogSelectDescription", !IS_ABSTRACT, //$NON-NLS-1$
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFTreeDialogSelectDescription_SemanticCandidateExpression(), this.getExpression(), "semanticCandidateExpression", null, 0, //$NON-NLS-1$
-				1, EEFTreeDialogSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEAttribute(getEEFTreeDialogSelectDescription_SemanticCandidateExpression(), theExpressionPackage.getExpression(),
+				"semanticCandidateExpression", null, 0, 1, EEFTreeDialogSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEEFTreeDialogSelectDescription_DefaultFilter(), ecorePackage.getEString(), "defaultFilter", "*", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
 				EEFTreeDialogSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -3256,42 +3482,42 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		initEClass(eefLinkDescriptionEClass, EEFLinkDescription.class, "EEFLinkDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFLinkDescription_OnClickExpression(), this.getExpression(), "onClickExpression", null, 0, 1, EEFLinkDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLinkDescription_OnClickExpression(), theExpressionPackage.getExpression(), "onClickExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLinkDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefImageDescriptionEClass, EEFImageDescription.class, "EEFImageDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFImageDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFImageDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFImageDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFImageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefTreeDescriptionEClass, EEFTreeDescription.class, "EEFTreeDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFTreeDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFTreeDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTreeDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTreeDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEEFTreeDescription_TreeStructure(), this.getEEFTreeStructureDescription(), null, "treeStructure", null, 0, 1, //$NON-NLS-1$
 				EEFTreeDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFTreeDescription_EditExpression(), this.getExpression(), "editExpression", null, 0, 1, EEFTreeDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTreeDescription_EditExpression(), theExpressionPackage.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTreeDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefImagePickerDescriptionEClass, EEFImagePickerDescription.class, "EEFImagePickerDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFImagePickerDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFImagePickerDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
 				EEFImagePickerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getEEFImagePickerDescription_EditExpression(), this.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFImagePickerDescription_EditExpression(), theExpressionPackage.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
 				EEFImagePickerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getEEFImagePickerDescription_CandidatesExpression(), this.getExpression(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFImagePickerDescription_CandidatesExpression(), theExpressionPackage.getExpression(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
 				EEFImagePickerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(eefTableDescriptionEClass, EEFTableDescription.class, "EEFTableDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFTableDescription_ValueExpression(), this.getExpression(), "valueExpression", null, 0, 1, EEFTableDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFTableDescription_EditExpression(), this.getExpression(), "editExpression", null, 0, 1, EEFTableDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTableDescription_ValueExpression(), theExpressionPackage.getExpression(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTableDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTableDescription_EditExpression(), theExpressionPackage.getExpression(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTableDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEEFTableDescription_TableStructure(), this.getEEFTableStructureDescription(), null, "tableStructure", null, 0, 1, //$NON-NLS-1$
 				EEFTableDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -3300,8 +3526,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFColumnDescription_Width(), ecorePackage.getEInt(), "width", null, 0, 1, EEFColumnDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFColumnDescription_HeaderExpression(), this.getExpression(), "headerExpression", null, 0, 1, EEFColumnDescription.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFColumnDescription_HeaderExpression(), theExpressionPackage.getExpression(), "headerExpression", null, 0, 1, //$NON-NLS-1$
+				EEFColumnDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEEFColumnDescription_CellWidget(), this.getEEFCellWidgetDescription(), null, "cellWidget", null, 0, 1, //$NON-NLS-1$
 				EEFColumnDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -3310,8 +3536,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFLineDescription_HeaderExpression(), ecorePackage.getEString(), "headerExpression", null, 0, 1, EEFLineDescription.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFLineDescription_SemanticCandidatesExpression(), this.getExpression(), "semanticCandidatesExpression", null, 0, 1, //$NON-NLS-1$
-				EEFLineDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLineDescription_SemanticCandidatesExpression(), theExpressionPackage.getExpression(), "semanticCandidatesExpression", //$NON-NLS-1$
+				null, 0, 1, EEFLineDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getEEFLineDescription_DomainClass(), this.getTypeName(), "domainClass", null, 0, 1, EEFLineDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEEFLineDescription_SubLines(), this.getEEFLineDescription(), null, "subLines", null, 0, -1, EEFLineDescription.class, //$NON-NLS-1$
@@ -3325,6 +3552,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(getEEFTableStructureDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 1, 1, //$NON-NLS-1$
 				EEFTableStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEAttribute(getEEFTableStructureDescription_AddExpression(), theExpressionPackage.getExpression(), "addExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTableStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFTableStructureDescription_RemoveExpression(), theExpressionPackage.getExpression(), "removeExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTableStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFTableStructureDescription_UpExpression(), theExpressionPackage.getExpression(), "upExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTableStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFTableStructureDescription_DownExpression(), theExpressionPackage.getExpression(), "downExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTableStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(eefAdapterFactoryTableStructureDescriptionEClass, EEFAdapterFactoryTableStructureDescription.class,
 				"EEFAdapterFactoryTableStructureDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -3332,28 +3571,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				null, 0, 1, EEFAdapterFactoryTableStructureDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(contextableElementEClass, ContextableElement.class, "ContextableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getContextableElement_RequiredContextVariables(), theContextPackage.getContextVariable(), null, "requiredContextVariables", //$NON-NLS-1$
-				null, 0, -1, ContextableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContextableElement_ExcludedContextVariables(), theContextPackage.getContextVariable(), null, "excludedContextVariables", //$NON-NLS-1$
-				null, 0, -1, ContextableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(eefStyleEClass, EEFStyle.class, "EEFStyle", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFStyle_FontExpression(), this.getExpression(), "fontExpression", null, 0, 1, EEFStyle.class, !IS_TRANSIENT, !IS_VOLATILE, //$NON-NLS-1$
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFStyle_FontExpression(), theExpressionPackage.getExpression(), "fontExpression", null, 0, 1, EEFStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefConditionalStyleEClass, EEFConditionalStyle.class, "EEFConditionalStyle", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFConditionalStyle_ConditionalExpression(), this.getExpression(), "conditionalExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFConditionalStyle_ConditionalExpression(), theExpressionPackage.getExpression(), "conditionalExpression", null, 0, 1, //$NON-NLS-1$
 				EEFConditionalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefStyleCustomizationEClass, EEFStyleCustomization.class, "EEFStyleCustomization", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(eefGroupStyleEClass, EEFGroupStyle.class, "EEFGroupStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFGroupStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFGroupStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFGroupStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefGroupConditionalStyleEClass, EEFGroupConditionalStyle.class, "EEFGroupConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
@@ -3367,10 +3598,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefTextStyleEClass, EEFTextStyle.class, "EEFTextStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFTextStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, EEFTextStyle.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFTextStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, EEFTextStyle.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTextStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTextStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefTextConditionalStyleEClass, EEFTextConditionalStyle.class, "EEFTextConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3383,9 +3614,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefCheckboxStyleEClass, EEFCheckboxStyle.class, "EEFCheckboxStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFCheckboxStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFCheckboxStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFCheckboxStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFCheckboxStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFCheckboxStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFCheckboxStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefCheckboxConditionalStyleEClass, EEFCheckboxConditionalStyle.class, "EEFCheckboxConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
@@ -3401,9 +3632,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefLabelStyleEClass, EEFLabelStyle.class, "EEFLabelStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFLabelStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFLabelStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFLabelStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFLabelStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFLabelStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFLabelStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefLabelConditionalStyleEClass, EEFLabelConditionalStyle.class, "EEFLabelConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
@@ -3417,9 +3648,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefRadioStyleEClass, EEFRadioStyle.class, "EEFRadioStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFRadioStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFRadioStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFRadioStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFRadioStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFRadioStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFRadioStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefRadioConditionalStyleEClass, EEFRadioConditionalStyle.class, "EEFRadioConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
@@ -3433,12 +3664,12 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefLinkStyleEClass, EEFLinkStyle.class, "EEFLinkStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFLinkStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, EEFLinkStyle.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFLinkStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, EEFLinkStyle.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFLinkStyle_BackgroundImageExpression(), this.getExpression(), "backgroundImageExpression", null, 0, 1, EEFLinkStyle.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLinkStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLinkStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLinkStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLinkStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLinkStyle_BackgroundImageExpression(), theExpressionPackage.getExpression(), "backgroundImageExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLinkStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefLinkConditionalStyleEClass, EEFLinkConditionalStyle.class, "EEFLinkConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3451,9 +3682,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefSelectStyleEClass, EEFSelectStyle.class, "EEFSelectStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFSelectStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFSelectStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFSelectStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFSelectStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFSelectStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFSelectStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefSelectConditionalStyleEClass, EEFSelectConditionalStyle.class, "EEFSelectConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
@@ -3491,14 +3722,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefLineStyleEClass, EEFLineStyle.class, "EEFLineStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFLineStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, EEFLineStyle.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFLineStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, EEFLineStyle.class, //$NON-NLS-1$
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFLineStyle_HeaderBackgroundColorExpression(), this.getExpression(), "headerBackgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFLineStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFLineStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFLineStyle_HeaderForegroundColorExpression(), this.getExpression(), "headerForegroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFLineStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFLineStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLineStyle_HeaderBackgroundColorExpression(), theExpressionPackage.getExpression(), "headerBackgroundColorExpression", //$NON-NLS-1$
+				null, 0, 1, EEFLineStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFLineStyle_HeaderForegroundColorExpression(), theExpressionPackage.getExpression(), "headerForegroundColorExpression", //$NON-NLS-1$
+				null, 0, 1, EEFLineStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(eefLineConditionalStyleEClass, EEFLineConditionalStyle.class, "EEFLineConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3511,14 +3744,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefColumnStyleEClass, EEFColumnStyle.class, "EEFColumnStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getEEFColumnStyle_BackgroundColorExpression(), this.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFColumnStyle_BackgroundColorExpression(), theExpressionPackage.getExpression(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFColumnStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFColumnStyle_ForegroundColorExpression(), this.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+		initEAttribute(getEEFColumnStyle_ForegroundColorExpression(), theExpressionPackage.getExpression(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
 				EEFColumnStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFColumnStyle_HeaderBackgroundColorExpression(), this.getExpression(), "headerBackgroundColorExpression", null, 0, 1, //$NON-NLS-1$
-				EEFColumnStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFColumnStyle_HeaderForegroundColorExpression(), this.getExpression(), "headerForegroundColorExpression", null, 0, 1, //$NON-NLS-1$
-				EEFColumnStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFColumnStyle_HeaderBackgroundColorExpression(), theExpressionPackage.getExpression(), "headerBackgroundColorExpression", //$NON-NLS-1$
+				null, 0, 1, EEFColumnStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFColumnStyle_HeaderForegroundColorExpression(), theExpressionPackage.getExpression(), "headerForegroundColorExpression", //$NON-NLS-1$
+				null, 0, 1, EEFColumnStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(eefColumnConditionalStyleEClass, EEFColumnConditionalStyle.class, "EEFColumnConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -3530,8 +3765,23 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEReference(getEEFColumnStyleCustomization_Style(), this.getEEFColumnStyle(), null, "style", null, 0, 1, EEFColumnStyleCustomization.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(eefQuickFixEClass, EEFQuickFix.class, "EEFQuickFix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFQuickFix_TitleExpression(), theExpressionPackage.getExpression(), "titleExpression", null, 0, 1, EEFQuickFix.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFQuickFix_MessageExpression(), theExpressionPackage.getExpression(), "messageExpression", null, 0, 1, EEFQuickFix.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFQuickFix_CanHandleStatusExpression(), theExpressionPackage.getExpression(), "canHandleStatusExpression", null, 0, 1, //$NON-NLS-1$
+				EEFQuickFix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFQuickFix_FixExpression(), theExpressionPackage.getExpression(), "fixExpression", null, 0, 1, EEFQuickFix.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eefValidationEClass, EEFValidation.class, "EEFValidation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFValidation_ValidationExpression(), theExpressionPackage.getExpression(), "validationExpression", null, 0, 1, //$NON-NLS-1$
+				EEFValidation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFValidation_Quickfixes(), this.getEEFQuickFix(), null, "quickfixes", null, 0, -1, EEFValidation.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize data types
-		initEDataType(expressionEDataType, String.class, "Expression", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEDataType(typeNameEDataType, String.class, "TypeName", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource

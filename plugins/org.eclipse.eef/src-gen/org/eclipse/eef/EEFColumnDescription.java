@@ -68,7 +68,7 @@ public interface EEFColumnDescription extends EObject {
 	 * @return the value of the '<em>Header Expression</em>' attribute.
 	 * @see #setHeaderExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFColumnDescription_HeaderExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getHeaderExpression();

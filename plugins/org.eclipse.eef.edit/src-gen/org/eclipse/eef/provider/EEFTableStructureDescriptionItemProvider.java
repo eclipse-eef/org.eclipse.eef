@@ -61,6 +61,10 @@ public class EEFTableStructureDescriptionItemProvider extends ItemProviderAdapte
 
 			addMultiplePropertyDescriptor(object);
 			addIdentifierPropertyDescriptor(object);
+			addAddExpressionPropertyDescriptor(object);
+			addRemoveExpressionPropertyDescriptor(object);
+			addUpExpressionPropertyDescriptor(object);
+			addDownExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,6 +97,66 @@ public class EEFTableStructureDescriptionItemProvider extends ItemProviderAdapte
 						"_UI_EEFTableStructureDescription_type"), //$NON-NLS-1$
 				EefPackage.Literals.EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Add Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAddExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFTableStructureDescription_addExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFTableStructureDescription_addExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFTableStructureDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Remove Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRemoveExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFTableStructureDescription_removeExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFTableStructureDescription_removeExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFTableStructureDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Up Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUpExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFTableStructureDescription_upExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFTableStructureDescription_upExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFTableStructureDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Down Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDownExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFTableStructureDescription_downExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFTableStructureDescription_downExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFTableStructureDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -142,6 +206,10 @@ public class EEFTableStructureDescriptionItemProvider extends ItemProviderAdapte
 		switch (notification.getFeatureID(EEFTableStructureDescription.class)) {
 		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__MULTIPLE:
 		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER:
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION:
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION:
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION:
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

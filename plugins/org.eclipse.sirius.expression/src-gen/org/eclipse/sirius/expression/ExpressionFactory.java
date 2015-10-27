@@ -72,6 +72,15 @@ public interface ExpressionFactory extends EFactory {
 	SiriusParameter createSiriusParameter();
 
 	/**
+	 * Returns a new object of class '<em>User Defined Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>User Defined Variable</em>'.
+	 * @generated
+	 */
+	UserDefinedVariable createUserDefinedVariable();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

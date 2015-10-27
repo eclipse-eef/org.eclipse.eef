@@ -40,7 +40,7 @@ public interface EEFRadioStyle extends EEFStyle {
 	 * @return the value of the '<em>Background Color Expression</em>' attribute.
 	 * @see #setBackgroundColorExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFRadioStyle_BackgroundColorExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getBackgroundColorExpression();
@@ -65,7 +65,7 @@ public interface EEFRadioStyle extends EEFStyle {
 	 * @return the value of the '<em>Foreground Color Expression</em>' attribute.
 	 * @see #setForegroundColorExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFRadioStyle_ForegroundColorExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getForegroundColorExpression();

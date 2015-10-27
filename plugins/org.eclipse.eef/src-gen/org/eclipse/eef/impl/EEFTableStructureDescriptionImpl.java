@@ -28,6 +28,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link org.eclipse.eef.impl.EEFTableStructureDescriptionImpl#isMultiple <em>Multiple</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFTableStructureDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFTableStructureDescriptionImpl#getAddExpression <em>Add Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFTableStructureDescriptionImpl#getRemoveExpression <em>Remove Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFTableStructureDescriptionImpl#getUpExpression <em>Up Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFTableStructureDescriptionImpl#getDownExpression <em>Down Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,6 +76,86 @@ public abstract class EEFTableStructureDescriptionImpl extends MinimalEObjectImp
 	 * @ordered
 	 */
 	protected String identifier = IDENTIFIER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAddExpression() <em>Add Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ADD_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAddExpression() <em>Add Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String addExpression = ADD_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRemoveExpression() <em>Remove Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemoveExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String REMOVE_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRemoveExpression() <em>Remove Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRemoveExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String removeExpression = REMOVE_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getUpExpression() <em>Up Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String UP_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getUpExpression() <em>Up Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUpExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String upExpression = UP_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDownExpression() <em>Down Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDownExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DOWN_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDownExpression() <em>Down Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDownExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String downExpression = DOWN_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,12 +228,116 @@ public abstract class EEFTableStructureDescriptionImpl extends MinimalEObjectImp
 	 * @generated
 	 */
 	@Override
+	public String getAddExpression() {
+		return addExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAddExpression(String newAddExpression) {
+		String oldAddExpression = addExpression;
+		addExpression = newAddExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION, oldAddExpression,
+					addExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRemoveExpression() {
+		return removeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRemoveExpression(String newRemoveExpression) {
+		String oldRemoveExpression = removeExpression;
+		removeExpression = newRemoveExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION, oldRemoveExpression,
+					removeExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getUpExpression() {
+		return upExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setUpExpression(String newUpExpression) {
+		String oldUpExpression = upExpression;
+		upExpression = newUpExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION, oldUpExpression,
+					upExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDownExpression() {
+		return downExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDownExpression(String newDownExpression) {
+		String oldDownExpression = downExpression;
+		downExpression = newDownExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION, oldDownExpression,
+					downExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__MULTIPLE:
 			return isMultiple();
 		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER:
 			return getIdentifier();
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION:
+			return getAddExpression();
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION:
+			return getRemoveExpression();
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION:
+			return getUpExpression();
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION:
+			return getDownExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +355,18 @@ public abstract class EEFTableStructureDescriptionImpl extends MinimalEObjectImp
 			return;
 		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER:
 			setIdentifier((String) newValue);
+			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION:
+			setAddExpression((String) newValue);
+			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION:
+			setRemoveExpression((String) newValue);
+			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION:
+			setUpExpression((String) newValue);
+			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION:
+			setDownExpression((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +386,18 @@ public abstract class EEFTableStructureDescriptionImpl extends MinimalEObjectImp
 		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER:
 			setIdentifier(IDENTIFIER_EDEFAULT);
 			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION:
+			setAddExpression(ADD_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION:
+			setRemoveExpression(REMOVE_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION:
+			setUpExpression(UP_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION:
+			setDownExpression(DOWN_EXPRESSION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +414,14 @@ public abstract class EEFTableStructureDescriptionImpl extends MinimalEObjectImp
 			return multiple != MULTIPLE_EDEFAULT;
 		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__IDENTIFIER:
 			return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__ADD_EXPRESSION:
+			return ADD_EXPRESSION_EDEFAULT == null ? addExpression != null : !ADD_EXPRESSION_EDEFAULT.equals(addExpression);
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__REMOVE_EXPRESSION:
+			return REMOVE_EXPRESSION_EDEFAULT == null ? removeExpression != null : !REMOVE_EXPRESSION_EDEFAULT.equals(removeExpression);
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__UP_EXPRESSION:
+			return UP_EXPRESSION_EDEFAULT == null ? upExpression != null : !UP_EXPRESSION_EDEFAULT.equals(upExpression);
+		case EefPackage.EEF_TABLE_STRUCTURE_DESCRIPTION__DOWN_EXPRESSION:
+			return DOWN_EXPRESSION_EDEFAULT == null ? downExpression != null : !DOWN_EXPRESSION_EDEFAULT.equals(downExpression);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,6 +441,14 @@ public abstract class EEFTableStructureDescriptionImpl extends MinimalEObjectImp
 		result.append(multiple);
 		result.append(", identifier: "); //$NON-NLS-1$
 		result.append(identifier);
+		result.append(", addExpression: "); //$NON-NLS-1$
+		result.append(addExpression);
+		result.append(", removeExpression: "); //$NON-NLS-1$
+		result.append(removeExpression);
+		result.append(", upExpression: "); //$NON-NLS-1$
+		result.append(upExpression);
+		result.append(", downExpression: "); //$NON-NLS-1$
+		result.append(downExpression);
 		result.append(')');
 		return result.toString();
 	}

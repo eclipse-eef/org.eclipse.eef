@@ -1299,11 +1299,11 @@ rule__SiriusExpressionDescription__Group__13__Impl
     }
 :
 (
-{ before(grammarAccess.getSiriusExpressionDescriptionAccess().getVariableContainersKeyword_13()); }
+{ before(grammarAccess.getSiriusExpressionDescriptionAccess().getUserDefinedVariableContainersKeyword_13()); }
 
-	'variableContainers' 
+	'userDefinedVariableContainers' 
 
-{ after(grammarAccess.getSiriusExpressionDescriptionAccess().getVariableContainersKeyword_13()); }
+{ after(grammarAccess.getSiriusExpressionDescriptionAccess().getUserDefinedVariableContainersKeyword_13()); }
 )
 
 ;

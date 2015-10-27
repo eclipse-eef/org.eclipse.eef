@@ -28,11 +28,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.sirius.expression.UserDefinedVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,6 +46,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getUserDefinedVariables <em>User Defined Variables</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getEPackageNsUris <em>EPackage Ns Uris</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getGroups <em>Groups</em>}</li>
@@ -56,7 +61,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EEFViewDescriptionImpl extends ContextableElementImpl implements EEFViewDescription {
+public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container implements EEFViewDescription {
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,6 +81,36 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 	 * @ordered
 	 */
 	protected String identifier = IDENTIFIER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUserDefinedVariables() <em>User Defined Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserDefinedVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UserDefinedVariable> userDefinedVariables;
 
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
@@ -225,6 +260,44 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 	 * @generated
 	 */
 	@Override
+	public String getPreconditionExpression() {
+		return preconditionExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPreconditionExpression(String newPreconditionExpression) {
+		String oldPreconditionExpression = preconditionExpression;
+		preconditionExpression = newPreconditionExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression,
+					preconditionExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<UserDefinedVariable> getUserDefinedVariables() {
+		if (userDefinedVariables == null) {
+			userDefinedVariables = new EObjectContainmentEList.Resolving<UserDefinedVariable>(UserDefinedVariable.class, this,
+					EefPackage.EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES);
+		}
+		return userDefinedVariables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getLabelExpression() {
 		return labelExpression;
 	}
@@ -361,6 +434,8 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case EefPackage.EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return ((InternalEList<?>) getUserDefinedVariables()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			return ((InternalEList<?>) getGroups()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_VIEW_DESCRIPTION__PAGES:
@@ -385,6 +460,10 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 		switch (featureID) {
 		case EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER:
 			return getIdentifier();
+		case EefPackage.EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return getPreconditionExpression();
+		case EefPackage.EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return getUserDefinedVariables();
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			return getLabelExpression();
 		case EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGE_NS_URIS:
@@ -418,6 +497,13 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 		switch (featureID) {
 		case EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER:
 			setIdentifier((String) newValue);
+			return;
+		case EefPackage.EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression((String) newValue);
+			return;
+		case EefPackage.EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
+			getUserDefinedVariables().addAll((Collection<? extends UserDefinedVariable>) newValue);
 			return;
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
@@ -469,6 +555,12 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 		case EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER:
 			setIdentifier(IDENTIFIER_EDEFAULT);
 			return;
+		case EefPackage.EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
+			return;
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression(LABEL_EXPRESSION_EDEFAULT);
 			return;
@@ -510,6 +602,11 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 		switch (featureID) {
 		case EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER:
 			return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+		case EefPackage.EEF_VIEW_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+					: !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+		case EefPackage.EEF_VIEW_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return userDefinedVariables != null && !userDefinedVariables.isEmpty();
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			return LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGE_NS_URIS:
@@ -545,6 +642,8 @@ public class EEFViewDescriptionImpl extends ContextableElementImpl implements EE
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (identifier: "); //$NON-NLS-1$
 		result.append(identifier);
+		result.append(", preconditionExpression: "); //$NON-NLS-1$
+		result.append(preconditionExpression);
 		result.append(", labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
 		result.append(", ePackageNsUris: "); //$NON-NLS-1$

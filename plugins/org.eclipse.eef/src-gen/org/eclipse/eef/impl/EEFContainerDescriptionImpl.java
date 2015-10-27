@@ -23,9 +23,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.sirius.expression.UserDefinedVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getUserDefinedVariables <em>User Defined Variables</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getLayoutColumnCount <em>Layout Column Count</em>}</li>
@@ -45,7 +50,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EEFContainerDescriptionImpl extends ContextableElementImpl implements EEFContainerDescription {
+public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container implements EEFContainerDescription {
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,6 +70,36 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 	 * @ordered
 	 */
 	protected String identifier = IDENTIFIER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUserDefinedVariables() <em>User Defined Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserDefinedVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UserDefinedVariable> userDefinedVariables;
 
 	/**
 	 * The default value of the '{@link #getSemanticCandidateExpression() <em>Semantic Candidate Expression</em>}' attribute.
@@ -194,6 +229,44 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 	 * @generated
 	 */
 	@Override
+	public String getPreconditionExpression() {
+		return preconditionExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPreconditionExpression(String newPreconditionExpression) {
+		String oldPreconditionExpression = preconditionExpression;
+		preconditionExpression = newPreconditionExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION,
+					oldPreconditionExpression, preconditionExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<UserDefinedVariable> getUserDefinedVariables() {
+		if (userDefinedVariables == null) {
+			userDefinedVariables = new EObjectContainmentEList.Resolving<UserDefinedVariable>(UserDefinedVariable.class, this,
+					EefPackage.EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES);
+		}
+		return userDefinedVariables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getSemanticCandidateExpression() {
 		return semanticCandidateExpression;
 	}
@@ -295,6 +368,8 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return ((InternalEList<?>) getUserDefinedVariables()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTAINERS:
 			return ((InternalEList<?>) getContainers()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
@@ -313,6 +388,10 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
 			return getIdentifier();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return getPreconditionExpression();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return getUserDefinedVariables();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return getSemanticCandidateExpression();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__DOMAIN_CLASS:
@@ -338,6 +417,13 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
 			setIdentifier((String) newValue);
+			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression((String) newValue);
+			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
+			getUserDefinedVariables().addAll((Collection<? extends UserDefinedVariable>) newValue);
 			return;
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression((String) newValue);
@@ -371,6 +457,12 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
 			setIdentifier(IDENTIFIER_EDEFAULT);
 			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
+			return;
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression(SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT);
 			return;
@@ -400,6 +492,11 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
 			return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+					: !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return userDefinedVariables != null && !userDefinedVariables.isEmpty();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
 					: !SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
@@ -428,6 +525,8 @@ public class EEFContainerDescriptionImpl extends ContextableElementImpl implemen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (identifier: "); //$NON-NLS-1$
 		result.append(identifier);
+		result.append(", preconditionExpression: "); //$NON-NLS-1$
+		result.append(preconditionExpression);
 		result.append(", semanticCandidateExpression: "); //$NON-NLS-1$
 		result.append(semanticCandidateExpression);
 		result.append(", domainClass: "); //$NON-NLS-1$

@@ -67,6 +67,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 			case ExpressionPackage.SIRIUS_VARIABLE: return createSiriusVariable();
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS: return createSiriusExpressionClass();
 			case ExpressionPackage.SIRIUS_PARAMETER: return createSiriusParameter();
+			case ExpressionPackage.USER_DEFINED_VARIABLE: return createUserDefinedVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -86,6 +87,8 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 				return createObjectFromString(eDataType, initialValue);
 			case ExpressionPackage.PREDICATE:
 				return createPredicateFromString(eDataType, initialValue);
+			case ExpressionPackage.EXPRESSION:
+				return createExpressionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -105,6 +108,8 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 				return convertObjectToString(eDataType, instanceValue);
 			case ExpressionPackage.PREDICATE:
 				return convertPredicateToString(eDataType, instanceValue);
+			case ExpressionPackage.EXPRESSION:
+				return convertExpressionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -165,6 +170,16 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public UserDefinedVariable createUserDefinedVariable() {
+		UserDefinedVariableImpl userDefinedVariable = new UserDefinedVariableImpl();
+		return userDefinedVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Void createVoidFromString(EDataType eDataType, String initialValue) {
 		return (Void)super.createFromString(eDataType, initialValue);
 	}
@@ -211,6 +226,24 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * @generated
 	 */
 	public String convertPredicateToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createExpressionFromString(EDataType eDataType, String initialValue) {
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertExpressionToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

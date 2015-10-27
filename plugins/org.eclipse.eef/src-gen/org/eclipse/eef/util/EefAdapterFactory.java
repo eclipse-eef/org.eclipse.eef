@@ -203,11 +203,6 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseContextableElement(ContextableElement object) {
-			return createContextableElementAdapter();
-		}
-
-		@Override
 		public Adapter caseEEFStyle(EEFStyle object) {
 			return createEEFStyleAdapter();
 		}
@@ -385,6 +380,16 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFColumnStyleCustomization(EEFColumnStyleCustomization object) {
 			return createEEFColumnStyleCustomizationAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFQuickFix(EEFQuickFix object) {
+			return createEEFQuickFixAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFValidation(EEFValidation object) {
+			return createEEFValidationAdapter();
 		}
 
 		@Override
@@ -767,20 +772,6 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFAdapterFactoryTableStructureDescriptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.ContextableElement <em>Contextable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.eef.ContextableElement
-	 * @generated
-	 */
-	public Adapter createContextableElementAdapter() {
 		return null;
 	}
 
@@ -1285,6 +1276,34 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFColumnStyleCustomizationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFQuickFix <em>EEF Quick Fix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFQuickFix
+	 * @generated
+	 */
+	public Adapter createEEFQuickFixAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFValidation <em>EEF Validation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFValidation
+	 * @generated
+	 */
+	public Adapter createEEFValidationAdapter() {
 		return null;
 	}
 

@@ -224,7 +224,7 @@ public class ExpressionTextGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cUpperBoundBoundParserRuleCall_10_0 = (RuleCall)cUpperBoundAssignment_10.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Keyword cVariableContainersKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cUserDefinedVariableContainersKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		private final Keyword cEqualsSignKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Keyword cLeftSquareBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
@@ -242,14 +242,15 @@ public class ExpressionTextGrammarAccess extends AbstractGrammarElementFinder {
 		//SiriusExpressionDescription:
 		//	'exp' expression=[ecore::EAttribute|FQN] '(' (parameters+=SiriusParameter (',' parameters+=SiriusParameter)*)? ')' ':'
 		//	returnType=[ecore::EClassifier|FQN] '[' lowerBound=Bound '..' upperBound=Bound ']' '{'
-		//	'variableContainers' '=' '[' (variableContainers+=[ecore::EClass|FQN] (',' variableContainers+=[ecore::EClass|FQN])*)?
+		//	'userDefinedVariableContainers' '=' '[' (variableContainers+=[ecore::EClass|FQN] (','
+		//	variableContainers+=[ecore::EClass|FQN])*)?
 		//	']'
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
 		//'exp' expression=[ecore::EAttribute|FQN] '(' (parameters+=SiriusParameter (',' parameters+=SiriusParameter)*)? ')' ':'
-		//returnType=[ecore::EClassifier|FQN] '[' lowerBound=Bound '..' upperBound=Bound ']' '{' 'variableContainers' '=' '['
-		//(variableContainers+=[ecore::EClass|FQN] (',' variableContainers+=[ecore::EClass|FQN])*)? ']' '}'
+		//returnType=[ecore::EClassifier|FQN] '[' lowerBound=Bound '..' upperBound=Bound ']' '{' 'userDefinedVariableContainers'
+		//'=' '[' (variableContainers+=[ecore::EClass|FQN] (',' variableContainers+=[ecore::EClass|FQN])*)? ']' '}'
 		public Group getGroup() { return cGroup; }
 
 		//'exp'
@@ -327,8 +328,8 @@ public class ExpressionTextGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
 
-		//'variableContainers'
-		public Keyword getVariableContainersKeyword_13() { return cVariableContainersKeyword_13; }
+		//'userDefinedVariableContainers'
+		public Keyword getUserDefinedVariableContainersKeyword_13() { return cUserDefinedVariableContainersKeyword_13; }
 
 		//'='
 		public Keyword getEqualsSignKeyword_14() { return cEqualsSignKeyword_14; }
@@ -525,7 +526,8 @@ public class ExpressionTextGrammarAccess extends AbstractGrammarElementFinder {
 	//SiriusExpressionDescription:
 	//	'exp' expression=[ecore::EAttribute|FQN] '(' (parameters+=SiriusParameter (',' parameters+=SiriusParameter)*)? ')' ':'
 	//	returnType=[ecore::EClassifier|FQN] '[' lowerBound=Bound '..' upperBound=Bound ']' '{'
-	//	'variableContainers' '=' '[' (variableContainers+=[ecore::EClass|FQN] (',' variableContainers+=[ecore::EClass|FQN])*)?
+	//	'userDefinedVariableContainers' '=' '[' (variableContainers+=[ecore::EClass|FQN] (','
+	//	variableContainers+=[ecore::EClass|FQN])*)?
 	//	']'
 	//	'}';
 	public SiriusExpressionDescriptionElements getSiriusExpressionDescriptionAccess() {

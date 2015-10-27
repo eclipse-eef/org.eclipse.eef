@@ -33,15 +33,14 @@ public interface EEFCheckboxStyle extends EEFStyle {
 	/**
 	 * Returns the value of the '<em><b>Background Color Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Background Color Expression</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the background color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000).
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Background Color Expression</em>' attribute.
 	 * @see #setBackgroundColorExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFCheckboxStyle_BackgroundColorExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getBackgroundColorExpression();
@@ -59,15 +58,14 @@ public interface EEFCheckboxStyle extends EEFStyle {
 	/**
 	 * Returns the value of the '<em><b>Foreground Color Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Foreground Color Expression</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the foreground color of the widget. It must be define as rgb (rgb(0,0,0)) or hexa (#000000).
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Foreground Color Expression</em>' attribute.
 	 * @see #setForegroundColorExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFCheckboxStyle_ForegroundColorExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getForegroundColorExpression();

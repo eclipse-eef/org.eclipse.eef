@@ -4,16 +4,23 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.htm
+ * Contributors: Obeo - initial API and implementation
  */
-package org.eclipse.sirius.context.provider;
+package org.eclipse.eef.provider;
 
 import java.util.Collection;
 import java.util.List;
+
+import org.eclipse.eef.EEFValidation;
+import org.eclipse.eef.EefFactory;
+import org.eclipse.eef.EefPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -26,24 +33,21 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.eclipse.sirius.context.ContextPackage;
-import org.eclipse.sirius.context.ContextVariable;
-
 /**
- * This is the item provider adapter for a {@link org.eclipse.sirius.context.ContextVariable} object.
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFValidation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContextVariableItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFValidationItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextVariableItemProvider(AdapterFactory adapterFactory) {
+	public EEFValidationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,69 +62,64 @@ public class ContextVariableItemProvider extends ItemProviderAdapter implements 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContextPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addDocumentationPropertyDescriptor(object);
+			addValidationExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Context feature.
+	 * This adds a property descriptor for the Validation Expression feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ContextVariable_context_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_ContextVariable_context_feature", //$NON-NLS-1$//$NON-NLS-2$
-								"_UI_ContextVariable_type"), //$NON-NLS-1$
-						ContextPackage.Literals.CONTEXT_VARIABLE__CONTEXT, true, false, true, null, null, null));
+	protected void addValidationExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFValidation_validationExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFValidation_validationExpression_feature", "_UI_EEFValidation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_VALIDATION__VALIDATION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ContextVariable_name_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_ContextVariable_name_feature", //$NON-NLS-1$//$NON-NLS-2$
-								"_UI_ContextVariable_type"), //$NON-NLS-1$
-						ContextPackage.Literals.CONTEXT_VARIABLE__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(EefPackage.Literals.EEF_VALIDATION__QUICKFIXES);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Documentation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDocumentationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ContextVariable_documentation_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_ContextVariable_documentation_feature", //$NON-NLS-1$//$NON-NLS-2$
-								"_UI_ContextVariable_type"), //$NON-NLS-1$
-						ContextPackage.Literals.CONTEXT_VARIABLE__DOCUMENTATION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
-	 * This returns ContextVariable.gif.
+	 * This returns EEFValidation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ContextVariable")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFValidation")); //$NON-NLS-1$
 	}
 
 	/**
@@ -141,10 +140,10 @@ public class ContextVariableItemProvider extends ItemProviderAdapter implements 
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ContextVariable) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_ContextVariable_type") //$NON-NLS-1$
+		String label = ((EEFValidation) object).getValidationExpression();
+		return label == null || label.length() == 0 ? getString("_UI_EEFValidation_type") //$NON-NLS-1$
 				:
-				getString("_UI_ContextVariable_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFValidation_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -158,10 +157,12 @@ public class ContextVariableItemProvider extends ItemProviderAdapter implements 
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ContextVariable.class)) {
-		case ContextPackage.CONTEXT_VARIABLE__NAME:
-		case ContextPackage.CONTEXT_VARIABLE__DOCUMENTATION:
+		switch (notification.getFeatureID(EEFValidation.class)) {
+		case EefPackage.EEF_VALIDATION__VALIDATION_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case EefPackage.EEF_VALIDATION__QUICKFIXES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -177,6 +178,8 @@ public class ContextVariableItemProvider extends ItemProviderAdapter implements 
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_VALIDATION__QUICKFIXES, EefFactory.eINSTANCE.createEEFQuickFix()));
 	}
 
 	/**
@@ -187,7 +190,7 @@ public class ContextVariableItemProvider extends ItemProviderAdapter implements 
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ContextEditPlugin.INSTANCE;
+		return EefEditPlugin.INSTANCE;
 	}
 
 }

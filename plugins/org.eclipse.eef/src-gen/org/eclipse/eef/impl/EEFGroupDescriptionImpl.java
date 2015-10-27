@@ -8,17 +8,28 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
+
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFValidation;
 import org.eclipse.eef.EefPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.sirius.expression.UserDefinedVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,18 +40,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getUserDefinedVariables <em>User Defined Variables</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getCollapsibleExpression <em>Collapsible Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getCollapsedByDefaultExpression <em>Collapsed By Default Expression</em>}</li>
- *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getValidationExpression <em>Validation Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getValidation <em>Validation</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EEFGroupDescriptionImpl extends ContextableElementImpl implements EEFGroupDescription {
+public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implements EEFGroupDescription {
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,6 +73,36 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 	 * @ordered
 	 */
 	protected String identifier = IDENTIFIER_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUserDefinedVariables() <em>User Defined Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUserDefinedVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UserDefinedVariable> userDefinedVariables;
 
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
@@ -172,24 +215,14 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 	protected String collapsedByDefaultExpression = COLLAPSED_BY_DEFAULT_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValidationExpression() <em>Validation Expression</em>}' attribute.
+	 * The cached value of the '{@link #getValidation() <em>Validation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValidationExpression()
+	 * @see #getValidation()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALIDATION_EXPRESSION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValidationExpression() <em>Validation Expression</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValidationExpression()
-	 * @generated
-	 * @ordered
-	 */
-	protected String validationExpression = VALIDATION_EXPRESSION_EDEFAULT;
+	protected EEFValidation validation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -231,6 +264,44 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		identifier = newIdentifier;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER, oldIdentifier, identifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getPreconditionExpression() {
+		return preconditionExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPreconditionExpression(String newPreconditionExpression) {
+		String oldPreconditionExpression = preconditionExpression;
+		preconditionExpression = newPreconditionExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION,
+					oldPreconditionExpression, preconditionExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<UserDefinedVariable> getUserDefinedVariables() {
+		if (userDefinedVariables == null) {
+			userDefinedVariables = new EObjectContainmentEList.Resolving<UserDefinedVariable>(UserDefinedVariable.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES);
+		}
+		return userDefinedVariables;
 	}
 
 	/**
@@ -434,8 +505,53 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 	 * @generated
 	 */
 	@Override
-	public String getValidationExpression() {
-		return validationExpression;
+	public EEFValidation getValidation() {
+		if (validation != null && validation.eIsProxy()) {
+			InternalEObject oldValidation = (InternalEObject) validation;
+			validation = (EEFValidation) eResolveProxy(oldValidation);
+			if (validation != oldValidation) {
+				InternalEObject newValidation = (InternalEObject) validation;
+				NotificationChain msgs = oldValidation.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION,
+						null, null);
+				if (newValidation.eInternalContainer() == null) {
+					msgs = newValidation.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION, null, msgs);
+				}
+				if (msgs != null)
+					msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION, oldValidation,
+							validation));
+			}
+		}
+		return validation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEFValidation basicGetValidation() {
+		return validation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetValidation(EEFValidation newValidation, NotificationChain msgs) {
+		EEFValidation oldValidation = validation;
+		validation = newValidation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION,
+					oldValidation, newValidation);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -444,12 +560,20 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 	 * @generated
 	 */
 	@Override
-	public void setValidationExpression(String newValidationExpression) {
-		String oldValidationExpression = validationExpression;
-		validationExpression = newValidationExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION, oldValidationExpression,
-					validationExpression));
+	public void setValidation(EEFValidation newValidation) {
+		if (newValidation != validation) {
+			NotificationChain msgs = null;
+			if (validation != null)
+				msgs = ((InternalEObject) validation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION,
+						null, msgs);
+			if (newValidation != null)
+				msgs = ((InternalEObject) newValidation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION,
+						null, msgs);
+			msgs = basicSetValidation(newValidation, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION, newValidation, newValidation));
 	}
 
 	/**
@@ -460,8 +584,12 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case EefPackage.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return ((InternalEList<?>) getUserDefinedVariables()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			return basicSetContainer(null, msgs);
+		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION:
+			return basicSetValidation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -476,6 +604,10 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
 			return getIdentifier();
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return getPreconditionExpression();
+		case EefPackage.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return getUserDefinedVariables();
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			return getLabelExpression();
 		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
@@ -490,8 +622,10 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 			return getCollapsibleExpression();
 		case EefPackage.EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION:
 			return getCollapsedByDefaultExpression();
-		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION:
-			return getValidationExpression();
+		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION:
+			if (resolve)
+				return getValidation();
+			return basicGetValidation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -501,11 +635,19 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
 			setIdentifier((String) newValue);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression((String) newValue);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
+			getUserDefinedVariables().addAll((Collection<? extends UserDefinedVariable>) newValue);
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
@@ -525,8 +667,8 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		case EefPackage.EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION:
 			setCollapsedByDefaultExpression((String) newValue);
 			return;
-		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION:
-			setValidationExpression((String) newValue);
+		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION:
+			setValidation((EEFValidation) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -542,6 +684,12 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
 			setIdentifier(IDENTIFIER_EDEFAULT);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES:
+			getUserDefinedVariables().clear();
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression(LABEL_EXPRESSION_EDEFAULT);
@@ -561,8 +709,8 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		case EefPackage.EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION:
 			setCollapsedByDefaultExpression(COLLAPSED_BY_DEFAULT_EXPRESSION_EDEFAULT);
 			return;
-		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION:
-			setValidationExpression(VALIDATION_EXPRESSION_EDEFAULT);
+		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION:
+			setValidation((EEFValidation) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -578,6 +726,11 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
 			return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+					: !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+		case EefPackage.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES:
+			return userDefinedVariables != null && !userDefinedVariables.isEmpty();
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			return LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
@@ -593,9 +746,8 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		case EefPackage.EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION:
 			return COLLAPSED_BY_DEFAULT_EXPRESSION_EDEFAULT == null ? collapsedByDefaultExpression != null
 					: !COLLAPSED_BY_DEFAULT_EXPRESSION_EDEFAULT.equals(collapsedByDefaultExpression);
-		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION:
-			return VALIDATION_EXPRESSION_EDEFAULT == null ? validationExpression != null
-					: !VALIDATION_EXPRESSION_EDEFAULT.equals(validationExpression);
+		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION:
+			return validation != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -613,6 +765,8 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (identifier: "); //$NON-NLS-1$
 		result.append(identifier);
+		result.append(", preconditionExpression: "); //$NON-NLS-1$
+		result.append(preconditionExpression);
 		result.append(", labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
 		result.append(", domainClass: "); //$NON-NLS-1$
@@ -623,8 +777,6 @@ public class EEFGroupDescriptionImpl extends ContextableElementImpl implements E
 		result.append(collapsibleExpression);
 		result.append(", collapsedByDefaultExpression: "); //$NON-NLS-1$
 		result.append(collapsedByDefaultExpression);
-		result.append(", validationExpression: "); //$NON-NLS-1$
-		result.append(validationExpression);
 		result.append(')');
 		return result.toString();
 	}

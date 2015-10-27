@@ -10,6 +10,10 @@ package org.eclipse.eef;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.sirius.expression.UserDefinedVariable;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>EEF Container Description</b></em>'.
@@ -24,6 +28,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.eef.EEFContainerDescription#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFContainerDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFContainerDescription#getUserDefinedVariables <em>User Defined Variables</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFContainerDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFContainerDescription#getDomainClass <em>Domain Class</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFContainerDescription#getLayoutColumnCount <em>Layout Column Count</em>}</li>
@@ -35,7 +41,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface EEFContainerDescription extends ContextableElement {
+public interface EEFContainerDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -62,6 +68,46 @@ public interface EEFContainerDescription extends ContextableElement {
 	void setIdentifier(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the condition on which the Container will be visible.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #setPreconditionExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_PreconditionExpression()
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
+	 * @generated
+	 */
+	String getPreconditionExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 */
+	void setPreconditionExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.sirius.expression.UserDefinedVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Contains the variables defined by the end user.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>User Defined Variables</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_UserDefinedVariables()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<UserDefinedVariable> getUserDefinedVariables();
+
+	/**
 	 * Returns the value of the '<em><b>Semantic Candidate Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,7 +117,7 @@ public interface EEFContainerDescription extends ContextableElement {
 	 * @return the value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #setSemanticCandidateExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_SemanticCandidateExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getSemanticCandidateExpression();

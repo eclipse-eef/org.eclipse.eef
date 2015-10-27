@@ -8,6 +8,12 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.sirius.expression.UserDefinedVariable;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>EEF Group Description</b></em>'.
@@ -22,20 +28,22 @@ package org.eclipse.eef;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.eef.EEFGroupDescription#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getUserDefinedVariables <em>User Defined Variables</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFGroupDescription#getContainer <em>Container</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFGroupDescription#getCollapsibleExpression <em>Collapsible Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFGroupDescription#getCollapsedByDefaultExpression <em>Collapsed By Default Expression</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFGroupDescription#getValidationExpression <em>Validation Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getValidation <em>Validation</em>}</li>
  * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFGroupDescription()
  * @model
  * @generated
  */
-public interface EEFGroupDescription extends ContextableElement {
+public interface EEFGroupDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -62,6 +70,46 @@ public interface EEFGroupDescription extends ContextableElement {
 	void setIdentifier(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the condition on which the Group will be visible.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #setPreconditionExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_PreconditionExpression()
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
+	 * @generated
+	 */
+	String getPreconditionExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 */
+	void setPreconditionExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>User Defined Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.sirius.expression.UserDefinedVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Contains the variables defined by the end user.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>User Defined Variables</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_UserDefinedVariables()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<UserDefinedVariable> getUserDefinedVariables();
+
+	/**
 	 * Returns the value of the '<em><b>Label Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -71,7 +119,7 @@ public interface EEFGroupDescription extends ContextableElement {
 	 * @return the value of the '<em>Label Expression</em>' attribute.
 	 * @see #setLabelExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_LabelExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getLabelExpression();
@@ -121,7 +169,7 @@ public interface EEFGroupDescription extends ContextableElement {
 	 * @return the value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #setSemanticCandidateExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_SemanticCandidateExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getSemanticCandidateExpression();
@@ -171,7 +219,7 @@ public interface EEFGroupDescription extends ContextableElement {
 	 * @return the value of the '<em>Collapsible Expression</em>' attribute.
 	 * @see #setCollapsibleExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_CollapsibleExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getCollapsibleExpression();
@@ -196,7 +244,7 @@ public interface EEFGroupDescription extends ContextableElement {
 	 * @return the value of the '<em>Collapsed By Default Expression</em>' attribute.
 	 * @see #setCollapsedByDefaultExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_CollapsedByDefaultExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getCollapsedByDefaultExpression();
@@ -212,28 +260,28 @@ public interface EEFGroupDescription extends ContextableElement {
 	void setCollapsedByDefaultExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Validation Expression</b></em>' attribute.
+	 * Returns the value of the '<em><b>Validation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Defines if a group value is valid or not.
+	 * Contains the validation rule of the Group.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Validation Expression</em>' attribute.
-	 * @see #setValidationExpression(String)
-	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_ValidationExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @return the value of the '<em>Validation</em>' containment reference.
+	 * @see #setValidation(EEFValidation)
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Validation()
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	String getValidationExpression();
+	EEFValidation getValidation();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getValidationExpression <em>Validation Expression</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getValidation <em>Validation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Validation Expression</em>' attribute.
-	 * @see #getValidationExpression()
+	 * @param value the new value of the '<em>Validation</em>' containment reference.
+	 * @see #getValidation()
 	 * @generated
 	 */
-	void setValidationExpression(String value);
+	void setValidation(EEFValidation value);
 
 } // EEFGroupDescription

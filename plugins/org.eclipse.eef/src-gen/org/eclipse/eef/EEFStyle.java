@@ -41,7 +41,7 @@ public interface EEFStyle extends EObject {
 	 * @return the value of the '<em>Font Expression</em>' attribute.
 	 * @see #setFontExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFStyle_FontExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getFontExpression();

@@ -40,7 +40,7 @@ public interface EEFCheckboxDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFCheckboxDescription_ValueExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getValueExpression();
@@ -65,7 +65,7 @@ public interface EEFCheckboxDescription extends EEFCellWidgetDescription {
 	 * @return the value of the '<em>Edit Expression</em>' attribute.
 	 * @see #setEditExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFCheckboxDescription_EditExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getEditExpression();

@@ -42,7 +42,7 @@ public interface EEFInterpretedTreeStructureDescription extends EEFTreeStructure
 	 * @return the value of the '<em>Roots Expression</em>' attribute.
 	 * @see #setRootsExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFInterpretedTreeStructureDescription_RootsExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getRootsExpression();
@@ -67,7 +67,7 @@ public interface EEFInterpretedTreeStructureDescription extends EEFTreeStructure
 	 * @return the value of the '<em>Children Expression</em>' attribute.
 	 * @see #setChildrenExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFInterpretedTreeStructureDescription_ChildrenExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getChildrenExpression();
@@ -92,7 +92,7 @@ public interface EEFInterpretedTreeStructureDescription extends EEFTreeStructure
 	 * @return the value of the '<em>Selectable Predicate Expression</em>' attribute.
 	 * @see #setSelectablePredicateExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFInterpretedTreeStructureDescription_SelectablePredicateExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getSelectablePredicateExpression();
@@ -117,7 +117,7 @@ public interface EEFInterpretedTreeStructureDescription extends EEFTreeStructure
 	 * @return the value of the '<em>Candidate Display Expression</em>' attribute.
 	 * @see #setCandidateDisplayExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFInterpretedTreeStructureDescription_CandidateDisplayExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getCandidateDisplayExpression();

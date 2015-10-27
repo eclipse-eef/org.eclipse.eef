@@ -18,12 +18,22 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.eclipse.sirius.expression.ExpressionFactory;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFGroupDescription} object.
@@ -31,7 +41,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EEFGroupDescriptionItemProvider extends ContextableElementItemProvider {
+public class EEFGroupDescriptionItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -54,12 +65,12 @@ public class EEFGroupDescriptionItemProvider extends ContextableElementItemProvi
 			super.getPropertyDescriptors(object);
 
 			addIdentifierPropertyDescriptor(object);
+			addPreconditionExpressionPropertyDescriptor(object);
 			addLabelExpressionPropertyDescriptor(object);
 			addDomainClassPropertyDescriptor(object);
 			addSemanticCandidateExpressionPropertyDescriptor(object);
 			addCollapsibleExpressionPropertyDescriptor(object);
 			addCollapsedByDefaultExpressionPropertyDescriptor(object);
-			addValidationExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,6 +86,21 @@ public class EEFGroupDescriptionItemProvider extends ContextableElementItemProvi
 				getResourceLocator(), getString("_UI_EEFGroupDescription_identifier_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupDescription_identifier_feature", "_UI_EEFGroupDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_GROUP_DESCRIPTION__IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Precondition Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPreconditionExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGroupDescription_preconditionExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupDescription_preconditionExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFGroupDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -150,21 +176,6 @@ public class EEFGroupDescriptionItemProvider extends ContextableElementItemProvi
 	}
 
 	/**
-	 * This adds a property descriptor for the Validation Expression feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValidationExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_EEFGroupDescription_validationExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupDescription_validationExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
-						"_UI_EEFGroupDescription_type"), //$NON-NLS-1$
-				EefPackage.Literals.EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -176,7 +187,9 @@ public class EEFGroupDescriptionItemProvider extends ContextableElementItemProvi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTAINER);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__VALIDATION);
 		}
 		return childrenFeatures;
 	}
@@ -242,15 +255,17 @@ public class EEFGroupDescriptionItemProvider extends ContextableElementItemProvi
 
 		switch (notification.getFeatureID(EEFGroupDescription.class)) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 		case EefPackage.EEF_GROUP_DESCRIPTION__COLLAPSIBLE_EXPRESSION:
 		case EefPackage.EEF_GROUP_DESCRIPTION__COLLAPSED_BY_DEFAULT_EXPRESSION:
-		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES:
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
+		case EefPackage.EEF_GROUP_DESCRIPTION__VALIDATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -268,29 +283,25 @@ public class EEFGroupDescriptionItemProvider extends ContextableElementItemProvi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__USER_DEFINED_VARIABLES,
+				ExpressionFactory.eINSTANCE.createUserDefinedVariable()));
+
 		newChildDescriptors.add(
 				createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTAINER, EefFactory.eINSTANCE.createEEFContainerDescription()));
+
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__VALIDATION, EefFactory.eINSTANCE.createEEFValidation()));
 	}
 
 	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == EefPackage.Literals.CONTEXTABLE_ELEMENT__REQUIRED_CONTEXT_VARIABLES
-				|| childFeature == EefPackage.Literals.CONTEXTABLE_ELEMENT__EXCLUDED_CONTEXT_VARIABLES;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", //$NON-NLS-1$
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
+	public ResourceLocator getResourceLocator() {
+		return EefEditPlugin.INSTANCE;
 	}
 
 }

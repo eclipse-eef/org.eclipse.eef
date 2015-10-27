@@ -172,6 +172,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFColumnConditionalStyle();
 		case EefPackage.EEF_COLUMN_STYLE_CUSTOMIZATION:
 			return createEEFColumnStyleCustomization();
+		case EefPackage.EEF_QUICK_FIX:
+			return createEEFQuickFix();
+		case EefPackage.EEF_VALIDATION:
+			return createEEFValidation();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -185,8 +189,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case EefPackage.EXPRESSION:
-			return createExpressionFromString(eDataType, initialValue);
 		case EefPackage.TYPE_NAME:
 			return createTypeNameFromString(eDataType, initialValue);
 		default:
@@ -202,8 +204,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case EefPackage.EXPRESSION:
-			return convertExpressionToString(eDataType, instanceValue);
 		case EefPackage.TYPE_NAME:
 			return convertTypeNameToString(eDataType, instanceValue);
 		default:
@@ -821,8 +821,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String createExpressionFromString(EDataType eDataType, String initialValue) {
-		return (String) super.createFromString(eDataType, initialValue);
+	@Override
+	public EEFQuickFix createEEFQuickFix() {
+		EEFQuickFixImpl eefQuickFix = new EEFQuickFixImpl();
+		return eefQuickFix;
 	}
 
 	/**
@@ -830,8 +832,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertExpressionToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+	@Override
+	public EEFValidation createEEFValidation() {
+		EEFValidationImpl eefValidation = new EEFValidationImpl();
+		return eefValidation;
 	}
 
 	/**

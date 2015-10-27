@@ -192,6 +192,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.sirius.expression.UserDefinedVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UserDefinedVariableItemProvider userDefinedVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.sirius.expression.UserDefinedVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUserDefinedVariableAdapter() {
+		if (userDefinedVariableItemProvider == null) {
+			userDefinedVariableItemProvider = new UserDefinedVariableItemProvider(this);
+		}
+
+		return userDefinedVariableItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,6 +318,7 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		if (siriusVariableItemProvider != null) siriusVariableItemProvider.dispose();
 		if (siriusExpressionClassItemProvider != null) siriusExpressionClassItemProvider.dispose();
 		if (siriusParameterItemProvider != null) siriusParameterItemProvider.dispose();
+		if (userDefinedVariableItemProvider != null) userDefinedVariableItemProvider.dispose();
 	}
 
 }

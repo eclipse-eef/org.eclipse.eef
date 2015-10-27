@@ -41,7 +41,7 @@ public interface EEFLinkStyle extends EEFStyle {
 	 * @return the value of the '<em>Background Color Expression</em>' attribute.
 	 * @see #setBackgroundColorExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFLinkStyle_BackgroundColorExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getBackgroundColorExpression();
@@ -66,7 +66,7 @@ public interface EEFLinkStyle extends EEFStyle {
 	 * @return the value of the '<em>Foreground Color Expression</em>' attribute.
 	 * @see #setForegroundColorExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFLinkStyle_ForegroundColorExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getForegroundColorExpression();
@@ -91,7 +91,7 @@ public interface EEFLinkStyle extends EEFStyle {
 	 * @return the value of the '<em>Background Image Expression</em>' attribute.
 	 * @see #setBackgroundImageExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFLinkStyle_BackgroundImageExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getBackgroundImageExpression();

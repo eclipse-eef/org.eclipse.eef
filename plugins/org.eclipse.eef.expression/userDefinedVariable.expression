@@ -1,0 +1,8 @@
+package expression { 
+	class expression.UserDefinedVariable { 
+		var self : ecore.EObject
+		exp expression.UserDefinedVariable.valueExpression(self) : ecore.EObject [0..1] {
+			userDefinedVariableContainers = [] 
+		} 
+	} 
+}

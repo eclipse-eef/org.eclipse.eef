@@ -41,7 +41,7 @@ public interface EEFConditionalStyle extends EObject {
 	 * @return the value of the '<em>Conditional Expression</em>' attribute.
 	 * @see #setConditionalExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFConditionalStyle_ConditionalExpression()
-	 * @model dataType="org.eclipse.eef.Expression"
+	 * @model dataType="org.eclipse.sirius.expression.Expression"
 	 * @generated
 	 */
 	String getConditionalExpression();

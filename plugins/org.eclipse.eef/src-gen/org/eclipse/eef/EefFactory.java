@@ -523,6 +523,24 @@ public interface EefFactory extends EFactory {
 	EEFColumnStyleCustomization createEEFColumnStyleCustomization();
 
 	/**
+	 * Returns a new object of class '<em>EEF Quick Fix</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EEF Quick Fix</em>'.
+	 * @generated
+	 */
+	EEFQuickFix createEEFQuickFix();
+
+	/**
+	 * Returns a new object of class '<em>EEF Validation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EEF Validation</em>'.
+	 * @generated
+	 */
+	EEFValidation createEEFValidation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

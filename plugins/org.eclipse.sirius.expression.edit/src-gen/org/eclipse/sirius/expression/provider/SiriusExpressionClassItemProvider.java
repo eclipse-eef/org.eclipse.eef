@@ -196,6 +196,11 @@ public class SiriusExpressionClassItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(ExpressionPackage.Literals.SIRIUS_EXPRESSION_CLASS__VARIABLES,
+				 ExpressionFactory.eINSTANCE.createUserDefinedVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ExpressionPackage.Literals.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS,
 				 ExpressionFactory.eINSTANCE.createSiriusExpressionDescription()));
 	}
