@@ -193,6 +193,18 @@
         <details key="documentation" value="Contains the validation rule of the Group."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFGroupStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the group style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFGroupConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the group conditional styles."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFContainerDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -456,6 +468,18 @@
         <details key="documentation" value="Defines the behavior executed when the end-user updates the value of the checkbox."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFCheckboxStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the checkbox style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFCheckboxConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the checkbox conditional styles."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFSelectDescription" eSuperTypes="#//EEFCellWidgetDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -487,6 +511,18 @@
         <details key="documentation" value="Indicates how to display the input value."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFSelectStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the combo style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFSelectConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the combo conditional styles."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFLabelDescription" eSuperTypes="#//EEFCellWidgetDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -495,6 +531,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Indicates how to display the input value."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFLabelStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the label style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFLabelConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the label conditional styles."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -521,6 +569,18 @@
         eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Indicates how to display the input value."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFRadioStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the radio style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFRadioConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the radio conditional styles."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -560,6 +620,18 @@
         <details key="documentation" value="Defines the behavior executed when the link is clicked."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFLinkStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the link style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFLinkConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the link conditional styles."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFImageDescription" eSuperTypes="#//EEFCellWidgetDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -588,6 +660,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="editExpression" eType="ecore:EDataType ../../org.eclipse.sirius.expression/model/expression.ecore#//Expression">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Defines the behavior executed when the end-user updates the selection in the tree."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFTreeStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the tree style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFTreeConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the tree conditional styles."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -630,6 +714,18 @@
         <details key="documentation" value="References a table structure."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFTableStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the table style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFTableConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the table conditional styles."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFColumnDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -648,6 +744,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="cellWidget" eType="#//EEFCellWidgetDescription">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="References the widget to represent in the cell."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFColumnStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the column style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFColumnConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the column conditional styles."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -675,6 +783,18 @@
         eType="#//EEFLineDescription" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="References lines that will be represented as sub lines in the table, this allows to get a kind of tree inside a table."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFLineStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the line style."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFLineConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the line conditional styles."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
