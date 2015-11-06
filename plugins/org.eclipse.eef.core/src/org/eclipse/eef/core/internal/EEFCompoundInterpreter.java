@@ -21,7 +21,7 @@ import org.eclipse.eef.interpreter.api.IEvaluationResult;
 import org.eclipse.eef.interpreter.api.IInterpreter;
 import org.eclipse.eef.interpreter.api.IInterpreterProvider;
 import org.eclipse.eef.interpreter.api.IValidationResult;
-import org.eclipse.sirius.expression.ExpressionDescription;
+import org.eclipse.sirius.expression.SiriusExpressionDescription;
 
 /**
  * Utility class encapsulating all the available interpreters.
@@ -73,7 +73,8 @@ public class EEFCompoundInterpreter implements IInterpreter {
 	 *      org.eclipse.sirius.expression.ExpressionDescription, java.lang.String)
 	 */
 	@Override
-	public IEvaluationResult evaluateExpression(Map<String, Object> variables, ExpressionDescription expressionDescription, String expressionBody) {
+	public IEvaluationResult evaluateExpression(Map<String, Object> variables, SiriusExpressionDescription expressionDescription,
+			String expressionBody) {
 		IInterpreter interpreter = this.getInterpreterForExpression(expressionBody);
 		if (interpreter != null) {
 			return interpreter.evaluateExpression(variables, expressionDescription, expressionBody);
@@ -88,7 +89,7 @@ public class EEFCompoundInterpreter implements IInterpreter {
 	 *      java.lang.String)
 	 */
 	@Override
-	public IValidationResult validateExpression(ExpressionDescription expressionDescription, String expressionBody) {
+	public IValidationResult validateExpression(SiriusExpressionDescription expressionDescription, String expressionBody) {
 		IInterpreter interpreter = this.getInterpreterForExpression(expressionBody);
 		if (interpreter != null) {
 			return interpreter.validateExpression(expressionDescription, expressionBody);

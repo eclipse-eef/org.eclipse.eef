@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
-import org.eclipse.sirius.expression.ExpressionDescription;
+import org.eclipse.sirius.expression.SiriusExpressionDescription;
 
 /**
  * The AQL {@link IInterpreter}.
@@ -92,7 +92,8 @@ public class AQLInterpreter implements IInterpreter {
 	 *      org.eclipse.sirius.expression.ExpressionDescription, java.lang.String)
 	 */
 	@Override
-	public IEvaluationResult evaluateExpression(Map<String, Object> variables, ExpressionDescription expressionDescription, String expressionBody) {
+	public IEvaluationResult evaluateExpression(Map<String, Object> variables, SiriusExpressionDescription expressionDescription,
+			String expressionBody) {
 		String body = expressionBody.substring(IAQLConstants.AQL_PREFIX.length());
 		try {
 			AstResult astResult = this.parsedExpressions.get(body);
@@ -115,7 +116,7 @@ public class AQLInterpreter implements IInterpreter {
 	 *      java.lang.String)
 	 */
 	@Override
-	public IValidationResult validateExpression(ExpressionDescription expressionDescription, String expressionBody) {
+	public IValidationResult validateExpression(SiriusExpressionDescription expressionDescription, String expressionBody) {
 		return null;
 	}
 

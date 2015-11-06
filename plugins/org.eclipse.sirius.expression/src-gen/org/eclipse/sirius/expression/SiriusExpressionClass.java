@@ -9,6 +9,7 @@ package org.eclipse.sirius.expression;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.eclipse.sirius.expression.SiriusExpressionClass#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.eclipse.sirius.expression.SiriusExpressionClass#getExpressionDescriptions <em>Expression Descriptions</em>}</li>
- *   <li>{@link org.eclipse.sirius.expression.SiriusExpressionClass#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.eclipse.sirius.expression.SiriusExpressionClass#getEClass <em>EClass</em>}</li>
  * </ul>
  *
  * @see org.eclipse.sirius.expression.ExpressionPackage#getSiriusExpressionClass()
@@ -36,7 +37,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface SiriusExpressionClass extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.sirius.expression.Variable}.
+	 * The list contents are of type {@link org.eclipse.sirius.expression.SiriusVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -47,11 +48,11 @@ public interface SiriusExpressionClass extends EObject {
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	EList<Variable> getVariables();
+	EList<SiriusVariable> getVariables();
 
 	/**
 	 * Returns the value of the '<em><b>Expression Descriptions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.sirius.expression.ExpressionDescription}.
+	 * The list contents are of type {@link org.eclipse.sirius.expression.SiriusExpressionDescription}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -62,31 +63,32 @@ public interface SiriusExpressionClass extends EObject {
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	EList<ExpressionDescription> getExpressionDescriptions();
+	EList<SiriusExpressionDescription> getExpressionDescriptions();
 
 	/**
-	 * Returns the value of the '<em><b>Label</b></em>' attribute.
+	 * Returns the value of the '<em><b>EClass</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EClass</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Lable to identify an expression class.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Label</em>' attribute.
-	 * @see #setLabel(String)
-	 * @see org.eclipse.sirius.expression.ExpressionPackage#getSiriusExpressionClass_Label()
+	 * @return the value of the '<em>EClass</em>' reference.
+	 * @see #setEClass(EClass)
+	 * @see org.eclipse.sirius.expression.ExpressionPackage#getSiriusExpressionClass_EClass()
 	 * @model
 	 * @generated
 	 */
-	String getLabel();
+	EClass getEClass();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.sirius.expression.SiriusExpressionClass#getLabel <em>Label</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.sirius.expression.SiriusExpressionClass#getEClass <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label</em>' attribute.
-	 * @see #getLabel()
+	 * @param value the new value of the '<em>EClass</em>' reference.
+	 * @see #getEClass()
 	 * @generated
 	 */
-	void setLabel(String value);
+	void setEClass(EClass value);
 
 } // SiriusExpressionClass

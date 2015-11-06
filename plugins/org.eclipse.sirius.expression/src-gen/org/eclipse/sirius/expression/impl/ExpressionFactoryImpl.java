@@ -63,9 +63,10 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ExpressionPackage.SIRIUS_EXPRESSION_PACKAGE: return createSiriusExpressionPackage();
-			case ExpressionPackage.EXPRESSION_DESCRIPTION: return createExpressionDescription();
-			case ExpressionPackage.VARIABLE: return createVariable();
+			case ExpressionPackage.SIRIUS_EXPRESSION_DESCRIPTION: return createSiriusExpressionDescription();
+			case ExpressionPackage.SIRIUS_VARIABLE: return createSiriusVariable();
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS: return createSiriusExpressionClass();
+			case ExpressionPackage.SIRIUS_PARAMETER: return createSiriusParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -124,9 +125,9 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpressionDescription createExpressionDescription() {
-		ExpressionDescriptionImpl expressionDescription = new ExpressionDescriptionImpl();
-		return expressionDescription;
+	public SiriusExpressionDescription createSiriusExpressionDescription() {
+		SiriusExpressionDescriptionImpl siriusExpressionDescription = new SiriusExpressionDescriptionImpl();
+		return siriusExpressionDescription;
 	}
 
 	/**
@@ -134,9 +135,9 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variable createVariable() {
-		VariableImpl variable = new VariableImpl();
-		return variable;
+	public SiriusVariable createSiriusVariable() {
+		SiriusVariableImpl siriusVariable = new SiriusVariableImpl();
+		return siriusVariable;
 	}
 
 	/**
@@ -147,6 +148,16 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	public SiriusExpressionClass createSiriusExpressionClass() {
 		SiriusExpressionClassImpl siriusExpressionClass = new SiriusExpressionClassImpl();
 		return siriusExpressionClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SiriusParameter createSiriusParameter() {
+		SiriusParameterImpl siriusParameter = new SiriusParameterImpl();
+		return siriusParameter;
 	}
 
 	/**

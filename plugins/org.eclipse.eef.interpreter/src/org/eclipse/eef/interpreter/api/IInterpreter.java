@@ -12,7 +12,7 @@ package org.eclipse.eef.interpreter.api;
 
 import java.util.Map;
 
-import org.eclipse.sirius.expression.ExpressionDescription;
+import org.eclipse.sirius.expression.SiriusExpressionDescription;
 
 /**
  * Common interface of all the interpreters used by the EEF runtime.
@@ -33,7 +33,7 @@ public interface IInterpreter {
 	 * @throws EvaluationException
 	 *             In case of error during the evaluation
 	 */
-	IEvaluationResult evaluateExpression(Map<String, Object> variables, ExpressionDescription expressionDescription, String expressionBody);
+	IEvaluationResult evaluateExpression(Map<String, Object> variables, SiriusExpressionDescription expressionDescription, String expressionBody);
 
 	/**
 	 * Validates the expression with the given body and parameters.
@@ -44,5 +44,5 @@ public interface IInterpreter {
 	 *            The body of the expression
 	 * @return The evaluation result
 	 */
-	IValidationResult validateExpression(ExpressionDescription expressionDescription, String expressionBody);
+	IValidationResult validateExpression(SiriusExpressionDescription expressionDescription, String expressionBody);
 }
