@@ -77,16 +77,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 				return createSiriusExpressionPackageAdapter();
 			}
 			@Override
-			public Adapter caseExpressionDescription(ExpressionDescription object) {
-				return createExpressionDescriptionAdapter();
+			public Adapter caseSiriusExpressionDescription(SiriusExpressionDescription object) {
+				return createSiriusExpressionDescriptionAdapter();
 			}
 			@Override
-			public Adapter caseVariable(Variable object) {
-				return createVariableAdapter();
+			public Adapter caseSiriusVariable(SiriusVariable object) {
+				return createSiriusVariableAdapter();
 			}
 			@Override
 			public Adapter caseSiriusExpressionClass(SiriusExpressionClass object) {
 				return createSiriusExpressionClassAdapter();
+			}
+			@Override
+			public Adapter caseSiriusParameter(SiriusParameter object) {
+				return createSiriusParameterAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -123,30 +127,30 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.sirius.expression.ExpressionDescription <em>Description</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sirius.expression.SiriusExpressionDescription <em>Sirius Expression Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.sirius.expression.ExpressionDescription
+	 * @see org.eclipse.sirius.expression.SiriusExpressionDescription
 	 * @generated
 	 */
-	public Adapter createExpressionDescriptionAdapter() {
+	public Adapter createSiriusExpressionDescriptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.sirius.expression.Variable <em>Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sirius.expression.SiriusVariable <em>Sirius Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.sirius.expression.Variable
+	 * @see org.eclipse.sirius.expression.SiriusVariable
 	 * @generated
 	 */
-	public Adapter createVariableAdapter() {
+	public Adapter createSiriusVariableAdapter() {
 		return null;
 	}
 
@@ -161,6 +165,20 @@ public class ExpressionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSiriusExpressionClassAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sirius.expression.SiriusParameter <em>Sirius Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.sirius.expression.SiriusParameter
+	 * @generated
+	 */
+	public Adapter createSiriusParameterAdapter() {
 		return null;
 	}
 

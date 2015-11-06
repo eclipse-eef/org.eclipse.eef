@@ -77,21 +77,27 @@ public class ExpressionSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionPackage.EXPRESSION_DESCRIPTION: {
-				ExpressionDescription expressionDescription = (ExpressionDescription)theEObject;
-				T result = caseExpressionDescription(expressionDescription);
+			case ExpressionPackage.SIRIUS_EXPRESSION_DESCRIPTION: {
+				SiriusExpressionDescription siriusExpressionDescription = (SiriusExpressionDescription)theEObject;
+				T result = caseSiriusExpressionDescription(siriusExpressionDescription);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExpressionPackage.VARIABLE: {
-				Variable variable = (Variable)theEObject;
-				T result = caseVariable(variable);
+			case ExpressionPackage.SIRIUS_VARIABLE: {
+				SiriusVariable siriusVariable = (SiriusVariable)theEObject;
+				T result = caseSiriusVariable(siriusVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS: {
 				SiriusExpressionClass siriusExpressionClass = (SiriusExpressionClass)theEObject;
 				T result = caseSiriusExpressionClass(siriusExpressionClass);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExpressionPackage.SIRIUS_PARAMETER: {
+				SiriusParameter siriusParameter = (SiriusParameter)theEObject;
+				T result = caseSiriusParameter(siriusParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,32 +121,32 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Description</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Sirius Expression Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Sirius Expression Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseExpressionDescription(ExpressionDescription object) {
+	public T caseSiriusExpressionDescription(SiriusExpressionDescription object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Sirius Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Sirius Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariable(Variable object) {
+	public T caseSiriusVariable(SiriusVariable object) {
 		return null;
 	}
 
@@ -156,6 +162,21 @@ public class ExpressionSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSiriusExpressionClass(SiriusExpressionClass object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sirius Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sirius Parameter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSiriusParameter(SiriusParameter object) {
 		return null;
 	}
 

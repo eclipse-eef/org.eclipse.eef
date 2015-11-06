@@ -1,26 +1,553 @@
-package eef {
-	
+package eef{
+
 	class eef.EEFViewDescription {
 		/**
-		 * The semantic candidate of the view
-		 */
+     	 * The variable representing the view input.
+	 	 */
 		var viewSemanticCandidate : ecore.EObject
-		
-		exp eef.EEFViewDescription.labelExpression (optional viewSemanticCandidate) : ecore.EString [0..1] {
+
+		exp eef.EEFViewDescription.labelExpression(viewSemanticCandidate) : ecore.EString [0..1] {
 			contextableElements = [
 				eef.EEFViewDescription
 			]
-		}
+		} 
 	}
-	
+
 	class eef.EEFPageDescription {
 		/**
-		 * The semantic candidate of the page
-		 */
-		var pageSemanticCandidate : ecore.EObject
-		
-		exp eef.EEFPageDescription.labelExpression (viewSemanticCandidate) : ecore.EString [0..1] {
-			contextableElements = []
+     	 * The variable representing the page input.
+	 	 */
+		var pageSemanticCandidate : ecore.EObject 
+
+		exp eef.EEFPageDescription.semanticCandidateExpression(viewSemanticCandidate, pageSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription
+			]
+		} 
+		exp eef.EEFPageDescription.labelExpression(viewSemanticCandidate, pageSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription
+			]
+		} 
+	}
+
+	class eef.EEFGroupDescription {
+		/**
+     	 * The variable representing the group input.
+	 	 */
+		var groupSemanticCandidate : ecore.EObject 
+
+		exp eef.EEFGroupDescription.labelExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription
+			]
+		} 
+		exp eef.EEFGroupDescription.semanticCandidateExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription
+			]
+		} 
+		exp eef.EEFGroupDescription.collapsibleExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate) : ecore.EBoolean [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription
+			]
+		} 
+		exp eef.EEFGroupDescription.collapsedByDefaultExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate) : ecore.EBoolean [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription
+			]
+		} 
+		exp eef.EEFGroupDescription.validationExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate) : SiriusStatus [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription
+			]
+		} 
+	}
+
+	class eef.EEFContainerDescription {
+		/**
+     	 * The variable representing the container input.
+	 	 */
+		var containerSemanticCandidate : ecore.EObject 
+
+		exp eef.EEFContainerDescription.semanticCandidateExpression(viewSemanticCandidate, pageSemanticCandidate, containerSemanticCandidate, groupSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription
+			]
+		} 
+	}
+
+	class eef.EEFWidgetDescription {
+		exp eef.EEFWidgetDescription.labelExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+		exp eef.EEFWidgetDescription.tooltipExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+		exp eef.EEFWidgetDescription.helpExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+		exp eef.EEFWidgetDescription.validationExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : SiriusStatus [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+	}
+
+	class eef.EEFCheckboxDescription {
+		/**
+     	 * The variable containing the new updated value.
+	 	 */
+		var newValue : ecore.EObject 
+
+		exp eef.EEFCheckboxDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFCheckboxDescription
+			]
+		} 
+		exp eef.EEFCheckboxDescription.editExpression(viewSemanticCandidate, newValue, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFCheckboxDescription
+			]
+		} 
+	}
+
+	class eef.EEFSelectDescription {
+		/**
+     	 * The variable containing the new updated value.
+	 	 */
+		var newValue : ecore.EObject 
+
+		/**
+     	 * Represents one of the possible inputs.
+	 	 */
+		var candidate : ecore.EObject 
+
+		exp eef.EEFSelectDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+		exp eef.EEFSelectDescription.editExpression(viewSemanticCandidate, newValue, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+		exp eef.EEFSelectDescription.candidatesExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+		exp eef.EEFSelectDescription.candidateDisplayExpression(viewSemanticCandidate, candidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+	}
+
+	class eef.EEFLabelDescription {
+		exp eef.EEFLabelDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLabelDescription
+			]
+		} 
+	}
+
+	class eef.EEFRadioDescription {
+		/**
+     	 * The variable containing the new updated value.
+	 	 */
+		var newValue : ecore.EObject 
+
+		/**
+     	 * Represents the one of the possible inputs.
+	 	 */
+		var candidate : ecore.EObject 
+
+		exp eef.EEFRadioDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFRadioDescription
+			]
+		} 
+		exp eef.EEFRadioDescription.editExpression(viewSemanticCandidate, newValue, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFRadioDescription
+			]
+		} 
+		exp eef.EEFRadioDescription.candidatesExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFRadioDescription
+			]
+		} 
+		exp eef.EEFRadioDescription.candidateDisplayExpression(viewSemanticCandidate, candidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFRadioDescription
+			]
+		} 
+	}
+
+	class eef.EEFLinkDescription {
+		exp eef.EEFLinkDescription.onClickExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : Void [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLinkDescription
+			]
+		} 
+	}
+
+	class eef.EEFImageDescription {
+		exp eef.EEFImageDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : Object [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFImageDescription
+			]
+		} 
+	}
+
+	class eef.EEFTreeDescription {
+		/**
+     	 * The variable containing the new updated values.
+	 	 */
+		var newValue : ecore.EObject 
+
+		exp eef.EEFTreeDescription.editExpression(viewSemanticCandidate, newValue, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTreeDescription
+			]
+		} 
+		exp eef.EEFTreeDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTreeDescription
+			]
+		} 
+	}
+
+	class eef.EEFTreeDialogSelectDescription {
+		/**
+     	 * Represents the semantic candidate.
+	 	 */
+		var treeDialogSelectSemanticCandidate : ecore.EObject 
+
+		/**
+     	 * Represents one of the possible inputs.
+	 	 */
+		var candidate : ecore.EObject 
+
+		/**
+     	 * The variable containing the new updated values.
+	 	 */
+		var newValue : ecore.EObject 
+
+		exp eef.EEFTreeDialogSelectDescription.semanticCandidateExpression(viewSemanticCandidate, treeDialogSelectSemanticCandidate, candidate, newValue, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTreeDialogSelectDescription
+			]
+		} 
+	}
+
+	class eef.EEFImagePickerDescription {
+		/**
+     	 * The variable containing the new updated value.
+	 	 */
+		var newValue : ecore.EObject 
+
+		exp eef.EEFImagePickerDescription.candidatesExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : Object [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFImagePickerDescription
+			]
+		} 
+		exp eef.EEFImagePickerDescription.editExpression(viewSemanticCandidate, newValue, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : Object [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFImagePickerDescription
+			]
+		} 
+		exp eef.EEFImagePickerDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : Object [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFImagePickerDescription
+			]
+		} 
+	}
+
+	class eef.EEFColumnDescription {
+		/**
+     	 * Represents the column input.
+	 	 */
+		var columnSemanticCandidate : ecore.EObject 
+
+		exp eef.EEFColumnDescription.headerExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFColumnDescription
+			]
+		} 
+		exp eef.EEFColumnDescription.contextCandidatesExpression(viewSemanticCandidate, columnSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFColumnDescription
+			]
+		} 
+	}
+
+	class eef.EEFLineDescription {
+		/**
+     	 * Represents the line input.
+	 	 */
+		var lineSemanticCandidate : ecore.EObject 
+
+		exp eef.EEFLineDescription.headerExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLineDescription
+			]
+		} 
+		exp eef.EEFLineDescription.semanticCandidatesExpression(viewSemanticCandidate, lineSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLineDescription
+			]
+		} 
+	}
+
+	class eef.EEFTableDescription {
+		/**
+     	 * The variable containing the new updated values.
+	 	 */
+		var newValue : ecore.EObject 
+
+		exp eef.EEFTableDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTableDescription
+			]
+		} 
+		exp eef.EEFTableDescription.editExpression(viewSemanticCandidate, newValue, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTableDescription
+			]
+		} 
+	}
+
+	class eef.EEFInterpretedTreeStructureDescription {
+		/**
+     	 * The variable representing the parent element while computing the children expression in the Tree.
+	 	 */
+		var parent : ecore.EObject 
+
+		/**
+     	 * The variable representing the candidate element while computing the candidate display expression.
+	 	 */
+		var candidate : ecore.EObject 
+
+		exp eef.EEFInterpretedTreeStructureDescription.rootsExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFInterpretedTreeStructureDescription
+			]
+		} 
+		exp eef.EEFInterpretedTreeStructureDescription.candidateDisplayExpression(viewSemanticCandidate, candidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFInterpretedTreeStructureDescription
+			]
+		} 
+		exp eef.EEFInterpretedTreeStructureDescription.selectablePredicateExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : Predicate [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFInterpretedTreeStructureDescription
+			]
+		} 
+		exp eef.EEFInterpretedTreeStructureDescription.childrenExpression(viewSemanticCandidate, parent, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFInterpretedTreeStructureDescription
+			]
+		} 
+	}
+
+	class eef.EEFTextDescription {
+		/**
+     	 * The variable containing the text field value.
+	 	 */
+		var value : ecore.EObject 
+
+		/**
+     	 * The variable containing the cursor position when the completion is called.
+	 	 */
+		var position : ecore.EObject 
+
+		exp eef.EEFTextDescription.valueExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTextDescription
+			]
+		} 
+		exp eef.EEFTextDescription.editExpression(viewSemanticCandidate, value, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EObject [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTextDescription
+			]
+		} 
+		exp eef.EEFTextDescription.readOnlyExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EBoolean [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTextDescription
+			]
+		} 
+		exp eef.EEFTextDescription.contentAssistExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate, value, position) : CompletionProposal [0..-1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTextDescription
+			]
+		} 
+		exp eef.EEFTextDescription.placeholderExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTextDescription
+			]
+		} 
+	}
+
+	class eef.EEFStyleDescription {
+		exp eef.EEFStyleDescription.fontExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+	}
+
+	class eef.EEFConditionalStyleDescription {
+		exp eef.EEFConditionalStyleDescription.conditionalExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EBoolean [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+	}
+
+	class eef.EEFGroupStyleDescription {
+		exp eef.EEFGroupStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription
+			]
+		} 
+	}
+
+	class eef.EEFTextStyleDescription {
+		exp eef.EEFTextStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTextDescription
+			]
+		} 
+		exp eef.EEFTextStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFTextDescription
+			]
+		} 
+	}
+
+	class eef.EEFCheckboxStyleDescription {
+		exp eef.EEFCheckboxStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFCheckboxDescription
+			]
+		} 
+		exp eef.EEFCheckboxStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFCheckboxDescription
+			]
+		} 
+	}
+
+	class eef.EEFLabelStyleDescription {
+		exp eef.EEFLabelStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLabelDescription
+			]
+		} 
+		exp eef.EEFLabelStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLabelDescription
+			]
+		} 
+	}
+
+	class eef.EEFRadioStyleDescription {
+		exp eef.EEFRadioStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFRadioDescription
+			]
+		} 
+		exp eef.EEFRadioStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFRadioDescription
+			]
+		} 
+	}
+
+	class eef.EEFLinkStyleDescription {
+		exp eef.EEFLinkStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLinkDescription
+			]
+		} 
+		exp eef.EEFLinkStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLinkDescription
+			]
+		} 
+		exp eef.EEFLinkStyleDescription.backgroundImageExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFLinkDescription
+			]
+		} 
+	}
+
+	class eef.EEFSelectStyleDescription {
+		exp eef.EEFSelectStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+		exp eef.EEFSelectStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+	}
+
+	class eef.EEFLineStyleDescription {
+		exp eef.EEFLineStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+		exp eef.EEFLineStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+		exp eef.EEFLineStyleDescription.headerBackgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+		exp eef.EEFLineStyleDescription.headerForegroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+	}
+
+	class eef.EEFColumnStyleDescription {
+		exp eef.EEFColumnStyleDescription.backgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+		exp eef.EEFColumnStyleDescription.foregroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
+		} 
+		exp eef.EEFColumnStyleDescription.headerBackgroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription
+			]
+		} 
+		exp eef.EEFColumnStyleDescription.headerForegroundColorExpression(viewSemanticCandidate, pageSemanticCandidate, groupSemanticCandidate, containerSemanticCandidate) : ecore.EString [0..1] {
+			contextableElements = [
+				eef.EEFViewDescription, eef.EEFPageDescription, eef.EEFGroupDescription, eef.EEFContainerDescription, eef.EEFWidgetDescription, eef.EEFSelectDescription
+			]
 		}
 	}
+
 }

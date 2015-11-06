@@ -100,49 +100,49 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.sirius.expression.ExpressionDescription} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.sirius.expression.SiriusExpressionDescription} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ExpressionDescriptionItemProvider expressionDescriptionItemProvider;
+	protected SiriusExpressionDescriptionItemProvider siriusExpressionDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.sirius.expression.ExpressionDescription}.
+	 * This creates an adapter for a {@link org.eclipse.sirius.expression.SiriusExpressionDescription}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createExpressionDescriptionAdapter() {
-		if (expressionDescriptionItemProvider == null) {
-			expressionDescriptionItemProvider = new ExpressionDescriptionItemProvider(this);
+	public Adapter createSiriusExpressionDescriptionAdapter() {
+		if (siriusExpressionDescriptionItemProvider == null) {
+			siriusExpressionDescriptionItemProvider = new SiriusExpressionDescriptionItemProvider(this);
 		}
 
-		return expressionDescriptionItemProvider;
+		return siriusExpressionDescriptionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.sirius.expression.Variable} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.sirius.expression.SiriusVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected VariableItemProvider variableItemProvider;
+	protected SiriusVariableItemProvider siriusVariableItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.sirius.expression.Variable}.
+	 * This creates an adapter for a {@link org.eclipse.sirius.expression.SiriusVariable}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariableAdapter() {
-		if (variableItemProvider == null) {
-			variableItemProvider = new VariableItemProvider(this);
+	public Adapter createSiriusVariableAdapter() {
+		if (siriusVariableItemProvider == null) {
+			siriusVariableItemProvider = new SiriusVariableItemProvider(this);
 		}
 
-		return variableItemProvider;
+		return siriusVariableItemProvider;
 	}
 
 	/**
@@ -166,6 +166,29 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 		}
 
 		return siriusExpressionClassItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.sirius.expression.SiriusParameter} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SiriusParameterItemProvider siriusParameterItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.sirius.expression.SiriusParameter}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSiriusParameterAdapter() {
+		if (siriusParameterItemProvider == null) {
+			siriusParameterItemProvider = new SiriusParameterItemProvider(this);
+		}
+
+		return siriusParameterItemProvider;
 	}
 
 	/**
@@ -268,9 +291,10 @@ public class ExpressionItemProviderAdapterFactory extends ExpressionAdapterFacto
 	 */
 	public void dispose() {
 		if (siriusExpressionPackageItemProvider != null) siriusExpressionPackageItemProvider.dispose();
-		if (expressionDescriptionItemProvider != null) expressionDescriptionItemProvider.dispose();
-		if (variableItemProvider != null) variableItemProvider.dispose();
+		if (siriusExpressionDescriptionItemProvider != null) siriusExpressionDescriptionItemProvider.dispose();
+		if (siriusVariableItemProvider != null) siriusVariableItemProvider.dispose();
 		if (siriusExpressionClassItemProvider != null) siriusExpressionClassItemProvider.dispose();
+		if (siriusParameterItemProvider != null) siriusParameterItemProvider.dispose();
 	}
 
 }
