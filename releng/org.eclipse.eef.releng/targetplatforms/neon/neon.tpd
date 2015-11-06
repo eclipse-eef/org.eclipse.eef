@@ -10,4 +10,7 @@ location "http://download.eclipse.org/releases/neon" {
 	org.eclipse.sirius.specifier.feature.group lazy
 	org.eclipse.uml2.uml.feature.group lazy
 	org.eclipse.uml2.uml.editor lazy
+	org.eclipse.xtext.sdk.feature.group lazy
+	org.eclipse.xtend.sdk.feature.group lazy
+	org.eclipse.emf.mwe2.runtime.sdk.feature.group lazy
 }
