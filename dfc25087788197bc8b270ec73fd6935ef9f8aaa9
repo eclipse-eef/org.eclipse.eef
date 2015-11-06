@@ -1,0 +1,268 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67ccbf7d_8288ef2f",
+        "filename": "plugins/org.eclipse.sirius.expression.edit/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "Missing bundle versions [2.8.0, 3.0.0)",
+      "range": {
+        "startLine": 15,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 48
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_2279e39f",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "Java 1.6",
+      "range": {
+        "startLine": 6,
+        "startChar": 132,
+        "endLine": 6,
+        "endChar": 142
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_e27e1b8a",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "%providerName\n\nThe internationalization of the MANIFEST.MF is missing",
+      "range": {
+        "startLine": 4,
+        "startChar": 15,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_027cdf8f",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "Java 1.6",
+      "range": {
+        "startLine": 23,
+        "startChar": 37,
+        "endLine": 23,
+        "endChar": 47
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_62fe8b78",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/build.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "Missing Copyright",
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_82038f19",
+        "filename": "plugins/org.eclipse.sirius.expression.text.ui/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "Java 1.6",
+      "range": {
+        "startLine": 6,
+        "startChar": 132,
+        "endLine": 6,
+        "endChar": 142
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_c20cb74b",
+        "filename": "plugins/org.eclipse.sirius.expression.text.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "%providerName and i18n",
+      "range": {
+        "startLine": 4,
+        "startChar": 15,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_a2089336",
+        "filename": "plugins/org.eclipse.sirius.expression.text.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "1.6",
+      "range": {
+        "startLine": 20,
+        "startChar": 37,
+        "endLine": 20,
+        "endChar": 47
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_e209bb38",
+        "filename": "plugins/org.eclipse.sirius.expression.text/.classpath",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "Java 1.6",
+      "range": {
+        "startLine": 6,
+        "startChar": 131,
+        "endLine": 6,
+        "endChar": 142
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_2214834a",
+        "filename": "plugins/org.eclipse.sirius.expression.text/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "i18n",
+      "range": {
+        "startLine": 4,
+        "startChar": 15,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_02177f51",
+        "filename": "plugins/org.eclipse.sirius.expression.text/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "1.6",
+      "range": {
+        "startLine": 19,
+        "startChar": 37,
+        "endLine": 19,
+        "endChar": 47
+      },
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_4220a7a3",
+        "filename": "plugins/org.eclipse.sirius.expression.text/build.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-06T15:32:10Z",
+      "side": 1,
+      "message": "Copyright",
+      "revId": "dfc25087788197bc8b270ec73fd6935ef9f8aaa9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
