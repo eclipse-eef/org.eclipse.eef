@@ -36,22 +36,22 @@ public interface ExpressionFactory extends EFactory {
 	SiriusExpressionPackage createSiriusExpressionPackage();
 
 	/**
-	 * Returns a new object of class '<em>Description</em>'.
+	 * Returns a new object of class '<em>Sirius Expression Description</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Description</em>'.
+	 * @return a new object of class '<em>Sirius Expression Description</em>'.
 	 * @generated
 	 */
-	ExpressionDescription createExpressionDescription();
+	SiriusExpressionDescription createSiriusExpressionDescription();
 
 	/**
-	 * Returns a new object of class '<em>Variable</em>'.
+	 * Returns a new object of class '<em>Sirius Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable</em>'.
+	 * @return a new object of class '<em>Sirius Variable</em>'.
 	 * @generated
 	 */
-	Variable createVariable();
+	SiriusVariable createSiriusVariable();
 
 	/**
 	 * Returns a new object of class '<em>Sirius Expression Class</em>'.
@@ -61,6 +61,15 @@ public interface ExpressionFactory extends EFactory {
 	 * @generated
 	 */
 	SiriusExpressionClass createSiriusExpressionClass();
+
+	/**
+	 * Returns a new object of class '<em>Sirius Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sirius Parameter</em>'.
+	 * @generated
+	 */
+	SiriusParameter createSiriusParameter();
 
 	/**
 	 * Returns the package supported by this factory.

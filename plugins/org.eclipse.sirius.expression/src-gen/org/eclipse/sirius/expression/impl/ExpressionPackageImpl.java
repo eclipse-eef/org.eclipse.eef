@@ -13,14 +13,15 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.sirius.expression.ExpressionDescription;
 import org.eclipse.sirius.expression.ExpressionFactory;
 import org.eclipse.sirius.expression.ExpressionPackage;
 import org.eclipse.sirius.expression.SiriusExpressionClass;
+import org.eclipse.sirius.expression.SiriusExpressionDescription;
 import org.eclipse.sirius.expression.SiriusExpressionPackage;
-import org.eclipse.sirius.expression.Variable;
+import org.eclipse.sirius.expression.SiriusParameter;
+import org.eclipse.sirius.expression.SiriusVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +42,14 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass expressionDescriptionEClass = null;
+	private EClass siriusExpressionDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass variableEClass = null;
+	private EClass siriusVariableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -56,6 +57,13 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * @generated
 	 */
 	private EClass siriusExpressionClassEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass siriusParameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +132,9 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theExpressionPackage.createPackageContents();
 
@@ -171,8 +182,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExpressionDescription() {
-		return expressionDescriptionEClass;
+	public EClass getSiriusExpressionDescription() {
+		return siriusExpressionDescriptionEClass;
 	}
 
 	/**
@@ -180,8 +191,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExpressionDescription_LowerBound() {
-		return (EAttribute)expressionDescriptionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSiriusExpressionDescription_LowerBound() {
+		return (EAttribute)siriusExpressionDescriptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -189,8 +200,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExpressionDescription_UpperBound() {
-		return (EAttribute)expressionDescriptionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSiriusExpressionDescription_UpperBound() {
+		return (EAttribute)siriusExpressionDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -198,8 +209,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExpressionDescription_Expression() {
-		return (EReference)expressionDescriptionEClass.getEStructuralFeatures().get(2);
+	public EReference getSiriusExpressionDescription_Expression() {
+		return (EReference)siriusExpressionDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -207,8 +218,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExpressionDescription_Variables() {
-		return (EReference)expressionDescriptionEClass.getEStructuralFeatures().get(3);
+	public EReference getSiriusExpressionDescription_Parameters() {
+		return (EReference)siriusExpressionDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -216,8 +227,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExpressionDescription_ReturnType() {
-		return (EReference)expressionDescriptionEClass.getEStructuralFeatures().get(4);
+	public EReference getSiriusExpressionDescription_ReturnType() {
+		return (EReference)siriusExpressionDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -225,8 +236,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getExpressionDescription_Label() {
-		return (EAttribute)expressionDescriptionEClass.getEStructuralFeatures().get(5);
+	public EReference getSiriusExpressionDescription_VariableContainers() {
+		return (EReference)siriusExpressionDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -234,8 +245,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExpressionDescription_ContextableElements() {
-		return (EReference)expressionDescriptionEClass.getEStructuralFeatures().get(6);
+	public EClass getSiriusVariable() {
+		return siriusVariableEClass;
 	}
 
 	/**
@@ -243,8 +254,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVariable() {
-		return variableEClass;
+	public EAttribute getSiriusVariable_Name() {
+		return (EAttribute)siriusVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -252,8 +263,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariable_Name() {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSiriusVariable_Documentation() {
+		return (EAttribute)siriusVariableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -261,8 +272,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariable_Documentation() {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+	public EReference getSiriusVariable_EType() {
+		return (EReference)siriusVariableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -297,8 +308,35 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSiriusExpressionClass_Label() {
-		return (EAttribute)siriusExpressionClassEClass.getEStructuralFeatures().get(2);
+	public EReference getSiriusExpressionClass_EClass() {
+		return (EReference)siriusExpressionClassEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSiriusParameter() {
+		return siriusParameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSiriusParameter_Optional() {
+		return (EAttribute)siriusParameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSiriusParameter_Variable() {
+		return (EReference)siriusParameterEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -360,23 +398,27 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		createEReference(siriusExpressionPackageEClass, SIRIUS_EXPRESSION_PACKAGE__EXPRESSION_CLASSES);
 		createEReference(siriusExpressionPackageEClass, SIRIUS_EXPRESSION_PACKAGE__EPACKAGE);
 
-		expressionDescriptionEClass = createEClass(EXPRESSION_DESCRIPTION);
-		createEAttribute(expressionDescriptionEClass, EXPRESSION_DESCRIPTION__LOWER_BOUND);
-		createEAttribute(expressionDescriptionEClass, EXPRESSION_DESCRIPTION__UPPER_BOUND);
-		createEReference(expressionDescriptionEClass, EXPRESSION_DESCRIPTION__EXPRESSION);
-		createEReference(expressionDescriptionEClass, EXPRESSION_DESCRIPTION__VARIABLES);
-		createEReference(expressionDescriptionEClass, EXPRESSION_DESCRIPTION__RETURN_TYPE);
-		createEAttribute(expressionDescriptionEClass, EXPRESSION_DESCRIPTION__LABEL);
-		createEReference(expressionDescriptionEClass, EXPRESSION_DESCRIPTION__CONTEXTABLE_ELEMENTS);
+		siriusExpressionDescriptionEClass = createEClass(SIRIUS_EXPRESSION_DESCRIPTION);
+		createEAttribute(siriusExpressionDescriptionEClass, SIRIUS_EXPRESSION_DESCRIPTION__LOWER_BOUND);
+		createEAttribute(siriusExpressionDescriptionEClass, SIRIUS_EXPRESSION_DESCRIPTION__UPPER_BOUND);
+		createEReference(siriusExpressionDescriptionEClass, SIRIUS_EXPRESSION_DESCRIPTION__EXPRESSION);
+		createEReference(siriusExpressionDescriptionEClass, SIRIUS_EXPRESSION_DESCRIPTION__PARAMETERS);
+		createEReference(siriusExpressionDescriptionEClass, SIRIUS_EXPRESSION_DESCRIPTION__RETURN_TYPE);
+		createEReference(siriusExpressionDescriptionEClass, SIRIUS_EXPRESSION_DESCRIPTION__VARIABLE_CONTAINERS);
 
-		variableEClass = createEClass(VARIABLE);
-		createEAttribute(variableEClass, VARIABLE__NAME);
-		createEAttribute(variableEClass, VARIABLE__DOCUMENTATION);
+		siriusVariableEClass = createEClass(SIRIUS_VARIABLE);
+		createEAttribute(siriusVariableEClass, SIRIUS_VARIABLE__NAME);
+		createEAttribute(siriusVariableEClass, SIRIUS_VARIABLE__DOCUMENTATION);
+		createEReference(siriusVariableEClass, SIRIUS_VARIABLE__ETYPE);
 
 		siriusExpressionClassEClass = createEClass(SIRIUS_EXPRESSION_CLASS);
 		createEReference(siriusExpressionClassEClass, SIRIUS_EXPRESSION_CLASS__VARIABLES);
 		createEReference(siriusExpressionClassEClass, SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS);
-		createEAttribute(siriusExpressionClassEClass, SIRIUS_EXPRESSION_CLASS__LABEL);
+		createEReference(siriusExpressionClassEClass, SIRIUS_EXPRESSION_CLASS__ECLASS);
+
+		siriusParameterEClass = createEClass(SIRIUS_PARAMETER);
+		createEAttribute(siriusParameterEClass, SIRIUS_PARAMETER__OPTIONAL);
+		createEReference(siriusParameterEClass, SIRIUS_PARAMETER__VARIABLE);
 
 		// Create data types
 		voidEDataType = createEDataType(VOID);
@@ -407,6 +449,9 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -416,25 +461,29 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(siriusExpressionPackageEClass, SiriusExpressionPackage.class, "SiriusExpressionPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(getSiriusExpressionPackage_ExpressionClasses(), this.getSiriusExpressionClass(), null, "expressionClasses", null, 0, -1, SiriusExpressionPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getSiriusExpressionPackage_EPackage(), ecorePackage.getEPackage(), null, "ePackage", null, 0, 1, SiriusExpressionPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusExpressionPackage_EPackage(), theEcorePackage.getEPackage(), null, "ePackage", null, 0, 1, SiriusExpressionPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(expressionDescriptionEClass, ExpressionDescription.class, "ExpressionDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getExpressionDescription_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 0, 1, ExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getExpressionDescription_UpperBound(), ecorePackage.getEInt(), "upperBound", "1", 0, 1, ExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-		initEReference(getExpressionDescription_Expression(), ecorePackage.getEStructuralFeature(), null, "expression", null, 0, 1, ExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getExpressionDescription_Variables(), this.getVariable(), null, "variables", null, 0, -1, ExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getExpressionDescription_ReturnType(), ecorePackage.getEClassifier(), null, "returnType", null, 0, 1, ExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getExpressionDescription_Label(), ecorePackage.getEString(), "label", null, 0, 1, ExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getExpressionDescription_ContextableElements(), ecorePackage.getEClass(), null, "contextableElements", null, 0, -1, ExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(siriusExpressionDescriptionEClass, SiriusExpressionDescription.class, "SiriusExpressionDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getSiriusExpressionDescription_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 0, 1, SiriusExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getSiriusExpressionDescription_UpperBound(), ecorePackage.getEInt(), "upperBound", "1", 0, 1, SiriusExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEReference(getSiriusExpressionDescription_Expression(), theEcorePackage.getEStructuralFeature(), null, "expression", null, 0, 1, SiriusExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusExpressionDescription_Parameters(), this.getSiriusParameter(), null, "parameters", null, 0, -1, SiriusExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusExpressionDescription_ReturnType(), theEcorePackage.getEClassifier(), null, "returnType", null, 0, 1, SiriusExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusExpressionDescription_VariableContainers(), theEcorePackage.getEClass(), null, "variableContainers", null, 0, -1, SiriusExpressionDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
-		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getVariable_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(siriusVariableEClass, SiriusVariable.class, "SiriusVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getSiriusVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, SiriusVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getSiriusVariable_Documentation(), ecorePackage.getEString(), "documentation", null, 0, 1, SiriusVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusVariable_EType(), theEcorePackage.getEClassifier(), null, "eType", null, 0, 1, SiriusVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(siriusExpressionClassEClass, SiriusExpressionClass.class, "SiriusExpressionClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getSiriusExpressionClass_Variables(), this.getVariable(), null, "variables", null, 0, -1, SiriusExpressionClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getSiriusExpressionClass_ExpressionDescriptions(), this.getExpressionDescription(), null, "expressionDescriptions", null, 0, -1, SiriusExpressionClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getSiriusExpressionClass_Label(), ecorePackage.getEString(), "label", null, 0, 1, SiriusExpressionClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusExpressionClass_Variables(), this.getSiriusVariable(), null, "variables", null, 0, -1, SiriusExpressionClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusExpressionClass_ExpressionDescriptions(), this.getSiriusExpressionDescription(), null, "expressionDescriptions", null, 0, -1, SiriusExpressionClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusExpressionClass_EClass(), theEcorePackage.getEClass(), null, "eClass", null, 0, 1, SiriusExpressionClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(siriusParameterEClass, SiriusParameter.class, "SiriusParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getSiriusParameter_Optional(), ecorePackage.getEBoolean(), "optional", null, 0, 1, SiriusParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getSiriusParameter_Variable(), this.getSiriusVariable(), null, "variable", null, 0, 1, SiriusParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize data types
 		initEDataType(voidEDataType, Void.class, "Void", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

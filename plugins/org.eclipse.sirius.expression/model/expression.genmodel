@@ -6,7 +6,8 @@
     modelPluginID="org.eclipse.sirius.expression" modelName="Expression" nonNLSMarkers="true"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory=""
     importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="6.0"
-    copyrightFields="false" language="" operationReflection="true" importOrganizing="true">
+    copyrightFields="false" language="" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>expression.ecore</foreignModel>
   <genPackages prefix="Expression" basePackage="org.eclipse.sirius" disposableProviderFactory="true"
       ecorePackage="expression.ecore#/">
@@ -17,23 +18,27 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionPackage/expressionClasses"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionPackage/ePackage"/>
     </genClasses>
-    <genClasses ecoreClass="expression.ecore#//ExpressionDescription">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//ExpressionDescription/lowerBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//ExpressionDescription/upperBound"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/expression"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/variables"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/returnType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//ExpressionDescription/label"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//ExpressionDescription/contextableElements"/>
+    <genClasses ecoreClass="expression.ecore#//SiriusExpressionDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//SiriusExpressionDescription/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//SiriusExpressionDescription/upperBound"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionDescription/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionDescription/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionDescription/returnType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionDescription/variableContainers"/>
     </genClasses>
-    <genClasses ecoreClass="expression.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Variable/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//Variable/documentation"/>
+    <genClasses ecoreClass="expression.ecore#//SiriusVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//SiriusVariable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//SiriusVariable/documentation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusVariable/eType"/>
     </genClasses>
     <genClasses ecoreClass="expression.ecore#//SiriusExpressionClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionClass/variables"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionClass/expressionDescriptions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//SiriusExpressionClass/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusExpressionClass/eClass"/>
+    </genClasses>
+    <genClasses ecoreClass="expression.ecore#//SiriusParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute expression.ecore#//SiriusParameter/optional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference expression.ecore#//SiriusParameter/variable"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
