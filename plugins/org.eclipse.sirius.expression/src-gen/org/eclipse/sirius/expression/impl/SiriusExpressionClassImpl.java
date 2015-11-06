@@ -22,11 +22,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.eclipse.sirius.expression.ExpressionDescription;
 import org.eclipse.sirius.expression.ExpressionPackage;
 import org.eclipse.sirius.expression.SiriusExpressionClass;
-import org.eclipse.sirius.expression.Variable;
+import org.eclipse.sirius.expression.SiriusExpressionDescription;
+import org.eclipse.sirius.expression.SiriusVariable;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +37,7 @@ import org.eclipse.sirius.expression.Variable;
  * <ul>
  *   <li>{@link org.eclipse.sirius.expression.impl.SiriusExpressionClassImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.eclipse.sirius.expression.impl.SiriusExpressionClassImpl#getExpressionDescriptions <em>Expression Descriptions</em>}</li>
- *   <li>{@link org.eclipse.sirius.expression.impl.SiriusExpressionClassImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link org.eclipse.sirius.expression.impl.SiriusExpressionClassImpl#getEClass <em>EClass</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,7 +51,7 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Variable> variables;
+	protected EList<SiriusVariable> variables;
 
 	/**
 	 * The cached value of the '{@link #getExpressionDescriptions() <em>Expression Descriptions</em>}' containment reference list.
@@ -62,27 +61,17 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ExpressionDescription> expressionDescriptions;
+	protected EList<SiriusExpressionDescription> expressionDescriptions;
 
 	/**
-	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+	 * The cached value of the '{@link #getEClass() <em>EClass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLabel()
+	 * @see #getEClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LABEL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLabel()
-	 * @generated
-	 * @ordered
-	 */
-	protected String label = LABEL_EDEFAULT;
+	protected EClass eClass;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,9 +97,9 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Variable> getVariables() {
+	public EList<SiriusVariable> getVariables() {
 		if (variables == null) {
-			variables = new EObjectContainmentEList.Resolving<Variable>(Variable.class, this, ExpressionPackage.SIRIUS_EXPRESSION_CLASS__VARIABLES);
+			variables = new EObjectContainmentEList.Resolving<SiriusVariable>(SiriusVariable.class, this, ExpressionPackage.SIRIUS_EXPRESSION_CLASS__VARIABLES);
 		}
 		return variables;
 	}
@@ -120,9 +109,9 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ExpressionDescription> getExpressionDescriptions() {
+	public EList<SiriusExpressionDescription> getExpressionDescriptions() {
 		if (expressionDescriptions == null) {
-			expressionDescriptions = new EObjectContainmentEList.Resolving<ExpressionDescription>(ExpressionDescription.class, this, ExpressionPackage.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS);
+			expressionDescriptions = new EObjectContainmentEList.Resolving<SiriusExpressionDescription>(SiriusExpressionDescription.class, this, ExpressionPackage.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS);
 		}
 		return expressionDescriptions;
 	}
@@ -132,8 +121,16 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLabel() {
-		return label;
+	public EClass getEClass() {
+		if (eClass != null && eClass.eIsProxy()) {
+			InternalEObject oldEClass = (InternalEObject)eClass;
+			eClass = (EClass)eResolveProxy(oldEClass);
+			if (eClass != oldEClass) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpressionPackage.SIRIUS_EXPRESSION_CLASS__ECLASS, oldEClass, eClass));
+			}
+		}
+		return eClass;
 	}
 
 	/**
@@ -141,11 +138,20 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLabel(String newLabel) {
-		String oldLabel = label;
-		label = newLabel;
+	public EClass basicGetEClass() {
+		return eClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEClass(EClass newEClass) {
+		EClass oldEClass = eClass;
+		eClass = newEClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.SIRIUS_EXPRESSION_CLASS__LABEL, oldLabel, label));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.SIRIUS_EXPRESSION_CLASS__ECLASS, oldEClass, eClass));
 	}
 
 	/**
@@ -176,8 +182,9 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 				return getVariables();
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS:
 				return getExpressionDescriptions();
-			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__LABEL:
-				return getLabel();
+			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__ECLASS:
+				if (resolve) return getEClass();
+				return basicGetEClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -193,14 +200,14 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__VARIABLES:
 				getVariables().clear();
-				getVariables().addAll((Collection<? extends Variable>)newValue);
+				getVariables().addAll((Collection<? extends SiriusVariable>)newValue);
 				return;
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS:
 				getExpressionDescriptions().clear();
-				getExpressionDescriptions().addAll((Collection<? extends ExpressionDescription>)newValue);
+				getExpressionDescriptions().addAll((Collection<? extends SiriusExpressionDescription>)newValue);
 				return;
-			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__LABEL:
-				setLabel((String)newValue);
+			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__ECLASS:
+				setEClass((EClass)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -220,8 +227,8 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS:
 				getExpressionDescriptions().clear();
 				return;
-			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__LABEL:
-				setLabel(LABEL_EDEFAULT);
+			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__ECLASS:
+				setEClass((EClass)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -239,26 +246,10 @@ public class SiriusExpressionClassImpl extends MinimalEObjectImpl.Container impl
 				return variables != null && !variables.isEmpty();
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS:
 				return expressionDescriptions != null && !expressionDescriptions.isEmpty();
-			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__LABEL:
-				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__ECLASS:
+				return eClass != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (label: "); //$NON-NLS-1$
-		result.append(label);
-		result.append(')');
-		return result.toString();
 	}
 
 } //SiriusExpressionClassImpl

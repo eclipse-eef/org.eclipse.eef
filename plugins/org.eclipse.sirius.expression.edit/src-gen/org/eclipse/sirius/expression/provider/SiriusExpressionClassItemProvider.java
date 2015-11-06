@@ -25,7 +25,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -68,29 +67,29 @@ public class SiriusExpressionClassItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLabelPropertyDescriptor(object);
+			addEClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Label feature.
+	 * This adds a property descriptor for the EClass feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLabelPropertyDescriptor(Object object) {
+	protected void addEClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SiriusExpressionClass_label_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_SiriusExpressionClass_label_feature", "_UI_SiriusExpressionClass_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 ExpressionPackage.Literals.SIRIUS_EXPRESSION_CLASS__LABEL,
+				 getString("_UI_SiriusExpressionClass_eClass_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_SiriusExpressionClass_eClass_feature", "_UI_SiriusExpressionClass_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 ExpressionPackage.Literals.SIRIUS_EXPRESSION_CLASS__ECLASS,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -155,10 +154,7 @@ public class SiriusExpressionClassItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SiriusExpressionClass)object).getLabel();
-		return label == null || label.length() == 0 ?
-			getString("_UI_SiriusExpressionClass_type") : //$NON-NLS-1$
-			getString("_UI_SiriusExpressionClass_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return getString("_UI_SiriusExpressionClass_type"); //$NON-NLS-1$
 	}
 	
 
@@ -174,9 +170,6 @@ public class SiriusExpressionClassItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SiriusExpressionClass.class)) {
-			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__LABEL:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__VARIABLES:
 			case ExpressionPackage.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -199,12 +192,12 @@ public class SiriusExpressionClassItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.SIRIUS_EXPRESSION_CLASS__VARIABLES,
-				 ExpressionFactory.eINSTANCE.createVariable()));
+				 ExpressionFactory.eINSTANCE.createSiriusVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionPackage.Literals.SIRIUS_EXPRESSION_CLASS__EXPRESSION_DESCRIPTIONS,
-				 ExpressionFactory.eINSTANCE.createExpressionDescription()));
+				 ExpressionFactory.eINSTANCE.createSiriusExpressionDescription()));
 	}
 
 	/**
