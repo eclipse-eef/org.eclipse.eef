@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "67ccbf7d_5394fb99",
+        "filename": "plugins/org.eclipse.sirius.expression.edit/META-INF/MANIFEST.MF",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-11-09T13:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ccbf7d_931da327",
+      "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67ccbf7d_b322a75f",
         "filename": "plugins/org.eclipse.sirius.expression.text.tests/META-INF/MANIFEST.MF",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-09T10:59:17Z",
       "side": 1,
       "message": "For the i18n to work, the entry Bundle-Localization is required, along with adding plugin.properties to the build.properties entries",
+      "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_53addbf3",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/META-INF/MANIFEST.MF",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-11-09T13:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ccbf7d_b322a75f",
       "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "67ccbf7d_73b2df52",
+        "filename": "plugins/org.eclipse.sirius.expression.text.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-11-09T13:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ccbf7d_d3064bd8",
+      "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67ccbf7d_f3034fc5",
         "filename": "plugins/org.eclipse.sirius.expression.text/META-INF/MANIFEST.MF",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-09T10:59:17Z",
       "side": 1,
       "message": "For the i18n to work, the entry Bundle-Localization is required, along with adding plugin.properties to the build.properties entries",
+      "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_7399ffd0",
+        "filename": "plugins/org.eclipse.sirius.expression.text/META-INF/MANIFEST.MF",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-11-09T13:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ccbf7d_f3034fc5",
       "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
@@ -93,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "67ccbf7d_938e838a",
+        "filename": "plugins/org.eclipse.sirius.expression.text/build.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-11-09T13:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ccbf7d_733f3f73",
+      "range": {
+        "startLine": 12,
+        "startChar": 15,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67ccbf7d_1311930b",
         "filename": "plugins/org.eclipse.sirius.expression/META-INF/MANIFEST.MF",
         "patchSetId": 2
@@ -104,6 +200,24 @@
       "writtenOn": "2015-11-09T10:59:17Z",
       "side": 1,
       "message": "For the i18n to work, the entry Bundle-Localization is required, along with adding plugin.properties to the build.properties entries",
+      "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_d3a72b07",
+        "filename": "plugins/org.eclipse.sirius.expression/META-INF/MANIFEST.MF",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-11-09T13:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ccbf7d_1311930b",
       "revId": "9378ba38f6a5459fa9de43b518b9729a5e1d7d31",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
