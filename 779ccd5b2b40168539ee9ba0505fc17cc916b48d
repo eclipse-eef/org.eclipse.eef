@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67ccbf7d_ced4e0b8",
+        "filename": "plugins/org.eclipse.eef.expression/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-09T15:24:59Z",
+      "side": 1,
+      "message": "Java 1.6 \u0026 i18n \u0026 about.html :)",
+      "range": {
+        "startLine": 13,
+        "startChar": 46,
+        "endLine": 13,
+        "endChar": 47
+      },
+      "revId": "779ccd5b2b40168539ee9ba0505fc17cc916b48d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_eed1a4c5",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-09T15:24:59Z",
+      "side": 1,
+      "message": "Could you mention this in the commit message please? :)",
+      "range": {
+        "startLine": 628,
+        "startChar": 4,
+        "endLine": 631,
+        "endChar": 98
+      },
+      "revId": "779ccd5b2b40168539ee9ba0505fc17cc916b48d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
