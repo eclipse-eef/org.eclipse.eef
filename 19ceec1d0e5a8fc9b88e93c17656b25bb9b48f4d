@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67ccbf7d_b365473b",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/.classpath",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-09T13:47:00Z",
+      "side": 1,
+      "message": "To remove since it cannot be contributed to Git right now",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 46
+      },
+      "revId": "19ceec1d0e5a8fc9b88e93c17656b25bb9b48f4d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_d359eb87",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/build.properties",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-09T13:47:00Z",
+      "side": 1,
+      "message": "To remove since it cannot be contributed to Git right now",
+      "range": {
+        "startLine": 8,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 10
+      },
+      "revId": "19ceec1d0e5a8fc9b88e93c17656b25bb9b48f4d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67ccbf7d_f356ef54",
+        "filename": "plugins/org.eclipse.sirius.expression.text.tests/build.properties",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2015-11-09T13:47:00Z",
+      "side": 1,
+      "message": "To remove since it cannot be contributed to Git right now",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 10,
+        "endChar": 20
+      },
+      "revId": "19ceec1d0e5a8fc9b88e93c17656b25bb9b48f4d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
