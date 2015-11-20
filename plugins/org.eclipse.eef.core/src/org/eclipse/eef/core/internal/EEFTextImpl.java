@@ -100,7 +100,7 @@ public class EEFTextImpl extends AbstractEEFWidgetImpl implements EEFText {
 		String valueExpression = EEFTextImpl.this.eefTextDescription.getValueExpression();
 		if (valueExpression != null) {
 			IEvaluationResult evaluationResult = EEFTextImpl.this.getInterpreter()
-					.evaluateExpression(EEFTextImpl.this.getVariableManager().getVariables(), null, valueExpression);
+					.evaluateExpression(EEFTextImpl.this.getVariableManager().getVariables(), valueExpression);
 			Object value = evaluationResult.getValue();
 			if (value instanceof String && EEFTextImpl.this.valueExpressionConsumer != null) {
 				EEFTextImpl.this.valueExpressionConsumer.apply((String) value);
@@ -110,7 +110,7 @@ public class EEFTextImpl extends AbstractEEFWidgetImpl implements EEFText {
 		String labelExpression = EEFTextImpl.this.eefTextDescription.getLabelExpression();
 		if (labelExpression != null) {
 			IEvaluationResult evaluationResult = EEFTextImpl.this.getInterpreter()
-					.evaluateExpression(EEFTextImpl.this.getVariableManager().getVariables(), null, labelExpression);
+					.evaluateExpression(EEFTextImpl.this.getVariableManager().getVariables(), labelExpression);
 			Object value = evaluationResult.getValue();
 			if (value instanceof String && EEFTextImpl.this.labelExpressionConsumer != null) {
 				EEFTextImpl.this.labelExpressionConsumer.apply((String) value);
@@ -131,7 +131,7 @@ public class EEFTextImpl extends AbstractEEFWidgetImpl implements EEFText {
 
 					// FIXME REMOVE THIS HARDCODED STUFF!!!!
 					variables.put("selection", selection); //$NON-NLS-1$
-					EEFTextImpl.this.getInterpreter().evaluateExpression(variables, null, editExpression);
+					EEFTextImpl.this.getInterpreter().evaluateExpression(variables, editExpression);
 				}
 			}
 

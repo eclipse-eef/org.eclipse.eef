@@ -29,12 +29,10 @@ import org.eclipse.acceleo.query.runtime.QueryEvaluation;
 import org.eclipse.acceleo.query.runtime.QueryParsing;
 import org.eclipse.eef.interpreter.api.IEvaluationResult;
 import org.eclipse.eef.interpreter.api.IInterpreter;
-import org.eclipse.eef.interpreter.api.IValidationResult;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
-import org.eclipse.sirius.expression.SiriusExpressionDescription;
 
 /**
  * The AQL {@link IInterpreter}.
@@ -88,12 +86,10 @@ public class AQLInterpreter implements IInterpreter {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.interpreter.api.IInterpreter#evaluateExpression(java.util.Map,
-	 *      org.eclipse.sirius.expression.ExpressionDescription, java.lang.String)
+	 * @see org.eclipse.eef.interpreter.api.IInterpreter#evaluateExpression(java.util.Map, java.lang.String)
 	 */
 	@Override
-	public IEvaluationResult evaluateExpression(Map<String, Object> variables, SiriusExpressionDescription expressionDescription,
-			String expressionBody) {
+	public IEvaluationResult evaluateExpression(Map<String, Object> variables, String expressionBody) {
 		String body = expressionBody.substring(IAQLConstants.AQL_PREFIX.length());
 		try {
 			AstResult astResult = this.parsedExpressions.get(body);
@@ -107,17 +103,6 @@ public class AQLInterpreter implements IInterpreter {
 		String message = MessageFormat.format(Messages.AQLInterpreter_errorEvaluation, body);
 		Diagnostic error = new BasicDiagnostic(Diagnostic.ERROR, AQLInterpreterPlugin.PLUGIN_ID, 0, message, new Object[0]);
 		return new AQLEvaluationResult(null, error);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.interpreter.api.IInterpreter#validateExpression(org.eclipse.sirius.expression.ExpressionDescription,
-	 *      java.lang.String)
-	 */
-	@Override
-	public IValidationResult validateExpression(SiriusExpressionDescription expressionDescription, String expressionBody) {
-		return null;
 	}
 
 }

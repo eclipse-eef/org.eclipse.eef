@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal;
 
-import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.core.api.EEFContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
@@ -75,14 +74,7 @@ public class EEFGroupImpl extends AbstractEEFChildObject implements EEFGroup {
 	 */
 	@Override
 	public void createControl() {
-		EEFContainerDescription eefContainerDescription = this.eefGroupDescription.getContainer();
-		String semanticCandidateExpression = eefContainerDescription.getSemanticCandidateExpression();
-		if (semanticCandidateExpression != null) {
-			// TODO Support semantic candidate for the container
-		}
-		IVariableManager childVariableManager = this.getVariableManager().createChild();
-
-		EEFContainerImpl eefContainerImpl = new EEFContainerImpl(this, this.eefGroupDescription.getContainer(), childVariableManager,
+		EEFContainerImpl eefContainerImpl = new EEFContainerImpl(this, this.eefGroupDescription.getContainer(), this.getVariableManager(),
 				this.getInterpreter(), this.editingDomain);
 		eefContainerImpl.createControl();
 		this.eefContainer = eefContainerImpl;

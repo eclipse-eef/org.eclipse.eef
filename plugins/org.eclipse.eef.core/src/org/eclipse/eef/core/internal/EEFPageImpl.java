@@ -84,7 +84,7 @@ public class EEFPageImpl extends AbstractEEFChildObject implements EEFPage {
 		for (EEFGroupDescription eefGroupDescription : eefGroupDescriptions) {
 			String semanticCandidatesExpression = eefGroupDescription.getSemanticCandidateExpression();
 			if (semanticCandidatesExpression != null && semanticCandidatesExpression.trim().length() > 0) {
-				IEvaluationResult evaluationResult = this.getInterpreter().evaluateExpression(this.getVariableManager().getVariables(), null,
+				IEvaluationResult evaluationResult = this.getInterpreter().evaluateExpression(this.getVariableManager().getVariables(),
 						semanticCandidatesExpression);
 				if (evaluationResult.getValue() instanceof Iterable<?>) {
 					@SuppressWarnings("unchecked")
@@ -130,7 +130,7 @@ public class EEFPageImpl extends AbstractEEFChildObject implements EEFPage {
 
 				String semanticCandidatesExpression = eefGroupImpl.getDescription().getSemanticCandidateExpression();
 				if (semanticCandidatesExpression != null && semanticCandidatesExpression.trim().length() > 0) {
-					IEvaluationResult evaluationResult = this.getInterpreter().evaluateExpression(this.getVariableManager().getVariables(), null,
+					IEvaluationResult evaluationResult = this.getInterpreter().evaluateExpression(this.getVariableManager().getVariables(),
 							semanticCandidatesExpression);
 					Object groupSemanticCandidate = evaluationResult.getValue();
 					eefGroupImpl.setInput(groupSemanticCandidate);
@@ -150,8 +150,7 @@ public class EEFPageImpl extends AbstractEEFChildObject implements EEFPage {
 	public String getLabel() {
 		String labelExpression = this.eefPageDescription.getLabelExpression();
 		if (labelExpression != null) {
-			IEvaluationResult evaluationResult = this.getInterpreter().evaluateExpression(this.getVariableManager().getVariables(), null,
-					labelExpression);
+			IEvaluationResult evaluationResult = this.getInterpreter().evaluateExpression(this.getVariableManager().getVariables(), labelExpression);
 			if (evaluationResult.getValue() != null) {
 				return evaluationResult.getValue().toString();
 			}

@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2015 Obeo.
- * All rights reserved. This program and the accompanying materials 
+ * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.htm
@@ -9,36 +9,22 @@
 package org.eclipse.eef;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.sirius.expression.UserDefinedVariable;
+import org.eclipse.emf.ecore.EPackage;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>EEF View Description</b></em>'.
- * <!-- end-user-doc -->
- *
- * <!-- begin-model-doc -->
- * A View is the root concept of the EEF metamodel. A View defines groups of widgets, semantic mappings and related metamodels.
- * <!-- end-model-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF View Description</b></em>'. <!--
+ * end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getUserDefinedVariables <em>User Defined Variables</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getEPackageNsUris <em>EPackage Ns Uris</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getGroups <em>Groups</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getPages <em>Pages</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getJavaExtensions <em>Java Extensions</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getImportedViews <em>Imported Views</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getTreeStructures <em>Tree Structures</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getTableStructures <em>Table Structures</em>}</li>
- *   <li>{@link org.eclipse.eef.EEFViewDescription#getStyleCustomizations <em>Style Customizations</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFViewDescription#getGroups <em>Groups</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFViewDescription#getPages <em>Pages</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFViewDescription#getEPackages <em>EPackages</em>}</li>
  * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFViewDescription()
@@ -47,12 +33,9 @@ import org.eclipse.sirius.expression.UserDefinedVariable;
  */
 public interface EEFViewDescription extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Used to identify a specific View instance.
-	 * <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc --> Used to identify a specific View instance. <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Identifier()
@@ -63,102 +46,44 @@ public interface EEFViewDescription extends EObject {
 
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifier</em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
 	void setIdentifier(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Defines the condition on which the View will be visible.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Precondition Expression</em>' attribute.
-	 * @see #setPreconditionExpression(String)
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_PreconditionExpression()
-	 * @model dataType="org.eclipse.sirius.expression.Expression"
-	 * @generated
-	 */
-	String getPreconditionExpression();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Precondition Expression</em>' attribute.
-	 * @see #getPreconditionExpression()
-	 * @generated
-	 */
-	void setPreconditionExpression(String value);
-
-	/**
-	 * Returns the value of the '<em><b>User Defined Variables</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.sirius.expression.UserDefinedVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Contains the variables defined by the end user.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>User Defined Variables</em>' containment reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_UserDefinedVariables()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<UserDefinedVariable> getUserDefinedVariables();
-
-	/**
-	 * Returns the value of the '<em><b>Label Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The label of the View visible by the end-users.
-	 * <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> The label of the View visible by the end-users. <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Label Expression</em>' attribute.
 	 * @see #setLabelExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_LabelExpression()
-	 * @model dataType="org.eclipse.sirius.expression.Expression"
+	 * @model
 	 * @generated
 	 */
 	String getLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
 	 * @generated
 	 */
 	void setLabelExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>EPackage Ns Uris</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * References the metamodels to use thanks to their NsURIs.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>EPackage Ns Uris</em>' attribute list.
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_EPackageNsUris()
-	 * @model
-	 * @generated
-	 */
-	EList<String> getEPackageNsUris();
-
-	/**
-	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.eef.EEFGroupDescription}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Contains all the defined Groups. It is defined under the View for reuasability reason and to be referenced easily from any Page.
-	 * <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list. The list contents are of type
+	 * {@link org.eclipse.eef.EEFGroupDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
+	 * --> Contains all the defined Groups. It is defined under the View for reuasability reason and to be referenced
+	 * easily from any Page. <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Groups</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Groups()
 	 * @model containment="true" resolveProxies="true"
@@ -167,13 +92,10 @@ public interface EEFViewDescription extends EObject {
 	EList<EEFGroupDescription> getGroups();
 
 	/**
-	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.eef.EEFPageDescription}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Defines the tabs that are represented in the View.
-	 * <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list. The list contents are of type
+	 * {@link org.eclipse.eef.EEFPageDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
+	 * --> Defines the tabs that are represented in the View. <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Pages</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Pages()
 	 * @model containment="true" resolveProxies="true" required="true"
@@ -182,78 +104,19 @@ public interface EEFViewDescription extends EObject {
 	EList<EEFPageDescription> getPages();
 
 	/**
-	 * Returns the value of the '<em><b>Java Extensions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.eef.EEFJavaExtensionDescription}.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>EPackages</b></em>' reference list. The list contents are of type
+	 * {@link org.eclipse.emf.ecore.EPackage}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>EPackages</em>' reference list isn't clear, there really should be more of a
+	 * description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * References Java classes to contribute them as services for EEF runtime interpreters.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Java Extensions</em>' containment reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_JavaExtensions()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<EEFJavaExtensionDescription> getJavaExtensions();
-
-	/**
-	 * Returns the value of the '<em><b>Imported Views</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.eef.EEFViewDescription}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Imports other existing views to reuse groups and widgets.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Imported Views</em>' reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_ImportedViews()
+	 *
+	 * @return the value of the '<em>EPackages</em>' reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_EPackages()
 	 * @model
 	 * @generated
 	 */
-	EList<EEFViewDescription> getImportedViews();
-
-	/**
-	 * Returns the value of the '<em><b>Tree Structures</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.eef.EEFTreeStructureDescription}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Contains all the defined TreeDescription. It is defined under the View for reusability reason and to be referenced easily  from any Tree widget.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Tree Structures</em>' containment reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_TreeStructures()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<EEFTreeStructureDescription> getTreeStructures();
-
-	/**
-	 * Returns the value of the '<em><b>Table Structures</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.eef.EEFTableStructureDescription}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Contains all the defined TableDescription. It is defined under the View for reusability reason and to be referenced easily  from any Tree widget.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Table Structures</em>' containment reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_TableStructures()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<EEFTableStructureDescription> getTableStructures();
-
-	/**
-	 * Returns the value of the '<em><b>Style Customizations</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.eef.EEFStyleCustomization}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Contains all the style customizations defined for a view.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Style Customizations</em>' reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_StyleCustomizations()
-	 * @model
-	 * @generated
-	 */
-	EList<EEFStyleCustomization> getStyleCustomizations();
+	EList<EPackage> getEPackages();
 
 } // EEFViewDescription

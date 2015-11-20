@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.eef.feature"
+      id="org.eclipse.eef.sdk.feature"
       label="%featureName"
       version="2.0.0.qualifier"
       provider-name="%featureProvider">
@@ -19,6 +19,13 @@
 
    <plugin
          id="org.eclipse.eef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.eef.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -61,41 +68,6 @@
 
    <plugin
          id="org.eclipse.eef.interpreter.aql"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.sirius.context"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.sirius.expression"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.sirius.context.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.sirius.expression.edit"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.eef.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"

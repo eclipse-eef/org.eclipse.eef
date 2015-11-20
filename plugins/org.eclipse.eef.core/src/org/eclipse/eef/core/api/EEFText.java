@@ -40,8 +40,9 @@ public interface EEFText extends EEFWidget {
 
 	/**
 	 * Updates the value of the text.
-	 * 
+	 *
 	 * @param selection
+	 *            The selection
 	 *
 	 * @param newValue
 	 *            The new value

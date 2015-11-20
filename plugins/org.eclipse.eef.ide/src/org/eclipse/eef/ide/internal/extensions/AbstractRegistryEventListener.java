@@ -23,12 +23,11 @@ import org.eclipse.core.runtime.IRegistryEventListener;
  */
 public abstract class AbstractRegistryEventListener implements IRegistryEventListener {
 	/**
-	 * This enumeration will be used to distinguish the various states of an
-	 * incoming event.
+	 * This enumeration will be used to distinguish the various states of an incoming event.
 	 *
 	 * @author sbegaudeau
 	 */
-	protected static enum Action {
+	protected enum Action {
 		/**
 		 * An extension is being added.
 		 */
@@ -85,8 +84,7 @@ public abstract class AbstractRegistryEventListener implements IRegistryEventLis
 	 * @param configurationElement
 	 *            The configuration element
 	 * @param action
-	 *            Indicates whether we have an addition or a removal of the
-	 *            configuration element
+	 *            Indicates whether we have an addition or a removal of the configuration element
 	 */
 	private void processConfigurationElement(IConfigurationElement configurationElement, Action action) {
 		boolean isValid = this.readConfigurationElement(configurationElement, action);
@@ -104,10 +102,8 @@ public abstract class AbstractRegistryEventListener implements IRegistryEventLis
 	 * @param configurationElement
 	 *            The configuration element.
 	 * @param action
-	 *            Indicates wether we have an addition or a removal of the
-	 *            configuration element
-	 * @return <code>true</code> if the configuration element has been read
-	 *         properly
+	 *            Indicates wether we have an addition or a removal of the configuration element
+	 * @return <code>true</code> if the configuration element has been read properly
 	 */
 	private boolean readConfigurationElement(IConfigurationElement configurationElement, Action action) {
 		boolean isValid = false;
@@ -126,8 +122,7 @@ public abstract class AbstractRegistryEventListener implements IRegistryEventLis
 	 *
 	 * @param configurationElement
 	 *            The configuration element
-	 * @return <code>true</code> if the configuration element is valid,
-	 *         <code>false</code> otherwise
+	 * @return <code>true</code> if the configuration element is valid, <code>false</code> otherwise
 	 */
 	protected abstract boolean validateConfigurationElement(IConfigurationElement configurationElement);
 
@@ -136,18 +131,16 @@ public abstract class AbstractRegistryEventListener implements IRegistryEventLis
 	 *
 	 * @param configurationElement
 	 *            The configuration element
-	 * @return <code>true</code> if the configuration element has been properly
-	 *         added, <code>false</code> otherwise
+	 * @return <code>true</code> if the configuration element has been properly added, <code>false</code> otherwise
 	 */
 	protected abstract boolean processAddition(IConfigurationElement configurationElement);
 
 	/**
 	 * Processes the removal of the given configuration element.
-	 * 
+	 *
 	 * @param configurationElement
 	 *            The configuration element
-	 * @return <code>true</code> if the configuration element has been properly
-	 *         removed, <code>false</code> otherwise
+	 * @return <code>true</code> if the configuration element has been properly removed, <code>false</code> otherwise
 	 */
 	protected abstract boolean processRemoval(IConfigurationElement configurationElement);
 

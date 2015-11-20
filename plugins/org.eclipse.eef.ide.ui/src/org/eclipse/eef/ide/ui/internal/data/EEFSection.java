@@ -58,7 +58,10 @@ public class EEFSection implements ISection {
 	 */
 	private List<Widget> widgets = new ArrayList<Widget>();
 
-	private Object selection;
+	/**
+	 * The current selection.
+	 */
+	private Object currentSelection;
 
 	/**
 	 * The constructor.
@@ -123,7 +126,7 @@ public class EEFSection implements ISection {
 			IStructuredSelection iStructuredSelection = (IStructuredSelection) selection;
 			Object object = iStructuredSelection.getFirstElement();
 
-			this.selection = ((IStructuredSelection) selection).getFirstElement();
+			this.currentSelection = ((IStructuredSelection) selection).getFirstElement();
 
 			EObject eObject = Platform.getAdapterManager().getAdapter(object, EObject.class);
 
@@ -195,7 +198,7 @@ public class EEFSection implements ISection {
 				text.addModifyListener(new ModifyListener() {
 					@Override
 					public void modifyText(ModifyEvent e) {
-						eefText.updateValue(selection, text.getText());
+						eefText.updateValue(currentSelection, text.getText());
 					}
 				});
 			}

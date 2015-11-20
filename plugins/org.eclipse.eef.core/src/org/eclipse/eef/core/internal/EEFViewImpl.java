@@ -89,7 +89,7 @@ public class EEFViewImpl extends AbstractEEFObject implements EEFView {
 					if (semanticCandidateExpression != null && semanticCandidateExpression.trim().length() > 0) {
 
 						IEvaluationResult evaluationResult = EEFViewImpl.this.getInterpreter()
-								.evaluateExpression(EEFViewImpl.this.getVariableManager().getVariables(), null, semanticCandidateExpression);
+								.evaluateExpression(EEFViewImpl.this.getVariableManager().getVariables(), semanticCandidateExpression);
 						if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity()) {
 							childVariableManager.put(EEFExpressionUtils.EEFPage.PAGE_SEMANTIC_CANDIDATE, evaluationResult.getValue());
 						}
