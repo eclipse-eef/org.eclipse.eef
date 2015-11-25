@@ -19,8 +19,6 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.IVariableManager;
-import org.eclipse.eef.interpreter.api.IEvaluationResult;
-import org.eclipse.eef.interpreter.api.IInterpreter;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -29,6 +27,8 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 
 /**
  * The implementation of the {@link EEFView}.
@@ -88,15 +88,15 @@ public class EEFViewImpl extends AbstractEEFObject implements EEFView {
 					final String semanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
 					if (semanticCandidateExpression != null && semanticCandidateExpression.trim().length() > 0) {
 
-						IEvaluationResult evaluationResult = EEFViewImpl.this.getInterpreter()
-								.evaluateExpression(EEFViewImpl.this.getVariableManager().getVariables(), semanticCandidateExpression);
+						IEvaluationResult evaluationResult = EEFViewImpl.this.getInterpreter().evaluateExpression(
+								EEFViewImpl.this.getVariableManager().getVariables(), semanticCandidateExpression);
 						if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity()) {
 							childVariableManager.put(EEFExpressionUtils.EEFPage.PAGE_SEMANTIC_CANDIDATE, evaluationResult.getValue());
 						}
 					}
 
-					EEFPageImpl ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager, EEFViewImpl.this.getInterpreter(),
-							EEFViewImpl.this.editingDomain);
+					EEFPageImpl ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager,
+							EEFViewImpl.this.getInterpreter(), EEFViewImpl.this.editingDomain);
 					ePage.createControl();
 					eefPages.add(ePage);
 				}

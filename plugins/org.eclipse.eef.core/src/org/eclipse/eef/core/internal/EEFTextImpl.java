@@ -19,9 +19,9 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFText;
 import org.eclipse.eef.core.api.IConsumer;
 import org.eclipse.eef.core.api.IVariableManager;
-import org.eclipse.eef.interpreter.api.IEvaluationResult;
-import org.eclipse.eef.interpreter.api.IInterpreter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 
 /**
  * The implementation of the {@link EEFText}.
@@ -96,8 +96,8 @@ public class EEFTextImpl extends AbstractEEFWidgetImpl implements EEFText {
 	public void setInput(Object object) {
 		String valueExpression = EEFTextImpl.this.eefTextDescription.getValueExpression();
 		if (valueExpression != null) {
-			IEvaluationResult evaluationResult = EEFTextImpl.this.getInterpreter()
-					.evaluateExpression(EEFTextImpl.this.getVariableManager().getVariables(), valueExpression);
+			IEvaluationResult evaluationResult = EEFTextImpl.this.getInterpreter().evaluateExpression(
+					EEFTextImpl.this.getVariableManager().getVariables(), valueExpression);
 			Object value = evaluationResult.getValue();
 			if (value instanceof String && EEFTextImpl.this.valueExpressionConsumer != null) {
 				EEFTextImpl.this.valueExpressionConsumer.apply((String) value);
@@ -106,8 +106,8 @@ public class EEFTextImpl extends AbstractEEFWidgetImpl implements EEFText {
 
 		String labelExpression = EEFTextImpl.this.eefTextDescription.getLabelExpression();
 		if (labelExpression != null) {
-			IEvaluationResult evaluationResult = EEFTextImpl.this.getInterpreter()
-					.evaluateExpression(EEFTextImpl.this.getVariableManager().getVariables(), labelExpression);
+			IEvaluationResult evaluationResult = EEFTextImpl.this.getInterpreter().evaluateExpression(
+					EEFTextImpl.this.getVariableManager().getVariables(), labelExpression);
 			Object value = evaluationResult.getValue();
 			if (value instanceof String && EEFTextImpl.this.labelExpressionConsumer != null) {
 				EEFTextImpl.this.labelExpressionConsumer.apply((String) value);

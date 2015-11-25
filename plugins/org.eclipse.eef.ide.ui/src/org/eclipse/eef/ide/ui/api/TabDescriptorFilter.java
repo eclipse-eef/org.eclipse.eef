@@ -25,8 +25,8 @@ import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.internal.extensions.IItemDescriptor;
 import org.eclipse.eef.ide.internal.extensions.IItemRegistry;
 import org.eclipse.eef.ide.ui.internal.data.EEFTabDescriptor;
-import org.eclipse.eef.interpreter.api.IInterpreterProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreterProvider;
 import org.eclipse.ui.views.properties.tabbed.ITabDescriptor;
 
 /**

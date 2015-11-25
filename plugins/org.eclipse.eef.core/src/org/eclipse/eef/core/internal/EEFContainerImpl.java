@@ -20,8 +20,8 @@ import org.eclipse.eef.core.api.EEFContainer;
 import org.eclipse.eef.core.api.EEFContainerParent;
 import org.eclipse.eef.core.api.EEFWidget;
 import org.eclipse.eef.core.api.IVariableManager;
-import org.eclipse.eef.interpreter.api.IInterpreter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 
 /**
  * Implementation of the {@link EEFContainer}.

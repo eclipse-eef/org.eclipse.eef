@@ -12,7 +12,7 @@ package org.eclipse.eef.core.internal;
 
 import org.eclipse.eef.core.api.EEFChildObject;
 import org.eclipse.eef.core.api.IVariableManager;
-import org.eclipse.eef.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 
 /**
  * Common superclass of all the child object.

@@ -15,8 +15,8 @@ import java.util.List;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.core.internal.EEFCompoundInterpreter;
 import org.eclipse.eef.core.internal.EEFViewImpl;
-import org.eclipse.eef.interpreter.api.IInterpreterProvider;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreterProvider;
 
 /**
  * The factory used to create the {@link EEFView}.

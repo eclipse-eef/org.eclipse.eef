@@ -19,9 +19,9 @@ import org.eclipse.eef.ide.internal.extensions.AbstractRegistryEventListener;
 import org.eclipse.eef.ide.internal.extensions.IItemRegistry;
 import org.eclipse.eef.ide.internal.extensions.impl.DescriptorRegistryEventListener;
 import org.eclipse.eef.ide.internal.extensions.impl.ItemRegistry;
-import org.eclipse.eef.interpreter.api.IInterpreterProvider;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.sirius.common.interpreter.api.IInterpreterProvider;
 import org.osgi.framework.BundleContext;
 
 /**
