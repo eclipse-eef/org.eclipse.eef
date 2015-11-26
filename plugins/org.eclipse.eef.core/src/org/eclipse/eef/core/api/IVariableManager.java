@@ -38,9 +38,14 @@ public interface IVariableManager {
 
 	/**
 	 * Creates a child {@link IVariableManager}.
-	 * 
+	 *
 	 * @return A child {@link IVariableManager}
 	 */
 	IVariableManager createChild();
+
+	/**
+	 * Clear the variable manager and its children.
+	 */
+	void clear();
 
 }

@@ -12,7 +12,9 @@ package org.eclipse.eef.core.internal;
 
 import com.google.common.collect.Maps;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.eef.core.api.IVariableManager;
@@ -33,6 +35,11 @@ public class EEFVariableManager implements IVariableManager {
 	 * The variables.
 	 */
 	private Map<String, Object> variables = new HashMap<String, Object>();
+
+	/**
+	 * The child variable manager.
+	 */
+	private List<IVariableManager> children = new ArrayList<IVariableManager>();
 
 	/**
 	 * The constructor.
@@ -85,7 +92,21 @@ public class EEFVariableManager implements IVariableManager {
 	@Override
 	public IVariableManager createChild() {
 		IVariableManager variableManager = new EEFVariableManager(this);
+		this.children.add(variableManager);
 		return variableManager;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.IVariableManager#clear()
+	 */
+	@Override
+	public void clear() {
+		this.variables.clear();
+
+		for (IVariableManager variableManager : children) {
+			variableManager.clear();
+		}
+	}
 }

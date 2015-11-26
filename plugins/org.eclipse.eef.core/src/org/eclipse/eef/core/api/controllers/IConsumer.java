@@ -8,13 +8,21 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.api;
+package org.eclipse.eef.core.api.controllers;
 
 /**
- * This interface is used as the common parent of both {@link EEFContainer} and {@link EEFGroup}.
+ * The consumer is a functional type used to receive an Object of a specific type.
  *
  * @author sbegaudeau
+ * @param <T>
+ *            The type of the Object that can be received
  */
-public interface EEFContainerParent {
-	// nothing
+public interface IConsumer<T> {
+	/**
+	 * This operation is called in order to give to the consumer an Object.
+	 *
+	 * @param value
+	 *            The Object
+	 */
+	void apply(T value);
 }

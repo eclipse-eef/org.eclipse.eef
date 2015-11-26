@@ -11,20 +11,28 @@
 package org.eclipse.eef.core.internal;
 
 import org.eclipse.eef.EEFGroupDescription;
-import org.eclipse.eef.core.api.EEFContainer;
-import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.IVariableManager;
-import org.eclipse.eef.interpreter.api.IInterpreter;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 
 /**
  * The implementation of the {@link EEFGroup}.
  *
  * @author sbegaudeau
  */
-public class EEFGroupImpl extends AbstractEEFChildObject implements EEFGroup {
+public class EEFGroupImpl implements EEFGroup {
+	/**
+	 * The variable manager.
+	 */
+	private IVariableManager variableManager;
+
+	/**
+	 * The interpreter.
+	 */
+	private IInterpreter interpreter;
+
 	/**
 	 * The description.
 	 */
@@ -34,11 +42,6 @@ public class EEFGroupImpl extends AbstractEEFChildObject implements EEFGroup {
 	 * The containing {@link EEFPage}.
 	 */
 	private EEFPage eefPage;
-
-	/**
-	 * The {@link EEFContainer}.
-	 */
-	private EEFContainer eefContainer;
 
 	/**
 	 * The editing domain.
@@ -61,47 +64,11 @@ public class EEFGroupImpl extends AbstractEEFChildObject implements EEFGroup {
 	 */
 	public EEFGroupImpl(EEFPage eefPage, EEFGroupDescription eefGroupDescription, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter);
+		this.variableManager = variableManager;
+		this.interpreter = interpreter;
 		this.eefPage = eefPage;
 		this.eefGroupDescription = eefGroupDescription;
 		this.editingDomain = editingDomain;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFObject#createControl()
-	 */
-	@Override
-	public void createControl() {
-		EEFContainerImpl eefContainerImpl = new EEFContainerImpl(this, this.eefGroupDescription.getContainer(), this.getVariableManager(),
-				this.getInterpreter(), this.editingDomain);
-		eefContainerImpl.createControl();
-		this.eefContainer = eefContainerImpl;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFObject#setInput(java.lang.Object)
-	 */
-	@Override
-	public void setInput(Object object) {
-		this.getVariableManager().put(EEFExpressionUtils.EEFGroup.GROUP_SEMANTIC_CANDIDATE, object);
-		if (this.eefContainer instanceof EEFContainerImpl) {
-			EEFContainerImpl eefContainerImpl = (EEFContainerImpl) this.eefContainer;
-			eefContainerImpl.setInput(null);
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFGroup#getContainer()
-	 */
-	@Override
-	public EEFContainer getContainer() {
-		return this.eefContainer;
 	}
 
 	/**
@@ -114,13 +81,38 @@ public class EEFGroupImpl extends AbstractEEFChildObject implements EEFGroup {
 		return this.eefGroupDescription;
 	}
 
+	@Override
+	public EEFPage getPage() {
+		return this.eefPage;
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.EEFChildObject#getParent()
+	 * @see org.eclipse.eef.core.api.EEFGroup#getVariableManager()
 	 */
 	@Override
-	public EEFPage getParent() {
-		return this.eefPage;
+	public IVariableManager getVariableManager() {
+		return this.variableManager;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.EEFGroup#getInterpreter()
+	 */
+	@Override
+	public IInterpreter getInterpreter() {
+		return this.interpreter;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.EEFGroup#getEditingDomain()
+	 */
+	@Override
+	public TransactionalEditingDomain getEditingDomain() {
+		return this.editingDomain;
 	}
 }

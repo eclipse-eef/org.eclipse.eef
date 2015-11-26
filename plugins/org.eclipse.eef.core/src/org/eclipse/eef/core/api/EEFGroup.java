@@ -11,6 +11,8 @@
 package org.eclipse.eef.core.api;
 
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 
 /**
  * The {@link EEFGroup} is used as the main structure within a page.
@@ -26,9 +28,30 @@ public interface EEFGroup extends EEFContainerParent {
 	EEFGroupDescription getDescription();
 
 	/**
-	 * Returns the {@link EEFContainer} used to layout this {@link EEFGroup}.
+	 * Returns the page containing the group.
 	 *
-	 * @return The {@link EEFContainer}
+	 * @return The page containing the group
 	 */
-	EEFContainer getContainer();
+	EEFPage getPage();
+
+	/**
+	 * Returns the variable manager.
+	 *
+	 * @return The variable manager
+	 */
+	IVariableManager getVariableManager();
+
+	/**
+	 * Returns the interpreter.
+	 *
+	 * @return The interpreter
+	 */
+	IInterpreter getInterpreter();
+
+	/**
+	 * Returns the editing domain.
+	 *
+	 * @return The editing domain
+	 */
+	TransactionalEditingDomain getEditingDomain();
 }

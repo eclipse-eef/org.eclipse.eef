@@ -15,8 +15,9 @@ import java.util.List;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.core.internal.EEFCompoundInterpreter;
 import org.eclipse.eef.core.internal.EEFViewImpl;
-import org.eclipse.eef.interpreter.api.IInterpreterProvider;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreterProvider;
 
 /**
  * The factory used to create the {@link EEFView}.
@@ -35,12 +36,15 @@ public class EEFViewFactory {
 	 *            The {@link IInterpreterProvider} available
 	 * @param editingDomain
 	 *            The editing domain
+	 * @param eObject
+	 *            The input
 	 * @return The {@link EEFView} fully initialized
 	 */
 	public EEFView createEEFView(EEFViewDescription eefViewDescription, IVariableManager variableManager,
-			List<IInterpreterProvider> interpreterProviders, TransactionalEditingDomain editingDomain) {
+			List<IInterpreterProvider> interpreterProviders, TransactionalEditingDomain editingDomain, EObject eObject) {
 		EEFView eefView = new EEFViewImpl(eefViewDescription, variableManager, new EEFCompoundInterpreter(interpreterProviders), editingDomain);
-		eefView.createControl();
+		eefView.setInput(eObject);
+		eefView.initialize();
 		return eefView;
 	}
 }

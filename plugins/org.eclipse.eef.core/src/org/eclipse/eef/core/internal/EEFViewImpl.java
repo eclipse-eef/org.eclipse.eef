@@ -16,26 +16,34 @@ import java.util.List;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.IVariableManager;
-import org.eclipse.eef.interpreter.api.IEvaluationResult;
-import org.eclipse.eef.interpreter.api.IInterpreter;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.transaction.NotificationFilter;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.ResourceSetChangeEvent;
-import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 
 /**
  * The implementation of the {@link EEFView}.
  *
  * @author sbegaudeau
  */
-public class EEFViewImpl extends AbstractEEFObject implements EEFView {
+public class EEFViewImpl implements EEFView {
+	/**
+	 * The variable manager.
+	 */
+	private IVariableManager variableManager;
+
+	/**
+	 * The interpreter.
+	 */
+	private IInterpreter interpreter;
 
 	/**
 	 * The description.
@@ -43,14 +51,14 @@ public class EEFViewImpl extends AbstractEEFObject implements EEFView {
 	private EEFViewDescription eefViewDescription;
 
 	/**
-	 * The {@link EEFPage} of the view.
-	 */
-	private List<EEFPage> eefPages = new ArrayList<EEFPage>();
-
-	/**
 	 * The editing domain.
 	 */
 	private TransactionalEditingDomain editingDomain;
+
+	/**
+	 * The {@link EEFPage} of the view.
+	 */
+	private List<EEFPage> eefPages = new ArrayList<EEFPage>();
 
 	/**
 	 * The constructor.
@@ -66,7 +74,8 @@ public class EEFViewImpl extends AbstractEEFObject implements EEFView {
 	 */
 	public EEFViewImpl(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter);
+		this.variableManager = variableManager;
+		this.interpreter = interpreter;
 		this.eefViewDescription = eefViewDescription;
 		this.editingDomain = editingDomain;
 	}
@@ -74,69 +83,91 @@ public class EEFViewImpl extends AbstractEEFObject implements EEFView {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.EEFObject#createControl()
+	 * @see org.eclipse.eef.core.api.EEFView#initialize()
 	 */
 	@Override
-	public void createControl() {
+	public void initialize() {
 		Command command = new RecordingCommand(this.editingDomain) {
 			@Override
 			protected void doExecute() {
-				List<EEFPageDescription> eefPageDescriptions = EEFViewImpl.this.getDescription().getPages();
-				for (EEFPageDescription eefPageDescription : eefPageDescriptions) {
-					IVariableManager childVariableManager = EEFViewImpl.this.getVariableManager().createChild();
-
-					final String semanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
-					if (semanticCandidateExpression != null && semanticCandidateExpression.trim().length() > 0) {
-
-						IEvaluationResult evaluationResult = EEFViewImpl.this.getInterpreter()
-								.evaluateExpression(EEFViewImpl.this.getVariableManager().getVariables(), semanticCandidateExpression);
-						if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity()) {
-							childVariableManager.put(EEFExpressionUtils.EEFPage.PAGE_SEMANTIC_CANDIDATE, evaluationResult.getValue());
-						}
-					}
-
-					EEFPageImpl ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager, EEFViewImpl.this.getInterpreter(),
-							EEFViewImpl.this.editingDomain);
-					ePage.createControl();
-					eefPages.add(ePage);
-				}
+				EEFViewImpl.this.doInitialize();
 			}
 		};
-
-		this.editingDomain.addResourceSetListener(new ResourceSetListenerImpl(NotificationFilter.NOT_TOUCH) {
-			@Override
-			public void resourceSetChanged(ResourceSetChangeEvent event) {
-				for (EEFPage eefPage : EEFViewImpl.this.eefPages) {
-					if (eefPage instanceof EEFPageImpl) {
-						EEFPageImpl eefPageImpl = (EEFPageImpl) eefPage;
-						//System.out.println("Resource Set changed: " + event); //$NON-NLS-1$
-						eefPageImpl.setInput(null);
-					}
-				}
-			}
-
-			@Override
-			public boolean isPostcommitOnly() {
-				return true;
-			}
-		});
 
 		CommandStack commandStack = this.editingDomain.getCommandStack();
 		commandStack.execute(command);
 	}
 
 	/**
+	 * Performs the initialization of the view by creating the necessary pages.
+	 */
+	private void doInitialize() {
+		List<EEFPageDescription> eefPageDescriptions = EEFViewImpl.this.getDescription().getPages();
+		for (EEFPageDescription eefPageDescription : eefPageDescriptions) {
+			EEFPageImpl ePage = null;
+			final String semanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
+			if (semanticCandidateExpression != null && semanticCandidateExpression.trim().length() > 0) {
+				IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(EEFViewImpl.this.variableManager.getVariables(),
+						semanticCandidateExpression);
+				if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+					IVariableManager childVariableManager = EEFViewImpl.this.variableManager.createChild();
+					childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+					ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager, EEFViewImpl.this.interpreter,
+							EEFViewImpl.this.editingDomain);
+				}
+			} else {
+				ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, EEFViewImpl.this.variableManager.createChild(),
+						EEFViewImpl.this.interpreter, EEFViewImpl.this.editingDomain);
+			}
+
+			if (ePage != null) {
+				ePage.initialize();
+				eefPages.add(ePage);
+			}
+		}
+	}
+
+	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.EEFObject#setInput(java.lang.Object)
+	 * @see org.eclipse.eef.core.api.EEFView#setInput(org.eclipse.emf.ecore.EObject)
 	 */
 	@Override
-	public void setInput(Object object) {
-		this.getVariableManager().put(EEFExpressionUtils.EEFView.VIEW_SEMANTIC_CANDIDATE, object);
-		for (EEFPage eefPage : this.eefPages) {
-			if (eefPage instanceof EEFPageImpl) {
-				EEFPageImpl eefPageImpl = (EEFPageImpl) eefPage;
-				eefPageImpl.setInput(null);
+	public void setInput(EObject eObject) {
+		Object selfValue = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+		if (eObject != selfValue) {
+			// Invalidate and update the content of the variable manager with the new input
+			this.variableManager.clear();
+
+			this.variableManager.put(EEFExpressionUtils.SELF, eObject);
+
+			for (EEFPage eefPage : eefPages) {
+				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
+				if (pageSemanticCandidateExpression != null && pageSemanticCandidateExpression.trim().length() > 0) {
+
+					IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(
+							EEFViewImpl.this.variableManager.getVariables(), pageSemanticCandidateExpression);
+					if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+						eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+					} else {
+						// Something is very wrong here...
+					}
+				}
+
+				List<EEFGroup> groups = eefPage.getGroups();
+				for (EEFGroup eefGroup : groups) {
+					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
+					if (groupSemanticCandidateExpression != null && groupSemanticCandidateExpression.trim().length() > 0) {
+
+						IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(eefPage.getVariableManager()
+								.getVariables(), groupSemanticCandidateExpression);
+						if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+						} else {
+							// Something is very wrong here...
+						}
+					}
+				}
 			}
 		}
 	}
