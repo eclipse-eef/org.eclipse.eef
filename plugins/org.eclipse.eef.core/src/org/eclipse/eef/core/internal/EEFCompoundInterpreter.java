@@ -17,10 +17,10 @@ import com.google.common.collect.Iterables;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.eef.interpreter.api.IEvaluationResult;
-import org.eclipse.eef.interpreter.api.IInterpreter;
-import org.eclipse.eef.interpreter.api.IInterpreterProvider;
 import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IInterpreterProvider;
 
 /**
  * Utility class encapsulating all the available interpreters.

@@ -15,64 +15,18 @@ package org.eclipse.eef.core.api;
  *
  * @author sbegaudeau
  */
-public class EEFExpressionUtils {
+public final class EEFExpressionUtils {
 
 	/**
-	 * Utility class containing the constants related to the {@link org.eclipse.eef.core.api.EEFView}.
-	 *
-	 * @author sbegaudeau
+	 * The self variable.
 	 */
-	public final class EEFView {
-		/**
-		 * The name of the variable viewSemanticCandidate.
-		 */
-		public static final String VIEW_SEMANTIC_CANDIDATE = "viewSemanticCandidate"; //$NON-NLS-1$
-
-		/**
-		 * The constructor.
-		 */
-		private EEFView() {
-			// prevent instantiation
-		}
-	}
+	public static final String SELF = "self"; //$NON-NLS-1$
 
 	/**
-	 * Utility class containing the constants related to the {@link org.eclipse.eef.core.api.EEFPage}.
-	 *
-	 * @author sbegaudeau
+	 * The constructor.
 	 */
-	public final class EEFPage {
-
-		/**
-		 * The name of the variable pageSemanticCandidate.
-		 */
-		public static final String PAGE_SEMANTIC_CANDIDATE = "pageSemanticCandidate"; //$NON-NLS-1$
-
-		/**
-		 * The constructor.
-		 */
-		private EEFPage() {
-			// prevent instantiation
-		}
-	}
-
-	/**
-	 * Utility class containing the constants related to the {@link org.eclipse.eef.core.api.EEFGroup}.
-	 *
-	 * @author sbegaudeau
-	 */
-	public final class EEFGroup {
-		/**
-		 * The name of the variable groupSemanticCandidate.
-		 */
-		public static final String GROUP_SEMANTIC_CANDIDATE = "groupSemanticCandidate"; //$NON-NLS-1$
-
-		/**
-		 * The constructor.
-		 */
-		private EEFGroup() {
-			// prevent instantiation
-		}
+	private EEFExpressionUtils() {
+		// prevent instantiation
 	}
 
 	/**

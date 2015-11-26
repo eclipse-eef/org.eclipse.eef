@@ -19,7 +19,7 @@ import org.eclipse.eef.EEFPageDescription;
  *
  * @author sbegaudeau
  */
-public interface EEFPage extends EEFChildObject {
+public interface EEFPage {
 	/**
 	 * Returns the description of the {@link EEFPage}.
 	 *
@@ -40,4 +40,19 @@ public interface EEFPage extends EEFChildObject {
 	 * @return The {@link EEFGroup}
 	 */
 	List<EEFGroup> getGroups();
+
+	/**
+	 * Returns the view containing the page.
+	 * 
+	 * @return The view containing the page
+	 */
+	EEFView getView();
+
+	/**
+	 * Returns the variable manager.
+	 * 
+	 * @return The variable manager
+	 */
+	IVariableManager getVariableManager();
+
 }

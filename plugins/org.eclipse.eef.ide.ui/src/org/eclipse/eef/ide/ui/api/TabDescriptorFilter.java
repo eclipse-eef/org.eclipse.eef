@@ -15,7 +15,6 @@ import java.util.List;
 
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.api.IEEFViewDescriptionProvider;
-import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFVariableManagerFactory;
 import org.eclipse.eef.core.api.EEFView;
@@ -24,9 +23,10 @@ import org.eclipse.eef.core.api.IVariableManager;
 import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.internal.extensions.IItemDescriptor;
 import org.eclipse.eef.ide.internal.extensions.IItemRegistry;
-import org.eclipse.eef.ide.ui.internal.data.EEFTabDescriptor;
-import org.eclipse.eef.interpreter.api.IInterpreterProvider;
+import org.eclipse.eef.ide.ui.internal.properties.EEFTabDescriptor;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreterProvider;
 import org.eclipse.ui.views.properties.tabbed.ITabDescriptor;
 
 /**
@@ -50,16 +50,12 @@ public class TabDescriptorFilter {
 		List<IInterpreterProvider> interpreterProviders = this.getInterprerProviders();
 
 		List<ITabDescriptor> tabDescriptors = new ArrayList<ITabDescriptor>();
-		if (eefViewDescriptions.size() > 0) {
+		if (eefViewDescriptions.size() > 0 && objects.length > 0 && objects[0] instanceof EObject) {
 			EEFViewDescription eefViewDescription = eefViewDescriptions.get(0);
+			EObject eObject = (EObject) objects[0];
 
 			IVariableManager variableManager = new EEFVariableManagerFactory().createVariableManager();
-			if (objects.length == 1) {
-				variableManager.put(EEFExpressionUtils.EEFView.VIEW_SEMANTIC_CANDIDATE, objects[0]);
-			} else {
-				// TODO Add support for multiple input
-			}
-			EEFView eefView = new EEFViewFactory().createEEFView(eefViewDescription, variableManager, interpreterProviders, editingDomain);
+			EEFView eefView = new EEFViewFactory().createEEFView(eefViewDescription, variableManager, interpreterProviders, editingDomain, eObject);
 
 			List<EEFPage> eefPages = eefView.getPages();
 			for (EEFPage eefPage : eefPages) {
