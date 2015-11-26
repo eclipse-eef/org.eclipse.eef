@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67ccbf7d_2b217ba7",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-11-26T14:33:36Z",
+      "side": 1,
+      "message": "Typo manager -\u003e manage",
+      "revId": "a7c821dee300942ca7854673497c69ca47560845",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
