@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.tests.internal;
 
+import org.eclipse.eef.tests.internal.controllers.EEFTextControllerTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -20,7 +21,7 @@ import org.junit.runners.Suite.SuiteClasses;
  * @author sbegaudeau
  */
 @RunWith(Suite.class)
-@SuiteClasses({ InitializationTests.class })
+@SuiteClasses({ EEFTextControllerTests.class })
 public final class AllTests {
 	/**
 	 * The constructor.
