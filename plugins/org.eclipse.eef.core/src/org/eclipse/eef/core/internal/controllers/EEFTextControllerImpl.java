@@ -12,6 +12,10 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
@@ -62,6 +66,16 @@ public class EEFTextControllerImpl implements EEFTextController {
 	private IConsumer<String> newLabelConsumer;
 
 	/**
+	 * Executor service used to run the update of the text field.
+	 */
+	private ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+
+	/**
+	 * This future contains the update to be performed.
+	 */
+	private ScheduledFuture<?> currentUpdatedValueFuture;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -83,7 +97,11 @@ public class EEFTextControllerImpl implements EEFTextController {
 
 	@Override
 	public void updateValue(final String text) {
-		Command command = new RecordingCommand(this.editingDomain) {
+		if (this.currentUpdatedValueFuture != null && !this.currentUpdatedValueFuture.isDone()) {
+			this.currentUpdatedValueFuture.cancel(true);
+		}
+
+		final Command command = new RecordingCommand(this.editingDomain) {
 			@Override
 			protected void doExecute() {
 				String editExpression = EEFTextControllerImpl.this.description.getEditExpression();
@@ -92,7 +110,6 @@ public class EEFTextControllerImpl implements EEFTextController {
 					variables.putAll(EEFTextControllerImpl.this.variableManager.getVariables());
 					variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 					//variables.put("selection", selection); //$NON-NLS-1$
-
 					EEFTextControllerImpl.this.interpreter.evaluateExpression(variables, editExpression);
 				}
 			}
@@ -103,8 +120,15 @@ public class EEFTextControllerImpl implements EEFTextController {
 			}
 		};
 
-		CommandStack commandStack = this.editingDomain.getCommandStack();
-		commandStack.execute(command);
+		Runnable runnable = new Runnable() {
+			@Override
+			public void run() {
+				CommandStack commandStack = EEFTextControllerImpl.this.editingDomain.getCommandStack();
+				commandStack.execute(command);
+			}
+		};
+		final long scheduleTime = 500L;
+		this.currentUpdatedValueFuture = this.executor.schedule(runnable, scheduleTime, TimeUnit.MILLISECONDS);
 	}
 
 	/**
