@@ -16,16 +16,17 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.EEFTextController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.views.properties.tabbed.ITabbedPropertyConstants;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
@@ -35,6 +36,11 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
  * @author sbegaudeau
  */
 public class EEFTextLifecycleManager implements ILifecycleManager {
+	/**
+	 * The key used for the help image.
+	 */
+	private static final String DLG_IMG_HELP = "dialog_help_image"; //$NON-NLS-1$
+
 	/**
 	 * The description.
 	 */
@@ -63,7 +69,12 @@ public class EEFTextLifecycleManager implements ILifecycleManager {
 	/**
 	 * The label.
 	 */
-	private CLabel label;
+	private Label label;
+
+	/**
+	 * The help label.
+	 */
+	private Label help;
 
 	/**
 	 * The controller.
@@ -105,59 +116,21 @@ public class EEFTextLifecycleManager implements ILifecycleManager {
 	public void createControl(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
 		TabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
 
-		this.text = this.createText(parent, widgetFactory);
-		this.label = this.createLabel(parent, widgetFactory, this.text);
+		this.label = widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
+
+		this.text = widgetFactory.createText(parent, "", SWT.NONE); //$NON-NLS-1$
+		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
+		this.text.setLayoutData(nameData);
+
+		this.help = widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
+		Image image = JFaceResources.getImage(DLG_IMG_HELP);
+		help.setImage(image);
+		help.setToolTipText("There should be some help in this tooltip..."); //$NON-NLS-1$
 
 		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
-	}
-
-	/**
-	 * Creates the text widget.
-	 *
-	 * @param parent
-	 *            The composite parent
-	 * @param widgetFactory
-	 *            The widget factory
-	 * @return The text widget created
-	 */
-	private Text createText(Composite parent, TabbedPropertySheetWidgetFactory widgetFactory) {
-		Text textWidget = widgetFactory.createText(parent, ""); //$NON-NLS-1$
-		FormData data = new FormData();
-
-		final int textOffset = 232;
-		data.left = new FormAttachment(0, textOffset);
-		data.right = new FormAttachment(100, 0);
-		data.top = new FormAttachment(0, ITabbedPropertyConstants.VSPACE);
-
-		textWidget.setLayoutData(data);
-		textWidget.setEnabled(false);
-
-		return textWidget;
-	}
-
-	/**
-	 * Creates the label widget.
-	 *
-	 * @param parent
-	 *            The composite parent
-	 * @param widgetFactory
-	 *            The widget factory
-	 * @param textWidget
-	 *            The text widget created
-	 * @return The label widget created
-	 */
-	private CLabel createLabel(Composite parent, TabbedPropertySheetWidgetFactory widgetFactory, Text textWidget) {
-		CLabel labelWidget = widgetFactory.createCLabel(parent, ""); //$NON-NLS-1$
-
-		final int labelOffset = 20;
-		FormData data = new FormData();
-		data.left = new FormAttachment(0, 0);
-		data.right = new FormAttachment(textWidget, -ITabbedPropertyConstants.HSPACE - labelOffset);
-		data.top = new FormAttachment(textWidget, 0, SWT.CENTER);
-		labelWidget.setLayoutData(data);
-
-		return labelWidget;
 	}
 
 	/**
