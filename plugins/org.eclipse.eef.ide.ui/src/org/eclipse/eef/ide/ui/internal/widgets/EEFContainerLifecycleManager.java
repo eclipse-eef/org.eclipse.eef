@@ -21,7 +21,6 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 /**
  * This class will handle the lifecycle of the {@link EEFContainerDescription}.
@@ -83,9 +82,6 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	 */
 	@Override
 	public void createControl(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-		TabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
-		Composite sectionComposite = widgetFactory.createFlatFormComposite(parent);
-
 		List<EEFWidgetDescription> widgets = this.description.getWidgets();
 		for (EEFWidgetDescription eefWidgetDescription : widgets) {
 			if (eefWidgetDescription instanceof EEFTextDescription) {
@@ -93,7 +89,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 
 				EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, variableManager.createChild(),
 						interpreter, editingDomain);
-				eefTextLifecycleManager.createControl(sectionComposite, tabbedPropertySheetPage);
+				eefTextLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
 				this.lifecycleManagers.add(eefTextLifecycleManager);
 			}
