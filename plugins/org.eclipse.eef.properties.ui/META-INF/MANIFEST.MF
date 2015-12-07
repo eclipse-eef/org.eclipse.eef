@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.eef.properties.ui;singleton:=true
+Bundle-Version: 1.6.0.qualifier
+Bundle-Vendor: %providerName
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.ui;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.ui.views;bundle-version="[3.5.0,4.0.0)",
+ org.eclipse.ui.forms;bundle-version="[3.4.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)"
+Export-Package: org.eclipse.eef.properties.ui.api;version="1.6.0",
+ org.eclipse.eef.properties.ui.internal;version="1.6.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.internal.page;version="1.6.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.internal.page.propertylist;version="1.6.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.internal.registry;version="1.6.0";x-internal:=true
+Bundle-Localization: plugin
