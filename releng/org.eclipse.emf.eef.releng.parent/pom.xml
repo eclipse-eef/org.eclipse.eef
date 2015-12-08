@@ -286,9 +286,6 @@
 		<module>../../tests/org.eclipse.emf.eef.tests.nonreg.editor</module>
 		<module>../../tests/org.eclipse.emf.eef.tests.nonreg.junit</module>
 
-		<!-- EEF 2 -->
-		<module>../../releng/org.eclipse.eef.releng</module>
-
 	</modules>
 
 	<build>
