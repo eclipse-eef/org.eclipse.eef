@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Eclipse Neon" sequenceNumber="1445593356">
+<target name="Eclipse Neon" sequenceNumber="1449572326">
   <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.acceleo.query.feature.group" version="0.0.0"/>
+      <unit id="org.antlr.runtime" version="4.3.0.v201502022030"/>
+      <repository id="Acceleo-3.6" location="http://download.eclipse.org/acceleo/updates/releases/3.6/R201510121214/"/>
+    </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.query.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.sirius.aql.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.sirius.specifier.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.uml2.uml.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.uml2.uml.editor" version="0.0.0"/>
       <unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtend.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.mwe2.runtime.sdk.feature.group" version="0.0.0"/>
-      <repository location="http://download.eclipse.org/releases/neon"/>
+      <repository id="Eclipse-Neon" location="http://download.eclipse.org/releases/neon"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.eef.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.xtext.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ocl.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.samples.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.specifier.ide.ui.aql.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.specifier.ide.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.tests.support.feature.group" version="0.0.0"/>
+      <repository id="Sirius-Core" location="http://download.eclipse.org/sirius/updates/nightly/latest/neon"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sirius.incubation.feature.group" version="0.0.0"/>
+      <repository id="Sirius-Incubation" location="http://download.eclipse.org/sirius/updates/nightly/latest/neon/incubation"/>
     </location>
   </locations>
 </target>
