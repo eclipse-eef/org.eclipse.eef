@@ -38,7 +38,7 @@ export BUILD_TYPE="nightly"
 export BUILD_TYPE_PREFIX="N"
 
 # The root folder for all EEF update sites
-export EEF_UPDATES_ROOT="/home/data/httpd/download.eclipse.org/eef/updates"
+export EEF_UPDATES_ROOT="/home/data/httpd/download.eclipse.org/modeling/emft/eef/updates"
 
 # Converts the Hudson BUILD_ID (e.g. 2013-10-15_07-07-07) into the
 # syntax we want for our update-sites (e.g. 20131015-070707)
