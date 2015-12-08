@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description>
+      To install these features, point Eclipse at this site.
+   </description>
+   <feature url="features/org.eclipse.eef.sdk.feature_2.0.0.qualifier.jar" id="org.eclipse.eef.sdk.feature" version="2.0.0.qualifier">
+      <category name="EEF Incubation"/>
+   </feature>
+   <category-def name="EEF Incubation" label="EEF Incubation"/>
+</site>
