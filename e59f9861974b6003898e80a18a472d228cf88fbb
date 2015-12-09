@@ -1,0 +1,878 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27d6470d_f92fa610",
+        "filename": "plugins/org.eclipse.eef.properties.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "It should be 1.6.0",
+      "range": {
+        "startLine": 5,
+        "startChar": 16,
+        "endLine": 5,
+        "endChar": 21
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_19444acf",
+        "filename": "plugins/org.eclipse.eef.properties.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 13,
+        "startChar": 49,
+        "endLine": 13,
+        "endChar": 54
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_39410ebf",
+        "filename": "plugins/org.eclipse.eef.properties.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 14,
+        "startChar": 54,
+        "endLine": 14,
+        "endChar": 59
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_593ed242",
+        "filename": "plugins/org.eclipse.eef.properties.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 15,
+        "startChar": 67,
+        "endLine": 15,
+        "endChar": 72
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_793b9650",
+        "filename": "plugins/org.eclipse.eef.properties.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 16,
+        "startChar": 58,
+        "endLine": 16,
+        "endChar": 63
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_d9e58253",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFPropertySection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "I would say \"to the EEF project\" instead of \"the project EEF\"?",
+      "range": {
+        "startLine": 10,
+        "startChar": 34,
+        "endLine": 10,
+        "endChar": 45
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_99dbfa9a",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFPropertySection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 24,
+        "startChar": 10,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_f9ea4621",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFSectionDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "EEF project ?",
+      "range": {
+        "startLine": 10,
+        "startChar": 34,
+        "endLine": 10,
+        "endChar": 45
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_b9e0be43",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFSectionDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 27,
+        "startChar": 10,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_39ccaedf",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFTabDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "Add Obeo",
+      "range": {
+        "startLine": 8,
+        "startChar": 3,
+        "endLine": 8,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_19cfead6",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFTabDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 25,
+        "startChar": 10,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_59d9729b",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabContents.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_79d6366d",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabbedPropertySheetPage.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 57,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_99021a7f",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabbedPropertySheetWidgetFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 32,
+        "startChar": 10,
+        "endLine": 32,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_f9016679",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTypeMapper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_19f60a03",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFSection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 63,
+        "startChar": 10,
+        "endLine": 63,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_59f09203",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFSectionDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_79ed562d",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "Obeo",
+      "range": {
+        "startLine": 8,
+        "startChar": 3,
+        "endLine": 8,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_99adbaf7",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 24,
+        "startChar": 10,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_b9b27e4f",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabItem.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 21,
+        "startChar": 10,
+        "endLine": 21,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_d9b7423f",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabSelectionListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_f9bc0626",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabbedPropertyConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_19c1aa97",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabbedPropertySheetPageContributor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_39be6e1b",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTypeMapper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "1.6.0",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 15
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_59cb32b7",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/EEFTabbedPropertyViewPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since  1.6.0",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 24,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_79c8f6b9",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/EEFTabbedPropertyComposite.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_9994da9b",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/EEFTabbedPropertyListContentProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 24,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_b9999ed3",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/EEFTabbedPropertyRegistryClassSectionFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_f99326ad",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/EEFTabbedPropertySheetPageLabelProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_19a8cad7",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/EEFTabbedPropertyViewer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_59a252f7",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFAccessibleControlAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_799f16b1",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFBottomNavigationElement.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_997f7ad3",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFListElement.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_b9843e64",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFPropertyListFocusListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 24,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_d989027c",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFTabbedPropertyList.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 48,
+        "startChar": 1,
+        "endLine": 48,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_f98ec681",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFTabbedPropertyListColorHolder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_19736a0b",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFTopNavigationElement.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d6470d_dc5f3044",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/registry/EEFTabbedPropertyRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2015-12-09T13:36:04Z",
+      "side": 1,
+      "message": "@since 1.6.0",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 3
+      },
+      "revId": "e59f9861974b6003898e80a18a472d228cf88fbb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
