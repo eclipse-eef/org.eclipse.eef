@@ -10,10 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api;
 
-import java.util.List;
-
 import org.eclipse.eef.EEFViewDescription;
-import org.eclipse.eef.core.internal.EEFCompoundInterpreter;
 import org.eclipse.eef.core.internal.EEFViewImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -33,17 +30,17 @@ public class EEFViewFactory {
 	 *            The description of the {@link EEFView}
 	 * @param variableManager
 	 *            The variable manager
-	 * @param interpreterProviders
-	 *            The {@link IInterpreterProvider} available
+	 * @param interpreter
+	 *            The {@link IInterpreter} to use for dynamic expressions.
 	 * @param editingDomain
 	 *            The editing domain
 	 * @param eObject
 	 *            The input
 	 * @return The {@link EEFView} fully initialized
 	 */
-	public EEFView createEEFView(EEFViewDescription eefViewDescription, IVariableManager variableManager,
-			List<IInterpreterProvider> interpreterProviders, TransactionalEditingDomain editingDomain, EObject eObject) {
-		EEFView eefView = new EEFViewImpl(eefViewDescription, variableManager, new EEFCompoundInterpreter(interpreterProviders), editingDomain);
+	public EEFView createEEFView(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
+			TransactionalEditingDomain editingDomain, EObject eObject) {
+		EEFView eefView = new EEFViewImpl(eefViewDescription, variableManager, interpreter, editingDomain);
 		eefView.setInput(eObject);
 		eefView.initialize();
 		return eefView;
