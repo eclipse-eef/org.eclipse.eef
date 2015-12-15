@@ -54,6 +54,15 @@ public class EEFTabContents {
 	}
 
 	/**
+	 * Return the sections.
+	 *
+	 * @return the sections
+	 */
+	public List<IEEFSection> getSections() {
+		return this.sections;
+	}
+
+	/**
 	 * Creates the page's sections controls.
 	 *
 	 * @param parent

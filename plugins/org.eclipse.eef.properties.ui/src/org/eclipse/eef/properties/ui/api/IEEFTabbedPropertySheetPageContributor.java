@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.api;
 
+
 /**
  * Interface for a workbench part to contribute content to the tabbed property view.
  * <p>

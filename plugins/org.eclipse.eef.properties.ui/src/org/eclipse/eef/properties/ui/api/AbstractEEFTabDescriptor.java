@@ -187,4 +187,14 @@ public abstract class AbstractEEFTabDescriptor implements IEEFTabDescriptor, Clo
 	public boolean isSelected() {
 		return false;
 	}
+
+	/**
+	 * Set the list of section descriptors for the tab.
+	 *
+	 * @param sectionDescriptors
+	 *            the list of section descriptors for the tab.
+	 */
+	public void setSectionDescriptors(List<IEEFSectionDescriptor> sectionDescriptors) {
+		this.sectionDescriptors = sectionDescriptors;
+	}
 }

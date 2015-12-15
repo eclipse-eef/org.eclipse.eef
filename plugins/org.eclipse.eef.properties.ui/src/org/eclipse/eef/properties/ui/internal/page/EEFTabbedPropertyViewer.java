@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.internal.page.propertylist.EEFTabbedPropertyList;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredViewer;
@@ -34,7 +35,7 @@ public class EEFTabbedPropertyViewer extends StructuredViewer {
 	/**
 	 * The elements displayed in the viewer.
 	 */
-	private List<Object> elements = new ArrayList<Object>();
+	private List<IEEFTabDescriptor> elements = new ArrayList<IEEFTabDescriptor>();
 
 	/**
 	 * The tabbed property list.
@@ -81,10 +82,14 @@ public class EEFTabbedPropertyViewer extends StructuredViewer {
 
 		Object[] children = getSortedChildren(getRoot());
 		list.removeAll();
-		for (int i = 0; i < children.length; i++) {
-			elements.add(children[i]);
-			mapElement(children[i], list);
+
+		for (Object child : children) {
+			if (child instanceof IEEFTabDescriptor) {
+				this.elements.add((IEEFTabDescriptor) child);
+				mapElement(child, list);
+			}
 		}
+
 		list.setElements(children);
 	}
 
@@ -109,9 +114,28 @@ public class EEFTabbedPropertyViewer extends StructuredViewer {
 		if (index == EEFTabbedPropertyList.NONE) {
 			return Collections.EMPTY_LIST;
 		}
-		List<Object> result = new ArrayList<Object>(1);
+		List<IEEFTabDescriptor> result = new ArrayList<IEEFTabDescriptor>(1);
 		result.add(this.getElementAt(index));
 		return result;
+	}
+
+	/**
+	 * Return the elements.
+	 *
+	 * @return the elements
+	 */
+	public List<IEEFTabDescriptor> getElements() {
+		return this.elements;
+	}
+
+	/**
+	 * Returns the zero-relative index of the item which is currently selected in the receiver, or -1 if no item is
+	 * selected.
+	 *
+	 * @return the index of the selected item
+	 */
+	public int getSelectionIndex() {
+		return list.getSelectionIndex();
 	}
 
 	/**
@@ -121,7 +145,7 @@ public class EEFTabbedPropertyViewer extends StructuredViewer {
 	 *            The index
 	 * @return The element at the give index
 	 */
-	public Object getElementAt(int index) {
+	public IEEFTabDescriptor getElementAt(int index) {
 		if (index >= 0 && index < this.elements.size()) {
 			return this.elements.get(index);
 		}
