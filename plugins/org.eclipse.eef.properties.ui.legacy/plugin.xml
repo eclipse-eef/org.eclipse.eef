@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.properties.ui.eefTabDescriptorProvider">
+      <descriptor
+            class="org.eclipse.eef.properties.ui.legacy.internal.extension.impl.LegacyTabDescriptorProvider"
+            description="Provides tab descriptors defined thanks to the legacy tabbed properties view extension point"
+            id="org.eclipse.eef.properties.ui.legacy.tab.descriptor.provider"
+            label="EEF Legacy Tab Descriptor Provider">
+      </descriptor>
+   </extension>
+
+</plugin>

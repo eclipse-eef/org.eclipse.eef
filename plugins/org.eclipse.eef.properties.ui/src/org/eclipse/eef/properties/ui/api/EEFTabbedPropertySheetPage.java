@@ -251,7 +251,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 
 		// see if the selection provides a new contributor
 		// validateRegistry(selection);
-		List<IEEFTabDescriptor> descriptors = EEFTabbedPropertyRegistry.getDefault().getTabDescriptors();
+		List<IEEFTabDescriptor> descriptors = EEFTabbedPropertyRegistry.getDefault().getTabDescriptors(part, selection);
 		// If there are no descriptors for the given input we do not need to
 		// touch the tab objects. We might reuse them for the next valid
 		// input.
@@ -580,7 +580,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	/**
 	 * Resize the scrolled composite.
 	 */
-	private void resizeScrolledComposite() {
+	public void resizeScrolledComposite() {
 		Point currentTabSize = new Point(0, 0);
 		if (this.currentTab != null) {
 			Composite sizeReference = this.tabToComposite.get(this.currentTab);
@@ -602,6 +602,21 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			Rectangle clientArea = this.tabbedPropertyComposite.getScrolledComposite().getClientArea();
 			int increment = clientArea.width - 5;
 			horizontalScrollBar.setPageIncrement(increment);
+		}
+	}
+
+	/**
+	 * Set the currently selected tab to be that of the provided tab id.
+	 *
+	 * @param id
+	 *            The string id of the tab to select.
+	 */
+	public void setSelectedTab(String id) {
+		List<IEEFTabDescriptor> elements = this.tabbedPropertyViewer.getElements();
+		for (IEEFTabDescriptor descriptor : elements) {
+			if (descriptor.getId() != null && descriptor.getId().equals(id)) {
+				this.tabbedPropertyViewer.setSelection(new StructuredSelection(descriptor), true);
+			}
 		}
 	}
 
@@ -637,6 +652,15 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	}
 
 	/**
+	 * Returns the list of currently active tabs.
+	 *
+	 * @return the currently active tabs.
+	 */
+	public List<IEEFTabDescriptor> getActiveTabs() {
+		return this.tabbedPropertyViewer.getElements();
+	}
+
+	/**
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.ui.part.IPage#getControl()
@@ -644,6 +668,28 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	@Override
 	public Control getControl() {
 		return this.form;
+	}
+
+	/**
+	 * Return the currentTab.
+	 *
+	 * @return the currentTab
+	 */
+	public EEFTabContents getCurrentTab() {
+		return this.currentTab;
+	}
+
+	/**
+	 * Returns the currently selected tab.
+	 *
+	 * @return the currently selected tab or <code>null</code> if there is no tab selected.
+	 */
+	public IEEFTabDescriptor getSelectedTab() {
+		int selectedTab = tabbedPropertyViewer.getSelectionIndex();
+		if (selectedTab != -1) {
+			return tabbedPropertyViewer.getElementAt(selectedTab);
+		}
+		return null;
 	}
 
 	/**
@@ -673,6 +719,22 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 */
 	public EEFTabbedPropertySheetWidgetFactory getWidgetFactory() {
 		return this.widgetFactory;
+	}
+
+	/**
+	 * Refresh the currently active tab.
+	 */
+	public void refresh() {
+		this.currentTab.refresh();
+	}
+
+	/**
+	 * Return the contributor.
+	 *
+	 * @return the contributor
+	 */
+	public IEEFTabbedPropertySheetPageContributor getContributor() {
+		return this.contributor;
 	}
 
 }
