@@ -12,6 +12,7 @@
 package org.eclipse.eef.properties.ui.internal.page;
 
 import org.eclipse.eef.properties.ui.internal.registry.EEFTabbedPropertyRegistry;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.ui.IWorkbenchPart;
@@ -64,7 +65,7 @@ public class EEFTabbedPropertyListContentProvider implements IStructuredContentP
 	 */
 	@Override
 	public Object[] getElements(Object inputElement) {
-		return this.registry.getTabDescriptors().toArray();
+		return this.registry.getTabDescriptors(this.currentPart, (ISelection) inputElement).toArray();
 	}
 
 	/**

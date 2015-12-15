@@ -73,5 +73,4 @@ public interface IEEFTabDescriptor extends IEEFTabItem {
 	 * @return the list of section descriptors for the tab.
 	 */
 	List<IEEFSectionDescriptor> getSectionDescriptors();
-
 }

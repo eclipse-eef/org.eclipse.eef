@@ -11,10 +11,18 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.internal.registry;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
+import org.eclipse.eef.properties.ui.internal.EEFTabbedPropertyViewPlugin;
+import org.eclipse.eef.properties.ui.internal.extension.IItemDescriptor;
+import org.eclipse.eef.properties.ui.internal.extension.IItemRegistry;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IWorkbenchPart;
 
@@ -37,7 +45,7 @@ public class EEFTabbedPropertyRegistry {
 	/**
 	 * The tab descriptors.
 	 */
-	private List<IEEFTabDescriptor> descriptors = Collections.singletonList((IEEFTabDescriptor) new TestTabDescriptor());
+	private Map<String, IEEFTabDescriptor> allDescriptors = new HashMap<String, IEEFTabDescriptor>();
 
 	/**
 	 * Returns the sole instance of the registry.
@@ -53,8 +61,19 @@ public class EEFTabbedPropertyRegistry {
 	 *
 	 * @return The descriptors
 	 */
-	public List<IEEFTabDescriptor> getTabDescriptors() {
-		return this.descriptors;
+	private List<IEEFTabDescriptor> getTabDescriptors() {
+		// Get the tab descriptors from the extension point
+		IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry = EEFTabbedPropertyViewPlugin.getInstance()
+				.getEEFTabDescriptorProviderRegistry();
+		for (IItemDescriptor<IEEFTabDescriptorProvider> itemDescriptor : eefTabDescriptorProviderRegistry.getItemDescriptors()) {
+			IEEFTabDescriptorProvider tabDescriptorProvider = itemDescriptor.getItem();
+			for (IEEFTabDescriptor tabDescriptor : tabDescriptorProvider.get()) {
+				if (!allDescriptors.containsKey(tabDescriptor.getId())) {
+					allDescriptors.put(tabDescriptor.getId(), tabDescriptor);
+				}
+			}
+		}
+		return new ArrayList<IEEFTabDescriptor>(allDescriptors.values());
 	}
 
 	/**
@@ -67,6 +86,59 @@ public class EEFTabbedPropertyRegistry {
 	 * @return The descriptors for the given part and selection
 	 */
 	public List<IEEFTabDescriptor> getTabDescriptors(IWorkbenchPart part, ISelection input) {
-		return this.descriptors;
+		if (input == null || input.isEmpty()) {
+			return new ArrayList<IEEFTabDescriptor>();
+		}
+		List<IEEFTabDescriptor> result = filterTabDescriptors(getTabDescriptors(), part, input);
+		return result;
+	}
+
+	/**
+	 * Filters out the tab descriptors that do not have any sections for the given input.
+	 *
+	 * @param eefTabDescriptors
+	 *            EEF tab descriptors
+	 * @param part
+	 *            The current part
+	 * @param input
+	 *            The current selection
+	 * @return List of EEF tab descriptors
+	 */
+	private List<IEEFTabDescriptor> filterTabDescriptors(List<IEEFTabDescriptor> eefTabDescriptors, IWorkbenchPart part, ISelection input) {
+		List<IEEFTabDescriptor> filteredEefTabDescriptors = new ArrayList<IEEFTabDescriptor>();
+		for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptors) {
+			IEEFTabDescriptor filteredEefTabDescriptor = adaptDescriptorFor(eefTabDescriptor, part, input);
+			if (!filteredEefTabDescriptor.getSectionDescriptors().isEmpty()) {
+				filteredEefTabDescriptors.add(filteredEefTabDescriptor);
+			}
+		}
+		return filteredEefTabDescriptors;
+	}
+
+	/**
+	 * Given a property tab descriptor remove all its section descriptors that do not apply to the given input object.
+	 *
+	 * @param target
+	 *            EEF tab descriptor
+	 * @param part
+	 *            The current part
+	 * @param selection
+	 *            The current selection
+	 * @return EEF tab descriptor filtered according to the given selection
+	 */
+	private IEEFTabDescriptor adaptDescriptorFor(IEEFTabDescriptor target, IWorkbenchPart part, ISelection selection) {
+		List<IEEFSectionDescriptor> filteredEefSectionDescriptors = new ArrayList<IEEFSectionDescriptor>();
+		// Get all the available section for this tab
+		List<IEEFSectionDescriptor> eefSectionDescriptors = target.getSectionDescriptors();
+		for (IEEFSectionDescriptor eefSectionDescriptor : eefSectionDescriptors) {
+			// Check if section is valid for the current part and selection
+			if (eefSectionDescriptor.appliesTo(part, selection)) {
+				filteredEefSectionDescriptors.add(eefSectionDescriptor);
+			}
+		}
+
+		AbstractEEFTabDescriptor filteredEefTabDescriptor = (AbstractEEFTabDescriptor) ((AbstractEEFTabDescriptor) target).clone();
+		filteredEefTabDescriptor.setSectionDescriptors(filteredEefSectionDescriptors);
+		return filteredEefTabDescriptor;
 	}
 }
