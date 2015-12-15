@@ -13,6 +13,7 @@ package org.eclipse.eef.core.api;
 import java.util.List;
 
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
 /**
  * The {@link EEFPage} will control the content of a tab.

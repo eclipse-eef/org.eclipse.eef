@@ -11,10 +11,10 @@
 package org.eclipse.eef.core.api.controllers;
 
 import org.eclipse.eef.EEFTextDescription;
-import org.eclipse.eef.core.api.IVariableManager;
 import org.eclipse.eef.core.internal.controllers.EEFTextControllerImpl;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
 /**
  * This factory will be used to create the controllers.

@@ -13,6 +13,7 @@ package org.eclipse.eef.core.api;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
 /**
  * The {@link EEFGroup} is used as the main structure within a page.

@@ -13,9 +13,9 @@ package org.eclipse.eef.core.internal;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
-import org.eclipse.eef.core.api.IVariableManager;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
 /**
  * The implementation of the {@link EEFGroup}.

@@ -15,8 +15,6 @@ import java.util.Map;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
-import org.eclipse.eef.core.api.EEFVariableManagerFactory;
-import org.eclipse.eef.core.api.IVariableManager;
 import org.eclipse.eef.core.api.controllers.EEFTextController;
 import org.eclipse.eef.core.internal.controllers.EEFTextControllerImpl;
 import org.eclipse.emf.common.command.Command;
@@ -33,6 +31,8 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.sirius.common.interpreter.api.EvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.sirius.common.interpreter.api.VariableManagerFactory;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -73,7 +73,7 @@ public class EEFTextControllerTests {
 		this.resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
 		.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 		this.editingDomain = new TransactionalEditingDomainImpl(adapterFactory, this.resourceSet);
-		this.variableManager = new EEFVariableManagerFactory().createVariableManager();
+		this.variableManager = new VariableManagerFactory().createVariableManager();
 
 		this.description = EefFactory.eINSTANCE.createEEFTextDescription();
 
