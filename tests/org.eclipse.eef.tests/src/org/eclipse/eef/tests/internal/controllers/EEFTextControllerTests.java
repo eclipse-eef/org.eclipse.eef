@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
+import org.eclipse.sirius.common.interpreter.api.EvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.junit.Before;
 import org.junit.Test;
@@ -86,7 +87,7 @@ public class EEFTextControllerTests {
 		final String newValue = "newValue"; //$NON-NLS-1$
 
 		IInterpreter interpreter = (Map<String, Object> variables, String expressionBody) -> {
-			return new EvaluationResult(newValue);
+			return EvaluationResult.of(newValue);
 		};
 
 		EEFTextController controller = new EEFTextControllerImpl(description, variableManager, interpreter, editingDomain);
@@ -123,7 +124,7 @@ public class EEFTextControllerTests {
 		final String newLabel = "Label"; //$NON-NLS-1$
 
 		IInterpreter interpreter = (Map<String, Object> variables, String expressionBody) -> {
-			return new EvaluationResult(newLabel);
+			return EvaluationResult.of(newLabel);
 		};
 
 		EEFTextController controller = new EEFTextControllerImpl(description, variableManager, interpreter, editingDomain);
