@@ -93,6 +93,8 @@ Contributors:
         <module>../../plugins/org.eclipse.eef.core</module>
         <module>../../plugins/org.eclipse.eef.ide</module>
         <module>../../plugins/org.eclipse.eef.ide.ui</module>
+        <module>../../plugins/org.eclipse.eef.properties.ui</module>
+	<module>../../plugins/org.eclipse.eef.properties.ui.legacy</module>
 
         <module>../../tests/org.eclipse.eef.tests</module>
 

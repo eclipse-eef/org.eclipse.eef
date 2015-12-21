@@ -20,10 +20,10 @@ Contributors:
     <relativePath>../../releng/org.eclipse.eef.releng</relativePath>
   </parent>
 
-  <artifactId>org.eclipse.eef.properties.ui</artifactId>
+  <artifactId>org.eclipse.eef.properties.ui.legacy</artifactId>
   <packaging>eclipse-plugin</packaging>
   
-  <name>EEF Properties UI</name>
+  <name>EEF Properties UI Legacy</name>
 
   <build>
     <plugins>
