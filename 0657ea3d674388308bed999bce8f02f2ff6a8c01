@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_30f91f42",
+        "filename": "plugins/org.eclipse.eef.ide.ui/build.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "You can remove this because you are not using it",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_70f3a75f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/plugin.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "You can remove this file because you are not using it",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 9
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_f0225760",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/META-INF/MANIFEST.MF",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "Export this packages as internal ones not as public ones with a version 1.6.0",
+      "range": {
+        "startLine": 16,
+        "startChar": 16,
+        "endLine": 17,
+        "endChar": 56
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_5011430a",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/EEFPropertiesUiLegacyPlugin.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "Remove the import",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 80
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_3004bfce",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/EEFPropertiesUiLegacyPlugin.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "wait what? why? it seems that you have this dependency only for the name of a bundle, use the name directly, no need for a dependency to the activator of said bundle.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_700e47f0",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/EEFPropertiesUiLegacyPlugin.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "Copy the name here, the name will never change",
+      "range": {
+        "startLine": 45,
+        "startChar": 64,
+        "endLine": 45,
+        "endChar": 132
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_903aeb81",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/legacy2eef/EEFLegacyTabbedPropertySheetWidgetFactory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "I am surprised that checkstyle do not require a comment like \"// do nothing\" here",
+      "range": {
+        "startLine": 30,
+        "startChar": 99,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_b03fef71",
+        "filename": "plugins/org.eclipse.eef.properties.ui/plugin.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "Use a key a bit more specific, we may have more than one extension point",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_d0347396",
+        "filename": "plugins/org.eclipse.eef.properties.ui/plugin.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-11T10:29:52Z",
+      "side": 1,
+      "message": "More specific key",
+      "range": {
+        "startLine": 4,
+        "startChar": 57,
+        "endLine": 4,
+        "endChar": 72
+      },
+      "revId": "0657ea3d674388308bed999bce8f02f2ff6a8c01",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
