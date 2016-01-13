@@ -21,7 +21,6 @@ import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -118,7 +117,7 @@ public class EEFViewImpl implements EEFView {
 		final String semanticCandidateExpression = description.getSemanticCandidateExpression();
 		if (!isBlank(semanticCandidateExpression)) {
 			IEvaluationResult evaluationResult = interpreter.evaluateExpression(variableManager.getVariables(), semanticCandidateExpression);
-			if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+			if (evaluationResult.success()) {
 				IVariableManager childVariableManager = variableManager.createChild();
 				childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 				page = new EEFPageImpl(this, description, childVariableManager, interpreter, editingDomain);
@@ -142,7 +141,7 @@ public class EEFViewImpl implements EEFView {
 				if (!isBlank(pageSemanticCandidateExpression)) {
 					IEvaluationResult evaluationResult = interpreter.evaluateExpression(variableManager.getVariables(),
 							pageSemanticCandidateExpression);
-					if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+					if (evaluationResult.success()) {
 						eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 					} else {
 						// Something is very wrong here...
@@ -155,7 +154,7 @@ public class EEFViewImpl implements EEFView {
 					if (!isBlank(groupSemanticCandidateExpression)) {
 						IEvaluationResult evaluationResult = interpreter.evaluateExpression(eefPage.getVariableManager().getVariables(),
 								groupSemanticCandidateExpression);
-						if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+						if (evaluationResult.success()) {
 							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 						} else {
 							// Something is very wrong here...
