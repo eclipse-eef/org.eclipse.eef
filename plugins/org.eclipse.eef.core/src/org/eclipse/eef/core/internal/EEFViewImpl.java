@@ -80,17 +80,12 @@ public class EEFViewImpl implements EEFView {
 		this.editingDomain = editingDomain;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFView#initialize()
-	 */
 	@Override
 	public void initialize() {
 		Command command = new RecordingCommand(this.editingDomain) {
 			@Override
 			protected void doExecute() {
-				EEFViewImpl.this.doInitialize();
+				doInitialize();
 			}
 		};
 
@@ -102,24 +97,8 @@ public class EEFViewImpl implements EEFView {
 	 * Performs the initialization of the view by creating the necessary pages.
 	 */
 	private void doInitialize() {
-		List<EEFPageDescription> eefPageDescriptions = EEFViewImpl.this.getDescription().getPages();
-		for (EEFPageDescription eefPageDescription : eefPageDescriptions) {
-			EEFPageImpl ePage = null;
-			final String semanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
-			if (semanticCandidateExpression != null && semanticCandidateExpression.trim().length() > 0) {
-				IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(EEFViewImpl.this.variableManager.getVariables(),
-						semanticCandidateExpression);
-				if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
-					IVariableManager childVariableManager = EEFViewImpl.this.variableManager.createChild();
-					childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
-					ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager, EEFViewImpl.this.interpreter,
-							EEFViewImpl.this.editingDomain);
-				}
-			} else {
-				ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, EEFViewImpl.this.variableManager.createChild(),
-						EEFViewImpl.this.interpreter, EEFViewImpl.this.editingDomain);
-			}
-
+		for (EEFPageDescription eefPageDescription : getDescription().getPages()) {
+			EEFPageImpl ePage = createPage(eefPageDescription);
 			if (ePage != null) {
 				ePage.initialize();
 				eefPages.add(ePage);
@@ -128,25 +107,41 @@ public class EEFViewImpl implements EEFView {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Create an {@link EEFPage} from its {@link EEFPageDescription description}.
 	 *
-	 * @see org.eclipse.eef.core.api.EEFView#setInput(org.eclipse.emf.ecore.EObject)
+	 * @param description
+	 *            a page description.
+	 * @return an actual {@link EEFPage} setup according to the description.
 	 */
+	private EEFPageImpl createPage(EEFPageDescription description) {
+		EEFPageImpl page = null;
+		final String semanticCandidateExpression = description.getSemanticCandidateExpression();
+		if (!isBlank(semanticCandidateExpression)) {
+			IEvaluationResult evaluationResult = interpreter.evaluateExpression(variableManager.getVariables(), semanticCandidateExpression);
+			if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+				IVariableManager childVariableManager = variableManager.createChild();
+				childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+				page = new EEFPageImpl(this, description, childVariableManager, interpreter, editingDomain);
+			}
+		} else {
+			page = new EEFPageImpl(this, description, variableManager.createChild(), interpreter, editingDomain);
+		}
+		return page;
+	}
+
 	@Override
 	public void setInput(EObject eObject) {
-		Object selfValue = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+		Object selfValue = variableManager.getVariables().get(EEFExpressionUtils.SELF);
 		if (eObject != selfValue) {
 			// Invalidate and update the content of the variable manager with the new input
-			this.variableManager.clear();
-
-			this.variableManager.put(EEFExpressionUtils.SELF, eObject);
+			variableManager.clear();
+			variableManager.put(EEFExpressionUtils.SELF, eObject);
 
 			for (EEFPage eefPage : eefPages) {
 				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
-				if (pageSemanticCandidateExpression != null && pageSemanticCandidateExpression.trim().length() > 0) {
-
-					IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(
-							EEFViewImpl.this.variableManager.getVariables(), pageSemanticCandidateExpression);
+				if (!isBlank(pageSemanticCandidateExpression)) {
+					IEvaluationResult evaluationResult = interpreter.evaluateExpression(variableManager.getVariables(),
+							pageSemanticCandidateExpression);
 					if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
 						eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 					} else {
@@ -157,10 +152,9 @@ public class EEFViewImpl implements EEFView {
 				List<EEFGroup> groups = eefPage.getGroups();
 				for (EEFGroup eefGroup : groups) {
 					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
-					if (groupSemanticCandidateExpression != null && groupSemanticCandidateExpression.trim().length() > 0) {
-
-						IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(eefPage.getVariableManager()
-								.getVariables(), groupSemanticCandidateExpression);
+					if (!isBlank(groupSemanticCandidateExpression)) {
+						IEvaluationResult evaluationResult = interpreter.evaluateExpression(eefPage.getVariableManager().getVariables(),
+								groupSemanticCandidateExpression);
 						if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
 							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 						} else {
@@ -172,23 +166,25 @@ public class EEFViewImpl implements EEFView {
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFView#getPages()
-	 */
 	@Override
 	public List<EEFPage> getPages() {
 		return this.eefPages;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFView#getDescription()
-	 */
 	@Override
 	public EEFViewDescription getDescription() {
 		return this.eefViewDescription;
 	}
+
+	/**
+	 * Tests if a string is blank (i.e. null, empty, or containing only whitespace).
+	 *
+	 * @param s
+	 *            the string to test.
+	 * @return <code>true</code> iff the string is blank.
+	 */
+	private boolean isBlank(String s) {
+		return s == null || s.trim().length() == 0;
+	}
+
 }
