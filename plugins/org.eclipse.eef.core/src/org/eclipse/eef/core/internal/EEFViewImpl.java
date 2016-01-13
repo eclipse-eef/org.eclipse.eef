@@ -118,20 +118,12 @@ public class EEFViewImpl implements EEFView {
 	 * @return an actual {@link EEFPage} setup according to the description.
 	 */
 	private EEFPageImpl createPage(EEFPageDescription description) {
-		EEFPageImpl page = null;
-		final String semanticCandidateExpression = description.getSemanticCandidateExpression();
-		if (!isBlank(semanticCandidateExpression)) {
-			IEvaluationResult evaluationResult = this.interpreter
-					.evaluateExpression(this.variableManager.getVariables(), semanticCandidateExpression);
-			if (evaluationResult.success()) {
-				IVariableManager childVariableManager = this.variableManager.createChild();
-				childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
-				page = new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain);
-			}
-		} else {
-			page = new EEFPageImpl(this, description, this.variableManager.createChild(), this.interpreter, this.editingDomain);
+		Object candidate = computeCandidate(this.variableManager, description.getSemanticCandidateExpression());
+		IVariableManager childVariableManager = this.variableManager.createChild();
+		if (candidate != null) {
+			childVariableManager.put(EEFExpressionUtils.SELF, candidate);
 		}
-		return page;
+		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain);
 	}
 
 	/**
@@ -194,6 +186,25 @@ public class EEFViewImpl implements EEFView {
 	@Override
 	public EEFViewDescription getDescription() {
 		return this.eefViewDescription;
+	}
+
+	/**
+	 * Helper to evaluate a SemanticCandidateExpression.
+	 *
+	 * @param context
+	 *            the evaluation context (variables).
+	 * @param expression
+	 *            the expression to evaluate.
+	 * @return the result, or <code>null</code> if the evaluation failed.
+	 */
+	private Object computeCandidate(IVariableManager context, String expression) {
+		if (!isBlank(expression)) {
+			IEvaluationResult evaluationResult = interpreter.evaluateExpression(context.getVariables(), expression);
+			if (evaluationResult.success()) {
+				return evaluationResult.getValue();
+			}
+		}
+		return null;
 	}
 
 	/**
