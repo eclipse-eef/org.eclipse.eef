@@ -102,29 +102,37 @@ public class EEFViewImpl implements EEFView {
 	 * Performs the initialization of the view by creating the necessary pages.
 	 */
 	private void doInitialize() {
-		List<EEFPageDescription> eefPageDescriptions = EEFViewImpl.this.getDescription().getPages();
-		for (EEFPageDescription eefPageDescription : eefPageDescriptions) {
-			EEFPageImpl ePage = null;
-			final String semanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
-			if (semanticCandidateExpression != null && semanticCandidateExpression.trim().length() > 0) {
-				IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(EEFViewImpl.this.variableManager.getVariables(),
-						semanticCandidateExpression);
-				if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
-					IVariableManager childVariableManager = EEFViewImpl.this.variableManager.createChild();
-					childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
-					ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager, EEFViewImpl.this.interpreter,
-							EEFViewImpl.this.editingDomain);
-				}
-			} else {
-				ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, EEFViewImpl.this.variableManager.createChild(),
-						EEFViewImpl.this.interpreter, EEFViewImpl.this.editingDomain);
-			}
-
+		for (EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
+			EEFPageImpl ePage = createPage(eefPageDescription);
 			if (ePage != null) {
 				ePage.initialize();
-				eefPages.add(ePage);
+				this.eefPages.add(ePage);
 			}
 		}
+	}
+
+	/**
+	 * Create an {@link EEFPage} from its {@link EEFPageDescription description}.
+	 *
+	 * @param description
+	 *            a page description.
+	 * @return an actual {@link EEFPage} setup according to the description.
+	 */
+	private EEFPageImpl createPage(EEFPageDescription description) {
+		EEFPageImpl page = null;
+		final String semanticCandidateExpression = description.getSemanticCandidateExpression();
+		if (!isBlank(semanticCandidateExpression)) {
+			IEvaluationResult evaluationResult = this.interpreter
+					.evaluateExpression(this.variableManager.getVariables(), semanticCandidateExpression);
+			if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
+				IVariableManager childVariableManager = this.variableManager.createChild();
+				childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+				page = new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain);
+			}
+		} else {
+			page = new EEFPageImpl(this, description, this.variableManager.createChild(), this.interpreter, this.editingDomain);
+		}
+		return page;
 	}
 
 	/**
@@ -138,15 +146,13 @@ public class EEFViewImpl implements EEFView {
 		if (eObject != selfValue) {
 			// Invalidate and update the content of the variable manager with the new input
 			this.variableManager.clear();
-
 			this.variableManager.put(EEFExpressionUtils.SELF, eObject);
 
-			for (EEFPage eefPage : eefPages) {
+			for (EEFPage eefPage : this.eefPages) {
 				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
-				if (pageSemanticCandidateExpression != null && pageSemanticCandidateExpression.trim().length() > 0) {
-
-					IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(
-							EEFViewImpl.this.variableManager.getVariables(), pageSemanticCandidateExpression);
+				if (!isBlank(pageSemanticCandidateExpression)) {
+					IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(),
+							pageSemanticCandidateExpression);
 					if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
 						eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 					} else {
@@ -157,10 +163,9 @@ public class EEFViewImpl implements EEFView {
 				List<EEFGroup> groups = eefPage.getGroups();
 				for (EEFGroup eefGroup : groups) {
 					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
-					if (groupSemanticCandidateExpression != null && groupSemanticCandidateExpression.trim().length() > 0) {
-
-						IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(eefPage.getVariableManager()
-								.getVariables(), groupSemanticCandidateExpression);
+					if (!isBlank(groupSemanticCandidateExpression)) {
+						IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(eefPage.getVariableManager().getVariables(),
+								groupSemanticCandidateExpression);
 						if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
 							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 						} else {
@@ -191,4 +196,16 @@ public class EEFViewImpl implements EEFView {
 	public EEFViewDescription getDescription() {
 		return this.eefViewDescription;
 	}
+
+	/**
+	 * Tests if a string is blank (i.e. null, empty, or containing only whitespace).
+	 *
+	 * @param s
+	 *            the string to test.
+	 * @return <code>true</code> if and only if the string is blank.
+	 */
+	private boolean isBlank(String s) {
+		return s == null || s.trim().length() == 0;
+	}
+
 }
