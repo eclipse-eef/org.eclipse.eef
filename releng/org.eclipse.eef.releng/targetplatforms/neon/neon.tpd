@@ -12,9 +12,10 @@ location Eclipse-Neon "http://download.eclipse.org/releases/neon" {
 	org.eclipse.xtext.sdk.feature.group lazy
 	org.eclipse.xtend.sdk.feature.group lazy
 	org.eclipse.emf.mwe2.runtime.sdk.feature.group lazy
+	org.eclipse.emf.transaction.feature.group lazy
 }
 
-location Sirius-Core "http://download.eclipse.org/sirius/updates/nightly/latest/neon" {
+/*location Sirius-Core "http://download.eclipse.org/sirius/updates/nightly/latest/neon" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.acceleo.feature.group lazy
 	org.eclipse.sirius.runtime.feature.group lazy
@@ -29,8 +30,8 @@ location Sirius-Core "http://download.eclipse.org/sirius/updates/nightly/latest/
 	org.eclipse.sirius.specifier.ide.ui.aql.feature.group lazy
 	org.eclipse.sirius.specifier.ide.ui.feature.group lazy
 	org.eclipse.sirius.tests.support.feature.group lazy
-}
+}*/
 
 location Sirius-Incubation "http://download.eclipse.org/sirius/updates/nightly/latest/neon/incubation" {
-	org.eclipse.sirius.incubation.feature.group lazy
+	org.eclipse.sirius.incubation.interpreter.feature.group lazy
 }
