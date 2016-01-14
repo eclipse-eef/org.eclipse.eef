@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_987920a2",
+        "filename": "releng/org.eclipse.eef.releng/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-14T08:51:26Z",
+      "side": 1,
+      "message": "Duplicate see line 88",
+      "range": {
+        "startLine": 96,
+        "startChar": 8,
+        "endLine": 96,
+        "endChar": 68
+      },
+      "revId": "49d9278e9194ef2831d24e1a6571b0c81848160b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
