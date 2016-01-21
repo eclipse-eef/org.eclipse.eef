@@ -20,6 +20,7 @@ import org.eclipse.eef.properties.ui.legacy.internal.extension.AbstractRegistryE
 import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacySection;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
+import org.eclipse.ui.views.properties.tabbed.ISection;
 import org.eclipse.ui.views.properties.tabbed.ISectionDescriptor;
 
 /**
@@ -156,11 +157,13 @@ public class LegacyPropertySectionsRegistryEventListener extends AbstractRegistr
 				if (configurationElement.getAttribute(FILTER_ATTR) != null) {
 					filter = (IFilter) configurationElement.createExecutableExtension(FILTER_ATTR);
 				}
-				AbstractPropertySection sectionClass = (AbstractPropertySection) configurationElement.createExecutableExtension(CLASS_ATTR);
-				EEFLegacySection legacySection = new EEFLegacySection(sectionClass);
-				LegacyPropertySectionItemDescriptor legacySectionDescriptor = new LegacyPropertySectionItemDescriptor(tab, filter, legacySection, id,
-						enablesFor, afterSection);
-				this.propertySectionRegistry.add(legacySectionDescriptor);
+				ISection sectionClass = (ISection) configurationElement.createExecutableExtension(CLASS_ATTR);
+				if (sectionClass instanceof AbstractPropertySection) {
+					EEFLegacySection legacySection = new EEFLegacySection((AbstractPropertySection) sectionClass);
+					LegacyPropertySectionItemDescriptor legacySectionDescriptor = new LegacyPropertySectionItemDescriptor(tab, filter, legacySection, id,
+							enablesFor, afterSection);
+					this.propertySectionRegistry.add(legacySectionDescriptor);
+				}
 			} catch (CoreException e) {
 				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, id);
 				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);

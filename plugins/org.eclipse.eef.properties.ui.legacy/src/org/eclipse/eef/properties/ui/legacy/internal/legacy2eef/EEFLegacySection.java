@@ -29,7 +29,7 @@ public class EEFLegacySection extends AbstractEEFPropertySection {
 	/**
 	 * The legacy section.
 	 */
-	AbstractPropertySection legacySection;
+	private AbstractPropertySection legacySection;
 
 	/**
 	 * The constructor.
