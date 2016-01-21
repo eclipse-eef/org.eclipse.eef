@@ -118,7 +118,7 @@ public class EEFViewImpl implements EEFView {
 	 * @return an actual {@link EEFPage} setup according to the description.
 	 */
 	private EEFPageImpl createPage(EEFPageDescription description) {
-		Object candidate = computeCandidate(this.variableManager, description.getSemanticCandidateExpression());
+		Object candidate = Util.computeCandidate(this.interpreter, this.variableManager, description.getSemanticCandidateExpression());
 		IVariableManager childVariableManager = this.variableManager.createChild();
 		if (candidate != null) {
 			childVariableManager.put(EEFExpressionUtils.SELF, candidate);
@@ -141,7 +141,7 @@ public class EEFViewImpl implements EEFView {
 
 			for (EEFPage eefPage : this.eefPages) {
 				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
-				if (!isBlank(pageSemanticCandidateExpression)) {
+				if (!Util.isBlank(pageSemanticCandidateExpression)) {
 					IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(),
 							pageSemanticCandidateExpression);
 					if (evaluationResult.success()) {
@@ -154,7 +154,7 @@ public class EEFViewImpl implements EEFView {
 				List<EEFGroup> groups = eefPage.getGroups();
 				for (EEFGroup eefGroup : groups) {
 					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
-					if (!isBlank(groupSemanticCandidateExpression)) {
+					if (!Util.isBlank(groupSemanticCandidateExpression)) {
 						IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(eefPage.getVariableManager().getVariables(),
 								groupSemanticCandidateExpression);
 						if (evaluationResult.success()) {
@@ -186,36 +186,6 @@ public class EEFViewImpl implements EEFView {
 	@Override
 	public EEFViewDescription getDescription() {
 		return this.eefViewDescription;
-	}
-
-	/**
-	 * Helper to evaluate a SemanticCandidateExpression.
-	 *
-	 * @param context
-	 *            the evaluation context (variables).
-	 * @param expression
-	 *            the expression to evaluate.
-	 * @return the result, or <code>null</code> if the evaluation failed.
-	 */
-	private Object computeCandidate(IVariableManager context, String expression) {
-		if (!isBlank(expression)) {
-			IEvaluationResult evaluationResult = interpreter.evaluateExpression(context.getVariables(), expression);
-			if (evaluationResult.success()) {
-				return evaluationResult.getValue();
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Tests if a string is blank (i.e. null, empty, or containing only whitespace).
-	 *
-	 * @param s
-	 *            the string to test.
-	 * @return <code>true</code> if and only if the string is blank.
-	 */
-	private boolean isBlank(String s) {
-		return s == null || s.trim().length() == 0;
 	}
 
 }
