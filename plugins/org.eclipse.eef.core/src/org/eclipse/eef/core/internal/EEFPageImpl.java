@@ -19,6 +19,7 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -87,70 +88,37 @@ public class EEFPageImpl implements EEFPage {
 	 * Initialize the variables of the EEFPage.
 	 */
 	public void initialize() {
-		List<EEFGroupDescription> eefGroupDescriptions = this.eefPageDescription.getGroups();
-		for (EEFGroupDescription eefGroupDescription : eefGroupDescriptions) {
-			String semanticCandidatesExpression = eefGroupDescription.getSemanticCandidateExpression();
-			if (semanticCandidatesExpression != null && semanticCandidatesExpression.trim().length() > 0) {
-				IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.getVariableManager().getVariables(),
-						semanticCandidatesExpression);
-				if (evaluationResult.getValue() instanceof Iterable<?>) {
-					@SuppressWarnings("unchecked")
-					Iterable<Object> groupSemanticCandidates = (Iterable<Object>) evaluationResult.getValue();
-					for (Object groupSemanticCandidate : groupSemanticCandidates) {
-						IVariableManager childVariableManager = this.getVariableManager().createChild();
-						childVariableManager.put(EEFExpressionUtils.SELF, groupSemanticCandidate);
-						EEFGroupImpl eefGroupImpl = new EEFGroupImpl(this, eefGroupDescription, childVariableManager, this.interpreter,
-								this.editingDomain);
-						eefGroups.add(eefGroupImpl);
-					}
-				} else {
-					Object groupSemanticCandidate = evaluationResult.getValue();
+		for (EEFGroupDescription eefGroupDescription : eefPageDescription.getGroups()) {
+			String semanticCandidatesExpression = Util.firstNonBlank(eefGroupDescription.getSemanticCandidateExpression(), "var:self"); //$NON-NLS-1$
+			IEvaluationResult result = interpreter.evaluateExpression(this.getVariableManager().getVariables(), semanticCandidatesExpression);
+			if (result.success()) {
+				for (EObject groupSemanticCandidate : result.asEObjects()) {
 					IVariableManager childVariableManager = this.getVariableManager().createChild();
 					childVariableManager.put(EEFExpressionUtils.SELF, groupSemanticCandidate);
-					EEFGroupImpl eefGroupImpl = new EEFGroupImpl(this, eefGroupDescription, childVariableManager, this.interpreter,
-							this.editingDomain);
+					EEFGroupImpl eefGroupImpl = new EEFGroupImpl(this, eefGroupDescription, childVariableManager, interpreter, editingDomain);
 					eefGroups.add(eefGroupImpl);
 				}
-			} else {
-				IVariableManager childVariableManager = this.getVariableManager().createChild();
-				EEFGroupImpl eefGroupImpl = new EEFGroupImpl(this, eefGroupDescription, childVariableManager, this.interpreter, this.editingDomain);
-				eefGroups.add(eefGroupImpl);
 			}
 		}
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFPage#getLabel()
-	 */
 	@Override
 	public String getLabel() {
 		String labelExpression = this.eefPageDescription.getLabelExpression();
 		if (labelExpression != null) {
 			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.getVariableManager().getVariables(), labelExpression);
-			if (evaluationResult.getValue() != null) {
-				return evaluationResult.getValue().toString();
+			if (evaluationResult.success()) {
+				return evaluationResult.asString();
 			}
 		}
 		return labelExpression;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFPage#getGroups()
-	 */
 	@Override
 	public List<EEFGroup> getGroups() {
 		return this.eefGroups;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFPage#getDescription()
-	 */
 	@Override
 	public EEFPageDescription getDescription() {
 		return this.eefPageDescription;
@@ -161,11 +129,6 @@ public class EEFPageImpl implements EEFPage {
 		return this.eefView;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFPage#getVariableManager()
-	 */
 	@Override
 	public IVariableManager getVariableManager() {
 		return this.variableManager;
