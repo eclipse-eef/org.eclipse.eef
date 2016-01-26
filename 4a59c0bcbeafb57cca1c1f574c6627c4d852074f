@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_9200f875",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFPageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-26T13:16:28Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 1
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_b2f6dc00",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFPageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-26T13:16:28Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 1
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_d2f1a009",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFPageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-26T13:16:28Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 1
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_f2f06405",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFPageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-26T13:16:28Z",
+      "side": 1,
+      "message": "Why?",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 1
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_12ece830",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/Util.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-26T13:16:28Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_32ae4cf2",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/Util.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-26T13:16:28Z",
+      "side": 1,
+      "message": "Missing author",
+      "range": {
+        "startLine": 18,
+        "startChar": 26,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
