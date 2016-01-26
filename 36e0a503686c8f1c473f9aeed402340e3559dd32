@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_5d1be178",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-01-26T14:34:10Z",
+      "side": 1,
+      "message": "They are redundant with @Override and (IMO) only add noise and reduce code density. But if you prefer having them, they\u0027re back.",
+      "parentUuid": "07d9433e_3231ec75",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 1
+      },
+      "revId": "36e0a503686c8f1c473f9aeed402340e3559dd32",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_f2d9449d",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2016-01-26T13:11:48Z",
       "side": 1,
       "message": "why?",
+      "revId": "36e0a503686c8f1c473f9aeed402340e3559dd32",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_9d1e4996",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-01-26T14:34:10Z",
+      "side": 1,
+      "message": "Because it\u0027s not needed. Java is verbose enough already :) so in general I prefer shorter forms if there is no risk of misunderstanding.\n\nI guess it\u0027s personal taste. I\u0027ll revert this (and all the other removals (except the \"EEFViewImpl.this\" instead of simply \"this\" outside of the anonymous class).",
+      "parentUuid": "07d9433e_f2d9449d",
       "revId": "36e0a503686c8f1c473f9aeed402340e3559dd32",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
@@ -139,6 +181,30 @@
       "writtenOn": "2016-01-26T13:11:48Z",
       "side": 1,
       "message": "if",
+      "range": {
+        "startLine": 184,
+        "startChar": 30,
+        "endLine": 184,
+        "endChar": 33
+      },
+      "revId": "36e0a503686c8f1c473f9aeed402340e3559dd32",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_bdf22dd3",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-01-26T14:34:10Z",
+      "side": 1,
+      "message": "\"iff\" \u003d \"if and only if\", but I can spell it out. Done in Patch set 2.",
+      "parentUuid": "07d9433e_32dc8c92",
       "range": {
         "startLine": 184,
         "startChar": 30,
