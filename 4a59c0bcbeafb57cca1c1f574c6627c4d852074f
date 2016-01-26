@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_7df0a586",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFPageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-01-26T14:36:34Z",
+      "side": 1,
+      "message": "They\u0027re back in patch set 2.",
+      "parentUuid": "07d9433e_9200f875",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 1
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_b2f6dc00",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFPageImpl.java",
         "patchSetId": 1
@@ -117,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_dde0d1b7",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/Util.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-01-26T14:36:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_12ece830",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_32ae4cf2",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/Util.java",
         "patchSetId": 1
@@ -128,6 +176,30 @@
       "writtenOn": "2016-01-26T13:16:28Z",
       "side": 1,
       "message": "Missing author",
+      "range": {
+        "startLine": 18,
+        "startChar": 26,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "4a59c0bcbeafb57cca1c1f574c6627c4d852074f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_bde14dbc",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/Util.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-01-26T14:36:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_32ae4cf2",
       "range": {
         "startLine": 18,
         "startChar": 26,
