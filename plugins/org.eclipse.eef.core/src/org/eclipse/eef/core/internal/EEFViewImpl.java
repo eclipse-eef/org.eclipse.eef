@@ -104,26 +104,40 @@ public class EEFViewImpl implements EEFView {
 	private void doInitialize() {
 		List<EEFPageDescription> eefPageDescriptions = EEFViewImpl.this.getDescription().getPages();
 		for (EEFPageDescription eefPageDescription : eefPageDescriptions) {
-			EEFPageImpl ePage = null;
 			final String semanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
 			if (semanticCandidateExpression != null && semanticCandidateExpression.trim().length() > 0) {
 				IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(EEFViewImpl.this.variableManager.getVariables(),
 						semanticCandidateExpression);
+
 				if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
-					IVariableManager childVariableManager = EEFViewImpl.this.variableManager.createChild();
-					childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
-					ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager, EEFViewImpl.this.interpreter,
-							EEFViewImpl.this.editingDomain);
+					if (evaluationResult.getValue() instanceof Iterable<?>) {
+						@SuppressWarnings("unchecked")
+						Iterable<Object> viewSemanticCandidates = (Iterable<Object>) evaluationResult.getValue();
+						for (Object viewSemanticCandidate : viewSemanticCandidates) {
+							IVariableManager childVariableManager = this.variableManager.createChild();
+							childVariableManager.put(EEFExpressionUtils.SELF, viewSemanticCandidate);
+							EEFPageImpl ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager,
+									EEFViewImpl.this.interpreter, EEFViewImpl.this.editingDomain);
+							ePage.initialize();
+							eefPages.add(ePage);
+						}
+					} else {
+						IVariableManager childVariableManager = EEFViewImpl.this.variableManager.createChild();
+						childVariableManager.put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+						EEFPageImpl ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, childVariableManager, EEFViewImpl.this.interpreter,
+								EEFViewImpl.this.editingDomain);
+						ePage.initialize();
+						eefPages.add(ePage);
+					}
+
 				}
 			} else {
-				ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, EEFViewImpl.this.variableManager.createChild(),
+				EEFPageImpl ePage = new EEFPageImpl(EEFViewImpl.this, eefPageDescription, EEFViewImpl.this.variableManager.createChild(),
 						EEFViewImpl.this.interpreter, EEFViewImpl.this.editingDomain);
-			}
-
-			if (ePage != null) {
 				ePage.initialize();
 				eefPages.add(ePage);
 			}
+
 		}
 	}
 
@@ -143,12 +157,12 @@ public class EEFViewImpl implements EEFView {
 
 			for (EEFPage eefPage : eefPages) {
 				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
-				if (pageSemanticCandidateExpression != null && pageSemanticCandidateExpression.trim().length() > 0) {
 
+				if (pageSemanticCandidateExpression != null && pageSemanticCandidateExpression.trim().length() > 0) {
 					IEvaluationResult evaluationResult = EEFViewImpl.this.interpreter.evaluateExpression(
 							EEFViewImpl.this.variableManager.getVariables(), pageSemanticCandidateExpression);
 					if (Diagnostic.OK == evaluationResult.getDiagnostic().getSeverity() && evaluationResult.getValue() != null) {
-						eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+						addSelfToPageVariableManager(eefPage, evaluationResult);
 					} else {
 						// Something is very wrong here...
 					}
@@ -169,6 +183,26 @@ public class EEFViewImpl implements EEFView {
 					}
 				}
 			}
+		}
+	}
+
+	/**
+	 * Register the 'self' variable to the page variable manager.
+	 *
+	 * @param eefPage
+	 *            The page
+	 * @param evaluationResult
+	 *            The evaluation result
+	 */
+	private void addSelfToPageVariableManager(EEFPage eefPage, IEvaluationResult evaluationResult) {
+		if (evaluationResult.getValue() instanceof Iterable<?>) {
+			@SuppressWarnings("unchecked")
+			Iterable<Object> pageSemanticCandidates = (Iterable<Object>) evaluationResult.getValue();
+			for (Object pageSemanticCandidate : pageSemanticCandidates) {
+				eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
+			}
+		} else {
+			eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 		}
 	}
 

@@ -66,7 +66,7 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	 *            The image
 	 */
 	public LegacyPropertyTabItemDescriptor(String label, String category, String afterTab, String id, boolean indented, Image image) {
-		super(EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry().getPropertySections(id));
+		setSectionDescriptors(EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry().getPropertySections(id));
 		this.category = category;
 		this.id = id;
 		this.label = label;
@@ -117,7 +117,7 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 		}
 		return this.afterTab;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 *
@@ -127,7 +127,7 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	public boolean isIndented() {
 		return this.indented;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 *
