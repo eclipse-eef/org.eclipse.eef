@@ -14,6 +14,8 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.EEFTextController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
+import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -27,8 +29,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 /**
  * This class will be used in order to manager the lifecycle of a text.
@@ -113,8 +113,8 @@ public class EEFTextLifecycleManager implements ILifecycleManager {
 	 *      org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
 	 */
 	@Override
-	public void createControl(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-		TabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
+	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
+		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
 
 		this.label = widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
 

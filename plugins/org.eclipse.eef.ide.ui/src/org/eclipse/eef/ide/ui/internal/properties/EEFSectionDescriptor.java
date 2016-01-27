@@ -11,16 +11,16 @@
 package org.eclipse.eef.ide.ui.internal.properties;
 
 import org.eclipse.eef.core.api.EEFGroup;
+import org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFSection;
 import org.eclipse.jface.viewers.IFilter;
-import org.eclipse.ui.views.properties.tabbed.AbstractSectionDescriptor;
-import org.eclipse.ui.views.properties.tabbed.ISection;
 
 /**
- * The implementation of the {@link AbstractSectionDescriptor} using the {@link EEFGroup}.
+ * The implementation of the {@link AbstractEEFSectionDescriptor} using the {@link EEFGroup}.
  *
  * @author sbegaudeau
  */
-public class EEFSectionDescriptor extends AbstractSectionDescriptor {
+public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 
 	/**
 	 * The EEFGroup.
@@ -40,7 +40,7 @@ public class EEFSectionDescriptor extends AbstractSectionDescriptor {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.views.properties.tabbed.ISectionDescriptor#getId()
+	 * @see org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor#getId()
 	 */
 	@Override
 	public String getId() {
@@ -50,17 +50,17 @@ public class EEFSectionDescriptor extends AbstractSectionDescriptor {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.views.properties.tabbed.ISectionDescriptor#getSectionClass()
+	 * @see org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor#getSectionClass()
 	 */
 	@Override
-	public ISection getSectionClass() {
+	public IEEFSection getSectionClass() {
 		return new EEFSection(this);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.views.properties.tabbed.ISectionDescriptor#getTargetTab()
+	 * @see org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor#getTargetTab()
 	 */
 	@Override
 	public String getTargetTab() {
@@ -70,7 +70,7 @@ public class EEFSectionDescriptor extends AbstractSectionDescriptor {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.views.properties.tabbed.AbstractSectionDescriptor#getFilter()
+	 * @see org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor#getFilter()
 	 */
 	@Override
 	public IFilter getFilter() {
@@ -85,7 +85,7 @@ public class EEFSectionDescriptor extends AbstractSectionDescriptor {
 
 	/**
 	 * Returns the EEFGroup used to managed this section descriptor.
-	 * 
+	 *
 	 * @return The EEFGroup used to managed this section descriptor
 	 */
 	public EEFGroup getEEFGroup() {

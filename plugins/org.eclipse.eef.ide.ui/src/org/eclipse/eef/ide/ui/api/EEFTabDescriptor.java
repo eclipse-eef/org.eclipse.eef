@@ -8,22 +8,25 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.properties;
+package org.eclipse.eef.ide.ui.api;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
-import org.eclipse.ui.views.properties.tabbed.AbstractTabDescriptor;
-import org.eclipse.ui.views.properties.tabbed.ISectionDescriptor;
+import org.eclipse.eef.ide.ui.internal.properties.EEFSectionDescriptor;
+import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * The implementation of the {@link AbstractTabDescriptor} using the {@link EEFPage}.
  *
  * @author sbegaudeau
  */
-public class EEFTabDescriptor extends AbstractTabDescriptor {
+public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 
 	/**
 	 * The {@link EEFPage}.
@@ -37,23 +40,25 @@ public class EEFTabDescriptor extends AbstractTabDescriptor {
 	 *            The EEFPage
 	 */
 	public EEFTabDescriptor(EEFPage eefPage) {
+		super();
 		this.eefPage = eefPage;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.views.properties.tabbed.ITabDescriptor#getId()
+	 * @see org.eclipse.eef.properties.ui.api.IEEFTabDescriptor#getId()
 	 */
 	@Override
 	public String getId() {
-		return this.eefPage.getDescription().getIdentifier();
+		EObject self = (EObject) this.eefPage.getVariableManager().getVariables().get("self"); //$NON-NLS-1$
+		return this.eefPage.getDescription().getIdentifier() + EcoreUtil.getURI(self);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.views.properties.tabbed.ITabDescriptor#getLabel()
+	 * @see org.eclipse.eef.properties.ui.api.IEEFTabDescriptor#getLabel()
 	 */
 	@Override
 	public String getLabel() {
@@ -63,12 +68,12 @@ public class EEFTabDescriptor extends AbstractTabDescriptor {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.views.properties.tabbed.AbstractTabDescriptor#getSectionDescriptors()
+	 * @see org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor#getSectionDescriptors()
 	 */
 	@SuppressWarnings("rawtypes")
 	@Override
 	public List getSectionDescriptors() {
-		List<ISectionDescriptor> sectionDescriptors = new ArrayList<ISectionDescriptor>();
+		List<IEEFSectionDescriptor> sectionDescriptors = new ArrayList<IEEFSectionDescriptor>();
 
 		List<EEFGroup> eefGroups = this.eefPage.getGroups();
 		for (EEFGroup eefGroup : eefGroups) {

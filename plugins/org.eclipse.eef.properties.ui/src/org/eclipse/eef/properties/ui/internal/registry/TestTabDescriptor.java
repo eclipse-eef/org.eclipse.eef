@@ -26,7 +26,7 @@ public class TestTabDescriptor extends AbstractEEFTabDescriptor {
 	 * The constructor.
 	 */
 	public TestTabDescriptor() {
-		super(Collections.singletonList((IEEFSectionDescriptor) new TestSectionDescriptor()));
+		setSectionDescriptors(Collections.singletonList((IEEFSectionDescriptor) new TestSectionDescriptor()));
 	}
 
 	/**

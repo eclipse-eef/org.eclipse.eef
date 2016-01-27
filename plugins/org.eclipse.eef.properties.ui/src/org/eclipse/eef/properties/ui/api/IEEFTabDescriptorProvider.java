@@ -12,6 +12,9 @@ package org.eclipse.eef.properties.ui.api;
 
 import java.util.Collection;
 
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ui.IWorkbenchPart;
+
 /**
  * This interface is used to provide a list of {@link IEEFTabDescriptor}.
  *
@@ -21,7 +24,12 @@ public interface IEEFTabDescriptorProvider {
 	/**
 	 * Returns an {@link IEEFTabDescriptor}.
 	 *
+	 * @param part
+	 *            The current part
+	 * @param selection
+	 *            The current selection
+	 *
 	 * @return An {@link IEEFTabDescriptor}
 	 */
-	Collection<IEEFTabDescriptor> get();
+	Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection);
 }
