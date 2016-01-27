@@ -10,8 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 /**
  * Implementations of this interface will be used to handle the lifecycle of the widgets and controllers created for a
@@ -22,13 +22,13 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 public interface ILifecycleManager {
 	/**
 	 * Creates the controls for the description.
-	 * 
+	 *
 	 * @param parent
 	 *            The composite parent
 	 * @param tabbedPropertySheetPage
 	 *            The tabbed property sheet page
 	 */
-	void createControl(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage);
+	void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage);
 
 	/**
 	 * Prepares for the widgets to be shown.

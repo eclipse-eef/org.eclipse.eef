@@ -19,6 +19,9 @@ import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFContainerLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager;
+import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
+import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.properties.ui.api.IEEFSection;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
@@ -30,16 +33,13 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.Section;
-import org.eclipse.ui.views.properties.tabbed.ISection;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 /**
- * The implementation of {@link ISection} using the {@link EEFSectionDescriptor}.
+ * The implementation of {@link IEEFSection} using the {@link EEFSectionDescriptor}.
  *
  * @author sbegaudeau
  */
-public class EEFSection implements ISection {
+public class EEFSection implements IEEFSection {
 
 	/**
 	 * The section descriptor.
@@ -62,12 +62,12 @@ public class EEFSection implements ISection {
 	}
 
 	@Override
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+	public void createControls(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
 		EEFGroup eefGroup = this.eefSectionDescriptor.getEEFGroup();
 		EEFContainerDescription eefContainerDescription = eefGroup.getDescription().getContainer();
 
 		if (eefContainerDescription != null) {
-			TabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
+			EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
 
 			Composite container = widgetFactory.createComposite(parent);
 			container.setLayout(new GridLayout(3, false));

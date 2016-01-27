@@ -102,10 +102,25 @@ public class EEFViewImpl implements EEFView {
 	 */
 	private void doInitialize() {
 		for (EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
-			EEFPageImpl ePage = createPage(eefPageDescription);
-			if (ePage != null) {
-				ePage.initialize();
-				this.eefPages.add(ePage);
+
+			Object candidates = Util.computeCandidate(this.interpreter, this.variableManager, eefPageDescription.getSemanticCandidateExpression());
+
+			if (candidates instanceof Iterable<?>) {
+				@SuppressWarnings("unchecked")
+				Iterable<Object> candidatesIter = (Iterable<Object>) candidates;
+				for (Object candidate : candidatesIter) {
+					EEFPageImpl ePage = createPage(eefPageDescription, candidate);
+					if (ePage != null) {
+						ePage.initialize();
+						this.eefPages.add(ePage);
+					}
+				}
+			} else {
+				EEFPageImpl ePage = createPage(eefPageDescription, candidates);
+				if (ePage != null) {
+					ePage.initialize();
+					this.eefPages.add(ePage);
+				}
 			}
 		}
 	}
@@ -114,14 +129,15 @@ public class EEFViewImpl implements EEFView {
 	 * Create an {@link EEFPage} from its {@link EEFPageDescription description}.
 	 *
 	 * @param description
-	 *            a page description.
+	 *            a page description
+	 * @param semanticCandidate
+	 *            page semantic candidate
 	 * @return an actual {@link EEFPage} setup according to the description.
 	 */
-	private EEFPageImpl createPage(EEFPageDescription description) {
-		Object candidate = Util.computeCandidate(this.interpreter, this.variableManager, description.getSemanticCandidateExpression());
+	private EEFPageImpl createPage(EEFPageDescription description, Object semanticCandidate) {
 		IVariableManager childVariableManager = this.variableManager.createChild();
-		if (candidate != null) {
-			childVariableManager.put(EEFExpressionUtils.SELF, candidate);
+		if (semanticCandidate != null) {
+			childVariableManager.put(EEFExpressionUtils.SELF, semanticCandidate);
 		}
 		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain);
 	}
@@ -145,7 +161,7 @@ public class EEFViewImpl implements EEFView {
 					IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(),
 							pageSemanticCandidateExpression);
 					if (evaluationResult.success()) {
-						eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
+						addSelfToPageVariableManager(eefPage, evaluationResult);
 					} else {
 						// Something is very wrong here...
 					}
@@ -165,6 +181,43 @@ public class EEFViewImpl implements EEFView {
 					}
 				}
 			}
+		}
+	}
+
+	/**
+	 * Register the 'self' variable to the page variable manager.
+	 *
+	 * @param eefPage
+	 *            The page
+	 * @param evaluationResult
+	 *            The evaluation result
+	 */
+	private void addSelfToPageVariableManager(EEFPage eefPage, IEvaluationResult evaluationResult) {
+		if (evaluationResult.getValue() instanceof Iterable<?>) {
+			@SuppressWarnings("unchecked")
+			Iterable<Object> pageSemanticCandidates = (Iterable<Object>) evaluationResult.getValue();
+			// FIXME When you have evaluated the semanticCandidateExpression of the page once again, you need to update
+			// the semantic candidates. For example:
+			// Page 1, 2 and 3 have been created from the same Page definition (think one page for each feature of the
+			// selected EClass). Page 4 and Page 5 have been created with a 1 to 1 mapping.
+			// You need to refresh "self" for those 5 pages. Here you are iterating on each page and then using their
+			// description to update their self. It won't work, for example, for the first page, the semantic candidate
+			// expression will return 3 structural features.
+			// Here you are iterating on said structural features and for each feature you are doing:
+			// eefPage.getVariableManager().put("self", candidate)
+			// Thus all the first 3 pages will now use the last structural feature as "self". What you need to do is
+			// identify all the pages coming from the same definition and then reevaluate said definition in order to
+			// have a new collection and then use each element of the collection to update the pages. The issue being
+			// that while re-evaluating this semanticCandidateExpression, you may now have only 2 or 4
+			// pageSemanticCandidates to use to update your 3 pages. This issue should be processed earlier because it
+			// would trigger the creation of completely different Tab & Section descriptors which would cause the whole
+			// view to be recreated from scratch.
+			// All your update process for EEFPages need to be updated. It's not simple in any way or shape, I know.
+			for (Object pageSemanticCandidate : pageSemanticCandidates) {
+				eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
+			}
+		} else {
+			eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 		}
 	}
 

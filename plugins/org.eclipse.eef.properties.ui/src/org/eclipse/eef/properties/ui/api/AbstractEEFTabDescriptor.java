@@ -31,16 +31,6 @@ public abstract class AbstractEEFTabDescriptor implements IEEFTabDescriptor, Clo
 	 */
 	private List<IEEFSectionDescriptor> sectionDescriptors = new ArrayList<IEEFSectionDescriptor>();
 
-	/**
-	 * The constructor.
-	 *
-	 * @param sectionDescriptors
-	 *            The section descriptors to use
-	 */
-	public AbstractEEFTabDescriptor(List<IEEFSectionDescriptor> sectionDescriptors) {
-		this.sectionDescriptors.addAll(sectionDescriptors);
-	}
-
 	// CHECKSTYLE:OFF
 
 	/**

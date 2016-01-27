@@ -43,11 +43,6 @@ public class EEFTabbedPropertyRegistry {
 	private static EEFTabbedPropertyRegistry instance = new EEFTabbedPropertyRegistry();
 
 	/**
-	 * The tab descriptors.
-	 */
-	private Map<String, IEEFTabDescriptor> allDescriptors = new HashMap<String, IEEFTabDescriptor>();
-
-	/**
 	 * Returns the sole instance of the registry.
 	 *
 	 * @return The sole instance of the registry
@@ -57,23 +52,30 @@ public class EEFTabbedPropertyRegistry {
 	}
 
 	/**
-	 * Returns the descriptors.
+	 * Returns all the descriptors defined by the tab descriptor providers.
+	 *
+	 * @param part
+	 *            The current part
+	 * @param input
+	 *            The current selection
 	 *
 	 * @return The descriptors
 	 */
-	private List<IEEFTabDescriptor> getTabDescriptors() {
+	private List<IEEFTabDescriptor> getAllTabDescriptors(IWorkbenchPart part, ISelection input) {
 		// Get the tab descriptors from the extension point
+		Map<String, IEEFTabDescriptor> eefTabDescriptors = new HashMap<String, IEEFTabDescriptor>();
 		IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry = EEFTabbedPropertyViewPlugin.getInstance()
 				.getEEFTabDescriptorProviderRegistry();
 		for (IItemDescriptor<IEEFTabDescriptorProvider> itemDescriptor : eefTabDescriptorProviderRegistry.getItemDescriptors()) {
-			IEEFTabDescriptorProvider tabDescriptorProvider = itemDescriptor.getItem();
-			for (IEEFTabDescriptor tabDescriptor : tabDescriptorProvider.get()) {
-				if (!allDescriptors.containsKey(tabDescriptor.getId())) {
-					allDescriptors.put(tabDescriptor.getId(), tabDescriptor);
+			IEEFTabDescriptorProvider eefTabDescriptorProvider = itemDescriptor.getItem();
+			for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptorProvider.get(part, input)) {
+				String eefTabDescriptorId = eefTabDescriptor.getId();
+				if (!eefTabDescriptors.containsKey(eefTabDescriptorId)) {
+					eefTabDescriptors.put(eefTabDescriptorId, eefTabDescriptor);
 				}
 			}
 		}
-		return new ArrayList<IEEFTabDescriptor>(allDescriptors.values());
+		return new ArrayList<IEEFTabDescriptor>(eefTabDescriptors.values());
 	}
 
 	/**
@@ -89,7 +91,7 @@ public class EEFTabbedPropertyRegistry {
 		if (input == null || input.isEmpty()) {
 			return new ArrayList<IEEFTabDescriptor>();
 		}
-		List<IEEFTabDescriptor> result = filterTabDescriptors(getTabDescriptors(), part, input);
+		List<IEEFTabDescriptor> result = filterTabDescriptors(getAllTabDescriptors(part, input), part, input);
 		return result;
 	}
 

@@ -16,6 +16,8 @@ import java.util.List;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ui.IWorkbenchPart;
 
 /**
  * Provides the tab descriptors defined thanks to the legacy org.eclipse.ui.views.properties.tabbed.propertyTabs
@@ -28,10 +30,10 @@ public class LegacyTabDescriptorProvider implements IEEFTabDescriptorProvider {
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see IEEFTabDescriptorProvider#get()
+	 * @see IEEFTabDescriptorProvider#get(IWorkbenchPart part, ISelection selection)
 	 */
 	@Override
-	public Collection<IEEFTabDescriptor> get() {
+	public Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection) {
 		// Get legacy tab descriptors
 		LegacyPropertyTabRegistry legacyTabDescriptorRegistry = EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertyTabsRegistry();
 		List<IEEFTabDescriptor> legacyEefTabDescriptors = legacyTabDescriptorRegistry.getPropertyTabs();
