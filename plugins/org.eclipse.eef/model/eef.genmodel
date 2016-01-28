@@ -32,6 +32,7 @@
     <genClasses ecoreClass="eef.ecore#//EEFContainerDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFContainerDescription/identifier"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFContainerDescription/widgets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFContainerDescription/dynamicMappings"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFWidgetDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetDescription/identifier"/>
@@ -40,6 +41,26 @@
     <genClasses ecoreClass="eef.ecore#//EEFTextDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTextDescription/valueExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFTextDescription/editExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFLabelDescription"/>
+    <genClasses ecoreClass="eef.ecore#//EEFDynamicMappingFor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFDynamicMappingFor/iterator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFDynamicMappingFor/domainClassExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFDynamicMappingFor/switch"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFDynamicMappingSwitch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFDynamicMappingSwitch/switchExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFDynamicMappingSwitch/cases"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFDynamicMappingCase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFDynamicMappingCase/caseExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFDynamicMappingCase/widget"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFSelectDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/editExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/candidatesExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSelectDescription/candidateDisplayExpression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

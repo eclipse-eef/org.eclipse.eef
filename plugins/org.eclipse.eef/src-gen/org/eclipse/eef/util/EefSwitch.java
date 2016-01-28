@@ -15,6 +15,7 @@ import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -129,6 +130,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFLabelDescription(eefLabelDescription);
 			if (result == null) {
 				result = caseEEFWidgetDescription(eefLabelDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SELECT_DESCRIPTION: {
+			EEFSelectDescription eefSelectDescription = (EEFSelectDescription) theEObject;
+			T result = caseEEFSelectDescription(eefSelectDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefSelectDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -266,6 +278,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFLabelDescription(EEFLabelDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Select Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Select Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSelectDescription(EEFSelectDescription object) {
 		return null;
 	}
 

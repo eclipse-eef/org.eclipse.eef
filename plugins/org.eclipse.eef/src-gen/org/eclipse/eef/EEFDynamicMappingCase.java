@@ -28,13 +28,9 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFDynamicMappingCase extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Case Expression</b></em>' attribute. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Case Expression</em>' attribute isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> The result of this expression is compared with the result of the
-	 * switch expression to determine if this case should be used. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Case Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> The result of this expression is compared with the result of the switch expression
+	 * to determine if this case should be used. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Case Expression</em>' attribute.
 	 * @see #setCaseExpression(String)
@@ -56,13 +52,9 @@ public interface EEFDynamicMappingCase extends EObject {
 	void setCaseExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Widget</b></em>' containment reference. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Widget</em>' containment reference isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> The widget to create if the result of the switch expression and
-	 * the case expression are equals. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Widget</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> The widget to create if the result of the switch expression and the
+	 * case expression are equals. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Widget</em>' containment reference.
 	 * @see #setWidget(EEFWidgetDescription)

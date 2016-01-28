@@ -237,7 +237,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingSwitch} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFDynamicMappingSwitchItemProvider eefDynamicMappingSwitchItemProvider;
@@ -260,14 +260,23 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingCase} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFDynamicMappingCaseItemProvider eefDynamicMappingCaseItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingCase}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectDescription} instances. <!--
+	 * begin-user-doc --> <!-- ======= This keeps track of the one adapter used for all
+	 * {@link org.eclipse.eef.EEFSelectDescription} instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSelectDescriptionItemProvider eefSelectDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingCase}. <!-- begin-user-doc --> <!-- >>>>>>>
+	 * Contribute the select widget. end-user-doc -->
 	 * 
 	 * @generated
 	 */
@@ -278,6 +287,15 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 
 		return eefDynamicMappingCaseItemProvider;
+	}
+
+	@Override
+	public Adapter createEEFSelectDescriptionAdapter() {
+		if (eefSelectDescriptionItemProvider == null) {
+			eefSelectDescriptionItemProvider = new EEFSelectDescriptionItemProvider(this);
+		}
+
+		return eefSelectDescriptionItemProvider;
 	}
 
 	/**
@@ -398,6 +416,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		if (eefLabelDescriptionItemProvider != null) {
 			eefLabelDescriptionItemProvider.dispose();
 		}
+		if (eefSelectDescriptionItemProvider != null) {
+			eefSelectDescriptionItemProvider.dispose();
+		}
 		if (eefDynamicMappingForItemProvider != null) {
 			eefDynamicMappingForItemProvider.dispose();
 		}
@@ -408,5 +429,4 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 			eefDynamicMappingCaseItemProvider.dispose();
 		}
 	}
-
 }

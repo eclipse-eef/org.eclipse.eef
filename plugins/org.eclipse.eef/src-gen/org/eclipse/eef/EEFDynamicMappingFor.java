@@ -29,13 +29,9 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFDynamicMappingFor extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Iterator</em>' attribute isn't clear, there really should be more of a description
-	 * here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> The name of the variable which contain the current value of the
-	 * iteration. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * begin-model-doc --> The name of the variable which contain the current value of the iteration. <!-- end-model-doc
+	 * -->
 	 *
 	 * @return the value of the '<em>Iterator</em>' attribute.
 	 * @see #setIterator(String)
@@ -57,13 +53,9 @@ public interface EEFDynamicMappingFor extends EObject {
 	void setIterator(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Domain Class Expression</b></em>' attribute. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Domain Class Expression</em>' attribute isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> Used to compute the mappings to create using the domain class of
-	 * the current object. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Domain Class Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Used to compute the mappings to create using the domain class of the
+	 * current object. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Domain Class Expression</em>' attribute.
 	 * @see #setDomainClassExpression(String)
@@ -85,12 +77,8 @@ public interface EEFDynamicMappingFor extends EObject {
 	void setDomainClassExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Switch</b></em>' containment reference. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Switch</em>' containment reference isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> Used to determine which widget to create. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Switch</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Used to determine which widget to create. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Switch</em>' containment reference.
 	 * @see #setSwitch(EEFDynamicMappingSwitch)
