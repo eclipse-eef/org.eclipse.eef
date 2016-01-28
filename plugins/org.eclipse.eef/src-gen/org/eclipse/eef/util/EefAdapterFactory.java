@@ -15,6 +15,7 @@ import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -108,6 +109,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFLabelDescription(EEFLabelDescription object) {
 			return createEEFLabelDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFSelectDescription(EEFSelectDescription object) {
+			return createEEFSelectDescriptionAdapter();
 		}
 
 		@Override
@@ -239,6 +245,20 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFLabelDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSelectDescription
+	 * <em>EEF Select Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFSelectDescription
+	 * @generated
+	 */
+	public Adapter createEEFSelectDescriptionAdapter() {
 		return null;
 	}
 

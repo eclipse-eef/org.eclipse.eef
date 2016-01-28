@@ -29,13 +29,8 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFDynamicMappingSwitch extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Switch Expression</b></em>' attribute. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Switch Expression</em>' attribute isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> Used to compute a value used to match the case to use. <!--
-	 * end-model-doc -->
+	 * Returns the value of the '<em><b>Switch Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Used to compute a value used to match the case to use. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Switch Expression</em>' attribute.
 	 * @see #setSwitchExpression(String)
@@ -58,12 +53,8 @@ public interface EEFDynamicMappingSwitch extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Cases</b></em>' containment reference list. The list contents are of type
-	 * {@link org.eclipse.eef.EEFDynamicMappingCase}. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cases</em>' containment reference list isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> Lists the cases that are supported. <!-- end-model-doc -->
+	 * {@link org.eclipse.eef.EEFDynamicMappingCase}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
+	 * --> Lists the cases that are supported. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Cases</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingSwitch_Cases()

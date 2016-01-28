@@ -144,7 +144,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -177,6 +177,9 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_CASE__WIDGET,
 				EefFactory.eINSTANCE.createEEFLabelDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_CASE__WIDGET,
+				EefFactory.eINSTANCE.createEEFSelectDescription()));
 	}
 
 	/**

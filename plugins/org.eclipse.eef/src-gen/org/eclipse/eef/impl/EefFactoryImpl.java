@@ -15,6 +15,7 @@ import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EefFactory;
@@ -77,6 +78,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFTextDescription();
 		case EefPackage.EEF_LABEL_DESCRIPTION:
 			return createEEFLabelDescription();
+		case EefPackage.EEF_SELECT_DESCRIPTION:
+			return createEEFSelectDescription();
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR:
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_SWITCH:
@@ -152,6 +155,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFLabelDescription createEEFLabelDescription() {
 		EEFLabelDescriptionImpl eefLabelDescription = new EEFLabelDescriptionImpl();
 		return eefLabelDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFSelectDescription createEEFSelectDescription() {
+		EEFSelectDescriptionImpl eefSelectDescription = new EEFSelectDescriptionImpl();
+		return eefSelectDescription;
 	}
 
 	/**
