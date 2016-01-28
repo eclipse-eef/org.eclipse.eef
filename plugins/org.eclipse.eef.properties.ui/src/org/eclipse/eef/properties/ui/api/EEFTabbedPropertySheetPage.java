@@ -146,13 +146,63 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	private Form form;
 
 	/**
+	 * Wrapper for contributors who want to use this version of the framework but can not have a hard dependency (via
+	 * inheritance) towards IEEFTabbedPropertySheetPageContributor.
+	 *
+	 * @author pcdavid
+	 */
+	private static class ContributorWrapper implements IEEFTabbedPropertySheetPageContributor {
+		/**
+		 * The original contributor object.
+		 */
+		private final Object realContributor;
+		/**
+		 * The contributor id.
+		 */
+		private final String contributorId;
+
+		/**
+		 * Crates a wrapper.
+		 *
+		 * @param realContributor
+		 *            the original contributor object.
+		 * @param contributorId
+		 *            the contributor id.
+		 */
+		public ContributorWrapper(Object realContributor, String contributorId) {
+			this.realContributor = realContributor;
+			this.contributorId = contributorId;
+		}
+
+		@Override
+		public String getContributorId() {
+			return contributorId;
+		}
+
+		/**
+		 * Return the original (wrapped) Contributor.
+		 *
+		 * @return the original (wrapped) Contributor.
+		 */
+		public Object getRealContributor() {
+			return this.realContributor;
+		}
+	}
+
+	/**
 	 * The constructor.
 	 *
 	 * @param contributor
-	 *            The contributor
+	 *            the contributor.
+	 * @param contributorId
+	 *            the contributor id.
 	 */
-	public EEFTabbedPropertySheetPage(IEEFTabbedPropertySheetPageContributor contributor) {
-		this.contributor = contributor;
+	public EEFTabbedPropertySheetPage(Object contributor, String contributorId) {
+		if (contributor instanceof IEEFTabbedPropertySheetPageContributor) {
+			this.contributor = (IEEFTabbedPropertySheetPageContributor) contributor;
+		} else {
+			this.contributor = new ContributorWrapper(contributor, contributorId);
+		}
 		this.initContributor(this.contributor.getContributorId());
 	}
 
@@ -385,7 +435,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		 * we want to send aboutToBeHidden() and aboutToBeShown() when the property sheet is hidden or shown.
 		 */
 		IContributedContentsView view = null;
-		if (!thisActivated && !part.equals(contributor) && !part.getSite().getId().equals(contributor.getContributorId())) {
+		if (!thisActivated && !matchesContributor(part) && !part.getSite().getId().equals(contributor.getContributorId())) {
 			/*
 			 * Is the part is a IContributedContentsView for the contributor, for example, outline view.
 			 */
@@ -407,6 +457,22 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			currentTab.refresh();
 		}
 		this.activePropertySheet = true;
+	}
+
+	/**
+	 * Tests whether the specified part is the same as the contributor we represent.
+	 *
+	 * @param part
+	 *            a workbench part.
+	 * @return <code>true</code> if the specified part is the same as the contributor we represent.
+	 */
+	private boolean matchesContributor(IWorkbenchPart part) {
+		if (contributor instanceof ContributorWrapper) {
+			ContributorWrapper wrapper = (ContributorWrapper) contributor;
+			return part.equals(wrapper.getRealContributor());
+		} else {
+			return part.equals(contributor);
+		}
 	}
 
 	/**
