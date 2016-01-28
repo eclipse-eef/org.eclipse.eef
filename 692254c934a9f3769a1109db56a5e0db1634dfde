@@ -16,6 +16,24 @@
       "revId": "692254c934a9f3769a1109db56a5e0db1634dfde",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_06cca5cd",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabbedPropertySheetPage.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-01-28T13:32:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_86b8b531",
+      "revId": "692254c934a9f3769a1109db56a5e0db1634dfde",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }
