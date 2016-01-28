@@ -9,6 +9,9 @@
 package org.eclipse.eef.impl;
 
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFDynamicMappingCase;
+import org.eclipse.eef.EEFDynamicMappingFor;
+import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
@@ -74,6 +77,12 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFTextDescription();
 		case EefPackage.EEF_LABEL_DESCRIPTION:
 			return createEEFLabelDescription();
+		case EefPackage.EEF_DYNAMIC_MAPPING_FOR:
+			return createEEFDynamicMappingFor();
+		case EefPackage.EEF_DYNAMIC_MAPPING_SWITCH:
+			return createEEFDynamicMappingSwitch();
+		case EefPackage.EEF_DYNAMIC_MAPPING_CASE:
+			return createEEFDynamicMappingCase();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -143,6 +152,39 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFLabelDescription createEEFLabelDescription() {
 		EEFLabelDescriptionImpl eefLabelDescription = new EEFLabelDescriptionImpl();
 		return eefLabelDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFDynamicMappingFor createEEFDynamicMappingFor() {
+		EEFDynamicMappingForImpl eefDynamicMappingFor = new EEFDynamicMappingForImpl();
+		return eefDynamicMappingFor;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFDynamicMappingSwitch createEEFDynamicMappingSwitch() {
+		EEFDynamicMappingSwitchImpl eefDynamicMappingSwitch = new EEFDynamicMappingSwitchImpl();
+		return eefDynamicMappingSwitch;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFDynamicMappingCase createEEFDynamicMappingCase() {
+		EEFDynamicMappingCaseImpl eefDynamicMappingCase = new EEFDynamicMappingCaseImpl();
+		return eefDynamicMappingCase;
 	}
 
 	/**

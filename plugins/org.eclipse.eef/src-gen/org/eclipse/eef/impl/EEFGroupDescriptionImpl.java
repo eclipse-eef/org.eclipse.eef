@@ -377,13 +377,13 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
 			return EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT
-					.equals(identifier);
+			.equals(identifier);
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-					: !EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+			: !EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
-					: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+			: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			return container != null;
 		}

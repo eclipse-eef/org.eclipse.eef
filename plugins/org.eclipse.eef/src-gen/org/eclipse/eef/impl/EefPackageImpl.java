@@ -9,6 +9,9 @@
 package org.eclipse.eef.impl;
 
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFDynamicMappingCase;
+import org.eclipse.eef.EEFDynamicMappingFor;
+import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
@@ -78,6 +81,27 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefLabelDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefDynamicMappingForEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefDynamicMappingSwitchEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefDynamicMappingCaseEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -340,6 +364,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFContainerDescription_DynamicMappings() {
+		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFWidgetDescription() {
 		return eefWidgetDescriptionEClass;
 	}
@@ -410,6 +444,106 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFDynamicMappingFor() {
+		return eefDynamicMappingForEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFDynamicMappingFor_Iterator() {
+		return (EAttribute) eefDynamicMappingForEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFDynamicMappingFor_DomainClassExpression() {
+		return (EAttribute) eefDynamicMappingForEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFDynamicMappingFor_Switch() {
+		return (EReference) eefDynamicMappingForEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFDynamicMappingSwitch() {
+		return eefDynamicMappingSwitchEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFDynamicMappingSwitch_SwitchExpression() {
+		return (EAttribute) eefDynamicMappingSwitchEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFDynamicMappingSwitch_Cases() {
+		return (EReference) eefDynamicMappingSwitchEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFDynamicMappingCase() {
+		return eefDynamicMappingCaseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFDynamicMappingCase_CaseExpression() {
+		return (EAttribute) eefDynamicMappingCaseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFDynamicMappingCase_Widget() {
+		return (EReference) eefDynamicMappingCaseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EefFactory getEefFactory() {
 		return (EefFactory) getEFactoryInstance();
 	}
@@ -456,6 +590,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefContainerDescriptionEClass = createEClass(EefPackage.EEF_CONTAINER_DESCRIPTION);
 		createEAttribute(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER);
 		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS);
+		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS);
 
 		eefWidgetDescriptionEClass = createEClass(EefPackage.EEF_WIDGET_DESCRIPTION);
 		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER);
@@ -466,6 +601,19 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION);
 
 		eefLabelDescriptionEClass = createEClass(EefPackage.EEF_LABEL_DESCRIPTION);
+
+		eefDynamicMappingForEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_FOR);
+		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR);
+		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION);
+		createEReference(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__SWITCH);
+
+		eefDynamicMappingSwitchEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_SWITCH);
+		createEAttribute(eefDynamicMappingSwitchEClass, EefPackage.EEF_DYNAMIC_MAPPING_SWITCH__SWITCH_EXPRESSION);
+		createEReference(eefDynamicMappingSwitchEClass, EefPackage.EEF_DYNAMIC_MAPPING_SWITCH__CASES);
+
+		eefDynamicMappingCaseEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_CASE);
+		createEAttribute(eefDynamicMappingCaseEClass, EefPackage.EEF_DYNAMIC_MAPPING_CASE__CASE_EXPRESSION);
+		createEReference(eefDynamicMappingCaseEClass, EefPackage.EEF_DYNAMIC_MAPPING_CASE__WIDGET);
 	}
 
 	/**
@@ -581,6 +729,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFWidgetDescription(),
 				null,
 				"widgets", null, 1, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFContainerDescription_DynamicMappings(),
+				this.getEEFDynamicMappingFor(),
+				null,
+				"dynamicMappings", null, 0, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefWidgetDescriptionEClass, EEFWidgetDescription.class,
 				"EEFWidgetDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -606,6 +759,46 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		initEClass(eefLabelDescriptionEClass, EEFLabelDescription.class,
 				"EEFLabelDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefDynamicMappingForEClass, EEFDynamicMappingFor.class,
+				"EEFDynamicMappingFor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFDynamicMappingFor_Iterator(),
+				theEcorePackage.getEString(),
+				"iterator", null, 1, 1, EEFDynamicMappingFor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFDynamicMappingFor_DomainClassExpression(),
+				theEcorePackage.getEString(),
+				"domainClassExpression", null, 1, 1, EEFDynamicMappingFor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFDynamicMappingFor_Switch(),
+				this.getEEFDynamicMappingSwitch(),
+				null,
+				"switch", null, 1, 1, EEFDynamicMappingFor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefDynamicMappingSwitchEClass, EEFDynamicMappingSwitch.class,
+				"EEFDynamicMappingSwitch", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFDynamicMappingSwitch_SwitchExpression(),
+				theEcorePackage.getEString(),
+				"switchExpression", null, 1, 1, EEFDynamicMappingSwitch.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFDynamicMappingSwitch_Cases(),
+				this.getEEFDynamicMappingCase(),
+				null,
+				"cases", null, 1, -1, EEFDynamicMappingSwitch.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefDynamicMappingCaseEClass, EEFDynamicMappingCase.class,
+				"EEFDynamicMappingCase", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFDynamicMappingCase_CaseExpression(),
+				theEcorePackage.getEString(),
+				"caseExpression", null, 1, 1, EEFDynamicMappingCase.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFDynamicMappingCase_Widget(),
+				this.getEEFWidgetDescription(),
+				null,
+				"widget", null, 1, 1, EEFDynamicMappingCase.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(EefPackage.eNS_URI);

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef:EEFViewDescription
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eef="http://www.eclipse.org/eef"
+    xsi:schemaLocation="http://www.eclipse.org/eef eef.ecore">
+  <groups>
+    <container>
+      <dynamicMappings
+          iterator="eStructuralFeature"
+          domainClassExpression="self.eClass().eAllStructuralFeatures()">
+        <switch
+            switchExpression="eStructuralFeature.eType.name">
+          <cases
+              caseExpression="EString">
+            <widget
+                xsi:type="eef:EEFTextDescription"
+                identifier=""
+                labelExpression="eStructuralFeature.name"
+                valueExpression="self.eGet(eStructuralFeature)"
+                editExpression="self.eSet(eStructuralFeature, newValue)"/>
+          </cases>
+        </switch>
+      </dynamicMappings>
+    </container>
+  </groups>
+</eef:EEFViewDescription>

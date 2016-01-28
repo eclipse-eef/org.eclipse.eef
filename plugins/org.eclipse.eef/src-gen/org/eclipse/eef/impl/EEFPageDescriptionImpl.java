@@ -293,13 +293,13 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER:
 			return EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT
-					.equals(identifier);
+			.equals(identifier);
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-					: !EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+			: !EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
-					: !EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+			: !EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		}

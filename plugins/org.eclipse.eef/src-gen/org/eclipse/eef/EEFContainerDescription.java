@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFContainerDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFContainerDescription#getWidgets <em>Widgets</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFContainerDescription#getDynamicMappings <em>Dynamic Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -62,5 +63,21 @@ public interface EEFContainerDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFWidgetDescription> getWidgets();
+
+	/**
+	 * Returns the value of the '<em><b>Dynamic Mappings</b></em>' containment reference list. The list contents are of
+	 * type {@link org.eclipse.eef.EEFDynamicMappingFor}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Dynamic Mappings</em>' containment reference list isn't clear, there really should be
+	 * more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Dynamic Mappings</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_DynamicMappings()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFDynamicMappingFor> getDynamicMappings();
 
 } // EEFContainerDescription

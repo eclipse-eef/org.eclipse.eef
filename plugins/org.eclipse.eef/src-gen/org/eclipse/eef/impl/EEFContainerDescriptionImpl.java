@@ -11,6 +11,7 @@ package org.eclipse.eef.impl;
 import java.util.Collection;
 
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getWidgets <em>Widgets</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getDynamicMappings <em>Dynamic Mappings</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +68,16 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected EList<EEFWidgetDescription> widgets;
+
+	/**
+	 * The cached value of the '{@link #getDynamicMappings() <em>Dynamic Mappings</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getDynamicMappings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFDynamicMappingFor> dynamicMappings;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -130,10 +142,26 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
+	public EList<EEFDynamicMappingFor> getDynamicMappings() {
+		if (dynamicMappings == null) {
+			dynamicMappings = new EObjectContainmentEList.Resolving<EEFDynamicMappingFor>(EEFDynamicMappingFor.class, this,
+					EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS);
+		}
+		return dynamicMappings;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
 			return ((InternalEList<?>) getWidgets()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
+			return ((InternalEList<?>) getDynamicMappings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -150,6 +178,8 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 			return getIdentifier();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
 			return getWidgets();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
+			return getDynamicMappings();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,6 +200,10 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 			getWidgets().clear();
 			getWidgets().addAll((Collection<? extends EEFWidgetDescription>) newValue);
 			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
+			getDynamicMappings().clear();
+			getDynamicMappings().addAll((Collection<? extends EEFDynamicMappingFor>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -188,6 +222,9 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
 			getWidgets().clear();
 			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
+			getDynamicMappings().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,9 +239,11 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
 			return EEFContainerDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFContainerDescriptionImpl.IDENTIFIER_EDEFAULT
-					.equals(identifier);
+			.equals(identifier);
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
 			return widgets != null && !widgets.isEmpty();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
+			return dynamicMappings != null && !dynamicMappings.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -91,6 +91,8 @@
         <details key="documentation" value="References the widgets to hold."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicMappings" upperBound="-1"
+        eType="#//EEFDynamicMappingFor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFWidgetDescription" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
@@ -118,4 +120,24 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFLabelDescription" eSuperTypes="#//EEFWidgetDescription"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFDynamicMappingFor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iterator" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainClassExpression"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="switch" lowerBound="1"
+        eType="#//EEFDynamicMappingSwitch" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFDynamicMappingSwitch">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="switchExpression" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" lowerBound="1" upperBound="-1"
+        eType="#//EEFDynamicMappingCase" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFDynamicMappingCase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caseExpression" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="widget" lowerBound="1"
+        eType="#//EEFWidgetDescription" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
