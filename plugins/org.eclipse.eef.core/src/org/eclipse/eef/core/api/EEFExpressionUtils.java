@@ -47,4 +47,23 @@ public final class EEFExpressionUtils {
 			// prevent instantiation
 		}
 	}
+
+	/**
+	 * Utility class containing the constants related to the Select widget.
+	 *
+	 * @author mbats
+	 */
+	public final class EEFSelect {
+		/**
+		 * The name of the variable candidate.
+		 */
+		public static final String CANDIDATE = "candidate"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFSelect() {
+			// prevent instantiation
+		}
+	}
 }

@@ -20,6 +20,7 @@ import org.eclipse.eef.EEFDynamicMappingCase;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
@@ -132,6 +133,14 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			eefLabelLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
 			this.lifecycleManagers.add(eefLabelLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFSelectDescription) {
+			EEFSelectDescription eefSelectDescription = (EEFSelectDescription) eefWidgetDescription;
+
+			EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, variableManager.createChild(),
+					interpreter, editingDomain);
+			eefSelectLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+
+			this.lifecycleManagers.add(eefSelectLifecycleManager);
 		}
 	}
 
