@@ -9,6 +9,9 @@
 package org.eclipse.eef.util;
 
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFDynamicMappingCase;
+import org.eclipse.eef.EEFDynamicMappingFor;
+import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
@@ -132,6 +135,30 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_DYNAMIC_MAPPING_FOR: {
+			EEFDynamicMappingFor eefDynamicMappingFor = (EEFDynamicMappingFor) theEObject;
+			T result = caseEEFDynamicMappingFor(eefDynamicMappingFor);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_DYNAMIC_MAPPING_SWITCH: {
+			EEFDynamicMappingSwitch eefDynamicMappingSwitch = (EEFDynamicMappingSwitch) theEObject;
+			T result = caseEEFDynamicMappingSwitch(eefDynamicMappingSwitch);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_DYNAMIC_MAPPING_CASE: {
+			EEFDynamicMappingCase eefDynamicMappingCase = (EEFDynamicMappingCase) theEObject;
+			T result = caseEEFDynamicMappingCase(eefDynamicMappingCase);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -239,6 +266,51 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFLabelDescription(EEFLabelDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFDynamicMappingFor(EEFDynamicMappingFor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping Switch</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping Switch</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFDynamicMappingSwitch(EEFDynamicMappingSwitch object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping Case</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping Case</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFDynamicMappingCase(EEFDynamicMappingCase object) {
 		return null;
 	}
 

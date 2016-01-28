@@ -327,10 +327,10 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 		case EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER:
 			return EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT
-					.equals(identifier);
+			.equals(identifier);
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-					: !EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+			: !EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_VIEW_DESCRIPTION__PAGES:

@@ -199,10 +199,10 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER:
 			return EEFWidgetDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFWidgetDescriptionImpl.IDENTIFIER_EDEFAULT
-					.equals(identifier);
+			.equals(identifier);
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-					: !EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+			: !EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		}
 		return super.eIsSet(featureID);
 	}

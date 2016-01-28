@@ -198,10 +198,10 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		switch (featureID) {
 		case EefPackage.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFTextDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-					: !EEFTextDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			: !EEFTextDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			return EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-					: !EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+			: !EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		}
 		return super.eIsSet(featureID);
 	}
