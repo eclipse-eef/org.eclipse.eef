@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.internal;
+package org.eclipse.eef.core.api.utils;
 
 import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;

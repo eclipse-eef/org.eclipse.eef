@@ -11,7 +11,7 @@ package org.eclipse.eef.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -30,19 +30,19 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFContainerDescription} object. <!-- begin-user-doc
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFDynamicMappingSwitch} object. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class EEFContainerDescriptionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+public class EEFDynamicMappingSwitchItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
 ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public EEFContainerDescriptionItemProvider(AdapterFactory adapterFactory) {
+	public EEFDynamicMappingSwitchItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,26 +56,26 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdentifierPropertyDescriptor(object);
+			addSwitchExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Identifier feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Switch Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addIdentifierPropertyDescriptor(Object object) {
+	protected void addSwitchExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 		.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFContainerDescription_identifier_feature"), //$NON-NLS-1$
+				getString("_UI_EEFDynamicMappingSwitch_switchExpression_feature"), //$NON-NLS-1$
 				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFContainerDescription_identifier_feature", "_UI_EEFContainerDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__IDENTIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
+						"_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingSwitch_switchExpression_feature", "_UI_EEFDynamicMappingSwitch_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_DYNAMIC_MAPPING_SWITCH__SWITCH_EXPRESSION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -90,8 +90,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__WIDGETS);
-			childrenFeatures.add(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS);
+			childrenFeatures.add(EefPackage.Literals.EEF_DYNAMIC_MAPPING_SWITCH__CASES);
 		}
 		return childrenFeatures;
 	}
@@ -110,13 +109,13 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This returns EEFContainerDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns EEFDynamicMappingSwitch.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFContainerDescription")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFDynamicMappingSwitch")); //$NON-NLS-1$
 	}
 
 	/**
@@ -136,28 +135,27 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EEFContainerDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFContainerDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFContainerDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EEFDynamicMappingSwitch) object).getSwitchExpression();
+		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingSwitch_type") : //$NON-NLS-1$
+			getString("_UI_EEFDynamicMappingSwitch_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EEFContainerDescription.class)) {
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
+		switch (notification.getFeatureID(EEFDynamicMappingSwitch.class)) {
+		case EefPackage.EEF_DYNAMIC_MAPPING_SWITCH__SWITCH_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
+		case EefPackage.EEF_DYNAMIC_MAPPING_SWITCH__CASES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -174,14 +172,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__WIDGETS,
-				EefFactory.eINSTANCE.createEEFTextDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__WIDGETS,
-				EefFactory.eINSTANCE.createEEFLabelDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS,
-				EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_SWITCH__CASES,
+				EefFactory.eINSTANCE.createEEFDynamicMappingCase()));
 	}
 
 	/**

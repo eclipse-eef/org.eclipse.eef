@@ -191,7 +191,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFLabelDescriptionItemProvider eefLabelDescriptionItemProvider;
@@ -209,6 +209,75 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 
 		return eefLabelDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFDynamicMappingForItemProvider eefDynamicMappingForItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingFor}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFDynamicMappingForAdapter() {
+		if (eefDynamicMappingForItemProvider == null) {
+			eefDynamicMappingForItemProvider = new EEFDynamicMappingForItemProvider(this);
+		}
+
+		return eefDynamicMappingForItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingSwitch} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFDynamicMappingSwitchItemProvider eefDynamicMappingSwitchItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingSwitch}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFDynamicMappingSwitchAdapter() {
+		if (eefDynamicMappingSwitchItemProvider == null) {
+			eefDynamicMappingSwitchItemProvider = new EEFDynamicMappingSwitchItemProvider(this);
+		}
+
+		return eefDynamicMappingSwitchItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingCase} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFDynamicMappingCaseItemProvider eefDynamicMappingCaseItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingCase}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFDynamicMappingCaseAdapter() {
+		if (eefDynamicMappingCaseItemProvider == null) {
+			eefDynamicMappingCaseItemProvider = new EEFDynamicMappingCaseItemProvider(this);
+		}
+
+		return eefDynamicMappingCaseItemProvider;
 	}
 
 	/**
@@ -328,6 +397,15 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefLabelDescriptionItemProvider != null) {
 			eefLabelDescriptionItemProvider.dispose();
+		}
+		if (eefDynamicMappingForItemProvider != null) {
+			eefDynamicMappingForItemProvider.dispose();
+		}
+		if (eefDynamicMappingSwitchItemProvider != null) {
+			eefDynamicMappingSwitchItemProvider.dispose();
+		}
+		if (eefDynamicMappingCaseItemProvider != null) {
+			eefDynamicMappingCaseItemProvider.dispose();
 		}
 	}
 

@@ -74,6 +74,31 @@ public interface EefFactory extends EFactory {
 	EEFLabelDescription createEEFLabelDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Dynamic Mapping For</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Dynamic Mapping For</em>'.
+	 * @generated
+	 */
+	EEFDynamicMappingFor createEEFDynamicMappingFor();
+
+	/**
+	 * Returns a new object of class '<em>EEF Dynamic Mapping Switch</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Dynamic Mapping Switch</em>'.
+	 * @generated
+	 */
+	EEFDynamicMappingSwitch createEEFDynamicMappingSwitch();
+
+	/**
+	 * Returns a new object of class '<em>EEF Dynamic Mapping Case</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Dynamic Mapping Case</em>'.
+	 * @generated
+	 */
+	EEFDynamicMappingCase createEEFDynamicMappingCase();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the package supported by this factory.
