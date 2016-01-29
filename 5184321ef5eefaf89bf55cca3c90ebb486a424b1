@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_210d13f2",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Comment added to the code",
+      "parentUuid": "07d9433e_a1076324",
+      "range": {
+        "startLine": 191,
+        "startChar": 3,
+        "endLine": 193,
+        "endChar": 4
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_61247bb7",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/EEFTabDescriptor.java",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-28T14:44:02Z",
       "side": 1,
       "message": "AbstractEEFTabDescriptor",
+      "range": {
+        "startLine": 25,
+        "startChar": 36,
+        "endLine": 25,
+        "endChar": 57
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_413bf786",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/EEFTabDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_61247bb7",
       "range": {
         "startLine": 25,
         "startChar": 36,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_613e3b78",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/EEFTabDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_01180f7f",
+      "range": {
+        "startLine": 73,
+        "startChar": 1,
+        "endLine": 73,
+        "endChar": 30
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_21135364",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/EEFTabDescriptor.java",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2016-01-28T14:44:02Z",
       "side": 1,
       "message": "Update the comment here",
+      "range": {
+        "startLine": 86,
+        "startChar": 2,
+        "endLine": 90,
+        "endChar": 4
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_a1384388",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/EEFTabDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_21135364",
       "range": {
         "startLine": 86,
         "startChar": 2,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_c12e2745",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/properties/EEFSection.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_811b3f78",
+      "range": {
+        "startLine": 38,
+        "startChar": 32,
+        "endLine": 38,
+        "endChar": 40
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_41ccd764",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
         "patchSetId": 2
@@ -128,6 +248,30 @@
       "writtenOn": "2016-01-28T14:44:02Z",
       "side": 1,
       "message": "Javadoc",
+      "range": {
+        "startLine": 81,
+        "startChar": 81,
+        "endLine": 82,
+        "endChar": 71
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_e1296b3c",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_41ccd764",
       "range": {
         "startLine": 81,
         "startChar": 81,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_0129ef39",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_a11e8366",
+      "range": {
+        "startLine": 75,
+        "startChar": 81,
+        "endLine": 76,
+        "endChar": 71
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_61f63b87",
         "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertyTabItemDescriptor.java",
         "patchSetId": 2
@@ -174,6 +342,30 @@
       "writtenOn": "2016-01-28T14:44:02Z",
       "side": 1,
       "message": "that\u0027s odd... more about that later",
+      "range": {
+        "startLine": 69,
+        "startChar": 2,
+        "endLine": 69,
+        "endChar": 23
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_36bd5201",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertyTabItemDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "We decide to keep the setter.",
+      "parentUuid": "07d9433e_61f63b87",
       "range": {
         "startLine": 69,
         "startChar": 2,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_6169db6e",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyTabDescriptorProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_01cacf42",
+      "range": {
+        "startLine": 33,
+        "startChar": 35,
+        "endLine": 33,
+        "endChar": 40
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_61a1db7d",
         "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFTabDescriptor.java",
         "patchSetId": 2
@@ -232,6 +448,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_3362c432",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFTabDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "We decide to keep the setter.",
+      "parentUuid": "07d9433e_61a1db7d",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 42,
+        "endChar": 2
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_81a89f63",
         "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFTabDescriptor.java",
         "patchSetId": 2
@@ -243,6 +483,30 @@
       "writtenOn": "2016-01-28T14:44:02Z",
       "side": 1,
       "message": "Right here :)",
+      "range": {
+        "startLine": 191,
+        "startChar": 1,
+        "endLine": 199,
+        "endChar": 2
+      },
+      "revId": "5184321ef5eefaf89bf55cca3c90ebb486a424b1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_53658837",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFTabDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-01-29T14:39:10Z",
+      "side": 1,
+      "message": "We decide to keep the setter because of its use in the clone in EEFTabbedPropertyRegistry#adaptDescriptorFor.",
+      "parentUuid": "07d9433e_81a89f63",
       "range": {
         "startLine": 191,
         "startChar": 1,
