@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_b62fa28e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/EEFTabDescriptor.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-01-29T15:30:45Z",
+      "side": 1,
+      "message": "You forgot to change the return type to List\u003cIEEFSectionDescriptor\u003e",
+      "range": {
+        "startLine": 74,
+        "startChar": 7,
+        "endLine": 74,
+        "endChar": 12
+      },
+      "revId": "03de0d541e3bb6d68048821626094384311032c1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
