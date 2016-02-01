@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_1cb22d51",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-01T09:04:05Z",
+      "side": 1,
+      "message": "Use Util.isBlank",
+      "revId": "fefdb8f606e15d81a3add9d0c5b3123868096135",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_dcec4534",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-01T09:04:05Z",
+      "side": 1,
+      "message": "Use EEFExpressionUtils.SELF",
+      "revId": "fefdb8f606e15d81a3add9d0c5b3123868096135",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_7c1ed9f0",
+        "filename": "plugins/org.eclipse.eef/model/EEFViewDescription.xmi",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-01T09:04:05Z",
+      "side": 1,
+      "message": "Maybe we could create a new oe.eef.sample project which contains examples for each kind of mappings/widgets we create.",
+      "revId": "fefdb8f606e15d81a3add9d0c5b3123868096135",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_dc23652f",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-01T09:04:05Z",
+      "side": 1,
+      "message": "Missing documentation",
+      "revId": "fefdb8f606e15d81a3add9d0c5b3123868096135",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_fc310976",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-01T09:04:05Z",
+      "side": 1,
+      "message": "Documentation",
+      "revId": "fefdb8f606e15d81a3add9d0c5b3123868096135",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
