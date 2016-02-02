@@ -166,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_7c941415",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFSelectController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:59:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_5cc67091",
+      "range": {
+        "startLine": 51,
+        "startChar": 22,
+        "endLine": 51,
+        "endChar": 39
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_089667a2",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSelectControllerImpl.java",
         "patchSetId": 1
@@ -224,6 +248,30 @@
       "writtenOn": "2016-02-02T09:18:58Z",
       "side": 1,
       "message": "I think that it would be better to just use candidates here. The only reason why you are using an array is because you know what will be done with it later on but it could change.",
+      "range": {
+        "startLine": 165,
+        "startChar": 37,
+        "endLine": 165,
+        "endChar": 57
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_dc70c083",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSelectControllerImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:59:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_e8506358",
       "range": {
         "startLine": 165,
         "startChar": 37,
@@ -400,6 +448,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_dc57e0d4",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:59:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_9cd0f840",
+      "range": {
+        "startLine": 217,
+        "startChar": 38,
+        "endLine": 217,
+        "endChar": 57
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_dcd9a06b",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
         "patchSetId": 1
@@ -423,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_fc5ae4fc",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:59:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_dcd9a06b",
+      "range": {
+        "startLine": 219,
+        "startChar": 21,
+        "endLine": 219,
+        "endChar": 27
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_bccbfc94",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
         "patchSetId": 1
@@ -434,6 +530,30 @@
       "writtenOn": "2016-02-02T09:18:58Z",
       "side": 1,
       "message": "value.toArray()",
+      "range": {
+        "startLine": 221,
+        "startChar": 26,
+        "endLine": 221,
+        "endChar": 31
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_1c5228e4",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:59:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_bccbfc94",
       "range": {
         "startLine": 221,
         "startChar": 26,
