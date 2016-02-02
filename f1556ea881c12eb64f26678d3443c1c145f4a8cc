@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_bf2a0e7c",
+        "filename": "plugins/org.eclipse.eef.core/plugin.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T13:08:29Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "f1556ea881c12eb64f26678d3443c1c145f4a8cc",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
