@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_a8f2db0a",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFExpressionUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_e8ece333",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFControllersFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_28996bd1",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFSelectController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_5cc67091",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFSelectController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "IConsumer\u003cList\u003cObject\u003e\u003e because this Object is an array of object in reality :)",
+      "range": {
+        "startLine": 51,
+        "startChar": 22,
+        "endLine": 51,
+        "endChar": 39
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_089667a2",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSelectControllerImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_e8506358",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSelectControllerImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "I think that it would be better to just use candidates here. The only reason why you are using an array is because you know what will be done with it later on but it could change.",
+      "range": {
+        "startLine": 165,
+        "startChar": 37,
+        "endLine": 165,
+        "endChar": 57
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_e8c783a7",
+        "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_c8a39ff8",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_a8a49b03",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_9cd0f840",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "IConsumer\u003cList\u003cObject\u003e\u003e",
+      "range": {
+        "startLine": 217,
+        "startChar": 38,
+        "endLine": 217,
+        "endChar": 57
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_dcd9a06b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "List\u003cObject\u003e",
+      "range": {
+        "startLine": 219,
+        "startChar": 21,
+        "endLine": 219,
+        "endChar": 27
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_bccbfc94",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-02T09:18:58Z",
+      "side": 1,
+      "message": "value.toArray()",
+      "range": {
+        "startLine": 221,
+        "startChar": 26,
+        "endLine": 221,
+        "endChar": 31
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
