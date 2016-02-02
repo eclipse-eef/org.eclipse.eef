@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal;
+package org.eclipse.eef.core.internal;
 
 import org.eclipse.eef.core.api.utils.I18N;
 import org.eclipse.eef.core.api.utils.I18N.TranslatableMessage;
@@ -21,15 +21,21 @@ import org.eclipse.eef.core.api.utils.I18N.TranslatableMessage;
 public final class Messages {
 
 	static {
-		I18N.initializeMessages(Messages.class, EEFIdeUiPlugin.INSTANCE);
+		I18N.initializeMessages(Messages.class, EEFCorePlugin.INSTANCE);
 	}
 
 	// CHECKSTYLE:OFF
 	@TranslatableMessage
-	public static String EEFContainerLifecycleManager_BlankDomainClassExpression;
+	public static String EEFTextControllerImpl_BlankEditExpression;
 
 	@TranslatableMessage
-	public static String EEFContainerLifecycleManager_BlankSwitchExpression;
+	public static String EEFTextControllerImpl_InvalidValueForExpression;
+
+	@TranslatableMessage
+	public static String EEFTextControllerImpl_BlankValueExpression;
+
+	@TranslatableMessage
+	public static String EEFTextControllerImpl_BlankLabelExpression;
 
 	// CHECKSTYLE:ON
 
