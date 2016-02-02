@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_5c0e7042",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFExpressionUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:40:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_a8f2db0a",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_e8ece333",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFControllersFactory.java",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_9c18f881",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFControllersFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:40:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_e8ece333",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_28996bd1",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFSelectController.java",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2016-02-02T09:18:58Z",
       "side": 1,
       "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_bc13fc61",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/EEFSelectController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:40:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_28996bd1",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_fc24a4b8",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSelectControllerImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:40:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_089667a2",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_e8506358",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSelectControllerImpl.java",
         "patchSetId": 1
@@ -163,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_7c3094ec",
+        "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:40:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_e8c783a7",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_c8a39ff8",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
         "patchSetId": 1
@@ -186,6 +306,30 @@
     },
     {
       "key": {
+        "uuid": "07d9433e_9c2f188f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:40:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_c8a39ff8",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07d9433e_a8a49b03",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
         "patchSetId": 1
@@ -197,6 +341,30 @@
       "writtenOn": "2016-02-02T09:18:58Z",
       "side": 1,
       "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "aeb980b1a311906bd41a504c247eeb9fb8954d3c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_bc2a1c7c",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:40:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_a8a49b03",
       "range": {
         "startLine": 2,
         "startChar": 17,
