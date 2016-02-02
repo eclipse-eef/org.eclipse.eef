@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -21,6 +22,9 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.EEFTextController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.core.api.utils.Util;
+import org.eclipse.eef.core.internal.EEFCorePlugin;
+import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -105,12 +109,13 @@ public class EEFTextControllerImpl implements EEFTextController {
 			@Override
 			protected void doExecute() {
 				String editExpression = EEFTextControllerImpl.this.description.getEditExpression();
-				if (editExpression != null) {
+				if (!Util.isBlank(editExpression)) {
 					Map<String, Object> variables = new HashMap<String, Object>();
 					variables.putAll(EEFTextControllerImpl.this.variableManager.getVariables());
 					variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
-					//variables.put("selection", selection); //$NON-NLS-1$
 					EEFTextControllerImpl.this.interpreter.evaluateExpression(variables, editExpression);
+				} else {
+					EEFCorePlugin.getPlugin().error(Messages.EEFTextControllerImpl_BlankEditExpression, null);
 				}
 			}
 
@@ -139,21 +144,41 @@ public class EEFTextControllerImpl implements EEFTextController {
 	@Override
 	public void refresh() {
 		String valueExpression = this.description.getValueExpression();
-		if (valueExpression != null) {
-			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(), valueExpression);
-			Object value = evaluationResult.getValue();
-			if (value instanceof String && this.newValueConsumer != null) {
-				this.newValueConsumer.apply((String) value);
-			}
+		if (!Util.isBlank(valueExpression)) {
+			this.refreshStringBasedExpression(valueExpression, this.newValueConsumer);
+		} else {
+			EEFCorePlugin.getPlugin().error(Messages.EEFTextControllerImpl_BlankValueExpression, null);
 		}
 
 		String labelExpression = this.description.getLabelExpression();
-		if (labelExpression != null) {
-			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(), labelExpression);
+		if (!Util.isBlank(labelExpression)) {
+			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
+		} else {
+			EEFCorePlugin.getPlugin().error(Messages.EEFTextControllerImpl_BlankLabelExpression, null);
+		}
+	}
+
+	/**
+	 * Refresh an expression returning a string.
+	 *
+	 * @param expression
+	 *            The expression
+	 * @param consumer
+	 *            The consumer of the result
+	 */
+	private void refreshStringBasedExpression(String expression, IConsumer<String> consumer) {
+		IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(), expression);
+		if (evaluationResult.success()) {
 			Object value = evaluationResult.getValue();
-			if (value instanceof String && this.newLabelConsumer != null) {
-				this.newLabelConsumer.apply((String) value);
+			if (value instanceof String && consumer != null) {
+				consumer.apply((String) value);
+			} else if (!(value instanceof String)) {
+				String message = MessageFormat.format(Messages.EEFTextControllerImpl_InvalidValueForExpression, expression, String.class.getName(),
+						value);
+				EEFCorePlugin.getPlugin().error(message, null);
 			}
+		} else {
+			EEFCorePlugin.getPlugin().error(evaluationResult.getDiagnostic().toString(), null);
 		}
 	}
 
