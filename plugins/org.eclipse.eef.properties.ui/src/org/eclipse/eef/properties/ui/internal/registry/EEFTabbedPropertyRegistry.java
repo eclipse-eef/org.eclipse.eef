@@ -12,7 +12,7 @@
 package org.eclipse.eef.properties.ui.internal.registry;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -62,7 +62,7 @@ public class EEFTabbedPropertyRegistry {
 	 */
 	private List<IEEFTabDescriptor> getAllTabDescriptors(IWorkbenchPart part, ISelection input) {
 		// Get the tab descriptors from the extension point
-		Map<String, IEEFTabDescriptor> eefTabDescriptors = new HashMap<String, IEEFTabDescriptor>();
+		Map<String, IEEFTabDescriptor> eefTabDescriptors = new LinkedHashMap<String, IEEFTabDescriptor>();
 		IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry = EEFTabbedPropertyViewPlugin.getInstance()
 				.getEEFTabDescriptorProviderRegistry();
 		for (IItemDescriptor<IEEFTabDescriptorProvider> itemDescriptor : eefTabDescriptorProviderRegistry.getItemDescriptors()) {
