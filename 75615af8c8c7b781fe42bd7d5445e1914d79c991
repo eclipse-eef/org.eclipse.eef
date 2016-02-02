@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_08af47ee",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-02T09:34:06Z",
+      "side": 1,
+      "message": "I would name it just \"log\"",
+      "range": {
+        "startLine": 88,
+        "startChar": 15,
+        "endLine": 88,
+        "endChar": 20
+      },
+      "revId": "75615af8c8c7b781fe42bd7d5445e1914d79c991",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
