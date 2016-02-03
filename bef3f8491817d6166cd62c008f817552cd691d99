@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_6b2fe841",
+        "filename": "plugins/org.eclipse.eef.core/plugin.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-03T09:09:40Z",
+      "side": 1,
+      "message": "I think we should improve this with a generic message saying The {0} expression cannot be blank or something like that. I\u0027ll look into it",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 91
+      },
+      "revId": "bef3f8491817d6166cd62c008f817552cd691d99",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
