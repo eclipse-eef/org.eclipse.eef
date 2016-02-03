@@ -19,10 +19,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
-import org.eclipse.eef.core.api.controllers.EEFSelectController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
 import org.eclipse.emf.common.command.Command;
@@ -37,7 +38,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author mbats
  */
-public class EEFSelectControllerImpl extends AbstractEEFWidgetController implements EEFSelectController {
+public class EEFSelectControllerImpl extends AbstractEEFWidgetController implements IEEFSelectController {
 	/**
 	 * The description.
 	 */
@@ -52,11 +53,6 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 	 * The consumer of a new value of the combo.
 	 */
 	private IConsumer<Object> newValueConsumer;
-
-	/**
-	 * The consumer of a new value of the label.
-	 */
-	private IConsumer<String> newLabelConsumer;
 
 	/**
 	 * The consumer of a new candidates of the combo.
@@ -87,9 +83,8 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 	 */
 	public EEFSelectControllerImpl(EEFSelectDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
+		super(variableManager, interpreter);
 		this.description = description;
-		this.variableManager = variableManager;
-		this.interpreter = interpreter;
 		this.editingDomain = editingDomain;
 	}
 
@@ -133,16 +128,11 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#refresh()
+	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#refresh()
 	 */
 	@Override
 	public void refresh() {
-		String labelExpression = this.description.getLabelExpression();
-		if (!Util.isBlank(labelExpression)) {
-			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
-		} else {
-			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
-		}
+		super.refresh();
 
 		String candidatesExpression = this.description.getCandidatesExpression();
 		if (!Util.isBlank(candidatesExpression)) {
@@ -162,7 +152,7 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
 	 */
 	@Override
 	public void onNewValue(IConsumer<Object> consumer) {
@@ -172,7 +162,7 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
 	 */
 	@Override
 	public void onNewCandidates(IConsumer<List<Object>> consumer) {
@@ -182,17 +172,7 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewLabel(org.eclipse.eef.core.api.controllers.IConsumer)
-	 */
-	@Override
-	public void onNewLabel(IConsumer<String> consumer) {
-		this.newLabelConsumer = consumer;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFSelectController#removeNewValueConsumer()
+	 * @see org.eclipse.eef.core.api.controllers.IEEFSelectController#removeNewValueConsumer()
 	 */
 	@Override
 	public void removeNewValueConsumer() {
@@ -202,21 +182,21 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFSelectController#removeNewLabelConsumer()
+	 * @see org.eclipse.eef.core.api.controllers.IEEFSelectController#removeNewCandidatesConsumer()
 	 */
 	@Override
-	public void removeNewLabelConsumer() {
-		this.newLabelConsumer = null;
+	public void removeNewCandidatesConsumer() {
+		this.newCandidatesConsumer = null;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFSelectController#removeNewCandidatesConsumer()
+	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
-	public void removeNewCandidatesConsumer() {
-		this.newCandidatesConsumer = null;
+	protected EEFWidgetDescription getDescription() {
+		return this.description;
 	}
 
 }

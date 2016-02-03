@@ -16,23 +16,6 @@ package org.eclipse.eef.core.api.controllers;
  *
  * @author mbats
  */
-public interface EEFLabelController {
-	/**
-	 * Register a consumer which will be called with the new value of the label when it will change.
-	 *
-	 * @param consumer
-	 *            The consumer of the new value of the label
-	 */
-	void onNewLabel(IConsumer<String> consumer);
-
-	/**
-	 * Remove the consumer of the new value of the label.
-	 */
-	void removeNewLabelConsumer();
-
-	/**
-	 * Refresh the label.
-	 */
-	void refresh();
-
+public interface IEEFLabelController extends IEEFWidgetController {
+	// do nothing more than its superinterface
 }

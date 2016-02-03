@@ -10,31 +10,31 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.properties;
 
-import org.eclipse.eef.core.api.EEFGroup;
+import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
 import org.eclipse.jface.viewers.IFilter;
 
 /**
- * The implementation of the {@link AbstractEEFSectionDescriptor} using the {@link EEFGroup}.
+ * The implementation of the {@link AbstractEEFSectionDescriptor} using the {@link EEFPage}.
  *
  * @author sbegaudeau
  */
 public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 
 	/**
-	 * The EEFGroup.
+	 * The EEFPage.
 	 */
-	private EEFGroup eefGroup;
+	private EEFPage eefPage;
 
 	/**
 	 * The constructor.
 	 *
-	 * @param eefGroup
-	 *            The EEFGroup
+	 * @param eefPage
+	 *            The EEFPage
 	 */
-	public EEFSectionDescriptor(EEFGroup eefGroup) {
-		this.eefGroup = eefGroup;
+	public EEFSectionDescriptor(EEFPage eefPage) {
+		this.eefPage = eefPage;
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 	 */
 	@Override
 	public String getId() {
-		return this.eefGroup.getDescription().getIdentifier();
+		return this.eefPage.getDescription().getIdentifier();
 	}
 
 	/**
@@ -84,11 +84,11 @@ public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 	}
 
 	/**
-	 * Returns the EEFGroup used to managed this section descriptor.
+	 * Returns the EEFPage used to managed this section descriptor.
 	 *
-	 * @return The EEFGroup used to managed this section descriptor
+	 * @return The EEFPage used to managed this section descriptor
 	 */
-	public EEFGroup getEEFGroup() {
-		return eefGroup;
+	public EEFPage getEEFPage() {
+		return eefPage;
 	}
 }

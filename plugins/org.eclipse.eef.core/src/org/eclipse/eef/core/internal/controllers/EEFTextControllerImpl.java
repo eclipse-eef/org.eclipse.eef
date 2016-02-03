@@ -18,10 +18,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
-import org.eclipse.eef.core.api.controllers.EEFTextController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
 import org.eclipse.emf.common.command.Command;
@@ -36,7 +37,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author sbegaudeau
  */
-public class EEFTextControllerImpl extends AbstractEEFWidgetController implements EEFTextController {
+public class EEFTextControllerImpl extends AbstractEEFWidgetController implements IEEFTextController {
 	/**
 	 * The description.
 	 */
@@ -51,11 +52,6 @@ public class EEFTextControllerImpl extends AbstractEEFWidgetController implement
 	 * The consumer of a new value of the text.
 	 */
 	private IConsumer<String> newValueConsumer;
-
-	/**
-	 * The consumer of a new value of the label.
-	 */
-	private IConsumer<String> newLabelConsumer;
 
 	/**
 	 * Executor service used to run the update of the text field.
@@ -81,9 +77,8 @@ public class EEFTextControllerImpl extends AbstractEEFWidgetController implement
 	 */
 	public EEFTextControllerImpl(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
+		super(variableManager, interpreter);
 		this.description = description;
-		this.variableManager = variableManager;
-		this.interpreter = interpreter;
 		this.editingDomain = editingDomain;
 	}
 
@@ -127,29 +122,24 @@ public class EEFTextControllerImpl extends AbstractEEFWidgetController implement
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#refresh()
+	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#refresh()
 	 */
 	@Override
 	public void refresh() {
+		super.refresh();
+
 		String valueExpression = this.description.getValueExpression();
 		if (!Util.isBlank(valueExpression)) {
 			this.refreshStringBasedExpression(valueExpression, this.newValueConsumer);
 		} else {
 			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION);
 		}
-
-		String labelExpression = this.description.getLabelExpression();
-		if (!Util.isBlank(labelExpression)) {
-			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
-		} else {
-			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
-		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
 	 */
 	@Override
 	public void onNewValue(IConsumer<String> consumer) {
@@ -159,17 +149,7 @@ public class EEFTextControllerImpl extends AbstractEEFWidgetController implement
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewLabel(org.eclipse.eef.core.api.controllers.IConsumer)
-	 */
-	@Override
-	public void onNewLabel(IConsumer<String> consumer) {
-		this.newLabelConsumer = consumer;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#removeNewValueConsumer()
+	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#removeNewValueConsumer()
 	 */
 	@Override
 	public void removeNewValueConsumer() {
@@ -179,11 +159,11 @@ public class EEFTextControllerImpl extends AbstractEEFWidgetController implement
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#removeNewLabelConsumer()
+	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
-	public void removeNewLabelConsumer() {
-		this.newLabelConsumer = null;
+	protected EEFWidgetDescription getDescription() {
+		return this.description;
 	}
 
 }

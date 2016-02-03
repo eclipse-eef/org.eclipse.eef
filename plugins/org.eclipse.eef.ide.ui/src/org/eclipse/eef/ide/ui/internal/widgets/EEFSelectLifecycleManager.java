@@ -20,8 +20,8 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.EEFSelectController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
@@ -102,7 +102,7 @@ public class EEFSelectLifecycleManager implements ILifecycleManager {
 	/**
 	 * The controller.
 	 */
-	private EEFSelectController controller;
+	private IEEFSelectController controller;
 
 	/**
 	 * The listener on the combo.

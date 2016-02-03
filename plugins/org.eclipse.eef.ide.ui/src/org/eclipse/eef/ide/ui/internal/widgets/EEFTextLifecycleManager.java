@@ -12,8 +12,8 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.EEFTextController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -79,7 +79,7 @@ public class EEFTextLifecycleManager implements ILifecycleManager {
 	/**
 	 * The controller.
 	 */
-	private EEFTextController controller;
+	private IEEFTextController controller;
 
 	/**
 	 * The listener on the text.

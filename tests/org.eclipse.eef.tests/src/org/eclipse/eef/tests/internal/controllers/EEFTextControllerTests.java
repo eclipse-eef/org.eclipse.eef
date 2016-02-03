@@ -15,7 +15,7 @@ import java.util.Map;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
-import org.eclipse.eef.core.api.controllers.EEFTextController;
+import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.internal.controllers.EEFTextControllerImpl;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -40,7 +40,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
 /**
- * Unit tests for the {@link EEFTextController}.
+ * Unit tests for the {@link IEEFTextController}.
  *
  * @author sbegaudeau
  */
@@ -90,7 +90,7 @@ public class EEFTextControllerTests {
 			return EvaluationResult.of(newValue);
 		};
 
-		EEFTextController controller = new EEFTextControllerImpl(description, variableManager, interpreter, editingDomain);
+		IEEFTextController controller = new EEFTextControllerImpl(description, variableManager, interpreter, editingDomain);
 		controller.onNewValue((text) -> {
 			assertThat(text, equalTo(newValue));
 		});
@@ -127,7 +127,7 @@ public class EEFTextControllerTests {
 			return EvaluationResult.of(newLabel);
 		};
 
-		EEFTextController controller = new EEFTextControllerImpl(description, variableManager, interpreter, editingDomain);
+		IEEFTextController controller = new EEFTextControllerImpl(description, variableManager, interpreter, editingDomain);
 		controller.onNewLabel((label) -> {
 			assertThat(label, equalTo(newLabel));
 		});

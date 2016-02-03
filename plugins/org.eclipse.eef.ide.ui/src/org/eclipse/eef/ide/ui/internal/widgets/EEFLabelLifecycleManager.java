@@ -12,8 +12,8 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.EEFLabelController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.core.api.controllers.IEEFLabelController;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -52,7 +52,7 @@ public class EEFLabelLifecycleManager implements ILifecycleManager {
 	/**
 	 * The controller.
 	 */
-	private EEFLabelController controller;
+	private IEEFLabelController controller;
 
 	/**
 	 * The constructor.

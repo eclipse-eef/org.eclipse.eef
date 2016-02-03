@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author mbats
  */
-public interface EEFSelectController {
+public interface IEEFSelectController extends IEEFWidgetController {
 
 	/**
 	 * Update the value of the text.
@@ -37,14 +37,6 @@ public interface EEFSelectController {
 	void onNewValue(IConsumer<Object> consumer);
 
 	/**
-	 * Register a consumer which will be called with the new value of the label when it will change.
-	 *
-	 * @param consumer
-	 *            The consumer of the new value of the label
-	 */
-	void onNewLabel(IConsumer<String> consumer);
-
-	/**
 	 * Register a consumer which will be called with the new value of the candidates when it will change.
 	 *
 	 * @param consumer
@@ -60,16 +52,6 @@ public interface EEFSelectController {
 	/**
 	 * Remove the consumer of the new value of the label.
 	 */
-	void removeNewLabelConsumer();
-
-	/**
-	 * Remove the consumer of the new value of the label.
-	 */
 	void removeNewCandidatesConsumer();
-
-	/**
-	 * Refresh the label and the text.
-	 */
-	void refresh();
 
 }

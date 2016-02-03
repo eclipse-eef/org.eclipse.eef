@@ -11,9 +11,9 @@
 package org.eclipse.eef.ide.ui.internal.widgets;
 
 import org.eclipse.eef.EEFCheckboxDescription;
-import org.eclipse.eef.core.api.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
+import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -67,7 +67,7 @@ public class EEFCheckboxLifecycleManager implements ILifecycleManager {
 	/**
 	 * The controller.
 	 */
-	private EEFCheckboxController controller;
+	private IEEFCheckboxController controller;
 
 	/**
 	 * The listener on the checkbox.

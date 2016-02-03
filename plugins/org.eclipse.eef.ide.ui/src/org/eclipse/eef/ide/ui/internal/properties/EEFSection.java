@@ -14,25 +14,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.ide.ui.internal.widgets.EEFContainerLifecycleManager;
+import org.eclipse.eef.ide.ui.internal.widgets.EEFGroupLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.forms.widgets.Section;
 
 /**
  * The implementation of {@link IEEFSection} using the {@link EEFSectionDescriptor}.
@@ -63,44 +56,14 @@ public class EEFSection implements IEEFSection {
 
 	@Override
 	public void createControls(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
-		EEFGroup eefGroup = this.eefSectionDescriptor.getEEFGroup();
-		EEFContainerDescription eefContainerDescription = eefGroup.getDescription().getContainer();
+		EEFPage eefPage = this.eefSectionDescriptor.getEEFPage();
+		List<EEFGroup> eefGroups = eefPage.getGroups();
+		for (EEFGroup eefGroup : eefGroups) {
+			EEFGroupLifecycleManager groupLifecycleManager = new EEFGroupLifecycleManager(eefGroup.getDescription(), eefGroup.getVariableManager(),
+					eefGroup.getInterpreter(), eefGroup.getEditingDomain());
+			groupLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
-		if (eefContainerDescription != null) {
-			EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
-
-			Composite container = widgetFactory.createComposite(parent);
-			container.setLayout(new GridLayout(3, false));
-
-			Section section = widgetFactory.createSection(container, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
-
-			String labelExpression = eefGroup.getDescription().getLabelExpression();
-			if (!Util.isBlank(labelExpression)) {
-				IEvaluationResult result = eefGroup.getInterpreter()
-						.evaluateExpression(eefGroup.getVariableManager().getVariables(), labelExpression);
-				if (result.success() && result.getValue() instanceof String) {
-					section.setText((String) result.getValue());
-				}
-			} else {
-				section.setText(""); //$NON-NLS-1$
-			}
-
-			GridData sectionLayoutData = new GridData(GridData.FILL_HORIZONTAL);
-			sectionLayoutData.horizontalSpan = 3;
-			section.setLayoutData(sectionLayoutData);
-			Composite group = widgetFactory.createComposite(section);
-			GridLayout groupLayout = new GridLayout();
-			groupLayout.numColumns = 3;
-			group.setLayout(groupLayout);
-			section.setClient(group);
-
-			EEFContainerLifecycleManager containerLifecycleManager = new EEFContainerLifecycleManager(eefContainerDescription, eefGroup
-					.getVariableManager().createChild(), eefGroup.getInterpreter(), eefGroup.getEditingDomain());
-			containerLifecycleManager.createControl(group, tabbedPropertySheetPage);
-
-			parent.layout();
-
-			this.lifecycleManagers.add(containerLifecycleManager);
+			this.lifecycleManagers.add(groupLifecycleManager);
 		}
 	}
 
@@ -119,12 +82,8 @@ public class EEFSection implements IEEFSection {
 
 			EObject eObject = Platform.getAdapterManager().getAdapter(object, EObject.class);
 
-			// Update the input of the view only
-			EEFGroup eefGroup = this.eefSectionDescriptor.getEEFGroup();
-			EEFPage eefPage = eefGroup.getPage();
-
 			// TODO we should create a whole context with the current selection etc for the context
-			eefPage.getView().setInput(eObject);
+			this.eefSectionDescriptor.getEEFPage().getView().setInput(eObject);
 		}
 	}
 

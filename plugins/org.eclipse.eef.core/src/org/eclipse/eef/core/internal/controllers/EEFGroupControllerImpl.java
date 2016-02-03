@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2015 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,50 +10,51 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
-import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
 /**
- * This class is used to provide utilities to widget controller.
+ * This controller is used to manage the interaction with a group.
  *
- * @author mbats
+ * @author sbegaudeau
  */
-public abstract class AbstractEEFWidgetController extends AbstractEEFController implements IEEFWidgetController {
+public class EEFGroupControllerImpl extends AbstractEEFController implements IEEFGroupController {
 
 	/**
-	 * The consumer of a new value of the label.
+	 * The description.
 	 */
-	protected IConsumer<String> newLabelConsumer;
+	private EEFGroupDescription description;
+
+	/**
+	 * The label consumer.
+	 */
+	private IConsumer<String> newLabelConsumer;
 
 	/**
 	 * The constructor.
 	 *
+	 * @param description
+	 *            The description
 	 * @param variableManager
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
 	 */
-	public AbstractEEFWidgetController(IVariableManager variableManager, IInterpreter interpreter) {
+	public EEFGroupControllerImpl(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter) {
 		super(variableManager, interpreter);
+		this.description = description;
 	}
-
-	/**
-	 * Returns the widget description.
-	 *
-	 * @return The widget description
-	 */
-	protected abstract EEFWidgetDescription getDescription();
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#onNewLabel(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#onNewLabel(org.eclipse.eef.core.api.controllers.IConsumer)
 	 */
 	@Override
 	public void onNewLabel(IConsumer<String> consumer) {
@@ -63,7 +64,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#removeNewLabelConsumer()
+	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#removeNewLabelConsumer()
 	 */
 	@Override
 	public void removeNewLabelConsumer() {
@@ -73,11 +74,11 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#refresh()
+	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#refresh()
 	 */
 	@Override
 	public void refresh() {
-		String labelExpression = this.getDescription().getLabelExpression();
+		String labelExpression = this.description.getLabelExpression();
 		if (!Util.isBlank(labelExpression)) {
 			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
 		} else {

@@ -13,7 +13,6 @@ package org.eclipse.eef.ide.ui.api;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.ide.ui.internal.properties.EEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
@@ -73,12 +72,7 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 	@Override
 	public List<IEEFSectionDescriptor> getSectionDescriptors() {
 		List<IEEFSectionDescriptor> sectionDescriptors = new ArrayList<IEEFSectionDescriptor>();
-
-		List<EEFGroup> eefGroups = this.eefPage.getGroups();
-		for (EEFGroup eefGroup : eefGroups) {
-			sectionDescriptors.add(new EEFSectionDescriptor(eefGroup));
-		}
-
+		sectionDescriptors.add(new EEFSectionDescriptor(this.eefPage));
 		return sectionDescriptors;
 	}
 
