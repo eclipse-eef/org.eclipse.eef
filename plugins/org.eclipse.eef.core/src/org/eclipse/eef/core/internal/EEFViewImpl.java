@@ -19,6 +19,7 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.InputDescriptor;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -142,15 +143,17 @@ public class EEFViewImpl implements EEFView {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.EEFView#setInput(org.eclipse.emf.ecore.EObject)
+	 * @see org.eclipse.eef.core.api.EEFView#setInput(org.eclipse.eef.core.api.InputDescriptor)
 	 */
 	@Override
-	public void setInput(EObject eObject) {
+	public void setInput(InputDescriptor input) {
 		Object selfValue = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+		EObject eObject = input.getSemanticElement();
 		if (eObject != selfValue) {
 			// Invalidate and update the content of the variable manager with the new input
 			this.variableManager.clear();
 			this.variableManager.put(EEFExpressionUtils.SELF, eObject);
+			this.variableManager.put(EEFExpressionUtils.INPUT, input);
 
 			for (EEFPage eefPage : this.eefPages) {
 				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
