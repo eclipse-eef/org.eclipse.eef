@@ -18,12 +18,12 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
-import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -133,14 +133,14 @@ public class EEFCheckboxControllerImpl extends AbstractEEFWidgetController imple
 		if (!Util.isBlank(valueExpression)) {
 			this.refreshBooleanBasedExpression(valueExpression, this.newValueConsumer);
 		} else {
-			EEFCorePlugin.getPlugin().error(Messages.EEFCheckboxControllerImpl_BlankValueExpression, null);
+			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION);
 		}
 
 		String labelExpression = this.description.getLabelExpression();
 		if (!Util.isBlank(labelExpression)) {
 			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
 		} else {
-			EEFCorePlugin.getPlugin().error(Messages.EEFCheckboxControllerImpl_BlankLabelExpression, null);
+			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
 		}
 	}
 

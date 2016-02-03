@@ -54,10 +54,10 @@ public abstract class AbstractEEFWidgetController {
 			} else if (!(value instanceof String)) {
 				String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
 						String.class.getName(), value);
-				EEFCorePlugin.getPlugin().error(message, null);
+				EEFCorePlugin.getPlugin().error(message);
 			}
 		} else {
-			EEFCorePlugin.getPlugin().error(evaluationResult.getDiagnostic().toString(), null);
+			EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
 		}
 	}
 
@@ -78,10 +78,10 @@ public abstract class AbstractEEFWidgetController {
 			} else if (!(value instanceof String)) {
 				String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
 						Boolean.class.getName(), value);
-				EEFCorePlugin.getPlugin().error(message, null);
+				EEFCorePlugin.getPlugin().error(message);
 			}
 		} else {
-			EEFCorePlugin.getPlugin().error(evaluationResult.getDiagnostic().toString(), null);
+			EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
 		}
 	}
 
@@ -101,7 +101,7 @@ public abstract class AbstractEEFWidgetController {
 				consumer.apply(value);
 			}
 		} else {
-			EEFCorePlugin.getPlugin().error(evaluationResult.getDiagnostic().toString(), null);
+			EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
 		}
 	}
 
@@ -126,10 +126,10 @@ public abstract class AbstractEEFWidgetController {
 			} else if (!(value instanceof Iterable<?>)) {
 				String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
 						Iterable.class.getName(), value);
-				EEFCorePlugin.getPlugin().error(message, null);
+				EEFCorePlugin.getPlugin().error(message);
 			}
 		} else {
-			EEFCorePlugin.getPlugin().error(evaluationResult.getDiagnostic().toString(), null);
+			EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
 		}
 	}
 }

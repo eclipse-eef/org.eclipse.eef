@@ -33,10 +33,6 @@ import org.eclipse.swt.widgets.Label;
  * @author mbats
  */
 public class EEFCheckboxLifecycleManager implements ILifecycleManager {
-	/**
-	 * The key used for the help image.
-	 */
-	private static final String DLG_IMG_HELP = "dialog_help_image"; //$NON-NLS-1$
 
 	/**
 	 * The description.

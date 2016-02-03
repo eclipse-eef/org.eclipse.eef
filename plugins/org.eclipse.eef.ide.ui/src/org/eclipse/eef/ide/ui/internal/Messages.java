@@ -25,14 +25,6 @@ public final class Messages {
 	}
 
 	// CHECKSTYLE:OFF
-	@TranslatableMessage
-	public static String EEFContainerLifecycleManager_BlankDomainClassExpression;
-
-	@TranslatableMessage
-	public static String EEFContainerLifecycleManager_BlankSwitchExpression;
-
-	@TranslatableMessage
-	public static String EEFSelectLifecycleManager_BlankCandidateDisplayExpression;
 
 	@TranslatableMessage
 	public static String EEFSelectLifecycleManager_InvalidValueForExpression;

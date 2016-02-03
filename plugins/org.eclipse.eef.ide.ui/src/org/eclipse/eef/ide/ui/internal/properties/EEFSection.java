@@ -17,12 +17,12 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
+import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFContainerLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -75,10 +75,10 @@ public class EEFSection implements IEEFSection {
 			Section section = widgetFactory.createSection(container, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 
 			String labelExpression = eefGroup.getDescription().getLabelExpression();
-			if (labelExpression != null) {
+			if (!Util.isBlank(labelExpression)) {
 				IEvaluationResult result = eefGroup.getInterpreter()
 						.evaluateExpression(eefGroup.getVariableManager().getVariables(), labelExpression);
-				if (result.getDiagnostic().getSeverity() == Diagnostic.OK && result.getValue() instanceof String) {
+				if (result.success() && result.getValue() instanceof String) {
 					section.setText((String) result.getValue());
 				}
 			} else {

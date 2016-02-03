@@ -24,10 +24,10 @@ import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
-import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -192,12 +192,12 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 					}
 				}
 			} else {
-				EEFIdeUiPlugin.getPlugin().error(domainClassExpressionResult.getDiagnostic().toString(), null);
+				EEFIdeUiPlugin.getPlugin().diagnostic(domainClassExpression, domainClassExpressionResult.getDiagnostic());
 			}
 		} else if (Util.isBlank(domainClassExpression)) {
-			EEFIdeUiPlugin.getPlugin().error(Messages.EEFContainerLifecycleManager_BlankDomainClassExpression, null);
+			EEFIdeUiPlugin.getPlugin().blank(EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION);
 		} else if (Util.isBlank(switchExpression)) {
-			EEFIdeUiPlugin.getPlugin().error(Messages.EEFContainerLifecycleManager_BlankSwitchExpression, null);
+			EEFIdeUiPlugin.getPlugin().blank(EefPackage.Literals.EEF_DYNAMIC_MAPPING_SWITCH__SWITCH_EXPRESSION);
 		}
 	}
 
@@ -224,7 +224,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 						break;
 					}
 				} else {
-					EEFIdeUiPlugin.getPlugin().error(caseExpressionResult.getDiagnostic().toString(), null);
+					EEFIdeUiPlugin.getPlugin().diagnostic(dynamicMappingCase.getCaseExpression(), caseExpressionResult.getDiagnostic());
 				}
 			}
 

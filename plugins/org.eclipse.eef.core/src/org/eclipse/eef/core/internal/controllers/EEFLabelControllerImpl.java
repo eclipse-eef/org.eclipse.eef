@@ -11,11 +11,11 @@
 package org.eclipse.eef.core.internal.controllers;
 
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.EEFLabelController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
-import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -62,7 +62,7 @@ public class EEFLabelControllerImpl extends AbstractEEFWidgetController implemen
 		if (!Util.isBlank(labelExpression)) {
 			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
 		} else {
-			EEFCorePlugin.getPlugin().error(Messages.EEFLabelControllerImpl_BlankLabelExpression, null);
+			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
 		}
 	}
 

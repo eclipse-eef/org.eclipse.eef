@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -78,19 +78,19 @@ public class DescriptorRegistryEventListener<T> extends AbstractRegistryEventLis
 			if (!this.isValidAttribute(configurationElement, ID_DESCRIPTOR_ATTR)) {
 				String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_missingAttribute,
 						configurationElement.getNamespaceIdentifier(), ID_DESCRIPTOR_ATTR);
-				EEFIdePlugin.getImplementation().logError(message, null);
+				EEFIdePlugin.getPlugin().error(message);
 			} else if (!this.isValidAttribute(configurationElement, LABEL_DESCRIPTOR_ATTR)) {
 				String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_missingAttribute,
 						configurationElement.getNamespaceIdentifier(), LABEL_DESCRIPTOR_ATTR);
-				EEFIdePlugin.getImplementation().logError(message, null);
+				EEFIdePlugin.getPlugin().error(message);
 			} else if (!this.isValidAttribute(configurationElement, DESCRIPTION_DESCRIPTOR_ATTR)) {
 				String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_missingAttribute,
 						configurationElement.getNamespaceIdentifier(), DESCRIPTION_DESCRIPTOR_ATTR);
-				EEFIdePlugin.getImplementation().logError(message, null);
+				EEFIdePlugin.getPlugin().error(message);
 			} else if (!this.isValidAttribute(configurationElement, IMPL_CLASS_DESCRIPTOR_ATTR)) {
 				String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_missingAttribute,
 						configurationElement.getNamespaceIdentifier(), IMPL_CLASS_DESCRIPTOR_ATTR);
-				EEFIdePlugin.getImplementation().logError(message, null);
+				EEFIdePlugin.getPlugin().error(message);
 			} else {
 				isValid = true;
 			}
@@ -101,17 +101,15 @@ public class DescriptorRegistryEventListener<T> extends AbstractRegistryEventLis
 
 	/**
 	 * Indicates if an attribute of the configuration element is valid.
-	 * 
+	 *
 	 * @param configurationElement
 	 *            The configuration element
 	 * @param attributeName
 	 *            The attribute name
-	 * @return <code>true</code> if the attribute is valid, <code>false</code>
-	 *         otherwise
+	 * @return <code>true</code> if the attribute is valid, <code>false</code> otherwise
 	 */
 	private boolean isValidAttribute(IConfigurationElement configurationElement, String attributeName) {
-		return configurationElement.getAttribute(attributeName) != null
-				&& !"".equals(configurationElement.getAttribute(attributeName)); //$NON-NLS-1$
+		return configurationElement.getAttribute(attributeName) != null && !"".equals(configurationElement.getAttribute(attributeName)); //$NON-NLS-1$
 	}
 
 	/**
@@ -132,15 +130,14 @@ public class DescriptorRegistryEventListener<T> extends AbstractRegistryEventLis
 			ItemDescriptor<T> descriptor = new ItemDescriptor<T>(id, label, description, instance);
 			IItemDescriptor<T> previous = this.itemRegistry.add(descriptor);
 			if (previous != null) {
-				String message = MessageFormat.format(
-						Messages.DescriptorRegistryEventListener_extensionAlreadyContributed,
+				String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_extensionAlreadyContributed,
 						configurationElement.getAttribute(ID_DESCRIPTOR_ATTR));
-				EEFIdePlugin.getImplementation().logWarning(message, null);
+				EEFIdePlugin.getPlugin().warning(message);
 			}
 		} catch (CoreException e) {
 			String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_cannotInstantiateExtension,
 					configurationElement.getAttribute(IMPL_CLASS_DESCRIPTOR_ATTR));
-			EEFIdePlugin.getImplementation().logError(message, e);
+			EEFIdePlugin.getPlugin().error(message);
 
 			return false;
 		}

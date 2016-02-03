@@ -11,10 +11,9 @@
 package org.eclipse.eef.ide.internal;
 
 import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.eef.api.IEEFViewDescriptionProvider;
+import org.eclipse.eef.core.api.AbstractEEFEclipsePlugin;
 import org.eclipse.eef.ide.internal.extensions.AbstractRegistryEventListener;
 import org.eclipse.eef.ide.internal.extensions.IItemRegistry;
 import org.eclipse.eef.ide.internal.extensions.impl.DescriptorRegistryEventListener;
@@ -78,7 +77,7 @@ public class EEFIdePlugin extends EMFPlugin {
 	 *
 	 * @return The OSGi related implementation
 	 */
-	public static Implementation getImplementation() {
+	public static Implementation getPlugin() {
 		return plugin;
 	}
 
@@ -87,7 +86,7 @@ public class EEFIdePlugin extends EMFPlugin {
 	 *
 	 * @author sbegaudeau
 	 */
-	public static class Implementation extends EclipsePlugin {
+	public static class Implementation extends AbstractEEFEclipsePlugin {
 		/**
 		 * The {@link IItemRegistry} used to retrieve the EEF View Description providers.
 		 */
@@ -112,7 +111,7 @@ public class EEFIdePlugin extends EMFPlugin {
 		 * The constructor.
 		 */
 		public Implementation() {
-			super();
+			super(PLUGIN_ID);
 
 			EEFIdePlugin.plugin = this;
 		}
@@ -177,32 +176,6 @@ public class EEFIdePlugin extends EMFPlugin {
 		 */
 		public IItemRegistry<IInterpreterProvider> getInterpreterProviderRegistry() {
 			return this.interpreterProviderRegistry;
-		}
-
-		/**
-		 * Logs an error with the exception and the given message.
-		 *
-		 * @param message
-		 *            The message
-		 * @param exception
-		 *            The exception
-		 */
-		public void logError(String message, Exception exception) {
-			IStatus status = new Status(IStatus.ERROR, PLUGIN_ID, message, exception);
-			this.getLog().log(status);
-		}
-
-		/**
-		 * Logs a warning with the exception and the given message.
-		 *
-		 * @param message
-		 *            The message
-		 * @param exception
-		 *            The exception
-		 */
-		public void logWarning(String message, Exception exception) {
-			IStatus status = new Status(IStatus.WARNING, PLUGIN_ID, message, exception);
-			this.getLog().log(status);
 		}
 	}
 

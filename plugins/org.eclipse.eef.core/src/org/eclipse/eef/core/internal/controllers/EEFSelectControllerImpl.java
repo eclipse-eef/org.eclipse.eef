@@ -19,12 +19,12 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.EEFSelectController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
-import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -109,7 +109,7 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 					variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 					EEFSelectControllerImpl.this.interpreter.evaluateExpression(variables, editExpression);
 				} else {
-					EEFCorePlugin.getPlugin().error(Messages.EEFTextControllerImpl_BlankEditExpression, null);
+					EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION);
 				}
 			}
 
@@ -141,21 +141,21 @@ public class EEFSelectControllerImpl extends AbstractEEFWidgetController impleme
 		if (!Util.isBlank(labelExpression)) {
 			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
 		} else {
-			EEFCorePlugin.getPlugin().error(Messages.EEFSelectControllerImpl_BlankLabelExpression, null);
+			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
 		}
 
 		String candidatesExpression = this.description.getCandidatesExpression();
 		if (!Util.isBlank(candidatesExpression)) {
 			this.refreshListBasedExpression(candidatesExpression, this.newCandidatesConsumer);
 		} else {
-			EEFCorePlugin.getPlugin().error(Messages.EEFSelectControllerImpl_BlankCandidatesExpression, null);
+			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION);
 		}
 
 		String valueExpression = this.description.getValueExpression();
 		if (!Util.isBlank(valueExpression)) {
 			this.refreshObjectBasedExpression(valueExpression, this.newValueConsumer);
 		} else {
-			EEFCorePlugin.getPlugin().error(Messages.EEFSelectControllerImpl_BlankValueExpression, null);
+			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION);
 		}
 	}
 

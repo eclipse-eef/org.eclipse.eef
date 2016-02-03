@@ -99,6 +99,8 @@ public class EEFPageImpl implements EEFPage {
 					EEFGroupImpl eefGroupImpl = new EEFGroupImpl(this, eefGroupDescription, childVariableManager, interpreter, editingDomain);
 					eefGroups.add(eefGroupImpl);
 				}
+			} else {
+				EEFCorePlugin.getPlugin().diagnostic(semanticCandidatesExpression, result.getDiagnostic());
 			}
 		}
 	}
@@ -115,6 +117,8 @@ public class EEFPageImpl implements EEFPage {
 			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.getVariableManager().getVariables(), labelExpression);
 			if (evaluationResult.success()) {
 				return evaluationResult.asString();
+			} else {
+				EEFCorePlugin.getPlugin().diagnostic(labelExpression, evaluationResult.getDiagnostic());
 			}
 		}
 		return labelExpression;

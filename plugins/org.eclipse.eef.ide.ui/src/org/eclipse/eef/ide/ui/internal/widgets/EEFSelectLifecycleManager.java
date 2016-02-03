@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -274,12 +275,12 @@ public class EEFSelectLifecycleManager implements ILifecycleManager {
 				} else if (!(value instanceof String)) {
 					String message = MessageFormat.format(Messages.EEFSelectLifecycleManager_InvalidValueForExpression, candidateDisplayExpression,
 							String.class.getName(), value);
-					EEFIdeUiPlugin.getPlugin().error(message, null);
+					EEFIdeUiPlugin.getPlugin().error(message);
 				} else {
-					EEFIdeUiPlugin.getPlugin().error(evaluationResult.getDiagnostic().toString(), null);
+					EEFIdeUiPlugin.getPlugin().diagnostic(candidateDisplayExpression, evaluationResult.getDiagnostic());
 				}
 			} else {
-				EEFIdeUiPlugin.getPlugin().error(Messages.EEFSelectLifecycleManager_BlankCandidateDisplayExpression, null);
+				EEFIdeUiPlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
 			}
 			return null;
 		}
