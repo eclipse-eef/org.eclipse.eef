@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_4e830d10",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFExpressionUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-04T14:36:42Z",
+      "side": 1,
+      "message": "\"var:\" is a Sirius-specific interpreter.",
+      "range": {
+        "startLine": 28,
+        "startChar": 40,
+        "endLine": 28,
+        "endChar": 48
+      },
+      "revId": "361105f765e1bd1148a6caaa1f9c4f8a5844e3a7",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_cefabd82",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/utils/Eval.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-04T14:36:42Z",
+      "side": 1,
+      "message": "This is related to my remark in the previous patch about coercions in IEvaluationResult. I\u0027m not against doing it like this is here, but it\u0027s probably something we should discuss and decide team-wide to make sure we are consistent.",
+      "range": {
+        "startLine": 103,
+        "startChar": 3,
+        "endLine": 106,
+        "endChar": 30
+      },
+      "revId": "361105f765e1bd1148a6caaa1f9c4f8a5844e3a7",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_2e088934",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/utils/ISuccessfulResultConsumer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-04T14:36:42Z",
+      "side": 1,
+      "message": "Do we really need a specific type for what is (except for the name) identical to the existing IConsumer?",
+      "range": {
+        "startLine": 21,
+        "startChar": 17,
+        "endLine": 21,
+        "endChar": 42
+      },
+      "revId": "361105f765e1bd1148a6caaa1f9c4f8a5844e3a7",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_ee5a21fd",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFGroupController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-04T14:36:42Z",
+      "side": 1,
+      "message": "if ISuccessfulResultConsumer was just IConsumer, this could be simply:\n\n    this.newEval().call(eAttribute, labelExpression, String.class, this.newLabelConsumer)",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 5
+      },
+      "revId": "361105f765e1bd1148a6caaa1f9c4f8a5844e3a7",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
