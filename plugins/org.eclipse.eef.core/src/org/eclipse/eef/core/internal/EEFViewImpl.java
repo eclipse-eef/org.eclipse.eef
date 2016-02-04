@@ -19,13 +19,14 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -102,23 +103,19 @@ public class EEFViewImpl implements EEFView {
 	 * Performs the initialization of the view by creating the necessary pages.
 	 */
 	private void doInitialize() {
-		for (EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
-			String semanticCandidatesExpression = Util.firstNonBlank(eefPageDescription.getSemanticCandidateExpression(), "var:self"); //$NON-NLS-1$
-			Object candidates = Util.computeCandidate(this.interpreter, this.variableManager, semanticCandidatesExpression);
-
-			if (candidates instanceof Iterable<?>) {
-				@SuppressWarnings("unchecked")
-				Iterable<Object> candidatesIter = (Iterable<Object>) candidates;
-				for (Object candidate : candidatesIter) {
-					EEFPageImpl ePage = createPage(eefPageDescription, candidate);
-					ePage.initialize();
-					this.eefPages.add(ePage);
+		for (final EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
+			String semanticCandidatesExpression = Util.firstNonBlank(eefPageDescription.getSemanticCandidateExpression(),
+					org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
+			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new ISuccessfulResultConsumer<Object>() {
+				@Override
+				public void apply(Object value) {
+					for (Object object : Util.asIterable(value, Object.class)) {
+						EEFPageImpl ePage = createPage(eefPageDescription, object);
+						ePage.initialize();
+						EEFViewImpl.this.eefPages.add(ePage);
+					}
 				}
-			} else if (candidates != null) {
-				EEFPageImpl ePage = createPage(eefPageDescription, candidates);
-				ePage.initialize();
-				this.eefPages.add(ePage);
-			}
+			});
 		}
 	}
 
@@ -152,47 +149,6 @@ public class EEFViewImpl implements EEFView {
 			this.variableManager.clear();
 			this.variableManager.put(EEFExpressionUtils.SELF, eObject);
 
-			for (EEFPage eefPage : this.eefPages) {
-				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
-				if (!Util.isBlank(pageSemanticCandidateExpression)) {
-					IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(),
-							pageSemanticCandidateExpression);
-					if (evaluationResult.success()) {
-						addSelfToPageVariableManager(eefPage, evaluationResult);
-					} else {
-						// Something is very wrong here...
-					}
-				}
-
-				List<EEFGroup> groups = eefPage.getGroups();
-				for (EEFGroup eefGroup : groups) {
-					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
-					if (!Util.isBlank(groupSemanticCandidateExpression)) {
-						IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(eefPage.getVariableManager().getVariables(),
-								groupSemanticCandidateExpression);
-						if (evaluationResult.success()) {
-							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
-						} else {
-							// Something is very wrong here...
-						}
-					}
-				}
-			}
-		}
-	}
-
-	/**
-	 * Register the 'self' variable to the page variable manager.
-	 *
-	 * @param eefPage
-	 *            The page
-	 * @param evaluationResult
-	 *            The evaluation result
-	 */
-	private void addSelfToPageVariableManager(EEFPage eefPage, IEvaluationResult evaluationResult) {
-		if (evaluationResult.getValue() instanceof Iterable<?>) {
-			@SuppressWarnings("unchecked")
-			Iterable<Object> pageSemanticCandidates = (Iterable<Object>) evaluationResult.getValue();
 			// FIXME When you have evaluated the semanticCandidateExpression of the page once again, you need to update
 			// the semantic candidates. For example:
 			// Page 1, 2 and 3 have been created from the same Page definition (think one page for each feature of the
@@ -210,11 +166,31 @@ public class EEFViewImpl implements EEFView {
 			// would trigger the creation of completely different Tab & Section descriptors which would cause the whole
 			// view to be recreated from scratch.
 			// All your update process for EEFPages need to be updated. It's not simple in any way or shape, I know.
-			for (Object pageSemanticCandidate : pageSemanticCandidates) {
-				eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
+
+			for (final EEFPage eefPage : this.eefPages) {
+				String pageSemanticCandidateExpression = Util.firstNonBlank(eefPage.getDescription().getSemanticCandidateExpression(),
+						org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
+				new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, new ISuccessfulResultConsumer<Object>() {
+					@Override
+					public void apply(Object value) {
+						for (Object pageSemanticCandidate : Util.asIterable(value, Object.class)) {
+							eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
+						}
+					}
+				});
+
+				List<EEFGroup> groups = eefPage.getGroups();
+				for (final EEFGroup eefGroup : groups) {
+					String groupSemanticCandidateExpression = Util.firstNonBlank(eefGroup.getDescription().getSemanticCandidateExpression(),
+							org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
+					new Eval(this.interpreter, this.variableManager).call(groupSemanticCandidateExpression, new ISuccessfulResultConsumer<Object>() {
+						@Override
+						public void apply(Object value) {
+							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, value);
+						}
+					});
+				}
 			}
-		} else {
-			eefPage.getVariableManager().put(EEFExpressionUtils.SELF, evaluationResult.getValue());
 		}
 	}
 

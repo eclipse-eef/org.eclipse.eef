@@ -18,12 +18,11 @@ import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.layout.GridData;
@@ -107,20 +106,15 @@ public class EEFGroupLifecycleManager implements ILifecycleManager {
 		container.setLayout(new GridLayout(3, false));
 
 		this.section = widgetFactory.createSection(container, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		this.section.setText(""); //$NON-NLS-1$
 
 		String labelExpression = this.description.getLabelExpression();
-		if (!Util.isBlank(labelExpression)) {
-			IEvaluationResult result = this.interpreter.evaluateExpression(this.variableManager.getVariables(), labelExpression);
-			if (result.success()) {
-				if (result.getValue() instanceof String) {
-					this.section.setText((String) result.getValue());
-				}
-			} else {
-				EEFIdeUiPlugin.getPlugin().diagnostic(labelExpression, result.getDiagnostic());
+		new Eval(this.interpreter, this.variableManager).call(labelExpression, String.class, new ISuccessfulResultConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				EEFGroupLifecycleManager.this.section.setText(value);
 			}
-		} else {
-			this.section.setText(""); //$NON-NLS-1$
-		}
+		});
 
 		GridData sectionLayoutData = new GridData(GridData.FILL_HORIZONTAL);
 		sectionLayoutData.horizontalSpan = 3;

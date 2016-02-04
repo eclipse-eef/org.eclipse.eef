@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,10 +25,11 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFSelectController;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.core.internal.EEFCorePlugin;
+import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -98,14 +100,13 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 			@Override
 			protected void doExecute() {
 				String editExpression = EEFSelectController.this.description.getEditExpression();
-				if (!Util.isBlank(editExpression)) {
-					Map<String, Object> variables = new HashMap<String, Object>();
-					variables.putAll(EEFSelectController.this.variableManager.getVariables());
-					variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
-					EEFSelectController.this.interpreter.evaluateExpression(variables, editExpression);
-				} else {
-					EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION);
-				}
+				EAttribute eAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION;
+
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(EEFSelectController.this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+
+				new Eval(EEFSelectController.this.interpreter, variables).call(eAttribute, editExpression);
 			}
 
 			@Override
@@ -135,18 +136,30 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 		super.refresh();
 
 		String candidatesExpression = this.description.getCandidatesExpression();
-		if (!Util.isBlank(candidatesExpression)) {
-			this.refreshListBasedExpression(candidatesExpression, this.newCandidatesConsumer);
-		} else {
-			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION);
-		}
+		EAttribute candidatesExpressionEAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION;
+
+		this.newEval().call(candidatesExpressionEAttribute, candidatesExpression, new ISuccessfulResultConsumer<Object>() {
+			@Override
+			public void apply(Object value) {
+				if (value instanceof Iterable<?>) {
+					List<Object> candidates = new ArrayList<Object>();
+					for (Object iterator : (Iterable<?>) value) {
+						candidates.add(iterator);
+					}
+					EEFSelectController.this.newCandidatesConsumer.apply(candidates);
+				}
+			}
+		});
 
 		String valueExpression = this.description.getValueExpression();
-		if (!Util.isBlank(valueExpression)) {
-			this.refreshObjectBasedExpression(valueExpression, this.newValueConsumer);
-		} else {
-			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION);
-		}
+		EAttribute valueExpressionEAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION;
+
+		this.newEval().call(valueExpressionEAttribute, valueExpression, new ISuccessfulResultConsumer<Object>() {
+			@Override
+			public void apply(Object value) {
+				EEFSelectController.this.newValueConsumer.apply(value);
+			}
+		});
 	}
 
 	/**

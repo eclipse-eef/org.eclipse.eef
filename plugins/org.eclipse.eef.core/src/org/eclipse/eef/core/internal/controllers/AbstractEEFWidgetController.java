@@ -14,8 +14,8 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.core.internal.EEFCorePlugin;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -78,10 +78,13 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	@Override
 	public void refresh() {
 		String labelExpression = this.getDescription().getLabelExpression();
-		if (!Util.isBlank(labelExpression)) {
-			this.refreshStringBasedExpression(labelExpression, this.newLabelConsumer);
-		} else {
-			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
-		}
+		EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+		this.newEval().call(eAttribute, labelExpression, String.class, new ISuccessfulResultConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				AbstractEEFWidgetController.this.newLabelConsumer.apply(value);
+			}
+		});
 	}
 }

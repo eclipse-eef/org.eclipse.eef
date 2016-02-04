@@ -23,10 +23,11 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.core.internal.EEFCorePlugin;
+import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -92,12 +93,13 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 			@Override
 			protected void doExecute() {
 				String editExpression = EEFCheckboxController.this.description.getEditExpression();
-				if (!Util.isBlank(editExpression)) {
-					Map<String, Object> variables = new HashMap<String, Object>();
-					variables.putAll(EEFCheckboxController.this.variableManager.getVariables());
-					variables.put(EEFExpressionUtils.EEFCheckbox.NEW_VALUE, checkbox);
-					EEFCheckboxController.this.interpreter.evaluateExpression(variables, editExpression);
-				}
+				EAttribute eAttribute = EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION;
+
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(EEFCheckboxController.this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFCheckbox.NEW_VALUE, checkbox);
+
+				new Eval(EEFCheckboxController.this.interpreter, variables).call(eAttribute, editExpression);
 			}
 
 			@Override
@@ -127,11 +129,14 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		if (!Util.isBlank(valueExpression)) {
-			this.refreshBooleanBasedExpression(valueExpression, this.newValueConsumer);
-		} else {
-			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION);
-		}
+		EAttribute eAttribute = EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION;
+
+		this.newEval().call(eAttribute, valueExpression, Boolean.class, new ISuccessfulResultConsumer<Boolean>() {
+			@Override
+			public void apply(Boolean value) {
+				EEFCheckboxController.this.newValueConsumer.apply(value);
+			}
+		});
 	}
 
 	/**

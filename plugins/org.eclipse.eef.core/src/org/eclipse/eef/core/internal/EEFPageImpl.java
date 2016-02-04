@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,14 +15,17 @@ import java.util.List;
 
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.eef.core.api.utils.Util;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -89,19 +92,22 @@ public class EEFPageImpl implements EEFPage {
 	 * Initialize the variables of the EEFPage.
 	 */
 	public void initialize() {
-		for (EEFGroupDescription eefGroupDescription : eefPageDescription.getGroups()) {
-			String semanticCandidatesExpression = Util.firstNonBlank(eefGroupDescription.getSemanticCandidateExpression(), "var:self"); //$NON-NLS-1$
-			IEvaluationResult result = interpreter.evaluateExpression(this.getVariableManager().getVariables(), semanticCandidatesExpression);
-			if (result.success()) {
-				for (EObject groupSemanticCandidate : result.asEObjects()) {
-					IVariableManager childVariableManager = this.getVariableManager().createChild();
-					childVariableManager.put(EEFExpressionUtils.SELF, groupSemanticCandidate);
-					EEFGroupImpl eefGroupImpl = new EEFGroupImpl(this, eefGroupDescription, childVariableManager, interpreter, editingDomain);
-					eefGroups.add(eefGroupImpl);
+		for (final EEFGroupDescription eefGroupDescription : eefPageDescription.getGroups()) {
+			String semanticCandidatesExpression = Util.firstNonBlank(eefGroupDescription.getSemanticCandidateExpression(),
+					org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
+
+			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new ISuccessfulResultConsumer<Object>() {
+				@Override
+				public void apply(Object value) {
+					for (EObject eObject : Util.asIterable(value, EObject.class)) {
+						IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
+						childVariableManager.put(EEFExpressionUtils.SELF, eObject);
+						EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter,
+								editingDomain);
+						eefGroups.add(eefGroupImpl);
+					}
 				}
-			} else {
-				EEFCorePlugin.getPlugin().diagnostic(semanticCandidatesExpression, result.getDiagnostic());
-			}
+			});
 		}
 	}
 
@@ -113,15 +119,9 @@ public class EEFPageImpl implements EEFPage {
 	@Override
 	public String getLabel() {
 		String labelExpression = this.eefPageDescription.getLabelExpression();
-		if (labelExpression != null) {
-			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.getVariableManager().getVariables(), labelExpression);
-			if (evaluationResult.success()) {
-				return evaluationResult.asString();
-			} else {
-				EEFCorePlugin.getPlugin().diagnostic(labelExpression, evaluationResult.getDiagnostic());
-			}
-		}
-		return labelExpression;
+		EAttribute eAttribute = EefPackage.Literals.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION;
+
+		return new Eval(this.interpreter, this.variableManager).get(eAttribute, labelExpression, String.class);
 	}
 
 	/**

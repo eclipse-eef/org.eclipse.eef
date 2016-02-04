@@ -26,12 +26,12 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.widgets.Composite;
@@ -168,43 +168,34 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	private void createDynamicMappingControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage,
 			EEFDynamicMappingFor dynamicMappingFor) {
 		String domainClassExpression = dynamicMappingFor.getDomainClassExpression();
+		EAttribute domainClassEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION;
 
 		EEFDynamicMappingSwitch dynamicMappingSwitch = dynamicMappingFor.getSwitch();
 		String switchExpression = dynamicMappingSwitch.getSwitchExpression();
+		EAttribute switchExpressionEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_SWITCH__SWITCH_EXPRESSION;
+		String iterator = dynamicMappingFor.getIterator();
 
-		if (!Util.isBlank(domainClassExpression) && !Util.isBlank(switchExpression)) {
-			IEvaluationResult domainClassExpressionResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(),
-					domainClassExpression);
-			if (domainClassExpressionResult.success()) {
-				for (EObject eObject : domainClassExpressionResult.asEObjects()) {
-					String iterator = dynamicMappingFor.getIterator();
+		Object domainClassExpressionResult = new Eval(this.interpreter, this.variableManager).get(domainClassEAttribute, domainClassExpression,
+				Object.class);
+		for (EObject eObject : Util.asIterable(domainClassExpressionResult, EObject.class)) {
+			Map<String, Object> switchExpressionVariables = new HashMap<String, Object>();
+			switchExpressionVariables.put(EEFExpressionUtils.SELF, this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
+			switchExpressionVariables.put(iterator, eObject);
 
-					Map<String, Object> switchExpressionVariables = new HashMap<String, Object>();
-					switchExpressionVariables.put(EEFExpressionUtils.SELF, this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
-					switchExpressionVariables.put(iterator, eObject);
+			EEFWidgetDescription eefWidgetDescription = null;
 
-					EEFWidgetDescription eefWidgetDescription = null;
+			Object switchExpressionResult = new Eval(this.interpreter, switchExpressionVariables).get(switchExpressionEAttribute, switchExpression,
+					Object.class);
 
-					IEvaluationResult switchExpressionResult = this.interpreter.evaluateExpression(switchExpressionVariables, switchExpression);
-					if (switchExpressionResult.success()) {
-						eefWidgetDescription = this.getWidgetDescription(switchExpressionResult, dynamicMappingSwitch.getCases());
-					} else {
-						EEFIdeUiPlugin.getPlugin().diagnostic(switchExpression, switchExpressionResult.getDiagnostic());
-					}
-
-					if (eefWidgetDescription != null) {
-						IVariableManager childVariableManager = this.variableManager.createChild();
-						childVariableManager.put(iterator, eObject);
-						this.createWidgetControl(parent, tabbedPropertySheetPage, eefWidgetDescription, childVariableManager);
-					}
-				}
-			} else {
-				EEFIdeUiPlugin.getPlugin().diagnostic(domainClassExpression, domainClassExpressionResult.getDiagnostic());
+			if (switchExpressionResult != null) {
+				eefWidgetDescription = this.getWidgetDescription(switchExpressionResult, dynamicMappingSwitch.getCases());
 			}
-		} else if (Util.isBlank(domainClassExpression)) {
-			EEFIdeUiPlugin.getPlugin().blank(EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION);
-		} else if (Util.isBlank(switchExpression)) {
-			EEFIdeUiPlugin.getPlugin().blank(EefPackage.Literals.EEF_DYNAMIC_MAPPING_SWITCH__SWITCH_EXPRESSION);
+
+			if (eefWidgetDescription != null) {
+				IVariableManager childVariableManager = this.variableManager.createChild();
+				childVariableManager.put(iterator, eObject);
+				this.createWidgetControl(parent, tabbedPropertySheetPage, eefWidgetDescription, childVariableManager);
+			}
 		}
 	}
 
@@ -219,18 +210,16 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	 * @return The {@link EEFWidgetDescription} for the matching case or <code>null</code> if the switch expression
 	 *         result is not a success or if none of the {@link EEFDynamicMappingCase} matches
 	 */
-	private EEFWidgetDescription getWidgetDescription(IEvaluationResult switchExpressionResult, List<EEFDynamicMappingCase> cases) {
+	private EEFWidgetDescription getWidgetDescription(Object switchExpressionResult, List<EEFDynamicMappingCase> cases) {
 		EEFDynamicMappingCase caseMatching = null;
 		for (EEFDynamicMappingCase dynamicMappingCase : cases) {
-			IEvaluationResult caseExpressionResult = this.interpreter.evaluateExpression(this.variableManager.getVariables(),
-					dynamicMappingCase.getCaseExpression());
-			if (caseExpressionResult.success()) {
-				if (caseExpressionResult.getValue() != null && caseExpressionResult.getValue().equals(switchExpressionResult.getValue())) {
-					caseMatching = dynamicMappingCase;
-					break;
-				}
-			} else {
-				EEFIdeUiPlugin.getPlugin().diagnostic(dynamicMappingCase.getCaseExpression(), caseExpressionResult.getDiagnostic());
+			String caseExpression = dynamicMappingCase.getCaseExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_CASE__CASE_EXPRESSION;
+
+			Object result = new Eval(this.interpreter, this.variableManager).get(eAttribute, caseExpression, Object.class);
+			if (result != null && result.equals(switchExpressionResult)) {
+				caseMatching = dynamicMappingCase;
+				break;
 			}
 		}
 

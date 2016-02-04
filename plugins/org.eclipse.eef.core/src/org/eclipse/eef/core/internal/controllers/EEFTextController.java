@@ -23,10 +23,11 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.core.internal.EEFCorePlugin;
+import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -92,14 +93,13 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 			@Override
 			protected void doExecute() {
 				String editExpression = EEFTextController.this.description.getEditExpression();
-				if (!Util.isBlank(editExpression)) {
-					Map<String, Object> variables = new HashMap<String, Object>();
-					variables.putAll(EEFTextController.this.variableManager.getVariables());
-					variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
-					EEFTextController.this.interpreter.evaluateExpression(variables, editExpression);
-				} else {
-					EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION);
-				}
+				EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
+
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(EEFTextController.this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+
+				new Eval(EEFTextController.this.interpreter, variables).call(eAttribute, editExpression);
 			}
 
 			@Override
@@ -129,11 +129,14 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		if (!Util.isBlank(valueExpression)) {
-			this.refreshStringBasedExpression(valueExpression, this.newValueConsumer);
-		} else {
-			EEFCorePlugin.getPlugin().blank(EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION);
-		}
+		EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION;
+
+		this.newEval().call(eAttribute, valueExpression, String.class, new ISuccessfulResultConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				EEFTextController.this.newValueConsumer.apply(value);
+			}
+		});
 	}
 
 	/**

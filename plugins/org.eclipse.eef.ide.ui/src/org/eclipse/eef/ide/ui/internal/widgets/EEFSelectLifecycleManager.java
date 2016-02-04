@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,11 +21,10 @@ import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFSelectController;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
-import org.eclipse.eef.ide.ui.internal.Messages;
+import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -35,7 +33,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -263,26 +260,14 @@ public class EEFSelectLifecycleManager implements ILifecycleManager {
 	private final class EEFSelectLabelProvider extends LabelProvider {
 		@Override
 		public String getText(Object element) {
-			String candidateDisplayExpression = description.getCandidateDisplayExpression();
-			if (!Util.isBlank(candidateDisplayExpression)) {
-				Map<String, Object> candidateDisplayExpressionVariables = new HashMap<String, Object>();
-				candidateDisplayExpressionVariables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
-				candidateDisplayExpressionVariables.put(EEFSelect.CANDIDATE, element);
-				IEvaluationResult evaluationResult = interpreter.evaluateExpression(candidateDisplayExpressionVariables, candidateDisplayExpression);
-				Object value = evaluationResult.getValue();
-				if (evaluationResult.success() && value instanceof String) {
-					return (String) value;
-				} else if (!(value instanceof String)) {
-					String message = MessageFormat.format(Messages.EEFSelectLifecycleManager_InvalidValueForExpression, candidateDisplayExpression,
-							String.class.getName(), value);
-					EEFIdeUiPlugin.getPlugin().error(message);
-				} else {
-					EEFIdeUiPlugin.getPlugin().diagnostic(candidateDisplayExpression, evaluationResult.getDiagnostic());
-				}
-			} else {
-				EEFIdeUiPlugin.getPlugin().blank(EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
-			}
-			return null;
+			String expression = description.getCandidateDisplayExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION;
+
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
+			variables.put(EEFSelect.CANDIDATE, element);
+
+			return new Eval(EEFSelectLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
 		}
 	}
 }
