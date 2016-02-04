@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_ae6f39ed",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/AbstractEEFController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-04T14:05:53Z",
+      "side": 1,
+      "message": "IEvaluationResult has standard coercions #asString(), #asBoolean() etc. which could be used here (and in the others).\n\nIt\u0027s a slightly different semantics as the current one, as the coercion methods will always return a non-null value, but for the better and for the worse it is consistant with how Sirius does it.\n\nWe can discuss offline if we want to go this way or not.",
+      "range": {
+        "startLine": 64,
+        "startChar": 3,
+        "endLine": 65,
+        "endChar": 30
+      },
+      "revId": "bf992caf36d25cecdb8ba57c39fc48aa5985790b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_2e640914",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/AbstractEEFController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-04T14:05:53Z",
+      "side": 1,
+      "message": "Could be tested earlier to avoid the whole evaluation if there is nothing to consume it. I\u0027m not really if the situation can happen given the current architecture, but...\n\nThe same remark applies to the other refresh*",
+      "range": {
+        "startLine": 65,
+        "startChar": 34,
+        "endLine": 65,
+        "endChar": 50
+      },
+      "revId": "bf992caf36d25cecdb8ba57c39fc48aa5985790b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_8e4b557e",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/AbstractEEFController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-04T14:05:53Z",
+      "side": 1,
+      "message": "IEvaluationResult.asEObjects()",
+      "range": {
+        "startLine": 132,
+        "startChar": 3,
+        "endLine": 132,
+        "endChar": 46
+      },
+      "revId": "bf992caf36d25cecdb8ba57c39fc48aa5985790b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
