@@ -13,7 +13,6 @@ package org.eclipse.eef.core.api;
 import java.util.List;
 
 import org.eclipse.eef.EEFViewDescription;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * The view if the root concept of the EEF model.
@@ -29,11 +28,11 @@ public interface EEFView {
 
 	/**
 	 * Sets the input of the view.
-	 * 
-	 * @param eObject
+	 *
+	 * @param input
 	 *            The input
 	 */
-	void setInput(EObject eObject);
+	void setInput(InputDescriptor input);
 
 	/**
 	 * Returns the description of the {@link EEFView}.

@@ -17,13 +17,13 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
+import org.eclipse.eef.core.api.InputDescriptor;
 import org.eclipse.eef.core.api.utils.Util;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFContainerLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
@@ -117,14 +117,14 @@ public class EEFSection implements IEEFSection {
 			IStructuredSelection iStructuredSelection = (IStructuredSelection) selection;
 			Object object = iStructuredSelection.getFirstElement();
 
-			EObject eObject = Platform.getAdapterManager().getAdapter(object, EObject.class);
+			InputDescriptor input = Platform.getAdapterManager().getAdapter(object, InputDescriptor.class);
 
 			// Update the input of the view only
 			EEFGroup eefGroup = this.eefSectionDescriptor.getEEFGroup();
 			EEFPage eefPage = eefGroup.getPage();
 
 			// TODO we should create a whole context with the current selection etc for the context
-			eefPage.getView().setInput(eObject);
+			eefPage.getView().setInput(input);
 		}
 	}
 

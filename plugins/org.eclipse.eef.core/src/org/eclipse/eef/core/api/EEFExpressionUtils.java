@@ -23,6 +23,11 @@ public final class EEFExpressionUtils {
 	public static final String SELF = "self"; //$NON-NLS-1$
 
 	/**
+	 * The input variable.
+	 */
+	public static final String INPUT = "input"; //$NON-NLS-1$
+
+	/**
 	 * The constructor.
 	 */
 	private EEFExpressionUtils() {
