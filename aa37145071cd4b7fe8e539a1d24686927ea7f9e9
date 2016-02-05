@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07d9433e_cea2b82a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-05T14:04:37Z",
+      "side": 1,
+      "message": "Use the variable manager that you have received in this operation otherwise some variables can be missing (i.e. dynamic mappings)",
+      "range": {
+        "startLine": 159,
+        "startChar": 109,
+        "endLine": 159,
+        "endChar": 138
+      },
+      "revId": "aa37145071cd4b7fe8e539a1d24686927ea7f9e9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
