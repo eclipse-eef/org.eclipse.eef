@@ -396,6 +396,59 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl <em>EEF Button Description</em>}
+	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFButtonDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonDescription()
+	 * @generated
+	 */
+	int EEF_BUTTON_DESCRIPTION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Button Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Push Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>EEF Button Description</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl
 	 * <em>EEF Checkbox Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -403,7 +456,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxDescription()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_DESCRIPTION = 7;
+	int EEF_CHECKBOX_DESCRIPTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -456,7 +509,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectDescription()
 	 * @generated
 	 */
-	int EEF_SELECT_DESCRIPTION = 8;
+	int EEF_SELECT_DESCRIPTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -527,7 +580,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingFor()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR = 9;
+	int EEF_DYNAMIC_MAPPING_FOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -572,7 +625,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingSwitch()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_SWITCH = 10;
+	int EEF_DYNAMIC_MAPPING_SWITCH = 11;
 
 	/**
 	 * The feature id for the '<em><b>Switch Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -609,7 +662,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingCase()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_CASE = 11;
+	int EEF_DYNAMIC_MAPPING_CASE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Case Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -930,6 +983,38 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEEFLabelDescription();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFButtonDescription <em>EEF Button Description</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Button Description</em>'.
+	 * @see org.eclipse.eef.EEFButtonDescription
+	 * @generated
+	 */
+	EClass getEEFButtonDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression
+	 * <em>Button Label Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Button Label Expression</em>'.
+	 * @see org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression()
+	 * @see #getEEFButtonDescription()
+	 * @generated
+	 */
+	EAttribute getEEFButtonDescription_ButtonLabelExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFButtonDescription#getPushExpression
+	 * <em>Push Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Push Expression</em>'.
+	 * @see org.eclipse.eef.EEFButtonDescription#getPushExpression()
+	 * @see #getEEFButtonDescription()
+	 * @generated
+	 */
+	EAttribute getEEFButtonDescription_PushExpression();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCheckboxDescription
@@ -1376,6 +1461,32 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EEF_LABEL_DESCRIPTION = EefPackage.eINSTANCE.getEEFLabelDescription();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl
+		 * <em>EEF Button Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFButtonDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonDescription()
+		 * @generated
+		 */
+		EClass EEF_BUTTON_DESCRIPTION = EefPackage.eINSTANCE.getEEFButtonDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Button Label Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION = EefPackage.eINSTANCE.getEEFButtonDescription_ButtonLabelExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Push Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION = EefPackage.eINSTANCE.getEEFButtonDescription_PushExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl

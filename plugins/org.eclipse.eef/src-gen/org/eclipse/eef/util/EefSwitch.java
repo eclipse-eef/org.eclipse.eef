@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef.util;
 
+import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFDynamicMappingCase;
@@ -131,6 +132,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFLabelDescription(eefLabelDescription);
 			if (result == null) {
 				result = caseEEFWidgetDescription(eefLabelDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_BUTTON_DESCRIPTION: {
+			EEFButtonDescription eefButtonDescription = (EEFButtonDescription) theEObject;
+			T result = caseEEFButtonDescription(eefButtonDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefButtonDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -290,6 +302,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFLabelDescription(EEFLabelDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Button Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Button Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFButtonDescription(EEFButtonDescription object) {
 		return null;
 	}
 

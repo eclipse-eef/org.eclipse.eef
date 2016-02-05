@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFDynamicMappingCase;
@@ -152,6 +153,14 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			eefCheckboxLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
 			this.lifecycleManagers.add(eefCheckboxLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFButtonDescription) {
+			EEFButtonDescription eefButtonDescription = (EEFButtonDescription) eefWidgetDescription;
+
+			EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, variableManager.createChild(),
+					interpreter, editingDomain);
+			eefButtonLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+
+			this.lifecycleManagers.add(eefButtonLifecycleManager);
 		}
 	}
 

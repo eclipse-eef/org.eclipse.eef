@@ -212,6 +212,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFButtonDescriptionItemProvider eefButtonDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFButtonDescriptionAdapter() {
+		if (eefButtonDescriptionItemProvider == null) {
+			eefButtonDescriptionItemProvider = new EEFButtonDescriptionItemProvider(this);
+		}
+
+		return eefButtonDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -443,6 +466,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefLabelDescriptionItemProvider != null) {
 			eefLabelDescriptionItemProvider.dispose();
+		}
+		if (eefButtonDescriptionItemProvider != null) {
+			eefButtonDescriptionItemProvider.dispose();
 		}
 		if (eefCheckboxDescriptionItemProvider != null) {
 			eefCheckboxDescriptionItemProvider.dispose();

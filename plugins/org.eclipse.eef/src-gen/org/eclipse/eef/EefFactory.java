@@ -74,6 +74,14 @@ public interface EefFactory extends EFactory {
 	EEFLabelDescription createEEFLabelDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Button Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Button Description</em>'.
+	 * @generated
+	 */
+	EEFButtonDescription createEEFButtonDescription();
+
+	/**
 	 * Returns a new object of class '<em>EEF Checkbox Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Checkbox Description</em>'.

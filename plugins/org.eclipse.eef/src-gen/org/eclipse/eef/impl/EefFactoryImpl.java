@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef.impl;
 
+import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFDynamicMappingCase;
@@ -79,6 +80,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFTextDescription();
 		case EefPackage.EEF_LABEL_DESCRIPTION:
 			return createEEFLabelDescription();
+		case EefPackage.EEF_BUTTON_DESCRIPTION:
+			return createEEFButtonDescription();
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION:
 			return createEEFCheckboxDescription();
 		case EefPackage.EEF_SELECT_DESCRIPTION:
@@ -158,6 +161,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFLabelDescription createEEFLabelDescription() {
 		EEFLabelDescriptionImpl eefLabelDescription = new EEFLabelDescriptionImpl();
 		return eefLabelDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFButtonDescription createEEFButtonDescription() {
+		EEFButtonDescriptionImpl eefButtonDescription = new EEFButtonDescriptionImpl();
+		return eefButtonDescription;
 	}
 
 	/**
