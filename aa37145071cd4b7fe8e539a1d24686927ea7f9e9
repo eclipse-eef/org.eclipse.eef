@@ -22,6 +22,30 @@
       "revId": "aa37145071cd4b7fe8e539a1d24686927ea7f9e9",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07d9433e_a28585e9",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-08T13:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07d9433e_cea2b82a",
+      "range": {
+        "startLine": 159,
+        "startChar": 109,
+        "endLine": 159,
+        "endChar": 138
+      },
+      "revId": "aa37145071cd4b7fe8e539a1d24686927ea7f9e9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }
