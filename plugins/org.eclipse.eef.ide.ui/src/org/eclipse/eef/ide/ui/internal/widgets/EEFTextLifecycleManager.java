@@ -118,10 +118,21 @@ public class EEFTextLifecycleManager implements ILifecycleManager {
 
 		this.label = widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
 
-		this.text = widgetFactory.createText(parent, "", SWT.NONE); //$NON-NLS-1$
+		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
+
+		// Get text area line count
+		int lineCount = description.getLineCount();
+
+		// Create text or text area according to the defined line count
+		if (lineCount > 1) {
+			this.text = widgetFactory.createText(parent, "", SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
+			nameData.heightHint = lineCount * text.getLineHeight();
+		} else {
+			this.text = widgetFactory.createText(parent, "", SWT.NONE); //$NON-NLS-1$
+		}
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
-		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
+
 		this.text.setLayoutData(nameData);
 
 		this.help = widgetFactory.createLabel(parent, ""); //$NON-NLS-1$

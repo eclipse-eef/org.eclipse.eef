@@ -48,6 +48,7 @@ public class EEFTextDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 
 			addValueExpressionPropertyDescriptor(object);
 			addEditExpressionPropertyDescriptor(object);
+			addLineCountPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,6 +82,18 @@ public class EEFTextDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 						"_UI_PropertyDescriptor_description", "_UI_EEFTextDescription_editExpression_feature", "_UI_EEFTextDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Line Count feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addLineCountPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFTextDescription_lineCount_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFTextDescription_lineCount_feature", "_UI_EEFTextDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_TEXT_DESCRIPTION__LINE_COUNT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -129,6 +142,7 @@ public class EEFTextDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 		switch (notification.getFeatureID(EEFTextDescription.class)) {
 		case EefPackage.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION:
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
+		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

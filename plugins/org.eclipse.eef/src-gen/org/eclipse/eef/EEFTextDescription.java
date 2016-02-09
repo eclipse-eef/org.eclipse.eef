@@ -17,6 +17,7 @@ package org.eclipse.eef;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFTextDescription#getLineCount <em>Line Count</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,5 +72,29 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setEditExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Line Count</b></em>' attribute. The default value is <code>"1"</code>. <!--
+	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> Must be upper or equal to 1. If lineCount > 1,
+	 * the text field is represented thanks to a text area. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Line Count</em>' attribute.
+	 * @see #setLineCount(int)
+	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_LineCount()
+	 * @model default="1"
+	 * @generated
+	 */
+	int getLineCount();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFTextDescription#getLineCount <em>Line Count</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Line Count</em>' attribute.
+	 * @see #getLineCount()
+	 * @generated
+	 */
+	void setLineCount(int value);
 
 } // EEFTextDescription

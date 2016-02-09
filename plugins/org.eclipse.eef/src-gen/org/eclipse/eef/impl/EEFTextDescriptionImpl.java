@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getLineCount <em>Line Count</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +68,26 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	 * @ordered
 	 */
 	protected String editExpression = EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLineCount() <em>Line Count</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @see #getLineCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int LINE_COUNT_EDEFAULT = 1;
+
+	/**
+	 * The cached value of the '{@link #getLineCount() <em>Line Count</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @see #getLineCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected int lineCount = EEFTextDescriptionImpl.LINE_COUNT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -142,12 +163,38 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	 * @generated
 	 */
 	@Override
+	public int getLineCount() {
+		return lineCount;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setLineCount(int newLineCount) {
+		int oldLineCount = lineCount;
+		lineCount = newLineCount;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT, oldLineCount, lineCount));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EefPackage.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION:
 			return getValueExpression();
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			return getEditExpression();
+		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
+			return getLineCount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +212,9 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return;
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			setEditExpression((String) newValue);
+			return;
+		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
+			setLineCount((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -184,6 +234,9 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			setEditExpression(EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
+			setLineCount(EEFTextDescriptionImpl.LINE_COUNT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +255,8 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			return EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
 			: !EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
+			return lineCount != EEFTextDescriptionImpl.LINE_COUNT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,6 +277,8 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		result.append(valueExpression);
 		result.append(", editExpression: "); //$NON-NLS-1$
 		result.append(editExpression);
+		result.append(", lineCount: "); //$NON-NLS-1$
+		result.append(lineCount);
 		result.append(')');
 		return result.toString();
 	}
