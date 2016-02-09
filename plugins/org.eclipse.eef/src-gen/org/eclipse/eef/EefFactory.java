@@ -90,6 +90,14 @@ public interface EefFactory extends EFactory {
 	EEFSelectDescription createEEFSelectDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Radio Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Radio Description</em>'.
+	 * @generated
+	 */
+	EEFRadioDescription createEEFRadioDescription();
+
+	/**
 	 * Returns a new object of class '<em>EEF Dynamic Mapping For</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Dynamic Mapping For</em>'.

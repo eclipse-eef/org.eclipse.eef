@@ -29,6 +29,12 @@ public final class Messages {
 	@TranslatableMessage
 	public static String EEFSelectLifecycleManager_InvalidValueForExpression;
 
+	@TranslatableMessage
+	public static String EEFRadioLifecycleManager_BlankCandidateDisplayExpression;
+
+	@TranslatableMessage
+	public static String EEFRadioLifecycleManager_InvalidValueForExpression;
+
 	// CHECKSTYLE:ON
 
 	/**

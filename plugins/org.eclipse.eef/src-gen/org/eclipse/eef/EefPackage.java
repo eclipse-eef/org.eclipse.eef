@@ -520,6 +520,77 @@ public interface EefPackage extends EPackage {
 	int EEF_SELECT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl <em>EEF Radio Description</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFRadioDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioDescription()
+	 * @generated
+	 */
+	int EEF_RADIO_DESCRIPTION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Edit Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Candidate Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>EEF Radio Description</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
 	 * <em>EEF Dynamic Mapping For</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -527,7 +598,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingFor()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR = 9;
+	int EEF_DYNAMIC_MAPPING_FOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -572,7 +643,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingSwitch()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_SWITCH = 10;
+	int EEF_DYNAMIC_MAPPING_SWITCH = 11;
 
 	/**
 	 * The feature id for the '<em><b>Switch Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -609,7 +680,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingCase()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_CASE = 11;
+	int EEF_DYNAMIC_MAPPING_CASE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Case Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1017,6 +1088,61 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFSelectDescription_CandidateDisplayExpression();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRadioDescription <em>EEF Radio Description</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Radio Description</em>'.
+	 * @see org.eclipse.eef.EEFRadioDescription
+	 * @generated
+	 */
+	EClass getEEFRadioDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFRadioDescription#getValueExpression
+	 * <em>Value Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Value Expression</em>'.
+	 * @see org.eclipse.eef.EEFRadioDescription#getValueExpression()
+	 * @see #getEEFRadioDescription()
+	 * @generated
+	 */
+	EAttribute getEEFRadioDescription_ValueExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFRadioDescription#getEditExpression
+	 * <em>Edit Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Edit Expression</em>'.
+	 * @see org.eclipse.eef.EEFRadioDescription#getEditExpression()
+	 * @see #getEEFRadioDescription()
+	 * @generated
+	 */
+	EAttribute getEEFRadioDescription_EditExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression
+	 * <em>Candidates Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Candidates Expression</em>'.
+	 * @see org.eclipse.eef.EEFRadioDescription#getCandidatesExpression()
+	 * @see #getEEFRadioDescription()
+	 * @generated
+	 */
+	EAttribute getEEFRadioDescription_CandidatesExpression();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Candidate Display Expression</em>'.
+	 * @see org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression()
+	 * @see #getEEFRadioDescription()
+	 * @generated
+	 */
+	EAttribute getEEFRadioDescription_CandidateDisplayExpression();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFDynamicMappingFor <em>EEF Dynamic Mapping For</em>}
@@ -1444,6 +1570,48 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFSelectDescription_CandidateDisplayExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl
+		 * <em>EEF Radio Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFRadioDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioDescription()
+		 * @generated
+		 */
+		EClass EEF_RADIO_DESCRIPTION = EefPackage.eINSTANCE.getEEFRadioDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION = EefPackage.eINSTANCE.getEEFRadioDescription_ValueExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Edit Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION = EefPackage.eINSTANCE.getEEFRadioDescription_EditExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Candidates Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION = EefPackage.eINSTANCE.getEEFRadioDescription_CandidatesExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Candidate Display Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFRadioDescription_CandidateDisplayExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
