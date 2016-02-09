@@ -11,7 +11,6 @@
 package org.eclipse.eef.ide.ui.internal;
 
 import org.eclipse.eef.core.api.utils.I18N;
-import org.eclipse.eef.core.api.utils.I18N.TranslatableMessage;
 
 /**
  * Utility class used for the internationalization.
@@ -25,9 +24,6 @@ public final class Messages {
 	}
 
 	// CHECKSTYLE:OFF
-
-	@TranslatableMessage
-	public static String EEFSelectLifecycleManager_InvalidValueForExpression;
 
 	// CHECKSTYLE:ON
 

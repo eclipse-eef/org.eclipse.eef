@@ -186,6 +186,9 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__WIDGETS,
 				EefFactory.eINSTANCE.createEEFSelectDescription()));
 
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__WIDGETS,
+				EefFactory.eINSTANCE.createEEFRadioDescription()));
+
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS,
 				EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
 	}

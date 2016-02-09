@@ -16,6 +16,7 @@ import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
@@ -83,6 +84,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCheckboxDescription();
 		case EefPackage.EEF_SELECT_DESCRIPTION:
 			return createEEFSelectDescription();
+		case EefPackage.EEF_RADIO_DESCRIPTION:
+			return createEEFRadioDescription();
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR:
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_SWITCH:
@@ -180,6 +183,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFSelectDescription createEEFSelectDescription() {
 		EEFSelectDescriptionImpl eefSelectDescription = new EEFSelectDescriptionImpl();
 		return eefSelectDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFRadioDescription createEEFRadioDescription() {
+		EEFRadioDescriptionImpl eefRadioDescription = new EEFRadioDescriptionImpl();
+		return eefRadioDescription;
 	}
 
 	/**
