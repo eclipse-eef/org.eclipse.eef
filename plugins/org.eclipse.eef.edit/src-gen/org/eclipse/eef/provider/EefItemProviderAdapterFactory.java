@@ -281,6 +281,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFRadioDescriptionItemProvider eefRadioDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFRadioDescriptionAdapter() {
+		if (eefRadioDescriptionItemProvider == null) {
+			eefRadioDescriptionItemProvider = new EEFRadioDescriptionItemProvider(this);
+		}
+
+		return eefRadioDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -475,6 +498,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefSelectDescriptionItemProvider != null) {
 			eefSelectDescriptionItemProvider.dispose();
+		}
+		if (eefRadioDescriptionItemProvider != null) {
+			eefRadioDescriptionItemProvider.dispose();
 		}
 		if (eefDynamicMappingForItemProvider != null) {
 			eefDynamicMappingForItemProvider.dispose();
