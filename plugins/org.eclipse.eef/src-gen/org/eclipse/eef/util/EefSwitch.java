@@ -17,6 +17,7 @@ import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
@@ -165,6 +166,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFSelectDescription(eefSelectDescription);
 			if (result == null) {
 				result = caseEEFWidgetDescription(eefSelectDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_RADIO_DESCRIPTION: {
+			EEFRadioDescription eefRadioDescription = (EEFRadioDescription) theEObject;
+			T result = caseEEFRadioDescription(eefRadioDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefRadioDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -347,6 +359,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFSelectDescription(EEFSelectDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Radio Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Radio Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFRadioDescription(EEFRadioDescription object) {
 		return null;
 	}
 

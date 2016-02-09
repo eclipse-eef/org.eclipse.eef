@@ -22,6 +22,7 @@ import org.eclipse.eef.EEFDynamicMappingCase;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingSwitch;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -145,6 +146,14 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			eefSelectLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
 			this.lifecycleManagers.add(eefSelectLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFRadioDescription) {
+			EEFRadioDescription eefRadioDescription = (EEFRadioDescription) eefWidgetDescription;
+
+			EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager, interpreter,
+					editingDomain);
+			eefRadioLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+
+			this.lifecycleManagers.add(eefRadioLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFCheckboxDescription) {
 			EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) eefWidgetDescription;
 
