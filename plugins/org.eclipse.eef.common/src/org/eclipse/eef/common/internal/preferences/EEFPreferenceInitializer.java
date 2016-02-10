@@ -8,32 +8,26 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.internal;
+package org.eclipse.eef.common.internal.preferences;
 
-import org.eclipse.eef.common.api.utils.I18N;
-import org.eclipse.eef.common.api.utils.I18N.TranslatableMessage;
+import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
+import org.eclipse.eef.common.api.preferences.EEFCommonPreferences;
 
 /**
- * Utility class used for the internationalization.
+ * The preference initializer.
  *
  * @author sbegaudeau
  */
-public final class Messages {
-
-	static {
-		I18N.initializeMessages(Messages.class, EEFCorePlugin.INSTANCE);
-	}
-
-	// CHECKSTYLE:OFF
-	@TranslatableMessage
-	public static String AbstractEEFWidgetController_InvalidValueForExpression;
-
-	// CHECKSTYLE:ON
+public class EEFPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/**
-	 * The constructor.
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer#initializeDefaultPreferences()
 	 */
-	private Messages() {
-		// Prevents instanciation.
+	@Override
+	public void initializeDefaultPreferences() {
+		EEFCommonPreferences.setDebug(false);
 	}
+
 }

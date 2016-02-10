@@ -63,7 +63,7 @@ public class EEFTabbedPropertyRegistry {
 	private List<IEEFTabDescriptor> getAllTabDescriptors(IWorkbenchPart part, ISelection input) {
 		// Get the tab descriptors from the extension point
 		Map<String, IEEFTabDescriptor> eefTabDescriptors = new LinkedHashMap<String, IEEFTabDescriptor>();
-		IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry = EEFTabbedPropertyViewPlugin.getInstance()
+		IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry = EEFTabbedPropertyViewPlugin.getPlugin()
 				.getEEFTabDescriptorProviderRegistry();
 		for (IItemDescriptor<IEEFTabDescriptorProvider> itemDescriptor : eefTabDescriptorProviderRegistry.getItemDescriptors()) {
 			IEEFTabDescriptorProvider eefTabDescriptorProvider = itemDescriptor.getItem();
@@ -138,7 +138,7 @@ public class EEFTabbedPropertyRegistry {
 				if (eefSectionDescriptor.getId() != null) {
 					filteredEefSectionDescriptors.add(eefSectionDescriptor);
 				} else {
-					EEFTabbedPropertyViewPlugin.getInstance().logError(Messages.EEFTabbedPropertyRegistry_MissingSectionDescriptorId);
+					EEFTabbedPropertyViewPlugin.getPlugin().error(Messages.EEFTabbedPropertyRegistry_MissingSectionDescriptorId);
 				}
 			}
 		}

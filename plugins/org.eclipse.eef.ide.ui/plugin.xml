@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.eclipse.eef.ide.ui.internal.preferences.EEFPreferencePage"
+            id="org.eclipse.eef.ide.ui.preferencePage"
+            name="%EEFIdeUi_PreferencePage_Name">
+      </page>
+   </extension>
+
+</plugin>

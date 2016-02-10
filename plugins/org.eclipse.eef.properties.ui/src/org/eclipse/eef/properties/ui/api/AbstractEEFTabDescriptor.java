@@ -43,7 +43,7 @@ public abstract class AbstractEEFTabDescriptor implements IEEFTabDescriptor, Clo
 		try {
 			return super.clone();
 		} catch (CloneNotSupportedException exception) {
-			EEFTabbedPropertyViewPlugin.getInstance().logError(exception);
+			EEFTabbedPropertyViewPlugin.getPlugin().error(exception.getMessage(), exception);
 		}
 		return null;
 	}

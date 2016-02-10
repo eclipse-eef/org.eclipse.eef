@@ -8,32 +8,17 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.internal;
-
-import org.eclipse.eef.common.api.utils.I18N;
-import org.eclipse.eef.common.api.utils.I18N.TranslatableMessage;
+package org.eclipse.eef.common.internal.preferences;
 
 /**
- * Utility class used for the internationalization.
+ * Interface used to store preference constants.
  *
  * @author sbegaudeau
  */
-public final class Messages {
-
-	static {
-		I18N.initializeMessages(Messages.class, EEFCorePlugin.INSTANCE);
-	}
-
-	// CHECKSTYLE:OFF
-	@TranslatableMessage
-	public static String AbstractEEFWidgetController_InvalidValueForExpression;
-
-	// CHECKSTYLE:ON
-
+public interface IEEFPreferenceConstants {
 	/**
-	 * The constructor.
+	 * The key for the debug preference.
 	 */
-	private Messages() {
-		// Prevents instanciation.
-	}
+	String DEBUG = "debug"; //$NON-NLS-1$
+
 }

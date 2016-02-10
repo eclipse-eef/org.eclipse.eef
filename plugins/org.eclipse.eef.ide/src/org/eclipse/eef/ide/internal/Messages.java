@@ -10,8 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.internal;
 
-import org.eclipse.eef.core.api.utils.I18N;
-import org.eclipse.eef.core.api.utils.I18N.TranslatableMessage;
+import org.eclipse.eef.common.api.utils.I18N;
+import org.eclipse.eef.common.api.utils.I18N.TranslatableMessage;
 
 /**
  * Utility class used to hold the messages of the bundle.

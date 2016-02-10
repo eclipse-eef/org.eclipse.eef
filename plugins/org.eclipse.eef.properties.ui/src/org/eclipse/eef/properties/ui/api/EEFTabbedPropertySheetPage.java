@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.eef.common.api.preferences.EEFCommonPreferences;
+import org.eclipse.eef.properties.ui.internal.EEFTabbedPropertyViewPlugin;
 import org.eclipse.eef.properties.ui.internal.page.EEFPartListenerAdapter;
 import org.eclipse.eef.properties.ui.internal.page.EEFTabbedPropertyComposite;
 import org.eclipse.eef.properties.ui.internal.page.EEFTabbedPropertyListContentProvider;
@@ -281,6 +283,9 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 */
 	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFTabbedPropertyViewPlugin.getPlugin().info("EEFTabbedPropertySheetPage#selectionChanged(...)"); //$NON-NLS-1$
+		}
 		this.setInput(part, selection);
 	}
 
@@ -424,6 +429,10 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 *            the new activated part.
 	 */
 	private void handlePartActivated(IWorkbenchPart part) {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFTabbedPropertyViewPlugin.getPlugin().info("EEFTabbedPropertySheetPage#partActivated(...)"); //$NON-NLS-1$
+		}
+
 		/*
 		 * The properties view has been activated and the current page is this instance of TabbedPropertySheetPage
 		 */
@@ -488,6 +497,9 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			EEFTabContents tab = null;
 
 			if (descriptor == null) {
+				if (EEFCommonPreferences.isDebugEnabled()) {
+					EEFTabbedPropertyViewPlugin.getPlugin().info("EEFTabbedPropertySheetPage -- Hide tab"); //$NON-NLS-1$
+				}
 				// pretend the tab is empty.
 				this.hideTab(this.currentTab);
 			} else {

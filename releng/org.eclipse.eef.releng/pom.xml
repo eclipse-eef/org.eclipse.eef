@@ -91,6 +91,7 @@ Contributors:
         <module>../../plugins/org.eclipse.eef</module>
         <module>../../plugins/org.eclipse.eef.edit</module>
 
+        <module>../../plugins/org.eclipse.eef.common</module>
         <module>../../plugins/org.eclipse.eef.core</module>
         <module>../../plugins/org.eclipse.eef.ide</module>
         <module>../../plugins/org.eclipse.eef.ide.ui</module>

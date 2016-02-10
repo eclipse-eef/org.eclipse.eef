@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.api;
+package org.eclipse.eef.common.api;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -16,8 +16,7 @@ import java.util.List;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.eef.core.api.utils.Util;
-import org.eclipse.eef.core.internal.Messages;
+import org.eclipse.eef.common.internal.Messages;
 import org.eclipse.emf.common.EMFPlugin.EclipsePlugin;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EAttribute;
@@ -88,13 +87,13 @@ public abstract class AbstractEEFEclipsePlugin extends EclipsePlugin {
 
 		StringBuilder messageToLog = new StringBuilder();
 
-		if (!Util.isBlank(diagnostic.getMessage())) {
+		if (diagnostic.getMessage() != null && diagnostic.getMessage().trim().length() > 0) {
 			messageToLog.append(diagnostic.getMessage());
 			messageToLog.append(ls);
 		}
 		List<Diagnostic> children = diagnostic.getChildren();
 		for (Diagnostic childDiagnostic : children) {
-			if (!Util.isBlank(childDiagnostic.getMessage())) {
+			if (childDiagnostic.getMessage() != null && childDiagnostic.getMessage().trim().length() > 0) {
 				messageToLog.append(childDiagnostic.getMessage());
 				messageToLog.append(ls);
 			}

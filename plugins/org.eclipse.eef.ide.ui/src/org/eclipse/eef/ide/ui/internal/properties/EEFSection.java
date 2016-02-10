@@ -14,9 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.eef.common.api.preferences.EEFCommonPreferences;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.InputDescriptor;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFGroupLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
@@ -56,6 +58,10 @@ public class EEFSection implements IEEFSection {
 
 	@Override
 	public void createControls(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFIdeUiPlugin.getPlugin().info("EEFSection#createControls(...)"); //$NON-NLS-1$
+		}
+
 		EEFPage eefPage = this.eefSectionDescriptor.getEEFPage();
 		List<EEFGroup> eefGroups = eefPage.getGroups();
 		for (EEFGroup eefGroup : eefGroups) {
@@ -69,6 +75,10 @@ public class EEFSection implements IEEFSection {
 
 	@Override
 	public void aboutToBeShown() {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFIdeUiPlugin.getPlugin().info("EEFSection#aboutToBeShown(...)"); //$NON-NLS-1$
+		}
+
 		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.aboutToBeShown();
 		}
@@ -76,6 +86,10 @@ public class EEFSection implements IEEFSection {
 
 	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFIdeUiPlugin.getPlugin().info("EEFSection#setInput(...)"); //$NON-NLS-1$
+		}
+
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection iStructuredSelection = (IStructuredSelection) selection;
 			Object object = iStructuredSelection.getFirstElement();
@@ -89,6 +103,10 @@ public class EEFSection implements IEEFSection {
 
 	@Override
 	public void refresh() {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFIdeUiPlugin.getPlugin().info("EEFSection#refresh(...)"); //$NON-NLS-1$
+		}
+
 		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.refresh();
 		}
@@ -96,6 +114,10 @@ public class EEFSection implements IEEFSection {
 
 	@Override
 	public void aboutToBeHidden() {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFIdeUiPlugin.getPlugin().info("EEFSection#aboutToBeHidden(...)"); //$NON-NLS-1$
+		}
+
 		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.aboutToBeHidden();
 		}
@@ -103,6 +125,10 @@ public class EEFSection implements IEEFSection {
 
 	@Override
 	public void dispose() {
+		if (EEFCommonPreferences.isDebugEnabled()) {
+			EEFIdeUiPlugin.getPlugin().info("EEFSection#dispose(...)"); //$NON-NLS-1$
+		}
+
 		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.dispose();
 		}

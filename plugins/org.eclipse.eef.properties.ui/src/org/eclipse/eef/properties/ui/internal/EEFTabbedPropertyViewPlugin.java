@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2001, 2015 IBM Corporation and others.
+ * Copyright (c) 2001, 2016 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,15 +12,15 @@
 package org.eclipse.eef.properties.ui.internal;
 
 import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.eef.common.api.AbstractEEFEclipsePlugin;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
 import org.eclipse.eef.properties.ui.internal.extension.AbstractRegistryEventListener;
 import org.eclipse.eef.properties.ui.internal.extension.IItemRegistry;
 import org.eclipse.eef.properties.ui.internal.extension.impl.EEFTabDescriptorProviderRegistryEventListener;
 import org.eclipse.eef.properties.ui.internal.extension.impl.ItemRegistry;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.emf.common.EMFPlugin;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -29,106 +29,121 @@ import org.osgi.framework.BundleContext;
  * @author Anthony Hunter
  * @author Stephane Begaudeau
  */
-public class EEFTabbedPropertyViewPlugin extends AbstractUIPlugin {
+public class EEFTabbedPropertyViewPlugin extends EMFPlugin {
 	/**
 	 * The symbolic name of the plugin.
 	 */
-	private static final String PLUGIN_ID = "org.eclipse.eef.properties.ui"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.eef.properties.ui"; //$NON-NLS-1$
 
 	/**
-	 * The sole instance of the activator.
+	 * The sole instance of the plugin.
 	 */
-	private static EEFTabbedPropertyViewPlugin instance;
+	public static final EEFTabbedPropertyViewPlugin INSTANCE = new EEFTabbedPropertyViewPlugin();
 
 	/**
-	 * The name of the extension point for the tab descriptor provider.
+	 * The OSGi related implementation of the plugin.
 	 */
-	private static final String EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT = "eefTabDescriptorProvider"; //$NON-NLS-1$
+	private static Implementation plugin;
 
 	/**
-	 * The {@link IItemRegistry} used to retrieve the tab descriptor provider {@link IEEFTabDescriptorProvider}.
+	 * The constructor.
 	 */
-	private IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry;
-
-	/**
-	 * The extension registry listener used to populate the registry of tab descriptor provider
-	 * {@link IEEFTabDescriptorProvider}.
-	 */
-	private AbstractRegistryEventListener eefTabDescriptorProviderListener;
-
-	/**
-	 * Returns the sole instance of the plugin.
-	 *
-	 * @return The sole instance of the plugin
-	 */
-	public static EEFTabbedPropertyViewPlugin getInstance() {
-		return instance;
+	public EEFTabbedPropertyViewPlugin() {
+		super(new ResourceLocator[0]);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
+	 * @see org.eclipse.emf.common.EMFPlugin#getPluginResourceLocator()
 	 */
 	@Override
-	public void start(BundleContext context) throws Exception {
-		super.start(context);
-		instance = this;
-
-		IExtensionRegistry registry = Platform.getExtensionRegistry();
-
-		this.eefTabDescriptorProviderRegistry = new ItemRegistry<IEEFTabDescriptorProvider>();
-		this.eefTabDescriptorProviderListener = new EEFTabDescriptorProviderRegistryEventListener<IEEFTabDescriptorProvider>(PLUGIN_ID,
-				EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT, this.eefTabDescriptorProviderRegistry);
-		registry.addListener(this.eefTabDescriptorProviderListener, PLUGIN_ID + '.' + EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT);
-		this.eefTabDescriptorProviderListener.readRegistry(registry);
+	public ResourceLocator getPluginResourceLocator() {
+		return plugin;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Returns the OSGi related implementation of the plugin.
 	 *
-	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
+	 * @return The OSGi related implementation of the plugin
 	 */
-	@Override
-	public void stop(BundleContext context) throws Exception {
-		instance = null;
-		super.stop(context);
-
-		IExtensionRegistry registry = Platform.getExtensionRegistry();
-
-		registry.removeListener(this.eefTabDescriptorProviderListener);
-		this.eefTabDescriptorProviderListener = null;
-		this.eefTabDescriptorProviderRegistry = null;
+	public static Implementation getPlugin() {
+		return plugin;
 	}
 
 	/**
-	 * Logs the given exception as an error.
+	 * This class is used as the bundle activator of the plugin.
 	 *
-	 * @param exception
-	 *            The exception to log
+	 * @author sbegaudeau
 	 */
-	public void logError(Exception exception) {
-		IStatus status = new Status(IStatus.ERROR, PLUGIN_ID, exception.getMessage(), exception);
-		this.getLog().log(status);
+	public static class Implementation extends AbstractEEFEclipsePlugin {
+		/**
+		 * The name of the extension point for the tab descriptor provider.
+		 */
+		private static final String EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT = "eefTabDescriptorProvider"; //$NON-NLS-1$
+
+		/**
+		 * The {@link IItemRegistry} used to retrieve the tab descriptor provider {@link IEEFTabDescriptorProvider}.
+		 */
+		private IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry;
+
+		/**
+		 * The extension registry listener used to populate the registry of tab descriptor provider
+		 * {@link IEEFTabDescriptorProvider}.
+		 */
+		private AbstractRegistryEventListener eefTabDescriptorProviderListener;
+
+		/**
+		 * The constructor.
+		 */
+		public Implementation() {
+			super(PLUGIN_ID);
+
+			EEFTabbedPropertyViewPlugin.plugin = this;
+		}
+
+		/**
+		 * {@inheritDoc}
+		 *
+		 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
+		 */
+		@Override
+		public void start(BundleContext context) throws Exception {
+			super.start(context);
+
+			IExtensionRegistry registry = Platform.getExtensionRegistry();
+
+			this.eefTabDescriptorProviderRegistry = new ItemRegistry<IEEFTabDescriptorProvider>();
+			this.eefTabDescriptorProviderListener = new EEFTabDescriptorProviderRegistryEventListener<IEEFTabDescriptorProvider>(PLUGIN_ID,
+					EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT, this.eefTabDescriptorProviderRegistry);
+			registry.addListener(this.eefTabDescriptorProviderListener, PLUGIN_ID + '.' + EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT);
+			this.eefTabDescriptorProviderListener.readRegistry(registry);
+		}
+
+		/**
+		 * {@inheritDoc}
+		 *
+		 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
+		 */
+		@Override
+		public void stop(BundleContext context) throws Exception {
+			super.stop(context);
+
+			IExtensionRegistry registry = Platform.getExtensionRegistry();
+
+			registry.removeListener(this.eefTabDescriptorProviderListener);
+			this.eefTabDescriptorProviderListener = null;
+			this.eefTabDescriptorProviderRegistry = null;
+		}
+
+		/**
+		 * Return the tabbedPropertyTabsRegistry.
+		 *
+		 * @return the tabbedPropertyTabsRegistry
+		 */
+		public IItemRegistry<IEEFTabDescriptorProvider> getEEFTabDescriptorProviderRegistry() {
+			return this.eefTabDescriptorProviderRegistry;
+		}
 	}
 
-	/**
-	 * Logs the given message as an error.
-	 *
-	 * @param message
-	 *            The message to log
-	 */
-	public void logError(String message) {
-		IStatus status = new Status(IStatus.ERROR, PLUGIN_ID, message, null);
-		this.getLog().log(status);
-	}
-
-	/**
-	 * Return the tabbedPropertyTabsRegistry.
-	 *
-	 * @return the tabbedPropertyTabsRegistry
-	 */
-	public IItemRegistry<IEEFTabDescriptorProvider> getEEFTabDescriptorProviderRegistry() {
-		return this.eefTabDescriptorProviderRegistry;
-	}
 }

@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.internal;
+package org.eclipse.eef.common.internal;
 
 import org.eclipse.eef.common.api.AbstractEEFEclipsePlugin;
 import org.eclipse.emf.common.EMFPlugin;
@@ -19,17 +19,17 @@ import org.eclipse.emf.common.util.ResourceLocator;
  *
  * @author sbegaudeau
  */
-public class EEFCorePlugin extends EMFPlugin {
+public class EEFCommonPlugin extends EMFPlugin {
 
 	/**
 	 * The identifier of the plugin.
 	 */
-	public static final String PLUGIN_ID = "org.eclipse.eef.core"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.eclipse.eef.common"; //$NON-NLS-1$
 
 	/**
 	 * The sole instance of the plugin.
 	 */
-	public static final EEFCorePlugin INSTANCE = new EEFCorePlugin();
+	public static final EEFCommonPlugin INSTANCE = new EEFCommonPlugin();
 
 	/**
 	 * The sole instance of the bundle activator.
@@ -39,7 +39,7 @@ public class EEFCorePlugin extends EMFPlugin {
 	/**
 	 * The constructor.
 	 */
-	public EEFCorePlugin() {
+	public EEFCommonPlugin() {
 		super(new ResourceLocator[0]);
 	}
 

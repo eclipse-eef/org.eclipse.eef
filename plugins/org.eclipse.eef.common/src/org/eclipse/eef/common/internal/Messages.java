@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal;
+package org.eclipse.eef.common.internal;
 
 import org.eclipse.eef.common.api.utils.I18N;
 import org.eclipse.eef.common.api.utils.I18N.TranslatableMessage;
@@ -21,15 +21,15 @@ import org.eclipse.eef.common.api.utils.I18N.TranslatableMessage;
 public final class Messages {
 
 	static {
-		I18N.initializeMessages(Messages.class, EEFIdeUiPlugin.INSTANCE);
+		I18N.initializeMessages(Messages.class, EEFCommonPlugin.INSTANCE);
 	}
 
 	// CHECKSTYLE:OFF
 	@TranslatableMessage
-	public static String EEFPreferencePage_DebugButton_Text;
+	public static String AbstractEEFEclipsePlugin_InvalidEvaluation;
 
 	@TranslatableMessage
-	public static String EEFPreferencePage_DebugButton_Tooltip;
+	public static String AbstractEEFEclipsePlugin_BlankExpression;
 
 	// CHECKSTYLE:ON
 
