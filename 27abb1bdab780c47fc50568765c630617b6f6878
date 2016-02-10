@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_d894b517",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/Messages.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-10T11:18:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_ede53117",
+      "range": {
+        "startLine": 32,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 73
+      },
+      "revId": "27abb1bdab780c47fc50568765c630617b6f6878",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_cd3075ef",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/RadioGroup.java",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-10T09:05:52Z",
       "side": 1,
       "message": "Why is this method protected? Just a question :)",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 80,
+        "endChar": 2
+      },
+      "revId": "27abb1bdab780c47fc50568765c630617b6f6878",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7879e16b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/RadioGroup.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-10T11:18:24Z",
+      "side": 1,
+      "message": "It should not :)\nI fix it to private",
+      "parentUuid": "e7dfcf21_cd3075ef",
       "range": {
         "startLine": 72,
         "startChar": 1,
