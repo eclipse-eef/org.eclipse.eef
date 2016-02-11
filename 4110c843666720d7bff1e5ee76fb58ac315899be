@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_fb8248a1",
+        "filename": "plugins/org.eclipse.eef.common/src/org/eclipse/eef/common/api/AbstractEEFEclipsePlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "Why not moving Util.isBlank to eef.common and use it?",
+      "range": {
+        "startLine": 90,
+        "startChar": 6,
+        "endLine": 90,
+        "endChar": 84
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_3b4cb01c",
+        "filename": "plugins/org.eclipse.eef.common/src/org/eclipse/eef/common/api/AbstractEEFEclipsePlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "Util.isBlank ?",
+      "range": {
+        "startLine": 96,
+        "startChar": 7,
+        "endLine": 96,
+        "endChar": 95
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5b517caf",
+        "filename": "plugins/org.eclipse.eef.common/src/org/eclipse/eef/common/api/preferences/EEFCommonPreferences.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 19,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7b4638fc",
+        "filename": "plugins/org.eclipse.eef.common/src/org/eclipse/eef/common/api/preferences/EEFCommonPreferences.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "Common",
+      "range": {
+        "startLine": 20,
+        "startChar": 37,
+        "endLine": 20,
+        "endChar": 41
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_9b4b0402",
+        "filename": "plugins/org.eclipse.eef.common/src/org/eclipse/eef/common/api/preferences/EEFCommonPreferences.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "Common",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 16
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7ed2a645",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/properties/EEFSection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "why not : EEFIdeUiPlugin.getPlugin().debug and the debug method tests EEFCommonPreferences.isDebugEnabled(). What do you think ?",
+      "range": {
+        "startLine": 62,
+        "startChar": 30,
+        "endLine": 62,
+        "endChar": 34
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_9ed77233",
+        "filename": "plugins/org.eclipse.eef.ide/src/org/eclipse/eef/ide/internal/EEFIdePlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_beeb4eec",
+        "filename": "plugins/org.eclipse.eef.ide/src/org/eclipse/eef/ide/internal/Messages.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_9e121292",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/extension/impl/EEFTabDescriptorProviderRegistryEventListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-11T15:05:20Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "4110c843666720d7bff1e5ee76fb58ac315899be",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
