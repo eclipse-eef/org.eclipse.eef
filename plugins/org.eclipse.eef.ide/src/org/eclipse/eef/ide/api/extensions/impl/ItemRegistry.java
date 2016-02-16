@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.internal.extensions.impl;
+package org.eclipse.eef.ide.api.extensions.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,8 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.eef.ide.internal.extensions.IItemDescriptor;
-import org.eclipse.eef.ide.internal.extensions.IItemRegistry;
+import org.eclipse.eef.ide.api.extensions.IItemDescriptor;
+import org.eclipse.eef.ide.api.extensions.IItemRegistry;
 
 /**
  * The implementation of the {@link IItemRegistry}.
@@ -38,7 +38,7 @@ public class ItemRegistry<T> implements IItemRegistry<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemRegistry#getItemDescriptors()
+	 * @see org.eclipse.eef.ide.api.extensions.IItemRegistry#getItemDescriptors()
 	 */
 	@Override
 	public List<IItemDescriptor<T>> getItemDescriptors() {
@@ -53,7 +53,7 @@ public class ItemRegistry<T> implements IItemRegistry<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemRegistry#getItemDescriptor(java.lang.String)
+	 * @see org.eclipse.eef.ide.api.extensions.IItemRegistry#getItemDescriptor(java.lang.String)
 	 */
 	@Override
 	public IItemDescriptor<T> getItemDescriptor(String id) {
@@ -63,7 +63,7 @@ public class ItemRegistry<T> implements IItemRegistry<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemRegistry#add(org.eclipse.eef.ide.internal.extensions.IItemDescriptor)
+	 * @see org.eclipse.eef.ide.api.extensions.IItemRegistry#add(org.eclipse.eef.ide.api.extensions.IItemDescriptor)
 	 */
 	@Override
 	public IItemDescriptor<T> add(IItemDescriptor<T> descriptor) {
@@ -73,7 +73,7 @@ public class ItemRegistry<T> implements IItemRegistry<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemRegistry#remove(java.lang.String)
+	 * @see org.eclipse.eef.ide.api.extensions.IItemRegistry#remove(java.lang.String)
 	 */
 	@Override
 	public IItemDescriptor<T> remove(String id) {
@@ -83,7 +83,7 @@ public class ItemRegistry<T> implements IItemRegistry<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemRegistry#clear()
+	 * @see org.eclipse.eef.ide.api.extensions.IItemRegistry#clear()
 	 */
 	@Override
 	public void clear() {

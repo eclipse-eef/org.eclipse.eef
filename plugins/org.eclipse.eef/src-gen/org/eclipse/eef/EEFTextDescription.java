@@ -12,6 +12,8 @@ package org.eclipse.eef;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Text Description</b></em>'. <!--
  * end-user-doc -->
  *
+ * <!-- begin-model-doc --> Represents a text field in the user interface. <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

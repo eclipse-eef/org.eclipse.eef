@@ -12,7 +12,7 @@ package org.eclipse.eef;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Radio Description</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a radio button in the user interface. <!-- end-model-doc -->
+ * <!-- begin-model-doc --> Represents a radio group in the user interface. <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:

@@ -734,6 +734,87 @@ public interface EefPackage extends EPackage {
 	int EEF_DYNAMIC_MAPPING_IF_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+	 * <em>EEF Custom Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetDescription()
+	 * @generated
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Custom Expressions</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Custom Widget Description</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl <em>EEF Custom Expression</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFCustomExpressionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomExpression()
+	 * @generated
+	 */
+	int EEF_CUSTOM_EXPRESSION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_EXPRESSION__IDENTIFIER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = 1;
+
+	/**
+	 * The number of structural features of the '<em>EEF Custom Expression</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_EXPRESSION_FEATURE_COUNT = 2;
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1288,6 +1369,60 @@ public interface EefPackage extends EPackage {
 	EReference getEEFDynamicMappingIf_Widget();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetDescription
+	 * <em>EEF Custom Widget Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Custom Widget Description</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription
+	 * @generated
+	 */
+	EClass getEEFCustomWidgetDescription();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFCustomWidgetDescription#getCustomExpressions <em>Custom Expressions</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Custom Expressions</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription#getCustomExpressions()
+	 * @see #getEEFCustomWidgetDescription()
+	 * @generated
+	 */
+	EReference getEEFCustomWidgetDescription_CustomExpressions();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomExpression <em>EEF Custom Expression</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Custom Expression</em>'.
+	 * @see org.eclipse.eef.EEFCustomExpression
+	 * @generated
+	 */
+	EClass getEEFCustomExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFCustomExpression#getIdentifier
+	 * <em>Identifier</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Identifier</em>'.
+	 * @see org.eclipse.eef.EEFCustomExpression#getIdentifier()
+	 * @see #getEEFCustomExpression()
+	 * @generated
+	 */
+	EAttribute getEEFCustomExpression_Identifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression
+	 * <em>Custom Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Custom Expression</em>'.
+	 * @see org.eclipse.eef.EEFCustomExpression#getCustomExpression()
+	 * @see #getEEFCustomExpression()
+	 * @generated
+	 */
+	EAttribute getEEFCustomExpression_CustomExpression();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the factory that creates the instances of the model.
@@ -1741,6 +1876,50 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_DYNAMIC_MAPPING_IF__WIDGET = EefPackage.eINSTANCE.getEEFDynamicMappingIf_Widget();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+		 * <em>EEF Custom Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetDescription()
+		 * @generated
+		 */
+		EClass EEF_CUSTOM_WIDGET_DESCRIPTION = EefPackage.eINSTANCE.getEEFCustomWidgetDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Expressions</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS = EefPackage.eINSTANCE.getEEFCustomWidgetDescription_CustomExpressions();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl
+		 * <em>EEF Custom Expression</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFCustomExpressionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomExpression()
+		 * @generated
+		 */
+		EClass EEF_CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_CUSTOM_EXPRESSION__IDENTIFIER = EefPackage.eINSTANCE.getEEFCustomExpression_Identifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression_CustomExpression();
 
 	}
 

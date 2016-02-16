@@ -11,6 +11,8 @@ package org.eclipse.eef.util;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFCustomExpression;
+import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
@@ -141,6 +143,16 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFDynamicMappingIf(EEFDynamicMappingIf object) {
 			return createEEFDynamicMappingIfAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFCustomWidgetDescription(EEFCustomWidgetDescription object) {
+			return createEEFCustomWidgetDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFCustomExpression(EEFCustomExpression object) {
+			return createEEFCustomExpressionAdapter();
 		}
 
 		@Override
@@ -341,6 +353,34 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFDynamicMappingIfAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetDescription
+	 * <em>EEF Custom Widget Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription
+	 * @generated
+	 */
+	public Adapter createEEFCustomWidgetDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomExpression
+	 * <em>EEF Custom Expression</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFCustomExpression
+	 * @generated
+	 */
+	public Adapter createEEFCustomExpressionAdapter() {
 		return null;
 	}
 

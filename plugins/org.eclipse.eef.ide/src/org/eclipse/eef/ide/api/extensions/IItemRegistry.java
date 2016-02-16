@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.internal.extensions;
+package org.eclipse.eef.ide.api.extensions;
 
 import java.util.List;
 

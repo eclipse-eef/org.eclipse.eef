@@ -8,9 +8,9 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.internal.extensions.impl;
+package org.eclipse.eef.ide.api.extensions.impl;
 
-import org.eclipse.eef.ide.internal.extensions.IItemDescriptor;
+import org.eclipse.eef.ide.api.extensions.IItemDescriptor;
 
 /**
  * The implementation of the {@link IItemDescriptor}.
@@ -64,7 +64,7 @@ public class ItemDescriptor<T> implements IItemDescriptor<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemDescriptor#getID()
+	 * @see org.eclipse.eef.ide.api.extensions.IItemDescriptor#getID()
 	 */
 	@Override
 	public String getID() {
@@ -74,7 +74,7 @@ public class ItemDescriptor<T> implements IItemDescriptor<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemDescriptor#getLabel()
+	 * @see org.eclipse.eef.ide.api.extensions.IItemDescriptor#getLabel()
 	 */
 	@Override
 	public String getLabel() {
@@ -84,7 +84,7 @@ public class ItemDescriptor<T> implements IItemDescriptor<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemDescriptor#getDescription()
+	 * @see org.eclipse.eef.ide.api.extensions.IItemDescriptor#getDescription()
 	 */
 	@Override
 	public String getDescription() {
@@ -94,7 +94,7 @@ public class ItemDescriptor<T> implements IItemDescriptor<T> {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.IItemDescriptor#getItem()
+	 * @see org.eclipse.eef.ide.api.extensions.IItemDescriptor#getItem()
 	 */
 	@Override
 	public T getItem() {

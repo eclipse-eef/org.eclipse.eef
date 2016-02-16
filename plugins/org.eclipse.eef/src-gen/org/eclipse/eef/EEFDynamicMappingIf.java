@@ -28,12 +28,8 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFDynamicMappingIf extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Predicate Expression</em>' attribute isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> The expression used to determine if we will use the widget. <!--
+	 * Returns the value of the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> The expression used to determine if we will use the widget. <!--
 	 * end-model-doc -->
 	 *
 	 * @return the value of the '<em>Predicate Expression</em>' attribute.
@@ -57,8 +53,8 @@ public interface EEFDynamicMappingIf extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Widget</b></em>' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc --> <!-- begin-model-doc --> The widget to create if the result of the switch expression and the
-	 * case expression are equals. <!-- end-model-doc -->
+	 * end-user-doc --> <!-- begin-model-doc --> The widget to create if the predicate expression is evaluated to true.
+	 * <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Widget</em>' containment reference.
 	 * @see #setWidget(EEFWidgetDescription)
