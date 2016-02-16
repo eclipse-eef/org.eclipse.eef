@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_214ab27b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/properties/EEFSection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-16T09:19:18Z",
+      "side": 1,
+      "message": "If we really need the editing domain used by the framework, you should maybe directly make the editing domain of the view visible to do:\n\nthis.eefSectionDescriptor.getEEFPage().getView().getEditingDomain()\n\nBecause the computation of the editing domain for the part has already been done during the creation of the view by the EEF/Sirius bridge. You may not event need to store it in a dedicated field since you can retrieve it easily.",
+      "range": {
+        "startLine": 192,
+        "startChar": 3,
+        "endLine": 214,
+        "endChar": 3
+      },
+      "revId": "fbcec4c5e1004bf90ce3d440f5a2117c93a6df56",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
