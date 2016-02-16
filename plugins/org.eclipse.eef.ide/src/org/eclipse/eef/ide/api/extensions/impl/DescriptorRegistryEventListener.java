@@ -8,17 +8,17 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.internal.extensions.impl;
+package org.eclipse.eef.ide.api.extensions.impl;
 
 import java.text.MessageFormat;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.eef.ide.api.extensions.AbstractRegistryEventListener;
+import org.eclipse.eef.ide.api.extensions.IItemDescriptor;
+import org.eclipse.eef.ide.api.extensions.IItemRegistry;
 import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.internal.Messages;
-import org.eclipse.eef.ide.internal.extensions.AbstractRegistryEventListener;
-import org.eclipse.eef.ide.internal.extensions.IItemDescriptor;
-import org.eclipse.eef.ide.internal.extensions.IItemRegistry;
 
 /**
  * Utility class used to retrieved the descriptors of extensions.
@@ -68,7 +68,7 @@ public class DescriptorRegistryEventListener<T> extends AbstractRegistryEventLis
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.AbstractRegistryEventListener#validateConfigurationElement(org.eclipse.core.runtime.IConfigurationElement)
+	 * @see org.eclipse.eef.ide.api.extensions.AbstractRegistryEventListener#validateConfigurationElement(org.eclipse.core.runtime.IConfigurationElement)
 	 */
 	@Override
 	protected boolean validateConfigurationElement(IConfigurationElement configurationElement) {
@@ -115,7 +115,7 @@ public class DescriptorRegistryEventListener<T> extends AbstractRegistryEventLis
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.AbstractRegistryEventListener#processAddition(org.eclipse.core.runtime.IConfigurationElement)
+	 * @see org.eclipse.eef.ide.api.extensions.AbstractRegistryEventListener#processAddition(org.eclipse.core.runtime.IConfigurationElement)
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -148,7 +148,7 @@ public class DescriptorRegistryEventListener<T> extends AbstractRegistryEventLis
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.internal.extensions.AbstractRegistryEventListener#processRemoval(org.eclipse.core.runtime.IConfigurationElement)
+	 * @see org.eclipse.eef.ide.api.extensions.AbstractRegistryEventListener#processRemoval(org.eclipse.core.runtime.IConfigurationElement)
 	 */
 	@Override
 	protected boolean processRemoval(IConfigurationElement configurationElement) {

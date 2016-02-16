@@ -12,6 +12,8 @@ package org.eclipse.eef;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Button Description</b></em>'. <!--
  * end-user-doc -->
  *
+ * <!-- begin-model-doc --> Represents a button in the user interface. <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -27,7 +29,8 @@ package org.eclipse.eef;
 public interface EEFButtonDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Button Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc --> <!-- begin-model-doc --> Indicates how to display the input value. <!-- end-model-doc -->
+	 * end-user-doc --> <!-- begin-model-doc --> Label of the button visible in the user interface. <!-- end-model-doc
+	 * -->
 	 *
 	 * @return the value of the '<em>Button Label Expression</em>' attribute.
 	 * @see #setButtonLabelExpression(String)
@@ -50,8 +53,8 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Push Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * --> <!-- begin-model-doc --> Defines the behavior executed when the end-user updates the value of the text field.
-	 * <!-- end-model-doc -->
+	 * --> <!-- begin-model-doc --> Defines the behavior executed when the end-user pushed the button. <!--
+	 * end-model-doc -->
 	 *
 	 * @return the value of the '<em>Push Expression</em>' attribute.
 	 * @see #setPushExpression(String)
