@@ -16,6 +16,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -77,7 +78,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
 	 */
 	@Override
@@ -97,7 +98,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getController()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getController()
 	 */
 	@Override
 	protected IEEFWidgetController getController() {
@@ -107,7 +108,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
 	 */
 	@Override
 	protected Control getValidationControl() {
@@ -161,7 +162,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {

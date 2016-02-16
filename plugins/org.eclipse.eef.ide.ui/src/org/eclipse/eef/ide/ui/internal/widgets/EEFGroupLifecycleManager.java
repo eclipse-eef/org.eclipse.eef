@@ -23,6 +23,7 @@ import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
+import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -99,7 +100,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
 	 */
 	@Override
@@ -169,7 +170,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#aboutToBeShown()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
 	 */
 	@Override
 	public void aboutToBeShown() {
@@ -190,7 +191,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#refresh()
 	 */
 	@Override
 	public void refresh() {
@@ -204,7 +205,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {
@@ -220,7 +221,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
 	 */
 	@Override
 	public void dispose() {

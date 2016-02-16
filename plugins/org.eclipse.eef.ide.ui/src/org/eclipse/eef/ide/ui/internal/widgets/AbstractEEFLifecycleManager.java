@@ -16,6 +16,7 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
 import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
+import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;

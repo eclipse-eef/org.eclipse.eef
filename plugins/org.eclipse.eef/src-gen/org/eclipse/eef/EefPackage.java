@@ -1146,14 +1146,14 @@ public interface EefPackage extends EPackage {
 	int EEF_DYNAMIC_MAPPING_IF_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSingleReferenceDescriptionImpl
-	 * <em>EEF Single Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+	 * <em>EEF Custom Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.eef.impl.EEFSingleReferenceDescriptionImpl
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSingleReferenceDescription()
+	 * @see org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetDescription()
 	 * @generated
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION = 18;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1161,7 +1161,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1170,7 +1170,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1178,7 +1178,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -1187,80 +1187,35 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
-	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
+	 * The feature id for the '<em><b>Custom Expressions</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__VALUE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
+	 * The number of structural features of the '<em>EEF Custom Widget Description</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>On Click Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl <em>EEF Custom Expression</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Create Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__CREATE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Search Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__SEARCH_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Unset Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION__UNSET_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>EEF Single Reference Description</em>' class. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFMultipleReferencesDescriptionImpl
-	 * <em>EEF Multiple References Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.eef.impl.EEFMultipleReferencesDescriptionImpl
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFMultipleReferencesDescription()
+	 * @see org.eclipse.eef.impl.EEFCustomExpressionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomExpression()
 	 * @generated
 	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION = 19;
+	int EEF_CUSTOM_EXPRESSION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1268,112 +1223,25 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+	int EEF_CUSTOM_EXPRESSION__IDENTIFIER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * The feature id for the '<em><b>Custom Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+	int EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * The number of structural features of the '<em>EEF Custom Expression</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
-
-	/**
-	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__VALUE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>On Click Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Create Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__CREATE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Search Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__SEARCH_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Unset Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__UNSET_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Up Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__UP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Down Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__DOWN_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 7;
-
-	/**
-	 * The number of structural features of the '<em>EEF Multiple References Description</em>' class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 8;
+	int EEF_CUSTOM_EXPRESSION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -2186,192 +2054,58 @@ public interface EefPackage extends EPackage {
 	EReference getEEFDynamicMappingIf_Widget();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSingleReferenceDescription
-	 * <em>EEF Single Reference Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetDescription
+	 * <em>EEF Custom Widget Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @return the meta object for class '<em>EEF Single Reference Description</em>'.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription
+	 * @return the meta object for class '<em>EEF Custom Widget Description</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription
 	 * @generated
 	 */
-	EClass getEEFSingleReferenceDescription();
+	EClass getEEFCustomWidgetDescription();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFSingleReferenceDescription#getValueExpression <em>Value Expression</em>}'. <!--
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFCustomWidgetDescription#getCustomExpressions <em>Custom Expressions</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Value Expression</em>'.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription#getValueExpression()
-	 * @see #getEEFSingleReferenceDescription()
+	 * @return the meta object for the containment reference list '<em>Custom Expressions</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription#getCustomExpressions()
+	 * @see #getEEFCustomWidgetDescription()
 	 * @generated
 	 */
-	EAttribute getEEFSingleReferenceDescription_ValueExpression();
+	EReference getEEFCustomWidgetDescription_CustomExpressions();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFSingleReferenceDescription#getDisplayExpression <em>Display Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomExpression <em>EEF Custom Expression</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Display Expression</em>'.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription#getDisplayExpression()
-	 * @see #getEEFSingleReferenceDescription()
+	 * @return the meta object for class '<em>EEF Custom Expression</em>'.
+	 * @see org.eclipse.eef.EEFCustomExpression
 	 * @generated
 	 */
-	EAttribute getEEFSingleReferenceDescription_DisplayExpression();
+	EClass getEEFCustomExpression();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFSingleReferenceDescription#getOnClickExpression <em>On Click Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFCustomExpression#getIdentifier
+	 * <em>Identifier</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>On Click Expression</em>'.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription#getOnClickExpression()
-	 * @see #getEEFSingleReferenceDescription()
+	 * @return the meta object for the attribute '<em>Identifier</em>'.
+	 * @see org.eclipse.eef.EEFCustomExpression#getIdentifier()
+	 * @see #getEEFCustomExpression()
 	 * @generated
 	 */
-	EAttribute getEEFSingleReferenceDescription_OnClickExpression();
+	EAttribute getEEFCustomExpression_Identifier();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFSingleReferenceDescription#getCreateExpression <em>Create Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression
+	 * <em>Custom Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @return the meta object for the attribute '<em>Create Expression</em>'.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription#getCreateExpression()
-	 * @see #getEEFSingleReferenceDescription()
+	 * @return the meta object for the attribute '<em>Custom Expression</em>'.
+	 * @see org.eclipse.eef.EEFCustomExpression#getCustomExpression()
+	 * @see #getEEFCustomExpression()
 	 * @generated
 	 */
-	EAttribute getEEFSingleReferenceDescription_CreateExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFSingleReferenceDescription#getSearchExpression <em>Search Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Search Expression</em>'.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription#getSearchExpression()
-	 * @see #getEEFSingleReferenceDescription()
-	 * @generated
-	 */
-	EAttribute getEEFSingleReferenceDescription_SearchExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFSingleReferenceDescription#getUnsetExpression <em>Unset Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Unset Expression</em>'.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription#getUnsetExpression()
-	 * @see #getEEFSingleReferenceDescription()
-	 * @generated
-	 */
-	EAttribute getEEFSingleReferenceDescription_UnsetExpression();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFMultipleReferencesDescription
-	 * <em>EEF Multiple References Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>EEF Multiple References Description</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription
-	 * @generated
-	 */
-	EClass getEEFMultipleReferencesDescription();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getValueExpression <em>Value Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Value Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getValueExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_ValueExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getDisplayExpression <em>Display Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Display Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getDisplayExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_DisplayExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getOnClickExpression <em>On Click Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>On Click Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getOnClickExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_OnClickExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getCreateExpression <em>Create Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Create Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getCreateExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_CreateExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getSearchExpression <em>Search Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Search Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getSearchExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_SearchExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getUnsetExpression <em>Unset Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Unset Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getUnsetExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_UnsetExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getUpExpression <em>Up Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Up Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getUpExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_UpExpression();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFMultipleReferencesDescription#getDownExpression <em>Down Expression</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Down Expression</em>'.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription#getDownExpression()
-	 * @see #getEEFMultipleReferencesDescription()
-	 * @generated
-	 */
-	EAttribute getEEFMultipleReferencesDescription_DownExpression();
+	EAttribute getEEFCustomExpression_CustomExpression();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -3026,140 +2760,48 @@ public interface EefPackage extends EPackage {
 		EReference EEF_DYNAMIC_MAPPING_IF__WIDGET = EefPackage.eINSTANCE.getEEFDynamicMappingIf_Widget();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSingleReferenceDescriptionImpl
-		 * <em>EEF Single Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+		 * <em>EEF Custom Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
-		 * @see org.eclipse.eef.impl.EEFSingleReferenceDescriptionImpl
-		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSingleReferenceDescription()
+		 * @see org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetDescription()
 		 * @generated
 		 */
-		EClass EEF_SINGLE_REFERENCE_DESCRIPTION = EefPackage.eINSTANCE.getEEFSingleReferenceDescription();
+		EClass EEF_CUSTOM_WIDGET_DESCRIPTION = EefPackage.eINSTANCE.getEEFCustomWidgetDescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Custom Expressions</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute EEF_SINGLE_REFERENCE_DESCRIPTION__VALUE_EXPRESSION = EefPackage.eINSTANCE.getEEFSingleReferenceDescription_ValueExpression();
+		EReference EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS = EefPackage.eINSTANCE.getEEFCustomWidgetDescription_CustomExpressions();
 
 		/**
-		 * The meta object literal for the '<em><b>Display Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl
+		 * <em>EEF Custom Expression</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFCustomExpressionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomExpression()
+		 * @generated
+		 */
+		EClass EEF_CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_CUSTOM_EXPRESSION__IDENTIFIER = EefPackage.eINSTANCE.getEEFCustomExpression_Identifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Expression</b></em>' attribute feature. <!-- begin-user-doc
 		 * --> <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute EEF_SINGLE_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFSingleReferenceDescription_DisplayExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>On Click Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_SINGLE_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.eINSTANCE.getEEFSingleReferenceDescription_OnClickExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Create Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_SINGLE_REFERENCE_DESCRIPTION__CREATE_EXPRESSION = EefPackage.eINSTANCE.getEEFSingleReferenceDescription_CreateExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Search Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_SINGLE_REFERENCE_DESCRIPTION__SEARCH_EXPRESSION = EefPackage.eINSTANCE.getEEFSingleReferenceDescription_SearchExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Unset Expression</b></em>' attribute feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_SINGLE_REFERENCE_DESCRIPTION__UNSET_EXPRESSION = EefPackage.eINSTANCE.getEEFSingleReferenceDescription_UnsetExpression();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFMultipleReferencesDescriptionImpl
-		 * <em>EEF Multiple References Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.eef.impl.EEFMultipleReferencesDescriptionImpl
-		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFMultipleReferencesDescription()
-		 * @generated
-		 */
-		EClass EEF_MULTIPLE_REFERENCES_DESCRIPTION = EefPackage.eINSTANCE.getEEFMultipleReferencesDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__VALUE_EXPRESSION = EefPackage.eINSTANCE.getEEFMultipleReferencesDescription_ValueExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.eINSTANCE
-				.getEEFMultipleReferencesDescription_DisplayExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>On Click Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.eINSTANCE
-				.getEEFMultipleReferencesDescription_OnClickExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Create Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__CREATE_EXPRESSION = EefPackage.eINSTANCE
-				.getEEFMultipleReferencesDescription_CreateExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Search Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__SEARCH_EXPRESSION = EefPackage.eINSTANCE
-				.getEEFMultipleReferencesDescription_SearchExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Unset Expression</b></em>' attribute feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__UNSET_EXPRESSION = EefPackage.eINSTANCE.getEEFMultipleReferencesDescription_UnsetExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Up Expression</b></em>' attribute feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__UP_EXPRESSION = EefPackage.eINSTANCE.getEEFMultipleReferencesDescription_UpExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Down Expression</b></em>' attribute feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__DOWN_EXPRESSION = EefPackage.eINSTANCE.getEEFMultipleReferencesDescription_DownExpression();
+		EAttribute EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression_CustomExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION

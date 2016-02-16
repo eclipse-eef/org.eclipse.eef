@@ -1,0 +1,76 @@
+/**
+ * Copyright (c) 2015 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.htm
+ * Contributors: Obeo - initial API and implementation
+ */
+package org.eclipse.eef;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Custom Expression</b></em>'. <!--
+ * end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ * <li>{@link org.eclipse.eef.EEFCustomExpression#getIdentifier <em>Identifier</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom Expression</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see org.eclipse.eef.EefPackage#getEEFCustomExpression()
+ * @model
+ * @generated
+ */
+public interface EEFCustomExpression extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc --> Used to identify a specific widget. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Identifier</em>' attribute.
+	 * @see #setIdentifier(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFCustomExpression_Identifier()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getIdentifier();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getIdentifier <em>Identifier</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @see #getIdentifier()
+	 * @generated
+	 */
+	void setIdentifier(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Custom Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> The label of the Widget visible by the end-users. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Custom Expression</em>' attribute.
+	 * @see #setCustomExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFCustomExpression_CustomExpression()
+	 * @model
+	 * @generated
+	 */
+	String getCustomExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom Expression</em>}
+	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Custom Expression</em>' attribute.
+	 * @see #getCustomExpression()
+	 * @generated
+	 */
+	void setCustomExpression(String value);
+
+} // EEFCustomExpression

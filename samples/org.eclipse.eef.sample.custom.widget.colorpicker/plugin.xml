@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
+      <descriptor
+            class="org.eclipse.eef.sample.custom.widget.colorpicker.ColorPickerProvider"
+            description="Provides a color picker custom widget"
+            id="org.eclipse.eef.sample.custom.widget.colorpicker"
+            label="Color Picker Widget">
+      </descriptor>
+   </extension>
+
+</plugin>

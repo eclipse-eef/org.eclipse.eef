@@ -11,18 +11,18 @@ package org.eclipse.eef.impl;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFCustomExpression;
+import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
@@ -108,10 +108,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
 			return createEEFDynamicMappingIf();
-		case EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION:
-			return createEEFSingleReferenceDescription();
-		case EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION:
-			return createEEFMultipleReferencesDescription();
+		case EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION:
+			return createEEFCustomWidgetDescription();
+		case EefPackage.EEF_CUSTOM_EXPRESSION:
+			return createEEFCustomExpression();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -329,9 +329,9 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
-	public EEFSingleReferenceDescription createEEFSingleReferenceDescription() {
-		EEFSingleReferenceDescriptionImpl eefSingleReferenceDescription = new EEFSingleReferenceDescriptionImpl();
-		return eefSingleReferenceDescription;
+	public EEFCustomWidgetDescription createEEFCustomWidgetDescription() {
+		EEFCustomWidgetDescriptionImpl eefCustomWidgetDescription = new EEFCustomWidgetDescriptionImpl();
+		return eefCustomWidgetDescription;
 	}
 
 	/**
@@ -340,9 +340,9 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
-	public EEFMultipleReferencesDescription createEEFMultipleReferencesDescription() {
-		EEFMultipleReferencesDescriptionImpl eefMultipleReferencesDescription = new EEFMultipleReferencesDescriptionImpl();
-		return eefMultipleReferencesDescription;
+	public EEFCustomExpression createEEFCustomExpression() {
+		EEFCustomExpressionImpl eefCustomExpression = new EEFCustomExpressionImpl();
+		return eefCustomExpression;
 	}
 
 	/**

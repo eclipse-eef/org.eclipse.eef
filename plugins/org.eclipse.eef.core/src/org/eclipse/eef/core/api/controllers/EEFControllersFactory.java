@@ -14,21 +14,17 @@ import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.internal.controllers.EEFButtonController;
 import org.eclipse.eef.core.internal.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.internal.controllers.EEFGroupController;
 import org.eclipse.eef.core.internal.controllers.EEFLabelController;
-import org.eclipse.eef.core.internal.controllers.EEFMultipleReferencesController;
 import org.eclipse.eef.core.internal.controllers.EEFRadioController;
 import org.eclipse.eef.core.internal.controllers.EEFSectionController;
 import org.eclipse.eef.core.internal.controllers.EEFSelectController;
-import org.eclipse.eef.core.internal.controllers.EEFSingleReferenceController;
 import org.eclipse.eef.core.internal.controllers.EEFTextController;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -160,42 +156,6 @@ public class EEFControllersFactory {
 	public IEEFRadioController createRadioController(EEFRadioDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
 		return new EEFRadioController(description, variableManager, interpreter, editingDomain);
-	}
-
-	/**
-	 * Creates a new single reference controller.
-	 *
-	 * @param description
-	 *            The description
-	 * @param variableManager
-	 *            The variable manager
-	 * @param interpreter
-	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
-	 * @return A radio controller
-	 */
-	public IEEFSingleReferenceController createSingleReferenceController(EEFSingleReferenceDescription description, IVariableManager variableManager,
-			IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-		return new EEFSingleReferenceController(description, variableManager, interpreter, editingDomain);
-	}
-
-	/**
-	 * Creates a new multiple references controller.
-	 *
-	 * @param description
-	 *            The description
-	 * @param variableManager
-	 *            The variable manager
-	 * @param interpreter
-	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
-	 * @return A radio controller
-	 */
-	public IEEFMultipleReferencesController createMultipleReferencesController(EEFMultipleReferencesDescription description,
-			IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-		return new EEFMultipleReferencesController(description, variableManager, interpreter, editingDomain);
 	}
 
 	/**

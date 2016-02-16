@@ -18,6 +18,7 @@ import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
+import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.internal.properties.EEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.swt.widgets.Composite;

@@ -64,7 +64,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This adds a property descriptor for the Predicate Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addPredicateExpressionPropertyDescriptor(Object object) {
@@ -145,7 +145,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -192,10 +192,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 				EefFactory.eINSTANCE.createEEFRadioDescription()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFSingleReferenceDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFMultipleReferencesDescription()));
+				EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
 	}
 
 	/**

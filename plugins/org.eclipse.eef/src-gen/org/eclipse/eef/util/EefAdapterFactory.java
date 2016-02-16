@@ -11,18 +11,18 @@ package org.eclipse.eef.util;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFCustomExpression;
+import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
@@ -176,13 +176,13 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEEFSingleReferenceDescription(EEFSingleReferenceDescription object) {
-			return createEEFSingleReferenceDescriptionAdapter();
+		public Adapter caseEEFCustomWidgetDescription(EEFCustomWidgetDescription object) {
+			return createEEFCustomWidgetDescriptionAdapter();
 		}
 
 		@Override
-		public Adapter caseEEFMultipleReferencesDescription(EEFMultipleReferencesDescription object) {
-			return createEEFMultipleReferencesDescriptionAdapter();
+		public Adapter caseEEFCustomExpression(EEFCustomExpression object) {
+			return createEEFCustomExpressionAdapter();
 		}
 
 		@Override
@@ -457,30 +457,30 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSingleReferenceDescription
-	 * <em>EEF Single Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetDescription
+	 * <em>EEF Custom Widget Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
 	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription
 	 * @generated
 	 */
-	public Adapter createEEFSingleReferenceDescriptionAdapter() {
+	public Adapter createEEFCustomWidgetDescriptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFMultipleReferencesDescription
-	 * <em>EEF Multiple References Description</em>}'. <!-- begin-user-doc --> This default implementation returns null
-	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
-	 * anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomExpression
+	 * <em>EEF Custom Expression</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription
+	 * @see org.eclipse.eef.EEFCustomExpression
 	 * @generated
 	 */
-	public Adapter createEEFMultipleReferencesDescriptionAdapter() {
+	public Adapter createEEFCustomExpressionAdapter() {
 		return null;
 	}
 

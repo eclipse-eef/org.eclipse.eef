@@ -18,6 +18,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -72,7 +73,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
 	 */
 	@Override
@@ -91,7 +92,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#aboutToBeShown()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
 	 */
 	@Override
 	public void aboutToBeShown() {
@@ -110,7 +111,17 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#refresh()
+	 */
+	@Override
+	public void refresh() {
+		this.controller.refresh();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {
@@ -121,7 +132,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getController()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
 	 */
 	@Override
 	protected IEEFWidgetController getController() {
@@ -131,7 +142,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getWidgetDescription()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getController()
 	 */
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
@@ -141,7 +152,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
 	 */
 	@Override
 	protected Control getValidationControl() {

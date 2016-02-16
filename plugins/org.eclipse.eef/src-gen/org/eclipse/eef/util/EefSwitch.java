@@ -11,18 +11,18 @@ package org.eclipse.eef.util;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFCustomExpression;
+import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
@@ -251,23 +251,20 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION: {
-			EEFSingleReferenceDescription eefSingleReferenceDescription = (EEFSingleReferenceDescription) theEObject;
-			T result = caseEEFSingleReferenceDescription(eefSingleReferenceDescription);
+		case EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION: {
+			EEFCustomWidgetDescription eefCustomWidgetDescription = (EEFCustomWidgetDescription) theEObject;
+			T result = caseEEFCustomWidgetDescription(eefCustomWidgetDescription);
 			if (result == null) {
-				result = caseEEFWidgetDescription(eefSingleReferenceDescription);
+				result = caseEEFWidgetDescription(eefCustomWidgetDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION: {
-			EEFMultipleReferencesDescription eefMultipleReferencesDescription = (EEFMultipleReferencesDescription) theEObject;
-			T result = caseEEFMultipleReferencesDescription(eefMultipleReferencesDescription);
-			if (result == null) {
-				result = caseEEFWidgetDescription(eefMultipleReferencesDescription);
-			}
+		case EefPackage.EEF_CUSTOM_EXPRESSION: {
+			EEFCustomExpression eefCustomExpression = (EEFCustomExpression) theEObject;
+			T result = caseEEFCustomExpression(eefCustomExpression);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -551,32 +548,32 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EEF Single Reference Description</em>'. <!--
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
 	 *
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EEF Single Reference Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEEFSingleReferenceDescription(EEFSingleReferenceDescription object) {
+	public T caseEEFCustomWidgetDescription(EEFCustomWidgetDescription object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EEF Multiple References Description</em>'.
-	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Expression</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
 	 *
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EEF Multiple References Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEEFMultipleReferencesDescription(EEFMultipleReferencesDescription object) {
+	public T caseEEFCustomExpression(EEFCustomExpression object) {
 		return null;
 	}
 
