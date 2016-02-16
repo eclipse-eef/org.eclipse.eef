@@ -31,6 +31,12 @@ public final class Messages {
 	@TranslatableMessage
 	public static String EEFPreferencePage_DebugButton_Tooltip;
 
+	@TranslatableMessage
+	public static String DescriptorRegistryEventListener_missingAttribute;
+
+	@TranslatableMessage
+	public static String DescriptorRegistryEventListener_extensionAlreadyContributed;
+
 	// CHECKSTYLE:ON
 
 	/**

@@ -350,6 +350,52 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFCustomDescriptionItemProvider eefCustomDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFCustomDescriptionAdapter() {
+		if (eefCustomDescriptionItemProvider == null) {
+			eefCustomDescriptionItemProvider = new EEFCustomDescriptionItemProvider(this);
+		}
+
+		return eefCustomDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomExpression} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFCustomExpressionItemProvider eefCustomExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomExpression}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFCustomExpressionAdapter() {
+		if (eefCustomExpressionItemProvider == null) {
+			eefCustomExpressionItemProvider = new EEFCustomExpressionItemProvider(this);
+		}
+
+		return eefCustomExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -484,6 +530,12 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefDynamicMappingIfItemProvider != null) {
 			eefDynamicMappingIfItemProvider.dispose();
+		}
+		if (eefCustomDescriptionItemProvider != null) {
+			eefCustomDescriptionItemProvider.dispose();
+		}
+		if (eefCustomExpressionItemProvider != null) {
+			eefCustomExpressionItemProvider.dispose();
 		}
 	}
 

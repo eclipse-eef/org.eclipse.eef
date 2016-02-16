@@ -94,6 +94,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	/**
 	 * {@inheritDoc}
 	 *
+	 * 
 	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getController()
 	 */
 	@Override
@@ -148,7 +149,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {

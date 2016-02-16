@@ -11,6 +11,8 @@ package org.eclipse.eef.impl;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFCustomDescription;
+import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
@@ -126,6 +128,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefDynamicMappingIfEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefCustomDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefCustomExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -708,6 +724,56 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFCustomDescription() {
+		return eefCustomDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFCustomDescription_CustomExpressions() {
+		return (EReference) eefCustomDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFCustomExpression() {
+		return eefCustomExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFCustomExpression_Identifier() {
+		return (EAttribute) eefCustomExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFCustomExpression_CustomExpression() {
+		return (EAttribute) eefCustomExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EefFactory getEefFactory() {
 		return (EefFactory) getEFactoryInstance();
 	}
@@ -795,6 +861,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefDynamicMappingIfEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_IF);
 		createEAttribute(eefDynamicMappingIfEClass, EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION);
 		createEReference(eefDynamicMappingIfEClass, EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET);
+
+		eefCustomDescriptionEClass = createEClass(EefPackage.EEF_CUSTOM_DESCRIPTION);
+		createEReference(eefCustomDescriptionEClass, EefPackage.EEF_CUSTOM_DESCRIPTION__CUSTOM_EXPRESSIONS);
+
+		eefCustomExpressionEClass = createEClass(EefPackage.EEF_CUSTOM_EXPRESSION);
+		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__IDENTIFIER);
+		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION);
 	}
 
 	/**
@@ -835,6 +908,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefCheckboxDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefSelectDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefRadioDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
+		eefCustomDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
@@ -1036,6 +1110,25 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFWidgetDescription(),
 				null,
 				"widget", null, 1, 1, EEFDynamicMappingIf.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefCustomDescriptionEClass, EEFCustomDescription.class,
+				"EEFCustomDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFCustomDescription_CustomExpressions(),
+				this.getEEFCustomExpression(),
+				null,
+				"customExpressions", null, 0, -1, EEFCustomDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefCustomExpressionEClass, EEFCustomExpression.class,
+				"EEFCustomExpression", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFCustomExpression_Identifier(),
+				ecorePackage.getEString(),
+				"identifier", null, 1, 1, EEFCustomExpression.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFCustomExpression_CustomExpression(),
+				ecorePackage.getEString(),
+				"customExpression", null, 0, 1, EEFCustomExpression.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(EefPackage.eNS_URI);

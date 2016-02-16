@@ -55,8 +55,8 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Edit Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * --> <!-- begin-model-doc --> Defines the behavior executed when the end-user updates the value of the text field.
-	 * <!-- end-model-doc -->
+	 * --> <!-- begin-model-doc --> Defines the behavior executed when the end-user updates the value of the combo. <!--
+	 * end-model-doc -->
 	 *
 	 * @return the value of the '<em>Edit Expression</em>' attribute.
 	 * @see #setEditExpression(String)

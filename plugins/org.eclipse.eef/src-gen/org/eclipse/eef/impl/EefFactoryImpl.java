@@ -11,6 +11,8 @@ package org.eclipse.eef.impl;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFCustomDescription;
+import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
@@ -92,6 +94,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
 			return createEEFDynamicMappingIf();
+		case EefPackage.EEF_CUSTOM_DESCRIPTION:
+			return createEEFCustomDescription();
+		case EefPackage.EEF_CUSTOM_EXPRESSION:
+			return createEEFCustomExpression();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -227,6 +233,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFDynamicMappingIf createEEFDynamicMappingIf() {
 		EEFDynamicMappingIfImpl eefDynamicMappingIf = new EEFDynamicMappingIfImpl();
 		return eefDynamicMappingIf;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFCustomDescription createEEFCustomDescription() {
+		EEFCustomDescriptionImpl eefCustomDescription = new EEFCustomDescriptionImpl();
+		return eefCustomDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFCustomExpression createEEFCustomExpression() {
+		EEFCustomExpressionImpl eefCustomExpression = new EEFCustomExpressionImpl();
+		return eefCustomExpression;
 	}
 
 	/**

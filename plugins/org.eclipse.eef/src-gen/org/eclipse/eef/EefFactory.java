@@ -122,6 +122,22 @@ public interface EefFactory extends EFactory {
 	EEFDynamicMappingIf createEEFDynamicMappingIf();
 
 	/**
+	 * Returns a new object of class '<em>EEF Custom Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Custom Description</em>'.
+	 * @generated
+	 */
+	EEFCustomDescription createEEFCustomDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Custom Expression</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Custom Expression</em>'.
+	 * @generated
+	 */
+	EEFCustomExpression createEEFCustomExpression();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the package supported by this factory.

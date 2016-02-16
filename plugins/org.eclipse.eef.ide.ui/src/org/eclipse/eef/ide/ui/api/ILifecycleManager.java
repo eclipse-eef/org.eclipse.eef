@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.widgets;
+package org.eclipse.eef.ide.ui.api;
 
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.swt.widgets.Composite;

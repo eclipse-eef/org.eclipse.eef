@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefCustomDescriptionProvider">
+      <provider
+            class="org.eclipse.eef.properties.ui.widgets.references.SingleReferenceViewerProvider"
+            description="Provides custom widgets to handle mono references"
+            id="org.eclipse.eef.properties.ui.widgets.singleReferenceViewer"
+            label="MonoReferences Widget">
+      </provider>
+   </extension>
+
+</plugin>

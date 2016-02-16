@@ -12,6 +12,8 @@ package org.eclipse.eef;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Label Description</b></em>'. <!--
  * end-user-doc -->
  *
+ * <!-- begin-model-doc --> Represents a label in the user interface. <!-- end-model-doc -->
+ *
  *
  * @see org.eclipse.eef.EefPackage#getEEFLabelDescription()
  * @model
