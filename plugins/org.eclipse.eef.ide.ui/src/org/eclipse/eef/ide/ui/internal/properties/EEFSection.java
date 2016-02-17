@@ -22,7 +22,6 @@ import org.eclipse.eef.ide.ui.internal.widgets.EEFGroupLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
@@ -34,7 +33,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PlatformUI;
 
 /**
  * The implementation of {@link IEEFSection} using the {@link EEFSectionDescriptor}.
@@ -44,15 +42,19 @@ import org.eclipse.ui.PlatformUI;
 public class EEFSection implements IEEFSection {
 
 	/**
-	 * A post-commit listener which refreshes the section content when a significant change (an actual modification of a
+	 * A post-commit listener which refreshes the whole page when a significant change (an actual modification of a
 	 * model element) occurs in the current editing domain.
 	 */
-	private static final class SectionUpdater extends ResourceSetListenerImpl {
+	private static final class Updater extends ResourceSetListenerImpl {
 		/**
 		 * Describes the changes we want to react to.
 		 */
-		private static final NotificationFilter FILTER = NotificationFilter.NOT_TOUCH.and(NotificationFilter.createEventTypeFilter(Notification.SET)
-				.or(NotificationFilter.createEventTypeFilter(Notification.UNSET)).and(NotificationFilter.createNotifierTypeFilter(EObject.class)));
+		private static final NotificationFilter FILTER = NotificationFilter.NOT_TOUCH.and(NotificationFilter.createNotifierTypeFilter(EObject.class));
+
+		/**
+		 * The top-level page the section is part of.
+		 */
+		private final EEFTabbedPropertySheetPage page;
 
 		/**
 		 * The section to refresh.
@@ -69,10 +71,13 @@ public class EEFSection implements IEEFSection {
 		 *
 		 * @param section
 		 *            the section to refresh.
+		 * @param page
+		 *            the top-level page the section is part of.
 		 */
-		private SectionUpdater(EEFSection section) {
+		private Updater(EEFSection section, EEFTabbedPropertySheetPage page) {
 			super(FILTER);
 			this.section = section;
+			this.page = page;
 		}
 
 		@Override
@@ -81,13 +86,13 @@ public class EEFSection implements IEEFSection {
 		}
 
 		@Override
-		public void resourceSetChanged(ResourceSetChangeEvent event) {
-			Display display = getCurrentDisplay();
+		public void resourceSetChanged(final ResourceSetChangeEvent event) {
+			Display display = page.getSite().getShell().getDisplay();
 			if (display != null) {
 				display.asyncExec(new Runnable() {
 					@Override
 					public void run() {
-						section.refresh();
+						page.refreshPage();
 					}
 				});
 			}
@@ -112,20 +117,6 @@ public class EEFSection implements IEEFSection {
 				editingDomain.removeResourceSetListener(this);
 			}
 		}
-
-		/**
-		 * Helper to obtain the current display, as the actual refresh must be launched in the UI thread.
-		 *
-		 * @return the current display.
-		 */
-		private Display getCurrentDisplay() {
-			if (PlatformUI.isWorkbenchRunning()) {
-				return PlatformUI.getWorkbench().getDisplay();
-			} else {
-				return Display.getDefault();
-			}
-		}
-
 	}
 
 	/**
@@ -141,7 +132,7 @@ public class EEFSection implements IEEFSection {
 	/**
 	 * The updater which refreshes this section on external model changes.
 	 */
-	private SectionUpdater updater;
+	private Updater updater;
 
 	/**
 	 * The constructor.
@@ -151,7 +142,6 @@ public class EEFSection implements IEEFSection {
 	 */
 	public EEFSection(EEFSectionDescriptor eefSectionDescriptor) {
 		this.eefSectionDescriptor = eefSectionDescriptor;
-		this.updater = new SectionUpdater(this);
 	}
 
 	@Override
@@ -167,6 +157,7 @@ public class EEFSection implements IEEFSection {
 
 			this.lifecycleManagers.add(groupLifecycleManager);
 		}
+		this.updater = new Updater(this, tabbedPropertySheetPage);
 	}
 
 	@Override
