@@ -121,6 +121,11 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	private boolean activePropertySheet;
 
 	/**
+	 * The current part.
+	 */
+	private IWorkbenchPart currentPart;
+
+	/**
 	 * The current selection.
 	 */
 	private ISelection currentSelection;
@@ -276,7 +281,26 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		if (selection.equals(currentSelection)) {
 			return;
 		}
+		doSetInput(part, selection);
+	}
 
+	/**
+	 * Refreshes the content of the page using the current input.
+	 */
+	public void refreshPage() {
+		doSetInput(currentPart, currentSelection);
+	}
+
+	/**
+	 * Set or reset the input of the page.
+	 *
+	 * @param part
+	 *            The current workbench part
+	 * @param selection
+	 *            The current selection
+	 */
+	private void doSetInput(IWorkbenchPart part, ISelection selection) {
+		this.currentPart = part;
 		this.currentSelection = selection;
 
 		// see if the selection provides a new contributor
