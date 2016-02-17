@@ -22,7 +22,6 @@ import org.eclipse.eef.ide.ui.internal.widgets.EEFGroupLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
@@ -33,8 +32,13 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IViewPart;
+import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.part.IPage;
+import org.eclipse.ui.views.properties.PropertySheet;
 
 /**
  * The implementation of {@link IEEFSection} using the {@link EEFSectionDescriptor}.
@@ -44,15 +48,14 @@ import org.eclipse.ui.PlatformUI;
 public class EEFSection implements IEEFSection {
 
 	/**
-	 * A post-commit listener which refreshes the section content when a significant change (an actual modification of a
+	 * A post-commit listener which refreshes the whole view when a significant change (an actual modification of a
 	 * model element) occurs in the current editing domain.
 	 */
-	private static final class SectionUpdater extends ResourceSetListenerImpl {
+	private static final class Updater extends ResourceSetListenerImpl {
 		/**
 		 * Describes the changes we want to react to.
 		 */
-		private static final NotificationFilter FILTER = NotificationFilter.NOT_TOUCH.and(NotificationFilter.createEventTypeFilter(Notification.SET)
-				.or(NotificationFilter.createEventTypeFilter(Notification.UNSET)).and(NotificationFilter.createNotifierTypeFilter(EObject.class)));
+		private static final NotificationFilter FILTER = NotificationFilter.NOT_TOUCH.and(NotificationFilter.createNotifierTypeFilter(EObject.class));
 
 		/**
 		 * The section to refresh.
@@ -70,7 +73,7 @@ public class EEFSection implements IEEFSection {
 		 * @param section
 		 *            the section to refresh.
 		 */
-		private SectionUpdater(EEFSection section) {
+		private Updater(EEFSection section) {
 			super(FILTER);
 			this.section = section;
 		}
@@ -81,13 +84,13 @@ public class EEFSection implements IEEFSection {
 		}
 
 		@Override
-		public void resourceSetChanged(ResourceSetChangeEvent event) {
+		public void resourceSetChanged(final ResourceSetChangeEvent event) {
 			Display display = getCurrentDisplay();
 			if (display != null) {
 				display.asyncExec(new Runnable() {
 					@Override
 					public void run() {
-						section.refresh();
+						section.refreshWholeView(event);
 					}
 				});
 			}
@@ -141,7 +144,7 @@ public class EEFSection implements IEEFSection {
 	/**
 	 * The updater which refreshes this section on external model changes.
 	 */
-	private SectionUpdater updater;
+	private Updater updater;
 
 	/**
 	 * The constructor.
@@ -151,7 +154,39 @@ public class EEFSection implements IEEFSection {
 	 */
 	public EEFSection(EEFSectionDescriptor eefSectionDescriptor) {
 		this.eefSectionDescriptor = eefSectionDescriptor;
-		this.updater = new SectionUpdater(this);
+		this.updater = new Updater(this);
+	}
+
+	/**
+	 * Force a complete refresh of the whole "Properties" view.
+	 *
+	 * @param event
+	 *            the changes which triggered the need to refresh the view.
+	 */
+	private void refreshWholeView(ResourceSetChangeEvent event) {
+		IViewPart view = findPropertiesView();
+		if (view instanceof PropertySheet) {
+			IPage page = ((PropertySheet) view).getCurrentPage();
+			if (page instanceof EEFTabbedPropertySheetPage) {
+				((EEFTabbedPropertySheetPage) page).refreshPage();
+			}
+		}
+	}
+
+	/**
+	 * Returns the properties view part, or <code>null</code> if it could not be found.
+	 *
+	 * @return the properties view part.
+	 */
+	private IViewPart findPropertiesView() {
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		if (window != null) {
+			IWorkbenchPage activePage = window.getActivePage();
+			if (activePage != null) {
+				return activePage.findView("org.eclipse.ui.views.PropertySheet"); //$NON-NLS-1$
+			}
+		}
+		return null;
 	}
 
 	@Override
