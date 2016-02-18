@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_d84bbc00",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-18T15:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_5825ec5b",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 57,
+        "endChar": 43
+      },
+      "revId": "c862c6c558624be3d1269613758460bf717d03e4",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_580eccef",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_5857ac9f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-18T15:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_580eccef",
+      "range": {
+        "startLine": 72,
+        "startChar": 2,
+        "endLine": 77,
+        "endChar": 37
+      },
+      "revId": "c862c6c558624be3d1269613758460bf717d03e4",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_783aa884",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2016-02-18T15:29:42Z",
       "side": 1,
       "message": "this.controller",
+      "range": {
+        "startLine": 135,
+        "startChar": 9,
+        "endLine": 135,
+        "endChar": 13
+      },
+      "revId": "c862c6c558624be3d1269613758460bf717d03e4",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_78b70873",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-18T15:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_783aa884",
       "range": {
         "startLine": 135,
         "startChar": 9,
