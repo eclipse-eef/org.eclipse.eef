@@ -14,40 +14,27 @@ import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
+import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Control;
 
 /**
  * This class will be used in order to manage the lifecycle of a label.
  *
  * @author mbats
  */
-public class EEFLabelLifecycleManager implements ILifecycleManager {
+public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	/**
 	 * The description.
 	 */
 	private EEFLabelDescription description;
-
-	/**
-	 * The variable manager.
-	 */
-	private IVariableManager variableManager;
-
-	/**
-	 * The interpreter.
-	 */
-	private IInterpreter interpreter;
-
-	/**
-	 * The label.
-	 */
-	private Label label;
 
 	/**
 	 * The controller.
@@ -63,21 +50,23 @@ public class EEFLabelLifecycleManager implements ILifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param editingDomain
+	 *            The editing domain
 	 */
-	public EEFLabelLifecycleManager(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter) {
+	public EEFLabelLifecycleManager(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			TransactionalEditingDomain editingDomain) {
+		super(variableManager, interpreter, editingDomain);
 		this.description = description;
-		this.variableManager = variableManager;
-		this.interpreter = interpreter;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
 	 */
 	@Override
-	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
+	protected void createMainControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
 		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
 
 		widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
@@ -135,4 +124,25 @@ public class EEFLabelLifecycleManager implements ILifecycleManager {
 	public void dispose() {
 		// do nothing
 	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getController()
+	 */
+	@Override
+	protected IEEFWidgetController getController() {
+		return null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
+	 */
+	@Override
+	protected Control getValidationControl() {
+		return this.label;
+	}
+
 }
