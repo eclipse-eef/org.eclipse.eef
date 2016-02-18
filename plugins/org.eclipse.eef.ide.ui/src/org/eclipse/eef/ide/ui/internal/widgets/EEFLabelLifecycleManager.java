@@ -14,13 +14,14 @@ import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
+import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 
 /**
@@ -28,26 +29,16 @@ import org.eclipse.swt.widgets.Label;
  *
  * @author mbats
  */
-public class EEFLabelLifecycleManager implements ILifecycleManager {
+public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	/**
 	 * The description.
 	 */
 	private EEFLabelDescription description;
 
 	/**
-	 * The variable manager.
+	 * The body.
 	 */
-	private IVariableManager variableManager;
-
-	/**
-	 * The interpreter.
-	 */
-	private IInterpreter interpreter;
-
-	/**
-	 * The label.
-	 */
-	private Label label;
+	private Label body;
 
 	/**
 	 * The controller.
@@ -63,29 +54,27 @@ public class EEFLabelLifecycleManager implements ILifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param editingDomain
+	 *            The editing domain
 	 */
-	public EEFLabelLifecycleManager(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter) {
+	public EEFLabelLifecycleManager(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			TransactionalEditingDomain editingDomain) {
+		super(variableManager, interpreter, editingDomain);
 		this.description = description;
-		this.variableManager = variableManager;
-		this.interpreter = interpreter;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
 	 */
 	@Override
-	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
+	protected void createMainControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
 		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
 
-		widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
-		this.label = widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
-		widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
-		widgetFactory.paintBordersFor(parent);
-		GridData nameData = new GridData(GridData.FILL_HORIZONTAL);
-		this.label.setLayoutData(nameData);
+		this.body = widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
+
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter);
 	}
 
@@ -96,24 +85,16 @@ public class EEFLabelLifecycleManager implements ILifecycleManager {
 	 */
 	@Override
 	public void aboutToBeShown() {
-		this.controller.onNewLabel(new IConsumer<String>() {
+		super.aboutToBeShown();
+
+		this.controller.onNewBody(new IConsumer<String>() {
 			@Override
 			public void apply(String value) {
-				if (!label.isDisposed() && !(label.getText() != null && label.getText().equals(value))) {
-					label.setText(value);
+				if (!body.isDisposed() && !(body.getText() != null && body.getText().equals(value))) {
+					body.setText(value);
 				}
 			}
 		});
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#refresh()
-	 */
-	@Override
-	public void refresh() {
-		this.controller.refresh();
 	}
 
 	/**
@@ -123,16 +104,28 @@ public class EEFLabelLifecycleManager implements ILifecycleManager {
 	 */
 	@Override
 	public void aboutToBeHidden() {
-		this.controller.removeNewLabelConsumer();
+		super.aboutToBeHidden();
+		this.controller.removeNewBodyConsumer();
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getController()
 	 */
 	@Override
-	public void dispose() {
-		// do nothing
+	protected IEEFWidgetController getController() {
+		return this.controller;
 	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
+	 */
+	@Override
+	protected Control getValidationControl() {
+		return this.body;
+	}
+
 }

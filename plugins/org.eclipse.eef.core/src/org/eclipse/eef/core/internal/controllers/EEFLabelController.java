@@ -12,7 +12,11 @@ package org.eclipse.eef.core.internal.controllers;
 
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
+import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -26,6 +30,11 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	 * The description.
 	 */
 	private EEFLabelDescription description;
+
+	/**
+	 * The consumer of the new body.
+	 */
+	private IConsumer<String> newBodyConsumer;
 
 	/**
 	 * The constructor.
@@ -43,6 +52,26 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	}
 
 	/**
+	 *
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#refresh()
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
+		String bodyExpression = this.description.getBodyExpression();
+		EAttribute eAttribute = EefPackage.Literals.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION;
+
+		this.newEval().call(eAttribute, bodyExpression, String.class, new ISuccessfulResultConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				EEFLabelController.this.newBodyConsumer.apply(value);
+			}
+		});
+	}
+
+	/**
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#getDescription()
@@ -50,6 +79,26 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	@Override
 	protected EEFWidgetDescription getDescription() {
 		return this.description;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFLabelController#onNewBody(org.eclipse.eef.core.api.controllers.IConsumer)
+	 */
+	@Override
+	public void onNewBody(IConsumer<String> consumer) {
+		this.newBodyConsumer = consumer;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFLabelController#removeNewBodyConsumer()
+	 */
+	@Override
+	public void removeNewBodyConsumer() {
+		this.newBodyConsumer = null;
 	}
 
 }
