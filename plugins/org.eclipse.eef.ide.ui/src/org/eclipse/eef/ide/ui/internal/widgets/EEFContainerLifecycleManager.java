@@ -133,7 +133,8 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 		} else if (eefWidgetDescription instanceof EEFLabelDescription) {
 			EEFLabelDescription eefLabelDescription = (EEFLabelDescription) eefWidgetDescription;
 
-			EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter);
+			EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter,
+					editingDomain);
 			eefLabelLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
 			this.lifecycleManagers.add(eefLabelLifecycleManager);
