@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_bf416c64",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-02-22T16:00:48Z",
+      "side": 1,
+      "message": "Was this kept voluntarily?",
+      "range": {
+        "startLine": 120,
+        "startChar": 5,
+        "endLine": 121,
+        "endChar": 66
+      },
+      "revId": "fd832e65b7cee537a771674cf7705b8f9a065a55",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
