@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
  * </li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getContainer <em>Container</em>}</li>
@@ -76,6 +77,29 @@ public interface EEFGroupDescription extends EObject {
 	 * @generated
 	 */
 	void setLabelExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc --> The class of the EObject used as "self" in the page <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Domain Class</em>' attribute.
+	 * @see #setDomainClass(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_DomainClass()
+	 * @model
+	 * @generated
+	 */
+	String getDomainClass();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Domain Class</em>' attribute.
+	 * @see #getDomainClass()
+	 * @generated
+	 */
+	void setDomainClass(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Semantic Candidate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--

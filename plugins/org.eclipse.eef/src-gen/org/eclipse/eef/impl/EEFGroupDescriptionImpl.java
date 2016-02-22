@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getContainer <em>Container</em>}</li>
@@ -74,6 +75,26 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected String labelExpression = EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getDomainClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DOMAIN_CLASS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @see #getDomainClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected String domainClass = EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getSemanticCandidateExpression() <em>Semantic Candidate Expression</em>}'
@@ -170,6 +191,30 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION, oldLabelExpression,
 					labelExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDomainClass() {
+		return domainClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDomainClass(String newDomainClass) {
+		String oldDomainClass = domainClass;
+		domainClass = newDomainClass;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS, oldDomainClass, domainClass));
 		}
 	}
 
@@ -308,6 +353,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return getIdentifier();
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			return getLabelExpression();
+		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
+			return getDomainClass();
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return getSemanticCandidateExpression();
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
@@ -333,6 +380,9 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
+			setDomainClass((String) newValue);
+			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression((String) newValue);
 			return;
@@ -356,6 +406,9 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression(EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
+			setDomainClass(EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT);
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression(EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT);
@@ -381,6 +434,9 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
 			: !EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
+			return EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null : !EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT
+			.equals(domainClass);
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
 			: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
@@ -406,6 +462,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		result.append(identifier);
 		result.append(", labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
+		result.append(", domainClass: "); //$NON-NLS-1$
+		result.append(domainClass);
 		result.append(", semanticCandidateExpression: "); //$NON-NLS-1$
 		result.append(semanticCandidateExpression);
 		result.append(')');

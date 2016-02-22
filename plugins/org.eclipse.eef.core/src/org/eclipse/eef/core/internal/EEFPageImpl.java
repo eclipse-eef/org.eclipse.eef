@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal;
 
+import com.google.common.collect.Iterables;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.utils.DomainClassTester;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.ecore.EAttribute;
@@ -92,6 +95,7 @@ public class EEFPageImpl implements EEFPage {
 	 * Initialize the variables of the EEFPage.
 	 */
 	public void initialize() {
+		EEFCorePlugin.getPlugin().debug("EEFPageImpl#initialize()"); //$NON-NLS-1$
 		for (final EEFGroupDescription eefGroupDescription : eefPageDescription.getGroups()) {
 			String semanticCandidatesExpression = Util.firstNonBlank(eefGroupDescription.getSemanticCandidateExpression(),
 					org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
@@ -99,7 +103,9 @@ public class EEFPageImpl implements EEFPage {
 			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new ISuccessfulResultConsumer<Object>() {
 				@Override
 				public void apply(Object value) {
-					for (EObject eObject : Util.asIterable(value, EObject.class)) {
+					Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
+					Iterable<EObject> eObjects = Iterables.filter(iterable, new DomainClassTester(eefGroupDescription.getDomainClass()));
+					for (EObject eObject : eObjects) {
 						IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
 						childVariableManager.put(EEFExpressionUtils.SELF, eObject);
 						EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter,

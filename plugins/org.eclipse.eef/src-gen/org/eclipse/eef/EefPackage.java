@@ -146,13 +146,21 @@ public interface EefPackage extends EPackage {
 	int EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PAGE_DESCRIPTION__DOMAIN_CLASS = 2;
+
+	/**
 	 * The feature id for the '<em><b>Semantic Candidate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 2;
+	int EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Groups</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -160,7 +168,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__GROUPS = 3;
+	int EEF_PAGE_DESCRIPTION__GROUPS = 4;
 
 	/**
 	 * The number of structural features of the '<em>EEF Page Description</em>' class. <!-- begin-user-doc --> <!--
@@ -169,7 +177,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 4;
+	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl <em>EEF Group Description</em>}'
@@ -199,13 +207,21 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__DOMAIN_CLASS = 2;
+
+	/**
 	 * The feature id for the '<em><b>Semantic Candidate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 2;
+	int EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' containment reference. <!-- begin-user-doc --> <!--
@@ -214,7 +230,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__CONTAINER = 3;
+	int EEF_GROUP_DESCRIPTION__CONTAINER = 4;
 
 	/**
 	 * The number of structural features of the '<em>EEF Group Description</em>' class. <!-- begin-user-doc --> <!--
@@ -223,7 +239,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 4;
+	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
@@ -895,6 +911,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFPageDescription_LabelExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getDomainClass
+	 * <em>Domain Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Domain Class</em>'.
+	 * @see org.eclipse.eef.EEFPageDescription#getDomainClass()
+	 * @see #getEEFPageDescription()
+	 * @generated
+	 */
+	EAttribute getEEFPageDescription_DomainClass();
+
+	/**
 	 * Returns the meta object for the attribute '
 	 * {@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
 	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -948,6 +975,17 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFGroupDescription_LabelExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupDescription#getDomainClass
+	 * <em>Domain Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Domain Class</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getDomainClass()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EAttribute getEEFGroupDescription_DomainClass();
 
 	/**
 	 * Returns the meta object for the attribute '
@@ -1471,6 +1509,14 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION = EefPackage.eINSTANCE.getEEFPageDescription_LabelExpression();
 
 		/**
+		 * The meta object literal for the '<em><b>Domain Class</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_PAGE_DESCRIPTION__DOMAIN_CLASS = EefPackage.eINSTANCE.getEEFPageDescription_DomainClass();
+
+		/**
 		 * The meta object literal for the '<em><b>Semantic Candidate Expression</b></em>' attribute feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -1511,6 +1557,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupDescription_LabelExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Domain Class</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_DESCRIPTION__DOMAIN_CLASS = EefPackage.eINSTANCE.getEEFGroupDescription_DomainClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Semantic Candidate Expression</b></em>' attribute feature. <!--

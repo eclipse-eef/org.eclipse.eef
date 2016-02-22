@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal;
 
+import com.google.common.collect.Iterables;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.InputDescriptor;
+import org.eclipse.eef.core.api.utils.DomainClassTester;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
@@ -104,13 +107,19 @@ public class EEFViewImpl implements EEFView {
 	 * Performs the initialization of the view by creating the necessary pages.
 	 */
 	private void doInitialize() {
+		EEFCorePlugin.getPlugin().debug("EEFViewImpl#initialize()"); //$NON-NLS-1$
 		for (final EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
 			String semanticCandidatesExpression = Util.firstNonBlank(eefPageDescription.getSemanticCandidateExpression(),
 					org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
 			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new ISuccessfulResultConsumer<Object>() {
 				@Override
 				public void apply(Object value) {
-					for (Object object : Util.asIterable(value, Object.class)) {
+					long start = System.currentTimeMillis();
+					Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
+					Iterable<EObject> eObjects = Iterables.filter(iterable, new DomainClassTester(eefPageDescription.getDomainClass()));
+					long end = System.currentTimeMillis();
+					System.out.println((end - start) / 1000 + "s"); //$NON-NLS-1$
+					for (Object object : eObjects) {
 						EEFPageImpl ePage = createPage(eefPageDescription, object);
 						ePage.initialize();
 						EEFViewImpl.this.eefPages.add(ePage);

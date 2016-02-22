@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
+import org.eclipse.eef.properties.ui.internal.EEFTabbedPropertyViewPlugin;
 import org.eclipse.eef.properties.ui.internal.page.propertylist.EEFTabbedPropertyList;
 import org.eclipse.eef.properties.ui.internal.registry.EEFTabbedPropertyRegistry;
 import org.eclipse.jface.util.OpenStrategy;
@@ -136,6 +137,8 @@ public class EEFTabbedPropertyViewer {
 	 *            the selection in the workbench part.
 	 */
 	public void setInput(IWorkbenchPart workbenchPart, ISelection selection) {
+		EEFTabbedPropertyViewPlugin.getPlugin().debug("EEFTabbedPropertyViewer#setInput()"); //$NON-NLS-1$
+
 		this.part = workbenchPart;
 		this.input = selection;
 		this.elements.clear();
