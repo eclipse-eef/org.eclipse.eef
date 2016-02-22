@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_e91d0226",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/properties/EEFSection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-22T08:45:38Z",
+      "side": 1,
+      "message": "Why not attach the updater after the creation of the controls? This way you would have access to the proper tabbed property page directly. Since we can have multiple instances of the property view, I am not sure that this code will find the right one.\n\nAs for forcing the refresh using tabbedPropertySheetPage.refreshPage(), I don\u0027t why not going with this approach, let\u0027s try :)",
+      "range": {
+        "startLine": 160,
+        "startChar": 1,
+        "endLine": 189,
+        "endChar": 14
+      },
+      "revId": "760ff3a555c24afc97672d132c7cdf6979bd0b4a",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
