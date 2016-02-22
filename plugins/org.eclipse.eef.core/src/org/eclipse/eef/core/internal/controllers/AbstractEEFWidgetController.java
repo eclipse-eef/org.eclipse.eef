@@ -40,6 +40,11 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	protected IConsumer<String> newLabelConsumer;
 
 	/**
+	 * The consumer of the new value of the help.
+	 */
+	protected IConsumer<String> newHelpConsumer;
+
+	/**
 	 * The consumer of the validation messages.
 	 */
 	protected IConsumer<List<IValidationMessage>> validationConsumer;
@@ -86,6 +91,26 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#onNewHelp(org.eclipse.eef.core.api.controllers.IConsumer)
+	 */
+	@Override
+	public void onNewHelp(IConsumer<String> consumer) {
+		this.newHelpConsumer = consumer;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#removeNewHelpConsumer()
+	 */
+	@Override
+	public void removeNewHelpConsumer() {
+		this.newHelpConsumer = null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#onValidation(org.eclipse.eef.core.api.controllers.IConsumer)
 	 */
 	@Override
@@ -111,12 +136,20 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	@Override
 	public void refresh() {
 		String labelExpression = this.getDescription().getLabelExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+		EAttribute labelEAttribute = EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
 
-		this.newEval().call(eAttribute, labelExpression, String.class, new ISuccessfulResultConsumer<String>() {
+		this.newEval().call(labelEAttribute, labelExpression, String.class, new ISuccessfulResultConsumer<String>() {
 			@Override
 			public void apply(String value) {
 				AbstractEEFWidgetController.this.newLabelConsumer.apply(value);
+			}
+		});
+
+		String helpExpression = this.getDescription().getHelpExpression();
+		this.newEval().call(helpExpression, String.class, new ISuccessfulResultConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				AbstractEEFWidgetController.this.newHelpConsumer.apply(value);
 			}
 		});
 

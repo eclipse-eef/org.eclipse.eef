@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
@@ -129,6 +130,16 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	@Override
 	protected IEEFWidgetController getController() {
 		return this.controller;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getWidgetDescription()
+	 */
+	@Override
+	protected EEFWidgetDescription getWidgetDescription() {
+		return this.description;
 	}
 
 	/**

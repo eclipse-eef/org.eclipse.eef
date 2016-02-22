@@ -189,8 +189,10 @@ public class EEFSection implements IEEFSection {
 
 			InputDescriptor input = Platform.getAdapterManager().getAdapter(object, InputDescriptor.class);
 
-			// TODO we should create a whole context with the current selection etc for the context
-			this.eefSectionDescriptor.getEEFPage().getView().setInput(input);
+			if (input != null) {
+				// TODO we should create a whole context with the current selection etc for the context
+				this.eefSectionDescriptor.getEEFPage().getView().setInput(input);
+			}
 		}
 	}
 

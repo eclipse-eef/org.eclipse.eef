@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,28 @@ public interface EEFWidgetDescription extends EObject {
 	 * @generated
 	 */
 	void setLabelExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> The tooltip of the help icon visible by the end-users <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Help Expression</em>' attribute.
+	 * @see #setHelpExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFWidgetDescription_HelpExpression()
+	 * @model
+	 * @generated
+	 */
+	String getHelpExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Help Expression</em>' attribute.
+	 * @see #getHelpExpression()
+	 * @generated
+	 */
+	void setHelpExpression(String value);
 
 } // EEFWidgetDescription

@@ -11,6 +11,7 @@
 package org.eclipse.eef.ide.ui.internal.widgets;
 
 import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
@@ -111,6 +112,16 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	@Override
 	protected Control getValidationControl() {
 		return this.checkbox;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getWidgetDescription()
+	 */
+	@Override
+	protected EEFWidgetDescription getWidgetDescription() {
+		return this.description;
 	}
 
 	/**

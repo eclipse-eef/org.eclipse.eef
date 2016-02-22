@@ -11,8 +11,9 @@
 package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.util.List;
-import java.util.Random;
 
+import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IValidationMessage;
@@ -128,7 +129,7 @@ public abstract class AbstractEEFWidgetLifecycleManager implements ILifecycleMan
 
 		Control control = this.getValidationControl();
 
-		boolean hasHelp = new Random().nextBoolean(); // [SBE] yes, I know, to be removed :)
+		boolean hasHelp = !Util.isBlank(this.getWidgetDescription().getHelpExpression());
 
 		int gap = GAP_WITHOUT_HELP;
 		if (hasHelp) {
@@ -149,9 +150,16 @@ public abstract class AbstractEEFWidgetLifecycleManager implements ILifecycleMan
 			helpFormData.left = new FormAttachment(this.label);
 			this.help.setLayoutData(helpFormData);
 			this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));
-			this.help.setToolTipText("There should be some help in this tooltip..."); //$NON-NLS-1$
+			this.help.setToolTipText(""); //$NON-NLS-1$
 		}
 	}
+
+	/**
+	 * Returns the description of the widget.
+	 *
+	 * @return The description of the widget
+	 */
+	protected abstract EEFWidgetDescription getWidgetDescription();
 
 	/**
 	 * Create the main control.
@@ -182,6 +190,15 @@ public abstract class AbstractEEFWidgetLifecycleManager implements ILifecycleMan
 			public void apply(String value) {
 				if (!label.isDisposed() && !(label.getText() != null && label.getText().equals(value))) {
 					label.setText(value);
+				}
+			}
+		});
+
+		this.getController().onNewHelp(new IConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				if (help != null && !help.isDisposed() && !(help.getText() != null && help.getText().equals(value))) {
+					help.setToolTipText(value);
 				}
 			}
 		});

@@ -32,6 +32,19 @@ public interface IEEFWidgetController {
 	void removeNewLabelConsumer();
 
 	/**
+	 * Registers a consumer which will be called with the new value of the help.
+	 * 
+	 * @param consumer
+	 *            The consumer of the new value of the help
+	 */
+	void onNewHelp(IConsumer<String> consumer);
+
+	/**
+	 * Removes the consumer of the new value of the help.
+	 */
+	void removeNewHelpConsumer();
+
+	/**
 	 * Registers a consumer which will be called with the validation status.
 	 *
 	 * @param consumer

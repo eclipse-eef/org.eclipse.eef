@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getHelpExpression <em>Help Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,6 +69,26 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	 * @ordered
 	 */
 	protected String labelExpression = EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getHelpExpression() <em>Help Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getHelpExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HELP_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHelpExpression() <em>Help Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getHelpExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String helpExpression = EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -143,12 +164,39 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	 * @generated
 	 */
 	@Override
+	public String getHelpExpression() {
+		return helpExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setHelpExpression(String newHelpExpression) {
+		String oldHelpExpression = helpExpression;
+		helpExpression = newHelpExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION, oldHelpExpression,
+					helpExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER:
 			return getIdentifier();
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			return getLabelExpression();
+		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
+			return getHelpExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,6 +214,9 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 			return;
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
+			return;
+		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
+			setHelpExpression((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,6 +236,9 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression(EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
+			setHelpExpression(EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +257,9 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
 			: !EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
+			return EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT == null ? helpExpression != null
+			: !EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT.equals(helpExpression);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,6 +280,8 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 		result.append(identifier);
 		result.append(", labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
+		result.append(", helpExpression: "); //$NON-NLS-1$
+		result.append(helpExpression);
 		result.append(')');
 		return result.toString();
 	}
