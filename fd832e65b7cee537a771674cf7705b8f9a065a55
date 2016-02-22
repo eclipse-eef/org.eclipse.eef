@@ -22,6 +22,30 @@
       "revId": "fd832e65b7cee537a771674cf7705b8f9a065a55",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5f2ea894",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-02-22T16:23:31Z",
+      "side": 1,
+      "message": "Nope, good catch :)",
+      "parentUuid": "e7dfcf21_bf416c64",
+      "range": {
+        "startLine": 120,
+        "startChar": 5,
+        "endLine": 121,
+        "endChar": 66
+      },
+      "revId": "fd832e65b7cee537a771674cf7705b8f9a065a55",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }
