@@ -21,12 +21,12 @@ public final class EEFExpressionUtils {
 	 * The self variable.
 	 */
 	public static final String SELF = "self"; //$NON-NLS-1$
-	
+
 	/**
 	 * The input variable.
 	 */
 	public static final String INPUT = "input"; //$NON-NLS-1$
-	
+
 	/**
 	 * The expression used to retrieve self.
 	 */
@@ -92,6 +92,25 @@ public final class EEFExpressionUtils {
 		 * The constructor.
 		 */
 		private EEFSelect() {
+			// prevent instantiation
+		}
+	}
+
+	/**
+	 * Utility class containing the constants related to the {@link org.eclipse.eef.core.api.EEFMultiReferences}.
+	 *
+	 * @author mbats
+	 */
+	public final class EEFMultiReferences {
+		/**
+		 * The name of the variable selection.
+		 */
+		public static final String SELECTION = "selection"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFMultiReferences() {
 			// prevent instantiation
 		}
 	}

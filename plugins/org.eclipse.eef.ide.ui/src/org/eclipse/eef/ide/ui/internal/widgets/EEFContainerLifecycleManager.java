@@ -21,8 +21,10 @@ import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -170,6 +172,22 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			eefButtonLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
 			this.lifecycleManagers.add(eefButtonLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFSingleReferenceDescription) {
+			EEFSingleReferenceDescription eefSingleReferenceDescription = (EEFSingleReferenceDescription) eefWidgetDescription;
+
+			EEFSingleReferenceLifecycleManager eefSingleReferenceLifecycleManager = new EEFSingleReferenceLifecycleManager(
+					eefSingleReferenceDescription, childVariableManager, interpreter, editingDomain);
+			eefSingleReferenceLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+
+			this.lifecycleManagers.add(eefSingleReferenceLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFMultipleReferencesDescription) {
+			EEFMultipleReferencesDescription eefMultipleReferencesDescription = (EEFMultipleReferencesDescription) eefWidgetDescription;
+
+			EEFMultipleReferencesLifecycleManager eefMultipleReferencesLifecycleManager = new EEFMultipleReferencesLifecycleManager(
+					eefMultipleReferencesDescription, childVariableManager, interpreter, editingDomain);
+			eefMultipleReferencesLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+
+			this.lifecycleManagers.add(eefMultipleReferencesLifecycleManager);
 		}
 	}
 

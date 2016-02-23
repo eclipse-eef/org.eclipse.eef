@@ -140,13 +140,13 @@ public abstract class AbstractEEFWidgetLifecycleManager implements ILifecycleMan
 		FormData labelFormData = new FormData();
 		labelFormData.left = new FormAttachment(0, 0);
 		labelFormData.right = new FormAttachment(control, -HSPACE - gap);
-		labelFormData.top = new FormAttachment(control, 0, SWT.TOP);
+		labelFormData.top = new FormAttachment(control, 0, SWT.CENTER);
 		this.label.setLayoutData(labelFormData);
 
 		if (hasHelp) {
 			this.help = widgetFactory.createCLabel(composite, ""); //$NON-NLS-1$
 			FormData helpFormData = new FormData();
-			helpFormData.top = new FormAttachment(control, 0, SWT.TOP);
+			helpFormData.top = new FormAttachment(control, 0, SWT.CENTER);
 			helpFormData.left = new FormAttachment(this.label);
 			this.help.setLayoutData(helpFormData);
 			this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));

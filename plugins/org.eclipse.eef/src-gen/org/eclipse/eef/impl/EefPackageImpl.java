@@ -15,9 +15,11 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -126,6 +128,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefDynamicMappingIfEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefSingleReferenceDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefMultipleReferencesDescriptionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -748,6 +764,166 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFSingleReferenceDescription() {
+		return eefSingleReferenceDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSingleReferenceDescription_ValueExpression() {
+		return (EAttribute) eefSingleReferenceDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSingleReferenceDescription_DisplayExpression() {
+		return (EAttribute) eefSingleReferenceDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSingleReferenceDescription_OnClickExpression() {
+		return (EAttribute) eefSingleReferenceDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSingleReferenceDescription_CreateExpression() {
+		return (EAttribute) eefSingleReferenceDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSingleReferenceDescription_SearchExpression() {
+		return (EAttribute) eefSingleReferenceDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSingleReferenceDescription_UnsetExpression() {
+		return (EAttribute) eefSingleReferenceDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFMultipleReferencesDescription() {
+		return eefMultipleReferencesDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_ValueExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_DisplayExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_OnClickExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_CreateExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_SearchExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_UnsetExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_UpExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFMultipleReferencesDescription_DownExpression() {
+		return (EAttribute) eefMultipleReferencesDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EefFactory getEefFactory() {
 		return (EefFactory) getEFactoryInstance();
 	}
@@ -839,6 +1015,24 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefDynamicMappingIfEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_IF);
 		createEAttribute(eefDynamicMappingIfEClass, EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION);
 		createEReference(eefDynamicMappingIfEClass, EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET);
+
+		eefSingleReferenceDescriptionEClass = createEClass(EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION);
+		createEAttribute(eefSingleReferenceDescriptionEClass, EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefSingleReferenceDescriptionEClass, EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION);
+		createEAttribute(eefSingleReferenceDescriptionEClass, EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION);
+		createEAttribute(eefSingleReferenceDescriptionEClass, EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION__CREATE_EXPRESSION);
+		createEAttribute(eefSingleReferenceDescriptionEClass, EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION__SEARCH_EXPRESSION);
+		createEAttribute(eefSingleReferenceDescriptionEClass, EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION__UNSET_EXPRESSION);
+
+		eefMultipleReferencesDescriptionEClass = createEClass(EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__DISPLAY_EXPRESSION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__ON_CLICK_EXPRESSION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__CREATE_EXPRESSION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__SEARCH_EXPRESSION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__UNSET_EXPRESSION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__UP_EXPRESSION);
+		createEAttribute(eefMultipleReferencesDescriptionEClass, EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION__DOWN_EXPRESSION);
 	}
 
 	/**
@@ -879,6 +1073,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefCheckboxDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefSelectDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefRadioDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
+		eefSingleReferenceDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
+		eefMultipleReferencesDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
@@ -1096,6 +1292,68 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFWidgetDescription(),
 				null,
 				"widget", null, 1, 1, EEFDynamicMappingIf.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefSingleReferenceDescriptionEClass, EEFSingleReferenceDescription.class,
+				"EEFSingleReferenceDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFSingleReferenceDescription_ValueExpression(),
+				theEcorePackage.getEString(),
+				"valueExpression", null, 0, 1, EEFSingleReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFSingleReferenceDescription_DisplayExpression(),
+				theEcorePackage.getEString(),
+				"displayExpression", null, 0, 1, EEFSingleReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFSingleReferenceDescription_OnClickExpression(),
+				theEcorePackage.getEString(),
+				"onClickExpression", null, 0, 1, EEFSingleReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFSingleReferenceDescription_CreateExpression(),
+				theEcorePackage.getEString(),
+				"createExpression", null, 0, 1, EEFSingleReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFSingleReferenceDescription_SearchExpression(),
+				theEcorePackage.getEString(),
+				"searchExpression", null, 0, 1, EEFSingleReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFSingleReferenceDescription_UnsetExpression(),
+				theEcorePackage.getEString(),
+				"unsetExpression", null, 0, 1, EEFSingleReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefMultipleReferencesDescriptionEClass, EEFMultipleReferencesDescription.class,
+				"EEFMultipleReferencesDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_ValueExpression(),
+				theEcorePackage.getEString(),
+				"valueExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_DisplayExpression(),
+				theEcorePackage.getEString(),
+				"displayExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_OnClickExpression(),
+				theEcorePackage.getEString(),
+				"onClickExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_CreateExpression(),
+				theEcorePackage.getEString(),
+				"createExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_SearchExpression(),
+				theEcorePackage.getEString(),
+				"searchExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_UnsetExpression(),
+				theEcorePackage.getEString(),
+				"unsetExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_UpExpression(),
+				theEcorePackage.getEString(),
+				"upExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFMultipleReferencesDescription_DownExpression(),
+				theEcorePackage.getEString(),
+				"downExpression", null, 0, 1, EEFMultipleReferencesDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(EefPackage.eNS_URI);

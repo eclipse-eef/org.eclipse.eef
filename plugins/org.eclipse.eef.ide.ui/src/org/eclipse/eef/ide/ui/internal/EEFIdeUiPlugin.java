@@ -85,6 +85,11 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 			EEFIdeUiPlugin.plugin = this;
 			this.imageRegistry = this.createImageRegistry();
 			this.imageRegistry.put(Icons.HELP, this.getImageDescriptor(Icons.HELP));
+			this.imageRegistry.put(Icons.CREATE, this.getImageDescriptor(Icons.CREATE));
+			this.imageRegistry.put(Icons.SEARCH, this.getImageDescriptor(Icons.SEARCH));
+			this.imageRegistry.put(Icons.UNSET, this.getImageDescriptor(Icons.UNSET));
+			this.imageRegistry.put(Icons.UP, this.getImageDescriptor(Icons.UP));
+			this.imageRegistry.put(Icons.DOWN, this.getImageDescriptor(Icons.DOWN));
 		}
 
 		/**
@@ -137,7 +142,7 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 
 		/**
 		 * Returns the image registry.
-		 * 
+		 *
 		 * @return The image registry
 		 */
 		public ImageRegistry getImageRegistry() {
