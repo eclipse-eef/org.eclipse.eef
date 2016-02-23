@@ -133,6 +133,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTAINER);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		}
 		return childrenFeatures;
 	}
@@ -186,7 +188,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -201,6 +203,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
+		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
+		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -219,6 +223,12 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTAINER,
 				EefFactory.eINSTANCE.createEEFContainerDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES,
+				EefFactory.eINSTANCE.createEEFSemanticValidationRuleDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES,
+				EefFactory.eINSTANCE.createEEFPropertyValidationRuleDescription()));
 	}
 
 	/**

@@ -57,6 +57,93 @@
         <details key="documentation" value="References the Groups which are visible in a Page. If not specified, the EEF runtime looks for all the Groups defined under the View containing the Page that have a domainClass which is equal or a super class of the domainClass of the Page and use them following the order of the inheritance tree of the EObject."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticValidationRules"
+        upperBound="-1" eType="#//EEFSemanticValidationRuleDescription" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The validation rules used to validate the semantic element of the page."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFValidationRuleDescription" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" lowerBound="1"
+        eType="#//EEF_VALIDATION_SEVERITY_DESCRIPTION">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The severity of the validation rule."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageExpression" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression used to compute the message to display to the end user in case of error."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="audits" upperBound="-1"
+        eType="#//EEFRuleAuditDescription" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The audits to perform to ensure that the validation rule is valid or not."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fixes" upperBound="-1"
+        eType="#//EEFValidationFixDescription" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The quick fixes that can be used to fix invalid data."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EEF_VALIDATION_SEVERITY_DESCRIPTION">
+    <eLiterals name="INFO" value="1" literal="INFO">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The severity used to describe a piece of information."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="WARNING" value="2" literal="WARNING">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The severity used to describe a warning."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="ERROR" value="3" literal="ERROR">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The severity used to describe an error."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFRuleAuditDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="auditExpression" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression used to determine if a validation is valid or not."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFValidationFixDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the validation fix to be displayed to the end user."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixExpression" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression to be used to fix an issue with the validation."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFPropertyValidationRuleDescription"
+      eSuperTypes="#//EEFValidationRuleDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targets" upperBound="-1"
+        eType="#//EEFWidgetDescription" eOpposite="#//EEFWidgetDescription/propertyValidationRules">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The widgets involved in this validation rules."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFSemanticValidationRuleDescription"
+      eSuperTypes="#//EEFValidationRuleDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetClass" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The target class involved in this validation rule."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFGroupDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
@@ -85,6 +172,18 @@
         eType="#//EEFContainerDescription" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Contains the container related to a group."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticValidationRules"
+        upperBound="-1" eType="#//EEFSemanticValidationRuleDescription" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The validation rules used to validate the semantic element of the group."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValidationRules"
+        upperBound="-1" eType="#//EEFPropertyValidationRuleDescription" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The validation rules used to validate widgets of the group."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -126,6 +225,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="helpExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The tooltip of the help icon visible by the end-users"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValidationRules"
+        upperBound="-1" eType="#//EEFPropertyValidationRuleDescription" eOpposite="#//EEFPropertyValidationRuleDescription/targets">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The property validation rules to use for the widget."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

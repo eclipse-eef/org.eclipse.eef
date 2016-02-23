@@ -13,6 +13,7 @@ package org.eclipse.eef.core.api;
 import java.util.List;
 
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
 /**
@@ -44,16 +45,31 @@ public interface EEFPage {
 
 	/**
 	 * Returns the view containing the page.
-	 * 
+	 *
 	 * @return The view containing the page
 	 */
 	EEFView getView();
 
 	/**
 	 * Returns the variable manager.
-	 * 
+	 *
 	 * @return The variable manager
 	 */
 	IVariableManager getVariableManager();
+
+	/**
+	 * Returns the interpreter.
+	 * 
+	 * @return The interpreter
+	 */
+	IInterpreter getInterpreter();
+
+	/**
+	 * Indicates if this page is the only instantiation of the page description.
+	 *
+	 * @return <code>true</code> if this page is the only page created from the page description, <code>false</code>
+	 *         otherwise.
+	 */
+	boolean isUnique();
 
 }

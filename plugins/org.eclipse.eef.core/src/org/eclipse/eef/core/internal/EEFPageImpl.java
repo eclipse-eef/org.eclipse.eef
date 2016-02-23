@@ -69,6 +69,11 @@ public class EEFPageImpl implements EEFPage {
 	private TransactionalEditingDomain editingDomain;
 
 	/**
+	 * Indicates if the description of this page has been instantiated multiple times.
+	 */
+	private boolean isUnique;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param eefView
@@ -81,14 +86,17 @@ public class EEFPageImpl implements EEFPage {
 	 *            The interpreter
 	 * @param editingDomain
 	 *            The editing domain
+	 * @param isUnique
+	 *            Indicates if the description from this page has been instantiated multiple times
 	 */
 	public EEFPageImpl(EEFView eefView, EEFPageDescription eefPageDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+			TransactionalEditingDomain editingDomain, boolean isUnique) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefView = eefView;
 		this.eefPageDescription = eefPageDescription;
 		this.editingDomain = editingDomain;
+		this.isUnique = isUnique;
 	}
 
 	/**
@@ -168,6 +176,26 @@ public class EEFPageImpl implements EEFPage {
 	@Override
 	public IVariableManager getVariableManager() {
 		return this.variableManager;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.EEFPage#getInterpreter()
+	 */
+	@Override
+	public IInterpreter getInterpreter() {
+		return this.interpreter;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.EEFPage#isUnique()
+	 */
+	@Override
+	public boolean isUnique() {
+		return this.isUnique;
 	}
 
 }

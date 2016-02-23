@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,6 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
  * </li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getContainer <em>Container</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -147,5 +150,31 @@ public interface EEFGroupDescription extends EObject {
 	 * @generated
 	 */
 	void setContainer(EEFContainerDescription value);
+
+	/**
+	 * Returns the value of the '<em><b>Semantic Validation Rules</b></em>' containment reference list. The list
+	 * contents are of type {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> The validation rules used to validate the semantic element of the
+	 * group. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Semantic Validation Rules</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_SemanticValidationRules()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules();
+
+	/**
+	 * Returns the value of the '<em><b>Property Validation Rules</b></em>' containment reference list. The list
+	 * contents are of type {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> The validation rules used to validate widgets of the group. <!--
+	 * end-model-doc -->
+	 *
+	 * @return the value of the '<em>Property Validation Rules</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_PropertyValidationRules()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules();
 
 } // EEFGroupDescription

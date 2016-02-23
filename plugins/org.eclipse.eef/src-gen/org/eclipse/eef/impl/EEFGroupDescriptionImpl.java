@@ -8,15 +8,22 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
+
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFPropertyValidationRuleDescription;
+import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Group Description</b></em>'. <!--
@@ -30,6 +37,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getContainer <em>Container</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules
+ * </em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
+ * </em>}</li>
  * </ul>
  * </p>
  *
@@ -125,6 +136,26 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected EEFContainerDescription container;
+
+	/**
+	 * The cached value of the '{@link #getSemanticValidationRules() <em>Semantic Validation Rules</em>}' containment
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getSemanticValidationRules()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFSemanticValidationRuleDescription> semanticValidationRules;
+
+	/**
+	 * The cached value of the '{@link #getPropertyValidationRules() <em>Property Validation Rules</em>}' containment
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getPropertyValidationRules()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFPropertyValidationRuleDescription> propertyValidationRules;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -333,10 +364,42 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
+		if (semanticValidationRules == null) {
+			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
+					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+		}
+		return semanticValidationRules;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules() {
+		if (propertyValidationRules == null) {
+			propertyValidationRules = new EObjectContainmentEList.Resolving<EEFPropertyValidationRuleDescription>(
+					EEFPropertyValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
+		}
+		return propertyValidationRules;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			return basicSetContainer(null, msgs);
+		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
+			return ((InternalEList<?>) getSemanticValidationRules()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
+			return ((InternalEList<?>) getPropertyValidationRules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -362,6 +425,10 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 				return getContainer();
 			}
 			return basicGetContainer();
+		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
+			return getSemanticValidationRules();
+		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
+			return getPropertyValidationRules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -371,6 +438,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -388,6 +456,14 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			setContainer((EEFContainerDescription) newValue);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
+			getSemanticValidationRules().clear();
+			getSemanticValidationRules().addAll((Collection<? extends EEFSemanticValidationRuleDescription>) newValue);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
+			getPropertyValidationRules().clear();
+			getPropertyValidationRules().addAll((Collection<? extends EEFPropertyValidationRuleDescription>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -416,6 +492,12 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			setContainer((EEFContainerDescription) null);
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
+			getSemanticValidationRules().clear();
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
+			getPropertyValidationRules().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -442,6 +524,10 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			return container != null;
+		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
+			return semanticValidationRules != null && !semanticValidationRules.isEmpty();
+		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
+			return propertyValidationRules != null && !propertyValidationRules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

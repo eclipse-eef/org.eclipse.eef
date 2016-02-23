@@ -57,6 +57,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 			addIdentifierPropertyDescriptor(object);
 			addLabelExpressionPropertyDescriptor(object);
 			addHelpExpressionPropertyDescriptor(object);
+			addPropertyValidationRulesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,6 +103,22 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
+	 * This adds a property descriptor for the Property Validation Rules feature. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addPropertyValidationRulesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EEFWidgetDescription_propertyValidationRules_feature"), //$NON-NLS-1$
+				getString(
+						"_UI_PropertyDescriptor_description", "_UI_EEFWidgetDescription_propertyValidationRules_feature", "_UI_EEFWidgetDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This returns EEFWidgetDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -137,7 +154,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

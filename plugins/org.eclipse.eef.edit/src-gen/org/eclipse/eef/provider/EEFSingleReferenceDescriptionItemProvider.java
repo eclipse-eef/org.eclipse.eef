@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFSingleReferenceDescription} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EEFSingleReferenceDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
@@ -93,7 +93,7 @@ public class EEFSingleReferenceDescriptionItemProvider extends EEFWidgetDescript
 	/**
 	 * This adds a property descriptor for the On Click Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addOnClickExpressionPropertyDescriptor(Object object) {
@@ -195,7 +195,7 @@ public class EEFSingleReferenceDescriptionItemProvider extends EEFWidgetDescript
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

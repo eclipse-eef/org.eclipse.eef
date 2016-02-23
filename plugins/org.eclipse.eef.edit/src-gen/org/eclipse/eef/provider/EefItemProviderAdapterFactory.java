@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * factory convert EMF adapter notifications into calls to {@link #fireNotifyChanged fireNotifyChanged}. The adapters
  * also support Eclipse property sheets. Note that most of the adapters are shared among multiple instances. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EefItemProviderAdapterFactory extends EefAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -55,7 +55,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -76,7 +76,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFViewDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFViewDescriptionItemProvider eefViewDescriptionItemProvider;
@@ -99,7 +99,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFPageDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFPageDescriptionItemProvider eefPageDescriptionItemProvider;
@@ -120,9 +120,101 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRuleAuditDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFRuleAuditDescriptionItemProvider eefRuleAuditDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFRuleAuditDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFRuleAuditDescriptionAdapter() {
+		if (eefRuleAuditDescriptionItemProvider == null) {
+			eefRuleAuditDescriptionItemProvider = new EEFRuleAuditDescriptionItemProvider(this);
+		}
+
+		return eefRuleAuditDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFValidationFixDescription} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFValidationFixDescriptionItemProvider eefValidationFixDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFValidationFixDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFValidationFixDescriptionAdapter() {
+		if (eefValidationFixDescriptionItemProvider == null) {
+			eefValidationFixDescriptionItemProvider = new EEFValidationFixDescriptionItemProvider(this);
+		}
+
+		return eefValidationFixDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}
+	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFPropertyValidationRuleDescriptionItemProvider eefPropertyValidationRuleDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFPropertyValidationRuleDescriptionAdapter() {
+		if (eefPropertyValidationRuleDescriptionItemProvider == null) {
+			eefPropertyValidationRuleDescriptionItemProvider = new EEFPropertyValidationRuleDescriptionItemProvider(this);
+		}
+
+		return eefPropertyValidationRuleDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}
+	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSemanticValidationRuleDescriptionItemProvider eefSemanticValidationRuleDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSemanticValidationRuleDescriptionAdapter() {
+		if (eefSemanticValidationRuleDescriptionItemProvider == null) {
+			eefSemanticValidationRuleDescriptionItemProvider = new EEFSemanticValidationRuleDescriptionItemProvider(this);
+		}
+
+		return eefSemanticValidationRuleDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGroupDescriptionItemProvider eefGroupDescriptionItemProvider;
@@ -145,7 +237,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFContainerDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFContainerDescriptionItemProvider eefContainerDescriptionItemProvider;
@@ -168,7 +260,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFTextDescriptionItemProvider eefTextDescriptionItemProvider;
@@ -191,7 +283,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFLabelDescriptionItemProvider eefLabelDescriptionItemProvider;
@@ -214,7 +306,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFButtonDescriptionItemProvider eefButtonDescriptionItemProvider;
@@ -237,7 +329,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxDescriptionItemProvider eefCheckboxDescriptionItemProvider;
@@ -260,7 +352,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFSelectDescriptionItemProvider eefSelectDescriptionItemProvider;
@@ -283,7 +375,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRadioDescriptionItemProvider eefRadioDescriptionItemProvider;
@@ -306,7 +398,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFDynamicMappingForItemProvider eefDynamicMappingForItemProvider;
@@ -329,7 +421,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingIf} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFDynamicMappingIfItemProvider eefDynamicMappingIfItemProvider;
@@ -500,6 +592,18 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefPageDescriptionItemProvider != null) {
 			eefPageDescriptionItemProvider.dispose();
+		}
+		if (eefRuleAuditDescriptionItemProvider != null) {
+			eefRuleAuditDescriptionItemProvider.dispose();
+		}
+		if (eefValidationFixDescriptionItemProvider != null) {
+			eefValidationFixDescriptionItemProvider.dispose();
+		}
+		if (eefPropertyValidationRuleDescriptionItemProvider != null) {
+			eefPropertyValidationRuleDescriptionItemProvider.dispose();
+		}
+		if (eefSemanticValidationRuleDescriptionItemProvider != null) {
+			eefSemanticValidationRuleDescriptionItemProvider.dispose();
 		}
 		if (eefGroupDescriptionItemProvider != null) {
 			eefGroupDescriptionItemProvider.dispose();

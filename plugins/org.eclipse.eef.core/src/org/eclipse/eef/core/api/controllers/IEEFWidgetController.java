@@ -33,7 +33,7 @@ public interface IEEFWidgetController {
 
 	/**
 	 * Registers a consumer which will be called with the new value of the help.
-	 * 
+	 *
 	 * @param consumer
 	 *            The consumer of the new value of the help
 	 */
@@ -50,7 +50,7 @@ public interface IEEFWidgetController {
 	 * @param consumer
 	 *            The consumer of the validation status
 	 */
-	void onValidation(IConsumer<List<IValidationMessage>> consumer);
+	void onValidation(IConsumer<List<IValidationRuleResult>> consumer);
 
 	/**
 	 * Removes the consumer of the validation.

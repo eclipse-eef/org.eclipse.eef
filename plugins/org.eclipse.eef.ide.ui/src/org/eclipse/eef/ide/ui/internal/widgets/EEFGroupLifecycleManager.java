@@ -18,6 +18,8 @@ import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
+import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
+import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
@@ -28,6 +30,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.forms.IMessageManager;
 import org.eclipse.ui.forms.widgets.Section;
 
 /**
@@ -73,6 +76,11 @@ public class EEFGroupLifecycleManager implements ILifecycleManager {
 	private Section section;
 
 	/**
+	 * The tabbed property sheet page.
+	 */
+	private EEFTabbedPropertySheetPage page;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -100,6 +108,8 @@ public class EEFGroupLifecycleManager implements ILifecycleManager {
 	 */
 	@Override
 	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
+		this.page = tabbedPropertySheetPage;
+
 		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
 
 		Composite container = widgetFactory.createComposite(parent);
@@ -151,6 +161,22 @@ public class EEFGroupLifecycleManager implements ILifecycleManager {
 			@Override
 			public void apply(String value) {
 				EEFGroupLifecycleManager.this.section.setText(value);
+			}
+		});
+
+		this.controller.onValidation(new IConsumer<List<IValidationRuleResult>>() {
+			@Override
+			public void apply(List<IValidationRuleResult> validationRuleResults) {
+				IMessageManager messageManager = page.getForm().getMessageManager();
+
+				for (IValidationRuleResult validationRuleResult : validationRuleResults) {
+					if (validationRuleResult instanceof IInvalidValidationRuleResult) {
+						IInvalidValidationRuleResult result = (IInvalidValidationRuleResult) validationRuleResult;
+						messageManager.addMessage(result.getValidationRule(), result.getMessage(), result.getData(), result.getSeverity(), section);
+					} else {
+						messageManager.removeMessage(validationRuleResult.getValidationRule(), section);
+					}
+				}
 			}
 		});
 
