@@ -20,4 +20,29 @@ public interface Icons {
 	 * Help.
 	 */
 	String HELP = "icons/full/help.gif"; //$NON-NLS-1$
+
+	/**
+	 * Create.
+	 */
+	String CREATE = "icons/full/create.gif"; //$NON-NLS-1$
+
+	/**
+	 * Search.
+	 */
+	String SEARCH = "icons/full/search.gif"; //$NON-NLS-1$
+
+	/**
+	 * Unset.
+	 */
+	String UNSET = "icons/full/unset.gif"; //$NON-NLS-1$
+
+	/**
+	 * Up.
+	 */
+	String UP = "icons/full/up.gif"; //$NON-NLS-1$
+
+	/**
+	 * Down.
+	 */
+	String DOWN = "icons/full/down.gif"; //$NON-NLS-1$
 }

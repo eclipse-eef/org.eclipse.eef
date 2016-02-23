@@ -15,9 +15,11 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EefFactory;
@@ -92,6 +94,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
 			return createEEFDynamicMappingIf();
+		case EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION:
+			return createEEFSingleReferenceDescription();
+		case EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION:
+			return createEEFMultipleReferencesDescription();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -227,6 +233,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFDynamicMappingIf createEEFDynamicMappingIf() {
 		EEFDynamicMappingIfImpl eefDynamicMappingIf = new EEFDynamicMappingIfImpl();
 		return eefDynamicMappingIf;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFSingleReferenceDescription createEEFSingleReferenceDescription() {
+		EEFSingleReferenceDescriptionImpl eefSingleReferenceDescription = new EEFSingleReferenceDescriptionImpl();
+		return eefSingleReferenceDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFMultipleReferencesDescription createEEFMultipleReferencesDescription() {
+		EEFMultipleReferencesDescriptionImpl eefMultipleReferencesDescription = new EEFMultipleReferencesDescriptionImpl();
+		return eefMultipleReferencesDescription;
 	}
 
 	/**

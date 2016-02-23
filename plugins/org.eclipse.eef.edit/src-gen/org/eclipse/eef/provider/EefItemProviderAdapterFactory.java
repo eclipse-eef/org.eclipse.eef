@@ -350,6 +350,52 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSingleReferenceDescription} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSingleReferenceDescriptionItemProvider eefSingleReferenceDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSingleReferenceDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSingleReferenceDescriptionAdapter() {
+		if (eefSingleReferenceDescriptionItemProvider == null) {
+			eefSingleReferenceDescriptionItemProvider = new EEFSingleReferenceDescriptionItemProvider(this);
+		}
+
+		return eefSingleReferenceDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFMultipleReferencesDescription}
+	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFMultipleReferencesDescriptionItemProvider eefMultipleReferencesDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFMultipleReferencesDescription}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFMultipleReferencesDescriptionAdapter() {
+		if (eefMultipleReferencesDescriptionItemProvider == null) {
+			eefMultipleReferencesDescriptionItemProvider = new EEFMultipleReferencesDescriptionItemProvider(this);
+		}
+
+		return eefMultipleReferencesDescriptionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -484,6 +530,12 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefDynamicMappingIfItemProvider != null) {
 			eefDynamicMappingIfItemProvider.dispose();
+		}
+		if (eefSingleReferenceDescriptionItemProvider != null) {
+			eefSingleReferenceDescriptionItemProvider.dispose();
+		}
+		if (eefMultipleReferencesDescriptionItemProvider != null) {
+			eefMultipleReferencesDescriptionItemProvider.dispose();
 		}
 	}
 

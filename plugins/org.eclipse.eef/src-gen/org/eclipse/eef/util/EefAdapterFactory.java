@@ -15,9 +15,11 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -141,6 +143,16 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFDynamicMappingIf(EEFDynamicMappingIf object) {
 			return createEEFDynamicMappingIfAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFSingleReferenceDescription(EEFSingleReferenceDescription object) {
+			return createEEFSingleReferenceDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFMultipleReferencesDescription(EEFMultipleReferencesDescription object) {
+			return createEEFMultipleReferencesDescriptionAdapter();
 		}
 
 		@Override
@@ -341,6 +353,34 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFDynamicMappingIfAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSingleReferenceDescription
+	 * <em>EEF Single Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFSingleReferenceDescription
+	 * @generated
+	 */
+	public Adapter createEEFSingleReferenceDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFMultipleReferencesDescription
+	 * <em>EEF Multiple References Description</em>}'. <!-- begin-user-doc --> This default implementation returns null
+	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFMultipleReferencesDescription
+	 * @generated
+	 */
+	public Adapter createEEFMultipleReferencesDescriptionAdapter() {
 		return null;
 	}
 
