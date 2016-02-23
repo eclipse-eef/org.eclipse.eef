@@ -42,6 +42,42 @@ public interface EefFactory extends EFactory {
 	EEFPageDescription createEEFPageDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Rule Audit Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Rule Audit Description</em>'.
+	 * @generated
+	 */
+	EEFRuleAuditDescription createEEFRuleAuditDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Validation Fix Description</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Validation Fix Description</em>'.
+	 * @generated
+	 */
+	EEFValidationFixDescription createEEFValidationFixDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Property Validation Rule Description</em>'.
+	 * @generated
+	 */
+	EEFPropertyValidationRuleDescription createEEFPropertyValidationRuleDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Semantic Validation Rule Description</em>'.
+	 * @generated
+	 */
+	EEFSemanticValidationRuleDescription createEEFSemanticValidationRuleDescription();
+
+	/**
 	 * Returns a new object of class '<em>EEF Group Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Group Description</em>'.

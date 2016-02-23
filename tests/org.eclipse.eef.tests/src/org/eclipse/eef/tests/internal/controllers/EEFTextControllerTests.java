@@ -71,7 +71,7 @@ public class EEFTextControllerTests {
 		AdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 		this.resourceSet = new ResourceSetImpl();
 		this.resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
-				.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+		.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 		this.editingDomain = new TransactionalEditingDomainImpl(adapterFactory, this.resourceSet);
 		this.variableManager = new VariableManagerFactory().createVariableManager();
 
@@ -97,11 +97,15 @@ public class EEFTextControllerTests {
 
 		controller.onNewLabel(newLabel -> {
 			// do nothing
-			});
+		});
 
 		controller.onNewHelp(newHelp -> {
 			// nothing
-			});
+		});
+
+		controller.onValidation(result -> {
+			// nothing
+		});
 
 		controller.refresh();
 	}
@@ -142,11 +146,15 @@ public class EEFTextControllerTests {
 
 		controller.onNewValue(newValue -> {
 			// nothing
-			});
+		});
 
 		controller.onNewHelp(newHelp -> {
 			// nothing
-			});
+		});
+
+		controller.onValidation(result -> {
+			// nothing
+		});
 
 		controller.refresh();
 	}

@@ -16,7 +16,8 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.core.api.controllers.IValidationMessage;
+import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
+import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Icons;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
@@ -203,14 +204,19 @@ public abstract class AbstractEEFWidgetLifecycleManager implements ILifecycleMan
 			}
 		});
 
-		this.getController().onValidation(new IConsumer<List<IValidationMessage>>() {
+		this.getController().onValidation(new IConsumer<List<IValidationRuleResult>>() {
 			@Override
-			public void apply(List<IValidationMessage> messages) {
+			public void apply(List<IValidationRuleResult> validationRuleResults) {
 				IMessageManager messageManager = page.getForm().getMessageManager();
-				messageManager.removeMessages(getValidationControl());
 
-				for (IValidationMessage message : messages) {
-					messageManager.addMessage(message.getKey(), message.getMessage(), message.getData(), message.getType(), getValidationControl());
+				for (IValidationRuleResult validationRuleResult : validationRuleResults) {
+					if (validationRuleResult instanceof IInvalidValidationRuleResult) {
+						IInvalidValidationRuleResult result = (IInvalidValidationRuleResult) validationRuleResult;
+						messageManager.addMessage(result.getValidationRule(), result.getMessage(), result.getData(), result.getSeverity(),
+								getValidationControl());
+					} else {
+						messageManager.removeMessage(validationRuleResult.getValidationRule(), getValidationControl());
+					}
 				}
 			}
 		});
@@ -251,6 +257,6 @@ public abstract class AbstractEEFWidgetLifecycleManager implements ILifecycleMan
 	 */
 	@Override
 	public void dispose() {
-		// do nothing
+		EEFIdeUiPlugin.getPlugin().debug("AbstractEEFWidgetLifeCycleManager#dispose()"); //$NON-NLS-1$
 	}
 }

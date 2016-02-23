@@ -17,14 +17,20 @@ import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -74,6 +80,14 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFViewDescription();
 		case EefPackage.EEF_PAGE_DESCRIPTION:
 			return createEEFPageDescription();
+		case EefPackage.EEF_RULE_AUDIT_DESCRIPTION:
+			return createEEFRuleAuditDescription();
+		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION:
+			return createEEFValidationFixDescription();
+		case EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION:
+			return createEEFPropertyValidationRuleDescription();
+		case EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION:
+			return createEEFSemanticValidationRuleDescription();
 		case EefPackage.EEF_GROUP_DESCRIPTION:
 			return createEEFGroupDescription();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION:
@@ -109,6 +123,36 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+		case EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION:
+			return createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+		case EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION:
+			return convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFViewDescription createEEFViewDescription() {
 		EEFViewDescriptionImpl eefViewDescription = new EEFViewDescriptionImpl();
 		return eefViewDescription;
@@ -123,6 +167,50 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFPageDescription createEEFPageDescription() {
 		EEFPageDescriptionImpl eefPageDescription = new EEFPageDescriptionImpl();
 		return eefPageDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFRuleAuditDescription createEEFRuleAuditDescription() {
+		EEFRuleAuditDescriptionImpl eefRuleAuditDescription = new EEFRuleAuditDescriptionImpl();
+		return eefRuleAuditDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFValidationFixDescription createEEFValidationFixDescription() {
+		EEFValidationFixDescriptionImpl eefValidationFixDescription = new EEFValidationFixDescriptionImpl();
+		return eefValidationFixDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFPropertyValidationRuleDescription createEEFPropertyValidationRuleDescription() {
+		EEFPropertyValidationRuleDescriptionImpl eefPropertyValidationRuleDescription = new EEFPropertyValidationRuleDescriptionImpl();
+		return eefPropertyValidationRuleDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFSemanticValidationRuleDescription createEEFSemanticValidationRuleDescription() {
+		EEFSemanticValidationRuleDescriptionImpl eefSemanticValidationRuleDescription = new EEFSemanticValidationRuleDescriptionImpl();
+		return eefSemanticValidationRuleDescription;
 	}
 
 	/**
@@ -255,6 +343,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFMultipleReferencesDescription createEEFMultipleReferencesDescription() {
 		EEFMultipleReferencesDescriptionImpl eefMultipleReferencesDescription = new EEFMultipleReferencesDescriptionImpl();
 		return eefMultipleReferencesDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public EEF_VALIDATION_SEVERITY_DESCRIPTION createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(EDataType eDataType, String initialValue) {
+		EEF_VALIDATION_SEVERITY_DESCRIPTION result = EEF_VALIDATION_SEVERITY_DESCRIPTION.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

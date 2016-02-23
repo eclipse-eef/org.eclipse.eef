@@ -26,10 +26,9 @@ package org.eclipse.eef;
  * @generated
  */
 public interface EEFLabelDescription extends EEFWidgetDescription {
-
 	/**
 	 * Returns the value of the '<em><b>Body Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * --> <!-- begin-model-doc --> The label of the Widget visible by the end-users. <!-- end-model-doc -->
+	 * --> <!-- begin-model-doc --> The body of the label containing the meaningful content <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Body Expression</em>' attribute.
 	 * @see #setBodyExpression(String)
@@ -49,4 +48,5 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setBodyExpression(String value);
+
 } // EEFLabelDescription

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getGroups <em>Groups</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -139,5 +140,18 @@ public interface EEFPageDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFGroupDescription> getGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Semantic Validation Rules</b></em>' containment reference list. The list
+	 * contents are of type {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> The validation rules used to validate the semantic element of the page.
+	 * <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Semantic Validation Rules</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_SemanticValidationRules()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules();
 
 } // EEFPageDescription

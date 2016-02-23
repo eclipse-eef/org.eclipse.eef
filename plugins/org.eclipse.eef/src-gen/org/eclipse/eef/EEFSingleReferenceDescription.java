@@ -33,7 +33,7 @@ package org.eclipse.eef;
 public interface EEFSingleReferenceDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * --> <!-- begin-model-doc --> Indicates how to display the input value. <!-- end-model-doc -->
+	 * --> <!-- begin-model-doc --> Provides the input value. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
