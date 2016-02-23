@@ -15,9 +15,11 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -193,6 +195,28 @@ public class EefSwitch<T> extends Switch<T> {
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF: {
 			EEFDynamicMappingIf eefDynamicMappingIf = (EEFDynamicMappingIf) theEObject;
 			T result = caseEEFDynamicMappingIf(eefDynamicMappingIf);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION: {
+			EEFSingleReferenceDescription eefSingleReferenceDescription = (EEFSingleReferenceDescription) theEObject;
+			T result = caseEEFSingleReferenceDescription(eefSingleReferenceDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefSingleReferenceDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION: {
+			EEFMultipleReferencesDescription eefMultipleReferencesDescription = (EEFMultipleReferencesDescription) theEObject;
+			T result = caseEEFMultipleReferencesDescription(eefMultipleReferencesDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefMultipleReferencesDescription);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -395,6 +419,36 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFDynamicMappingIf(EEFDynamicMappingIf object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Single Reference Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Single Reference Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSingleReferenceDescription(EEFSingleReferenceDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Multiple References Description</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Multiple References Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFMultipleReferencesDescription(EEFMultipleReferencesDescription object) {
 		return null;
 	}
 

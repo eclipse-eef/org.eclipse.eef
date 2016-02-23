@@ -122,6 +122,24 @@ public interface EefFactory extends EFactory {
 	EEFDynamicMappingIf createEEFDynamicMappingIf();
 
 	/**
+	 * Returns a new object of class '<em>EEF Single Reference Description</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Single Reference Description</em>'.
+	 * @generated
+	 */
+	EEFSingleReferenceDescription createEEFSingleReferenceDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Multiple References Description</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Multiple References Description</em>'.
+	 * @generated
+	 */
+	EEFMultipleReferencesDescription createEEFMultipleReferencesDescription();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the package supported by this factory.
