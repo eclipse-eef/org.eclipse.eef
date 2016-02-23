@@ -11,15 +11,11 @@
 package org.eclipse.eef.core.api.controllers;
 
 /**
- * The validation messages that can be returned by a controller.
+ * The invalid validation rule result.
  *
  * @author sbegaudeau
  */
-public interface IValidationMessage {
-	/**
-	 * OK.
-	 */
-	int OK_TYPE = 0;
+public interface IInvalidValidationRuleResult extends IValidationRuleResult {
 
 	/**
 	 * INFO.
@@ -37,30 +33,23 @@ public interface IValidationMessage {
 	int ERROR_TYPE = 3;
 
 	/**
-	 * The key of the message.
-	 * 
-	 * @return The key of the message
-	 */
-	Object getKey();
-
-	/**
-	 * The text to be displayed to the user.
-	 * 
-	 * @return The text to be displayed to the user
+	 * Returns the message to display to the end user.
+	 *
+	 * @return The message to display to the end user
 	 */
 	String getMessage();
 
 	/**
-	 * The data related to the message.
-	 * 
-	 * @return The data related to the message or <code>null</code> if not relevant
+	 * Returns the data related to this invalid result.
+	 *
+	 * @return The data related to this invalid result
 	 */
 	Object getData();
 
 	/**
-	 * The type of the message.
-	 * 
-	 * @return The type of the message
+	 * Returns the severity.
+	 *
+	 * @return The severity
 	 */
-	int getType();
+	int getSeverity();
 }

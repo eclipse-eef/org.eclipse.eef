@@ -85,7 +85,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	/**
 	 * This adds a property descriptor for the Candidates Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addCandidatesExpressionPropertyDescriptor(Object object) {
@@ -154,7 +154,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

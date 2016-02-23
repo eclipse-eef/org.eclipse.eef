@@ -10,10 +10,16 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFRuleAuditDescription;
+import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
+import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -35,6 +41,11 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	 * The label consumer.
 	 */
 	private IConsumer<String> newLabelConsumer;
+
+	/**
+	 * The consumer of the validation messages.
+	 */
+	private IConsumer<List<IValidationRuleResult>> validationConsumer;
 
 	/**
 	 * The constructor.
@@ -74,6 +85,26 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#onValidation(org.eclipse.eef.core.api.controllers.IConsumer)
+	 */
+	@Override
+	public void onValidation(IConsumer<List<IValidationRuleResult>> consumer) {
+		this.validationConsumer = consumer;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#removeValidationConsumer()
+	 */
+	@Override
+	public void removeValidationConsumer() {
+		this.validationConsumer = null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#refresh()
 	 */
 	@Override
@@ -87,5 +118,34 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 				EEFGroupController.this.newLabelConsumer.apply(value);
 			}
 		});
+
+		List<IValidationRuleResult> validationRuleResults = new ArrayList<IValidationRuleResult>();
+		EAttribute auditEAttribute = EefPackage.Literals.EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION;
+		EAttribute messageEAttribute = EefPackage.Literals.EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION;
+
+		for (EEFSemanticValidationRuleDescription semanticValidationRule : this.description.getSemanticValidationRules()) {
+			boolean isValid = true;
+
+			for (EEFRuleAuditDescription audit : semanticValidationRule.getAudits()) {
+				String auditExpression = audit.getAuditExpression();
+				Boolean result = this.newEval().get(auditEAttribute, auditExpression, Boolean.class);
+				isValid = isValid && (result != null && result.booleanValue());
+
+				if (!isValid) {
+					break;
+				}
+			}
+
+			if (isValid) {
+				validationRuleResults.add(new ValidationRuleResult(semanticValidationRule));
+			} else {
+				String messageExpression = semanticValidationRule.getMessageExpression();
+				String message = this.newEval().get(messageEAttribute, messageExpression, String.class);
+				validationRuleResults.add(new InvalidValidationRuleResult(semanticValidationRule, message, null, semanticValidationRule.getSeverity()
+						.getValue()));
+			}
+		}
+
+		this.validationConsumer.apply(validationRuleResults);
 	}
 }

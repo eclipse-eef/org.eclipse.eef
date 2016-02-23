@@ -36,6 +36,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @ordered
 	 */
 	protected static final String BODY_EXPRESSION_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getBodyExpression() <em>Body Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->

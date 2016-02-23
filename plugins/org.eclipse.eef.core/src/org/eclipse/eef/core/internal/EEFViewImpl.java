@@ -13,6 +13,7 @@ package org.eclipse.eef.core.internal;
 import com.google.common.collect.Iterables;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.eef.EEFPageDescription;
@@ -116,8 +117,16 @@ public class EEFViewImpl implements EEFView {
 				public void apply(Object value) {
 					Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
 					Iterable<EObject> eObjects = Iterables.filter(iterable, new DomainClassTester(eefPageDescription.getDomainClass()));
-					for (Object object : eObjects) {
-						EEFPageImpl ePage = createPage(eefPageDescription, object);
+
+					boolean isUnique = true;
+					Iterator<EObject> iterator = eObjects.iterator();
+					while (iterator.hasNext()) {
+						EObject eObject = iterator.next();
+
+						if (isUnique && iterator.hasNext()) {
+							isUnique = false;
+						}
+						EEFPageImpl ePage = createPage(eefPageDescription, eObject, isUnique);
 						ePage.initialize();
 						EEFViewImpl.this.eefPages.add(ePage);
 					}
@@ -133,14 +142,17 @@ public class EEFViewImpl implements EEFView {
 	 *            a page description
 	 * @param semanticCandidate
 	 *            page semantic candidate
+	 * @param isUnique
+	 *            Indicates if the page description used to create this page is "instantiated" only once or if the page
+	 *            to create is on the several pages created from this description
 	 * @return an actual {@link EEFPage} setup according to the description.
 	 */
-	private EEFPageImpl createPage(EEFPageDescription description, Object semanticCandidate) {
+	private EEFPageImpl createPage(EEFPageDescription description, Object semanticCandidate, boolean isUnique) {
 		IVariableManager childVariableManager = this.variableManager.createChild();
 		if (semanticCandidate != null) {
 			childVariableManager.put(EEFExpressionUtils.SELF, semanticCandidate);
 		}
-		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain);
+		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain, isUnique);
 	}
 
 	/**

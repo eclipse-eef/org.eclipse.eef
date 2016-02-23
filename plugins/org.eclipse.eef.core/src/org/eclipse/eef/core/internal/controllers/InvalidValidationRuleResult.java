@@ -10,19 +10,15 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
-import org.eclipse.eef.core.api.controllers.IValidationMessage;
+import org.eclipse.eef.EEFValidationRuleDescription;
+import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
 
 /**
- * A validation message.
+ * An invalid validation rule result.
  *
  * @author sbegaudeau
  */
-public class ValidationMessage implements IValidationMessage {
-
-	/**
-	 * The key.
-	 */
-	private Object key;
+public class InvalidValidationRuleResult extends ValidationRuleResult implements IInvalidValidationRuleResult {
 
 	/**
 	 * The message.
@@ -35,43 +31,33 @@ public class ValidationMessage implements IValidationMessage {
 	private Object data;
 
 	/**
-	 * The type.
+	 * The severity.
 	 */
-	private int type;
+	private int severity;
 
 	/**
 	 * The constructor.
 	 * 
-	 * @param key
-	 *            The key
+	 * @param validationRule
+	 *            The validation rule
 	 * @param message
 	 *            The message
 	 * @param data
 	 *            The data
-	 * @param type
-	 *            The type
+	 * @param severity
+	 *            The severity
 	 */
-	public ValidationMessage(Object key, String message, Object data, int type) {
-		this.key = key;
+	public InvalidValidationRuleResult(EEFValidationRuleDescription validationRule, String message, Object data, int severity) {
+		super(validationRule);
 		this.message = message;
 		this.data = data;
-		this.type = type;
+		this.severity = severity;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IValidationMessage#getKey()
-	 */
-	@Override
-	public Object getKey() {
-		return this.key;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.controllers.IValidationMessage#getMessage()
+	 * @see org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult#getMessage()
 	 */
 	@Override
 	public String getMessage() {
@@ -81,7 +67,7 @@ public class ValidationMessage implements IValidationMessage {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IValidationMessage#getData()
+	 * @see org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult#getData()
 	 */
 	@Override
 	public Object getData() {
@@ -91,11 +77,11 @@ public class ValidationMessage implements IValidationMessage {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IValidationMessage#getType()
+	 * @see org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult#getSeverity()
 	 */
 	@Override
-	public int getType() {
-		return this.type;
+	public int getSeverity() {
+		return this.severity;
 	}
 
 }

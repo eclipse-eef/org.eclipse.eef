@@ -10,6 +10,7 @@ package org.eclipse.eef;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -171,13 +172,263 @@ public interface EefPackage extends EPackage {
 	int EEF_PAGE_DESCRIPTION__GROUPS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Semantic Validation Rules</b></em>' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES = 5;
+
+	/**
 	 * The number of structural features of the '<em>EEF Page Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 5;
+	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 6;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
+	 * <em>EEF Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationRuleDescription()
+	 * @generated
+	 */
+	int EEF_VALIDATION_RULE_DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Severity</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_RULE_DESCRIPTION__SEVERITY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Message Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Audits</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_RULE_DESCRIPTION__AUDITS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Fixes</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_RULE_DESCRIPTION__FIXES = 3;
+
+	/**
+	 * The number of structural features of the '<em>EEF Validation Rule Description</em>' class. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
+	 * <em>EEF Rule Audit Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRuleAuditDescription()
+	 * @generated
+	 */
+	int EEF_RULE_AUDIT_DESCRIPTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Audit Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION = 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Rule Audit Description</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RULE_AUDIT_DESCRIPTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
+	 * <em>EEF Validation Fix Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationFixDescription()
+	 * @generated
+	 */
+	int EEF_VALIDATION_FIX_DESCRIPTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_FIX_DESCRIPTION__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Fix Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION = 1;
+
+	/**
+	 * The number of structural features of the '<em>EEF Validation Fix Description</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VALIDATION_FIX_DESCRIPTION_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
+	 * <em>EEF Property Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFPropertyValidationRuleDescription()
+	 * @generated
+	 */
+	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Severity</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__SEVERITY = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__SEVERITY;
+
+	/**
+	 * The feature id for the '<em><b>Message Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Audits</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__AUDITS = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS;
+
+	/**
+	 * The feature id for the '<em><b>Fixes</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__FIXES = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__FIXES;
+
+	/**
+	 * The feature id for the '<em><b>Targets</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Property Validation Rule Description</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
+	 * <em>EEF Semantic Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSemanticValidationRuleDescription()
+	 * @generated
+	 */
+	int EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Severity</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__SEVERITY = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__SEVERITY;
+
+	/**
+	 * The feature id for the '<em><b>Message Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Audits</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__AUDITS = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS;
+
+	/**
+	 * The feature id for the '<em><b>Fixes</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__FIXES = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__FIXES;
+
+	/**
+	 * The feature id for the '<em><b>Target Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Semantic Validation Rule Description</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl <em>EEF Group Description</em>}'
@@ -187,7 +438,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupDescription()
 	 * @generated
 	 */
-	int EEF_GROUP_DESCRIPTION = 2;
+	int EEF_GROUP_DESCRIPTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -233,13 +484,31 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION__CONTAINER = 4;
 
 	/**
+	 * The feature id for the '<em><b>Semantic Validation Rules</b></em>' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES = 5;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES = 6;
+
+	/**
 	 * The number of structural features of the '<em>EEF Group Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 5;
+	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
@@ -249,7 +518,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFContainerDescription()
 	 * @generated
 	 */
-	int EEF_CONTAINER_DESCRIPTION = 3;
+	int EEF_CONTAINER_DESCRIPTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -294,7 +563,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetDescription()
 	 * @generated
 	 */
-	int EEF_WIDGET_DESCRIPTION = 4;
+	int EEF_WIDGET_DESCRIPTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -322,13 +591,22 @@ public interface EefPackage extends EPackage {
 	int EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = 3;
+
+	/**
 	 * The number of structural features of the '<em>EEF Widget Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = 3;
+	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFTextDescriptionImpl <em>EEF Text Description</em>}'
@@ -338,7 +616,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextDescription()
 	 * @generated
 	 */
-	int EEF_TEXT_DESCRIPTION = 5;
+	int EEF_TEXT_DESCRIPTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -364,6 +642,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_TEXT_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -407,7 +694,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelDescription()
 	 * @generated
 	 */
-	int EEF_LABEL_DESCRIPTION = 6;
+	int EEF_LABEL_DESCRIPTION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -435,6 +722,15 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+
+	/**
 	 * The feature id for the '<em><b>Body Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
@@ -459,7 +755,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonDescription()
 	 * @generated
 	 */
-	int EEF_BUTTON_DESCRIPTION = 7;
+	int EEF_BUTTON_DESCRIPTION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -485,6 +781,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_BUTTON_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
 	 * The feature id for the '<em><b>Button Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -520,7 +825,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxDescription()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_DESCRIPTION = 8;
+	int EEF_CHECKBOX_DESCRIPTION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -546,6 +851,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_CHECKBOX_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -581,7 +895,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectDescription()
 	 * @generated
 	 */
-	int EEF_SELECT_DESCRIPTION = 9;
+	int EEF_SELECT_DESCRIPTION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -607,6 +921,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_SELECT_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -660,7 +983,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioDescription()
 	 * @generated
 	 */
-	int EEF_RADIO_DESCRIPTION = 10;
+	int EEF_RADIO_DESCRIPTION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -686,6 +1009,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_RADIO_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -739,7 +1071,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingFor()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR = 11;
+	int EEF_DYNAMIC_MAPPING_FOR = 16;
 
 	/**
 	 * The feature id for the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -784,7 +1116,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingIf()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_IF = 12;
+	int EEF_DYNAMIC_MAPPING_IF = 17;
 
 	/**
 	 * The feature id for the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -821,7 +1153,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSingleReferenceDescription()
 	 * @generated
 	 */
-	int EEF_SINGLE_REFERENCE_DESCRIPTION = 13;
+	int EEF_SINGLE_REFERENCE_DESCRIPTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -839,6 +1171,23 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_SINGLE_REFERENCE_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SINGLE_REFERENCE_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SINGLE_REFERENCE_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -911,7 +1260,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFMultipleReferencesDescription()
 	 * @generated
 	 */
-	int EEF_MULTIPLE_REFERENCES_DESCRIPTION = 14;
+	int EEF_MULTIPLE_REFERENCES_DESCRIPTION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -929,6 +1278,23 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_MULTIPLE_REFERENCES_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1008,6 +1374,16 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_MULTIPLE_REFERENCES_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 8;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
+	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
+	 * @generated
+	 */
+	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 20;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
@@ -1141,6 +1517,172 @@ public interface EefPackage extends EPackage {
 	EReference getEEFPageDescription_Groups();
 
 	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFPageDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Semantic Validation Rules</em>'.
+	 * @see org.eclipse.eef.EEFPageDescription#getSemanticValidationRules()
+	 * @see #getEEFPageDescription()
+	 * @generated
+	 */
+	EReference getEEFPageDescription_SemanticValidationRules();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFValidationRuleDescription
+	 * <em>EEF Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Validation Rule Description</em>'.
+	 * @see org.eclipse.eef.EEFValidationRuleDescription
+	 * @generated
+	 */
+	EClass getEEFValidationRuleDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFValidationRuleDescription#getSeverity
+	 * <em>Severity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Severity</em>'.
+	 * @see org.eclipse.eef.EEFValidationRuleDescription#getSeverity()
+	 * @see #getEEFValidationRuleDescription()
+	 * @generated
+	 */
+	EAttribute getEEFValidationRuleDescription_Severity();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression <em>Message Expression</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Message Expression</em>'.
+	 * @see org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression()
+	 * @see #getEEFValidationRuleDescription()
+	 * @generated
+	 */
+	EAttribute getEEFValidationRuleDescription_MessageExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFValidationRuleDescription#getAudits <em>Audits</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Audits</em>'.
+	 * @see org.eclipse.eef.EEFValidationRuleDescription#getAudits()
+	 * @see #getEEFValidationRuleDescription()
+	 * @generated
+	 */
+	EReference getEEFValidationRuleDescription_Audits();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFValidationRuleDescription#getFixes <em>Fixes</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Fixes</em>'.
+	 * @see org.eclipse.eef.EEFValidationRuleDescription#getFixes()
+	 * @see #getEEFValidationRuleDescription()
+	 * @generated
+	 */
+	EReference getEEFValidationRuleDescription_Fixes();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRuleAuditDescription
+	 * <em>EEF Rule Audit Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Rule Audit Description</em>'.
+	 * @see org.eclipse.eef.EEFRuleAuditDescription
+	 * @generated
+	 */
+	EClass getEEFRuleAuditDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFRuleAuditDescription#getAuditExpression
+	 * <em>Audit Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Audit Expression</em>'.
+	 * @see org.eclipse.eef.EEFRuleAuditDescription#getAuditExpression()
+	 * @see #getEEFRuleAuditDescription()
+	 * @generated
+	 */
+	EAttribute getEEFRuleAuditDescription_AuditExpression();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFValidationFixDescription
+	 * <em>EEF Validation Fix Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Validation Fix Description</em>'.
+	 * @see org.eclipse.eef.EEFValidationFixDescription
+	 * @generated
+	 */
+	EClass getEEFValidationFixDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFValidationFixDescription#getName
+	 * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.eef.EEFValidationFixDescription#getName()
+	 * @see #getEEFValidationFixDescription()
+	 * @generated
+	 */
+	EAttribute getEEFValidationFixDescription_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFValidationFixDescription#getFixExpression
+	 * <em>Fix Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Fix Expression</em>'.
+	 * @see org.eclipse.eef.EEFValidationFixDescription#getFixExpression()
+	 * @see #getEEFValidationFixDescription()
+	 * @generated
+	 */
+	EAttribute getEEFValidationFixDescription_FixExpression();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription
+	 * <em>EEF Property Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Property Validation Rule Description</em>'.
+	 * @see org.eclipse.eef.EEFPropertyValidationRuleDescription
+	 * @generated
+	 */
+	EClass getEEFPropertyValidationRuleDescription();
+
+	/**
+	 * Returns the meta object for the reference list '
+	 * {@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference list '<em>Targets</em>'.
+	 * @see org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets()
+	 * @see #getEEFPropertyValidationRuleDescription()
+	 * @generated
+	 */
+	EReference getEEFPropertyValidationRuleDescription_Targets();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription
+	 * <em>EEF Semantic Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Semantic Validation Rule Description</em>'.
+	 * @see org.eclipse.eef.EEFSemanticValidationRuleDescription
+	 * @generated
+	 */
+	EClass getEEFSemanticValidationRuleDescription();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.eef.EEFSemanticValidationRuleDescription#getTargetClass <em>Target Class</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Target Class</em>'.
+	 * @see org.eclipse.eef.EEFSemanticValidationRuleDescription#getTargetClass()
+	 * @see #getEEFSemanticValidationRuleDescription()
+	 * @generated
+	 */
+	EAttribute getEEFSemanticValidationRuleDescription_TargetClass();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGroupDescription <em>EEF Group Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1205,6 +1747,30 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFGroupDescription_Container();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Semantic Validation Rules</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EReference getEEFGroupDescription_SemanticValidationRules();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules <em>Property Validation Rules</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Property Validation Rules</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EReference getEEFGroupDescription_PropertyValidationRules();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFContainerDescription
@@ -1293,6 +1859,18 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFWidgetDescription_HelpExpression();
+
+	/**
+	 * Returns the meta object for the reference list '
+	 * {@link org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules <em>Property Validation Rules</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the reference list '<em>Property Validation Rules</em>'.
+	 * @see org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules()
+	 * @see #getEEFWidgetDescription()
+	 * @generated
+	 */
+	EReference getEEFWidgetDescription_PropertyValidationRules();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFTextDescription <em>EEF Text Description</em>}'.
@@ -1796,6 +2374,16 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFMultipleReferencesDescription_DownExpression();
 
 	/**
+	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
+	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>EEF VALIDATION SEVERITY DESCRIPTION</em>'.
+	 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
+	 * @generated
+	 */
+	EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the factory that creates the instances of the model.
@@ -1917,6 +2505,137 @@ public interface EefPackage extends EPackage {
 		EReference EEF_PAGE_DESCRIPTION__GROUPS = EefPackage.eINSTANCE.getEEFPageDescription_Groups();
 
 		/**
+		 * The meta object literal for the '<em><b>Semantic Validation Rules</b></em>' containment reference list
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFPageDescription_SemanticValidationRules();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
+		 * <em>EEF Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationRuleDescription()
+		 * @generated
+		 */
+		EClass EEF_VALIDATION_RULE_DESCRIPTION = EefPackage.eINSTANCE.getEEFValidationRuleDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Severity</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_VALIDATION_RULE_DESCRIPTION__SEVERITY = EefPackage.eINSTANCE.getEEFValidationRuleDescription_Severity();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION = EefPackage.eINSTANCE.getEEFValidationRuleDescription_MessageExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Audits</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_VALIDATION_RULE_DESCRIPTION__AUDITS = EefPackage.eINSTANCE.getEEFValidationRuleDescription_Audits();
+
+		/**
+		 * The meta object literal for the '<em><b>Fixes</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_VALIDATION_RULE_DESCRIPTION__FIXES = EefPackage.eINSTANCE.getEEFValidationRuleDescription_Fixes();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
+		 * <em>EEF Rule Audit Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRuleAuditDescription()
+		 * @generated
+		 */
+		EClass EEF_RULE_AUDIT_DESCRIPTION = EefPackage.eINSTANCE.getEEFRuleAuditDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Audit Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION = EefPackage.eINSTANCE.getEEFRuleAuditDescription_AuditExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
+		 * <em>EEF Validation Fix Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationFixDescription()
+		 * @generated
+		 */
+		EClass EEF_VALIDATION_FIX_DESCRIPTION = EefPackage.eINSTANCE.getEEFValidationFixDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_VALIDATION_FIX_DESCRIPTION__NAME = EefPackage.eINSTANCE.getEEFValidationFixDescription_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Fix Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION = EefPackage.eINSTANCE.getEEFValidationFixDescription_FixExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
+		 * <em>EEF Property Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFPropertyValidationRuleDescription()
+		 * @generated
+		 */
+		EClass EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION = EefPackage.eINSTANCE.getEEFPropertyValidationRuleDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Targets</b></em>' reference list feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS = EefPackage.eINSTANCE.getEEFPropertyValidationRuleDescription_Targets();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
+		 * <em>EEF Semantic Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSemanticValidationRuleDescription()
+		 * @generated
+		 */
+		EClass EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION = EefPackage.eINSTANCE.getEEFSemanticValidationRuleDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Class</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS = EefPackage.eINSTANCE
+				.getEEFSemanticValidationRuleDescription_TargetClass();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl
 		 * <em>EEF Group Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -1965,6 +2684,22 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_GROUP_DESCRIPTION__CONTAINER = EefPackage.eINSTANCE.getEEFGroupDescription_Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Semantic Validation Rules</b></em>' containment reference list
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFGroupDescription_SemanticValidationRules();
+
+		/**
+		 * The meta object literal for the '<em><b>Property Validation Rules</b></em>' containment reference list
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFGroupDescription_PropertyValidationRules();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
@@ -2033,6 +2768,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION = EefPackage.eINSTANCE.getEEFWidgetDescription_HelpExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Property Validation Rules</b></em>' reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFWidgetDescription_PropertyValidationRules();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextDescriptionImpl
@@ -2417,6 +3160,16 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_MULTIPLE_REFERENCES_DESCRIPTION__DOWN_EXPRESSION = EefPackage.eINSTANCE.getEEFMultipleReferencesDescription_DownExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
+		 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
+		 * @generated
+		 */
+		EEnum EEF_VALIDATION_SEVERITY_DESCRIPTION = EefPackage.eINSTANCE.getEEF_VALIDATION_SEVERITY_DESCRIPTION();
 
 	}
 

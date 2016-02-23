@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import java.util.List;
+
 /**
  * The EEFGroupController is responsible of supporting the refresh of the label of the group.
  *
@@ -28,6 +30,19 @@ public interface IEEFGroupController {
 	 * Remove the consumer of the new value of the label.
 	 */
 	void removeNewLabelConsumer();
+
+	/**
+	 * Registers a consumer which will be called with the validation status.
+	 *
+	 * @param consumer
+	 *            The consumer of the validation status
+	 */
+	void onValidation(IConsumer<List<IValidationRuleResult>> consumer);
+
+	/**
+	 * Removes the consumer of the validation.
+	 */
+	void removeValidationConsumer();
 
 	/**
 	 * Refresh the label.

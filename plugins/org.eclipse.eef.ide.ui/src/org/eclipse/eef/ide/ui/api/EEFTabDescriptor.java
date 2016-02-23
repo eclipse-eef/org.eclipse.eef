@@ -50,6 +50,9 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 	 */
 	@Override
 	public String getId() {
+		if (this.eefPage.isUnique()) {
+			return this.eefPage.getDescription().getIdentifier();
+		}
 		EObject self = (EObject) this.eefPage.getVariableManager().getVariables().get("self"); //$NON-NLS-1$
 		return this.eefPage.getDescription().getIdentifier() + EcoreUtil.getURI(self);
 	}

@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,5 +100,20 @@ public interface EEFWidgetDescription extends EObject {
 	 * @generated
 	 */
 	void setHelpExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Property Validation Rules</b></em>' reference list. The list contents are of
+	 * type {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}. It is bidirectional and its opposite is '
+	 * {@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc --> <!-- begin-model-doc --> The property validation rules to use for the widget. <!--
+	 * end-model-doc -->
+	 *
+	 * @return the value of the '<em>Property Validation Rules</em>' reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFWidgetDescription_PropertyValidationRules()
+	 * @see org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets
+	 * @model opposite="targets"
+	 * @generated
+	 */
+	EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules();
 
 } // EEFWidgetDescription

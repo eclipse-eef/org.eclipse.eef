@@ -17,10 +17,15 @@ import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFValidationFixDescription;
+import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -88,6 +93,31 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFPageDescription(EEFPageDescription object) {
 			return createEEFPageDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFValidationRuleDescription(EEFValidationRuleDescription object) {
+			return createEEFValidationRuleDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFRuleAuditDescription(EEFRuleAuditDescription object) {
+			return createEEFRuleAuditDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFValidationFixDescription(EEFValidationFixDescription object) {
+			return createEEFValidationFixDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFPropertyValidationRuleDescription(EEFPropertyValidationRuleDescription object) {
+			return createEEFPropertyValidationRuleDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFSemanticValidationRuleDescription(EEFSemanticValidationRuleDescription object) {
+			return createEEFSemanticValidationRuleDescriptionAdapter();
 		}
 
 		@Override
@@ -199,6 +229,76 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFPageDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFValidationRuleDescription
+	 * <em>EEF Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFValidationRuleDescription
+	 * @generated
+	 */
+	public Adapter createEEFValidationRuleDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRuleAuditDescription
+	 * <em>EEF Rule Audit Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFRuleAuditDescription
+	 * @generated
+	 */
+	public Adapter createEEFRuleAuditDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFValidationFixDescription
+	 * <em>EEF Validation Fix Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFValidationFixDescription
+	 * @generated
+	 */
+	public Adapter createEEFValidationFixDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription
+	 * <em>EEF Property Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns
+	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFPropertyValidationRuleDescription
+	 * @generated
+	 */
+	public Adapter createEEFPropertyValidationRuleDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription
+	 * <em>EEF Semantic Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns
+	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFSemanticValidationRuleDescription
+	 * @generated
+	 */
+	public Adapter createEEFSemanticValidationRuleDescriptionAdapter() {
 		return null;
 	}
 

@@ -17,10 +17,15 @@ import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFMultipleReferencesDescription;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFSingleReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFValidationFixDescription;
+import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -89,6 +94,52 @@ public class EefSwitch<T> extends Switch<T> {
 		case EefPackage.EEF_PAGE_DESCRIPTION: {
 			EEFPageDescription eefPageDescription = (EEFPageDescription) theEObject;
 			T result = caseEEFPageDescription(eefPageDescription);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_VALIDATION_RULE_DESCRIPTION: {
+			EEFValidationRuleDescription eefValidationRuleDescription = (EEFValidationRuleDescription) theEObject;
+			T result = caseEEFValidationRuleDescription(eefValidationRuleDescription);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_RULE_AUDIT_DESCRIPTION: {
+			EEFRuleAuditDescription eefRuleAuditDescription = (EEFRuleAuditDescription) theEObject;
+			T result = caseEEFRuleAuditDescription(eefRuleAuditDescription);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION: {
+			EEFValidationFixDescription eefValidationFixDescription = (EEFValidationFixDescription) theEObject;
+			T result = caseEEFValidationFixDescription(eefValidationFixDescription);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION: {
+			EEFPropertyValidationRuleDescription eefPropertyValidationRuleDescription = (EEFPropertyValidationRuleDescription) theEObject;
+			T result = caseEEFPropertyValidationRuleDescription(eefPropertyValidationRuleDescription);
+			if (result == null) {
+				result = caseEEFValidationRuleDescription(eefPropertyValidationRuleDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION: {
+			EEFSemanticValidationRuleDescription eefSemanticValidationRuleDescription = (EEFSemanticValidationRuleDescription) theEObject;
+			T result = caseEEFSemanticValidationRuleDescription(eefSemanticValidationRuleDescription);
+			if (result == null) {
+				result = caseEEFValidationRuleDescription(eefSemanticValidationRuleDescription);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -254,6 +305,83 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFPageDescription(EEFPageDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Validation Rule Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Validation Rule Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFValidationRuleDescription(EEFValidationRuleDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Rule Audit Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Rule Audit Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFRuleAuditDescription(EEFRuleAuditDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Validation Fix Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Validation Fix Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFValidationFixDescription(EEFValidationFixDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>EEF Property Validation Rule Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFPropertyValidationRuleDescription(EEFPropertyValidationRuleDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>EEF Semantic Validation Rule Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSemanticValidationRuleDescription(EEFSemanticValidationRuleDescription object) {
 		return null;
 	}
 
