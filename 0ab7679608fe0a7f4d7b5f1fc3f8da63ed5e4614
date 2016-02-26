@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_a5c22e79",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFMultipleReferencesLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-26T08:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_aa703dfd",
+      "range": {
+        "startLine": 194,
+        "startChar": 37,
+        "endLine": 194,
+        "endChar": 119
+      },
+      "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_2a850d5f",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFMultipleReferencesLifecycleManager.java",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-02-25T14:54:12Z",
       "side": 1,
       "message": "The layout of the buttons is odd, it would be best to have them in a vertical layout on the right of the widget.",
+      "range": {
+        "startLine": 207,
+        "startChar": 2,
+        "endLine": 223,
+        "endChar": 3
+      },
+      "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_e56a768d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFMultipleReferencesLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-26T08:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_2a850d5f",
       "range": {
         "startLine": 207,
         "startChar": 2,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_854a922b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-26T08:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_4ab89930",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 95
+      },
+      "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_caa2e9f5",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSingleReferenceLifecycleManager.java",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2016-02-25T14:54:12Z",
       "side": 1,
       "message": "I find it a bit odd to have the buttons move with the size of the label of the reference.",
+      "range": {
+        "startLine": 158,
+        "startChar": 2,
+        "endLine": 161,
+        "endChar": 92
+      },
+      "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_256b7e69",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-26T08:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_caa2e9f5",
       "range": {
         "startLine": 158,
         "startChar": 2,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_e580b69a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-26T08:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_cacbc9b5",
+      "range": {
+        "startLine": 207,
+        "startChar": 5,
+        "endLine": 208,
+        "endChar": 50
+      },
+      "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_0a80514e",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSingleReferenceLifecycleManager.java",
         "patchSetId": 1
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_c55adac8",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-26T08:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_0a80514e",
+      "range": {
+        "startLine": 232,
+        "startChar": 5,
+        "endLine": 232,
+        "endChar": 27
+      },
+      "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_0a677145",
         "filename": "plugins/org.eclipse.eef/src-gen/org/eclipse/eef/EEFMultipleReferencesDescription.java",
         "patchSetId": 1
@@ -151,6 +295,24 @@
       "writtenOn": "2016-02-25T14:54:12Z",
       "side": 1,
       "message": "I don\u0027t see the point in having candidates since the widget is supposed to display a value, not a selection among candidates. You should only see the elements of the reference because right now, the value expression seems useless.",
+      "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_6d500c2a",
+        "filename": "plugins/org.eclipse.eef/src-gen/org/eclipse/eef/EEFMultipleReferencesDescription.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-02-26T08:47:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_0a677145",
       "revId": "0ab7679608fe0a7f4d7b5f1fc3f8da63ed5e4614",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
