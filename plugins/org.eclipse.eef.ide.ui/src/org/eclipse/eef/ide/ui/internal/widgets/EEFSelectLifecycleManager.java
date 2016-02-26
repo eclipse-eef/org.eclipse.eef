@@ -181,7 +181,12 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 			@Override
 			public void apply(Object value) {
 				if (!combo.isDisposed() && !(combo.getText() != null && combo.getText().equals(value))) {
-					final ISelection selection = new StructuredSelection(value);
+					final ISelection selection;
+					if (value != null) {
+						selection = new StructuredSelection(value);
+					} else {
+						selection = null;
+					}
 					comboViewer.setSelection(selection);
 					if (!combo.isEnabled()) {
 						combo.setEnabled(true);

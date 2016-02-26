@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import com.google.common.base.Objects;
+
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -150,7 +152,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void apply(String value) {
 				if (!text.isDisposed() && !(text.getText() != null && text.getText().equals(value))) {
-					text.setText(value);
+					text.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					if (!text.isEnabled()) {
 						text.setEnabled(true);
 					}
