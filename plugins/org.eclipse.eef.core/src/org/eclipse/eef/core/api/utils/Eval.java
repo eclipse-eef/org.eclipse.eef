@@ -102,7 +102,7 @@ public final class Eval {
 		IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
 		if (evaluationResult.success()) {
 			Object value = evaluationResult.getValue();
-			if (expectedResultType.isInstance(value)) {
+			if (expectedResultType.isInstance(value) || (value == null && !expectedResultType.isPrimitive())) {
 				T castValue = expectedResultType.cast(value);
 				consumer.apply(castValue);
 			} else {
@@ -189,7 +189,7 @@ public final class Eval {
 			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
 			if (evaluationResult.success()) {
 				Object value = evaluationResult.getValue();
-				if (expectedResultType.isInstance(value)) {
+				if (expectedResultType.isInstance(value) || (value == null && !expectedResultType.isPrimitive())) {
 					T castValue = expectedResultType.cast(value);
 					return castValue;
 				} else {
