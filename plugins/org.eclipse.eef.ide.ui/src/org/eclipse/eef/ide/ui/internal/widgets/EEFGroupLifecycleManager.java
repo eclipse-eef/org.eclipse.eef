@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import com.google.common.base.Objects;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,7 +118,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		new Eval(this.interpreter, this.variableManager).call(labelExpression, String.class, new ISuccessfulResultConsumer<String>() {
 			@Override
 			public void apply(String value) {
-				EEFGroupLifecycleManager.this.section.setText(value);
+				EEFGroupLifecycleManager.this.section.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 			}
 		});
 
