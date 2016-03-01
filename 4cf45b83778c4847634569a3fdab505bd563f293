@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_a50ea071",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFGroupController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_4af24b5c",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 149,
+        "endChar": 55
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_6a146702",
         "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-01T11:14:01Z",
       "side": 1,
       "message": "To remove",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 48
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_25d0d03e",
+        "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_6a146702",
       "range": {
         "startLine": 80,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_45cb1c96",
+        "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_8a17f304",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 7
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_ca21fb5d",
         "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2016-03-01T11:14:01Z",
       "side": 1,
       "message": "To remove",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 49
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_65d9f869",
+        "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_ca21fb5d",
       "range": {
         "startLine": 122,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_c5bf2cf7",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/EEFTabDescriptor.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "The Javadoc of isUnique explains that a page is considered unique if it is the only instantiation of the EEFPageDescription.",
+      "parentUuid": "e7dfcf21_ea2eb744",
+      "range": {
+        "startLine": 53,
+        "startChar": 2,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_0a2a0330",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/properties/EEFSection.java",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2016-03-01T11:14:01Z",
       "side": 1,
       "message": "Again the same code as in the widget and the group controller. We should try to merge it in one place.",
+      "range": {
+        "startLine": 209,
+        "startChar": 2,
+        "endLine": 235,
+        "endChar": 3
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_25e1b0b9",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/properties/EEFSection.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_0a2a0330",
       "range": {
         "startLine": 209,
         "startChar": 2,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_45dcfc03",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Not exactly but done",
+      "parentUuid": "e7dfcf21_aa702f50",
+      "range": {
+        "startLine": 212,
+        "startChar": 4,
+        "endLine": 219,
+        "endChar": 6
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_8a69b371",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
         "patchSetId": 3
@@ -186,6 +354,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_25b61071",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Yes with an AbstractEEFLifecycleManager for widgets, groups and sections...",
+      "parentUuid": "e7dfcf21_8a69b371",
+      "range": {
+        "startLine": 172,
+        "startChar": 4,
+        "endLine": 179,
+        "endChar": 5
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_0a5cc3c4",
         "filename": "plugins/org.eclipse.eef/model/eef.ecore",
         "patchSetId": 3
@@ -197,6 +389,30 @@
       "writtenOn": "2016-03-01T11:14:01Z",
       "side": 1,
       "message": "rule",
+      "range": {
+        "startLine": 135,
+        "startChar": 84,
+        "endLine": 135,
+        "endChar": 89
+      },
+      "revId": "4cf45b83778c4847634569a3fdab505bd563f293",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_05c11476",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-01T15:07:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_0a5cc3c4",
       "range": {
         "startLine": 135,
         "startChar": 84,
