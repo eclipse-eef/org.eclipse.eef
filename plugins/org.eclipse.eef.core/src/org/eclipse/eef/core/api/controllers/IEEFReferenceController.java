@@ -11,14 +11,14 @@
 package org.eclipse.eef.core.api.controllers;
 
 /**
- * The IEEFSingleReferenceController is responsible of supporting all the interactions with the widgets created for a
- * single reference viewer.
+ * The IEEFReferenceController is responsible of supporting all the interactions with the widgets created for a
+ * reference viewer.
  *
  * @author mbats
  */
-public interface IEEFSingleReferenceController extends IEEFWidgetController {
+public interface IEEFReferenceController extends IEEFWidgetController {
 	/**
-	 * Register a consumer which will be called with the new value of the text when it will change.
+	 * Register a consumer which will be called with the new value of the reference when it will change.
 	 *
 	 * @param consumer
 	 *            The consumer of the new value of the text
@@ -36,9 +36,12 @@ public interface IEEFSingleReferenceController extends IEEFWidgetController {
 	void create();
 
 	/**
-	 * Invoked when the user pushes the search button.
+	 * Invoked when the user pushes the set button.
+	 *
+	 * @param newValue
+	 *            New value
 	 */
-	void search();
+	void set(Object newValue);
 
 	/**
 	 * Invoked when the user pushes the unset button.

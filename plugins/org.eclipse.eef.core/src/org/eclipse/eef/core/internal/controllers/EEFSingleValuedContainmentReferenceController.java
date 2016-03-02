@@ -13,31 +13,32 @@ package org.eclipse.eef.core.internal.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.eef.EEFSingleReferenceDescription;
+import org.eclipse.eef.EEFContainmentReferenceDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.controllers.IEEFSingleReferenceController;
+import org.eclipse.eef.core.api.controllers.IEEFContainmentReferenceController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
 /**
- * This class will be used in order to manage the behavior of the single reference widget.
+ * This class will be used in order to manage the behavior of the single valued containment reference widget.
  *
  * @author mbats
  */
-public class EEFSingleReferenceController extends AbstractEEFWidgetController implements IEEFSingleReferenceController {
+public class EEFSingleValuedContainmentReferenceController extends AbstractEEFReferenceController implements IEEFContainmentReferenceController {
+
 	/**
 	 * The description.
 	 */
-	private EEFSingleReferenceDescription description;
+	private EEFContainmentReferenceDescription description;
 
 	/**
 	 * The editing domain.
@@ -61,9 +62,9 @@ public class EEFSingleReferenceController extends AbstractEEFWidgetController im
 	 * @param editingDomain
 	 *            The editing domain
 	 */
-	public EEFSingleReferenceController(EEFSingleReferenceDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter);
+	public EEFSingleValuedContainmentReferenceController(EEFContainmentReferenceDescription description, IVariableManager variableManager,
+			IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+		super(variableManager, interpreter, description.getSemanticElementExpression(), description.getEReferenceNameExpression());
 		this.description = description;
 		this.editingDomain = editingDomain;
 	}
@@ -71,21 +72,16 @@ public class EEFSingleReferenceController extends AbstractEEFWidgetController im
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFCustomWidgetController#refresh()
+	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#refresh()
 	 */
 	@Override
 	public void refresh() {
 		super.refresh();
 
-		String valueExpression = this.description.getValueExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_SINGLE_REFERENCE_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(eAttribute, valueExpression, Object.class, new ISuccessfulResultConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				EEFSingleReferenceController.this.newValueConsumer.apply(value);
-			}
-		});
+		// Set the value
+		if (eReferenceValue != null) {
+			EEFSingleValuedContainmentReferenceController.this.newValueConsumer.apply(eReferenceValue);
+		}
 	}
 
 	@Override
@@ -103,22 +99,9 @@ public class EEFSingleReferenceController extends AbstractEEFWidgetController im
 		final Command command = new RecordingCommand(this.editingDomain) {
 			@Override
 			protected void doExecute() {
-				String expression = EEFSingleReferenceController.this.description.getCreateExpression();
-				EAttribute attr = EefPackage.Literals.EEF_SINGLE_REFERENCE_DESCRIPTION__CREATE_EXPRESSION;
-				EEFSingleReferenceController.this.newEval().call(attr, expression);
-			}
-		};
-		this.editingDomain.getCommandStack().execute(command);
-	}
-
-	@Override
-	public void search() {
-		final Command command = new RecordingCommand(this.editingDomain) {
-			@Override
-			protected void doExecute() {
-				String expression = EEFSingleReferenceController.this.description.getSearchExpression();
-				EAttribute attr = EefPackage.Literals.EEF_SINGLE_REFERENCE_DESCRIPTION__SEARCH_EXPRESSION;
-				EEFSingleReferenceController.this.newEval().call(attr, expression);
+				String expression = EEFSingleValuedContainmentReferenceController.this.description.getCreateExpression();
+				EAttribute attr = EefPackage.Literals.EEF_REFERENCE_DESCRIPTION__CREATE_EXPRESSION;
+				EEFSingleValuedContainmentReferenceController.this.newEval().call(attr, expression);
 			}
 		};
 		this.editingDomain.getCommandStack().execute(command);
@@ -129,13 +112,10 @@ public class EEFSingleReferenceController extends AbstractEEFWidgetController im
 		final Command command = new RecordingCommand(this.editingDomain) {
 			@Override
 			protected void doExecute() {
-				String expression = EEFSingleReferenceController.this.description.getUnsetExpression();
-				EAttribute attr = EefPackage.Literals.EEF_SINGLE_REFERENCE_DESCRIPTION__UNSET_EXPRESSION;
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFSingleReferenceController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFMultiReferences.SELECTION, element);
-
-				new Eval(EEFSingleReferenceController.this.interpreter, variables).call(attr, expression);
+				if (eReferenceValue instanceof EObject) {
+					// Unset the reference
+					semanticElement.eUnset(eReference);
+				}
 			}
 		};
 		this.editingDomain.getCommandStack().execute(command);
@@ -146,14 +126,14 @@ public class EEFSingleReferenceController extends AbstractEEFWidgetController im
 		final Command command = new RecordingCommand(this.editingDomain) {
 			@Override
 			protected void doExecute() {
-				String expression = EEFSingleReferenceController.this.description.getOnClickExpression();
-				EAttribute attr = EefPackage.Literals.EEF_SINGLE_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION;
+				String expression = EEFSingleValuedContainmentReferenceController.this.description.getOnClickExpression();
+				EAttribute attr = EefPackage.Literals.EEF_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION;
 
 				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFSingleReferenceController.this.variableManager.getVariables());
+				variables.putAll(EEFSingleValuedContainmentReferenceController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFMultiReferences.SELECTION, element);
 
-				new Eval(EEFSingleReferenceController.this.interpreter, variables).call(attr, expression);
+				new Eval(EEFSingleValuedContainmentReferenceController.this.interpreter, variables).call(attr, expression);
 			}
 		};
 		this.editingDomain.getCommandStack().execute(command);
@@ -163,5 +143,4 @@ public class EEFSingleReferenceController extends AbstractEEFWidgetController im
 	protected EEFWidgetDescription getDescription() {
 		return this.description;
 	}
-
 }

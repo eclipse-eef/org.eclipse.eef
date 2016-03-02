@@ -15,14 +15,16 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
+import org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFMultiValuedReferenceDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
@@ -38,13 +40,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static EefFactory init() {
@@ -61,7 +63,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EefFactoryImpl() {
@@ -70,7 +72,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,10 +110,14 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
 			return createEEFDynamicMappingIf();
-		case EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION:
-			return createEEFSingleReferenceDescription();
-		case EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION:
-			return createEEFMultipleReferencesDescription();
+		case EefPackage.EEF_SINGLE_VALUED_CONTAINMENT_REFERENCE_DESCRIPTION:
+			return createEEFSingleValuedContainmentReferenceDescription();
+		case EefPackage.EEF_SINGLE_VALUED_REFERENCE_DESCRIPTION:
+			return createEEFSingleValuedReferenceDescription();
+		case EefPackage.EEF_MULTI_VALUED_CONTAINMENT_REFERENCE_DESCRIPTION:
+			return createEEFMultiValuedContainmentReferenceDescription();
+		case EefPackage.EEF_MULTI_VALUED_REFERENCE_DESCRIPTION:
+			return createEEFMultiValuedReferenceDescription();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -119,7 +125,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,7 +140,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,7 +155,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -160,7 +166,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,7 +177,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -182,7 +188,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -193,7 +199,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -204,7 +210,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -215,7 +221,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -226,7 +232,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -237,7 +243,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,7 +254,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -259,7 +265,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -270,7 +276,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,7 +287,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -292,7 +298,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -303,7 +309,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -314,7 +320,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -325,29 +331,51 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
-	public EEFSingleReferenceDescription createEEFSingleReferenceDescription() {
-		EEFSingleReferenceDescriptionImpl eefSingleReferenceDescription = new EEFSingleReferenceDescriptionImpl();
-		return eefSingleReferenceDescription;
+	public EEFSingleValuedContainmentReferenceDescription createEEFSingleValuedContainmentReferenceDescription() {
+		EEFSingleValuedContainmentReferenceDescriptionImpl eefSingleValuedContainmentReferenceDescription = new EEFSingleValuedContainmentReferenceDescriptionImpl();
+		return eefSingleValuedContainmentReferenceDescription;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
-	public EEFMultipleReferencesDescription createEEFMultipleReferencesDescription() {
-		EEFMultipleReferencesDescriptionImpl eefMultipleReferencesDescription = new EEFMultipleReferencesDescriptionImpl();
-		return eefMultipleReferencesDescription;
+	public EEFSingleValuedReferenceDescription createEEFSingleValuedReferenceDescription() {
+		EEFSingleValuedReferenceDescriptionImpl eefSingleValuedReferenceDescription = new EEFSingleValuedReferenceDescriptionImpl();
+		return eefSingleValuedReferenceDescription;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EEFMultiValuedContainmentReferenceDescription createEEFMultiValuedContainmentReferenceDescription() {
+		EEFMultiValuedContainmentReferenceDescriptionImpl eefMultiValuedContainmentReferenceDescription = new EEFMultiValuedContainmentReferenceDescriptionImpl();
+		return eefMultiValuedContainmentReferenceDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EEFMultiValuedReferenceDescription createEEFMultiValuedReferenceDescription() {
+		EEFMultiValuedReferenceDescriptionImpl eefMultiValuedReferenceDescription = new EEFMultiValuedReferenceDescriptionImpl();
+		return eefMultiValuedReferenceDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEF_VALIDATION_SEVERITY_DESCRIPTION createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(EDataType eDataType, String initialValue) {
@@ -360,7 +388,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(EDataType eDataType, Object instanceValue) {
@@ -369,7 +397,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -379,7 +407,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

@@ -21,10 +21,12 @@ import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
+import org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFMultiValuedReferenceDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -172,22 +174,38 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			eefButtonLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
 			this.lifecycleManagers.add(eefButtonLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFSingleReferenceDescription) {
-			EEFSingleReferenceDescription eefSingleReferenceDescription = (EEFSingleReferenceDescription) eefWidgetDescription;
+		} else if (eefWidgetDescription instanceof EEFSingleValuedContainmentReferenceDescription) {
+			EEFSingleValuedContainmentReferenceDescription eefSingleValuedContainmentReferenceDescription = (EEFSingleValuedContainmentReferenceDescription) eefWidgetDescription;
 
-			EEFSingleReferenceLifecycleManager eefSingleReferenceLifecycleManager = new EEFSingleReferenceLifecycleManager(
-					eefSingleReferenceDescription, childVariableManager, interpreter, editingDomain);
-			eefSingleReferenceLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			EEFSingleValuedContainmentReferenceLifecycleManager eefSingleValuedContainmentReferenceLifecycleManager = new EEFSingleValuedContainmentReferenceLifecycleManager(
+					eefSingleValuedContainmentReferenceDescription, childVariableManager, interpreter, editingDomain);
+			eefSingleValuedContainmentReferenceLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
-			this.lifecycleManagers.add(eefSingleReferenceLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFMultipleReferencesDescription) {
-			EEFMultipleReferencesDescription eefMultipleReferencesDescription = (EEFMultipleReferencesDescription) eefWidgetDescription;
+			this.lifecycleManagers.add(eefSingleValuedContainmentReferenceLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFSingleValuedReferenceDescription) {
+			EEFSingleValuedReferenceDescription eefSingleValuedReferenceDescription = (EEFSingleValuedReferenceDescription) eefWidgetDescription;
 
-			EEFMultipleReferencesLifecycleManager eefMultipleReferencesLifecycleManager = new EEFMultipleReferencesLifecycleManager(
-					eefMultipleReferencesDescription, childVariableManager, interpreter, editingDomain);
-			eefMultipleReferencesLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			EEFSingleValuedReferenceLifecycleManager eefSingleValuedReferenceLifecycleManager = new EEFSingleValuedReferenceLifecycleManager(
+					eefSingleValuedReferenceDescription, childVariableManager, interpreter, editingDomain);
+			eefSingleValuedReferenceLifecycleManager.createControl(parent, tabbedPropertySheetPage);
 
-			this.lifecycleManagers.add(eefMultipleReferencesLifecycleManager);
+			this.lifecycleManagers.add(eefSingleValuedReferenceLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFMultiValuedContainmentReferenceDescription) {
+			EEFMultiValuedContainmentReferenceDescription eefMultiValuedContainmentReferenceDescription = (EEFMultiValuedContainmentReferenceDescription) eefWidgetDescription;
+
+			EEFMultiValuedContainmentReferenceLifecycleManager eefMultiValuedContainmentReferenceLifecycleManager = new EEFMultiValuedContainmentReferenceLifecycleManager(
+					eefMultiValuedContainmentReferenceDescription, childVariableManager, interpreter, editingDomain);
+			eefMultiValuedContainmentReferenceLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+
+			this.lifecycleManagers.add(eefMultiValuedContainmentReferenceLifecycleManager);
+		} else if (eefWidgetDescription instanceof EEFMultiValuedReferenceDescription) {
+			EEFMultiValuedReferenceDescription eefMultiValuedReferenceDescription = (EEFMultiValuedReferenceDescription) eefWidgetDescription;
+
+			EEFMultiValuedReferenceLifecycleManager eefMultiValuedReferenceLifecycleManager = new EEFMultiValuedReferenceLifecycleManager(
+					eefMultiValuedReferenceDescription, childVariableManager, interpreter, editingDomain);
+			eefMultiValuedReferenceLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+
+			this.lifecycleManagers.add(eefMultiValuedReferenceLifecycleManager);
 		}
 	}
 

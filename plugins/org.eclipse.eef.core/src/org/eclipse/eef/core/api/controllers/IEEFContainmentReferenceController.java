@@ -10,22 +10,20 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
-import java.util.List;
-
 /**
- * The IEEFMultipleReferencesController is responsible of supporting all the interactions with the widgets created for a
- * multiple references viewer.
+ * The IEEFContainmentReferenceController is responsible of supporting all the interactions with the widgets created for
+ * a containment reference viewer.
  *
  * @author mbats
  */
-public interface IEEFMultipleReferencesController extends IEEFWidgetController {
+public interface IEEFContainmentReferenceController extends IEEFWidgetController {
 	/**
 	 * Register a consumer which will be called with the new value of the text when it will change.
 	 *
 	 * @param consumer
 	 *            The consumer of the new value of the text
 	 */
-	void onNewValue(IConsumer<List<Object>> consumer);
+	void onNewValue(IConsumer<Object> consumer);
 
 	/**
 	 * Remove the consumer of the new value of the text.
@@ -38,39 +36,19 @@ public interface IEEFMultipleReferencesController extends IEEFWidgetController {
 	void create();
 
 	/**
-	 * Invoked when the user pushes the search button.
-	 */
-	void search();
-
-	/**
 	 * Invoked when the user pushes the unset button.
 	 *
-	 * @param elements
-	 *            Selected elements
+	 * @param element
+	 *            Semantic element
 	 */
-	void unset(List<Object> elements);
+	void unset(Object element);
 
 	/**
-	 * Invoked when the user pushes the up button.
-	 *
-	 * @param elements
-	 *            Selected elements
-	 */
-	void up(List<Object> elements);
-
-	/**
-	 * Invoked when the user pushes the down button.
-	 *
-	 * @param elements
-	 *            Selected elements
-	 */
-	void down(List<Object> elements);
-
-	/**
-	 * Invoked when the user double clicks on a reference.
+	 * Invoked when the user clicks on an hyperlink.
 	 *
 	 * @param element
-	 *            Selected element
+	 *            Semantic element
 	 */
 	void onClick(Object element);
+
 }

@@ -114,4 +114,42 @@ public final class EEFExpressionUtils {
 			// prevent instantiation
 		}
 	}
+
+	/**
+	 * Utility class containing the constants related to the reference widgets.
+	 *
+	 * @author mbats
+	 */
+	public final class EEFReference {
+		/**
+		 * The name of the variable value.
+		 */
+		public static final String VALUE = "value"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFReference() {
+			// prevent instantiation
+		}
+	}
+
+	/**
+	 * Utility class containing the constants related to the non containment reference widgets.
+	 *
+	 * @author mbats
+	 */
+	public final class EEFNonContainmentReference {
+		/**
+		 * The name of the variable value.
+		 */
+		public static final String CANDIDATE = "candidate"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFNonContainmentReference() {
+			// prevent instantiation
+		}
+	}
 }

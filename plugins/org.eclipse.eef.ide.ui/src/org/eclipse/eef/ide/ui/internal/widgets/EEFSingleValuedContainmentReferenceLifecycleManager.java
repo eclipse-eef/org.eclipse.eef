@@ -13,13 +13,13 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.eef.EEFSingleReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.controllers.IEEFSingleReferenceController;
+import org.eclipse.eef.core.api.controllers.IEEFContainmentReferenceController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
@@ -28,7 +28,6 @@ import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -49,16 +48,15 @@ import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.forms.widgets.Hyperlink;
 
 /**
- * This class will be used in order to manager the lifecycle of a single reference widget.
+ * This class will be used in order to manage the lifecycle of a single valued containment reference widget.
  *
  * @author mbats
  */
-public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecycleManager {
-
+public class EEFSingleValuedContainmentReferenceLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	/**
 	 * The description.
 	 */
-	private EEFSingleReferenceDescription description;
+	private EEFSingleValuedContainmentReferenceDescription description;
 
 	/**
 	 * The text.
@@ -76,11 +74,6 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	private Button createButton;
 
 	/**
-	 * The search button.
-	 */
-	private Button searchButton;
-
-	/**
 	 * The unset button.
 	 */
 	private Button unsetButton;
@@ -88,7 +81,7 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	/**
 	 * The main parent.
 	 */
-	private Composite singleReference;
+	private Composite singleValuedContainmentReference;
 
 	/**
 	 * The buttons.
@@ -98,7 +91,7 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	/**
 	 * The controller.
 	 */
-	private IEEFSingleReferenceController controller;
+	private IEEFContainmentReferenceController controller;
 
 	/**
 	 * The listener on the text.
@@ -109,11 +102,6 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	 * The listener on the create button.
 	 */
 	private SelectionListener createSelectionListener;
-
-	/**
-	 * The listener on the search button.
-	 */
-	private SelectionListener searchSelectionListener;
 
 	/**
 	 * The listener on the unset button.
@@ -132,8 +120,8 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	 * @param editingDomain
 	 *            The editing domain
 	 */
-	public EEFSingleReferenceLifecycleManager(EEFSingleReferenceDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+	public EEFSingleValuedContainmentReferenceLifecycleManager(EEFSingleValuedContainmentReferenceDescription description,
+			IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
 		super(variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
@@ -147,35 +135,30 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	@Override
 	protected void createMainControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
 		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
-		this.singleReference = widgetFactory.createFlatFormComposite(parent);
+		this.singleValuedContainmentReference = widgetFactory.createFlatFormComposite(parent);
 		GridLayout layout = new GridLayout(2, false);
-		singleReference.setLayout(layout); // this is the parent composite
+		singleValuedContainmentReference.setLayout(layout); // this is the parent composite
 
 		// Use hyperlink if the onclick expression exists
 		GridData gd = new GridData();
 		gd.grabExcessHorizontalSpace = true;
 		gd.horizontalAlignment = SWT.FILL;
 		if (this.description.getOnClickExpression() != null) {
-			this.hyperlink = widgetFactory.createHyperlink(this.singleReference, "", SWT.NONE); //$NON-NLS-1$
+			this.hyperlink = widgetFactory.createHyperlink(this.singleValuedContainmentReference, "", SWT.NONE); //$NON-NLS-1$
 			hyperlink.setLayoutData(gd);
 		} else {
-			this.text = widgetFactory.createLabel(this.singleReference, "", SWT.NONE); //$NON-NLS-1$
+			this.text = widgetFactory.createLabel(this.singleValuedContainmentReference, "", SWT.NONE); //$NON-NLS-1$
 			text.setLayoutData(gd);
 		}
 
-		this.buttons = widgetFactory.createFlatFormComposite(singleReference);
+		this.buttons = widgetFactory.createFlatFormComposite(singleValuedContainmentReference);
 		this.buttons.setLayout(new RowLayout(SWT.HORIZONTAL));
 		gd = new GridData();
 		gd.grabExcessHorizontalSpace = false;
 		this.buttons.setLayoutData(gd);
 
-		// Create button is visible only if the create expression exists
-		if (this.description.getCreateExpression() != null) {
-			this.createButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
-			this.createButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.CREATE));
-		}
-		this.searchButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
-		this.searchButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.SEARCH));
+		this.createButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
+		this.createButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.CREATE));
 		this.unsetButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
 		this.unsetButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.UNSET));
 		widgetFactory.paintBordersFor(parent);
@@ -183,10 +166,10 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 		FormData formData = new FormData();
 		formData.left = new FormAttachment(0, LABEL_WIDTH);
 		formData.right = new FormAttachment(100, 0);
-		this.singleReference.setLayoutData(formData);
+		this.singleValuedContainmentReference.setLayoutData(formData);
 
-		this.controller = new EEFControllersFactory().createSingleReferenceController(this.description, this.variableManager, this.interpreter,
-				this.editingDomain);
+		this.controller = new EEFControllersFactory().createSingleValuedContainmentReferenceController(this.description, this.variableManager,
+				this.interpreter, this.editingDomain);
 	}
 
 	/**
@@ -222,83 +205,42 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 
 				@Override
 				public void linkActivated(HyperlinkEvent e) {
-					IStructuredSelection selection = (IStructuredSelection) e.getHref();
-					if (selection != null) {
-						Object element = selection.getFirstElement();
-						controller.onClick(element);
+					Object source = e.getSource();
+					if (source != null && source instanceof Hyperlink) {
+						Object element = ((Hyperlink) source).getData();
+						if (element != null) {
+							controller.onClick(element);
+						}
 					}
 				}
 			};
 			this.hyperlink.addHyperlinkListener(this.onClickListener);
 		}
 
-		this.controller.onNewValue(new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				String expression = description.getDisplayExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_SINGLE_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION;
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.put(EEFExpressionUtils.SELF, value);
-				String display = new Eval(EEFSingleReferenceLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
-				if (display != null) {
-					if (hyperlinkExists() && !hyperlink.isDisposed() && !(hyperlink.getText() != null && hyperlink.getText().equals(value))) {
-						hyperlink.setText(display);
-						hyperlink.setData(value);
-						if (!hyperlink.isEnabled()) {
-							hyperlink.setEnabled(true);
-						}
-					} else if (text != null && !text.isDisposed() && !(text.getText() != null && text.getText().equals(value))) {
-						text.setText(display);
-						text.setData(value);
-						if (!text.isEnabled()) {
-							text.setEnabled(true);
-						}
-					}
-				}
-			}
-		});
+		this.controller.onNewValue(new NewValueConsumer());
 
-		if (createButtonExists()) {
-			this.createSelectionListener = new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					controller.create();
-				}
-			};
-
-			this.createButton.addSelectionListener(this.createSelectionListener);
-		}
-
-		this.searchSelectionListener = new SelectionAdapter() {
+		this.createSelectionListener = new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				controller.search();
+				controller.create();
 			}
 		};
-		this.searchButton.addSelectionListener(this.searchSelectionListener);
+
+		this.createButton.addSelectionListener(this.createSelectionListener);
 
 		this.unsetSelectionListener = new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Object element = null;
 				if (hyperlinkExists()) {
-					element = EEFSingleReferenceLifecycleManager.this.hyperlink.getData();
+					element = EEFSingleValuedContainmentReferenceLifecycleManager.this.hyperlink.getData();
 				} else {
-					element = EEFSingleReferenceLifecycleManager.this.text.getData();
+					element = EEFSingleValuedContainmentReferenceLifecycleManager.this.text.getData();
 				}
 				controller.unset(element);
 			}
 		};
 		this.unsetButton.addSelectionListener(this.unsetSelectionListener);
-	}
-
-	/**
-	 * Check if the create button exists in the UI.
-	 *
-	 * @return True if exists otherwise false
-	 */
-	private boolean createButtonExists() {
-		return this.createButton != null;
 	}
 
 	/**
@@ -317,7 +259,7 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	 */
 	@Override
 	protected Control getValidationControl() {
-		return this.singleReference;
+		return this.singleValuedContainmentReference;
 	}
 
 	/**
@@ -333,12 +275,8 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 			this.hyperlink.removeHyperlinkListener(this.onClickListener);
 		}
 
-		if (createButtonExists() && !createButton.isDisposed()) {
+		if (!createButton.isDisposed()) {
 			this.createButton.removeSelectionListener(this.createSelectionListener);
-		}
-
-		if (!searchButton.isDisposed()) {
-			this.searchButton.removeSelectionListener(this.searchSelectionListener);
 		}
 
 		if (!unsetButton.isDisposed()) {
@@ -356,5 +294,39 @@ public class EEFSingleReferenceLifecycleManager extends AbstractEEFWidgetLifecyc
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
 		return this.description;
+	}
+
+	/**
+	 * New value consumer.
+	 *
+	 * @author mbats
+	 */
+	private final class NewValueConsumer implements IConsumer<Object> {
+		@Override
+		public void apply(Object value) {
+			String expression = description.getDisplayExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION;
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
+			variables.put(EEFExpressionUtils.EEFReference.VALUE, value);
+			String display = new Eval(EEFSingleValuedContainmentReferenceLifecycleManager.this.interpreter, variables).get(eAttribute, expression,
+					String.class);
+			if (display == null) {
+				display = ""; //$NON-NLS-1$
+			}
+			if (hyperlinkExists() && !hyperlink.isDisposed() && !(hyperlink.getText() != null && hyperlink.getText().equals(value))) {
+				hyperlink.setText(display);
+				hyperlink.setData(value);
+				if (!hyperlink.isEnabled()) {
+					hyperlink.setEnabled(true);
+				}
+			} else if (text != null && !text.isDisposed() && !(text.getText() != null && text.getText().equals(value))) {
+				text.setText(display);
+				text.setData(value);
+				if (!text.isEnabled()) {
+					text.setEnabled(true);
+				}
+			}
+		}
 	}
 }

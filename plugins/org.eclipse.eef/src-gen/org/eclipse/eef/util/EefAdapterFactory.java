@@ -11,18 +11,23 @@ package org.eclipse.eef.util;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFContainmentReferenceDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
+import org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFMultiValuedReferenceDescription;
+import org.eclipse.eef.EEFNonContainmentReferenceDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFReferenceDescription;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
@@ -37,21 +42,21 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter <code>createXXX</code>
  * method for each class of the model. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.eef.EefPackage
  * @generated
  */
 public class EefAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected static EefPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EefAdapterFactory() {
@@ -64,7 +69,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc --> This
 	 * implementation returns <code>true</code> if the object is either the model's package or is an instance object of
 	 * the model. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -81,7 +86,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EefSwitch<Adapter> modelSwitch = new EefSwitch<Adapter>() {
@@ -176,13 +181,38 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEEFSingleReferenceDescription(EEFSingleReferenceDescription object) {
-			return createEEFSingleReferenceDescriptionAdapter();
+		public Adapter caseEEFReferenceDescription(EEFReferenceDescription object) {
+			return createEEFReferenceDescriptionAdapter();
 		}
 
 		@Override
-		public Adapter caseEEFMultipleReferencesDescription(EEFMultipleReferencesDescription object) {
-			return createEEFMultipleReferencesDescriptionAdapter();
+		public Adapter caseEEFContainmentReferenceDescription(EEFContainmentReferenceDescription object) {
+			return createEEFContainmentReferenceDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFNonContainmentReferenceDescription(EEFNonContainmentReferenceDescription object) {
+			return createEEFNonContainmentReferenceDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFSingleValuedContainmentReferenceDescription(EEFSingleValuedContainmentReferenceDescription object) {
+			return createEEFSingleValuedContainmentReferenceDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFSingleValuedReferenceDescription(EEFSingleValuedReferenceDescription object) {
+			return createEEFSingleValuedReferenceDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFMultiValuedContainmentReferenceDescription(EEFMultiValuedContainmentReferenceDescription object) {
+			return createEEFMultiValuedContainmentReferenceDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFMultiValuedReferenceDescription(EEFMultiValuedReferenceDescription object) {
+			return createEEFMultiValuedReferenceDescriptionAdapter();
 		}
 
 		@Override
@@ -193,7 +223,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
@@ -209,7 +239,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF View Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
 	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFViewDescription
 	 * @generated
@@ -223,7 +253,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Page Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
 	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFPageDescription
 	 * @generated
@@ -237,7 +267,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
 	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFValidationRuleDescription
 	 * @generated
@@ -251,7 +281,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Rule Audit Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFRuleAuditDescription
 	 * @generated
@@ -265,7 +295,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Validation Fix Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
 	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFValidationFixDescription
 	 * @generated
@@ -279,7 +309,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Property Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns
 	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
 	 * anyway. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFPropertyValidationRuleDescription
 	 * @generated
@@ -293,7 +323,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Semantic Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns
 	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
 	 * anyway. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFSemanticValidationRuleDescription
 	 * @generated
@@ -307,7 +337,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Group Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
 	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFGroupDescription
 	 * @generated
@@ -321,7 +351,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Container Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFContainerDescription
 	 * @generated
@@ -335,7 +365,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Widget Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFWidgetDescription
 	 * @generated
@@ -349,7 +379,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Text Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
 	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFTextDescription
 	 * @generated
@@ -363,7 +393,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Label Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
 	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFLabelDescription
 	 * @generated
@@ -377,7 +407,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Button Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFButtonDescription
 	 * @generated
@@ -391,7 +421,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Checkbox Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCheckboxDescription
 	 * @generated
@@ -405,7 +435,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Select Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFSelectDescription
 	 * @generated
@@ -419,7 +449,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Radio Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
 	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFRadioDescription
 	 * @generated
@@ -433,7 +463,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Dynamic Mapping For</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFDynamicMappingFor
 	 * @generated
@@ -447,7 +477,7 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * <em>EEF Dynamic Mapping If</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFDynamicMappingIf
 	 * @generated
@@ -457,37 +487,109 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSingleReferenceDescription
-	 * <em>EEF Single Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 *
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFReferenceDescription
+	 * <em>EEF Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 * 
 	 * @return the new adapter.
-	 * @see org.eclipse.eef.EEFSingleReferenceDescription
+	 * @see org.eclipse.eef.EEFReferenceDescription
 	 * @generated
 	 */
-	public Adapter createEEFSingleReferenceDescriptionAdapter() {
+	public Adapter createEEFReferenceDescriptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFMultipleReferencesDescription
-	 * <em>EEF Multiple References Description</em>}'. <!-- begin-user-doc --> This default implementation returns null
-	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFContainmentReferenceDescription
+	 * <em>EEF Containment Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns
+	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
 	 * anyway. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
-	 * @see org.eclipse.eef.EEFMultipleReferencesDescription
+	 * @see org.eclipse.eef.EEFContainmentReferenceDescription
 	 * @generated
 	 */
-	public Adapter createEEFMultipleReferencesDescriptionAdapter() {
+	public Adapter createEEFContainmentReferenceDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFNonContainmentReferenceDescription
+	 * <em>EEF Non Containment Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns
+	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFNonContainmentReferenceDescription
+	 * @generated
+	 */
+	public Adapter createEEFNonContainmentReferenceDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription
+	 * <em>EEF Single Valued Containment Reference Description</em>}'. <!-- begin-user-doc --> This default
+	 * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance
+	 * will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription
+	 * @generated
+	 */
+	public Adapter createEEFSingleValuedContainmentReferenceDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSingleValuedReferenceDescription
+	 * <em>EEF Single Valued Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns
+	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFSingleValuedReferenceDescription
+	 * @generated
+	 */
+	public Adapter createEEFSingleValuedReferenceDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription
+	 * <em>EEF Multi Valued Containment Reference Description</em>}'. <!-- begin-user-doc --> This default
+	 * implementation returns null so that we can easily ignore cases; it's useful to ignore a case when inheritance
+	 * will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription
+	 * @generated
+	 */
+	public Adapter createEEFMultiValuedContainmentReferenceDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFMultiValuedReferenceDescription
+	 * <em>EEF Multi Valued Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns
+	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFMultiValuedReferenceDescription
+	 * @generated
+	 */
+	public Adapter createEEFMultiValuedReferenceDescriptionAdapter() {
 		return null;
 	}
 
 	/**
 	 * Creates a new adapter for the default case. <!-- begin-user-doc --> This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */

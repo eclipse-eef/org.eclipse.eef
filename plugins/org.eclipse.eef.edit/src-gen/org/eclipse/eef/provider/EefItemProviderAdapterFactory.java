@@ -442,49 +442,97 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSingleReferenceDescription} instances.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected EEFSingleReferenceDescriptionItemProvider eefSingleReferenceDescriptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFSingleReferenceDescription}. <!-- begin-user-doc --> <!--
+	 * This keeps track of the one adapter used for all
+	 * {@link org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription} instances. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
 	 * @generated
 	 */
+	protected EEFSingleValuedContainmentReferenceDescriptionItemProvider eefSingleValuedContainmentReferenceDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	@Override
-	public Adapter createEEFSingleReferenceDescriptionAdapter() {
-		if (eefSingleReferenceDescriptionItemProvider == null) {
-			eefSingleReferenceDescriptionItemProvider = new EEFSingleReferenceDescriptionItemProvider(this);
+	public Adapter createEEFSingleValuedContainmentReferenceDescriptionAdapter() {
+		if (eefSingleValuedContainmentReferenceDescriptionItemProvider == null) {
+			eefSingleValuedContainmentReferenceDescriptionItemProvider = new EEFSingleValuedContainmentReferenceDescriptionItemProvider(this);
 		}
 
-		return eefSingleReferenceDescriptionItemProvider;
+		return eefSingleValuedContainmentReferenceDescriptionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFMultipleReferencesDescription}
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSingleValuedReferenceDescription}
 	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected EEFMultipleReferencesDescriptionItemProvider eefMultipleReferencesDescriptionItemProvider;
+	protected EEFSingleValuedReferenceDescriptionItemProvider eefSingleValuedReferenceDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFMultipleReferencesDescription}. <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSingleValuedReferenceDescription}. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSingleValuedReferenceDescriptionAdapter() {
+		if (eefSingleValuedReferenceDescriptionItemProvider == null) {
+			eefSingleValuedReferenceDescriptionItemProvider = new EEFSingleValuedReferenceDescriptionItemProvider(this);
+		}
+
+		return eefSingleValuedReferenceDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription} instances. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFMultiValuedContainmentReferenceDescriptionItemProvider eefMultiValuedContainmentReferenceDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFMultiValuedContainmentReferenceDescriptionAdapter() {
+		if (eefMultiValuedContainmentReferenceDescriptionItemProvider == null) {
+			eefMultiValuedContainmentReferenceDescriptionItemProvider = new EEFMultiValuedContainmentReferenceDescriptionItemProvider(this);
+		}
+
+		return eefMultiValuedContainmentReferenceDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFMultiValuedReferenceDescription}
+	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFMultiValuedReferenceDescriptionItemProvider eefMultiValuedReferenceDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFMultiValuedReferenceDescription}. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
-	public Adapter createEEFMultipleReferencesDescriptionAdapter() {
-		if (eefMultipleReferencesDescriptionItemProvider == null) {
-			eefMultipleReferencesDescriptionItemProvider = new EEFMultipleReferencesDescriptionItemProvider(this);
+	public Adapter createEEFMultiValuedReferenceDescriptionAdapter() {
+		if (eefMultiValuedReferenceDescriptionItemProvider == null) {
+			eefMultiValuedReferenceDescriptionItemProvider = new EEFMultiValuedReferenceDescriptionItemProvider(this);
 		}
 
-		return eefMultipleReferencesDescriptionItemProvider;
+		return eefMultiValuedReferenceDescriptionItemProvider;
 	}
 
 	/**
@@ -635,11 +683,17 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		if (eefDynamicMappingIfItemProvider != null) {
 			eefDynamicMappingIfItemProvider.dispose();
 		}
-		if (eefSingleReferenceDescriptionItemProvider != null) {
-			eefSingleReferenceDescriptionItemProvider.dispose();
+		if (eefSingleValuedContainmentReferenceDescriptionItemProvider != null) {
+			eefSingleValuedContainmentReferenceDescriptionItemProvider.dispose();
 		}
-		if (eefMultipleReferencesDescriptionItemProvider != null) {
-			eefMultipleReferencesDescriptionItemProvider.dispose();
+		if (eefSingleValuedReferenceDescriptionItemProvider != null) {
+			eefSingleValuedReferenceDescriptionItemProvider.dispose();
+		}
+		if (eefMultiValuedContainmentReferenceDescriptionItemProvider != null) {
+			eefMultiValuedContainmentReferenceDescriptionItemProvider.dispose();
+		}
+		if (eefMultiValuedReferenceDescriptionItemProvider != null) {
+			eefMultiValuedReferenceDescriptionItemProvider.dispose();
 		}
 	}
 

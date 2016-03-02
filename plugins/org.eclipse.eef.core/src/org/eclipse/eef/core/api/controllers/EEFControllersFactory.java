@@ -14,21 +14,25 @@ import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
+import org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFMultiValuedReferenceDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.internal.controllers.EEFButtonController;
 import org.eclipse.eef.core.internal.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.internal.controllers.EEFGroupController;
 import org.eclipse.eef.core.internal.controllers.EEFLabelController;
-import org.eclipse.eef.core.internal.controllers.EEFMultipleReferencesController;
+import org.eclipse.eef.core.internal.controllers.EEFMultiValuedContainmentReferenceController;
+import org.eclipse.eef.core.internal.controllers.EEFMultiValuedReferenceController;
 import org.eclipse.eef.core.internal.controllers.EEFRadioController;
 import org.eclipse.eef.core.internal.controllers.EEFSectionController;
 import org.eclipse.eef.core.internal.controllers.EEFSelectController;
-import org.eclipse.eef.core.internal.controllers.EEFSingleReferenceController;
+import org.eclipse.eef.core.internal.controllers.EEFSingleValuedContainmentReferenceController;
+import org.eclipse.eef.core.internal.controllers.EEFSingleValuedReferenceController;
 import org.eclipse.eef.core.internal.controllers.EEFTextController;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -37,7 +41,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 /**
  * This factory will be used to create the controllers.
  *
- * @author sbegaudeau
+ * @author mbats
  */
 public class EEFControllersFactory {
 
@@ -163,7 +167,7 @@ public class EEFControllersFactory {
 	}
 
 	/**
-	 * Creates a new single reference controller.
+	 * Creates a new single valued containment reference controller.
 	 *
 	 * @param description
 	 *            The description
@@ -175,13 +179,14 @@ public class EEFControllersFactory {
 	 *            The editing domain
 	 * @return A radio controller
 	 */
-	public IEEFSingleReferenceController createSingleReferenceController(EEFSingleReferenceDescription description, IVariableManager variableManager,
-			IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-		return new EEFSingleReferenceController(description, variableManager, interpreter, editingDomain);
+	public IEEFContainmentReferenceController createSingleValuedContainmentReferenceController(
+			EEFSingleValuedContainmentReferenceDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			TransactionalEditingDomain editingDomain) {
+		return new EEFSingleValuedContainmentReferenceController(description, variableManager, interpreter, editingDomain);
 	}
 
 	/**
-	 * Creates a new multiple references controller.
+	 * Creates a new single valued reference controller.
 	 *
 	 * @param description
 	 *            The description
@@ -193,9 +198,46 @@ public class EEFControllersFactory {
 	 *            The editing domain
 	 * @return A radio controller
 	 */
-	public IEEFMultipleReferencesController createMultipleReferencesController(EEFMultipleReferencesDescription description,
+	public IEEFReferenceController createSingleValuedReferenceController(EEFSingleValuedReferenceDescription description,
 			IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-		return new EEFMultipleReferencesController(description, variableManager, interpreter, editingDomain);
+		return new EEFSingleValuedReferenceController(description, variableManager, interpreter, editingDomain);
+	}
+
+	/**
+	 * Creates a new multi valued containment reference controller.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param editingDomain
+	 *            The editing domain
+	 * @return A radio controller
+	 */
+	public EEFMultiValuedContainmentReferenceController createMultiValuedContainmentReferenceController(
+			EEFMultiValuedContainmentReferenceDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			TransactionalEditingDomain editingDomain) {
+		return new EEFMultiValuedContainmentReferenceController(description, variableManager, interpreter, editingDomain);
+	}
+
+	/**
+	 * Creates a new multi valued reference controller.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param editingDomain
+	 *            The editing domain
+	 * @return A radio controller
+	 */
+	public IEEFMultiValuedReferenceController createMultiValuedReferenceController(EEFMultiValuedReferenceDescription description,
+			IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+		return new EEFMultiValuedReferenceController(description, variableManager, interpreter, editingDomain);
 	}
 
 	/**

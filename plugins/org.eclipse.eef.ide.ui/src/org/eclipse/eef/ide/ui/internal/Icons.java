@@ -27,9 +27,9 @@ public interface Icons {
 	String CREATE = "icons/full/create.gif"; //$NON-NLS-1$
 
 	/**
-	 * Search.
+	 * Set.
 	 */
-	String SEARCH = "icons/full/search.gif"; //$NON-NLS-1$
+	String SET = "icons/full/set.gif"; //$NON-NLS-1$
 
 	/**
 	 * Unset.
