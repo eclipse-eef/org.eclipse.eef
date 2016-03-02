@@ -11,18 +11,23 @@ package org.eclipse.eef.util;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFContainmentReferenceDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFMultipleReferencesDescription;
+import org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFMultiValuedReferenceDescription;
+import org.eclipse.eef.EEFNonContainmentReferenceDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFReferenceDescription;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
-import org.eclipse.eef.EEFSingleReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedContainmentReferenceDescription;
+import org.eclipse.eef.EEFSingleValuedReferenceDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
@@ -38,21 +43,21 @@ import org.eclipse.emf.ecore.util.Switch;
  * {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
  * returned, which is the result of the switch. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.eef.EefPackage
  * @generated
  */
 public class EefSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected static EefPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EefSwitch() {
@@ -63,7 +68,7 @@ public class EefSwitch<T> extends Switch<T> {
 
 	/**
 	 * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -76,7 +81,7 @@ public class EefSwitch<T> extends Switch<T> {
 	/**
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
 	 * result. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -251,22 +256,107 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
-		case EefPackage.EEF_SINGLE_REFERENCE_DESCRIPTION: {
-			EEFSingleReferenceDescription eefSingleReferenceDescription = (EEFSingleReferenceDescription) theEObject;
-			T result = caseEEFSingleReferenceDescription(eefSingleReferenceDescription);
+		case EefPackage.EEF_REFERENCE_DESCRIPTION: {
+			EEFReferenceDescription eefReferenceDescription = (EEFReferenceDescription) theEObject;
+			T result = caseEEFReferenceDescription(eefReferenceDescription);
 			if (result == null) {
-				result = caseEEFWidgetDescription(eefSingleReferenceDescription);
+				result = caseEEFWidgetDescription(eefReferenceDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
 		}
-		case EefPackage.EEF_MULTIPLE_REFERENCES_DESCRIPTION: {
-			EEFMultipleReferencesDescription eefMultipleReferencesDescription = (EEFMultipleReferencesDescription) theEObject;
-			T result = caseEEFMultipleReferencesDescription(eefMultipleReferencesDescription);
+		case EefPackage.EEF_CONTAINMENT_REFERENCE_DESCRIPTION: {
+			EEFContainmentReferenceDescription eefContainmentReferenceDescription = (EEFContainmentReferenceDescription) theEObject;
+			T result = caseEEFContainmentReferenceDescription(eefContainmentReferenceDescription);
 			if (result == null) {
-				result = caseEEFWidgetDescription(eefMultipleReferencesDescription);
+				result = caseEEFReferenceDescription(eefContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_NON_CONTAINMENT_REFERENCE_DESCRIPTION: {
+			EEFNonContainmentReferenceDescription eefNonContainmentReferenceDescription = (EEFNonContainmentReferenceDescription) theEObject;
+			T result = caseEEFNonContainmentReferenceDescription(eefNonContainmentReferenceDescription);
+			if (result == null) {
+				result = caseEEFReferenceDescription(eefNonContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefNonContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SINGLE_VALUED_CONTAINMENT_REFERENCE_DESCRIPTION: {
+			EEFSingleValuedContainmentReferenceDescription eefSingleValuedContainmentReferenceDescription = (EEFSingleValuedContainmentReferenceDescription) theEObject;
+			T result = caseEEFSingleValuedContainmentReferenceDescription(eefSingleValuedContainmentReferenceDescription);
+			if (result == null) {
+				result = caseEEFContainmentReferenceDescription(eefSingleValuedContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFReferenceDescription(eefSingleValuedContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefSingleValuedContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SINGLE_VALUED_REFERENCE_DESCRIPTION: {
+			EEFSingleValuedReferenceDescription eefSingleValuedReferenceDescription = (EEFSingleValuedReferenceDescription) theEObject;
+			T result = caseEEFSingleValuedReferenceDescription(eefSingleValuedReferenceDescription);
+			if (result == null) {
+				result = caseEEFNonContainmentReferenceDescription(eefSingleValuedReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFReferenceDescription(eefSingleValuedReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefSingleValuedReferenceDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_MULTI_VALUED_CONTAINMENT_REFERENCE_DESCRIPTION: {
+			EEFMultiValuedContainmentReferenceDescription eefMultiValuedContainmentReferenceDescription = (EEFMultiValuedContainmentReferenceDescription) theEObject;
+			T result = caseEEFMultiValuedContainmentReferenceDescription(eefMultiValuedContainmentReferenceDescription);
+			if (result == null) {
+				result = caseEEFContainmentReferenceDescription(eefMultiValuedContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFReferenceDescription(eefMultiValuedContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefMultiValuedContainmentReferenceDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_MULTI_VALUED_REFERENCE_DESCRIPTION: {
+			EEFMultiValuedReferenceDescription eefMultiValuedReferenceDescription = (EEFMultiValuedReferenceDescription) theEObject;
+			T result = caseEEFMultiValuedReferenceDescription(eefMultiValuedReferenceDescription);
+			if (result == null) {
+				result = caseEEFNonContainmentReferenceDescription(eefMultiValuedReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFReferenceDescription(eefMultiValuedReferenceDescription);
+			}
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefMultiValuedReferenceDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -282,7 +372,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF View Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF View Description</em>'.
@@ -297,7 +387,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Page Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Page Description</em>'.
@@ -312,7 +402,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Validation Rule Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Validation Rule Description</em>'.
@@ -327,7 +417,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Rule Audit Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Rule Audit Description</em>'.
@@ -342,7 +432,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Validation Fix Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Validation Fix Description</em>'.
@@ -357,7 +447,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '
 	 * <em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -373,7 +463,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '
 	 * <em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -389,7 +479,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Group Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Group Description</em>'.
@@ -404,7 +494,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Container Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Container Description</em>'.
@@ -419,7 +509,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Widget Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Widget Description</em>'.
@@ -434,7 +524,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Text Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Text Description</em>'.
@@ -449,7 +539,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Label Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Label Description</em>'.
@@ -464,7 +554,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Button Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Button Description</em>'.
@@ -479,7 +569,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Checkbox Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Checkbox Description</em>'.
@@ -494,7 +584,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Select Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Select Description</em>'.
@@ -509,7 +599,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Radio Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Radio Description</em>'.
@@ -524,7 +614,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'.
@@ -539,7 +629,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping If</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping If</em>'.
@@ -551,32 +641,112 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EEF Single Reference Description</em>'. <!--
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Reference Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EEF Single Reference Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Reference Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEEFSingleReferenceDescription(EEFSingleReferenceDescription object) {
+	public T caseEEFReferenceDescription(EEFReferenceDescription object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EEF Multiple References Description</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Containment Reference Description</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EEF Multiple References Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Containment Reference Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEEFMultipleReferencesDescription(EEFMultipleReferencesDescription object) {
+	public T caseEEFContainmentReferenceDescription(EEFContainmentReferenceDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>EEF Non Containment Reference Description</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>EEF Non Containment Reference Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFNonContainmentReferenceDescription(EEFNonContainmentReferenceDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>EEF Single Valued Containment Reference Description</em>'. <!-- begin-user-doc --> This implementation
+	 * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>EEF Single Valued Containment Reference Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSingleValuedContainmentReferenceDescription(EEFSingleValuedContainmentReferenceDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Single Valued Reference Description</em>
+	 * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Single Valued Reference Description</em>
+	 *         '.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSingleValuedReferenceDescription(EEFSingleValuedReferenceDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>EEF Multi Valued Containment Reference Description</em>'. <!-- begin-user-doc --> This implementation returns
+	 * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>EEF Multi Valued Containment Reference Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFMultiValuedContainmentReferenceDescription(EEFMultiValuedContainmentReferenceDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Multi Valued Reference Description</em>
+	 * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the
+	 * switch. <!-- end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Multi Valued Reference Description</em>
+	 *         '.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFMultiValuedReferenceDescription(EEFMultiValuedReferenceDescription object) {
 		return null;
 	}
 
@@ -584,7 +754,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch, but this is the last case
 	 * anyway. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

@@ -192,10 +192,16 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 				EefFactory.eINSTANCE.createEEFRadioDescription()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFSingleReferenceDescription()));
+				EefFactory.eINSTANCE.createEEFSingleValuedContainmentReferenceDescription()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFMultipleReferencesDescription()));
+				EefFactory.eINSTANCE.createEEFSingleValuedReferenceDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
+				EefFactory.eINSTANCE.createEEFMultiValuedContainmentReferenceDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
+				EefFactory.eINSTANCE.createEEFMultiValuedReferenceDescription()));
 	}
 
 	/**

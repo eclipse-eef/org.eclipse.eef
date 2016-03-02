@@ -14,13 +14,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.eef.EEFMultipleReferencesDescription;
+import org.eclipse.eef.EEFMultiValuedContainmentReferenceDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.controllers.IEEFMultipleReferencesController;
+import org.eclipse.eef.core.api.controllers.IEEFMultiValuedContainmentReferenceController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
@@ -55,16 +55,16 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
 /**
- * This class will be used in order to manager the lifecycle of a multiple references widget.
+ * This class will be used in order to manage the lifecycle of a multi valued containment reference widget.
  *
  * @author mbats
  */
-public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLifecycleManager {
+public class EEFMultiValuedContainmentReferenceLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 	/**
 	 * The description.
 	 */
-	private EEFMultipleReferencesDescription description;
+	private EEFMultiValuedContainmentReferenceDescription description;
 
 	/**
 	 * The combo viewer.
@@ -80,11 +80,6 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 	 * The create button.
 	 */
 	private Button createButton;
-
-	/**
-	 * The search button.
-	 */
-	private Button searchButton;
 
 	/**
 	 * The unset button.
@@ -112,17 +107,12 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 	/**
 	 * The controller.
 	 */
-	private IEEFMultipleReferencesController controller;
+	private IEEFMultiValuedContainmentReferenceController controller;
 
 	/**
 	 * The listener on the create button.
 	 */
 	private SelectionListener createSelectionListener;
-
-	/**
-	 * The listener on the search button.
-	 */
-	private SelectionListener searchSelectionListener;
 
 	/**
 	 * The listener on the unset button.
@@ -161,8 +151,8 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 	 * @param editingDomain
 	 *            The editing domain
 	 */
-	public EEFMultipleReferencesLifecycleManager(EEFMultipleReferencesDescription description, IVariableManager variableManager,
-			IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+	public EEFMultiValuedContainmentReferenceLifecycleManager(EEFMultiValuedContainmentReferenceDescription description,
+			IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
 		super(variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
@@ -201,26 +191,17 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 		gridData.grabExcessHorizontalSpace = false;
 		buttons.setLayoutData(gridData);
 
-		// Create button is visible only if the create expression exists
-		if (this.description.getCreateExpression() != null) {
-			this.createButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
-			this.createButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.CREATE));
-		}
-		this.searchButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
-		this.searchButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.SEARCH));
+		this.createButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
+		this.createButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.CREATE));
 		this.unsetButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
 		this.unsetButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.UNSET));
-		if (this.description.getUpExpression() != null) {
-			this.upButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
-			this.upButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.UP));
-		}
-		if (this.description.getDownExpression() != null) {
-			this.downButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
-			this.downButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.DOWN));
-		}
+		this.upButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
+		this.upButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.UP));
+		this.downButton = widgetFactory.createButton(this.buttons, "", SWT.NONE); //$NON-NLS-1$
+		this.downButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.DOWN));
 
 		scrolledComposite.setContent(table);
-		int prefHeight = searchButton.computeSize(SWT.DEFAULT, SWT.DEFAULT).y * 6;
+		int prefHeight = createButton.computeSize(SWT.DEFAULT, SWT.DEFAULT).y * 5;
 		table.setSize(clientWidth, prefHeight);
 		scrolledComposite.setExpandHorizontal(true);
 		scrolledComposite.setAlwaysShowScrollBars(true);
@@ -232,8 +213,8 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 		formData.right = new FormAttachment(100, 0);
 		this.multipleReferences.setLayoutData(formData);
 
-		this.controller = new EEFControllersFactory().createMultipleReferencesController(this.description, this.variableManager, this.interpreter,
-				this.editingDomain);
+		this.controller = new EEFControllersFactory().createMultiValuedContainmentReferenceController(this.description, this.variableManager,
+				this.interpreter, this.editingDomain);
 	}
 
 	/**
@@ -256,80 +237,48 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 		super.aboutToBeShown();
 
 		// Set table items
-		this.controller.onNewValue(new IConsumer<List<Object>>() {
-			@Override
-			public void apply(List<Object> value) {
-				if (!table.isDisposed()) {
-					final ISelection selection;
-					if (value != null) {
-						selection = new StructuredSelection(value);
-					} else {
-						selection = null;
-					}
-					tableViewer.setSelection(selection);
-					if (value != null) {
-						tableViewer.setInput(value.toArray());
-					} else {
-						tableViewer.setInput(null);
-					}
-					if (!table.isEnabled()) {
-						table.setEnabled(true);
-					}
-				}
-			}
-		});
+		this.controller.onNewValue(new NewValueConsumer());
 
-		if (createButtonExists()) {
-			this.createSelectionListener = new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					controller.create();
-				}
-			};
-
-			this.createButton.addSelectionListener(this.createSelectionListener);
-		}
-
-		if (upButtonExists()) {
-			this.upSelectionListener = new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					IStructuredSelection selection = (IStructuredSelection) EEFMultipleReferencesLifecycleManager.this.tableViewer.getSelection();
-					@SuppressWarnings("unchecked")
-					List<Object> elements = selection.toList();
-					controller.up(elements);
-				}
-			};
-
-			this.upButton.addSelectionListener(this.upSelectionListener);
-		}
-
-		if (downButtonExists()) {
-			this.downSelectionListener = new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					IStructuredSelection selection = (IStructuredSelection) EEFMultipleReferencesLifecycleManager.this.tableViewer.getSelection();
-					@SuppressWarnings("unchecked")
-					List<Object> elements = selection.toList();
-					controller.down(elements);
-				}
-			};
-
-			this.downButton.addSelectionListener(this.downSelectionListener);
-		}
-
-		this.searchSelectionListener = new SelectionAdapter() {
+		this.createSelectionListener = new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				controller.search();
+				controller.create();
 			}
 		};
-		this.searchButton.addSelectionListener(this.searchSelectionListener);
+
+		this.createButton.addSelectionListener(this.createSelectionListener);
+
+		this.upSelectionListener = new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				IStructuredSelection selection = (IStructuredSelection) EEFMultiValuedContainmentReferenceLifecycleManager.this.tableViewer
+						.getSelection();
+				@SuppressWarnings("unchecked")
+				List<Object> elements = selection.toList();
+				controller.up(elements);
+			}
+		};
+
+		this.upButton.addSelectionListener(this.upSelectionListener);
+
+		this.downSelectionListener = new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				IStructuredSelection selection = (IStructuredSelection) EEFMultiValuedContainmentReferenceLifecycleManager.this.tableViewer
+						.getSelection();
+				@SuppressWarnings("unchecked")
+				List<Object> elements = selection.toList();
+				controller.down(elements);
+			}
+		};
+
+		this.downButton.addSelectionListener(this.downSelectionListener);
 
 		this.unsetSelectionListener = new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				IStructuredSelection selection = (IStructuredSelection) EEFMultipleReferencesLifecycleManager.this.tableViewer.getSelection();
+				IStructuredSelection selection = (IStructuredSelection) EEFMultiValuedContainmentReferenceLifecycleManager.this.tableViewer
+						.getSelection();
 				@SuppressWarnings("unchecked")
 				List<Object> elements = selection.toList();
 				controller.unset(elements);
@@ -347,33 +296,6 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 			}
 		};
 		this.tableViewer.addDoubleClickListener(doubleClickListener);
-	}
-
-	/**
-	 * Check if the create button exists in the UI.
-	 *
-	 * @return True if exists otherwise false
-	 */
-	private boolean createButtonExists() {
-		return this.createButton != null;
-	}
-
-	/**
-	 * Check if the up button exists in the UI.
-	 *
-	 * @return True if exists otherwise false
-	 */
-	private boolean upButtonExists() {
-		return this.upButton != null;
-	}
-
-	/**
-	 * Check if the down button exists in the UI.
-	 *
-	 * @return True if exists otherwise false
-	 */
-	private boolean downButtonExists() {
-		return this.downButton != null;
 	}
 
 	/**
@@ -395,20 +317,16 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
 
-		if (createButtonExists() && !createButton.isDisposed()) {
+		if (!createButton.isDisposed()) {
 			this.createButton.removeSelectionListener(this.createSelectionListener);
 		}
 
-		if (upButtonExists() && !upButton.isDisposed()) {
+		if (!upButton.isDisposed()) {
 			this.upButton.removeSelectionListener(this.upSelectionListener);
 		}
 
-		if (downButtonExists() && !downButton.isDisposed()) {
+		if (!downButton.isDisposed()) {
 			this.downButton.removeSelectionListener(this.downSelectionListener);
-		}
-
-		if (!searchButton.isDisposed()) {
-			this.searchButton.removeSelectionListener(this.searchSelectionListener);
 		}
 
 		if (!unsetButton.isDisposed()) {
@@ -435,12 +353,14 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 		public void update(ViewerCell cell) {
 			Object element = cell.getElement();
 			Map<String, Object> variables = new HashMap<String, Object>();
-			variables.putAll(EEFMultipleReferencesLifecycleManager.this.variableManager.getVariables());
-			variables.put(EEFExpressionUtils.SELF, element);
+			variables.putAll(EEFMultiValuedContainmentReferenceLifecycleManager.this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFReference.VALUE, element);
+			variables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
 
 			String expression = description.getDisplayExpression();
-			EAttribute eAttribute = EefPackage.Literals.EEF_MULTIPLE_REFERENCES_DESCRIPTION__DISPLAY_EXPRESSION;
-			String text = new Eval(EEFMultipleReferencesLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
+			EAttribute eAttribute = EefPackage.Literals.EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION;
+			String text = new Eval(EEFMultiValuedContainmentReferenceLifecycleManager.this.interpreter, variables).get(eAttribute, expression,
+					String.class);
 			cell.setText(text);
 			super.update(cell);
 		}
@@ -454,5 +374,27 @@ public class EEFMultipleReferencesLifecycleManager extends AbstractEEFWidgetLife
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
 		return this.description;
+	}
+
+	/**
+	 * New value consumer.
+	 *
+	 * @author mbats
+	 */
+	private final class NewValueConsumer implements IConsumer<Object> {
+		@SuppressWarnings("rawtypes")
+		@Override
+		public void apply(Object value) {
+			if (!table.isDisposed()) {
+				final ISelection selection = new StructuredSelection(value);
+				tableViewer.setSelection(selection);
+				if (value instanceof List) {
+					tableViewer.setInput(((List) value).toArray());
+					if (!table.isEnabled()) {
+						table.setEnabled(true);
+					}
+				}
+			}
+		}
 	}
 }

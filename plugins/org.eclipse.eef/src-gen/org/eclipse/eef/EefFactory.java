@@ -158,22 +158,40 @@ public interface EefFactory extends EFactory {
 	EEFDynamicMappingIf createEEFDynamicMappingIf();
 
 	/**
-	 * Returns a new object of class '<em>EEF Single Reference Description</em>'. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * Returns a new object of class '<em>EEF Single Valued Containment Reference Description</em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 *
-	 * @return a new object of class '<em>EEF Single Reference Description</em>'.
+	 * @return a new object of class '<em>EEF Single Valued Containment Reference Description</em>'.
 	 * @generated
 	 */
-	EEFSingleReferenceDescription createEEFSingleReferenceDescription();
+	EEFSingleValuedContainmentReferenceDescription createEEFSingleValuedContainmentReferenceDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Multiple References Description</em>'. <!-- begin-user-doc --> <!--
+	 * Returns a new object of class '<em>EEF Single Valued Reference Description</em>'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
-	 * @return a new object of class '<em>EEF Multiple References Description</em>'.
+	 * @return a new object of class '<em>EEF Single Valued Reference Description</em>'.
 	 * @generated
 	 */
-	EEFMultipleReferencesDescription createEEFMultipleReferencesDescription();
+	EEFSingleValuedReferenceDescription createEEFSingleValuedReferenceDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Multi Valued Containment Reference Description</em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Multi Valued Containment Reference Description</em>'.
+	 * @generated
+	 */
+	EEFMultiValuedContainmentReferenceDescription createEEFMultiValuedContainmentReferenceDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Multi Valued Reference Description</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Multi Valued Reference Description</em>'.
+	 * @generated
+	 */
+	EEFMultiValuedReferenceDescription createEEFMultiValuedReferenceDescription();
 
 	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
