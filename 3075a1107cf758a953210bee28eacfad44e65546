@@ -1,0 +1,767 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_0bb67470",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/AbstractEEFCustomWidgetController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Why? You may have wanted to have this method return an EEFCustomDescription which would have removed the need to check its type in the method getCustomExpression and instead test if it\u0027s not null",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 58
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_cb63acba",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/AbstractEEFCustomWidgetController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Could be removed if I\u0027m not mistaken",
+      "range": {
+        "startLine": 89,
+        "startChar": 1,
+        "endLine": 107,
+        "endChar": 2
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_4be95c77",
+        "filename": "plugins/org.eclipse.eef.ide.ui/plugin.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Use what is available in o.e.eef.ide",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 107
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_8bcc4434",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/AbstractEEFCustomWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure that you could remove this class altogether.",
+      "range": {
+        "startLine": 24,
+        "startChar": 22,
+        "endLine": 24,
+        "endChar": 61
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_ab54a0cf",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/AbstractEEFCustomWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Why create protected getter when the fields in question are already protected?",
+      "range": {
+        "startLine": 50,
+        "startChar": 1,
+        "endLine": 84,
+        "endChar": 2
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_0b459419",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/AbstractEEFCustomWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Can be removed too",
+      "range": {
+        "startLine": 86,
+        "startChar": 1,
+        "endLine": 104,
+        "endChar": 2
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_abcf4025",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/IEEFCustomWidgetDescriptionProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_cb2e4c45",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/IEEFCustomWidgetDescriptionProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Why is this interface not named IEEFLifecycleManagerProvider? It does not provide a custom widget description (it requires one) and later with some modification it could even be the standard entry point to create a lifecycle manager and thus replace or override the existing ones.",
+      "range": {
+        "startLine": 23,
+        "startChar": 17,
+        "endLine": 23,
+        "endChar": 52
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_8b51a4e1",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/ILifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2015, 2015",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_cb79ec3b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "lifecycle manager",
+      "range": {
+        "startLine": 75,
+        "startChar": 45,
+        "endLine": 75,
+        "endChar": 63
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_eb29483c",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "EEF_LIFECYCLE_MANAGER_PROVIDER_EXTENSION_POINT",
+      "range": {
+        "startLine": 77,
+        "startChar": 30,
+        "endLine": 77,
+        "endChar": 77
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_0b29143a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "eefLifecycleManagerProvider",
+      "range": {
+        "startLine": 77,
+        "startChar": 81,
+        "endLine": 77,
+        "endChar": 109
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_2b241060",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "lifecycle manager",
+      "range": {
+        "startLine": 80,
+        "startChar": 52,
+        "endLine": 80,
+        "endChar": 70
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_ab73c059",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "LifecycleManager",
+      "range": {
+        "startLine": 81,
+        "startChar": 16,
+        "endLine": 81,
+        "endChar": 28
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_8b70c450",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "LifecycleManager",
+      "range": {
+        "startLine": 83,
+        "startChar": 64,
+        "endLine": 83,
+        "endChar": 81
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_2b7fb01d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "lifecycle manager",
+      "range": {
+        "startLine": 86,
+        "startChar": 70,
+        "endLine": 86,
+        "endChar": 88
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_4b4ddc17",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Lifecycle manager",
+      "range": {
+        "startLine": 87,
+        "startChar": 16,
+        "endLine": 87,
+        "endChar": 28
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_6b50d8ac",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/EEFIdeUiPlugin.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "lifecycle manager",
+      "range": {
+        "startLine": 89,
+        "startChar": 43,
+        "endLine": 89,
+        "endChar": 60
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_0be0348c",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/Messages.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "Use directly what\u0027s available in o.e.eef.ide",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 82
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_cbfc8c35",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/AbstractRegistryEventListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "I would prefer to see the content of o.e.eef.ide.internal.extensions \u0026 o.e.eef.ide.internal.extensions.impl made as API instead of having another version of it here. That\u0027s a lot of code duplicated.",
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_4b14fc01",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/AbstractRegistryEventListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_2bf2505b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/IItemDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "I would prefer to see the content of o.e.eef.ide.internal.extensions \u0026 o.e.eef.ide.internal.extensions.impl made as API instead of having another version of it here. That\u0027s a lot of code duplicated.",
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_6b17f805",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/IItemDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_8b1e0420",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/IItemRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "I would prefer to see the content of o.e.eef.ide.internal.extensions \u0026 o.e.eef.ide.internal.extensions.impl made as API instead of having another version of it here. That\u0027s a lot of code duplicated.",
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_ab21005e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/IItemRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_cb072cd3",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/impl/EEFCustomWidgetDescriptionProviderRegistryEventListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "I would prefer to see the content of o.e.eef.ide.internal.extensions \u0026 o.e.eef.ide.internal.extensions.impl made as API instead of having another version of it here. That\u0027s a lot of code duplicated.",
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_eb0228c2",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/impl/ItemDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "I would prefer to see the content of o.e.eef.ide.internal.extensions \u0026 o.e.eef.ide.internal.extensions.impl made as API instead of having another version of it here. That\u0027s a lot of code duplicated.",
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_0b12f40f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/impl/ItemDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_2b0df0f1",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/impl/ItemRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "I would prefer to see the content of o.e.eef.ide.internal.extensions \u0026 o.e.eef.ide.internal.extensions.impl made as API instead of having another version of it here. That\u0027s a lot of code duplicated.",
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_4b3b1c87",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/extension/impl/ItemRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_6b3e1878",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFCheckboxLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 97,
+        "startChar": 3,
+        "endLine": 97,
+        "endChar": 4
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_2b8890a8",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "EEFCustomWidgetDescription",
+      "range": {
+        "startLine": 260,
+        "startChar": 46,
+        "endLine": 260,
+        "endChar": 66
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_eb8dc8bc",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "huh?",
+      "range": {
+        "startLine": 276,
+        "startChar": 44,
+        "endLine": 276,
+        "endChar": 92
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_6ba2982c",
+        "filename": "plugins/org.eclipse.eef/src-gen/org/eclipse/eef/EEFCustomDescription.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "EEFCustomWidgetDescription would be better (especially if we have another custom concept later)",
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_4b0a3cb2",
+        "filename": "samples/org.eclipse.eef.sample.custom.widget.singlereferenceviewer/build.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-08T09:09:28Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "3075a1107cf758a953210bee28eacfad44e65546",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
