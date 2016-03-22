@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_5caacfd1",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabbedPropertySheetPage.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-22T16:52:56Z",
+      "side": 1,
+      "message": "Typo",
+      "range": {
+        "startLine": 145,
+        "startChar": 64,
+        "endLine": 145,
+        "endChar": 69
+      },
+      "revId": "988a7008e430f697bbdd87fe6c241f933a586902",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_bc9d93b9",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabbedPropertySheetPage.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-22T16:52:56Z",
+      "side": 1,
+      "message": "Typo",
+      "range": {
+        "startLine": 304,
+        "startChar": 65,
+        "endLine": 304,
+        "endChar": 70
+      },
+      "revId": "988a7008e430f697bbdd87fe6c241f933a586902",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_dc817f54",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabbedPropertySheetPage.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-22T16:52:56Z",
+      "side": 1,
+      "message": "Typo",
+      "range": {
+        "startLine": 306,
+        "startChar": 69,
+        "endLine": 306,
+        "endChar": 74
+      },
+      "revId": "988a7008e430f697bbdd87fe6c241f933a586902",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
