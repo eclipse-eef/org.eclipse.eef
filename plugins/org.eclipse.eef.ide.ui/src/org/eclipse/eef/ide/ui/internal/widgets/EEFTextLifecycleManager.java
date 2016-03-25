@@ -13,20 +13,26 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
@@ -103,6 +109,69 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		} else {
 			this.text = widgetFactory.createText(parent, "", SWT.NONE); //$NON-NLS-1$
 		}
+
+		// Set text style
+		EEFTextStyle style = description.getStyle();
+		if (style != null) {
+			// Set font
+			// Get default font
+			Font defaultFont = text.getFont();
+			FontData defaultFontData = defaultFont.getFontData()[0];
+			String fontNameExpression = style.getFontNameExpression();
+			String fontName = defaultFontData.getName();
+			Eval eval = new Eval(this.interpreter, this.variableManager);
+			if (fontNameExpression != null && !fontNameExpression.isEmpty()) {
+				EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION;
+				String fontNameValue = eval.get(eAttribute, fontNameExpression, String.class);
+				if (fontNameValue != null) {
+					// Get font name
+					fontName = fontNameValue;
+				}
+			}
+
+			String fontSizeExpression = style.getFontSizeExpression();
+			int fontSize = defaultFontData.getHeight();
+			if (fontNameExpression != null && !fontNameExpression.isEmpty()) {
+				EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION;
+				Integer fontSizeValue = eval.get(eAttribute, fontSizeExpression, Integer.class);
+				if (fontSizeValue != null && fontSizeValue.intValue() != fontSize) {
+					fontSize = fontSizeValue;
+				}
+			}
+
+			String fontStyleExpression = style.getFontStyleExpression();
+			int fontStyle = defaultFontData.getStyle();
+			if (fontNameExpression != null && !fontNameExpression.isEmpty()) {
+				EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION;
+				Integer fontStyleValue = eval.get(eAttribute, fontStyleExpression, Integer.class);
+				if (fontStyleValue != null && fontStyleValue.intValue() != fontStyle) {
+					// Get font style
+					fontStyle = fontStyleValue;
+				}
+			}
+
+			EEFFont font = new EEFFont(fontName, fontSize, fontStyle);
+			this.text.setFont(font.getFont());
+
+			// Set background color
+			String backgroundColorExpression = style.getBackgroundColorExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION;
+			String backgroundColorCode = eval.get(eAttribute, backgroundColorExpression, String.class);
+			if (backgroundColorCode != null && !backgroundColorCode.isEmpty()) {
+				EEFColor backgroundColor = new EEFColor(backgroundColorCode);
+				this.text.setBackground(backgroundColor.getColor());
+			}
+
+			// Set foreground color
+			String foregroundColorExpression = style.getForegroundColorExpression();
+			eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION;
+			String foregroundColorCode = eval.get(eAttribute, foregroundColorExpression, String.class);
+			if (foregroundColorCode != null && !foregroundColorCode.isEmpty()) {
+				EEFColor foregroundColor = new EEFColor(foregroundColorCode);
+				this.text.setForeground(foregroundColor.getColor());
+			}
+		}
+
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
 

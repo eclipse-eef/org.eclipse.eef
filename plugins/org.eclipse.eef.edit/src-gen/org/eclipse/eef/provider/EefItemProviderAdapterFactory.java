@@ -488,6 +488,51 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFWidgetStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFWidgetStyleItemProvider eefWidgetStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFWidgetStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFWidgetStyleAdapter() {
+		if (eefWidgetStyleItemProvider == null) {
+			eefWidgetStyleItemProvider = new EEFWidgetStyleItemProvider(this);
+		}
+
+		return eefWidgetStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFTextStyleItemProvider eefTextStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextStyle}. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFTextStyleAdapter() {
+		if (eefTextStyleItemProvider == null) {
+			eefTextStyleItemProvider = new EEFTextStyleItemProvider(this);
+		}
+
+		return eefTextStyleItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -640,6 +685,12 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefCustomExpressionItemProvider != null) {
 			eefCustomExpressionItemProvider.dispose();
+		}
+		if (eefWidgetStyleItemProvider != null) {
+			eefWidgetStyleItemProvider.dispose();
+		}
+		if (eefTextStyleItemProvider != null) {
+			eefTextStyleItemProvider.dispose();
 		}
 	}
 

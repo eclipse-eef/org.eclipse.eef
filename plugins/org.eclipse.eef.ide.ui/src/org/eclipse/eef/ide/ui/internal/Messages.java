@@ -37,6 +37,9 @@ public final class Messages {
 	@TranslatableMessage
 	public static String EEFIdeUiPlugin_lifecycleManagerInvalid;
 
+	@TranslatableMessage
+	public static String EEFColor_invalidColorCode;
+
 	// CHECKSTYLE:ON
 
 	/**

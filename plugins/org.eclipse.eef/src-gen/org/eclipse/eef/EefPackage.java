@@ -678,13 +678,22 @@ public interface EefPackage extends EPackage {
 	int EEF_TEXT_DESCRIPTION__LINE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>EEF Text Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TEXT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_TEXT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl <em>EEF Label Description</em>}'
@@ -1244,6 +1253,89 @@ public interface EefPackage extends EPackage {
 	int EEF_CUSTOM_EXPRESSION_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetStyleImpl <em>EEF Widget Style</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFWidgetStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetStyle()
+	 * @generated
+	 */
+	int EEF_WIDGET_STYLE = 20;
+
+	/**
+	 * The number of structural features of the '<em>EEF Widget Style</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_STYLE_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFTextStyleImpl <em>EEF Text Style</em>}' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFTextStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextStyle()
+	 * @generated
+	 */
+	int EEF_TEXT_STYLE = 21;
+
+	/**
+	 * The feature id for the '<em><b>Background Color Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Foreground Color Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Font Name Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_STYLE__FONT_NAME_EXPRESSION = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Font Size Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Font Style Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>EEF Text Style</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 5;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1251,7 +1343,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
 	 * @generated
 	 */
-	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 20;
+	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 22;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
@@ -1784,6 +1876,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFTextDescription_LineCount();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFTextDescription#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFTextDescription#getStyle()
+	 * @see #getEEFTextDescription()
+	 * @generated
+	 */
+	EReference getEEFTextDescription_Style();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFLabelDescription <em>EEF Label Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2106,6 +2209,81 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFCustomExpression_CustomExpression();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFWidgetStyle <em>EEF Widget Style</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Widget Style</em>'.
+	 * @see org.eclipse.eef.EEFWidgetStyle
+	 * @generated
+	 */
+	EClass getEEFWidgetStyle();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFTextStyle <em>EEF Text Style</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Text Style</em>'.
+	 * @see org.eclipse.eef.EEFTextStyle
+	 * @generated
+	 */
+	EClass getEEFTextStyle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getBackgroundColorExpression
+	 * <em>Background Color Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Background Color Expression</em>'.
+	 * @see org.eclipse.eef.EEFTextStyle#getBackgroundColorExpression()
+	 * @see #getEEFTextStyle()
+	 * @generated
+	 */
+	EAttribute getEEFTextStyle_BackgroundColorExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getForegroundColorExpression
+	 * <em>Foreground Color Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Foreground Color Expression</em>'.
+	 * @see org.eclipse.eef.EEFTextStyle#getForegroundColorExpression()
+	 * @see #getEEFTextStyle()
+	 * @generated
+	 */
+	EAttribute getEEFTextStyle_ForegroundColorExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontNameExpression
+	 * <em>Font Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Font Name Expression</em>'.
+	 * @see org.eclipse.eef.EEFTextStyle#getFontNameExpression()
+	 * @see #getEEFTextStyle()
+	 * @generated
+	 */
+	EAttribute getEEFTextStyle_FontNameExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontSizeExpression
+	 * <em>Font Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Font Size Expression</em>'.
+	 * @see org.eclipse.eef.EEFTextStyle#getFontSizeExpression()
+	 * @see #getEEFTextStyle()
+	 * @generated
+	 */
+	EAttribute getEEFTextStyle_FontSizeExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontStyleExpression
+	 * <em>Font Style Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Font Style Expression</em>'.
+	 * @see org.eclipse.eef.EEFTextStyle#getFontStyleExpression()
+	 * @see #getEEFTextStyle()
+	 * @generated
+	 */
+	EAttribute getEEFTextStyle_FontStyleExpression();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -2546,6 +2724,14 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_TEXT_DESCRIPTION__LINE_COUNT = EefPackage.eINSTANCE.getEEFTextDescription_LineCount();
 
 		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_TEXT_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFTextDescription_Style();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl
 		 * <em>EEF Label Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -2802,6 +2988,66 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression_CustomExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFWidgetStyleImpl <em>EEF Widget Style</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFWidgetStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetStyle()
+		 * @generated
+		 */
+		EClass EEF_WIDGET_STYLE = EefPackage.eINSTANCE.getEEFWidgetStyle();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextStyleImpl <em>EEF Text Style</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFTextStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextStyle()
+		 * @generated
+		 */
+		EClass EEF_TEXT_STYLE = EefPackage.eINSTANCE.getEEFTextStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Background Color Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION = EefPackage.eINSTANCE.getEEFTextStyle_BackgroundColorExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Foreground Color Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION = EefPackage.eINSTANCE.getEEFTextStyle_ForegroundColorExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Font Name Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_TEXT_STYLE__FONT_NAME_EXPRESSION = EefPackage.eINSTANCE.getEEFTextStyle_FontNameExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Font Size Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION = EefPackage.eINSTANCE.getEEFTextStyle_FontSizeExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Font Style Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION = EefPackage.eINSTANCE.getEEFTextStyle_FontStyleExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
