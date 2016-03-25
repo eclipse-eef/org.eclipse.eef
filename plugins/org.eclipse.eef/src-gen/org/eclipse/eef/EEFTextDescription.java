@@ -20,6 +20,7 @@ package org.eclipse.eef;
  * <li>{@link org.eclipse.eef.EEFTextDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getLineCount <em>Line Count</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFTextDescription#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -98,5 +99,32 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setLineCount(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Style</em>' containment reference isn't clear, there really should be more of a
+	 * description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Style</em>' containment reference.
+	 * @see #setStyle(EEFTextStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_Style()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFTextStyle getStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFTextDescription#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Style</em>' containment reference.
+	 * @see #getStyle()
+	 * @generated
+	 */
+	void setStyle(EEFTextStyle value);
 
 } // EEFTextDescription

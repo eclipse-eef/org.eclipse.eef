@@ -24,10 +24,12 @@ import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -183,6 +185,16 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFCustomExpression(EEFCustomExpression object) {
 			return createEEFCustomExpressionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFWidgetStyle(EEFWidgetStyle object) {
+			return createEEFWidgetStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFTextStyle(EEFTextStyle object) {
+			return createEEFTextStyleAdapter();
 		}
 
 		@Override
@@ -481,6 +493,32 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFCustomExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetStyle <em>EEF Widget Style</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFWidgetStyle
+	 * @generated
+	 */
+	public Adapter createEEFWidgetStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFTextStyle <em>EEF Text Style</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFTextStyle
+	 * @generated
+	 */
+	public Adapter createEEFTextStyleAdapter() {
 		return null;
 	}
 
