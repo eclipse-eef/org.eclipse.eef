@@ -24,10 +24,12 @@ import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.ecore.EAttribute;
@@ -183,6 +185,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefCustomExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefWidgetStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefTextStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -742,6 +758,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFTextDescription_Style() {
+		return (EReference) eefTextDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFLabelDescription() {
 		return eefLabelDescriptionEClass;
 	}
@@ -1042,6 +1068,76 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFWidgetStyle() {
+		return eefWidgetStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFTextStyle() {
+		return eefTextStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTextStyle_BackgroundColorExpression() {
+		return (EAttribute) eefTextStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTextStyle_ForegroundColorExpression() {
+		return (EAttribute) eefTextStyleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTextStyle_FontNameExpression() {
+		return (EAttribute) eefTextStyleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTextStyle_FontSizeExpression() {
+		return (EAttribute) eefTextStyleEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFTextStyle_FontStyleExpression() {
+		return (EAttribute) eefTextStyleEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION() {
 		return eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum;
 	}
@@ -1134,6 +1230,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION);
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT);
+		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__STYLE);
 
 		eefLabelDescriptionEClass = createEClass(EefPackage.EEF_LABEL_DESCRIPTION);
 		createEAttribute(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION);
@@ -1173,6 +1270,15 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefCustomExpressionEClass = createEClass(EefPackage.EEF_CUSTOM_EXPRESSION);
 		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__IDENTIFIER);
 		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION);
+
+		eefWidgetStyleEClass = createEClass(EefPackage.EEF_WIDGET_STYLE);
+
+		eefTextStyleEClass = createEClass(EefPackage.EEF_TEXT_STYLE);
+		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION);
 
 		// Create enums
 		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION);
@@ -1219,6 +1325,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefSelectDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefRadioDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefCustomWidgetDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
+		eefTextStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
@@ -1419,6 +1526,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFTextDescription_LineCount(),
 				ecorePackage.getEInt(),
 				"lineCount", "1", 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEReference(
+				getEEFTextDescription_Style(),
+				this.getEEFTextStyle(),
+				null,
+				"style", null, 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefLabelDescriptionEClass, EEFLabelDescription.class,
 				"EEFLabelDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1533,6 +1645,32 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFCustomExpression_CustomExpression(),
 				ecorePackage.getEString(),
 				"customExpression", null, 0, 1, EEFCustomExpression.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefWidgetStyleEClass, EEFWidgetStyle.class,
+				"EEFWidgetStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefTextStyleEClass, EEFTextStyle.class,
+				"EEFTextStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFTextStyle_BackgroundColorExpression(),
+				ecorePackage.getEString(),
+				"backgroundColorExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFTextStyle_ForegroundColorExpression(),
+				ecorePackage.getEString(),
+				"foregroundColorExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFTextStyle_FontNameExpression(),
+				ecorePackage.getEString(),
+				"fontNameExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFTextStyle_FontSizeExpression(),
+				ecorePackage.getEString(),
+				"fontSizeExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFTextStyle_FontStyleExpression(),
+				ecorePackage.getEString(),
+				"fontStyleExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.class,

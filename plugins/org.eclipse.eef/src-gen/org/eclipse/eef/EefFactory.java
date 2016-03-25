@@ -175,6 +175,22 @@ public interface EefFactory extends EFactory {
 	EEFCustomExpression createEEFCustomExpression();
 
 	/**
+	 * Returns a new object of class '<em>EEF Widget Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Widget Style</em>'.
+	 * @generated
+	 */
+	EEFWidgetStyle createEEFWidgetStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Text Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Text Style</em>'.
+	 * @generated
+	 */
+	EEFTextStyle createEEFTextStyle();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the package supported by this factory.
