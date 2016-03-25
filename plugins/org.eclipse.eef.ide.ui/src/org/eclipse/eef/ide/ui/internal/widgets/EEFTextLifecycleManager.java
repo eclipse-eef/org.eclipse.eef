@@ -13,25 +13,32 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyleRange;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -49,7 +56,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	/**
 	 * The text.
 	 */
-	private Text text;
+	private StyledText text;
 
 	/**
 	 * The controller.
@@ -98,11 +105,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		// Create text or text area according to the defined line count
 		if (lineCount > 1) {
-			this.text = widgetFactory.createText(parent, "", SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP); //$NON-NLS-1$
+			this.text = new StyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP);
 			formData.height = lineCount * text.getLineHeight();
 		} else {
-			this.text = widgetFactory.createText(parent, "", SWT.NONE); //$NON-NLS-1$
+			this.text = new StyledText(parent, SWT.NONE);
 		}
+
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
 
@@ -155,13 +163,197 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void apply(String value) {
 				if (!text.isDisposed() && !(text.getText() != null && text.getText().equals(value))) {
-					text.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					String input = Objects.firstNonNull(value, ""); //$NON-NLS-1$
+					text.setText(input);
+					setTextStyle(input);
 					if (!text.isEnabled()) {
 						text.setEnabled(true);
 					}
 				}
 			}
 		});
+	}
+
+	/**
+	 * Set the text style.
+	 *
+	 * @param input
+	 *            The text
+	 */
+	private void setTextStyle(String input) {
+		EEFTextStyle style = description.getStyle();
+		if (style != null) {
+			// Set font
+			setFont(input, style);
+
+			// Set background color
+			setBackgroundColor(style);
+
+			// Set foreground color
+			setForegroundColor(style);
+		}
+	}
+
+	/**
+	 * Set the foreground color.
+	 *
+	 * @param style
+	 *            Style
+	 */
+	private void setForegroundColor(EEFTextStyle style) {
+		EAttribute eAttribute;
+		String foregroundColorExpression = style.getForegroundColorExpression();
+		eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION;
+		Eval eval = new Eval(interpreter, variableManager);
+		String foregroundColorCode = eval.get(eAttribute, foregroundColorExpression, String.class);
+		if (foregroundColorCode != null && !foregroundColorCode.isEmpty()) {
+			EEFColor foregroundColor = new EEFColor(foregroundColorCode);
+			text.setForeground(foregroundColor.getColor());
+		}
+	}
+
+	/**
+	 * Set the background color.
+	 *
+	 * @param style
+	 *            Style
+	 */
+	private void setBackgroundColor(EEFTextStyle style) {
+		String backgroundColorExpression = style.getBackgroundColorExpression();
+		EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION;
+		Eval eval = new Eval(interpreter, variableManager);
+		String backgroundColorCode = eval.get(eAttribute, backgroundColorExpression, String.class);
+		if (backgroundColorCode != null && !backgroundColorCode.isEmpty()) {
+			EEFColor backgroundColor = new EEFColor(backgroundColorCode);
+			text.setBackground(backgroundColor.getColor());
+		}
+	}
+
+	/**
+	 * Set the font.
+	 *
+	 * @param input
+	 *            Text
+	 * @param style
+	 *            Style
+	 */
+	private void setFont(String input, EEFTextStyle style) {
+		// Get default font
+		Font defaultFont = text.getFont();
+		FontData defaultFontData = defaultFont.getFontData()[0];
+		String fontName = getFontName(style, defaultFontData);
+		int fontSize = getFontSize(style, defaultFontData);
+		int fontStyle = getFontStyle(style, defaultFontData, input);
+		EEFFont font = new EEFFont(fontName, fontSize, fontStyle);
+		text.setFont(font.getFont());
+	}
+
+	/**
+	 * Get the font name.
+	 *
+	 * @param style
+	 *            Style
+	 * @param defaultFontData
+	 *            Default font data
+	 * @return Font name
+	 */
+	private String getFontName(EEFTextStyle style, FontData defaultFontData) {
+		String fontNameExpression = style.getFontNameExpression();
+		String fontName = defaultFontData.getName();
+		Eval eval = new Eval(interpreter, variableManager);
+		if (fontNameExpression != null && !fontNameExpression.isEmpty()) {
+			EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION;
+			String fontNameValue = eval.get(eAttribute, fontNameExpression, String.class);
+			if (fontNameValue != null) {
+				// Get font name
+				fontName = fontNameValue;
+			}
+		}
+		return fontName;
+	}
+
+	/**
+	 * Get the font size.
+	 *
+	 * @param style
+	 *            Style
+	 * @param defaultFontData
+	 *            Default font data
+	 * @return Font size
+	 */
+	private int getFontSize(EEFTextStyle style, FontData defaultFontData) {
+		String fontSizeExpression = style.getFontSizeExpression();
+		int fontSize = defaultFontData.getHeight();
+		if (fontSizeExpression != null && !fontSizeExpression.isEmpty()) {
+			EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION;
+			Eval eval = new Eval(interpreter, variableManager);
+			Integer fontSizeValue = eval.get(eAttribute, fontSizeExpression, Integer.class);
+			if (fontSizeValue != null && fontSizeValue.intValue() != fontSize) {
+				fontSize = fontSizeValue;
+			}
+		}
+		return fontSize;
+	}
+
+	/**
+	 * Get the font style.
+	 *
+	 * @param style
+	 *            Style
+	 * @param defaultFontData
+	 *            Default font data
+	 * @param input
+	 *            The input
+	 * @return Font style
+	 */
+	private int getFontStyle(EEFTextStyle style, FontData defaultFontData, String input) {
+		int fontStyle = defaultFontData.getStyle();
+		String fontStyleExpression = style.getFontStyleExpression();
+		if (fontStyleExpression != null && !fontStyleExpression.isEmpty()) {
+			EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION;
+			Eval eval = new Eval(interpreter, variableManager);
+			String fontStyleValue = eval.get(eAttribute, fontStyleExpression, String.class);
+			fontStyle = getFontStyle(input, fontStyleValue, fontStyle);
+		}
+		return fontStyle;
+	}
+
+	/**
+	 * Get the font style.
+	 *
+	 * @param input
+	 *            The input
+	 * @param fontStyleValue
+	 *            The font style value
+	 * @param defaultFontStyle
+	 *            The default font style
+	 * @return Font style
+	 */
+	private int getFontStyle(String input, String fontStyleValue, int defaultFontStyle) {
+		int fontStyle = defaultFontStyle;
+		// Get font style
+		if (fontStyleValue != null && fontStyleValue.contains("bold")) { //$NON-NLS-1$
+			// Bold font
+			fontStyle = fontStyle | SWT.BOLD;
+		}
+		if (fontStyleValue != null && fontStyleValue.contains("italic")) { //$NON-NLS-1$
+			// Italic font
+			fontStyle = fontStyle | SWT.ITALIC;
+		}
+		StyleRange styleRange = new StyleRange();
+		styleRange.start = 0;
+		styleRange.length = input.length();
+		if (fontStyleValue != null && fontStyleValue.contains("underline")) { //$NON-NLS-1$
+			// Underline is set thanks to style range and not directly thanks to the font
+			styleRange.underline = true;
+		}
+		if (fontStyleValue != null && fontStyleValue.contains("strike_through")) { //$NON-NLS-1$
+			// Strike out is set thanks to style range and not directly thanks to the font
+			styleRange.strikeout = true;
+		}
+
+		text.setStyleRange(styleRange);
+		return fontStyle;
 	}
 
 	/**

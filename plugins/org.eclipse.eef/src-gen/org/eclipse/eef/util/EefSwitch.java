@@ -24,10 +24,12 @@ import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -265,6 +267,25 @@ public class EefSwitch<T> extends Switch<T> {
 		case EefPackage.EEF_CUSTOM_EXPRESSION: {
 			EEFCustomExpression eefCustomExpression = (EEFCustomExpression) theEObject;
 			T result = caseEEFCustomExpression(eefCustomExpression);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_WIDGET_STYLE: {
+			EEFWidgetStyle eefWidgetStyle = (EEFWidgetStyle) theEObject;
+			T result = caseEEFWidgetStyle(eefWidgetStyle);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_TEXT_STYLE: {
+			EEFTextStyle eefTextStyle = (EEFTextStyle) theEObject;
+			T result = caseEEFTextStyle(eefTextStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefTextStyle);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -574,6 +595,36 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFCustomExpression(EEFCustomExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Widget Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Widget Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFWidgetStyle(EEFWidgetStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Text Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Text Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFTextStyle(EEFTextStyle object) {
 		return null;
 	}
 

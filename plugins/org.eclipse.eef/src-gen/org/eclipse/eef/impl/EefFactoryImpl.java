@@ -24,8 +24,10 @@ import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
@@ -112,6 +114,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetDescription();
 		case EefPackage.EEF_CUSTOM_EXPRESSION:
 			return createEEFCustomExpression();
+		case EefPackage.EEF_WIDGET_STYLE:
+			return createEEFWidgetStyle();
+		case EefPackage.EEF_TEXT_STYLE:
+			return createEEFTextStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -343,6 +349,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFCustomExpression createEEFCustomExpression() {
 		EEFCustomExpressionImpl eefCustomExpression = new EEFCustomExpressionImpl();
 		return eefCustomExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFWidgetStyle createEEFWidgetStyle() {
+		EEFWidgetStyleImpl eefWidgetStyle = new EEFWidgetStyleImpl();
+		return eefWidgetStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFTextStyle createEEFTextStyle() {
+		EEFTextStyleImpl eefTextStyle = new EEFTextStyleImpl();
+		return eefTextStyle;
 	}
 
 	/**
