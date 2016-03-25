@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.controllers.AbstractEEFController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
@@ -76,7 +77,7 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#getValidationRulesContainer()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#getValidationRulesContainer()
 	 */
 	@Override
 	protected EObject getValidationRulesContainer() {
@@ -86,7 +87,7 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#getValidationRulesReference()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#getValidationRulesReference()
 	 */
 	@Override
 	protected EReference getValidationRulesReference() {
@@ -96,7 +97,7 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#refresh()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#refresh()
 	 */
 	@Override
 	public void refresh() {

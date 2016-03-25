@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.controllers.AbstractEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -47,7 +48,7 @@ public class EEFSectionController extends AbstractEEFController implements IEEFS
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#getValidationRulesContainer()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#getValidationRulesContainer()
 	 */
 	@Override
 	protected EObject getValidationRulesContainer() {
@@ -57,7 +58,7 @@ public class EEFSectionController extends AbstractEEFController implements IEEFS
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#getValidationRulesReference()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#getValidationRulesReference()
 	 */
 	@Override
 	protected EReference getValidationRulesReference() {

@@ -13,6 +13,7 @@ package org.eclipse.eef.core.internal.controllers;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
@@ -55,7 +56,7 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	 *
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#refresh()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#refresh()
 	 */
 	@Override
 	public void refresh() {
@@ -74,7 +75,7 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#getDescription()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
 	protected EEFWidgetDescription getDescription() {

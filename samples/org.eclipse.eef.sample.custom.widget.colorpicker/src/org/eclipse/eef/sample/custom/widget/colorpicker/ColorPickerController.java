@@ -82,7 +82,7 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
     /**
      * {@inheritDoc}
      *
-     * @see org.eclipse.eef.core.internal.controllers.AbstractEEFCustomWidgetController#refresh()
+     * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController.refresh()
      */
     @Override
     public void refresh() {

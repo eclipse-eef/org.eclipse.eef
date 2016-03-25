@@ -8,12 +8,10 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.internal.controllers;
+package org.eclipse.eef.core.api.controllers;
 
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
@@ -60,7 +58,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#getValidationRulesContainer()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#getValidationRulesContainer()
 	 */
 	@Override
 	protected EObject getValidationRulesContainer() {
@@ -70,7 +68,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#getValidationRulesReference()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#getValidationRulesReference()
 	 */
 	@Override
 	protected EReference getValidationRulesReference() {
@@ -120,7 +118,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFController#refresh()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFController#refresh()
 	 */
 	@Override
 	public void refresh() {

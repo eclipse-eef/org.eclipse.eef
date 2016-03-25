@@ -17,6 +17,7 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.core.api.utils.Eval;
@@ -97,7 +98,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#refresh()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#refresh()
 	 */
 	@Override
 	public void refresh() {
@@ -137,7 +138,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#getDescription()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
 	protected EEFWidgetDescription getDescription() {

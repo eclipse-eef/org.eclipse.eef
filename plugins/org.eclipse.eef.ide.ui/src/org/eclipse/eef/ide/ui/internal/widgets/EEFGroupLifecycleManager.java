@@ -24,6 +24,7 @@ import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -150,7 +151,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFLifecycleManager#getController()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#getController()
 	 */
 	@Override
 	protected IEEFController getController() {
@@ -160,7 +161,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFLifecycleManager#getValidationControl()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#getValidationControl()
 	 */
 	@Override
 	protected Control getValidationControl() {

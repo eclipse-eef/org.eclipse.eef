@@ -13,6 +13,7 @@ package org.eclipse.eef.core.internal.controllers;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;

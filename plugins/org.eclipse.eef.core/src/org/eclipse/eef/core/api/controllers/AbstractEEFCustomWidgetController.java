@@ -13,7 +13,6 @@ package org.eclipse.eef.core.api.controllers;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -59,7 +58,7 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#getDescription()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
 	protected abstract EEFCustomWidgetDescription getDescription();

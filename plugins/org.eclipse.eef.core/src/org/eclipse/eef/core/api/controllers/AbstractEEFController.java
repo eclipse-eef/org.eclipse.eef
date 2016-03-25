@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.internal.controllers;
+package org.eclipse.eef.core.api.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,9 @@ import java.util.List;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.controllers.IEEFController;
-import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
 import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.internal.controllers.InvalidValidationRuleResult;
+import org.eclipse.eef.core.internal.controllers.ValidationRuleResult;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;

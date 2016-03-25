@@ -19,6 +19,7 @@ import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.api.utils.Eval;
@@ -104,7 +105,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#refresh()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#refresh()
 	 */
 	@Override
 	public void refresh() {
@@ -180,7 +181,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.internal.controllers.AbstractEEFWidgetController#getDescription()
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
 	protected EEFWidgetDescription getDescription() {

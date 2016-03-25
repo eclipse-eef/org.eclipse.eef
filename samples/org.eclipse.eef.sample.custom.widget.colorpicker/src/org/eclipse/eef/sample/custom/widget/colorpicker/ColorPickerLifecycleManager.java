@@ -103,7 +103,7 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
     /**
      * {@inheritDoc}
      *
-     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getController()
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager.getController()
      */
     @Override
     protected IEEFWidgetController getController() {
@@ -113,7 +113,7 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
     /**
      * {@inheritDoc}
      *
-     * @see org.eclipse.eef.ide.ui.internal.widgets.AbstractEEFWidgetLifecycleManager#getWidgetDescription()
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager.getWidgetDescription()
      */
     @Override
     protected EEFWidgetDescription getWidgetDescription() {
@@ -123,7 +123,7 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
     /**
      * {@inheritDoc}
      *
-     * @see org.eclipse.eef.ide.ui.internal.widgets.ILifecycleManager#aboutToBeShown()
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager.aboutToBeShown()
      */
     @Override
     public void aboutToBeShown() {
@@ -160,7 +160,8 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
     /**
      * {@inheritDoc}
      *
-     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager.
+     *      getValidationControl()
      */
     @Override
     protected Control getValidationControl() {
