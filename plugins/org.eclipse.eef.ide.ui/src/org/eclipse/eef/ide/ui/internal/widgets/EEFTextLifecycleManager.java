@@ -14,13 +14,13 @@ import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -83,11 +83,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
-	protected void createMainControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
-		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
+	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
+		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		FormData formData = new FormData();
 		formData.left = new FormAttachment(0, LABEL_WIDTH);
@@ -144,7 +144,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.modifyListener = new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent event) {
-				if (!EEFTextLifecycleManager.this.page.isRenderingInProgress()) {
+				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
 					controller.updateValue(text.getText());
 				}
 			}

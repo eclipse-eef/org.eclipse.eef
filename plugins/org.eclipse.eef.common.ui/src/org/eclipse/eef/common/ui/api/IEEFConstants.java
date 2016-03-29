@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2001, 2015 IBM Corporation and others.
+ * Copyright (c) 2001, 2016 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *     Obeo - Contribution to the EEF project
  *******************************************************************************/
-package org.eclipse.eef.properties.ui.api;
+package org.eclipse.eef.common.ui.api;
 
 /**
  * Constants used by the implementors of IEEFTabbedPropertySection.
@@ -18,7 +18,7 @@ package org.eclipse.eef.properties.ui.api;
  * @author Stephane Begaudeau
  * @since 1.6.0
  */
-public interface IEEFTabbedPropertyConstants {
+public interface IEEFConstants {
 	/**
 	 * These horizontal margin around the composite. Each section should use a margin of 0, 0.
 	 */

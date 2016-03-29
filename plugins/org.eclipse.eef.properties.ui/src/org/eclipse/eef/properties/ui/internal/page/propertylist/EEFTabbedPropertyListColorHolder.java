@@ -13,7 +13,7 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.internal.page.propertylist;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
@@ -31,7 +31,7 @@ public class EEFTabbedPropertyListColorHolder {
 	/**
 	 * The widget factory.
 	 */
-	private EEFTabbedPropertySheetWidgetFactory widgetFactory;
+	private EEFWidgetFactory widgetFactory;
 
 	/**
 	 * The list background color.
@@ -109,7 +109,7 @@ public class EEFTabbedPropertyListColorHolder {
 	 * @param widgetFactory
 	 *            The widget factory
 	 */
-	public EEFTabbedPropertyListColorHolder(EEFTabbedPropertySheetWidgetFactory widgetFactory) {
+	public EEFTabbedPropertyListColorHolder(EEFWidgetFactory widgetFactory) {
 		this.widgetFactory = widgetFactory;
 		this.initializeColors();
 	}

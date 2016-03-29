@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.api;
 
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -50,7 +51,7 @@ public abstract class AbstractEEFPropertySection implements IEEFSection {
 	 *
 	 * @return the widget factory.
 	 */
-	public EEFTabbedPropertySheetWidgetFactory getWidgetFactory() {
+	public EEFWidgetFactory getWidgetFactory() {
 		return tabbedPropertySheetPage.getWidgetFactory();
 	}
 

@@ -8,13 +8,12 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.api;
+package org.eclipse.eef.ide.ui.properties.api;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.eef.core.api.EEFPage;
-import org.eclipse.eef.ide.ui.internal.properties.EEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor;
 import org.eclipse.emf.ecore.EObject;

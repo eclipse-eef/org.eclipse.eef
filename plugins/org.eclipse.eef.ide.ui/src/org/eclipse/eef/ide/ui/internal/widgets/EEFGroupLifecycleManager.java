@@ -17,6 +17,8 @@ import java.util.List;
 
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
@@ -25,8 +27,6 @@ import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -101,19 +101,19 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
-	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
-		super.createControl(parent, tabbedPropertySheetPage);
+	public void createControl(Composite parent, IEEFFormContainer formContainer) {
+		super.createControl(parent, formContainer);
 
-		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
+		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		Composite container = widgetFactory.createComposite(parent);
-		container.setLayout(new GridLayout(1, false));
+		Composite groupComposite = widgetFactory.createComposite(parent);
+		groupComposite.setLayout(new GridLayout(1, false));
 
-		this.section = widgetFactory.createSection(container, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		this.section = widgetFactory.createSection(groupComposite, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
 		this.section.setText(""); //$NON-NLS-1$
 
 		String labelExpression = this.description.getLabelExpression();
@@ -139,13 +139,12 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		if (containerDescription != null) {
 			EEFContainerLifecycleManager containerLifecycleManager = new EEFContainerLifecycleManager(containerDescription,
 					this.variableManager.createChild(), this.interpreter, this.editingDomain);
-			containerLifecycleManager.createControl(group, tabbedPropertySheetPage);
+			containerLifecycleManager.createControl(group, formContainer);
 
 			parent.layout();
 
 			this.lifecycleManagers.add(containerLifecycleManager);
 		}
-
 	}
 
 	/**

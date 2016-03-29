@@ -17,6 +17,8 @@ import java.util.Map;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -25,8 +27,6 @@ import org.eclipse.eef.core.api.controllers.IEEFRadioController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -98,11 +98,11 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
-	protected void createMainControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
-		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
+	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
+		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		this.radioGroupViewer = new RadioGroupViewer(parent, widgetFactory);
 		this.radioGroup = radioGroupViewer.getRadioGroup();

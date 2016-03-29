@@ -11,7 +11,7 @@
 
 package org.eclipse.eef.properties.ui.legacy.internal.legacy2eef;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 /**
@@ -19,7 +19,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
  * 
  * @author mbats
  */
-public class EEFLegacyTabbedPropertySheetWidgetFactory extends EEFTabbedPropertySheetWidgetFactory {
+public class EEFLegacyTabbedPropertySheetWidgetFactory extends EEFWidgetFactory {
 
 	/**
 	 * The constructor.

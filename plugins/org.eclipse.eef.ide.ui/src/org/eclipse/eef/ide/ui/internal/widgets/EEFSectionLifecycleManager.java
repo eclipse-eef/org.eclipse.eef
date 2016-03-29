@@ -13,6 +13,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -20,8 +21,6 @@ import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
-import org.eclipse.eef.ide.ui.internal.properties.EEFSectionDescriptor;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -33,9 +32,9 @@ import org.eclipse.swt.widgets.Control;
 public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 	/**
-	 * The section descriptor.
+	 * The page.
 	 */
-	private EEFSectionDescriptor sectionDescriptor;
+	private EEFPage eefPage;
 
 	/**
 	 * The controller of the section.
@@ -50,31 +49,31 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * The constructor.
 	 *
-	 * @param sectionDescriptor
-	 *            The section descriptor
+	 * @param eefPage
+	 *            The page
 	 */
-	public EEFSectionLifecycleManager(EEFSectionDescriptor sectionDescriptor) {
-		this.sectionDescriptor = sectionDescriptor;
+	public EEFSectionLifecycleManager(EEFPage eefPage) {
+		this.eefPage = eefPage;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
-	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
-		super.createControl(parent, tabbedPropertySheetPage);
-		EEFPage eefPage = this.sectionDescriptor.getEEFPage();
-		this.controller = new EEFControllersFactory().createSectionController(eefPage.getDescription(), eefPage.getVariableManager(),
-				eefPage.getInterpreter());
+	public void createControl(Composite parent, IEEFFormContainer formContainer) {
+		super.createControl(parent, formContainer);
 
-		List<EEFGroup> eefGroups = eefPage.getGroups();
+		this.controller = new EEFControllersFactory().createSectionController(this.eefPage.getDescription(), this.eefPage.getVariableManager(),
+				this.eefPage.getInterpreter());
+
+		List<EEFGroup> eefGroups = this.eefPage.getGroups();
 		for (EEFGroup eefGroup : eefGroups) {
 			EEFGroupLifecycleManager groupLifecycleManager = new EEFGroupLifecycleManager(eefGroup.getDescription(), eefGroup.getVariableManager(),
 					eefGroup.getInterpreter(), eefGroup.getEditingDomain());
-			groupLifecycleManager.createControl(parent, this.page);
+			groupLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(groupLifecycleManager);
 		}
@@ -109,7 +108,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 			lifecycleManager.refresh();
 		}
 
-		this.page.getForm().getMessageManager().update();
+		this.container.getForm().getMessageManager().update();
 	}
 
 	/**
@@ -121,7 +120,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
 
-		this.page.getForm().getMessageManager().removeAllMessages();
+		this.container.getForm().getMessageManager().removeAllMessages();
 
 		for (ILifecycleManager lifecycleManager : this.lifecycleManagers) {
 			lifecycleManager.aboutToBeHidden();

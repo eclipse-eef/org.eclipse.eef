@@ -84,7 +84,7 @@ public interface IEEFSection {
 	 * Notifies the section that the workbench selection has changed.
 	 *
 	 * @param part
-	 *            The active workench part.
+	 *            The active workbench part.
 	 * @param selection
 	 *            The active selection in the workbench part.
 	 */

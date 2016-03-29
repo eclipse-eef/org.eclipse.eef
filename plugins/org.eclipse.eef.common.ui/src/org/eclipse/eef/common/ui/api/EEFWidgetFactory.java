@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2001, 2015 IBM Corporation and others.
+ * Copyright (c) 2001, 2016 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *     IBM Corporation - initial API and implementation
  *     Obeo - Contribution to the EEF project
  *******************************************************************************/
-package org.eclipse.eef.properties.ui.api;
+package org.eclipse.eef.common.ui.api;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
@@ -25,17 +25,17 @@ import org.eclipse.swt.widgets.List;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
- * A FormToolkit customized for use by tabbed property sheet page.
+ * A FormToolkit customized for use by tabbed property sheet page and others.
  *
  * @author Anthony Hunter
  * @author Stephane Begaudeau
  * @since 1.6.0
  */
-public class EEFTabbedPropertySheetWidgetFactory extends FormToolkit {
+public class EEFWidgetFactory extends FormToolkit {
 	/**
 	 * The constructor.
 	 */
-	public EEFTabbedPropertySheetWidgetFactory() {
+	public EEFWidgetFactory() {
 		super(Display.getCurrent());
 	}
 
@@ -191,9 +191,9 @@ public class EEFTabbedPropertySheetWidgetFactory extends FormToolkit {
 	public Composite createFlatFormComposite(Composite parent) {
 		Composite composite = createComposite(parent);
 		FormLayout layout = new FormLayout();
-		layout.marginWidth = IEEFTabbedPropertyConstants.HSPACE + 2;
-		layout.marginHeight = IEEFTabbedPropertyConstants.VSPACE;
-		layout.spacing = IEEFTabbedPropertyConstants.VMARGIN + 1;
+		layout.marginWidth = IEEFConstants.HSPACE + 2;
+		layout.marginHeight = IEEFConstants.VSPACE;
+		layout.spacing = IEEFConstants.VMARGIN + 1;
 		composite.setLayout(layout);
 		return composite;
 	}

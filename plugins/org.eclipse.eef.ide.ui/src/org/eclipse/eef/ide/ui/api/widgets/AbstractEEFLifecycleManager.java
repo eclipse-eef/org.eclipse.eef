@@ -12,12 +12,12 @@ package org.eclipse.eef.ide.ui.api.widgets;
 
 import java.util.List;
 
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
 import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.IMessageManager;
@@ -30,19 +30,19 @@ import org.eclipse.ui.forms.IMessageManager;
 public abstract class AbstractEEFLifecycleManager implements ILifecycleManager {
 
 	/**
-	 * The tabbed property sheet page.
+	 * The form container.
 	 */
-	protected EEFTabbedPropertySheetPage page;
+	protected IEEFFormContainer container;
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
-	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
-		this.page = tabbedPropertySheetPage;
+	public void createControl(Composite parent, IEEFFormContainer formContainer) {
+		this.container = formContainer;
 	}
 
 	/**
@@ -55,7 +55,7 @@ public abstract class AbstractEEFLifecycleManager implements ILifecycleManager {
 		this.getController().onValidation(new IConsumer<List<IValidationRuleResult>>() {
 			@Override
 			public void apply(List<IValidationRuleResult> validationRuleResults) {
-				IMessageManager messageManager = page.getForm().getMessageManager();
+				IMessageManager messageManager = container.getForm().getMessageManager();
 
 				for (IValidationRuleResult validationRuleResult : validationRuleResults) {
 					if (validationRuleResult instanceof IInvalidValidationRuleResult) {

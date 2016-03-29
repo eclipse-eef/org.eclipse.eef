@@ -29,12 +29,12 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -98,18 +98,18 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
-	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
+	public void createControl(Composite parent, IEEFFormContainer formContainer) {
 		List<EEFWidgetDescription> widgets = this.description.getWidgets();
 		for (EEFWidgetDescription eefWidgetDescription : widgets) {
-			this.createWidgetControl(parent, tabbedPropertySheetPage, eefWidgetDescription, this.variableManager.createChild());
+			this.createWidgetControl(parent, formContainer, eefWidgetDescription, this.variableManager.createChild());
 		}
 
 		List<EEFDynamicMappingFor> dynamicMappings = this.description.getDynamicMappings();
 		for (EEFDynamicMappingFor dynamicMappingFor : dynamicMappings) {
-			this.createDynamicMappingControl(parent, tabbedPropertySheetPage, dynamicMappingFor);
+			this.createDynamicMappingControl(parent, formContainer, dynamicMappingFor);
 		}
 	}
 
@@ -118,21 +118,21 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	 *
 	 * @param parent
 	 *            The composite parent
-	 * @param tabbedPropertySheetPage
-	 *            The tabbed property sheet page
+	 * @param formContainer
+	 *            The form container
 	 * @param eefWidgetDescription
 	 *            The description of the widget to create
 	 * @param childVariableManager
 	 *            The variable manager to use for the widget to create
 	 */
-	private void createWidgetControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage, EEFWidgetDescription eefWidgetDescription,
+	private void createWidgetControl(Composite parent, IEEFFormContainer formContainer, EEFWidgetDescription eefWidgetDescription,
 			IVariableManager childVariableManager) {
 		if (eefWidgetDescription instanceof EEFTextDescription) {
 			EEFTextDescription eefTextDescription = (EEFTextDescription) eefWidgetDescription;
 
 			EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter,
 					editingDomain);
-			eefTextLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			eefTextLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefTextLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFLabelDescription) {
@@ -140,7 +140,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 
 			EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter,
 					editingDomain);
-			eefLabelLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			eefLabelLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefLabelLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFSelectDescription) {
@@ -148,7 +148,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 
 			EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager,
 					interpreter, editingDomain);
-			eefSelectLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			eefSelectLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefSelectLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFRadioDescription) {
@@ -156,7 +156,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 
 			EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager, interpreter,
 					editingDomain);
-			eefRadioLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			eefRadioLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefRadioLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFCheckboxDescription) {
@@ -164,7 +164,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 
 			EEFCheckboxLifecycleManager eefCheckboxLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription, childVariableManager,
 					interpreter, editingDomain);
-			eefCheckboxLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			eefCheckboxLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefCheckboxLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFButtonDescription) {
@@ -172,7 +172,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 
 			EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager,
 					interpreter, editingDomain);
-			eefButtonLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+			eefButtonLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefButtonLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFCustomWidgetDescription) {
@@ -180,7 +180,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			ILifecycleManager eefCustomWidgetLifecycleManager = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManager(eefCustomDescription,
 					childVariableManager, interpreter, editingDomain);
 			if (eefCustomWidgetLifecycleManager != null) {
-				eefCustomWidgetLifecycleManager.createControl(parent, tabbedPropertySheetPage);
+				eefCustomWidgetLifecycleManager.createControl(parent, formContainer);
 				this.lifecycleManagers.add(eefCustomWidgetLifecycleManager);
 			} else {
 				String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, eefCustomDescription.getIdentifier());
@@ -194,13 +194,12 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	 *
 	 * @param parent
 	 *            The composite parent
-	 * @param tabbedPropertySheetPage
-	 *            The tabbed property sheet page
+	 * @param formContainer
+	 *            The form container
 	 * @param dynamicMappingFor
 	 *            The root of a dynamic mapping definition
 	 */
-	private void createDynamicMappingControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage,
-			EEFDynamicMappingFor dynamicMappingFor) {
+	private void createDynamicMappingControl(Composite parent, IEEFFormContainer formContainer, EEFDynamicMappingFor dynamicMappingFor) {
 		String domainClassExpression = dynamicMappingFor.getDomainClassExpression();
 		EAttribute domainClassEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION;
 		String iterator = dynamicMappingFor.getIterator();
@@ -228,7 +227,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			if (eefWidgetDescription != null) {
 				IVariableManager childVariableManager = this.variableManager.createChild();
 				childVariableManager.put(iterator, eObject);
-				this.createWidgetControl(parent, tabbedPropertySheetPage, eefWidgetDescription, childVariableManager);
+				this.createWidgetControl(parent, formContainer, eefWidgetDescription, childVariableManager);
 			}
 		}
 	}

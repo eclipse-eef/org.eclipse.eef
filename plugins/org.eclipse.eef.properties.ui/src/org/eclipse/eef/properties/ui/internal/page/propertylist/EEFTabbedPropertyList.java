@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.properties.ui.api.IEEFTabItem;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.SWT;
@@ -61,7 +61,7 @@ public class EEFTabbedPropertyList extends Composite {
 	/**
 	 * The widget factory.
 	 */
-	private EEFTabbedPropertySheetWidgetFactory widgetFactory;
+	private EEFWidgetFactory widgetFactory;
 
 	/**
 	 * The top navigation element.
@@ -130,7 +130,7 @@ public class EEFTabbedPropertyList extends Composite {
 	 * @param widgetFactory
 	 *            The widget factory
 	 */
-	public EEFTabbedPropertyList(Composite parent, EEFTabbedPropertySheetWidgetFactory widgetFactory) {
+	public EEFTabbedPropertyList(Composite parent, EEFWidgetFactory widgetFactory) {
 		super(parent, SWT.NO_FOCUS);
 		this.widgetFactory = widgetFactory;
 
