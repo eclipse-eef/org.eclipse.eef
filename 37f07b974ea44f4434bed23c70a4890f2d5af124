@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_f8f3955d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFFont.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_b8c02d24",
+      "range": {
+        "startLine": 26,
+        "startChar": 42,
+        "endLine": 26,
+        "endChar": 50
+      },
+      "revId": "37f07b974ea44f4434bed23c70a4890f2d5af124",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_b8990d50",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-03-29T14:33:43Z",
       "side": 1,
       "message": "No font name -\u003e no font size",
+      "range": {
+        "startLine": 134,
+        "startChar": 7,
+        "endLine": 134,
+        "endChar": 66
+      },
+      "revId": "37f07b974ea44f4434bed23c70a4890f2d5af124",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_9820d159",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_b8990d50",
       "range": {
         "startLine": 134,
         "startChar": 7,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_d805f9cb",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_38717d85",
+      "range": {
+        "startLine": 144,
+        "startChar": 7,
+        "endLine": 144,
+        "endChar": 66
+      },
+      "revId": "37f07b974ea44f4434bed23c70a4890f2d5af124",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_5876497e",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2016-03-29T14:33:43Z",
       "side": 1,
       "message": "Somewhere, maybe not here, we should log something if the name of the font is not valid.",
+      "range": {
+        "startLine": 153,
+        "startChar": 3,
+        "endLine": 154,
+        "endChar": 37
+      },
+      "revId": "37f07b974ea44f4434bed23c70a4890f2d5af124",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_981611d6",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:55:52Z",
+      "side": 1,
+      "message": "SWT returns the default font.",
+      "parentUuid": "e7dfcf21_5876497e",
       "range": {
         "startLine": 153,
         "startChar": 3,
