@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_98061128",
+        "filename": "plugins/org.eclipse.eef.common.ui/src/org/eclipse/eef/common/ui/api/IEEFFormContainer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "Why current page ? and not refreshPage ?",
+      "range": {
+        "startLine": 46,
+        "startChar": 6,
+        "endLine": 46,
+        "endChar": 24
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_18a041a3",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/eef2legacy/LegacyTabbedPropertySheetWidgetFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_f8a2b5ac",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/legacy2eef/EEFLegacySection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 18,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_b883cd0e",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/legacy2eef/EEFLegacyTabbedPropertySheetWidgetFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5800090e",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/AbstractEEFPropertySection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 23,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_f814754d",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFSection.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 23,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_b8358ddf",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/EEFTabbedPropertyComposite.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 23,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_38225dac",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFTabbedPropertyList.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 23,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_1812015f",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/page/propertylist/EEFTabbedPropertyListColorHolder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-29T14:09:12Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 23,
+        "endLine": 2,
+        "endChar": 27
+      },
+      "revId": "fdfe528ff9bee3b9bce3f00a83c3326a7ee6b2c9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
