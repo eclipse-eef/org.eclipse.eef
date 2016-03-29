@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2001, 2015 IBM Corporation and others.
+ * Copyright (c) 2001, 2016 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -84,7 +84,7 @@ public interface IEEFSection {
 	 * Notifies the section that the workbench selection has changed.
 	 *
 	 * @param part
-	 *            The active workench part.
+	 *            The active workbench part.
 	 * @param selection
 	 *            The active selection in the workbench part.
 	 */

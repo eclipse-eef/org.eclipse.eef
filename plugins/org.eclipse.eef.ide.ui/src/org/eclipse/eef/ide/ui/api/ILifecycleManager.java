@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.api;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -25,10 +25,10 @@ public interface ILifecycleManager {
 	 *
 	 * @param parent
 	 *            The composite parent
-	 * @param tabbedPropertySheetPage
-	 *            The tabbed property sheet page
+	 * @param formContainer
+	 *            The form container
 	 */
-	void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage);
+	void createControl(Composite parent, IEEFFormContainer formContainer);
 
 	/**
 	 * Prepares for the widgets to be shown.

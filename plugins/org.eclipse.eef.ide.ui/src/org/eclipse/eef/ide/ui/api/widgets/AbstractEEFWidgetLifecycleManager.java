@@ -14,12 +14,12 @@ import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Icons;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -107,18 +107,19 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
-	public void createControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage) {
-		super.createControl(parent, tabbedPropertySheetPage);
-		EEFTabbedPropertySheetWidgetFactory widgetFactory = tabbedPropertySheetPage.getWidgetFactory();
+	public void createControl(Composite parent, IEEFFormContainer formContainer) {
+		super.createControl(parent, formContainer);
+
+		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		Composite composite = widgetFactory.createFlatFormComposite(parent);
 		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
 		composite.setLayoutData(gridData);
 
-		this.createMainControl(composite, tabbedPropertySheetPage);
+		this.createMainControl(composite, formContainer);
 
 		Control control = this.getValidationControl();
 
@@ -167,10 +168,10 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *
 	 * @param parent
 	 *            The composite parent
-	 * @param tabbedPropertySheetPage
-	 *            The tabbed property sheet page
+	 * @param formContainer
+	 *            The form container
 	 */
-	protected abstract void createMainControl(Composite parent, EEFTabbedPropertySheetPage tabbedPropertySheetPage);
+	protected abstract void createMainControl(Composite parent, IEEFFormContainer formContainer);
 
 	/**
 	 * {@inheritDoc}

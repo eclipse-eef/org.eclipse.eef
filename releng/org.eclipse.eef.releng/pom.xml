@@ -92,9 +92,12 @@ Contributors:
         <module>../../plugins/org.eclipse.eef.edit</module>
 
         <module>../../plugins/org.eclipse.eef.common</module>
+        <module>../../plugins/org.eclipse.eef.common.ui</module>
         <module>../../plugins/org.eclipse.eef.core</module>
         <module>../../plugins/org.eclipse.eef.ide</module>
         <module>../../plugins/org.eclipse.eef.ide.ui</module>
+
+        <module>../../plugins/org.eclipse.eef.ide.ui.properties</module>
 
         <module>../../tests/org.eclipse.eef.tests</module>
 

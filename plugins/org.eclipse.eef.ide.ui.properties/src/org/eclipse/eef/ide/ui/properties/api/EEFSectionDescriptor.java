@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.properties;
+package org.eclipse.eef.ide.ui.properties.api;
 
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor;
@@ -54,7 +54,7 @@ public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 	 */
 	@Override
 	public IEEFSection getSectionClass() {
-		return new EEFSection(this);
+		return new EEFSection(this.eefPage);
 	}
 
 	/**

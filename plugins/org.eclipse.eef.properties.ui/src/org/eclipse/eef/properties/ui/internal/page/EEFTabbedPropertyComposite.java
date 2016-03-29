@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2001, 2015 IBM Corporation and others.
+ * Copyright (c) 2001, 2016 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.internal.page;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.properties.ui.internal.page.propertylist.EEFTabbedPropertyList;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
@@ -31,7 +31,7 @@ public class EEFTabbedPropertyComposite extends Composite {
 	/**
 	 * The widget factory.
 	 */
-	private EEFTabbedPropertySheetWidgetFactory widgetFactory;
+	private EEFWidgetFactory widgetFactory;
 
 	/**
 	 * The main composite.
@@ -66,7 +66,7 @@ public class EEFTabbedPropertyComposite extends Composite {
 	 * @param widgetFactory
 	 *            The widget factory
 	 */
-	public EEFTabbedPropertyComposite(Composite parent, EEFTabbedPropertySheetWidgetFactory widgetFactory) {
+	public EEFTabbedPropertyComposite(Composite parent, EEFWidgetFactory widgetFactory) {
 		super(parent, SWT.NO_FOCUS);
 		this.widgetFactory = widgetFactory;
 		this.createMainComposite();

@@ -13,7 +13,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.RowLayout;
@@ -38,7 +38,7 @@ public class RadioGroup extends Composite {
 	/**
 	 * The widget factory.
 	 */
-	private EEFTabbedPropertySheetWidgetFactory widgetFactory;
+	private EEFWidgetFactory widgetFactory;
 
 	/**
 	 * Constructs a new instance of this class given its parent and a style value describing its behavior and
@@ -47,9 +47,9 @@ public class RadioGroup extends Composite {
 	 * @param parent
 	 *            a composite control which will be the parent of the new instance (cannot be null)
 	 * @param widgetFactory
-	 *            the style of control to construct
+	 *            the widget factory
 	 */
-	public RadioGroup(Composite parent, EEFTabbedPropertySheetWidgetFactory widgetFactory) {
+	public RadioGroup(Composite parent, EEFWidgetFactory widgetFactory) {
 		super(parent, SWT.RADIO);
 		this.widgetFactory = widgetFactory;
 

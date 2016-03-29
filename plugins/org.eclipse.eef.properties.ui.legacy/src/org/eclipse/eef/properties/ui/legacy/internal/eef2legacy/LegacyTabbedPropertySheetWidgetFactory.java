@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
 
 package org.eclipse.eef.properties.ui.legacy.internal.eef2legacy;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.custom.CTabFolder;
@@ -32,7 +32,7 @@ public class LegacyTabbedPropertySheetWidgetFactory extends TabbedPropertySheetW
 	/**
 	 * The EEF tabbed property sheet page widget factory.
 	 */
-	private EEFTabbedPropertySheetWidgetFactory eefWidgetFactory;
+	private EEFWidgetFactory eefWidgetFactory;
 
 	/**
 	 * The constructor.
@@ -40,7 +40,7 @@ public class LegacyTabbedPropertySheetWidgetFactory extends TabbedPropertySheetW
 	 * @param eefWidgetFactory
 	 *            EEF tabbed property sheet page widget factory
 	 */
-	public LegacyTabbedPropertySheetWidgetFactory(EEFTabbedPropertySheetWidgetFactory eefWidgetFactory) {
+	public LegacyTabbedPropertySheetWidgetFactory(EEFWidgetFactory eefWidgetFactory) {
 		this.eefWidgetFactory = eefWidgetFactory;
 	}
 

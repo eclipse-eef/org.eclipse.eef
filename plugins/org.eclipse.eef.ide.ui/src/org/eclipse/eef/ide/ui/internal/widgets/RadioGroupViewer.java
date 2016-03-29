@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.jface.viewers.AbstractListViewer;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -34,9 +34,9 @@ public class RadioGroupViewer extends AbstractListViewer {
 	 * @param parent
 	 *            the parent control
 	 * @param widgetFactory
-	 *            the SWT style bits
+	 *            the widget factory
 	 */
-	public RadioGroupViewer(Composite parent, EEFTabbedPropertySheetWidgetFactory widgetFactory) {
+	public RadioGroupViewer(Composite parent, EEFWidgetFactory widgetFactory) {
 		this(new RadioGroup(parent, widgetFactory));
 	}
 

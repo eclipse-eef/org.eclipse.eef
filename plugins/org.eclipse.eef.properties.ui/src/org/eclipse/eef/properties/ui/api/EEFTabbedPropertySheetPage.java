@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.properties.ui.internal.EEFTabbedPropertyViewPlugin;
 import org.eclipse.eef.properties.ui.internal.page.EEFPartListenerAdapter;
 import org.eclipse.eef.properties.ui.internal.page.EEFTabbedPropertyComposite;
@@ -36,6 +38,7 @@ import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IPartListener;
@@ -54,12 +57,12 @@ import org.eclipse.ui.views.properties.PropertySheet;
  * @author Stephane Begaudeau
  * @since 1.6.0
  */
-public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPage {
+public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPage, IEEFFormContainer {
 
 	/**
 	 * The widget factory.
 	 */
-	private EEFTabbedPropertySheetWidgetFactory widgetFactory;
+	private EEFWidgetFactory widgetFactory;
 
 	/**
 	 * The composite holding all the widgets.
@@ -213,7 +216,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 */
 	@Override
 	public void createControl(Composite parent) {
-		this.widgetFactory = new EEFTabbedPropertySheetWidgetFactory();
+		this.widgetFactory = new EEFWidgetFactory();
 
 		this.form = this.widgetFactory.createForm(parent);
 		this.form.setText("HAL 9000"); //$NON-NLS-1$
@@ -294,10 +297,21 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	}
 
 	/**
-	 * Refreshes the content of the page using the current input.
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.common.ui.api.IEEFFormContainer#refreshPage()
 	 */
+	@Override
 	public void refreshPage() {
-		doSetInput(currentPart, currentSelection);
+		Display display = this.getSite().getShell().getDisplay();
+		if (display != null) {
+			display.asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					doSetInput(currentPart, currentSelection);
+				}
+			});
+		}
 	}
 
 	/**
@@ -305,6 +319,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 *
 	 * @return <code>true</code> if we are inside the rendering/refresh pahse of the page's lifecycle.
 	 */
+	@Override
 	public boolean isRenderingInProgress() {
 		return isRenderingInProgress.get();
 	}
@@ -796,7 +811,8 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 *
 	 * @return the widgetFactory
 	 */
-	public EEFTabbedPropertySheetWidgetFactory getWidgetFactory() {
+	@Override
+	public EEFWidgetFactory getWidgetFactory() {
 		return this.widgetFactory;
 	}
 
@@ -821,6 +837,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 *
 	 * @return the form
 	 */
+	@Override
 	public Form getForm() {
 		return this.form;
 	}

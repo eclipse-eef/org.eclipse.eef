@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2001, 2015 IBM Corporation and others.
+ * Copyright (c) 2001, 2016 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.api;
 
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -50,7 +51,7 @@ public abstract class AbstractEEFPropertySection implements IEEFSection {
 	 *
 	 * @return the widget factory.
 	 */
-	public EEFTabbedPropertySheetWidgetFactory getWidgetFactory() {
+	public EEFWidgetFactory getWidgetFactory() {
 		return tabbedPropertySheetPage.getWidgetFactory();
 	}
 

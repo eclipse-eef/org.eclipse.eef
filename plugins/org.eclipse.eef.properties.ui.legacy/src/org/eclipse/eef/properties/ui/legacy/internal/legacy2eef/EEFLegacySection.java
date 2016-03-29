@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,9 +11,9 @@
 
 package org.eclipse.eef.properties.ui.legacy.internal.legacy2eef;
 
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.properties.ui.api.AbstractEEFPropertySection;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
-import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetWidgetFactory;
 import org.eclipse.eef.properties.ui.legacy.internal.eef2legacy.LegacyTabbedPropertySheetPage;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Composite;
@@ -177,7 +177,7 @@ public class EEFLegacySection extends AbstractEEFPropertySection {
 	 * @see AbstractEEFPropertySection#getWidgetFactory()
 	 */
 	@Override
-	public EEFTabbedPropertySheetWidgetFactory getWidgetFactory() {
+	public EEFWidgetFactory getWidgetFactory() {
 		return new EEFLegacyTabbedPropertySheetWidgetFactory(legacySection.getWidgetFactory());
 	}
 }
