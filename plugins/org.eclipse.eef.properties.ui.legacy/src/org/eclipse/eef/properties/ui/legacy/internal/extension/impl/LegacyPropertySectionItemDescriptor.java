@@ -10,10 +10,16 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
+import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
+import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacySection;
 import org.eclipse.jface.viewers.IFilter;
+import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
+import org.eclipse.ui.views.properties.tabbed.ISection;
 
 /**
  * The property section descriptor.
@@ -38,9 +44,9 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	private IFilter filter;
 
 	/**
-	 * The EEF section.
+	 * The configuration element used to create the section.
 	 */
-	private IEEFSection eefSection;
+	private IConfigurationElement configurationElement;
 
 	/**
 	 * The enablesFor.
@@ -59,8 +65,8 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 *            The parent tab
 	 * @param filter
 	 *            The filter
-	 * @param eefSection
-	 *            The EEF section
+	 * @param configurationElement
+	 *            The configuration element used to create the section
 	 * @param id
 	 *            The id
 	 * @param afterSection
@@ -68,10 +74,11 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 * @param enablesFor
 	 *            The enablesFor
 	 */
-	public LegacyPropertySectionItemDescriptor(String tab, IFilter filter, IEEFSection eefSection, String id, int enablesFor, String afterSection) {
+	public LegacyPropertySectionItemDescriptor(String tab, IFilter filter, IConfigurationElement configurationElement, String id, int enablesFor,
+			String afterSection) {
 		this.tab = tab;
 		this.filter = filter;
-		this.eefSection = eefSection;
+		this.configurationElement = configurationElement;
 		this.id = id;
 		this.enablesFor = enablesFor;
 		this.afterSection = afterSection;
@@ -94,7 +101,16 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public IEEFSection getSectionClass() {
-		return this.eefSection;
+		try {
+			ISection sectionClass = (ISection) configurationElement.createExecutableExtension(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR);
+			if (sectionClass instanceof AbstractPropertySection) {
+				EEFLegacySection legacySection = new EEFLegacySection((AbstractPropertySection) sectionClass);
+				return legacySection;
+			}
+		} catch (CoreException e) {
+			EEFPropertiesUiLegacyPlugin.getImplementation().logError(e.getMessage(), e);
+		}
+		return null;
 	}
 
 	/**

@@ -59,7 +59,10 @@ public abstract class AbstractEEFTabDescriptor implements IEEFTabDescriptor, Clo
 	public EEFTabContents createTab() {
 		List<IEEFSection> sections = new ArrayList<IEEFSection>(getSectionDescriptors().size());
 		for (IEEFSectionDescriptor sectionDescriptor : this.sectionDescriptors) {
-			sections.add(sectionDescriptor.getSectionClass());
+			IEEFSection section = sectionDescriptor.getSectionClass();
+			if (section != null) {
+				sections.add(section);
+			}
 		}
 		EEFTabContents tab = new EEFTabContents(sections);
 		return tab;
