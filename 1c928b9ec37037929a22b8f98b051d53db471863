@@ -22,6 +22,30 @@
       "revId": "1c928b9ec37037929a22b8f98b051d53db471863",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_8c188f7d",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-30T09:49:04Z",
+      "side": 1,
+      "message": "This already appear in the interface of EEFPage, we could remove both and only work with the variable manager and the interpreter since both are available in the interface of the EEFPage. A similar change could be made here too.",
+      "parentUuid": "e7dfcf21_6c950344",
+      "range": {
+        "startLine": 238,
+        "startChar": 15,
+        "endLine": 238,
+        "endChar": 23
+      },
+      "revId": "1c928b9ec37037929a22b8f98b051d53db471863",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }
