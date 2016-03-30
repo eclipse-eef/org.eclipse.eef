@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
@@ -27,6 +28,7 @@ import org.eclipse.eef.core.api.InputDescriptor;
 import org.eclipse.eef.core.api.utils.DomainClassTester;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -225,6 +227,18 @@ public class EEFViewImpl implements EEFView {
 	@Override
 	public TransactionalEditingDomain getEditingDomain() {
 		return this.editingDomain;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.EEFView#getLabel()
+	 */
+	@Override
+	public String getLabel() {
+		EAttribute labelExpressionEAttribute = EefPackage.Literals.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION;
+		String labelExpression = this.eefViewDescription.getLabelExpression();
+		return new Eval(this.interpreter, this.variableManager).get(labelExpressionEAttribute, labelExpression, String.class);
 	}
 
 }

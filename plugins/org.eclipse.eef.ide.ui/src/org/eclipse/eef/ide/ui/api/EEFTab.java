@@ -11,6 +11,7 @@
 package org.eclipse.eef.ide.ui.api;
 
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.InputDescriptor;
@@ -45,6 +46,11 @@ public class EEFTab {
 	private Updater updater;
 
 	/**
+	 * The form container.
+	 */
+	private IEEFFormContainer formContainer;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param eefPage
@@ -60,15 +66,16 @@ public class EEFTab {
 	 *
 	 * @param parent
 	 *            The parent container
-	 * @param formContainer
+	 * @param container
 	 *            The container of the whole form
 	 */
-	public void createControls(Composite parent, IEEFFormContainer formContainer) {
+	public void createControls(Composite parent, IEEFFormContainer container) {
 		EEFIdeUiPlugin.getPlugin().debug("EEFSection#createControls(...)"); //$NON-NLS-1$
 
-		this.lifecycleManager.createControl(parent, formContainer);
+		this.formContainer = container;
+		this.lifecycleManager.createControl(parent, container);
 
-		this.updater = new Updater(this, formContainer);
+		this.updater = new Updater(this, container);
 	}
 
 	/**
@@ -112,6 +119,10 @@ public class EEFTab {
 	public void refresh() {
 		EEFIdeUiPlugin.getPlugin().debug("EEFSection#refresh(...)"); //$NON-NLS-1$
 
+		String title = this.eefPage.getView().getLabel();
+		if (!Util.isBlank(title)) {
+			this.formContainer.getForm().setText(title);
+		}
 		this.lifecycleManager.refresh();
 	}
 
@@ -133,6 +144,7 @@ public class EEFTab {
 		EEFIdeUiPlugin.getPlugin().debug("EEFSection#dispose(...)"); //$NON-NLS-1$
 
 		this.lifecycleManager.dispose();
+		this.formContainer = null;
 	}
 
 	/**

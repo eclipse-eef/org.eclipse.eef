@@ -56,4 +56,11 @@ public interface EEFView {
 	 * @return the {@link TransactionalEditingDomain}.
 	 */
 	TransactionalEditingDomain getEditingDomain();
+
+	/**
+	 * Returns the label of the view.
+	 * 
+	 * @return The label of the view
+	 */
+	String getLabel();
 }
