@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getGroups <em>Groups</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getPages <em>Pages</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getEPackages <em>EPackages</em>}</li>
@@ -77,6 +78,30 @@ public interface EEFViewDescription extends EObject {
 	 * @generated
 	 */
 	void setLabelExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Image Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> The expression used to compute the image of the View visible by the end-users. <!--
+	 * end-model-doc -->
+	 *
+	 * @return the value of the '<em>Image Expression</em>' attribute.
+	 * @see #setImageExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_ImageExpression()
+	 * @model
+	 * @generated
+	 */
+	String getImageExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Image Expression</em>' attribute.
+	 * @see #getImageExpression()
+	 * @generated
+	 */
+	void setImageExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Groups</b></em>' containment reference list. The list contents are of type
