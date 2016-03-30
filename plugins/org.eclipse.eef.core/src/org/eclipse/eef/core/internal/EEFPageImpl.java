@@ -18,11 +18,11 @@ import java.util.List;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.core.api.EEFDomainClassTester;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
-import org.eclipse.eef.core.api.utils.DomainClassTester;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.ecore.EObject;
@@ -67,6 +67,11 @@ public class EEFPageImpl implements EEFPage {
 	private TransactionalEditingDomain editingDomain;
 
 	/**
+	 * The domain class handler.
+	 */
+	private EEFDomainClassTester domainClassTester;
+
+	/**
 	 * Indicates if the description of this page has been instantiated multiple times.
 	 */
 	private boolean isUnique;
@@ -84,16 +89,19 @@ public class EEFPageImpl implements EEFPage {
 	 *            The interpreter
 	 * @param editingDomain
 	 *            The editing domain
+	 * @param domainClassTester
+	 *            The domain class tester
 	 * @param isUnique
 	 *            Indicates if the description from this page has been instantiated multiple times
 	 */
 	public EEFPageImpl(EEFView eefView, EEFPageDescription eefPageDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain, boolean isUnique) {
+			TransactionalEditingDomain editingDomain, EEFDomainClassTester domainClassTester, boolean isUnique) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefView = eefView;
 		this.eefPageDescription = eefPageDescription;
 		this.editingDomain = editingDomain;
+		this.domainClassTester = domainClassTester;
 		this.isUnique = isUnique;
 	}
 
@@ -109,8 +117,10 @@ public class EEFPageImpl implements EEFPage {
 			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new ISuccessfulResultConsumer<Object>() {
 				@Override
 				public void apply(Object value) {
+					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), eefView
+							.getDescription().getEPackages(), domainClassTester);
 					Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
-					Iterable<EObject> eObjects = Iterables.filter(iterable, new DomainClassTester(eefGroupDescription.getDomainClass()));
+					Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
 					for (EObject eObject : eObjects) {
 						IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
 						childVariableManager.put(EEFExpressionUtils.SELF, eObject);
