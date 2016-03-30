@@ -21,7 +21,6 @@ import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EAttribute;
@@ -107,12 +106,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 		String valueExpression = this.description.getValueExpression();
 		EAttribute eAttribute = EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION;
 
-		this.newEval().call(eAttribute, valueExpression, Boolean.class, new ISuccessfulResultConsumer<Boolean>() {
-			@Override
-			public void apply(Boolean value) {
-				EEFCheckboxController.this.newValueConsumer.apply(value);
-			}
-		});
+		this.newEval().call(eAttribute, valueExpression, Boolean.class, EEFCheckboxController.this.newValueConsumer);
 	}
 
 	/**

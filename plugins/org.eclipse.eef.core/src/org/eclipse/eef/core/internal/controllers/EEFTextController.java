@@ -25,7 +25,6 @@ import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EAttribute;
@@ -132,12 +131,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 		String valueExpression = this.description.getValueExpression();
 		EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION;
 
-		this.newEval().call(eAttribute, valueExpression, String.class, new ISuccessfulResultConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				EEFTextController.this.newValueConsumer.apply(value);
-			}
-		});
+		this.newEval().call(eAttribute, valueExpression, String.class, EEFTextController.this.newValueConsumer);
 	}
 
 	/**

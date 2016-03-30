@@ -15,7 +15,6 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.AbstractEEFController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -106,11 +105,6 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 		String labelExpression = this.description.getLabelExpression();
 		EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
 
-		this.newEval().call(eAttribute, labelExpression, String.class, new ISuccessfulResultConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				EEFGroupController.this.newLabelConsumer.apply(value);
-			}
-		});
+		this.newEval().call(eAttribute, labelExpression, String.class, EEFGroupController.this.newLabelConsumer);
 	}
 }

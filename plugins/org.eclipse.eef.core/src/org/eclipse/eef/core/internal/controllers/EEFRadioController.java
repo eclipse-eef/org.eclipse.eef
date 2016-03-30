@@ -23,7 +23,6 @@ import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFRadioController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EAttribute;
@@ -113,7 +112,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 		String candidatesExpression = this.description.getCandidatesExpression();
 		EAttribute candidatesExpressionEAttribute = EefPackage.Literals.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION;
 
-		this.newEval().call(candidatesExpressionEAttribute, candidatesExpression, new ISuccessfulResultConsumer<Object>() {
+		this.newEval().call(candidatesExpressionEAttribute, candidatesExpression, new IConsumer<Object>() {
 			@Override
 			public void apply(Object value) {
 				if (value instanceof Iterable<?>) {
@@ -129,12 +128,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 		String valueExpression = this.description.getValueExpression();
 		EAttribute valueExpressionEAttribute = EefPackage.Literals.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION;
 
-		this.newEval().call(valueExpressionEAttribute, valueExpression, new ISuccessfulResultConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				EEFRadioController.this.newValueConsumer.apply(value);
-			}
-		});
+		this.newEval().call(valueExpressionEAttribute, valueExpression, EEFRadioController.this.newValueConsumer);
 	}
 
 	/**

@@ -16,7 +16,6 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.RecordingCommand;
@@ -85,12 +84,7 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 		String buttonLabelExpression = this.description.getButtonLabelExpression();
 		EAttribute eAttribute = EefPackage.Literals.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION;
 
-		this.newEval().call(eAttribute, buttonLabelExpression, String.class, new ISuccessfulResultConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				EEFButtonController.this.newButtonLabelConsumer.apply(value);
-			}
-		});
+		this.newEval().call(eAttribute, buttonLabelExpression, String.class, EEFButtonController.this.newButtonLabelConsumer);
 	}
 
 	@Override

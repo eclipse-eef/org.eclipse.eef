@@ -19,7 +19,6 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.controllers.AbstractEEFCustomWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EAttribute;
@@ -91,7 +90,7 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
         String valueExpression = getCustomExpression(VALUE_EXPRESSION_ID);
         EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
 
-        this.newEval().call(eAttribute, valueExpression, String.class, new ISuccessfulResultConsumer<String>() {
+        this.newEval().call(eAttribute, valueExpression, String.class, new IConsumer<String>() {
             @Override
             public void apply(String value) {
                 int red = DEFAULT_COLOR_CODE;

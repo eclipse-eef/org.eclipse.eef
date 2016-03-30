@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
 import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
@@ -78,7 +79,7 @@ public final class Eval {
 	 * @param <T>
 	 *            The type of the result expected
 	 */
-	public <T> void call(EAttribute expressionEAttribute, String expression, Class<T> expectedResultType, ISuccessfulResultConsumer<T> consumer) {
+	public <T> void call(EAttribute expressionEAttribute, String expression, Class<T> expectedResultType, IConsumer<T> consumer) {
 		if (!Util.isBlank(expression)) {
 			this.call(expression, expectedResultType, consumer);
 		} else if (EEFCorePlugin.getPlugin() != null) {
@@ -98,7 +99,7 @@ public final class Eval {
 	 * @param <T>
 	 *            The type of the result expected
 	 */
-	public <T> void call(String expression, Class<T> expectedResultType, ISuccessfulResultConsumer<T> consumer) {
+	public <T> void call(String expression, Class<T> expectedResultType, IConsumer<T> consumer) {
 		if (Util.isBlank(expression)) {
 			return;
 		}
@@ -129,7 +130,7 @@ public final class Eval {
 	 * @param consumer
 	 *            The consumer which will receive the result
 	 */
-	public void call(EAttribute expressionEAttribute, String expression, ISuccessfulResultConsumer<Object> consumer) {
+	public void call(EAttribute expressionEAttribute, String expression, IConsumer<Object> consumer) {
 		if (!Util.isBlank(expression)) {
 			this.call(expression, consumer);
 		} else if (EEFCorePlugin.getPlugin() != null) {
@@ -145,7 +146,7 @@ public final class Eval {
 	 * @param consumer
 	 *            The consumer which will receive the result
 	 */
-	public void call(String expression, ISuccessfulResultConsumer<Object> consumer) {
+	public void call(String expression, IConsumer<Object> consumer) {
 		IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
 		if (evaluationResult.success()) {
 			Object value = evaluationResult.getValue();

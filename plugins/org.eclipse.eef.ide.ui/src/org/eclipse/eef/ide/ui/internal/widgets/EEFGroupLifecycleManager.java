@@ -24,7 +24,6 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -117,7 +116,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		this.section.setText(""); //$NON-NLS-1$
 
 		String labelExpression = this.description.getLabelExpression();
-		new Eval(this.interpreter, this.variableManager).call(labelExpression, String.class, new ISuccessfulResultConsumer<String>() {
+		new Eval(this.interpreter, this.variableManager).call(labelExpression, String.class, new IConsumer<String>() {
 			@Override
 			public void apply(String value) {
 				EEFGroupLifecycleManager.this.section.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$

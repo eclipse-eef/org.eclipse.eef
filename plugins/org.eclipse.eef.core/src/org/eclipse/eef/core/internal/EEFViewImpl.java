@@ -25,8 +25,8 @@ import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.InputDescriptor;
+import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.core.api.utils.ISuccessfulResultConsumer;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -102,7 +102,7 @@ public class EEFViewImpl implements EEFView {
 		for (final EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
 			String semanticCandidatesExpression = Util.firstNonBlank(eefPageDescription.getSemanticCandidateExpression(),
 					org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new ISuccessfulResultConsumer<Object>() {
+			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
 				@Override
 				public void apply(Object value) {
 					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), eefViewDescription
@@ -183,7 +183,7 @@ public class EEFViewImpl implements EEFView {
 			for (final EEFPage eefPage : this.eefPages) {
 				String pageSemanticCandidateExpression = Util.firstNonBlank(eefPage.getDescription().getSemanticCandidateExpression(),
 						org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-				new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, new ISuccessfulResultConsumer<Object>() {
+				new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, new IConsumer<Object>() {
 					@Override
 					public void apply(Object value) {
 						for (Object pageSemanticCandidate : Util.asIterable(value, Object.class)) {
@@ -196,7 +196,7 @@ public class EEFViewImpl implements EEFView {
 				for (final EEFGroup eefGroup : groups) {
 					String groupSemanticCandidateExpression = Util.firstNonBlank(eefGroup.getDescription().getSemanticCandidateExpression(),
 							org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-					new Eval(this.interpreter, this.variableManager).call(groupSemanticCandidateExpression, new ISuccessfulResultConsumer<Object>() {
+					new Eval(this.interpreter, this.variableManager).call(groupSemanticCandidateExpression, new IConsumer<Object>() {
 						@Override
 						public void apply(Object value) {
 							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, value);
