@@ -13,6 +13,11 @@
         <details key="documentation" value="The label of the View visible by the end-users."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imageExpression" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression used to compute the image of the View visible by the end-users."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//EEFGroupDescription" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

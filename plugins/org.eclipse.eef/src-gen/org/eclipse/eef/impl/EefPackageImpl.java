@@ -292,8 +292,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFViewDescription_Groups() {
-		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(2);
+	public EAttribute getEEFViewDescription_ImageExpression() {
+		return (EAttribute) eefViewDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -302,7 +302,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFViewDescription_Pages() {
+	public EReference getEEFViewDescription_Groups() {
 		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -312,8 +312,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFViewDescription_EPackages() {
+	public EReference getEEFViewDescription_Pages() {
 		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFViewDescription_EPackages() {
+		return (EReference) eefViewDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1079,6 +1089,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefViewDescriptionEClass = createEClass(EefPackage.EEF_VIEW_DESCRIPTION);
 		createEAttribute(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER);
 		createEAttribute(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION);
+		createEAttribute(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION);
 		createEReference(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__GROUPS);
 		createEReference(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
 		createEReference(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
@@ -1231,6 +1242,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFViewDescription_LabelExpression(),
 				theEcorePackage.getEString(),
 				"labelExpression", null, 0, 1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFViewDescription_ImageExpression(),
+				theEcorePackage.getEString(),
+				"imageExpression", null, 0, 1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getEEFViewDescription_Groups(),
 				this.getEEFGroupDescription(),

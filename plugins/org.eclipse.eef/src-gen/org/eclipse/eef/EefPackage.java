@@ -85,13 +85,22 @@ public interface EefPackage extends EPackage {
 	int EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Image Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION = 2;
+
+	/**
 	 * The feature id for the '<em><b>Groups</b></em>' containment reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__GROUPS = 2;
+	int EEF_VIEW_DESCRIPTION__GROUPS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Pages</b></em>' containment reference list. <!-- begin-user-doc --> <!--
@@ -100,7 +109,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__PAGES = 3;
+	int EEF_VIEW_DESCRIPTION__PAGES = 4;
 
 	/**
 	 * The feature id for the '<em><b>EPackages</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -108,7 +117,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION__EPACKAGES = 4;
+	int EEF_VIEW_DESCRIPTION__EPACKAGES = 5;
 
 	/**
 	 * The number of structural features of the '<em>EEF View Description</em>' class. <!-- begin-user-doc --> <!--
@@ -117,7 +126,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_VIEW_DESCRIPTION_FEATURE_COUNT = 5;
+	int EEF_VIEW_DESCRIPTION_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFPageDescriptionImpl <em>EEF Page Description</em>}'
@@ -1286,6 +1295,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFViewDescription_LabelExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFViewDescription#getImageExpression
+	 * <em>Image Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Image Expression</em>'.
+	 * @see org.eclipse.eef.EEFViewDescription#getImageExpression()
+	 * @see #getEEFViewDescription()
+	 * @generated
+	 */
+	EAttribute getEEFViewDescription_ImageExpression();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFViewDescription#getGroups
 	 * <em>Groups</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2163,6 +2183,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION = EefPackage.eINSTANCE.getEEFViewDescription_LabelExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION = EefPackage.eINSTANCE.getEEFViewDescription_ImageExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Groups</b></em>' containment reference list feature. <!--

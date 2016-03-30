@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal;
 
+import java.net.URL;
 import java.text.MessageFormat;
 
 import org.eclipse.core.runtime.IExtensionRegistry;
@@ -32,6 +33,7 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTError;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -159,6 +161,23 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 		 */
 		private ImageDescriptor getImageDescriptor(final String path) {
 			return AbstractUIPlugin.imageDescriptorFromPlugin(EEFIdeUiPlugin.PLUGIN_ID, path);
+		}
+
+		/**
+		 * Returns the image for the given URL.
+		 * 
+		 * @param url
+		 *            The url of the image
+		 * @return The image found or <code>null</code> if it could not be found
+		 */
+		public Image getImage(URL url) {
+			Image image = this.imageRegistry.get(url.toString());
+			if (image == null) {
+				ImageDescriptor imageDescriptor = ImageDescriptor.createFromURL(url);
+				this.imageRegistry.put(url.toString(), imageDescriptor);
+				image = this.imageRegistry.get(url.toString());
+			}
+			return image;
 		}
 
 		/**

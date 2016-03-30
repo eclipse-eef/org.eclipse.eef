@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getImageExpression <em>Image Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getGroups <em>Groups</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getPages <em>Pages</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getEPackages <em>EPackages</em>}</li>
@@ -82,6 +83,26 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String labelExpression = EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IMAGE_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String imageExpression = EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list. <!-- begin-user-doc
@@ -187,6 +208,31 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public String getImageExpression() {
+		return imageExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setImageExpression(String newImageExpression) {
+		String oldImageExpression = imageExpression;
+		imageExpression = newImageExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION, oldImageExpression,
+					imageExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
 			groups = new EObjectContainmentEList.Resolving<EEFGroupDescription>(EEFGroupDescription.class, this,
@@ -249,6 +295,8 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return getIdentifier();
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			return getLabelExpression();
+		case EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION:
+			return getImageExpression();
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			return getGroups();
 		case EefPackage.EEF_VIEW_DESCRIPTION__PAGES:
@@ -273,6 +321,9 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return;
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
+			return;
+		case EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION:
+			setImageExpression((String) newValue);
 			return;
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			getGroups().clear();
@@ -304,6 +355,9 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression(EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION:
+			setImageExpression(EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			getGroups().clear();
 			return;
@@ -331,6 +385,9 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
 			: !EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+		case EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION:
+			return EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT == null ? imageExpression != null
+			: !EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_VIEW_DESCRIPTION__PAGES:
@@ -357,6 +414,8 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		result.append(identifier);
 		result.append(", labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
+		result.append(", imageExpression: "); //$NON-NLS-1$
+		result.append(imageExpression);
 		result.append(')');
 		return result.toString();
 	}
