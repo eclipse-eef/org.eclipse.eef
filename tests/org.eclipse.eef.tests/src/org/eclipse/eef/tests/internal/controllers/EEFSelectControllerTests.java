@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,9 +12,9 @@ package org.eclipse.eef.tests.internal.controllers;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.eclipse.eef.EEFTextDescription;
-import org.eclipse.eef.core.api.controllers.IEEFTextController;
-import org.eclipse.eef.core.internal.controllers.EEFTextController;
+import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.core.api.controllers.IEEFSelectController;
+import org.eclipse.eef.core.internal.controllers.EEFSelectController;
 import org.eclipse.eef.tests.internal.EEFDataTests;
 import org.eclipse.emf.ecore.EClassifier;
 import org.junit.Test;
@@ -25,40 +25,39 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Unit tests for the {@link IEEFTextController}.
+ * Unit tests for {@link IEEFSelectController}.
  *
  * @author sbegaudeau
  */
 @SuppressWarnings({ "checkstyle:javadocmethod" })
-public class EEFTextControllerTests extends AbstractEEFControllerTests {
-
+public class EEFSelectControllerTests extends AbstractEEFControllerTests {
 	/**
 	 * The name of the Project EClass.
 	 */
 	private static final String PROJECT_ECLASS_NAME = "Project"; //$NON-NLS-1$
 
-	private IEEFTextController textController(String modelPath) {
+	private IEEFSelectController selectController(String modelPath) {
 		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
-		EEFTextDescription description = widget(group(page(modelPath, 0), 0), EEFTextDescription.class, 0);
-		return new EEFTextController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		EEFSelectDescription description = widget(group(page(modelPath, 0), 0), EEFSelectDescription.class, 0);
+		return new EEFSelectController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
 	}
 
 	@Test
 	public void testLabel() {
-		testLabel(textController(EEFDataTests.EEFTEXTCONTROLLERTESTS_LABEL), "Project:"); //$NON-NLS-1$
+		testLabel(selectController(EEFDataTests.EEFSELECTCONTROLLERTESTS_LABEL), "Visibility:"); //$NON-NLS-1$
 	}
 
 	@Test
 	public void testHelp() {
-		testHelp(textController(EEFDataTests.EEFTEXTCONTROLLERTESTS_HELP), "Project Help"); //$NON-NLS-1$
+		testHelp(selectController(EEFDataTests.EEFSELECTCONTROLLERTESTS_HELP), "Visibility Help"); //$NON-NLS-1$
 	}
 
 	@Test
 	public void testValue() {
 		AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-		IEEFTextController controller = this.textController(EEFDataTests.EEFTEXTCONTROLLERTESTS_VALUE);
+		IEEFSelectController controller = this.selectController(EEFDataTests.EEFSELECTCONTROLLERTESTS_VALUE);
 		controller.onNewValue(value -> {
-			assertThat(value, is(PROJECT_ECLASS_NAME));
+			assertThat(value, is("public")); //$NON-NLS-1$
 			atomicBoolean.set(true);
 		});
 		controller.refresh();

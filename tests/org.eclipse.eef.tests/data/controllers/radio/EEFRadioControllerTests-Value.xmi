@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef:EEFViewDescription
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:eef="http://www.eclipse.org/eef"
+    xsi:schemaLocation="http://www.eclipse.org/eef ../../../../org.eclipse.eef/model/eef.ecore">
+  <groups>
+    <container>
+      <widgets
+          xsi:type="eef:EEFRadioDescription"
+          labelExpression=""
+          valueExpression="aql:'public'"/>
+    </container>
+  </groups>
+  <pages groups="//@groups.0"/>
+</eef:EEFViewDescription>

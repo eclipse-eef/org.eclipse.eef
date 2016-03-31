@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,9 +12,9 @@ package org.eclipse.eef.tests.internal.controllers;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.eclipse.eef.EEFTextDescription;
-import org.eclipse.eef.core.api.controllers.IEEFTextController;
-import org.eclipse.eef.core.internal.controllers.EEFTextController;
+import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.core.api.controllers.IEEFRadioController;
+import org.eclipse.eef.core.internal.controllers.EEFRadioController;
 import org.eclipse.eef.tests.internal.EEFDataTests;
 import org.eclipse.emf.ecore.EClassifier;
 import org.junit.Test;
@@ -25,40 +25,39 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Unit tests for the {@link IEEFTextController}.
+ * Unit tests for {@link IEEFRadioController}.
  *
  * @author sbegaudeau
  */
 @SuppressWarnings({ "checkstyle:javadocmethod" })
-public class EEFTextControllerTests extends AbstractEEFControllerTests {
-
+public class EEFRadioControllerTests extends AbstractEEFControllerTests {
 	/**
 	 * The name of the Project EClass.
 	 */
 	private static final String PROJECT_ECLASS_NAME = "Project"; //$NON-NLS-1$
 
-	private IEEFTextController textController(String modelPath) {
+	private IEEFRadioController radioController(String modelPath) {
 		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
-		EEFTextDescription description = widget(group(page(modelPath, 0), 0), EEFTextDescription.class, 0);
-		return new EEFTextController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		EEFRadioDescription description = widget(group(page(modelPath, 0), 0), EEFRadioDescription.class, 0);
+		return new EEFRadioController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
 	}
 
 	@Test
 	public void testLabel() {
-		testLabel(textController(EEFDataTests.EEFTEXTCONTROLLERTESTS_LABEL), "Project:"); //$NON-NLS-1$
+		testLabel(radioController(EEFDataTests.EEFRADIOCONTROLLERTESTS_LABEL), "Visibility:"); //$NON-NLS-1$
 	}
 
 	@Test
 	public void testHelp() {
-		testHelp(textController(EEFDataTests.EEFTEXTCONTROLLERTESTS_HELP), "Project Help"); //$NON-NLS-1$
+		testHelp(radioController(EEFDataTests.EEFRADIOCONTROLLERTESTS_HELP), "Visibility Help"); //$NON-NLS-1$
 	}
 
 	@Test
 	public void testValue() {
 		AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-		IEEFTextController controller = this.textController(EEFDataTests.EEFTEXTCONTROLLERTESTS_VALUE);
+		IEEFRadioController controller = this.radioController(EEFDataTests.EEFRADIOCONTROLLERTESTS_VALUE);
 		controller.onNewValue(value -> {
-			assertThat(value, is(PROJECT_ECLASS_NAME));
+			assertThat(value, is("public")); //$NON-NLS-1$
 			atomicBoolean.set(true);
 		});
 		controller.refresh();

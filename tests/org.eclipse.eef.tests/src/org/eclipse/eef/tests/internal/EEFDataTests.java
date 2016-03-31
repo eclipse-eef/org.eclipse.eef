@@ -49,6 +49,81 @@ public class EEFDataTests {
 	public static final String EEFTEXTCONTROLLERTESTS_HELP = "/data/controllers/text/EEFTextControllerTests-Help.xmi"; //$NON-NLS-1$
 
 	/**
+	 * Test model used to compute the help of a label widget.
+	 */
+	public static final String EEFLABELCONTROLLERTESTS_HELP = "/data/controllers/label/EEFLabelControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the label of a label widget.
+	 */
+	public static final String EEFLABELCONTROLLERTESTS_LABEL = "/data/controllers/label/EEFLabelControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the body of a label widget.
+	 */
+	public static final String EEFLABELCONTROLLERTESTS_BODY = "/data/controllers/label/EEFLabelControllerTests-Body.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the label of a button widget.
+	 */
+	public static final String EEFBUTTONCONTROLLERTESTS_LABEL = "/data/controllers/button/EEFButtonControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the help of a button widget.
+	 */
+	public static final String EEFBUTTONCONTROLLERTESTS_HELP = "/data/controllers/button/EEFButtonControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the button label of a button widget.
+	 */
+	public static final String EEFBUTTONCONTROLLERTESTS_BUTTONLABEL = "/data/controllers/button/EEFButtonControllerTests-ButtonLabel.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the label of a checkbox widget.
+	 */
+	public static final String EEFCHECKBOXCONTROLLERTESTS_LABEL = "/data/controllers/checkbox/EEFCheckboxControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the help of a checkbox widget.
+	 */
+	public static final String EEFCHECKBOXCONTROLLERTESTS_HELP = "/data/controllers/checkbox/EEFCheckboxControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the value of a checkbox widget.
+	 */
+	public static final String EEFCHECKBOXCONTROLLERTESTS_VALUE = "/data/controllers/checkbox/EEFCheckboxControllerTests-Value.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the label of a radio widget.
+	 */
+	public static final String EEFRADIOCONTROLLERTESTS_LABEL = "/data/controllers/radio/EEFRadioControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the help of a radio widget.
+	 */
+	public static final String EEFRADIOCONTROLLERTESTS_HELP = "/data/controllers/radio/EEFRadioControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the value of a radio widget.
+	 */
+	public static final String EEFRADIOCONTROLLERTESTS_VALUE = "/data/controllers/radio/EEFRadioControllerTests-Value.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the label of a select widget.
+	 */
+	public static final String EEFSELECTCONTROLLERTESTS_LABEL = "/data/controllers/select/EEFSelectControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the help of a select widget.
+	 */
+	public static final String EEFSELECTCONTROLLERTESTS_HELP = "/data/controllers/select/EEFSelectControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the value of a select widget.
+	 */
+	public static final String EEFSELECTCONTROLLERTESTS_VALUE = "/data/controllers/select/EEFSelectControllerTests-Value.xmi"; //$NON-NLS-1$
+
+	/**
 	 * The current directory.
 	 */
 	public static final String CURRENTDIR = System.getProperty("user.dir"); //$NON-NLS-1$
@@ -56,7 +131,11 @@ public class EEFDataTests {
 	/**
 	 * All the test models.
 	 */
-	private static final String[] MODELS = new String[] { EEFTEXTCONTROLLERTESTS_LABEL, EEFTEXTCONTROLLERTESTS_VALUE, EEFTEXTCONTROLLERTESTS_HELP, };
+	private static final String[] MODELS = new String[] { EEFTEXTCONTROLLERTESTS_LABEL, EEFTEXTCONTROLLERTESTS_VALUE, EEFTEXTCONTROLLERTESTS_HELP,
+		EEFLABELCONTROLLERTESTS_LABEL, EEFLABELCONTROLLERTESTS_BODY, EEFLABELCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_LABEL,
+		EEFBUTTONCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_BUTTONLABEL, EEFCHECKBOXCONTROLLERTESTS_LABEL, EEFCHECKBOXCONTROLLERTESTS_HELP,
+		EEFCHECKBOXCONTROLLERTESTS_VALUE, EEFRADIOCONTROLLERTESTS_LABEL, EEFRADIOCONTROLLERTESTS_HELP, EEFRADIOCONTROLLERTESTS_VALUE,
+		EEFSELECTCONTROLLERTESTS_HELP, EEFSELECTCONTROLLERTESTS_LABEL, EEFSELECTCONTROLLERTESTS_VALUE, };
 
 	/**
 	 * Loads the resource with the given URI in the given resource set.
