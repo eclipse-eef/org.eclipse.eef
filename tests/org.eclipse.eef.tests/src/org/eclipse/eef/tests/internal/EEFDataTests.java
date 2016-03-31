@@ -49,6 +49,26 @@ public class EEFDataTests {
 	public static final String EEFTEXTCONTROLLERTESTS_HELP = "/data/controllers/text/EEFTextControllerTests-Help.xmi"; //$NON-NLS-1$
 
 	/**
+	 * Test model used to compute the help of a label widget.
+	 */
+	public static final String EEFLABELCONTROLLERTESTS_HELP = "/data/controllers/label/EEFLabelControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the label of a label widget.
+	 */
+	public static final String EEFLABELCONTROLLERTESTS_LABEL = "/data/controllers/label/EEFLabelControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the body of a label widget.
+	 */
+	public static final String EEFLABELCONTROLLERTESTS_BODY = "/data/controllers/label/EEFLabelControllerTests-Body.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the label of a button widget.
+	 */
+	public static final String EEFBUTTONCONTROLLERTESTS_LABEL = "/data/controllers/button/EEFButtonControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
 	 * The current directory.
 	 */
 	public static final String CURRENTDIR = System.getProperty("user.dir"); //$NON-NLS-1$
@@ -56,7 +76,8 @@ public class EEFDataTests {
 	/**
 	 * All the test models.
 	 */
-	private static final String[] MODELS = new String[] { EEFTEXTCONTROLLERTESTS_LABEL, EEFTEXTCONTROLLERTESTS_VALUE, EEFTEXTCONTROLLERTESTS_HELP, };
+	private static final String[] MODELS = new String[] { EEFTEXTCONTROLLERTESTS_LABEL, EEFTEXTCONTROLLERTESTS_VALUE, EEFTEXTCONTROLLERTESTS_HELP,
+		EEFLABELCONTROLLERTESTS_LABEL, EEFLABELCONTROLLERTESTS_BODY, EEFLABELCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_LABEL, };
 
 	/**
 	 * Loads the resource with the given URI in the given resource set.
