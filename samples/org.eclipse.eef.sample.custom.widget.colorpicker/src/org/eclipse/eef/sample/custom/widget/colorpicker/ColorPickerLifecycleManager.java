@@ -73,7 +73,7 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
      * @param singleReferenceViewerProvider
      */
     public ColorPickerLifecycleManager(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-        super(variableManager, interpreter, editingDomain);
+        super(description, variableManager, interpreter, editingDomain);
         this.description = description;
     }
 

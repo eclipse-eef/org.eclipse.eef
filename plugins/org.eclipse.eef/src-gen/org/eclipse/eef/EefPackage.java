@@ -600,13 +600,22 @@ public interface EefPackage extends EPackage {
 	int EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_DESCRIPTION__LABEL_STYLE = 4;
+
+	/**
 	 * The number of structural features of the '<em>EEF Widget Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = 4;
+	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFTextDescriptionImpl <em>EEF Text Description</em>}'
@@ -651,6 +660,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_TEXT_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+
+	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_DESCRIPTION__LABEL_STYLE = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -740,6 +758,15 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__LABEL_STYLE = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE;
+
+	/**
 	 * The feature id for the '<em><b>Body Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
@@ -799,6 +826,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_BUTTON_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+
+	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION__LABEL_STYLE = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Button Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -871,6 +907,15 @@ public interface EefPackage extends EPackage {
 	int EEF_CHECKBOX_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
 
 	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_DESCRIPTION__LABEL_STYLE = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE;
+
+	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 *
@@ -939,6 +984,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_SELECT_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+
+	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_DESCRIPTION__LABEL_STYLE = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1027,6 +1081,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_RADIO_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+
+	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__LABEL_STYLE = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1197,6 +1260,15 @@ public interface EefPackage extends EPackage {
 	 * @ordered
 	 */
 	int EEF_CUSTOM_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+
+	/**
+	 * The feature id for the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__LABEL_STYLE = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Custom Expressions</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -1831,6 +1903,17 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFWidgetDescription_PropertyValidationRules();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFWidgetDescription#getLabelStyle
+	 * <em>Label Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Label Style</em>'.
+	 * @see org.eclipse.eef.EEFWidgetDescription#getLabelStyle()
+	 * @see #getEEFWidgetDescription()
+	 * @generated
+	 */
+	EReference getEEFWidgetDescription_LabelStyle();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFTextDescription <em>EEF Text Description</em>}'.
@@ -2688,6 +2771,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFWidgetDescription_PropertyValidationRules();
+
+		/**
+		 * The meta object literal for the '<em><b>Label Style</b></em>' containment reference feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_WIDGET_DESCRIPTION__LABEL_STYLE = EefPackage.eINSTANCE.getEEFWidgetDescription_LabelStyle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextDescriptionImpl

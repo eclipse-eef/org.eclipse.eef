@@ -20,11 +20,13 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Icons;
+import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFWidgetStyleHelper;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.GridData;
@@ -80,7 +82,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * The label.
 	 */
-	protected CLabel label;
+	protected StyledText label;
 
 	/**
 	 * The help label.
@@ -88,7 +90,15 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected CLabel help;
 
 	/**
+	 * The description.
+	 */
+	private EEFWidgetDescription description;
+
+	/**
 	 * The constructor.
+	 *
+	 * @param description
+	 *            The description
 	 *
 	 * @param variableManager
 	 *            The variable manager
@@ -97,7 +107,9 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * @param editingDomain
 	 *            The editing domain
 	 */
-	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+	public AbstractEEFWidgetLifecycleManager(EEFWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			TransactionalEditingDomain editingDomain) {
+		this.description = description;
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.editingDomain = editingDomain;
@@ -130,7 +142,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			gap = GAP_WITH_HELP;
 		}
 
-		this.label = widgetFactory.createCLabel(composite, ""); //$NON-NLS-1$
+		this.label = new StyledText(composite, SWT.NONE);
 		FormData labelFormData = new FormData();
 		labelFormData.left = new FormAttachment(0, 0);
 		labelFormData.right = new FormAttachment(control, -HSPACE - gap);
@@ -186,7 +198,11 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			@Override
 			public void apply(String value) {
 				if (!label.isDisposed() && !(label.getText() != null && label.getText().equals(value))) {
-					label.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					String input = Objects.firstNonNull(value, ""); //$NON-NLS-1$
+					label.setText(input);
+					// Set style
+					EEFWidgetStyleHelper eefWidgetStyleHelper = new EEFWidgetStyleHelper(variableManager, interpreter);
+					eefWidgetStyleHelper.setTextStyle(description.getLabelStyle(), label);
 				}
 			}
 		});
