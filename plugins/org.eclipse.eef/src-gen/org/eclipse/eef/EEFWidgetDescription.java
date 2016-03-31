@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFWidgetDescription#getLabelStyle <em>Label Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -115,5 +116,28 @@ public interface EEFWidgetDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules();
+
+	/**
+	 * Returns the value of the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Defines the label style <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Label Style</em>' containment reference.
+	 * @see #setLabelStyle(EEFTextStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFWidgetDescription_LabelStyle()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFTextStyle getLabelStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getLabelStyle <em>Label Style</em>}'
+	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Label Style</em>' containment reference.
+	 * @see #getLabelStyle()
+	 * @generated
+	 */
+	void setLabelStyle(EEFTextStyle value);
 
 } // EEFWidgetDescription

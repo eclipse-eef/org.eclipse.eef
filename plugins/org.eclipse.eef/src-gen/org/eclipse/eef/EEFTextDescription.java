@@ -106,7 +106,7 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	 * If the meaning of the '<em>Style</em>' containment reference isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
-	 * <!-- end-user-doc -->
+	 * <!-- end-user-doc --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFTextStyle)
