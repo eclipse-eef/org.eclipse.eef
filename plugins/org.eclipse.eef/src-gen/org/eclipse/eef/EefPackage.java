@@ -775,13 +775,22 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION__BODY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>EEF Label Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl <em>EEF Button Description</em>}
@@ -1991,6 +2000,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFLabelDescription_BodyExpression();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFLabelDescription#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFLabelDescription#getStyle()
+	 * @see #getEEFLabelDescription()
+	 * @generated
+	 */
+	EReference getEEFLabelDescription_Style();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFButtonDescription <em>EEF Button Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2839,6 +2859,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_LABEL_DESCRIPTION__BODY_EXPRESSION = EefPackage.eINSTANCE.getEEFLabelDescription_BodyExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_LABEL_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFLabelDescription_Style();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl

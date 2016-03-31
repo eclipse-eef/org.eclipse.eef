@@ -71,7 +71,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	 */
 	public EEFCheckboxLifecycleManager(EEFCheckboxDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(description, variableManager, interpreter, editingDomain);
+		super(variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
 
