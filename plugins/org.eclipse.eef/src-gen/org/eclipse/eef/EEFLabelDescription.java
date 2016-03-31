@@ -18,6 +18,7 @@ package org.eclipse.eef;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getBodyExpression <em>Body Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,5 +49,28 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setBodyExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Style</em>' containment reference.
+	 * @see #setStyle(EEFTextStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_Style()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFLabelStyle getStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Style</em>' containment reference.
+	 * @see #getStyle()
+	 * @generated
+	 */
+	void setStyle(EEFLabelStyle value);
 
 } // EEFLabelDescription

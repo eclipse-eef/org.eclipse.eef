@@ -32,7 +32,8 @@ Export-Package: org.eclipse.eef.ide.ui.api;version="1.6.0",
  org.eclipse.eef.ide.ui.api.widgets;version="1.6.0",
  org.eclipse.eef.ide.ui.internal;version="1.6.0";x-internal:=true,
  org.eclipse.eef.ide.ui.internal.preferences;version="1.6.0";x-internal:=true,
- org.eclipse.eef.ide.ui.internal.widgets;version="1.6.0";x-internal:=true
+ org.eclipse.eef.ide.ui.internal.widgets;version="1.6.0";x-internal:=true,
+ org.eclipse.eef.ide.ui.internal.widgets.styles;version="1.6.0";x-internal:=true
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin$Implementation

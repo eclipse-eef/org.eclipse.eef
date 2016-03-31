@@ -175,20 +175,52 @@ public interface EefFactory extends EFactory {
 	EEFCustomExpression createEEFCustomExpression();
 
 	/**
-	 * Returns a new object of class '<em>EEF Widget Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EEF Widget Style</em>'.
-	 * @generated
-	 */
-	EEFWidgetStyle createEEFWidgetStyle();
-
-	/**
 	 * Returns a new object of class '<em>EEF Text Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Text Style</em>'.
 	 * @generated
 	 */
 	EEFTextStyle createEEFTextStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Label Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Label Style</em>'.
+	 * @generated
+	 */
+	EEFLabelStyle createEEFLabelStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Button Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Button Style</em>'.
+	 * @generated
+	 */
+	EEFButtonStyle createEEFButtonStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Checkbox Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Checkbox Style</em>'.
+	 * @generated
+	 */
+	EEFCheckboxStyle createEEFCheckboxStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Select Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Select Style</em>'.
+	 * @generated
+	 */
+	EEFSelectStyle createEEFSelectStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Radio Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Radio Style</em>'.
+	 * @generated
+	 */
+	EEFRadioStyle createEEFRadioStyle();
 
 	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->

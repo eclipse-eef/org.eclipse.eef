@@ -16,6 +16,7 @@ import java.util.Map;
 
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
@@ -138,6 +139,16 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
 		return this.description;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle()
+	 */
+	@Override
+	protected EEFWidgetStyle getWidgetStyle() {
+		return this.description.getStyle();
 	}
 
 	/**

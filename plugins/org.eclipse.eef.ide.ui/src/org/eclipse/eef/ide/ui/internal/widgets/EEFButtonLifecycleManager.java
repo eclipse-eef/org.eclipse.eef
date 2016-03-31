@@ -14,6 +14,7 @@ import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -121,6 +122,16 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
 		return this.description;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle()
+	 */
+	@Override
+	protected EEFWidgetStyle getWidgetStyle() {
+		return this.description.getStyle();
 	}
 
 	@Override

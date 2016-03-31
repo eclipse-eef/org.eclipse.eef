@@ -22,6 +22,7 @@ package org.eclipse.eef;
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression <em>Candidates Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFSelectDescription#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -122,5 +123,28 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setCandidateDisplayExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Style</em>' containment reference.
+	 * @see #setStyle(EEFSelectStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_Style()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFSelectStyle getStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getStyle <em>Style</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Style</em>' containment reference.
+	 * @see #getStyle()
+	 * @generated
+	 */
+	void setStyle(EEFSelectStyle value);
 
 } // EEFSelectDescription

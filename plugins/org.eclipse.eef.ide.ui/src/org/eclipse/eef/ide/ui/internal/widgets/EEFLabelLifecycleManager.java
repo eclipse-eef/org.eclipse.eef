@@ -13,8 +13,10 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFWidgetDescription;
-import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
+import org.eclipse.eef.EEFWidgetStyle;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
@@ -25,7 +27,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CLabel;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
@@ -45,7 +47,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * The body.
 	 */
-	private CLabel body;
+	private StyledText body;
 
 	/**
 	 * The controller.
@@ -78,12 +80,10 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
-		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
-
 		FormData buttonFormData = new FormData();
 		buttonFormData.left = new FormAttachment(0, LABEL_WIDTH);
 
-		this.body = widgetFactory.createCLabel(parent, "", SWT.WRAP); //$NON-NLS-1$
+		this.body = new StyledText(parent, SWT.WRAP);
 		this.body.setLayoutData(buttonFormData);
 
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter);
@@ -103,9 +103,34 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 			public void apply(String value) {
 				if (!body.isDisposed() && !(body.getText() != null && body.getText().equals(value))) {
 					body.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					// Set style
+					setLabelStyle(description.getStyle(), body);
 				}
 			}
 		});
+	}
+
+	/**
+	 * Set the text style.
+	 *
+	 * @param style
+	 *            Style
+	 * @param text
+	 *            The text
+	 */
+	private void setLabelStyle(EEFLabelStyle style, StyledText text) {
+		if (style != null) {
+			// Set font
+			setFont(style.getFontNameExpression(), EefPackage.Literals.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION, style.getFontSizeExpression(),
+					EefPackage.Literals.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION, style.getFontStyleExpression(),
+					EefPackage.Literals.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION, text);
+
+			// Set background color
+			setBackgroundColor(style.getBackgroundColorExpression(), EefPackage.Literals.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION, text);
+
+			// Set foreground color
+			setForegroundColor(style.getForegroundColorExpression(), EefPackage.Literals.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION, text);
+		}
 	}
 
 	/**
@@ -137,6 +162,16 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
 		return this.description;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle()
+	 */
+	@Override
+	protected EEFWidgetStyle getWidgetStyle() {
+		return this.description.getStyle();
 	}
 
 	/**

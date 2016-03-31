@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.widgets;
+package org.eclipse.eef.ide.ui.internal.widgets.styles;
 
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.graphics.Font;

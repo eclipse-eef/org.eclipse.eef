@@ -9,9 +9,12 @@
 package org.eclipse.eef.impl;
 
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidatesExpression <em>Candidates Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display
  * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -110,6 +114,16 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @ordered
 	 */
 	protected String candidateDisplayExpression = EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @see #getStyle()
+	 * @generated
+	 * @ordered
+	 */
+	protected EEFRadioStyle style;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -236,6 +250,103 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @generated
 	 */
 	@Override
+	public EEFRadioStyle getStyle() {
+		if (style != null && style.eIsProxy()) {
+			InternalEObject oldStyle = (InternalEObject) style;
+			style = (EEFRadioStyle) eResolveProxy(oldStyle);
+			if (style != oldStyle) {
+				InternalEObject newStyle = (InternalEObject) style;
+				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, null);
+				if (newStyle.eInternalContainer() == null) {
+					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
+				}
+				if (msgs != null) {
+					msgs.dispatch();
+				}
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_RADIO_DESCRIPTION__STYLE, oldStyle, style));
+				}
+			}
+		}
+		return style;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public EEFRadioStyle basicGetStyle() {
+		return style;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetStyle(EEFRadioStyle newStyle, NotificationChain msgs) {
+		EEFRadioStyle oldStyle = style;
+		style = newStyle;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__STYLE, oldStyle,
+					newStyle);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setStyle(EEFRadioStyle newStyle) {
+		if (newStyle != style) {
+			NotificationChain msgs = null;
+			if (style != null) {
+				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
+			}
+			if (newStyle != null) {
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
+			}
+			msgs = basicSetStyle(newStyle, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__STYLE, newStyle, newStyle));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
+			return basicSetStyle(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION:
@@ -246,6 +357,11 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return getCandidatesExpression();
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return getCandidateDisplayExpression();
+		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
+			if (resolve) {
+				return getStyle();
+			}
+			return basicGetStyle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,6 +385,9 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			setCandidateDisplayExpression((String) newValue);
+			return;
+		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
+			setStyle((EEFRadioStyle) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,6 +413,9 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			setCandidateDisplayExpression(EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
+			setStyle((EEFRadioStyle) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -318,6 +440,8 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
 			: !EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
+		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
+			return style != null;
 		}
 		return super.eIsSet(featureID);
 	}
