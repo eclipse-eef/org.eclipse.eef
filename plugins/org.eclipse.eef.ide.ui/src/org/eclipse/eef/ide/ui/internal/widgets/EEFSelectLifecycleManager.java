@@ -92,7 +92,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 */
 	public EEFSelectLifecycleManager(EEFSelectDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter, editingDomain);
+		super(description, variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
 

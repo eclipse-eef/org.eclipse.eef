@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.widgets;
+package org.eclipse.eef.ide.ui.internal.widgets.styles;
 
 import java.text.MessageFormat;
 import java.util.regex.Matcher;

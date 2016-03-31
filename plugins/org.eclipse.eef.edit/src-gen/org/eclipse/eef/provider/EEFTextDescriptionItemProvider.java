@@ -197,4 +197,25 @@ public class EEFTextDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_TEXT_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFTextStyle()));
 	}
 
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_STYLE
+				|| childFeature == EefPackage.Literals.EEF_TEXT_DESCRIPTION__STYLE;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2", //$NON-NLS-1$
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
 }

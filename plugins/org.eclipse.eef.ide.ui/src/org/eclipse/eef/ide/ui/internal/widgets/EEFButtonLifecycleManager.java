@@ -74,7 +74,7 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 */
 	public EEFButtonLifecycleManager(EEFButtonDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter, editingDomain);
+		super(description, variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
 

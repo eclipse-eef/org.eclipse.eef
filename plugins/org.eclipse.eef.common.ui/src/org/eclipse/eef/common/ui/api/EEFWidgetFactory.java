@@ -17,6 +17,7 @@ import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -227,6 +228,21 @@ public class EEFWidgetFactory extends FormToolkit {
 		label.setBackground(parent.getBackground());
 		label.setText(text);
 		return label;
+	}
+
+	/**
+	 * Creates a styled text as a part of the form.
+	 *
+	 * @param parent
+	 *            the parent.
+	 * @param style
+	 *            the style.
+	 * @return the styled text.
+	 */
+	public StyledText createStyledText(Composite parent, int style) {
+		final StyledText styledText = new StyledText(parent, style);
+		styledText.setBackground(parent.getBackground());
+		return styledText;
 	}
 
 	/**

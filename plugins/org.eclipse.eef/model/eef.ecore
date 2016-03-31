@@ -233,6 +233,12 @@
         <details key="documentation" value="The property validation rules to use for the widget."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelStyle" eType="#//EEFTextStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the label style"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFTextDescription" eSuperTypes="#//EEFWidgetDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -255,7 +261,11 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFTextStyle"
-        containment="true"/>
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the text style"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFLabelDescription" eSuperTypes="#//EEFWidgetDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
