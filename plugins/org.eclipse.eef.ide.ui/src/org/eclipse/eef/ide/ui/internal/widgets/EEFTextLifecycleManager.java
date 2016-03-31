@@ -157,8 +157,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void apply(String value) {
 				if (!text.isDisposed() && !(text.getText() != null && text.getText().equals(value))) {
-					String input = Objects.firstNonNull(value, ""); //$NON-NLS-1$
-					text.setText(input);
+					text.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					// Set style
 					EEFWidgetStyleHelper eefWidgetStyleHelper = new EEFWidgetStyleHelper(variableManager, interpreter);
 					eefWidgetStyleHelper.setTextStyle(description.getStyle(), text);

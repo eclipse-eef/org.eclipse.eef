@@ -198,8 +198,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			@Override
 			public void apply(String value) {
 				if (!label.isDisposed() && !(label.getText() != null && label.getText().equals(value))) {
-					String input = Objects.firstNonNull(value, ""); //$NON-NLS-1$
-					label.setText(input);
+					label.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					// Set style
 					EEFWidgetStyleHelper eefWidgetStyleHelper = new EEFWidgetStyleHelper(variableManager, interpreter);
 					eefWidgetStyleHelper.setTextStyle(description.getLabelStyle(), label);
