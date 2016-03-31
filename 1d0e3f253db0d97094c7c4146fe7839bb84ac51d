@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_ed7aeadb",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-03-31T14:57:00Z",
+      "side": 0,
+      "message": "I liked the code in this class :)",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 356,
+        "endChar": 19
+      },
+      "revId": "1d0e3f253db0d97094c7c4146fe7839bb84ac51d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
