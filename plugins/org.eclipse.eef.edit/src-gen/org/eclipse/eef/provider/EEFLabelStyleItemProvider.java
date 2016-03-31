@@ -11,7 +11,7 @@ package org.eclipse.eef.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.eef.EEFTextStyle;
+import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -21,18 +21,18 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFTextStyle} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFLabelStyle} object. <!-- begin-user-doc --> <!--
  * end-user-doc -->
  * 
  * @generated
  */
-public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
+public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public EEFTextStyleItemProvider(AdapterFactory adapterFactory) {
+	public EEFLabelStyleItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,9 +64,9 @@ public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
 	protected void addBackgroundColorExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFTextStyle_backgroundColorExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFTextStyle_backgroundColorExpression_feature", "_UI_EEFTextStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				getString("_UI_EEFLabelStyle_backgroundColorExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelStyle_backgroundColorExpression_feature", "_UI_EEFLabelStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_LABEL_STYLE__BACKGROUND_COLOR_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
 	}
 
@@ -79,9 +79,9 @@ public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
 	protected void addForegroundColorExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFTextStyle_foregroundColorExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFTextStyle_foregroundColorExpression_feature", "_UI_EEFTextStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				getString("_UI_EEFLabelStyle_foregroundColorExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelStyle_foregroundColorExpression_feature", "_UI_EEFLabelStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_LABEL_STYLE__FOREGROUND_COLOR_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
 	}
 
@@ -95,9 +95,9 @@ public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
 		itemPropertyDescriptors
 		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFTextStyle_fontNameExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFTextStyle_fontNameExpression_feature", "_UI_EEFTextStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				getString("_UI_EEFLabelStyle_fontNameExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelStyle_fontNameExpression_feature", "_UI_EEFLabelStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_LABEL_STYLE__FONT_NAME_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
 	}
 
@@ -111,9 +111,9 @@ public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
 		itemPropertyDescriptors
 		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFTextStyle_fontSizeExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFTextStyle_fontSizeExpression_feature", "_UI_EEFTextStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				getString("_UI_EEFLabelStyle_fontSizeExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelStyle_fontSizeExpression_feature", "_UI_EEFLabelStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_LABEL_STYLE__FONT_SIZE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
 	}
 
@@ -124,23 +124,22 @@ public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
 	 * @generated
 	 */
 	protected void addFontStyleExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFTextStyle_fontStyleExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFTextStyle_fontStyleExpression_feature", "_UI_EEFTextStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				getString("_UI_EEFLabelStyle_fontStyleExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelStyle_fontStyleExpression_feature", "_UI_EEFLabelStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_LABEL_STYLE__FONT_STYLE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
-	 * This returns EEFTextStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns EEFLabelStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFTextStyle")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFLabelStyle")); //$NON-NLS-1$
 	}
 
 	/**
@@ -160,9 +159,9 @@ public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EEFTextStyle) object).getLabelFontNameExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFTextStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFTextStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EEFLabelStyle) object).getLabelFontNameExpression();
+		return label == null || label.length() == 0 ? getString("_UI_EEFLabelStyle_type") : //$NON-NLS-1$
+			getString("_UI_EEFLabelStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -176,12 +175,12 @@ public class EEFTextStyleItemProvider extends EEFWidgetStyleItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EEFTextStyle.class)) {
-		case EefPackage.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION:
-		case EefPackage.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION:
-		case EefPackage.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION:
-		case EefPackage.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION:
-		case EefPackage.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION:
+		switch (notification.getFeatureID(EEFLabelStyle.class)) {
+		case EefPackage.EEF_LABEL_STYLE__BACKGROUND_COLOR_EXPRESSION:
+		case EefPackage.EEF_LABEL_STYLE__FOREGROUND_COLOR_EXPRESSION:
+		case EefPackage.EEF_LABEL_STYLE__FONT_NAME_EXPRESSION:
+		case EefPackage.EEF_LABEL_STYLE__FONT_SIZE_EXPRESSION:
+		case EefPackage.EEF_LABEL_STYLE__FONT_STYLE_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

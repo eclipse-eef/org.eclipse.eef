@@ -12,6 +12,7 @@ package org.eclipse.eef.sample.custom.widget.colorpicker;
 
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.IConsumer;
@@ -73,7 +74,7 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
      * @param singleReferenceViewerProvider
      */
     public ColorPickerLifecycleManager(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-        super(description, variableManager, interpreter, editingDomain);
+        super(variableManager, interpreter, editingDomain);
         this.description = description;
     }
 
@@ -112,6 +113,16 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
     @Override
     protected EEFWidgetDescription getWidgetDescription() {
         return this.description;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle()
+     */
+    @Override
+    protected EEFWidgetStyle getWidgetStyle() {
+        return null;
     }
 
     /**

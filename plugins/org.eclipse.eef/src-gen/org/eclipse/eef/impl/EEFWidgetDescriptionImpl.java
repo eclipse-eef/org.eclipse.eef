@@ -11,7 +11,6 @@ package org.eclipse.eef.impl;
 import java.util.Collection;
 
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
-import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -35,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getHelpExpression <em>Help Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
  * </em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getLabelStyle <em>Label Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,16 +109,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	 * @ordered
 	 */
 	protected EList<EEFPropertyValidationRuleDescription> propertyValidationRules;
-
-	/**
-	 * The cached value of the '{@link #getLabelStyle() <em>Label Style</em>}' containment reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getLabelStyle()
-	 * @generated
-	 * @ordered
-	 */
-	protected EEFTextStyle labelStyle;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -235,91 +223,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	 *
 	 * @generated
 	 */
-	@Override
-	public EEFTextStyle getLabelStyle() {
-		if (labelStyle != null && labelStyle.eIsProxy()) {
-			InternalEObject oldLabelStyle = (InternalEObject) labelStyle;
-			labelStyle = (EEFTextStyle) eResolveProxy(oldLabelStyle);
-			if (labelStyle != oldLabelStyle) {
-				InternalEObject newLabelStyle = (InternalEObject) labelStyle;
-				NotificationChain msgs = oldLabelStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE, null, null);
-				if (newLabelStyle.eInternalContainer() == null) {
-					msgs = newLabelStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE,
-							null, msgs);
-				}
-				if (msgs != null) {
-					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE, oldLabelStyle,
-							labelStyle));
-				}
-			}
-		}
-		return labelStyle;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EEFTextStyle basicGetLabelStyle() {
-		return labelStyle;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public NotificationChain basicSetLabelStyle(EEFTextStyle newLabelStyle, NotificationChain msgs) {
-		EEFTextStyle oldLabelStyle = labelStyle;
-		labelStyle = newLabelStyle;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE,
-					oldLabelStyle, newLabelStyle);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setLabelStyle(EEFTextStyle newLabelStyle) {
-		if (newLabelStyle != labelStyle) {
-			NotificationChain msgs = null;
-			if (labelStyle != null) {
-				msgs = ((InternalEObject) labelStyle).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE, null, msgs);
-			}
-			if (newLabelStyle != null) {
-				msgs = ((InternalEObject) newLabelStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE, null, msgs);
-			}
-			msgs = basicSetLabelStyle(newLabelStyle, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE, newLabelStyle, newLabelStyle));
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -340,8 +243,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			return ((InternalEList<?>) getPropertyValidationRules()).basicRemove(otherEnd, msgs);
-		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE:
-			return basicSetLabelStyle(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -362,11 +263,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 			return getHelpExpression();
 		case EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			return getPropertyValidationRules();
-		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE:
-			if (resolve) {
-				return getLabelStyle();
-			}
-			return basicGetLabelStyle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -393,9 +289,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 			getPropertyValidationRules().clear();
 			getPropertyValidationRules().addAll((Collection<? extends EEFPropertyValidationRuleDescription>) newValue);
 			return;
-		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE:
-			setLabelStyle((EEFTextStyle) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -420,9 +313,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 		case EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			getPropertyValidationRules().clear();
 			return;
-		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE:
-			setLabelStyle((EEFTextStyle) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -446,8 +336,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 			: !EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT.equals(helpExpression);
 		case EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			return propertyValidationRules != null && !propertyValidationRules.isEmpty();
-		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_STYLE:
-			return labelStyle != null;
 		}
 		return super.eIsSet(featureID);
 	}

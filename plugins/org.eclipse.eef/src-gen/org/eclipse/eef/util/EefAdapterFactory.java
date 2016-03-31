@@ -17,6 +17,7 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
@@ -195,6 +196,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFTextStyle(EEFTextStyle object) {
 			return createEEFTextStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFLabelStyle(EEFLabelStyle object) {
+			return createEEFLabelStyleAdapter();
 		}
 
 		@Override
@@ -519,6 +525,19 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFTextStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLabelStyle <em>EEF Label Style</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFLabelStyle
+	 * @generated
+	 */
+	public Adapter createEEFLabelStyleAdapter() {
 		return null;
 	}
 

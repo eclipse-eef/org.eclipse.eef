@@ -17,6 +17,7 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
@@ -285,6 +286,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFTextStyle(eefTextStyle);
 			if (result == null) {
 				result = caseEEFWidgetStyle(eefTextStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_LABEL_STYLE: {
+			EEFLabelStyle eefLabelStyle = (EEFLabelStyle) theEObject;
+			T result = caseEEFLabelStyle(eefLabelStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefLabelStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -625,6 +637,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFTextStyle(EEFTextStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Label Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Label Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFLabelStyle(EEFLabelStyle object) {
 		return null;
 	}
 

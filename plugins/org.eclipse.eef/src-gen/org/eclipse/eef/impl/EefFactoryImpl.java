@@ -17,6 +17,7 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
@@ -27,7 +28,6 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
-import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
@@ -114,10 +114,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetDescription();
 		case EefPackage.EEF_CUSTOM_EXPRESSION:
 			return createEEFCustomExpression();
-		case EefPackage.EEF_WIDGET_STYLE:
-			return createEEFWidgetStyle();
 		case EefPackage.EEF_TEXT_STYLE:
 			return createEEFTextStyle();
+		case EefPackage.EEF_LABEL_STYLE:
+			return createEEFLabelStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -357,9 +357,9 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
-	public EEFWidgetStyle createEEFWidgetStyle() {
-		EEFWidgetStyleImpl eefWidgetStyle = new EEFWidgetStyleImpl();
-		return eefWidgetStyle;
+	public EEFTextStyle createEEFTextStyle() {
+		EEFTextStyleImpl eefTextStyle = new EEFTextStyleImpl();
+		return eefTextStyle;
 	}
 
 	/**
@@ -368,9 +368,9 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
-	public EEFTextStyle createEEFTextStyle() {
-		EEFTextStyleImpl eefTextStyle = new EEFTextStyleImpl();
-		return eefTextStyle;
+	public EEFLabelStyle createEEFLabelStyle() {
+		EEFLabelStyleImpl eefLabelStyle = new EEFLabelStyleImpl();
+		return eefLabelStyle;
 	}
 
 	/**
