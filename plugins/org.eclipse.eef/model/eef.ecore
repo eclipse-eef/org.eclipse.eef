@@ -233,12 +233,6 @@
         <details key="documentation" value="The property validation rules to use for the widget."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="labelStyle" eType="#//EEFTextStyle"
-        containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines the label style"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFTextDescription" eSuperTypes="#//EEFWidgetDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -274,6 +268,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bodyExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The body of the label containing the meaningful content"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFTextStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the text style"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -414,7 +414,14 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFWidgetStyle"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFWidgetStyle" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labelStyle" eType="#//EEFTextStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the label style"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFTextStyle" eSuperTypes="#//EEFWidgetStyle">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represents a style that can be applied on text widgets."/>

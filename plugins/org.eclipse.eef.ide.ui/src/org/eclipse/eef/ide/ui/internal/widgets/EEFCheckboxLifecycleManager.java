@@ -12,6 +12,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -71,7 +72,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	 */
 	public EEFCheckboxLifecycleManager(EEFCheckboxDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(description, variableManager, interpreter, editingDomain);
+		super(variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
 
@@ -123,6 +124,16 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
 		return this.description;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle()
+	 */
+	@Override
+	protected EEFWidgetStyle getWidgetStyle() {
+		return null;
 	}
 
 	/**

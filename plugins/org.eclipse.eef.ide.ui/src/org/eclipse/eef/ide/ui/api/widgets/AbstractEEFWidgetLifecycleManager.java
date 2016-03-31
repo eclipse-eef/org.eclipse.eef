@@ -14,6 +14,7 @@ import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -98,15 +99,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected CLabel help;
 
 	/**
-	 * The description.
-	 */
-	private EEFWidgetDescription description;
-
-	/**
 	 * The constructor.
-	 *
-	 * @param description
-	 *            The description
 	 *
 	 * @param variableManager
 	 *            The variable manager
@@ -115,9 +108,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * @param editingDomain
 	 *            The editing domain
 	 */
-	public AbstractEEFWidgetLifecycleManager(EEFWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		this.description = description;
+	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.editingDomain = editingDomain;
@@ -184,6 +175,13 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected abstract EEFWidgetDescription getWidgetDescription();
 
 	/**
+	 * Returns the style of the widget.
+	 *
+	 * @return The style of the widget
+	 */
+	protected abstract EEFWidgetStyle getWidgetStyle();
+
+	/**
 	 * Create the main control.
 	 *
 	 * @param parent
@@ -206,11 +204,10 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			@Override
 			public void apply(String value) {
 				if (!label.isDisposed() && !(label.getText() != null && label.getText().equals(value))) {
-					String input = Objects.firstNonNull(value, ""); //$NON-NLS-1$
-					label.setText(input);
-					// Set style
-					if (getWidgetDescription() != null) {
-						setTextStyle(getWidgetDescription().getLabelStyle(), label);
+					label.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					// Set label style
+					if (getWidgetStyle() != null) {
+						setTextStyle(getWidgetStyle().getLabelStyle(), label);
 					}
 				}
 			}

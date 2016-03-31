@@ -20,4 +20,27 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface EEFWidgetStyle extends EObject {
+
+	/**
+	 * Returns the value of the '<em><b>Label Style</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Defines the label style <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Label Style</em>' containment reference.
+	 * @see #setLabelStyle(EEFTextStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFWidgetStyle_LabelStyle()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFTextStyle getLabelStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelStyle <em>Label Style</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Label Style</em>' containment reference.
+	 * @see #getLabelStyle()
+	 * @generated
+	 */
+	void setLabelStyle(EEFTextStyle value);
 } // EEFWidgetStyle

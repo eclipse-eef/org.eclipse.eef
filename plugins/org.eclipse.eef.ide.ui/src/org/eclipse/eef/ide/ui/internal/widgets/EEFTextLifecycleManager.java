@@ -14,6 +14,7 @@ import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -75,7 +76,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 */
 	public EEFTextLifecycleManager(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(description, variableManager, interpreter, editingDomain);
+		super(variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
 
@@ -98,10 +99,10 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		// Create text or text area according to the defined line count
 		if (lineCount > 1) {
-			this.text = new StyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP);
+			this.text = widgetFactory.createStyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP);
 			formData.height = lineCount * text.getLineHeight();
 		} else {
-			this.text = new StyledText(parent, SWT.NONE);
+			this.text = widgetFactory.createStyledText(parent, SWT.NONE);
 		}
 
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
@@ -136,6 +137,16 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle()
+	 */
+	@Override
+	protected EEFWidgetStyle getWidgetStyle() {
+		return this.description.getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
 	 */
 	@Override
@@ -156,8 +167,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void apply(String value) {
 				if (!text.isDisposed() && !(text.getText() != null && text.getText().equals(value))) {
-					String input = Objects.firstNonNull(value, ""); //$NON-NLS-1$
-					text.setText(input);
+					text.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					// Set style
 					setTextStyle(description.getStyle(), text);
 					if (!text.isEnabled()) {
