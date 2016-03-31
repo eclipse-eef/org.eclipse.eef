@@ -98,15 +98,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected CLabel help;
 
 	/**
-	 * The description.
-	 */
-	private EEFWidgetDescription description;
-
-	/**
 	 * The constructor.
-	 *
-	 * @param description
-	 *            The description
 	 *
 	 * @param variableManager
 	 *            The variable manager
@@ -115,9 +107,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * @param editingDomain
 	 *            The editing domain
 	 */
-	public AbstractEEFWidgetLifecycleManager(EEFWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		this.description = description;
+	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.editingDomain = editingDomain;
@@ -206,8 +196,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			@Override
 			public void apply(String value) {
 				if (!label.isDisposed() && !(label.getText() != null && label.getText().equals(value))) {
-					String input = Objects.firstNonNull(value, ""); //$NON-NLS-1$
-					label.setText(input);
+					label.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					// Set style
 					if (getWidgetDescription() != null) {
 						setTextStyle(getWidgetDescription().getLabelStyle(), label);

@@ -14,7 +14,6 @@ import com.google.common.base.Objects;
 
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFWidgetDescription;
-import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
@@ -25,7 +24,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CLabel;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
@@ -45,7 +44,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * The body.
 	 */
-	private CLabel body;
+	private StyledText body;
 
 	/**
 	 * The controller.
@@ -66,7 +65,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 */
 	public EEFLabelLifecycleManager(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			TransactionalEditingDomain editingDomain) {
-		super(description, variableManager, interpreter, editingDomain);
+		super(variableManager, interpreter, editingDomain);
 		this.description = description;
 	}
 
@@ -78,12 +77,10 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
-		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
-
 		FormData buttonFormData = new FormData();
 		buttonFormData.left = new FormAttachment(0, LABEL_WIDTH);
 
-		this.body = widgetFactory.createCLabel(parent, "", SWT.WRAP); //$NON-NLS-1$
+		this.body = new StyledText(parent, SWT.WRAP);
 		this.body.setLayoutData(buttonFormData);
 
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter);
@@ -103,6 +100,8 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 			public void apply(String value) {
 				if (!body.isDisposed() && !(body.getText() != null && body.getText().equals(value))) {
 					body.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					// Set style
+					setTextStyle(description.getStyle(), body);
 				}
 			}
 		});
