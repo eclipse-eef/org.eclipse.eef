@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_92d6e5bc",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFDomainClassTester.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-31T09:59:47Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 82,
+        "startChar": 78,
+        "endLine": 82,
+        "endChar": 79
+      },
+      "revId": "e257f762cbe35bc49afbc6c69bb46159167a2cae",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_b2d3e1cb",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFDomainClassTester.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-31T09:59:47Z",
+      "side": 1,
+      "message": "remove dot",
+      "range": {
+        "startLine": 89,
+        "startChar": 36,
+        "endLine": 89,
+        "endChar": 37
+      },
+      "revId": "e257f762cbe35bc49afbc6c69bb46159167a2cae",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_f2d9e9eb",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFViewFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-31T09:59:47Z",
+      "side": 1,
+      "message": "remove the dot",
+      "range": {
+        "startLine": 53,
+        "startChar": 70,
+        "endLine": 53,
+        "endChar": 71
+      },
+      "revId": "e257f762cbe35bc49afbc6c69bb46159167a2cae",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_72e5d997",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFPageImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-31T09:59:47Z",
+      "side": 1,
+      "message": "tester",
+      "range": {
+        "startLine": 70,
+        "startChar": 21,
+        "endLine": 70,
+        "endChar": 28
+      },
+      "revId": "e257f762cbe35bc49afbc6c69bb46159167a2cae",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_92fd0531",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-03-31T09:59:47Z",
+      "side": 1,
+      "message": "tester",
+      "range": {
+        "startLine": 67,
+        "startChar": 21,
+        "endLine": 67,
+        "endChar": 28
+      },
+      "revId": "e257f762cbe35bc49afbc6c69bb46159167a2cae",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
