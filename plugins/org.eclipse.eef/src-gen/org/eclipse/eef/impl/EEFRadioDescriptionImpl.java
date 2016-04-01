@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidatesExpression <em>Candidates Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display
  * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
  * </ul>
  * </p>
  *
@@ -110,6 +111,26 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @ordered
 	 */
 	protected String candidateDisplayExpression = EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getNumberOfColumns()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_OF_COLUMNS_EDEFAULT = -1;
+
+	/**
+	 * The cached value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getNumberOfColumns()
+	 * @generated
+	 * @ordered
+	 */
+	protected int numberOfColumns = EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -236,6 +257,31 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @generated
 	 */
 	@Override
+	public int getNumberOfColumns() {
+		return numberOfColumns;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setNumberOfColumns(int newNumberOfColumns) {
+		int oldNumberOfColumns = numberOfColumns;
+		numberOfColumns = newNumberOfColumns;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS, oldNumberOfColumns,
+					numberOfColumns));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION:
@@ -246,6 +292,8 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return getCandidatesExpression();
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return getCandidateDisplayExpression();
+		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
+			return getNumberOfColumns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,6 +317,9 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			setCandidateDisplayExpression((String) newValue);
+			return;
+		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
+			setNumberOfColumns((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,6 +345,9 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			setCandidateDisplayExpression(EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
+			setNumberOfColumns(EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -318,6 +372,8 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
 			: !EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
+		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
+			return numberOfColumns != EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -342,6 +398,8 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		result.append(candidatesExpression);
 		result.append(", candidateDisplayExpression: "); //$NON-NLS-1$
 		result.append(candidateDisplayExpression);
+		result.append(", numberOfColumns: "); //$NON-NLS-1$
+		result.append(numberOfColumns);
 		result.append(')');
 		return result.toString();
 	}

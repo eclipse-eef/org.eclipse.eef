@@ -50,6 +50,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 			addEditExpressionPropertyDescriptor(object);
 			addCandidatesExpressionPropertyDescriptor(object);
 			addCandidateDisplayExpressionPropertyDescriptor(object);
+			addNumberOfColumnsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -119,6 +120,20 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	}
 
 	/**
+	 * This adds a property descriptor for the Number Of Columns feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addNumberOfColumnsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EEFRadioDescription_numberOfColumns_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_numberOfColumns_feature", "_UI_EEFRadioDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				null));
+	}
+
+	/**
 	 * This returns EEFRadioDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -166,6 +181,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 		case EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION:
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION:
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
+		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

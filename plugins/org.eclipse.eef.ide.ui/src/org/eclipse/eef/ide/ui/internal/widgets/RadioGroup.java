@@ -16,6 +16,7 @@ import java.util.Map;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -48,12 +49,18 @@ public class RadioGroup extends Composite {
 	 *            a composite control which will be the parent of the new instance (cannot be null)
 	 * @param widgetFactory
 	 *            the widget factory
+	 * @param numberOfColumns
+	 *            The number of columns to use to display the candidates
 	 */
-	public RadioGroup(Composite parent, EEFWidgetFactory widgetFactory) {
+	public RadioGroup(Composite parent, EEFWidgetFactory widgetFactory, int numberOfColumns) {
 		super(parent, SWT.RADIO);
 		this.widgetFactory = widgetFactory;
 
-		this.setLayout(new RowLayout(SWT.HORIZONTAL));
+		if (numberOfColumns <= 0) {
+			this.setLayout(new RowLayout(SWT.HORIZONTAL));
+		} else {
+			this.setLayout(new GridLayout(numberOfColumns, true));
+		}
 
 		addListener(SWT.Dispose, new Listener() {
 			@Override

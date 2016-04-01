@@ -35,9 +35,11 @@ public class RadioGroupViewer extends AbstractListViewer {
 	 *            the parent control
 	 * @param widgetFactory
 	 *            the widget factory
+	 * @param numberOfColumns
+	 *            The number of columns to use to display the candidates
 	 */
-	public RadioGroupViewer(Composite parent, EEFWidgetFactory widgetFactory) {
-		this(new RadioGroup(parent, widgetFactory));
+	public RadioGroupViewer(Composite parent, EEFWidgetFactory widgetFactory, int numberOfColumns) {
+		this(new RadioGroup(parent, widgetFactory, numberOfColumns));
 	}
 
 	/**

@@ -104,7 +104,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		this.radioGroupViewer = new RadioGroupViewer(parent, widgetFactory);
+		this.radioGroupViewer = new RadioGroupViewer(parent, widgetFactory, this.description.getNumberOfColumns());
 		this.radioGroup = radioGroupViewer.getRadioGroup();
 		this.radioGroupViewer.setContentProvider(ArrayContentProvider.getInstance());
 		this.radioGroupViewer.setLabelProvider(new EEFRadioLabelProvider());

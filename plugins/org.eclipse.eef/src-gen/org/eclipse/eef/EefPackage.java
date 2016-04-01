@@ -1073,13 +1073,22 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Number Of Columns</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>EEF Radio Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_RADIO_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+	int EEF_RADIO_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
@@ -2102,6 +2111,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFRadioDescription_CandidateDisplayExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFRadioDescription#getNumberOfColumns
+	 * <em>Number Of Columns</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Number Of Columns</em>'.
+	 * @see org.eclipse.eef.EEFRadioDescription#getNumberOfColumns()
+	 * @see #getEEFRadioDescription()
+	 * @generated
+	 */
+	EAttribute getEEFRadioDescription_NumberOfColumns();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFDynamicMappingFor <em>EEF Dynamic Mapping For</em>}
 	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2912,6 +2932,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFRadioDescription_CandidateDisplayExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Number Of Columns</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS = EefPackage.eINSTANCE.getEEFRadioDescription_NumberOfColumns();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
