@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_a0e2a448",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 4
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-01T12:27:03Z",
+      "side": 1,
+      "message": "Why do you have the style of the widget which contains the style of a text?\n\nWe may have some options in the feature that do work on a label but not on a text or the other way around. I would have defined the properties available on a label without using a new object. You still have two objects in this solution but instead of having them in the same container, one is inside the other here.\n\nI still believe that it will be confusing in Sirius (and in EEF too) since in Sirius everything is on the same style object. On one ContainerStyle, I have dozens of properties to manipulate in various tabs from the color of the container to the color of its label.\n\nI think that we should have this architecture:\n\nWidgetDescription\n|-LabelDescription\n   |-LabelStyle extends WidgetStyle\n|-TextDescription\n   |-TextStyle extends WidgetStyle\n\nnot:\n\nWidgetDescription\n|-LabelDescription\n   |-TextStyle extends WidgetStyle\n      |-TextStyle\n|-TextDescription\n   |-TextStyle extends WidgetStyle\n      |-TextStyle\n\nor \n\nWidgetDescription\n|-LabelDescription\n   |-TextStyle (label)\n   |-TextStyle (body)\n|-TextDescription\n   |-TextStyle (text)\n   |-TextStyle (label)",
+      "range": {
+        "startLine": 418,
+        "startChar": 4,
+        "endLine": 423,
+        "endChar": 26
+      },
+      "revId": "3f3e339938d3a0f933f217c3d5dfb5afedfc55e9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
