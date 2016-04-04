@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getContainer <em>Container</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules
  * </em>}</li>
@@ -126,6 +127,26 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected String semanticCandidateExpression = EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String preconditionExpression = EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getContainer() <em>Container</em>}' containment reference. <!-- begin-user-doc
@@ -280,6 +301,31 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public String getPreconditionExpression() {
+		return preconditionExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setPreconditionExpression(String newPreconditionExpression) {
+		String oldPreconditionExpression = preconditionExpression;
+		preconditionExpression = newPreconditionExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION,
+					oldPreconditionExpression, preconditionExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFContainerDescription getContainer() {
 		if (container != null && container.eIsProxy()) {
 			InternalEObject oldContainer = (InternalEObject) container;
@@ -420,6 +466,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return getDomainClass();
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return getSemanticCandidateExpression();
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return getPreconditionExpression();
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			if (resolve) {
 				return getContainer();
@@ -453,6 +501,9 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression((String) newValue);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression((String) newValue);
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			setContainer((EEFContainerDescription) newValue);
@@ -489,6 +540,9 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression(EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression(EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			setContainer((EEFContainerDescription) null);
 			return;
@@ -522,6 +576,9 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
 			: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+			: !EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
 			return container != null;
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
@@ -552,6 +609,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		result.append(domainClass);
 		result.append(", semanticCandidateExpression: "); //$NON-NLS-1$
 		result.append(semanticCandidateExpression);
+		result.append(", preconditionExpression: "); //$NON-NLS-1$
+		result.append(preconditionExpression);
 		result.append(')');
 		return result.toString();
 	}

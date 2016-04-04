@@ -173,12 +173,21 @@ public interface EefPackage extends EPackage {
 	int EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION = 4;
+
+	/**
 	 * The feature id for the '<em><b>Groups</b></em>' reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__GROUPS = 4;
+	int EEF_PAGE_DESCRIPTION__GROUPS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Validation Rules</b></em>' containment reference list. <!--
@@ -187,7 +196,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES = 5;
+	int EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES = 6;
 
 	/**
 	 * The number of structural features of the '<em>EEF Page Description</em>' class. <!-- begin-user-doc --> <!--
@@ -196,7 +205,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 6;
+	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
@@ -484,13 +493,22 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION = 4;
+
+	/**
 	 * The feature id for the '<em><b>Container</b></em>' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__CONTAINER = 4;
+	int EEF_GROUP_DESCRIPTION__CONTAINER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Validation Rules</b></em>' containment reference list. <!--
@@ -499,7 +517,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES = 5;
+	int EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES = 6;
 
 	/**
 	 * The feature id for the '<em><b>Property Validation Rules</b></em>' containment reference list. <!--
@@ -508,7 +526,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES = 6;
+	int EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES = 7;
 
 	/**
 	 * The number of structural features of the '<em>EEF Group Description</em>' class. <!-- begin-user-doc --> <!--
@@ -517,7 +535,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 7;
+	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
@@ -1486,6 +1504,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFPageDescription_SemanticCandidateExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression
+	 * <em>Precondition Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFPageDescription#getPreconditionExpression()
+	 * @see #getEEFPageDescription()
+	 * @generated
+	 */
+	EAttribute getEEFPageDescription_PreconditionExpression();
+
+	/**
 	 * Returns the meta object for the reference list '{@link org.eclipse.eef.EEFPageDescription#getGroups
 	 * <em>Groups</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1716,6 +1745,17 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFGroupDescription_SemanticCandidateExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression
+	 * <em>Precondition Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getPreconditionExpression()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EAttribute getEEFGroupDescription_PreconditionExpression();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFGroupDescription#getContainer
@@ -2437,6 +2477,14 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = EefPackage.eINSTANCE.getEEFPageDescription_SemanticCandidateExpression();
 
 		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION = EefPackage.eINSTANCE.getEEFPageDescription_PreconditionExpression();
+
+		/**
 		 * The meta object literal for the '<em><b>Groups</b></em>' reference list feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
 		 *
@@ -2616,6 +2664,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupDescription_SemanticCandidateExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupDescription_PreconditionExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Container</b></em>' containment reference feature. <!--

@@ -210,4 +210,35 @@ public final class Eval {
 		}
 		return null;
 	}
+
+	/**
+	 * Evaluates the expression and returns its result if its matches the given result type.
+	 *
+	 * @param expression
+	 *            The expression
+	 * @param expectedResultType
+	 *            The expected result type
+	 * @param <T>
+	 *            The type expected
+	 * @return The result of the expression
+	 */
+	public <T> T get(String expression, Class<T> expectedResultType) {
+		if (!Util.isBlank(expression)) {
+			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
+			if (evaluationResult.success()) {
+				Object value = evaluationResult.getValue();
+				if (expectedResultType.isInstance(value) || (value == null && !expectedResultType.isPrimitive())) {
+					T castValue = expectedResultType.cast(value);
+					return castValue;
+				} else if (EEFCorePlugin.getPlugin() != null) {
+					String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
+							expectedResultType.getName(), value);
+					EEFCorePlugin.getPlugin().error(message);
+				}
+			} else if (EEFCorePlugin.getPlugin() != null) {
+				EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
+			}
+		}
+		return null;
+	}
 }

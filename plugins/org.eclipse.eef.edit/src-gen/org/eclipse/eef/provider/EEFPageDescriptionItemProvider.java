@@ -60,6 +60,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 			addLabelExpressionPropertyDescriptor(object);
 			addDomainClassPropertyDescriptor(object);
 			addSemanticCandidateExpressionPropertyDescriptor(object);
+			addPreconditionExpressionPropertyDescriptor(object);
 			addGroupsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -118,6 +119,24 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 				getString(
 						"_UI_PropertyDescriptor_description", "_UI_EEFPageDescription_semanticCandidateExpression_feature", "_UI_EEFPageDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						EefPackage.Literals.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Precondition Expression feature. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addPreconditionExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+		.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EEFPageDescription_preconditionExpression_feature"), //$NON-NLS-1$
+				getString(
+						"_UI_PropertyDescriptor_description", "_UI_EEFPageDescription_preconditionExpression_feature", "_UI_EEFPageDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -211,6 +230,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 		case EefPackage.EEF_PAGE_DESCRIPTION__DOMAIN_CLASS:
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:

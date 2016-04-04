@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
  * </li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getContainer <em>Container</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
@@ -127,6 +128,29 @@ public interface EEFGroupDescription extends EObject {
 	 * @generated
 	 */
 	void setSemanticCandidateExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Indicates if the group should be displayed. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #setPreconditionExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_PreconditionExpression()
+	 * @model
+	 * @generated
+	 */
+	String getPreconditionExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression
+	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Precondition Expression</em>' attribute.
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 */
+	void setPreconditionExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Container</b></em>' containment reference. <!-- begin-user-doc --> <!--

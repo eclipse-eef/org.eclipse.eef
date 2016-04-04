@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getGroups <em>Groups</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules</em>}
  * </li>
@@ -124,6 +125,26 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String semanticCandidateExpression = EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PRECONDITION_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getPreconditionExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String preconditionExpression = EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' reference list. <!-- begin-user-doc --> <!--
@@ -268,6 +289,31 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public String getPreconditionExpression() {
+		return preconditionExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setPreconditionExpression(String newPreconditionExpression) {
+		String oldPreconditionExpression = preconditionExpression;
+		preconditionExpression = newPreconditionExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION,
+					oldPreconditionExpression, preconditionExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
 			groups = new EObjectResolvingEList<EEFGroupDescription>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
@@ -319,6 +365,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return getDomainClass();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return getSemanticCandidateExpression();
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return getPreconditionExpression();
 		case EefPackage.EEF_PAGE_DESCRIPTION__GROUPS:
 			return getGroups();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
@@ -347,6 +395,9 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return;
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression((String) newValue);
+			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression((String) newValue);
 			return;
 		case EefPackage.EEF_PAGE_DESCRIPTION__GROUPS:
 			getGroups().clear();
@@ -380,6 +431,9 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			setSemanticCandidateExpression(EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			setPreconditionExpression(EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_PAGE_DESCRIPTION__GROUPS:
 			getGroups().clear();
 			return;
@@ -410,6 +464,9 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
 			: !EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
+			return EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+			: !EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
@@ -438,6 +495,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		result.append(domainClass);
 		result.append(", semanticCandidateExpression: "); //$NON-NLS-1$
 		result.append(semanticCandidateExpression);
+		result.append(", preconditionExpression: "); //$NON-NLS-1$
+		result.append(preconditionExpression);
 		result.append(')');
 		return result.toString();
 	}

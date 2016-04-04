@@ -100,30 +100,36 @@ public class EEFViewImpl implements EEFView {
 	public void initialize() {
 		EEFCorePlugin.getPlugin().debug("EEFViewImpl#initialize()"); //$NON-NLS-1$
 		for (final EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
-			String semanticCandidatesExpression = Util.firstNonBlank(eefPageDescription.getSemanticCandidateExpression(),
-					org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
-				@Override
-				public void apply(Object value) {
-					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), eefViewDescription
-							.getEPackages(), domainClassTester);
-					Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
-					Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
+			String preconditionExpression = eefPageDescription.getPreconditionExpression();
+			Boolean preconditionValid = new Eval(this.interpreter, this.variableManager).get(preconditionExpression, Boolean.class);
+			if (preconditionValid == null || preconditionValid.booleanValue()) {
+				String semanticCandidatesExpression = Util.firstNonBlank(eefPageDescription.getSemanticCandidateExpression(),
+						org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
 
-					boolean isUnique = true;
-					Iterator<EObject> iterator = eObjects.iterator();
-					while (iterator.hasNext()) {
-						EObject eObject = iterator.next();
+				new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
+					@Override
+					public void apply(Object value) {
+						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), eefViewDescription
+								.getEPackages(), domainClassTester);
+						Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
+						Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
 
-						if (isUnique && iterator.hasNext()) {
-							isUnique = false;
+						boolean isUnique = true;
+						Iterator<EObject> iterator = eObjects.iterator();
+						while (iterator.hasNext()) {
+							EObject eObject = iterator.next();
+
+							if (isUnique && iterator.hasNext()) {
+								isUnique = false;
+							}
+							EEFPageImpl ePage = createPage(eefPageDescription, eObject, isUnique);
+							ePage.initialize();
+							EEFViewImpl.this.eefPages.add(ePage);
 						}
-						EEFPageImpl ePage = createPage(eefPageDescription, eObject, isUnique);
-						ePage.initialize();
-						EEFViewImpl.this.eefPages.add(ePage);
 					}
-				}
-			});
+				});
+			}
+
 		}
 	}
 

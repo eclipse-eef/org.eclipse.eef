@@ -111,25 +111,29 @@ public class EEFPageImpl implements EEFPage {
 	public void initialize() {
 		EEFCorePlugin.getPlugin().debug("EEFPageImpl#initialize()"); //$NON-NLS-1$
 		for (final EEFGroupDescription eefGroupDescription : eefPageDescription.getGroups()) {
-			String semanticCandidatesExpression = Util.firstNonBlank(eefGroupDescription.getSemanticCandidateExpression(),
-					org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
+			String preconditionExpression = eefGroupDescription.getPreconditionExpression();
+			Boolean preconditionValid = new Eval(this.interpreter, this.variableManager).get(preconditionExpression, Boolean.class);
+			if (preconditionValid == null || preconditionValid.booleanValue()) {
+				String semanticCandidatesExpression = Util.firstNonBlank(eefGroupDescription.getSemanticCandidateExpression(),
+						org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
 
-			new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
-				@Override
-				public void apply(Object value) {
-					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), eefView
-							.getDescription().getEPackages(), domainClassTester);
-					Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
-					Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
-					for (EObject eObject : eObjects) {
-						IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
-						childVariableManager.put(EEFExpressionUtils.SELF, eObject);
-						EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter,
-								editingDomain);
-						eefGroups.add(eefGroupImpl);
+				new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
+					@Override
+					public void apply(Object value) {
+						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), eefView
+								.getDescription().getEPackages(), domainClassTester);
+						Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
+						Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
+						for (EObject eObject : eObjects) {
+							IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
+							childVariableManager.put(EEFExpressionUtils.SELF, eObject);
+							EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter,
+									editingDomain);
+							eefGroups.add(eefGroupImpl);
+						}
 					}
-				}
-			});
+				});
+			}
 		}
 	}
 
