@@ -24,7 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFSemanticValidationRuleDescription} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EEFSemanticValidationRuleDescriptionItemProvider extends EEFValidationRuleDescriptionItemProvider {
@@ -106,7 +106,7 @@ public class EEFSemanticValidationRuleDescriptionItemProvider extends EEFValidat
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

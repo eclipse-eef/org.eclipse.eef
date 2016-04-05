@@ -30,13 +30,9 @@ package org.eclipse.eef;
  */
 public interface EEFTextStyle extends EEFWidgetStyle {
 	/**
-	 * Returns the value of the '<em><b>Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Background Color Expression</em>' attribute isn't clear, there really should be more
-	 * of a description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> Defines the background color of the widget. It must be defined as
-	 * hex (#000000) or RGB (rgb(0,0,0)). <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Background Color Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Defines the background color of the widget. It must be defined as hex
+	 * (#000000) or RGB (rgb(0,0,0)). <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Background Color Expression</em>' attribute.
 	 * @see #setBackgroundColorExpression(String)

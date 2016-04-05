@@ -36,8 +36,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -97,25 +96,22 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		FormData formData = new FormData();
-		formData.left = new FormAttachment(0, LABEL_WIDTH);
-		formData.right = new FormAttachment(100, 0);
-
 		// Get text area line count
 		int lineCount = description.getLineCount();
 
 		// Create text or text area according to the defined line count
 		if (lineCount > 1) {
-			this.text = widgetFactory.createStyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP);
-			formData.height = lineCount * text.getLineHeight();
+			this.text = widgetFactory.createStyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.MULTI);
+			GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, true);
+			gridData.minimumHeight = lineCount * text.getLineHeight();
+			this.text.setLayoutData(gridData);
 		} else {
 			this.text = widgetFactory.createStyledText(parent, SWT.NONE);
+			this.text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		}
 
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
-
-		this.text.setLayoutData(formData);
 
 		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);

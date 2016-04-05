@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import com.google.common.base.Objects;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +33,6 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -91,11 +91,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		FormData buttonFormData = new FormData();
-		buttonFormData.left = new FormAttachment(0, LABEL_WIDTH);
-
 		this.checkbox = widgetFactory.createButton(parent, "", SWT.CHECK); //$NON-NLS-1$
-		this.checkbox.setLayoutData(buttonFormData);
 
 		this.controller = new EEFControllersFactory().createCheckboxController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
@@ -174,6 +170,15 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
+
+		this.getController().onNewLabel(new IConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				if (!checkbox.isDisposed() && !(checkbox.getText() != null && checkbox.getText().equals(value))) {
+					checkbox.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+				}
+			}
+		});
 
 		this.selectionListener = new SelectionListener() {
 			@Override

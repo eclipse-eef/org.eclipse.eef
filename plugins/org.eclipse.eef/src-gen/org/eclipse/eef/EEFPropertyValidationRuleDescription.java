@@ -30,7 +30,7 @@ public interface EEFPropertyValidationRuleDescription extends EEFValidationRuleD
 	 * Returns the value of the '<em><b>Targets</b></em>' reference list. The list contents are of type
 	 * {@link org.eclipse.eef.EEFWidgetDescription}. It is bidirectional and its opposite is '
 	 * {@link org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules <em>Property Validation Rules</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The widgets involved in this validation rules.
+	 * begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The widgets involved in this validation rule.
 	 * <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Targets</em>' reference list.

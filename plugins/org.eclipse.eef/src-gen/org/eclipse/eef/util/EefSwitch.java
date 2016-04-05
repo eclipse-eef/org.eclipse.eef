@@ -16,16 +16,20 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFFillLayoutDescription;
+import org.eclipse.eef.EEFGridLayoutDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
+import org.eclipse.eef.EEFLayoutDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioConditionalStyle;
@@ -169,9 +173,50 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_CONTROL_DESCRIPTION: {
+			EEFControlDescription eefControlDescription = (EEFControlDescription) theEObject;
+			T result = caseEEFControlDescription(eefControlDescription);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case EefPackage.EEF_CONTAINER_DESCRIPTION: {
 			EEFContainerDescription eefContainerDescription = (EEFContainerDescription) theEObject;
 			T result = caseEEFContainerDescription(eefContainerDescription);
+			if (result == null) {
+				result = caseEEFControlDescription(eefContainerDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_LAYOUT_DESCRIPTION: {
+			EEFLayoutDescription eefLayoutDescription = (EEFLayoutDescription) theEObject;
+			T result = caseEEFLayoutDescription(eefLayoutDescription);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_FILL_LAYOUT_DESCRIPTION: {
+			EEFFillLayoutDescription eefFillLayoutDescription = (EEFFillLayoutDescription) theEObject;
+			T result = caseEEFFillLayoutDescription(eefFillLayoutDescription);
+			if (result == null) {
+				result = caseEEFLayoutDescription(eefFillLayoutDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_GRID_LAYOUT_DESCRIPTION: {
+			EEFGridLayoutDescription eefGridLayoutDescription = (EEFGridLayoutDescription) theEObject;
+			T result = caseEEFGridLayoutDescription(eefGridLayoutDescription);
+			if (result == null) {
+				result = caseEEFLayoutDescription(eefGridLayoutDescription);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -180,6 +225,9 @@ public class EefSwitch<T> extends Switch<T> {
 		case EefPackage.EEF_WIDGET_DESCRIPTION: {
 			EEFWidgetDescription eefWidgetDescription = (EEFWidgetDescription) theEObject;
 			T result = caseEEFWidgetDescription(eefWidgetDescription);
+			if (result == null) {
+				result = caseEEFControlDescription(eefWidgetDescription);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -190,6 +238,9 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFTextDescription(eefTextDescription);
 			if (result == null) {
 				result = caseEEFWidgetDescription(eefTextDescription);
+			}
+			if (result == null) {
+				result = caseEEFControlDescription(eefTextDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -203,6 +254,9 @@ public class EefSwitch<T> extends Switch<T> {
 				result = caseEEFWidgetDescription(eefLabelDescription);
 			}
 			if (result == null) {
+				result = caseEEFControlDescription(eefLabelDescription);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -212,6 +266,9 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFButtonDescription(eefButtonDescription);
 			if (result == null) {
 				result = caseEEFWidgetDescription(eefButtonDescription);
+			}
+			if (result == null) {
+				result = caseEEFControlDescription(eefButtonDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -225,6 +282,9 @@ public class EefSwitch<T> extends Switch<T> {
 				result = caseEEFWidgetDescription(eefCheckboxDescription);
 			}
 			if (result == null) {
+				result = caseEEFControlDescription(eefCheckboxDescription);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -234,6 +294,9 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFSelectDescription(eefSelectDescription);
 			if (result == null) {
 				result = caseEEFWidgetDescription(eefSelectDescription);
+			}
+			if (result == null) {
+				result = caseEEFControlDescription(eefSelectDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -247,6 +310,9 @@ public class EefSwitch<T> extends Switch<T> {
 				result = caseEEFWidgetDescription(eefRadioDescription);
 			}
 			if (result == null) {
+				result = caseEEFControlDescription(eefRadioDescription);
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
 			}
 			return result;
@@ -254,6 +320,9 @@ public class EefSwitch<T> extends Switch<T> {
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR: {
 			EEFDynamicMappingFor eefDynamicMappingFor = (EEFDynamicMappingFor) theEObject;
 			T result = caseEEFDynamicMappingFor(eefDynamicMappingFor);
+			if (result == null) {
+				result = caseEEFControlDescription(eefDynamicMappingFor);
+			}
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -272,6 +341,9 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFCustomWidgetDescription(eefCustomWidgetDescription);
 			if (result == null) {
 				result = caseEEFWidgetDescription(eefCustomWidgetDescription);
+			}
+			if (result == null) {
+				result = caseEEFControlDescription(eefCustomWidgetDescription);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -584,6 +656,21 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Control Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Control Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFControlDescription(EEFControlDescription object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Container Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -595,6 +682,51 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFContainerDescription(EEFContainerDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Layout Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Layout Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFLayoutDescription(EEFLayoutDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Fill Layout Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Fill Layout Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFFillLayoutDescription(EEFFillLayoutDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Grid Layout Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Grid Layout Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFGridLayoutDescription(EEFGridLayoutDescription object) {
 		return null;
 	}
 

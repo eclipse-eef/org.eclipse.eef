@@ -51,7 +51,7 @@ public interface EEFCustomWidgetDescription extends EEFWidgetDescription {
 	 * --> <!-- begin-model-doc --> Defines the custom widget style <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Style</em>' containment reference.
-	 * @see #setStyle(EEFCustomStyle)
+	 * @see #setStyle(EEFCustomWidgetStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFCustomWidgetDescription_Style()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
