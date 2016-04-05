@@ -21,6 +21,8 @@ import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFFillLayoutDescription;
+import org.eclipse.eef.EEFGridLayoutDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
@@ -40,6 +42,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION;
 import org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
@@ -106,6 +109,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFGroupDescription();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION:
 			return createEEFContainerDescription();
+		case EefPackage.EEF_FILL_LAYOUT_DESCRIPTION:
+			return createEEFFillLayoutDescription();
+		case EefPackage.EEF_GRID_LAYOUT_DESCRIPTION:
+			return createEEFGridLayoutDescription();
 		case EefPackage.EEF_TEXT_DESCRIPTION:
 			return createEEFTextDescription();
 		case EefPackage.EEF_LABEL_DESCRIPTION:
@@ -169,6 +176,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 		switch (eDataType.getClassifierID()) {
 		case EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION:
 			return createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(eDataType, initialValue);
+		case EefPackage.EEF_FILL_LAYOUT_ORIENTATION:
+			return createEEF_FILL_LAYOUT_ORIENTATIONFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -184,6 +193,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 		switch (eDataType.getClassifierID()) {
 		case EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION:
 			return convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(eDataType, instanceValue);
+		case EefPackage.EEF_FILL_LAYOUT_ORIENTATION:
+			return convertEEF_FILL_LAYOUT_ORIENTATIONToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -275,6 +286,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFContainerDescription createEEFContainerDescription() {
 		EEFContainerDescriptionImpl eefContainerDescription = new EEFContainerDescriptionImpl();
 		return eefContainerDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFFillLayoutDescription createEEFFillLayoutDescription() {
+		EEFFillLayoutDescriptionImpl eefFillLayoutDescription = new EEFFillLayoutDescriptionImpl();
+		return eefFillLayoutDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFGridLayoutDescription createEEFGridLayoutDescription() {
+		EEFGridLayoutDescriptionImpl eefGridLayoutDescription = new EEFGridLayoutDescriptionImpl();
+		return eefGridLayoutDescription;
 	}
 
 	/**
@@ -560,6 +593,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	public String convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public EEF_FILL_LAYOUT_ORIENTATION createEEF_FILL_LAYOUT_ORIENTATIONFromString(EDataType eDataType, String initialValue) {
+		EEF_FILL_LAYOUT_ORIENTATION result = EEF_FILL_LAYOUT_ORIENTATION.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertEEF_FILL_LAYOUT_ORIENTATIONToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

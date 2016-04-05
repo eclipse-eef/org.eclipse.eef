@@ -111,6 +111,8 @@ public class EEFTab {
 			IStructuredSelection iStructuredSelection = (IStructuredSelection) selection;
 			Object object = iStructuredSelection.getFirstElement();
 
+			// This "unecessary" cast is used to keep the compatibility with Eclipse Luna
+			@SuppressWarnings("cast")
 			InputDescriptor input = (InputDescriptor) Platform.getAdapterManager().getAdapter(object, InputDescriptor.class);
 
 			if (input != null) {
@@ -138,7 +140,7 @@ public class EEFTab {
 		EAttribute imageExpressionEAttribute = EefPackage.Literals.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION;
 		String imageExpression = eefView.getDescription().getImageExpression();
 		Object object = new Eval(eefView.getInterpreter(), eefView.getVariableManager())
-				.get(imageExpressionEAttribute, imageExpression, Object.class);
+		.get(imageExpressionEAttribute, imageExpression, Object.class);
 		if (object instanceof URL) {
 			Image image = EEFIdeUiPlugin.getPlugin().getImage((URL) object);
 			this.formContainer.getForm().setImage(image);

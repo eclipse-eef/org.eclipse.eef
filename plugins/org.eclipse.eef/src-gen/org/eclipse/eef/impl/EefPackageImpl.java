@@ -16,16 +16,20 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFFillLayoutDescription;
+import org.eclipse.eef.EEFGridLayoutDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
+import org.eclipse.eef.EEFLayoutDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioConditionalStyle;
@@ -121,7 +125,35 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 *
 	 * @generated
 	 */
+	private EClass eefControlDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass eefContainerDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefLayoutDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefFillLayoutDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefGridLayoutDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -318,6 +350,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EEnum eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EEnum eeF_FILL_LAYOUT_ORIENTATIONEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -740,7 +779,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFGroupDescription_Container() {
+	public EReference getEEFGroupDescription_Controls() {
 		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -770,6 +809,26 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFControlDescription() {
+		return eefControlDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFControlDescription_Identifier() {
+		return (EAttribute) eefControlDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFContainerDescription() {
 		return eefContainerDescriptionEClass;
 	}
@@ -780,18 +839,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFContainerDescription_Identifier() {
-		return (EAttribute) eefContainerDescriptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EReference getEEFContainerDescription_Widgets() {
-		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(1);
+	public EReference getEEFContainerDescription_Controls() {
+		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -801,7 +850,77 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 */
 	@Override
 	public EReference getEEFContainerDescription_DynamicMappings() {
+		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFContainerDescription_Layout() {
 		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFLayoutDescription() {
+		return eefLayoutDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFFillLayoutDescription() {
+		return eefFillLayoutDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFFillLayoutDescription_Orientation() {
+		return (EAttribute) eefFillLayoutDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFGridLayoutDescription() {
+		return eefGridLayoutDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGridLayoutDescription_NumberOfColumns() {
+		return (EAttribute) eefGridLayoutDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGridLayoutDescription_MakeColumnsWithEqualWidth() {
+		return (EAttribute) eefGridLayoutDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -820,7 +939,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFWidgetDescription_Identifier() {
+	public EAttribute getEEFWidgetDescription_LabelExpression() {
 		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -830,7 +949,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFWidgetDescription_LabelExpression() {
+	public EAttribute getEEFWidgetDescription_HelpExpression() {
 		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -840,18 +959,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFWidgetDescription_HelpExpression() {
-		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EReference getEEFWidgetDescription_PropertyValidationRules() {
-		return (EReference) eefWidgetDescriptionEClass.getEStructuralFeatures().get(3);
+		return (EReference) eefWidgetDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1750,6 +1859,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getEEF_FILL_LAYOUT_ORIENTATION() {
+		return eeF_FILL_LAYOUT_ORIENTATIONEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EefFactory getEefFactory() {
 		return (EefFactory) getEFactoryInstance();
 	}
@@ -1816,17 +1935,28 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS);
 		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
 		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION);
-		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER);
+		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 
+		eefControlDescriptionEClass = createEClass(EefPackage.EEF_CONTROL_DESCRIPTION);
+		createEAttribute(eefControlDescriptionEClass, EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER);
+
 		eefContainerDescriptionEClass = createEClass(EefPackage.EEF_CONTAINER_DESCRIPTION);
-		createEAttribute(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER);
-		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS);
+		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS);
 		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS);
+		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT);
+
+		eefLayoutDescriptionEClass = createEClass(EefPackage.EEF_LAYOUT_DESCRIPTION);
+
+		eefFillLayoutDescriptionEClass = createEClass(EefPackage.EEF_FILL_LAYOUT_DESCRIPTION);
+		createEAttribute(eefFillLayoutDescriptionEClass, EefPackage.EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION);
+
+		eefGridLayoutDescriptionEClass = createEClass(EefPackage.EEF_GRID_LAYOUT_DESCRIPTION);
+		createEAttribute(eefGridLayoutDescriptionEClass, EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS);
+		createEAttribute(eefGridLayoutDescriptionEClass, EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH);
 
 		eefWidgetDescriptionEClass = createEClass(EefPackage.EEF_WIDGET_DESCRIPTION);
-		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER);
 		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
 		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION);
 		createEReference(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES);
@@ -1947,6 +2077,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		// Create enums
 		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION);
+		eeF_FILL_LAYOUT_ORIENTATIONEEnum = createEEnum(EefPackage.EEF_FILL_LAYOUT_ORIENTATION);
 	}
 
 	/**
@@ -1983,12 +2114,17 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		// Add supertypes to classes
 		eefPropertyValidationRuleDescriptionEClass.getESuperTypes().add(this.getEEFValidationRuleDescription());
 		eefSemanticValidationRuleDescriptionEClass.getESuperTypes().add(this.getEEFValidationRuleDescription());
+		eefContainerDescriptionEClass.getESuperTypes().add(this.getEEFControlDescription());
+		eefFillLayoutDescriptionEClass.getESuperTypes().add(this.getEEFLayoutDescription());
+		eefGridLayoutDescriptionEClass.getESuperTypes().add(this.getEEFLayoutDescription());
+		eefWidgetDescriptionEClass.getESuperTypes().add(this.getEEFControlDescription());
 		eefTextDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefLabelDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefButtonDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefCheckboxDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefSelectDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefRadioDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
+		eefDynamicMappingForEClass.getESuperTypes().add(this.getEEFControlDescription());
 		eefCustomWidgetDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefTextStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefLabelStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
@@ -2150,10 +2286,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				theEcorePackage.getEString(),
 				"preconditionExpression", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
-				getEEFGroupDescription_Container(),
-				this.getEEFContainerDescription(),
+				getEEFGroupDescription_Controls(),
+				this.getEEFControlDescription(),
 				null,
-				"container", null, 1, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+				"controls", null, 1, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getEEFGroupDescription_SemanticValidationRules(),
 				this.getEEFSemanticValidationRuleDescription(),
@@ -2165,29 +2301,54 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				null,
 				"propertyValidationRules", null, 0, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
+		initEClass(eefControlDescriptionEClass, EEFControlDescription.class,
+				"EEFControlDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFControlDescription_Identifier(),
+				ecorePackage.getEString(),
+				"identifier", null, 1, 1, EEFControlDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(eefContainerDescriptionEClass, EEFContainerDescription.class,
 				"EEFContainerDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFContainerDescription_Identifier(),
-				ecorePackage.getEString(),
-				"identifier", null, 1, 1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
-				getEEFContainerDescription_Widgets(),
-				this.getEEFWidgetDescription(),
+				getEEFContainerDescription_Controls(),
+				this.getEEFControlDescription(),
 				null,
-				"widgets", null, 1, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+				"controls", null, 1, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getEEFContainerDescription_DynamicMappings(),
 				this.getEEFDynamicMappingFor(),
 				null,
 				"dynamicMappings", null, 0, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFContainerDescription_Layout(),
+				this.getEEFLayoutDescription(),
+				null,
+				"layout", null, 0, 1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefLayoutDescriptionEClass, EEFLayoutDescription.class,
+				"EEFLayoutDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefFillLayoutDescriptionEClass, EEFFillLayoutDescription.class,
+				"EEFFillLayoutDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFFillLayoutDescription_Orientation(),
+				this.getEEF_FILL_LAYOUT_ORIENTATION(),
+				"orientation", "VERTICAL", 0, 1, EEFFillLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+
+		initEClass(eefGridLayoutDescriptionEClass, EEFGridLayoutDescription.class,
+				"EEFGridLayoutDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGridLayoutDescription_NumberOfColumns(),
+				theEcorePackage.getEInt(),
+				"numberOfColumns", "1", 0, 1, EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEAttribute(
+				getEEFGridLayoutDescription_MakeColumnsWithEqualWidth(),
+				theEcorePackage.getEBoolean(),
+				"makeColumnsWithEqualWidth", "1", 0, 1, EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		initEClass(eefWidgetDescriptionEClass, EEFWidgetDescription.class,
 				"EEFWidgetDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetDescription_Identifier(),
-				ecorePackage.getEString(),
-				"identifier", null, 1, 1, EEFWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
 				getEEFWidgetDescription_LabelExpression(),
 				ecorePackage.getEString(),
@@ -2558,6 +2719,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		addEEnumLiteral(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.INFO);
 		addEEnumLiteral(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.WARNING);
 		addEEnumLiteral(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.ERROR);
+
+		initEEnum(eeF_FILL_LAYOUT_ORIENTATIONEEnum, org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION.class, "EEF_FILL_LAYOUT_ORIENTATION"); //$NON-NLS-1$
+		addEEnumLiteral(eeF_FILL_LAYOUT_ORIENTATIONEEnum, org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION.VERTICAL);
+		addEEnumLiteral(eeF_FILL_LAYOUT_ORIENTATIONEEnum, org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION.HORIZONTAL);
 
 		// Create resource
 		createResource(EefPackage.eNS_URI);

@@ -6,11 +6,9 @@
     xmlns:eef="http://www.eclipse.org/eef"
     xsi:schemaLocation="http://www.eclipse.org/eef ../../../../org.eclipse.eef/model/eef.ecore">
   <groups>
-    <container>
-      <widgets
-          xsi:type="eef:EEFButtonDescription"
-          labelExpression="aql:'Click:'"/>
-    </container>
+    <controls
+        xsi:type="eef:EEFButtonDescription"
+        labelExpression="aql:'Click:'"/>
   </groups>
   <pages groups="//@groups.0"/>
 </eef:EEFViewDescription>

@@ -42,8 +42,6 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -116,11 +114,8 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		this.radioGroupViewer.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
 
-		FormData radioGroupFormData = new FormData();
-		radioGroupFormData.left = new FormAttachment(0, LABEL_WIDTH);
-		this.radioGroup.setLayoutData(radioGroupFormData);
-
-		this.controller = new EEFControllersFactory().createRadioController(this.description, this.variableManager, this.interpreter, this.contextAdapter);
+		this.controller = new EEFControllersFactory().createRadioController(this.description, this.variableManager, this.interpreter,
+				this.contextAdapter);
 	}
 
 	/**

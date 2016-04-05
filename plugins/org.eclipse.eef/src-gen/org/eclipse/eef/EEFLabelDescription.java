@@ -55,10 +55,10 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
+	 * --> <!-- begin-model-doc --> Defines the label style <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Style</em>' containment reference.
-	 * @see #setStyle(EEFTextStyle)
+	 * @see #setStyle(EEFLabelStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_Style()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
@@ -78,7 +78,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
-	 * of type {@link org.eclipse.eef.EEFButtonConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * of type {@link org.eclipse.eef.EEFLabelConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> Defines the label style associated to a precondition <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.

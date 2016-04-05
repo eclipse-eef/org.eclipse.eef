@@ -101,8 +101,8 @@ public abstract class AbstractEEFControllerTests {
 	}
 
 	protected <T extends EEFWidgetDescription> T widget(EEFGroupDescription eefGroupDescription, Class<T> clazz, int widgetIndex) {
-		List<T> list = eefGroupDescription.getContainer().getWidgets().stream().filter(w -> clazz.isAssignableFrom(w.getClass()))
-				.map(w -> clazz.cast(w)).collect(Collectors.toList());
+		List<T> list = eefGroupDescription.getControls().stream().filter(w -> clazz.isAssignableFrom(w.getClass())).map(w -> clazz.cast(w))
+				.collect(Collectors.toList());
 		return list.get(widgetIndex);
 	}
 

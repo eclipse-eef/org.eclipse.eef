@@ -22,6 +22,7 @@ import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -34,8 +35,6 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -86,11 +85,8 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
-		FormData buttonFormData = new FormData();
-		buttonFormData.left = new FormAttachment(0, LABEL_WIDTH);
-
-		this.body = new StyledText(parent, SWT.WRAP);
-		this.body.setLayoutData(buttonFormData);
+		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
+		this.body = widgetFactory.createStyledText(parent, SWT.WRAP);
 
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter);
 	}

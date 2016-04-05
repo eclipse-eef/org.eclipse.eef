@@ -9,7 +9,6 @@
 package org.eclipse.eef;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Dynamic Mapping For</b></em>'. <!--
@@ -28,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EEFDynamicMappingFor extends EObject {
+public interface EEFDynamicMappingFor extends EEFControlDescription {
 	/**
 	 * Returns the value of the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> The name of the variable which contain the current value of the iteration. <!-- end-model-doc

@@ -185,10 +185,10 @@
         <details key="documentation" value="Indicates if the group should be displayed."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
-        eType="#//EEFContainerDescription" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" lowerBound="1"
+        upperBound="-1" eType="#//EEFControlDescription" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Contains the container related to a group."/>
+        <details key="documentation" value="Contains the controls related to a group."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semanticValidationRules"
@@ -204,15 +204,17 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFContainerDescription">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFControlDescription" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Used to identify a specific Container in a Group."/>
+        <details key="documentation" value="Used to identify a specific control."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="widgets" lowerBound="1"
-        upperBound="-1" eType="#//EEFWidgetDescription" containment="true">
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFContainerDescription" eSuperTypes="#//EEFControlDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" lowerBound="1"
+        upperBound="-1" eType="#//EEFControlDescription" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="References the widgets to hold."/>
       </eAnnotations>
@@ -223,17 +225,46 @@
         <details key="documentation" value="References the dynamic mappings to hold."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//EEFLayoutDescription"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The layout of the container."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFWidgetDescription" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFLayoutDescription" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFFillLayoutDescription" eSuperTypes="#//EEFLayoutDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="#//EEF_FILL_LAYOUT_ORIENTATION"
+        defaultValueLiteral="VERTICAL">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The orientation of the fill layout."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFGridLayoutDescription" eSuperTypes="#//EEFLayoutDescription">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfColumns" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The number of columns used inside the grid layout."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="makeColumnsWithEqualWidth"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates if the columns should have an equal width."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EEF_FILL_LAYOUT_ORIENTATION">
+    <eLiterals name="VERTICAL"/>
+    <eLiterals name="HORIZONTAL" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFWidgetDescription" abstract="true"
+      eSuperTypes="#//EEFControlDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Graphical element."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Used to identify a specific widget."/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="labelExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The label of the Widget visible by the end-users."/>
@@ -443,7 +474,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EEFDynamicMappingFor">
+  <eClassifiers xsi:type="ecore:EClass" name="EEFDynamicMappingFor" eSuperTypes="#//EEFControlDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iterator" lowerBound="1"
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

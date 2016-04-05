@@ -456,6 +456,8 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 * @param part
 	 *            the new activated part.
 	 */
+	// Used to keep the compatibility with luna
+	@SuppressWarnings("cast")
 	private void handlePartActivated(IWorkbenchPart part) {
 		EEFTabbedPropertyViewPlugin.getPlugin().debug("EEFTabbedPropertySheetPage#partActivated(...)"); //$NON-NLS-1$
 
