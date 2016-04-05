@@ -19,6 +19,7 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.ModelChangeExecutor;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
@@ -27,7 +28,6 @@ import org.eclipse.eef.ide.ui.internal.Icons;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -86,7 +86,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * The editing domain.
 	 */
-	protected TransactionalEditingDomain editingDomain;
+	protected ModelChangeExecutor mce;
 
 	/**
 	 * The label.
@@ -105,13 +105,13 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 */
-	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, ModelChangeExecutor mce) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
-		this.editingDomain = editingDomain;
+		this.mce = mce;
 	}
 
 	/**

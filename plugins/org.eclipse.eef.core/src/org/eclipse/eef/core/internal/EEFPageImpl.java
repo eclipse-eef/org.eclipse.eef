@@ -23,10 +23,10 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.ModelChangeExecutor;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -64,7 +64,7 @@ public class EEFPageImpl implements EEFPage {
 	/**
 	 * The editing domain.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private ModelChangeExecutor mce;
 
 	/**
 	 * The domain class tester.
@@ -87,7 +87,7 @@ public class EEFPageImpl implements EEFPage {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 * @param domainClassTester
 	 *            The domain class tester
@@ -95,12 +95,12 @@ public class EEFPageImpl implements EEFPage {
 	 *            Indicates if the description from this page has been instantiated multiple times
 	 */
 	public EEFPageImpl(EEFView eefView, EEFPageDescription eefPageDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain, EEFDomainClassTester domainClassTester, boolean isUnique) {
+			ModelChangeExecutor mce, EEFDomainClassTester domainClassTester, boolean isUnique) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefView = eefView;
 		this.eefPageDescription = eefPageDescription;
-		this.editingDomain = editingDomain;
+		this.mce = mce;
 		this.domainClassTester = domainClassTester;
 		this.isUnique = isUnique;
 	}
@@ -127,8 +127,7 @@ public class EEFPageImpl implements EEFPage {
 						for (EObject eObject : eObjects) {
 							IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
 							childVariableManager.put(EEFExpressionUtils.SELF, eObject);
-							EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter,
-									editingDomain);
+							EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter);
 							eefGroups.add(eefGroupImpl);
 						}
 					}

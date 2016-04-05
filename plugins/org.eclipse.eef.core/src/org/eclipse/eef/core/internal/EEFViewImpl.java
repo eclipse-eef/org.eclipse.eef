@@ -25,10 +25,11 @@ import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.InputDescriptor;
+import org.eclipse.eef.core.api.ModelChangeDetector;
+import org.eclipse.eef.core.api.ModelChangeExecutor;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -54,9 +55,14 @@ public class EEFViewImpl implements EEFView {
 	private EEFViewDescription eefViewDescription;
 
 	/**
-	 * The editing domain.
+	 * The command executor.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private ModelChangeExecutor mce;
+
+	/**
+	 * The command executor.
+	 */
+	private ModelChangeDetector mcd;
 
 	/**
 	 * The {@link EEFPage} of the view.
@@ -77,17 +83,20 @@ public class EEFViewImpl implements EEFView {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param mce
+	 *            The command executor
+	 * @param mcd
+	 *            the change detector
 	 * @param domainClassTester
 	 *            The domain class tester
 	 */
-	public EEFViewImpl(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain, EEFDomainClassTester domainClassTester) {
+	public EEFViewImpl(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter, ModelChangeExecutor mce,
+			ModelChangeDetector mcd, EEFDomainClassTester domainClassTester) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefViewDescription = eefViewDescription;
-		this.editingDomain = editingDomain;
+		this.mce = mce;
+		this.mcd = mcd;
 		this.domainClassTester = domainClassTester;
 	}
 
@@ -150,7 +159,7 @@ public class EEFViewImpl implements EEFView {
 		if (semanticCandidate != null) {
 			childVariableManager.put(EEFExpressionUtils.SELF, semanticCandidate);
 		}
-		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain, this.domainClassTester, isUnique);
+		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.mce, this.domainClassTester, isUnique);
 	}
 
 	/**
@@ -233,14 +242,29 @@ public class EEFViewImpl implements EEFView {
 		return this.eefViewDescription;
 	}
 
+	@Override
+	public void execute(Runnable cmd) {
+		this.mce.execute(cmd);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.EEFView#getEditingDomain()
+	 * @see org.eclipse.eef.core.api.ModelChangeDetector#addExternalModelChangeListener(java.lang.Runnable)
 	 */
 	@Override
-	public TransactionalEditingDomain getEditingDomain() {
-		return this.editingDomain;
+	public void addExternalModelChangeListener(Runnable trigger) {
+		this.mcd.addExternalModelChangeListener(trigger);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.ModelChangeDetector#removeExternalModelChangeListener(java.lang.Runnable)
+	 */
+	@Override
+	public void removeExternalModelChangeListener(Runnable trigger) {
+		this.mcd.removeExternalModelChangeListener(trigger);
 	}
 
 	/**

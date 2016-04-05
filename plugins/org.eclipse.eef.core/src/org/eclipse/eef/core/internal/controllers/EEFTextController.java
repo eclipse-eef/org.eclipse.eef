@@ -21,15 +21,12 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.ModelChangeExecutor;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -47,7 +44,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	/**
 	 * The editing domain.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private ModelChangeExecutor mce;
 
 	/**
 	 * The consumer of a new value of the text.
@@ -73,14 +70,13 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 */
-	public EEFTextController(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+	public EEFTextController(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter, ModelChangeExecutor mce) {
 		super(variableManager, interpreter);
 		this.description = description;
-		this.editingDomain = editingDomain;
+		this.mce = mce;
 	}
 
 	@Override
@@ -89,30 +85,22 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 			this.currentUpdatedValueFuture.cancel(true);
 		}
 
-		final Command command = new RecordingCommand(this.editingDomain) {
-			@Override
-			protected void doExecute() {
-				String editExpression = EEFTextController.this.description.getEditExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
-
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFTextController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
-
-				new Eval(EEFTextController.this.interpreter, variables).call(eAttribute, editExpression);
-			}
-
-			@Override
-			public boolean canExecute() {
-				return true;
-			}
-		};
-
 		Runnable runnable = new Runnable() {
 			@Override
 			public void run() {
-				CommandStack commandStack = EEFTextController.this.editingDomain.getCommandStack();
-				commandStack.execute(command);
+				EEFTextController.this.mce.execute(new Runnable() {
+					@Override
+					public void run() {
+						String editExpression = EEFTextController.this.description.getEditExpression();
+						EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
+
+						Map<String, Object> variables = new HashMap<String, Object>();
+						variables.putAll(EEFTextController.this.variableManager.getVariables());
+						variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+
+						new Eval(EEFTextController.this.interpreter, variables).call(eAttribute, editExpression);
+					}
+				});
 			}
 		};
 		final long scheduleTime = 500L;

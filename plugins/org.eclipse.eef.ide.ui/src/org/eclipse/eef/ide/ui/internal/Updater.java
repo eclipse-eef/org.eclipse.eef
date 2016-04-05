@@ -12,11 +12,6 @@ package org.eclipse.eef.ide.ui.internal;
 
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.ide.ui.api.EEFTab;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.NotificationFilter;
-import org.eclipse.emf.transaction.ResourceSetChangeEvent;
-import org.eclipse.emf.transaction.ResourceSetListenerImpl;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 /**
  * A post-commit listener which refreshes the whole page when a significant change (an actual modification of a model
@@ -24,11 +19,7 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
  *
  * @author pcdavid
  */
-public class Updater extends ResourceSetListenerImpl {
-	/**
-	 * Describes the changes we want to react to.
-	 */
-	private static final NotificationFilter FILTER = NotificationFilter.NOT_TOUCH.and(NotificationFilter.createNotifierTypeFilter(EObject.class));
+public class Updater implements Runnable {
 
 	/**
 	 * The top-level page the section is part of.
@@ -41,11 +32,6 @@ public class Updater extends ResourceSetListenerImpl {
 	private final EEFTab section;
 
 	/**
-	 * The editing domain to which we are attached.
-	 */
-	private TransactionalEditingDomain editingDomain;
-
-	/**
 	 * Creates a new updater.
 	 *
 	 * @param section
@@ -54,18 +40,12 @@ public class Updater extends ResourceSetListenerImpl {
 	 *            The container of the form.
 	 */
 	public Updater(EEFTab section, IEEFFormContainer formContainer) {
-		super(FILTER);
 		this.section = section;
 		this.formContainer = formContainer;
 	}
 
 	@Override
-	public boolean isPostcommitOnly() {
-		return true;
-	}
-
-	@Override
-	public void resourceSetChanged(final ResourceSetChangeEvent event) {
+	public void run() {
 		formContainer.refreshPage();
 	}
 
@@ -74,18 +54,13 @@ public class Updater extends ResourceSetListenerImpl {
 	 */
 	public void enable() {
 		disable();
-		editingDomain = section.getEEFPage().getView().getEditingDomain();
-		if (editingDomain != null) {
-			editingDomain.addResourceSetListener(this);
-		}
+		section.getEEFPage().getView().addExternalModelChangeListener(this);
 	}
 
 	/**
 	 * Stop listening to changes from the editing domain.
 	 */
 	public void disable() {
-		if (editingDomain != null) {
-			editingDomain.removeResourceSetListener(this);
-		}
+		section.getEEFPage().getView().removeExternalModelChangeListener(this);
 	}
 }

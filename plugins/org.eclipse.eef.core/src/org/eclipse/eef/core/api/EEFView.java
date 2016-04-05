@@ -13,7 +13,6 @@ package org.eclipse.eef.core.api;
 import java.util.List;
 
 import org.eclipse.eef.EEFViewDescription;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -22,7 +21,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author sbegaudeau
  */
-public interface EEFView {
+public interface EEFView extends ModelChangeExecutor, ModelChangeDetector {
 
 	/**
 	 * Initializes the view by creating the pages and groups used to compute the tab and section descriptors.
@@ -64,12 +63,4 @@ public interface EEFView {
 	 * @return The interpreter
 	 */
 	IInterpreter getInterpreter();
-
-	/**
-	 * Returns the {@link TransactionalEditingDomain} through which the current input is being edited. May be
-	 * <code>null</code>.
-	 *
-	 * @return the {@link TransactionalEditingDomain}.
-	 */
-	TransactionalEditingDomain getEditingDomain();
 }

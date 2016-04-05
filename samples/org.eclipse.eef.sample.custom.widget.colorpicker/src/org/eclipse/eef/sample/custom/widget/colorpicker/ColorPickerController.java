@@ -16,14 +16,11 @@ import java.util.Map;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.ModelChangeExecutor;
 import org.eclipse.eef.core.api.controllers.AbstractEEFCustomWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.graphics.Color;
@@ -71,17 +68,18 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
      *            The variable manager
      * @param interpreter
      *            The interpreter
-     * @param editingDomain
+     * @param mce
      *            The editing domain
      */
-    public ColorPickerController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-        super(description, variableManager, interpreter, editingDomain);
+    public ColorPickerController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter, ModelChangeExecutor mce) {
+        super(description, variableManager, interpreter, mce);
     }
 
     /**
      * {@inheritDoc}
      *
-     * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController.refresh()
+     * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController.
+     *      refresh()
      */
     @Override
     public void refresh() {
@@ -106,7 +104,8 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
                             Color color = ColorHelper.getColor(red, green, blue);
                             ColorPickerController.this.newValueConsumer.apply(color);
                         } catch (NumberFormatException e) {
-                            // TODO Log warning about unexpected result format from the expression.
+                            // TODO Log warning about unexpected result format
+                            // from the expression.
                         }
                     }
                 }
@@ -131,10 +130,9 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 
     @Override
     public void updateValue(final RGB color) {
-
-        final Command command = new RecordingCommand(this.editingDomain) {
+        mce.execute(new Runnable() {
             @Override
-            protected void doExecute() {
+            public void run() {
                 String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);
                 EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
 
@@ -144,21 +142,7 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 
                 new Eval(ColorPickerController.this.interpreter, variables).call(eAttribute, editExpression);
             }
-
-            @Override
-            public boolean canExecute() {
-                return true;
-            }
-        };
-
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                CommandStack commandStack = ColorPickerController.this.editingDomain.getCommandStack();
-                commandStack.execute(command);
-            }
-        };
-        runnable.run();
+        });
     }
 
 }

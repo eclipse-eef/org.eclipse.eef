@@ -18,6 +18,7 @@ import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.core.api.ModelChangeExecutor;
 import org.eclipse.eef.core.internal.controllers.EEFButtonController;
 import org.eclipse.eef.core.internal.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.internal.controllers.EEFGroupController;
@@ -26,7 +27,6 @@ import org.eclipse.eef.core.internal.controllers.EEFRadioController;
 import org.eclipse.eef.core.internal.controllers.EEFSectionController;
 import org.eclipse.eef.core.internal.controllers.EEFSelectController;
 import org.eclipse.eef.core.internal.controllers.EEFTextController;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -61,13 +61,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 * @return A text controller
 	 */
 	public IEEFTextController createTextController(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		return new EEFTextController(description, variableManager, interpreter, editingDomain);
+			ModelChangeExecutor mce) {
+		return new EEFTextController(description, variableManager, interpreter, mce);
 	}
 
 	/**
@@ -94,13 +94,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 * @return A button controller
 	 */
 	public IEEFButtonController createButtonController(EEFButtonDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		return new EEFButtonController(description, variableManager, interpreter, editingDomain);
+			ModelChangeExecutor mce) {
+		return new EEFButtonController(description, variableManager, interpreter, mce);
 	}
 
 	/**
@@ -112,13 +112,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 * @return A label controller
 	 */
 	public IEEFSelectController createSelectController(EEFSelectDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		return new EEFSelectController(description, variableManager, interpreter, editingDomain);
+			ModelChangeExecutor mce) {
+		return new EEFSelectController(description, variableManager, interpreter, mce);
 	}
 
 	/**
@@ -130,13 +130,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 * @return A checkbox controller
 	 */
 	public IEEFCheckboxController createCheckboxController(EEFCheckboxDescription description, IVariableManager variableManager,
-			IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
-		return new EEFCheckboxController(description, variableManager, interpreter, editingDomain);
+			IInterpreter interpreter, ModelChangeExecutor mce) {
+		return new EEFCheckboxController(description, variableManager, interpreter, mce);
 
 	}
 
@@ -149,13 +149,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 * @return A radio controller
 	 */
 	public IEEFRadioController createRadioController(EEFRadioDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		return new EEFRadioController(description, variableManager, interpreter, editingDomain);
+			ModelChangeExecutor mce) {
+		return new EEFRadioController(description, variableManager, interpreter, mce);
 	}
 
 	/**

@@ -22,6 +22,7 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
+import org.eclipse.eef.core.api.ModelChangeExecutor;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFSelectController;
@@ -29,7 +30,6 @@ import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
 import org.eclipse.jface.viewers.ISelection;
@@ -88,12 +88,12 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
+	 * @param mce
 	 *            The editing domain
 	 */
 	public EEFSelectLifecycleManager(EEFSelectDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter, editingDomain);
+			ModelChangeExecutor mce) {
+		super(variableManager, interpreter, mce);
 		this.description = description;
 	}
 
@@ -120,8 +120,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		comboFormData.right = new FormAttachment(100, 0);
 		this.comboViewer.getCombo().setLayoutData(comboFormData);
 
-		this.controller = new EEFControllersFactory().createSelectController(this.description, this.variableManager, this.interpreter,
-				this.editingDomain);
+		this.controller = new EEFControllersFactory().createSelectController(this.description, this.variableManager, this.interpreter, this.mce);
 	}
 
 	/**
