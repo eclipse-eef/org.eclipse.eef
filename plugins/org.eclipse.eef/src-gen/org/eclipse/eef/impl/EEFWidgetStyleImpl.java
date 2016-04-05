@@ -19,6 +19,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Widget Style</b></em>'. <!-- end-user-doc
  * -->
  * <p>
+ * The following features are implemented:
+ * <ul>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelBackgroundColorExpression <em>Label Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelForegroundColorExpression <em>Label Foreground Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontNameExpression <em>Label Font Name Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontSizeExpression <em>Label Font Size Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontStyleExpression <em>Label Font Style Expression</em>}</li>
+ * </ul>
  * </p>
  *
  * @generated
@@ -33,6 +43,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected static final String LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -42,6 +53,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String labelBackgroundColorExpression = EEFWidgetStyleImpl.LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}
 	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -51,6 +63,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected static final String LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -60,6 +73,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String labelForegroundColorExpression = EEFWidgetStyleImpl.LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLabelFontNameExpression() <em>Label Font Name Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -69,6 +83,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected static final String LABEL_FONT_NAME_EXPRESSION_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLabelFontNameExpression() <em>Label Font Name Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -78,6 +93,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String labelFontNameExpression = EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLabelFontSizeExpression() <em>Label Font Size Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -87,6 +103,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected static final String LABEL_FONT_SIZE_EXPRESSION_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLabelFontSizeExpression() <em>Label Font Size Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -96,6 +113,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String labelFontSizeExpression = EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getLabelFontStyleExpression() <em>Label Font Style Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -105,6 +123,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected static final String LABEL_FONT_STYLE_EXPRESSION_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLabelFontStyleExpression() <em>Label Font Style Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

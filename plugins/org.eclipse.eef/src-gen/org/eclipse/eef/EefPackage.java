@@ -502,13 +502,13 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Container</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION__CONTAINER = 5;
+	int EEF_GROUP_DESCRIPTION__CONTROLS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Semantic Validation Rules</b></em>' containment reference list. <!--
@@ -538,14 +538,14 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 8;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
-	 * <em>EEF Container Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl
+	 * <em>EEF Control Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @see org.eclipse.eef.impl.EEFContainerDescriptionImpl
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFContainerDescription()
+	 * @see org.eclipse.eef.impl.EEFControlDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFControlDescription()
 	 * @generated
 	 */
-	int EEF_CONTAINER_DESCRIPTION = 8;
+	int EEF_CONTROL_DESCRIPTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -553,16 +553,43 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__IDENTIFIER = 0;
+	int EEF_CONTROL_DESCRIPTION__IDENTIFIER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Widgets</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * The number of structural features of the '<em>EEF Control Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__WIDGETS = 1;
+	int EEF_CONTROL_DESCRIPTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
+	 * <em>EEF Container Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFContainerDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFContainerDescription()
+	 * @generated
+	 */
+	int EEF_CONTAINER_DESCRIPTION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CONTAINER_DESCRIPTION__IDENTIFIER = EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Controls</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CONTAINER_DESCRIPTION__CONTROLS = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Dynamic Mappings</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -571,7 +598,16 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS = 2;
+	int EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Layout</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CONTAINER_DESCRIPTION__LAYOUT = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>EEF Container Description</em>' class. <!-- begin-user-doc --> <!--
@@ -580,7 +616,90 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CONTAINER_DESCRIPTION_FEATURE_COUNT = 3;
+	int EEF_CONTAINER_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLayoutDescriptionImpl <em>EEF Layout Description</em>}
+	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFLayoutDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLayoutDescription()
+	 * @generated
+	 */
+	int EEF_LAYOUT_DESCRIPTION = 10;
+
+	/**
+	 * The number of structural features of the '<em>EEF Layout Description</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
+	 * <em>EEF Fill Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFFillLayoutDescription()
+	 * @generated
+	 */
+	int EEF_FILL_LAYOUT_DESCRIPTION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Orientation</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION = EefPackage.EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Fill Layout Description</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_FILL_LAYOUT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
+	 * <em>EEF Grid Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGridLayoutDescription()
+	 * @generated
+	 */
+	int EEF_GRID_LAYOUT_DESCRIPTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Columns</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS = EefPackage.EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Make Columns With Equal Width</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH = EefPackage.EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>EEF Grid Layout Description</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GRID_LAYOUT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl <em>EEF Widget Description</em>}
@@ -590,7 +709,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetDescription()
 	 * @generated
 	 */
-	int EEF_WIDGET_DESCRIPTION = 9;
+	int EEF_WIDGET_DESCRIPTION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -598,7 +717,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__IDENTIFIER = 0;
+	int EEF_WIDGET_DESCRIPTION__IDENTIFIER = EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -607,7 +726,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION = 1;
+	int EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -615,7 +734,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION = 2;
+	int EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
@@ -624,7 +743,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = 3;
+	int EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>EEF Widget Description</em>' class. <!-- begin-user-doc --> <!--
@@ -633,7 +752,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = 4;
+	int EEF_WIDGET_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFTextDescriptionImpl <em>EEF Text Description</em>}'
@@ -643,7 +762,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextDescription()
 	 * @generated
 	 */
-	int EEF_TEXT_DESCRIPTION = 10;
+	int EEF_TEXT_DESCRIPTION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -739,7 +858,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelDescription()
 	 * @generated
 	 */
-	int EEF_LABEL_DESCRIPTION = 11;
+	int EEF_LABEL_DESCRIPTION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -818,7 +937,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonDescription()
 	 * @generated
 	 */
-	int EEF_BUTTON_DESCRIPTION = 12;
+	int EEF_BUTTON_DESCRIPTION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -906,7 +1025,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxDescription()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_DESCRIPTION = 13;
+	int EEF_CHECKBOX_DESCRIPTION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -994,7 +1113,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectDescription()
 	 * @generated
 	 */
-	int EEF_SELECT_DESCRIPTION = 14;
+	int EEF_SELECT_DESCRIPTION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1100,7 +1219,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioDescription()
 	 * @generated
 	 */
-	int EEF_RADIO_DESCRIPTION = 15;
+	int EEF_RADIO_DESCRIPTION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1215,7 +1334,15 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingFor()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR = 16;
+	int EEF_DYNAMIC_MAPPING_FOR = 20;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_DYNAMIC_MAPPING_FOR__IDENTIFIER = EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER;
 
 	/**
 	 * The feature id for the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1223,7 +1350,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR__ITERATOR = 0;
+	int EEF_DYNAMIC_MAPPING_FOR__ITERATOR = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Domain Class Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -1232,7 +1359,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION = 1;
+	int EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Ifs</b></em>' containment reference list. <!-- begin-user-doc --> <!--
@@ -1241,7 +1368,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR__IFS = 2;
+	int EEF_DYNAMIC_MAPPING_FOR__IFS = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>EEF Dynamic Mapping For</em>' class. <!-- begin-user-doc --> <!--
@@ -1250,7 +1377,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR_FEATURE_COUNT = 3;
+	int EEF_DYNAMIC_MAPPING_FOR_FEATURE_COUNT = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingIfImpl <em>EEF Dynamic Mapping If</em>}'
@@ -1260,7 +1387,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingIf()
 	 * @generated
 	 */
-	int EEF_DYNAMIC_MAPPING_IF = 17;
+	int EEF_DYNAMIC_MAPPING_IF = 21;
 
 	/**
 	 * The feature id for the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -1297,7 +1424,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetDescription()
 	 * @generated
 	 */
-	int EEF_CUSTOM_WIDGET_DESCRIPTION = 18;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1377,7 +1504,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomExpression()
 	 * @generated
 	 */
-	int EEF_CUSTOM_EXPRESSION = 19;
+	int EEF_CUSTOM_EXPRESSION = 23;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1413,7 +1540,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetStyle()
 	 * @generated
 	 */
-	int EEF_WIDGET_STYLE = 20;
+	int EEF_WIDGET_STYLE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1477,7 +1604,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_STYLE = 21;
+	int EEF_TEXT_STYLE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1586,7 +1713,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_STYLE = 22;
+	int EEF_LABEL_STYLE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1695,7 +1822,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonStyle()
 	 * @generated
 	 */
-	int EEF_BUTTON_STYLE = 23;
+	int EEF_BUTTON_STYLE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1759,7 +1886,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_STYLE = 24;
+	int EEF_CHECKBOX_STYLE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1823,7 +1950,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_STYLE = 25;
+	int EEF_SELECT_STYLE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1887,7 +2014,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_STYLE = 26;
+	int EEF_RADIO_STYLE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1951,7 +2078,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetStyle()
 	 * @generated
 	 */
-	int EEF_CUSTOM_WIDGET_STYLE = 27;
+	int EEF_CUSTOM_WIDGET_STYLE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2015,7 +2142,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CONDITIONAL_STYLE = 28;
+	int EEF_CONDITIONAL_STYLE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2043,7 +2170,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_CONDITIONAL_STYLE = 29;
+	int EEF_TEXT_CONDITIONAL_STYLE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2080,7 +2207,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonConditionalStyle()
 	 * @generated
 	 */
-	int EEF_BUTTON_CONDITIONAL_STYLE = 30;
+	int EEF_BUTTON_CONDITIONAL_STYLE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2117,7 +2244,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_CONDITIONAL_STYLE = 31;
+	int EEF_LABEL_CONDITIONAL_STYLE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2154,7 +2281,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_CONDITIONAL_STYLE = 32;
+	int EEF_CHECKBOX_CONDITIONAL_STYLE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2191,7 +2318,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_CONDITIONAL_STYLE = 33;
+	int EEF_SELECT_CONDITIONAL_STYLE = 37;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2228,7 +2355,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_CONDITIONAL_STYLE = 34;
+	int EEF_RADIO_CONDITIONAL_STYLE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2265,7 +2392,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = 35;
+	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2302,7 +2429,17 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
 	 * @generated
 	 */
-	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 36;
+	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 40;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
+	 * <em>EEF FILL LAYOUT ORIENTATION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_FILL_LAYOUT_ORIENTATION()
+	 * @generated
+	 */
+	int EEF_FILL_LAYOUT_ORIENTATION = 41;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
@@ -2690,15 +2827,16 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupDescription_PreconditionExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFGroupDescription#getContainer
-	 * <em>Container</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 *
-	 * @return the meta object for the containment reference '<em>Container</em>'.
-	 * @see org.eclipse.eef.EEFGroupDescription#getContainer()
+	 * @return the meta object for the containment reference list '<em>Controls</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getControls()
 	 * @see #getEEFGroupDescription()
 	 * @generated
 	 */
-	EReference getEEFGroupDescription_Container();
+	EReference getEEFGroupDescription_Controls();
 
 	/**
 	 * Returns the meta object for the containment reference list '
@@ -2725,6 +2863,27 @@ public interface EefPackage extends EPackage {
 	EReference getEEFGroupDescription_PropertyValidationRules();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFControlDescription <em>EEF Control Description</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Control Description</em>'.
+	 * @see org.eclipse.eef.EEFControlDescription
+	 * @generated
+	 */
+	EClass getEEFControlDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFControlDescription#getIdentifier
+	 * <em>Identifier</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Identifier</em>'.
+	 * @see org.eclipse.eef.EEFControlDescription#getIdentifier()
+	 * @see #getEEFControlDescription()
+	 * @generated
+	 */
+	EAttribute getEEFControlDescription_Identifier();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFContainerDescription
 	 * <em>EEF Container Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2735,27 +2894,16 @@ public interface EefPackage extends EPackage {
 	EClass getEEFContainerDescription();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFContainerDescription#getIdentifier
-	 * <em>Identifier</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Identifier</em>'.
-	 * @see org.eclipse.eef.EEFContainerDescription#getIdentifier()
-	 * @see #getEEFContainerDescription()
-	 * @generated
-	 */
-	EAttribute getEEFContainerDescription_Identifier();
-
-	/**
 	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFContainerDescription#getWidgets <em>Widgets</em>}'. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
-	 * @return the meta object for the containment reference list '<em>Widgets</em>'.
-	 * @see org.eclipse.eef.EEFContainerDescription#getWidgets()
+	 * @return the meta object for the containment reference list '<em>Controls</em>'.
+	 * @see org.eclipse.eef.EEFContainerDescription#getControls()
 	 * @see #getEEFContainerDescription()
 	 * @generated
 	 */
-	EReference getEEFContainerDescription_Widgets();
+	EReference getEEFContainerDescription_Controls();
 
 	/**
 	 * Returns the meta object for the containment reference list '
@@ -2770,6 +2918,81 @@ public interface EefPackage extends EPackage {
 	EReference getEEFContainerDescription_DynamicMappings();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFContainerDescription#getLayout
+	 * <em>Layout</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Layout</em>'.
+	 * @see org.eclipse.eef.EEFContainerDescription#getLayout()
+	 * @see #getEEFContainerDescription()
+	 * @generated
+	 */
+	EReference getEEFContainerDescription_Layout();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFLayoutDescription <em>EEF Layout Description</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Layout Description</em>'.
+	 * @see org.eclipse.eef.EEFLayoutDescription
+	 * @generated
+	 */
+	EClass getEEFLayoutDescription();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFFillLayoutDescription
+	 * <em>EEF Fill Layout Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Fill Layout Description</em>'.
+	 * @see org.eclipse.eef.EEFFillLayoutDescription
+	 * @generated
+	 */
+	EClass getEEFFillLayoutDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFFillLayoutDescription#getOrientation
+	 * <em>Orientation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Orientation</em>'.
+	 * @see org.eclipse.eef.EEFFillLayoutDescription#getOrientation()
+	 * @see #getEEFFillLayoutDescription()
+	 * @generated
+	 */
+	EAttribute getEEFFillLayoutDescription_Orientation();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGridLayoutDescription
+	 * <em>EEF Grid Layout Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Grid Layout Description</em>'.
+	 * @see org.eclipse.eef.EEFGridLayoutDescription
+	 * @generated
+	 */
+	EClass getEEFGridLayoutDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGridLayoutDescription#getNumberOfColumns
+	 * <em>Number Of Columns</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Number Of Columns</em>'.
+	 * @see org.eclipse.eef.EEFGridLayoutDescription#getNumberOfColumns()
+	 * @see #getEEFGridLayoutDescription()
+	 * @generated
+	 */
+	EAttribute getEEFGridLayoutDescription_NumberOfColumns();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth
+	 * <em>Make Columns With Equal Width</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Make Columns With Equal Width</em>'.
+	 * @see org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth()
+	 * @see #getEEFGridLayoutDescription()
+	 * @generated
+	 */
+	EAttribute getEEFGridLayoutDescription_MakeColumnsWithEqualWidth();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFWidgetDescription <em>EEF Widget Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2778,17 +3001,6 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEEFWidgetDescription();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetDescription#getIdentifier
-	 * <em>Identifier</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Identifier</em>'.
-	 * @see org.eclipse.eef.EEFWidgetDescription#getIdentifier()
-	 * @see #getEEFWidgetDescription()
-	 * @generated
-	 */
-	EAttribute getEEFWidgetDescription_Identifier();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression
@@ -3792,6 +4004,16 @@ public interface EefPackage extends EPackage {
 	EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION();
 
 	/**
+	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
+	 * <em>EEF FILL LAYOUT ORIENTATION</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>EEF FILL LAYOUT ORIENTATION</em>'.
+	 * @see org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
+	 * @generated
+	 */
+	EEnum getEEF_FILL_LAYOUT_ORIENTATION();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the factory that creates the instances of the model.
@@ -4110,12 +4332,12 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupDescription_PreconditionExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Container</b></em>' containment reference feature. <!--
+		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference EEF_GROUP_DESCRIPTION__CONTAINER = EefPackage.eINSTANCE.getEEFGroupDescription_Container();
+		EReference EEF_GROUP_DESCRIPTION__CONTROLS = EefPackage.eINSTANCE.getEEFGroupDescription_Controls();
 
 		/**
 		 * The meta object literal for the '<em><b>Semantic Validation Rules</b></em>' containment reference list
@@ -4134,6 +4356,24 @@ public interface EefPackage extends EPackage {
 		EReference EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFGroupDescription_PropertyValidationRules();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl
+		 * <em>EEF Control Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFControlDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFControlDescription()
+		 * @generated
+		 */
+		EClass EEF_CONTROL_DESCRIPTION = EefPackage.eINSTANCE.getEEFControlDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_CONTROL_DESCRIPTION__IDENTIFIER = EefPackage.eINSTANCE.getEEFControlDescription_Identifier();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
 		 * <em>EEF Container Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -4144,20 +4384,12 @@ public interface EefPackage extends EPackage {
 		EClass EEF_CONTAINER_DESCRIPTION = EefPackage.eINSTANCE.getEEFContainerDescription();
 
 		/**
-		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_CONTAINER_DESCRIPTION__IDENTIFIER = EefPackage.eINSTANCE.getEEFContainerDescription_Identifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Widgets</b></em>' containment reference list feature. <!--
+		 * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EReference EEF_CONTAINER_DESCRIPTION__WIDGETS = EefPackage.eINSTANCE.getEEFContainerDescription_Widgets();
+		EReference EEF_CONTAINER_DESCRIPTION__CONTROLS = EefPackage.eINSTANCE.getEEFContainerDescription_Controls();
 
 		/**
 		 * The meta object literal for the '<em><b>Dynamic Mappings</b></em>' containment reference list feature. <!--
@@ -4168,6 +4400,69 @@ public interface EefPackage extends EPackage {
 		EReference EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS = EefPackage.eINSTANCE.getEEFContainerDescription_DynamicMappings();
 
 		/**
+		 * The meta object literal for the '<em><b>Layout</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_CONTAINER_DESCRIPTION__LAYOUT = EefPackage.eINSTANCE.getEEFContainerDescription_Layout();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLayoutDescriptionImpl
+		 * <em>EEF Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFLayoutDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLayoutDescription()
+		 * @generated
+		 */
+		EClass EEF_LAYOUT_DESCRIPTION = EefPackage.eINSTANCE.getEEFLayoutDescription();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
+		 * <em>EEF Fill Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFFillLayoutDescription()
+		 * @generated
+		 */
+		EClass EEF_FILL_LAYOUT_DESCRIPTION = EefPackage.eINSTANCE.getEEFFillLayoutDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Orientation</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION = EefPackage.eINSTANCE.getEEFFillLayoutDescription_Orientation();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
+		 * <em>EEF Grid Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGridLayoutDescription()
+		 * @generated
+		 */
+		EClass EEF_GRID_LAYOUT_DESCRIPTION = EefPackage.eINSTANCE.getEEFGridLayoutDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Number Of Columns</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS = EefPackage.eINSTANCE.getEEFGridLayoutDescription_NumberOfColumns();
+
+		/**
+		 * The meta object literal for the '<em><b>Make Columns With Equal Width</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH = EefPackage.eINSTANCE
+				.getEEFGridLayoutDescription_MakeColumnsWithEqualWidth();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl
 		 * <em>EEF Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -4176,14 +4471,6 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EEF_WIDGET_DESCRIPTION = EefPackage.eINSTANCE.getEEFWidgetDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Identifier</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_WIDGET_DESCRIPTION__IDENTIFIER = EefPackage.eINSTANCE.getEEFWidgetDescription_Identifier();
 
 		/**
 		 * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature. <!-- begin-user-doc -->
@@ -4974,6 +5261,16 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum EEF_VALIDATION_SEVERITY_DESCRIPTION = EefPackage.eINSTANCE.getEEF_VALIDATION_SEVERITY_DESCRIPTION();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
+		 * <em>EEF FILL LAYOUT ORIENTATION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_FILL_LAYOUT_ORIENTATION()
+		 * @generated
+		 */
+		EEnum EEF_FILL_LAYOUT_ORIENTATION = EefPackage.eINSTANCE.getEEF_FILL_LAYOUT_ORIENTATION();
 
 	}
 

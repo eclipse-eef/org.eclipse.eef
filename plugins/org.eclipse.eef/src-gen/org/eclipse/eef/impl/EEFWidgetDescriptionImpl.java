@@ -19,7 +19,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -29,7 +28,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getHelpExpression <em>Help Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
@@ -39,27 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Container implements EEFWidgetDescription {
-	/**
-	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @see #getIdentifier()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String IDENTIFIER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @see #getIdentifier()
-	 * @generated
-	 * @ordered
-	 */
-	protected String identifier = EEFWidgetDescriptionImpl.IDENTIFIER_EDEFAULT;
-
+public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl implements EEFWidgetDescription {
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
@@ -127,30 +105,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	@Override
 	protected EClass eStaticClass() {
 		return EefPackage.Literals.EEF_WIDGET_DESCRIPTION;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String getIdentifier() {
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setIdentifier(String newIdentifier) {
-		String oldIdentifier = identifier;
-		identifier = newIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER, oldIdentifier, identifier));
-		}
 	}
 
 	/**
@@ -255,8 +209,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER:
-			return getIdentifier();
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			return getLabelExpression();
 		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
@@ -276,9 +228,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER:
-			setIdentifier((String) newValue);
-			return;
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
 			return;
@@ -301,9 +250,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER:
-			setIdentifier(EEFWidgetDescriptionImpl.IDENTIFIER_EDEFAULT);
-			return;
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			setLabelExpression(EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT);
 			return;
@@ -325,9 +271,6 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER:
-			return EEFWidgetDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFWidgetDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
 			: !EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
@@ -352,9 +295,7 @@ public abstract class EEFWidgetDescriptionImpl extends MinimalEObjectImpl.Contai
 		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (identifier: "); //$NON-NLS-1$
-		result.append(identifier);
-		result.append(", labelExpression: "); //$NON-NLS-1$
+		result.append(" (labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
 		result.append(", helpExpression: "); //$NON-NLS-1$
 		result.append(helpExpression);

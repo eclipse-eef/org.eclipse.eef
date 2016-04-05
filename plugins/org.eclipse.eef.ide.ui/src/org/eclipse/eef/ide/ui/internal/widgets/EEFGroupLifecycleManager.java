@@ -15,7 +15,7 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
@@ -126,24 +126,22 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		GridData sectionLayoutData = new GridData(GridData.FILL_HORIZONTAL);
 		sectionLayoutData.horizontalSpan = 1;
 		this.section.setLayoutData(sectionLayoutData);
+
 		Composite group = widgetFactory.createComposite(this.section);
-		GridLayout groupLayout = new GridLayout();
-		groupLayout.numColumns = 1;
+		// group.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_INFO_BACKGROUND));
+		GridLayout groupLayout = new GridLayout(3, false);
 		group.setLayout(groupLayout);
 		this.section.setClient(group);
 
 		this.controller = new EEFControllersFactory().createGroupController(this.description, this.variableManager, this.interpreter);
 
-		EEFContainerDescription containerDescription = this.description.getContainer();
-		if (containerDescription != null) {
-			EEFContainerLifecycleManager containerLifecycleManager = new EEFContainerLifecycleManager(containerDescription,
-					this.variableManager.createChild(), this.interpreter, this.editingDomain);
-			containerLifecycleManager.createControl(group, formContainer);
-
-			parent.layout();
-
-			this.lifecycleManagers.add(containerLifecycleManager);
+		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.editingDomain);
+		List<EEFControlDescription> controls = this.description.getControls();
+		for (EEFControlDescription eefControlDescription : controls) {
+			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(group, formContainer, eefControlDescription, this.variableManager));
 		}
+
+		parent.layout();
 	}
 
 	/**

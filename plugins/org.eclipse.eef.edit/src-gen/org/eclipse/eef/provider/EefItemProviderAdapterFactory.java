@@ -258,6 +258,52 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFFillLayoutDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFFillLayoutDescriptionItemProvider eefFillLayoutDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFFillLayoutDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFFillLayoutDescriptionAdapter() {
+		if (eefFillLayoutDescriptionItemProvider == null) {
+			eefFillLayoutDescriptionItemProvider = new EEFFillLayoutDescriptionItemProvider(this);
+		}
+
+		return eefFillLayoutDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGridLayoutDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFGridLayoutDescriptionItemProvider eefGridLayoutDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGridLayoutDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFGridLayoutDescriptionAdapter() {
+		if (eefGridLayoutDescriptionItemProvider == null) {
+			eefGridLayoutDescriptionItemProvider = new EEFGridLayoutDescriptionItemProvider(this);
+		}
+
+		return eefGridLayoutDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -931,6 +977,12 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefContainerDescriptionItemProvider != null) {
 			eefContainerDescriptionItemProvider.dispose();
+		}
+		if (eefFillLayoutDescriptionItemProvider != null) {
+			eefFillLayoutDescriptionItemProvider.dispose();
+		}
+		if (eefGridLayoutDescriptionItemProvider != null) {
+			eefGridLayoutDescriptionItemProvider.dispose();
 		}
 		if (eefTextDescriptionItemProvider != null) {
 			eefTextDescriptionItemProvider.dispose();
