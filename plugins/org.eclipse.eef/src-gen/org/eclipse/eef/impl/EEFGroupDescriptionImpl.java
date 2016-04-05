@@ -10,7 +10,7 @@ package org.eclipse.eef.impl;
 
 import java.util.Collection;
 
-import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getContainer <em>Container</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getControls <em>Controls</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules
  * </em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
@@ -149,14 +149,14 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	protected String preconditionExpression = EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getContainer() <em>Container</em>}' containment reference. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @see #getContainer()
+	 * @see #getControls()
 	 * @generated
 	 * @ordered
 	 */
-	protected EEFContainerDescription container;
+	protected EList<EEFControlDescription> controls;
 
 	/**
 	 * The cached value of the '{@link #getSemanticValidationRules() <em>Semantic Validation Rules</em>}' containment
@@ -326,82 +326,12 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public EEFContainerDescription getContainer() {
-		if (container != null && container.eIsProxy()) {
-			InternalEObject oldContainer = (InternalEObject) container;
-			container = (EEFContainerDescription) eResolveProxy(oldContainer);
-			if (container != oldContainer) {
-				InternalEObject newContainer = (InternalEObject) container;
-				NotificationChain msgs = oldContainer.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER, null, null);
-				if (newContainer.eInternalContainer() == null) {
-					msgs = newContainer.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER, null,
-							msgs);
-				}
-				if (msgs != null) {
-					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER, oldContainer, container));
-				}
-			}
+	public EList<EEFControlDescription> getControls() {
+		if (controls == null) {
+			controls = new EObjectContainmentEList.Resolving<EEFControlDescription>(EEFControlDescription.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
 		}
-		return container;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EEFContainerDescription basicGetContainer() {
-		return container;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public NotificationChain basicSetContainer(EEFContainerDescription newContainer, NotificationChain msgs) {
-		EEFContainerDescription oldContainer = container;
-		container = newContainer;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER, oldContainer,
-					newContainer);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setContainer(EEFContainerDescription newContainer) {
-		if (newContainer != container) {
-			NotificationChain msgs = null;
-			if (container != null) {
-				msgs = ((InternalEObject) container).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER, null, msgs);
-			}
-			if (newContainer != null) {
-				msgs = ((InternalEObject) newContainer).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER, null, msgs);
-			}
-			msgs = basicSetContainer(newContainer, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER, newContainer, newContainer));
-		}
+		return controls;
 	}
 
 	/**
@@ -440,8 +370,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
-			return basicSetContainer(null, msgs);
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
+			return ((InternalEList<?>) getControls()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return ((InternalEList<?>) getSemanticValidationRules()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
@@ -468,11 +398,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return getSemanticCandidateExpression();
 		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 			return getPreconditionExpression();
-		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
-			if (resolve) {
-				return getContainer();
-			}
-			return basicGetContainer();
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
+			return getControls();
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return getSemanticValidationRules();
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
@@ -505,8 +432,9 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 			setPreconditionExpression((String) newValue);
 			return;
-		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
-			setContainer((EEFContainerDescription) newValue);
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
+			getControls().clear();
+			getControls().addAll((Collection<? extends EEFControlDescription>) newValue);
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			getSemanticValidationRules().clear();
@@ -543,8 +471,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 			setPreconditionExpression(EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT);
 			return;
-		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
-			setContainer((EEFContainerDescription) null);
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
+			getControls().clear();
 			return;
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			getSemanticValidationRules().clear();
@@ -579,8 +507,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 			return EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
 			: !EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
-		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
-			return container != null;
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
+			return controls != null && !controls.isEmpty();
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return semanticValidationRules != null && !semanticValidationRules.isEmpty();
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:

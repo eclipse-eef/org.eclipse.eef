@@ -6,13 +6,9 @@
     xmlns:eef="http://www.eclipse.org/eef"
     xsi:schemaLocation="http://www.eclipse.org/eef ../../../../org.eclipse.eef/model/eef.ecore">
   <groups>
-    <container>
-      <widgets
-          xsi:type="eef:EEFRadioDescription"
-          labelExpression=""
-          helpExpression="aql:'Visibility Help'"
-          editExpression=""/>
-    </container>
+    <controls
+        xsi:type="eef:EEFRadioDescription"
+        helpExpression="aql:'Visibility Help'"/>
   </groups>
   <pages groups="//@groups.0"/>
 </eef:EEFViewDescription>

@@ -94,6 +94,24 @@ public interface EefFactory extends EFactory {
 	EEFContainerDescription createEEFContainerDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Fill Layout Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Fill Layout Description</em>'.
+	 * @generated
+	 */
+	EEFFillLayoutDescription createEEFFillLayoutDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Grid Layout Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Grid Layout Description</em>'.
+	 * @generated
+	 */
+	EEFGridLayoutDescription createEEFGridLayoutDescription();
+
+	/**
 	 * Returns a new object of class '<em>EEF Text Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Text Description</em>'.

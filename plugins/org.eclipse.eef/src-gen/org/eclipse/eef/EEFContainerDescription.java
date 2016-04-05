@@ -9,7 +9,6 @@
 package org.eclipse.eef;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Container Description</b></em>'. <!--
@@ -18,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.eef.EEFContainerDescription#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.eclipse.eef.EEFContainerDescription#getWidgets <em>Widgets</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}</li>
  * <li>{@link org.eclipse.eef.EEFContainerDescription#getDynamicMappings <em>Dynamic Mappings</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,41 +27,18 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EEFContainerDescription extends EObject {
+public interface EEFContainerDescription extends EEFControlDescription {
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> Used to identify a specific Container in a Group. <!-- end-model-doc -->
-	 *
-	 * @return the value of the '<em>Identifier</em>' attribute.
-	 * @see #setIdentifier(String)
-	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_Identifier()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getIdentifier();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getIdentifier <em>Identifier</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
-	 * @see #getIdentifier()
-	 * @generated
-	 */
-	void setIdentifier(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Widgets</b></em>' containment reference list. The list contents are of type
-	 * {@link org.eclipse.eef.EEFWidgetDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
+	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list. The list contents are of type
+	 * {@link org.eclipse.eef.EEFControlDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
 	 * --> References the widgets to hold. <!-- end-model-doc -->
 	 *
-	 * @return the value of the '<em>Widgets</em>' containment reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_Widgets()
+	 * @return the value of the '<em>Controls</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_Controls()
 	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
-	EList<EEFWidgetDescription> getWidgets();
+	EList<EEFControlDescription> getControls();
 
 	/**
 	 * Returns the value of the '<em><b>Dynamic Mappings</b></em>' containment reference list. The list contents are of
@@ -75,5 +51,28 @@ public interface EEFContainerDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFDynamicMappingFor> getDynamicMappings();
+
+	/**
+	 * Returns the value of the '<em><b>Layout</b></em>' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> The layout of the container. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Layout</em>' containment reference.
+	 * @see #setLayout(EEFLayoutDescription)
+	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_Layout()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFLayoutDescription getLayout();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Layout</em>' containment reference.
+	 * @see #getLayout()
+	 * @generated
+	 */
+	void setLayout(EEFLayoutDescription value);
 
 } // EEFContainerDescription

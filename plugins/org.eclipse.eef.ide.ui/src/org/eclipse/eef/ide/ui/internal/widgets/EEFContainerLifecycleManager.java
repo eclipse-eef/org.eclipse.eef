@@ -10,36 +10,24 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.eef.EEFButtonDescription;
-import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
-import org.eclipse.eef.EEFCustomWidgetDescription;
-import org.eclipse.eef.EEFDynamicMappingFor;
-import org.eclipse.eef.EEFDynamicMappingIf;
-import org.eclipse.eef.EEFLabelDescription;
-import org.eclipse.eef.EEFRadioDescription;
-import org.eclipse.eef.EEFSelectDescription;
-import org.eclipse.eef.EEFTextDescription;
-import org.eclipse.eef.EEFWidgetDescription;
-import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.EEFControlDescription;
+import org.eclipse.eef.EEFFillLayoutDescription;
+import org.eclipse.eef.EEFGridLayoutDescription;
+import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFLayoutDescription;
+import org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
-import org.eclipse.eef.core.api.EEFExpressionUtils;
-import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
-import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
-import org.eclipse.eef.ide.ui.internal.Messages;
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -102,133 +90,40 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
-		List<EEFWidgetDescription> widgets = this.description.getWidgets();
-		for (EEFWidgetDescription eefWidgetDescription : widgets) {
-			this.createWidgetControl(parent, formContainer, eefWidgetDescription, this.variableManager.createChild());
+		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
+
+		Composite composite = null;
+		if (this.description.eContainer() instanceof EEFGroupDescription) {
+			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
+			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
+		}
+		composite = widgetFactory.createComposite(parent);
+		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
+		composite.setLayoutData(gridData);
+
+		EEFLayoutDescription layout = this.description.getLayout();
+		if (layout instanceof EEFFillLayoutDescription) {
+			EEFFillLayoutDescription fillLayoutDescription = (EEFFillLayoutDescription) layout;
+			if (fillLayoutDescription.getOrientation() == EEF_FILL_LAYOUT_ORIENTATION.HORIZONTAL) {
+				GridLayout gridLayout = new GridLayout(this.description.getControls().size(), false);
+				gridLayout.marginWidth = 1;
+				composite.setLayout(gridLayout);
+			} else if (fillLayoutDescription.getOrientation() == EEF_FILL_LAYOUT_ORIENTATION.VERTICAL) {
+				GridLayout gridLayout = new GridLayout(1, true);
+				gridLayout.marginWidth = 1;
+				composite.setLayout(gridLayout);
+			}
+		} else if (layout instanceof EEFGridLayoutDescription) {
+			EEFGridLayoutDescription gridLayoutDescription = (EEFGridLayoutDescription) layout;
+			GridLayout gridLayout = new GridLayout(gridLayoutDescription.getNumberOfColumns(), gridLayoutDescription.isMakeColumnsWithEqualWidth());
+			gridLayout.marginWidth = 1;
+			composite.setLayout(gridLayout);
 		}
 
-		List<EEFDynamicMappingFor> dynamicMappings = this.description.getDynamicMappings();
-		for (EEFDynamicMappingFor dynamicMappingFor : dynamicMappings) {
-			this.createDynamicMappingControl(parent, formContainer, dynamicMappingFor);
-		}
-	}
-
-	/**
-	 * Creates the control for the widget with the given {@link EEFWidgetDescription}.
-	 *
-	 * @param parent
-	 *            The composite parent
-	 * @param formContainer
-	 *            The form container
-	 * @param eefWidgetDescription
-	 *            The description of the widget to create
-	 * @param childVariableManager
-	 *            The variable manager to use for the widget to create
-	 */
-	private void createWidgetControl(Composite parent, IEEFFormContainer formContainer, EEFWidgetDescription eefWidgetDescription,
-			IVariableManager childVariableManager) {
-		if (eefWidgetDescription instanceof EEFTextDescription) {
-			EEFTextDescription eefTextDescription = (EEFTextDescription) eefWidgetDescription;
-
-			EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter,
-					editingDomain);
-			eefTextLifecycleManager.createControl(parent, formContainer);
-
-			this.lifecycleManagers.add(eefTextLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFLabelDescription) {
-			EEFLabelDescription eefLabelDescription = (EEFLabelDescription) eefWidgetDescription;
-
-			EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter,
-					editingDomain);
-			eefLabelLifecycleManager.createControl(parent, formContainer);
-
-			this.lifecycleManagers.add(eefLabelLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFSelectDescription) {
-			EEFSelectDescription eefSelectDescription = (EEFSelectDescription) eefWidgetDescription;
-
-			EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager,
-					interpreter, editingDomain);
-			eefSelectLifecycleManager.createControl(parent, formContainer);
-
-			this.lifecycleManagers.add(eefSelectLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFRadioDescription) {
-			EEFRadioDescription eefRadioDescription = (EEFRadioDescription) eefWidgetDescription;
-
-			EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager, interpreter,
-					editingDomain);
-			eefRadioLifecycleManager.createControl(parent, formContainer);
-
-			this.lifecycleManagers.add(eefRadioLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFCheckboxDescription) {
-			EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) eefWidgetDescription;
-
-			EEFCheckboxLifecycleManager eefCheckboxLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription, childVariableManager,
-					interpreter, editingDomain);
-			eefCheckboxLifecycleManager.createControl(parent, formContainer);
-
-			this.lifecycleManagers.add(eefCheckboxLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFButtonDescription) {
-			EEFButtonDescription eefButtonDescription = (EEFButtonDescription) eefWidgetDescription;
-
-			EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager,
-					interpreter, editingDomain);
-			eefButtonLifecycleManager.createControl(parent, formContainer);
-
-			this.lifecycleManagers.add(eefButtonLifecycleManager);
-		} else if (eefWidgetDescription instanceof EEFCustomWidgetDescription) {
-			EEFCustomWidgetDescription eefCustomDescription = (EEFCustomWidgetDescription) eefWidgetDescription;
-			ILifecycleManager eefCustomWidgetLifecycleManager = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManager(eefCustomDescription,
-					childVariableManager, interpreter, editingDomain);
-			if (eefCustomWidgetLifecycleManager != null) {
-				eefCustomWidgetLifecycleManager.createControl(parent, formContainer);
-				this.lifecycleManagers.add(eefCustomWidgetLifecycleManager);
-			} else {
-				String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, eefCustomDescription.getIdentifier());
-				EEFIdeUiPlugin.getPlugin().error(message);
-			}
-		}
-	}
-
-	/**
-	 * Creates the widgets for the dynamic mapping defined in the description.
-	 *
-	 * @param parent
-	 *            The composite parent
-	 * @param formContainer
-	 *            The form container
-	 * @param dynamicMappingFor
-	 *            The root of a dynamic mapping definition
-	 */
-	private void createDynamicMappingControl(Composite parent, IEEFFormContainer formContainer, EEFDynamicMappingFor dynamicMappingFor) {
-		String domainClassExpression = dynamicMappingFor.getDomainClassExpression();
-		EAttribute domainClassEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION;
-		String iterator = dynamicMappingFor.getIterator();
-
-		EAttribute ifExpressionEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION;
-
-		Object domainClassExpressionResult = new Eval(this.interpreter, this.variableManager).get(domainClassEAttribute, domainClassExpression,
-				Object.class);
-		for (EObject eObject : Util.asIterable(domainClassExpressionResult, EObject.class)) {
-			Map<String, Object> switchExpressionVariables = new HashMap<String, Object>();
-			switchExpressionVariables.put(EEFExpressionUtils.SELF, this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
-			switchExpressionVariables.put(iterator, eObject);
-
-			EEFWidgetDescription eefWidgetDescription = null;
-			List<EEFDynamicMappingIf> dynamicMappingIfs = dynamicMappingFor.getIfs();
-			for (EEFDynamicMappingIf dynamicMappingIf : dynamicMappingIfs) {
-				Boolean isValid = new Eval(this.interpreter, switchExpressionVariables).get(ifExpressionEAttribute,
-						dynamicMappingIf.getPredicateExpression(), Boolean.class);
-				if (isValid != null && isValid.booleanValue()) {
-					eefWidgetDescription = dynamicMappingIf.getWidget();
-					break;
-				}
-			}
-
-			if (eefWidgetDescription != null) {
-				IVariableManager childVariableManager = this.variableManager.createChild();
-				childVariableManager.put(iterator, eObject);
-				this.createWidgetControl(parent, formContainer, eefWidgetDescription, childVariableManager);
-			}
+		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.editingDomain);
+		List<EEFControlDescription> controls = this.description.getControls();
+		for (EEFControlDescription eefControlDescription : controls) {
+			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(composite, formContainer, eefControlDescription, this.variableManager));
 		}
 	}
 

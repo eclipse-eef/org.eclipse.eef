@@ -104,12 +104,8 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	void setLineCount(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Style</em>' containment reference isn't clear, there really should be more of a
-	 * description here...
-	 * </p>
-	 * <!-- end-user-doc --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFTextStyle)

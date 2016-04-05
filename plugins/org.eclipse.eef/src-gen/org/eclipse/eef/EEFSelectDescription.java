@@ -129,7 +129,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
+	 * --> <!-- begin-model-doc --> Defines the select style <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFSelectStyle)

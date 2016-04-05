@@ -11,8 +11,9 @@ package org.eclipse.eef.impl;
 import java.util.Collection;
 
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
-import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EEFLayoutDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -20,7 +21,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,44 +30,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getWidgets <em>Widgets</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getControls <em>Controls</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getDynamicMappings <em>Dynamic Mappings</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container implements EEFContainerDescription {
+public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl implements EEFContainerDescription {
 	/**
-	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @see #getIdentifier()
+	 * @see #getControls()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String IDENTIFIER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @see #getIdentifier()
-	 * @generated
-	 * @ordered
-	 */
-	protected String identifier = EEFContainerDescriptionImpl.IDENTIFIER_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getWidgets() <em>Widgets</em>}' containment reference list. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @see #getWidgets()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EEFWidgetDescription> widgets;
+	protected EList<EEFControlDescription> controls;
 
 	/**
 	 * The cached value of the '{@link #getDynamicMappings() <em>Dynamic Mappings</em>}' containment reference list.
@@ -78,6 +58,16 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected EList<EEFDynamicMappingFor> dynamicMappings;
+
+	/**
+	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @see #getLayout()
+	 * @generated
+	 * @ordered
+	 */
+	protected EEFLayoutDescription layout;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -104,36 +94,12 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public String getIdentifier() {
-		return identifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void setIdentifier(String newIdentifier) {
-		String oldIdentifier = identifier;
-		identifier = newIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER, oldIdentifier, identifier));
+	public EList<EEFControlDescription> getControls() {
+		if (controls == null) {
+			controls = new EObjectContainmentEList.Resolving<EEFControlDescription>(EEFControlDescription.class, this,
+					EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS);
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EList<EEFWidgetDescription> getWidgets() {
-		if (widgets == null) {
-			widgets = new EObjectContainmentEList.Resolving<EEFWidgetDescription>(EEFWidgetDescription.class, this,
-					EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS);
-		}
-		return widgets;
+		return controls;
 	}
 
 	/**
@@ -156,12 +122,98 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
+	public EEFLayoutDescription getLayout() {
+		if (layout != null && layout.eIsProxy()) {
+			InternalEObject oldLayout = (InternalEObject) layout;
+			layout = (EEFLayoutDescription) eResolveProxy(oldLayout);
+			if (layout != oldLayout) {
+				InternalEObject newLayout = (InternalEObject) layout;
+				NotificationChain msgs = oldLayout.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null, null);
+				if (newLayout.eInternalContainer() == null) {
+					msgs = newLayout.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null,
+							msgs);
+				}
+				if (msgs != null) {
+					msgs.dispatch();
+				}
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, oldLayout, layout));
+				}
+			}
+		}
+		return layout;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public EEFLayoutDescription basicGetLayout() {
+		return layout;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetLayout(EEFLayoutDescription newLayout, NotificationChain msgs) {
+		EEFLayoutDescription oldLayout = layout;
+		layout = newLayout;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, oldLayout,
+					newLayout);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setLayout(EEFLayoutDescription newLayout) {
+		if (newLayout != layout) {
+			NotificationChain msgs = null;
+			if (layout != null) {
+				msgs = ((InternalEObject) layout).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null, msgs);
+			}
+			if (newLayout != null) {
+				msgs = ((InternalEObject) newLayout).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null, msgs);
+			}
+			msgs = basicSetLayout(newLayout, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, newLayout, newLayout));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
-			return ((InternalEList<?>) getWidgets()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
+			return ((InternalEList<?>) getControls()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
 			return ((InternalEList<?>) getDynamicMappings()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
+			return basicSetLayout(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -174,12 +226,15 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
-			return getIdentifier();
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
-			return getWidgets();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
+			return getControls();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
 			return getDynamicMappings();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
+			if (resolve) {
+				return getLayout();
+			}
+			return basicGetLayout();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -193,16 +248,16 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
-			setIdentifier((String) newValue);
-			return;
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
-			getWidgets().clear();
-			getWidgets().addAll((Collection<? extends EEFWidgetDescription>) newValue);
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
+			getControls().clear();
+			getControls().addAll((Collection<? extends EEFControlDescription>) newValue);
 			return;
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
 			getDynamicMappings().clear();
 			getDynamicMappings().addAll((Collection<? extends EEFDynamicMappingFor>) newValue);
+			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
+			setLayout((EEFLayoutDescription) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -216,14 +271,14 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
-			setIdentifier(EEFContainerDescriptionImpl.IDENTIFIER_EDEFAULT);
-			return;
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
-			getWidgets().clear();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
+			getControls().clear();
 			return;
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
 			getDynamicMappings().clear();
+			return;
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
+			setLayout((EEFLayoutDescription) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -237,33 +292,14 @@ public class EEFContainerDescriptionImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__IDENTIFIER:
-			return EEFContainerDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFContainerDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__WIDGETS:
-			return widgets != null && !widgets.isEmpty();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
+			return controls != null && !controls.isEmpty();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
 			return dynamicMappings != null && !dynamicMappings.isEmpty();
+		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
+			return layout != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (identifier: "); //$NON-NLS-1$
-		result.append(identifier);
-		result.append(')');
-		return result.toString();
 	}
 
 } // EEFContainerDescriptionImpl

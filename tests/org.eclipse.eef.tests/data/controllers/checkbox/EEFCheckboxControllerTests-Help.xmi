@@ -6,12 +6,9 @@
     xmlns:eef="http://www.eclipse.org/eef"
     xsi:schemaLocation="http://www.eclipse.org/eef ../../../../org.eclipse.eef/model/eef.ecore">
   <groups>
-    <container>
-      <widgets
-          xsi:type="eef:EEFCheckboxDescription"
-          labelExpression=""
-          helpExpression="aql:'Abstract Help'"/>
-    </container>
+    <controls
+        xsi:type="eef:EEFCheckboxDescription"
+        helpExpression="aql:'Abstract Help'"/>
   </groups>
   <pages groups="//@groups.0"/>
 </eef:EEFViewDescription>

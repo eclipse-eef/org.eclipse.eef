@@ -14,13 +14,26 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Widget Style</b></em>'. <!-- end-user-doc
  * -->
  *
+ * <!-- begin-model-doc --> Represents a style that can be applied on widgets. <!-- end-model-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ * <li>{@link org.eclipse.eef.EEFWidgetStyle#getLabelBackgroundColorExpression <em>Label Background Color Expression
+ * </em>}</li>
+ * <li>{@link org.eclipse.eef.EEFWidgetStyle#getLabelForegroundColorExpression <em>Label Foreground Color Expression
+ * </em>}</li>
+ * <li>{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontNameExpression <em>Label Font Name Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontSizeExpression <em>Label Font Size Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontStyleExpression <em>Label Font Style Expression</em>}</li>
+ * </ul>
+ * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFWidgetStyle()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EEFWidgetStyle extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc --> <!-- begin-model-doc --> Defines the background color of the widget. It must be defined as
@@ -137,4 +150,5 @@ public interface EEFWidgetStyle extends EObject {
 	 * @generated
 	 */
 	void setLabelFontStyleExpression(String value);
+
 } // EEFWidgetStyle
