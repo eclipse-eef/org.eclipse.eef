@@ -11,9 +11,9 @@
 package org.eclipse.eef.sample.custom.widget.colorpicker;
 
 import org.eclipse.eef.EEFCustomWidgetDescription;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.ide.ui.api.IEEFLifecycleManagerProvider;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -25,8 +25,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 public class ColorPickerProvider implements IEEFLifecycleManagerProvider {
 
     @Override
-    public ILifecycleManager getLifecycleManager(EEFCustomWidgetDescription customWidgetDescription, IVariableManager variableManager, IInterpreter interpreter,
-            TransactionalEditingDomain editingDomain) {
-        return new ColorPickerLifecycleManager(customWidgetDescription, variableManager, interpreter, editingDomain);
+    public ILifecycleManager getLifecycleManager(EEFCustomWidgetDescription customWidgetDescription, IVariableManager variableManager, IInterpreter interpreter, EditionContextAdapter eca) {
+        return new ColorPickerLifecycleManager(customWidgetDescription, variableManager, interpreter, eca);
     }
 }

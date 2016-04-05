@@ -22,12 +22,12 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -75,12 +75,12 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param eca
+	 *            The editing context adapter
 	 */
 	public EEFButtonLifecycleManager(EEFButtonDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter, editingDomain);
+			EditionContextAdapter eca) {
+		super(variableManager, interpreter, eca);
 		this.description = description;
 	}
 
@@ -105,8 +105,7 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 
 		widgetFactory.paintBordersFor(parent);
 
-		this.controller = new EEFControllersFactory().createButtonController(this.description, this.variableManager, this.interpreter,
-				this.editingDomain);
+		this.controller = new EEFControllersFactory().createButtonController(this.description, this.variableManager, this.interpreter, this.eca);
 	}
 
 	/**
