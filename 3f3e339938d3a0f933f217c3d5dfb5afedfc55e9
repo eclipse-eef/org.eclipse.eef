@@ -22,6 +22,30 @@
       "revId": "3f3e339938d3a0f933f217c3d5dfb5afedfc55e9",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_800afd5d",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 4
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-05T15:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_a0e2a448",
+      "range": {
+        "startLine": 418,
+        "startChar": 4,
+        "endLine": 423,
+        "endChar": 26
+      },
+      "revId": "3f3e339938d3a0f933f217c3d5dfb5afedfc55e9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }
