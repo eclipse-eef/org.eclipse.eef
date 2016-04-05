@@ -13,10 +13,8 @@ package org.eclipse.eef.core.api.controllers;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.emf.common.command.Command;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -32,9 +30,9 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	protected EEFCustomWidgetDescription description;
 
 	/**
-	 * The editing domain.
+	 * The editing context adapter.
 	 */
-	protected TransactionalEditingDomain editingDomain;
+	protected EditionContextAdapter eca;
 
 	/**
 	 * The constructor.
@@ -45,14 +43,14 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param eca
+	 *            The editing context adapter.
 	 */
 	public AbstractEEFCustomWidgetController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+			EditionContextAdapter eca) {
 		super(variableManager, interpreter);
 		this.description = description;
-		this.editingDomain = editingDomain;
+		this.eca = eca;
 	}
 
 	/**
@@ -90,15 +88,14 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	 *            Identifier of the custom expression to execute
 	 */
 	protected void executeCommandExpression(final String customExpressionId) {
-		final Command command = new RecordingCommand(this.editingDomain) {
+		eca.performModelChange(new Runnable() {
 			@Override
-			protected void doExecute() {
+			public void run() {
 				String pushExpression = getCustomExpression(customExpressionId);
 				EAttribute attr = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
 				AbstractEEFCustomWidgetController.this.newEval().call(attr, pushExpression);
 			}
-		};
-		this.editingDomain.getCommandStack().execute(command);
+		});
 	}
 
 }

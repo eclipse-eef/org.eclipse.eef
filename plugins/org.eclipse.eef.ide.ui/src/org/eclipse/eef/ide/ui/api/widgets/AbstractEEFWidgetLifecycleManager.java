@@ -22,6 +22,7 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
@@ -31,7 +32,6 @@ import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
@@ -91,9 +91,9 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected IInterpreter interpreter;
 
 	/**
-	 * The editing domain.
+	 * The editing context adapter.
 	 */
-	protected TransactionalEditingDomain editingDomain;
+	protected EditionContextAdapter eca;
 
 	/**
 	 * The label.
@@ -112,13 +112,13 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param eca
+	 *            The editing context adapter
 	 */
-	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, EditionContextAdapter eca) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
-		this.editingDomain = editingDomain;
+		this.eca = eca;
 	}
 
 	/**
