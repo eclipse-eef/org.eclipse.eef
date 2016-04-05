@@ -17,12 +17,10 @@ import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.internal.controllers.EEFSelectController;
 import org.eclipse.eef.tests.internal.EEFDataTests;
 import org.eclipse.emf.ecore.EClassifier;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.Is;
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-
-import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests for {@link IEEFSelectController}.
@@ -37,9 +35,10 @@ public class EEFSelectControllerTests extends AbstractEEFControllerTests {
 	private static final String PROJECT_ECLASS_NAME = "Project"; //$NON-NLS-1$
 
 	private IEEFSelectController selectController(String modelPath) {
-		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
+		EClassifier eClassifier = this.ePackage(AbstractEEFControllerTests.DART_ECORE, 0)
+				.getEClassifier(EEFSelectControllerTests.PROJECT_ECLASS_NAME);
 		EEFSelectDescription description = widget(group(page(modelPath, 0), 0), EEFSelectDescription.class, 0);
-		return new EEFSelectController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		return new EEFSelectController(description, newVariableManager(eClassifier), this.interpreter, this.eca);
 	}
 
 	@Test
@@ -57,10 +56,10 @@ public class EEFSelectControllerTests extends AbstractEEFControllerTests {
 		AtomicBoolean atomicBoolean = new AtomicBoolean(false);
 		IEEFSelectController controller = this.selectController(EEFDataTests.EEFSELECTCONTROLLERTESTS_VALUE);
 		controller.onNewValue(value -> {
-			assertThat(value, is("public")); //$NON-NLS-1$
+			MatcherAssert.assertThat(value, Is.is("public")); //$NON-NLS-1$
 			atomicBoolean.set(true);
 		});
 		controller.refresh();
-		assertTrue(atomicBoolean.get());
+		Assert.assertTrue(atomicBoolean.get());
 	}
 }

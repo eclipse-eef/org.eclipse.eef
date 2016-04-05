@@ -31,13 +31,13 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.widgets.Composite;
@@ -60,9 +60,9 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	private IInterpreter interpreter;
 
 	/**
-	 * The editing domain.
+	 * The editing context adapter.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private EditionContextAdapter eca;
 
 	/**
 	 * The description of the container.
@@ -83,15 +83,15 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param eca
+	 *            The editing context adapter
 	 */
 	public EEFContainerLifecycleManager(EEFContainerDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+			EditionContextAdapter eca) {
 		this.description = description;
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
-		this.editingDomain = editingDomain;
+		this.eca = eca;
 	}
 
 	/**
@@ -130,8 +130,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 		if (eefWidgetDescription instanceof EEFTextDescription) {
 			EEFTextDescription eefTextDescription = (EEFTextDescription) eefWidgetDescription;
 
-			EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter,
-					editingDomain);
+			EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter, eca);
 			eefTextLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefTextLifecycleManager);
@@ -139,7 +138,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			EEFLabelDescription eefLabelDescription = (EEFLabelDescription) eefWidgetDescription;
 
 			EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter,
-					editingDomain);
+					eca);
 			eefLabelLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefLabelLifecycleManager);
@@ -147,7 +146,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			EEFSelectDescription eefSelectDescription = (EEFSelectDescription) eefWidgetDescription;
 
 			EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager,
-					interpreter, editingDomain);
+					interpreter, eca);
 			eefSelectLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefSelectLifecycleManager);
@@ -155,7 +154,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			EEFRadioDescription eefRadioDescription = (EEFRadioDescription) eefWidgetDescription;
 
 			EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager, interpreter,
-					editingDomain);
+					eca);
 			eefRadioLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefRadioLifecycleManager);
@@ -163,7 +162,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) eefWidgetDescription;
 
 			EEFCheckboxLifecycleManager eefCheckboxLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription, childVariableManager,
-					interpreter, editingDomain);
+					interpreter, eca);
 			eefCheckboxLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefCheckboxLifecycleManager);
@@ -171,14 +170,14 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 			EEFButtonDescription eefButtonDescription = (EEFButtonDescription) eefWidgetDescription;
 
 			EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager,
-					interpreter, editingDomain);
+					interpreter, eca);
 			eefButtonLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(eefButtonLifecycleManager);
 		} else if (eefWidgetDescription instanceof EEFCustomWidgetDescription) {
 			EEFCustomWidgetDescription eefCustomDescription = (EEFCustomWidgetDescription) eefWidgetDescription;
 			ILifecycleManager eefCustomWidgetLifecycleManager = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManager(eefCustomDescription,
-					childVariableManager, interpreter, editingDomain);
+					childVariableManager, interpreter, eca);
 			if (eefCustomWidgetLifecycleManager != null) {
 				eefCustomWidgetLifecycleManager.createControl(parent, formContainer);
 				this.lifecycleManagers.add(eefCustomWidgetLifecycleManager);

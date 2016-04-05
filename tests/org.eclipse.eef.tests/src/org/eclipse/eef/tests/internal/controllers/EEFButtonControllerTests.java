@@ -17,12 +17,10 @@ import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.eef.core.internal.controllers.EEFButtonController;
 import org.eclipse.eef.tests.internal.EEFDataTests;
 import org.eclipse.emf.ecore.EClassifier;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.Is;
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-
-import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests for the {@link IEEFButtonController}.
@@ -37,9 +35,10 @@ public class EEFButtonControllerTests extends AbstractEEFControllerTests {
 	private static final String PROJECT_ECLASS_NAME = "Project"; //$NON-NLS-1$
 
 	private IEEFButtonController buttonController(String modelPath) {
-		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
+		EClassifier eClassifier = this.ePackage(AbstractEEFControllerTests.DART_ECORE, 0)
+				.getEClassifier(EEFButtonControllerTests.PROJECT_ECLASS_NAME);
 		EEFButtonDescription description = widget(group(page(modelPath, 0), 0), EEFButtonDescription.class, 0);
-		return new EEFButtonController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		return new EEFButtonController(description, newVariableManager(eClassifier), this.interpreter, this.eca);
 	}
 
 	@Test
@@ -57,11 +56,11 @@ public class EEFButtonControllerTests extends AbstractEEFControllerTests {
 		AtomicBoolean atomicBoolean = new AtomicBoolean(false);
 		IEEFButtonController controller = this.buttonController(EEFDataTests.EEFBUTTONCONTROLLERTESTS_BUTTONLABEL);
 		controller.onNewButtonLabel(label -> {
-			assertThat(label, is("OK")); //$NON-NLS-1$
-				atomicBoolean.set(true);
-			});
+			MatcherAssert.assertThat(label, Is.is("OK")); //$NON-NLS-1$
+			atomicBoolean.set(true);
+		});
 		controller.refresh();
-		assertTrue(atomicBoolean.get());
+		Assert.assertTrue(atomicBoolean.get());
 	}
 
 }

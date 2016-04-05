@@ -17,12 +17,10 @@ import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.internal.controllers.EEFTextController;
 import org.eclipse.eef.tests.internal.EEFDataTests;
 import org.eclipse.emf.ecore.EClassifier;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.Is;
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-
-import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests for the {@link IEEFTextController}.
@@ -38,9 +36,9 @@ public class EEFTextControllerTests extends AbstractEEFControllerTests {
 	private static final String PROJECT_ECLASS_NAME = "Project"; //$NON-NLS-1$
 
 	private IEEFTextController textController(String modelPath) {
-		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
+		EClassifier eClassifier = this.ePackage(AbstractEEFControllerTests.DART_ECORE, 0).getEClassifier(EEFTextControllerTests.PROJECT_ECLASS_NAME);
 		EEFTextDescription description = widget(group(page(modelPath, 0), 0), EEFTextDescription.class, 0);
-		return new EEFTextController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		return new EEFTextController(description, newVariableManager(eClassifier), this.interpreter, this.eca);
 	}
 
 	@Test
@@ -58,10 +56,10 @@ public class EEFTextControllerTests extends AbstractEEFControllerTests {
 		AtomicBoolean atomicBoolean = new AtomicBoolean(false);
 		IEEFTextController controller = this.textController(EEFDataTests.EEFTEXTCONTROLLERTESTS_VALUE);
 		controller.onNewValue(value -> {
-			assertThat(value, is(PROJECT_ECLASS_NAME));
+			MatcherAssert.assertThat(value, Is.is(EEFTextControllerTests.PROJECT_ECLASS_NAME));
 			atomicBoolean.set(true);
 		});
 		controller.refresh();
-		assertTrue(atomicBoolean.get());
+		Assert.assertTrue(atomicBoolean.get());
 	}
 }

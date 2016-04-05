@@ -12,7 +12,6 @@ package org.eclipse.eef.core.api;
 
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.core.internal.EEFViewImpl;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -31,15 +30,15 @@ public class EEFViewFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The {@link IInterpreter} to use for dynamic expressions
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param eca
+	 *            the editing context adapter.
 	 * @param input
 	 *            The input
 	 * @return The {@link EEFView} fully initialized
 	 */
 	public EEFView createEEFView(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain, InputDescriptor input) {
-		return this.createEEFView(eefViewDescription, variableManager, interpreter, editingDomain, new EEFDomainClassTester(), input);
+			EditionContextAdapter eca, InputDescriptor input) {
+		return this.createEEFView(eefViewDescription, variableManager, interpreter, eca, new EEFDomainClassTester(), input);
 	}
 
 	/**
@@ -51,8 +50,8 @@ public class EEFViewFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The {@link IInterpreter} to use for dynamic expressions
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param eca
+	 *            the editing context adapter.
 	 * @param domainClassTester
 	 *            The domain class tester
 	 * @param input
@@ -60,8 +59,8 @@ public class EEFViewFactory {
 	 * @return The {@link EEFView} fully initialized
 	 */
 	public EEFView createEEFView(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain, EEFDomainClassTester domainClassTester, InputDescriptor input) {
-		EEFView eefView = new EEFViewImpl(eefViewDescription, variableManager, interpreter, editingDomain, domainClassTester);
+			EditionContextAdapter eca, EEFDomainClassTester domainClassTester, InputDescriptor input) {
+		EEFView eefView = new EEFViewImpl(eefViewDescription, variableManager, interpreter, eca, domainClassTester);
 		eefView.setInput(input);
 		eefView.initialize();
 		return eefView;

@@ -13,13 +13,11 @@ package org.eclipse.eef.core.internal.controllers;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -35,9 +33,9 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	private EEFButtonDescription description;
 
 	/**
-	 * The editing domain.
+	 * The editing context adapter.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private EditionContextAdapter eca;
 
 	/**
 	 * The consumer of a new value of the button's label.
@@ -53,14 +51,14 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param eca
+	 *            The editing context adapter
 	 */
 	public EEFButtonController(EEFButtonDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+			EditionContextAdapter eca) {
 		super(variableManager, interpreter);
 		this.description = description;
-		this.editingDomain = editingDomain;
+		this.eca = eca;
 	}
 
 	@Override
@@ -89,14 +87,13 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 
 	@Override
 	public void pushed() {
-		final Command command = new RecordingCommand(this.editingDomain) {
+		eca.performModelChange(new Runnable() {
 			@Override
-			protected void doExecute() {
+			public void run() {
 				String pushExpression = EEFButtonController.this.description.getPushExpression();
 				EAttribute attr = EefPackage.Literals.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION;
 				EEFButtonController.this.newEval().call(attr, pushExpression);
 			}
-		};
-		this.editingDomain.getCommandStack().execute(command);
+		});
 	}
 }

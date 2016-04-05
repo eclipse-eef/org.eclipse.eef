@@ -11,7 +11,6 @@
 package org.eclipse.eef.core.api;
 
 import org.eclipse.eef.EEFGroupDescription;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -48,11 +47,4 @@ public interface EEFGroup extends EEFContainerParent {
 	 * @return The interpreter
 	 */
 	IInterpreter getInterpreter();
-
-	/**
-	 * Returns the editing domain.
-	 *
-	 * @return The editing domain
-	 */
-	TransactionalEditingDomain getEditingDomain();
 }
