@@ -16,16 +16,20 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFFillLayoutDescription;
+import org.eclipse.eef.EEFGridLayoutDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
+import org.eclipse.eef.EEFLayoutDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioConditionalStyle;
@@ -142,8 +146,28 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseEEFControlDescription(EEFControlDescription object) {
+			return createEEFControlDescriptionAdapter();
+		}
+
+		@Override
 		public Adapter caseEEFContainerDescription(EEFContainerDescription object) {
 			return createEEFContainerDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFLayoutDescription(EEFLayoutDescription object) {
+			return createEEFLayoutDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFFillLayoutDescription(EEFFillLayoutDescription object) {
+			return createEEFFillLayoutDescriptionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFGridLayoutDescription(EEFGridLayoutDescription object) {
+			return createEEFGridLayoutDescriptionAdapter();
 		}
 
 		@Override
@@ -413,6 +437,20 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFControlDescription
+	 * <em>EEF Control Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFControlDescription
+	 * @generated
+	 */
+	public Adapter createEEFControlDescriptionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFContainerDescription
 	 * <em>EEF Container Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
@@ -423,6 +461,48 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFContainerDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLayoutDescription
+	 * <em>EEF Layout Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFLayoutDescription
+	 * @generated
+	 */
+	public Adapter createEEFLayoutDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFFillLayoutDescription
+	 * <em>EEF Fill Layout Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFFillLayoutDescription
+	 * @generated
+	 */
+	public Adapter createEEFFillLayoutDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGridLayoutDescription
+	 * <em>EEF Grid Layout Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFGridLayoutDescription
+	 * @generated
+	 */
+	public Adapter createEEFGridLayoutDescriptionAdapter() {
 		return null;
 	}
 

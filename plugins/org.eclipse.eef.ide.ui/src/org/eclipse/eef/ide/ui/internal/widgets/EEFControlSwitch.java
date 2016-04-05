@@ -1,0 +1,235 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Obeo - initial API and implementation
+ *******************************************************************************/
+package org.eclipse.eef.ide.ui.internal.widgets;
+
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.eef.EEFButtonDescription;
+import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFControlDescription;
+import org.eclipse.eef.EEFCustomWidgetDescription;
+import org.eclipse.eef.EEFDynamicMappingFor;
+import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.ide.ui.api.ILifecycleManager;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.eef.ide.ui.internal.Messages;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.swt.widgets.Composite;
+
+/**
+ * Utility class used to dispatch the creation of the control to create.
+ *
+ * @author sbegaudeau
+ */
+public class EEFControlSwitch {
+	/**
+	 * The interpreter.
+	 */
+	private IInterpreter interpreter;
+
+	/**
+	 * The editing domain.
+	 */
+	private TransactionalEditingDomain editingDomain;
+
+	/**
+	 * The constructor.
+	 *
+	 * @param interpreter
+	 *            The interpreter
+	 * @param editingDomain
+	 *            The editing domain
+	 */
+	public EEFControlSwitch(IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+		this.interpreter = interpreter;
+		this.editingDomain = editingDomain;
+	}
+
+	/**
+	 * Creates the control from the given description in the given parent.
+	 *
+	 * @param parent
+	 *            The parent in which the control should be created
+	 * @param formContainer
+	 *            The container of the form
+	 * @param controlDescription
+	 *            The description of the control to be created
+	 * @param variableManager
+	 *            The variable manager
+	 * @return The list of all the lifecycle manager that have been created. One description can create multiple
+	 *         controls and thus multiple lifecycle managers (for example dynamic mappings).
+	 */
+	public List<ILifecycleManager> doCreate(Composite parent, IEEFFormContainer formContainer, EEFControlDescription controlDescription,
+			IVariableManager variableManager) {
+		List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+		if (controlDescription instanceof EEFContainerDescription) {
+			EEFContainerLifecycleManager containerLifecycleManager = new EEFContainerLifecycleManager((EEFContainerDescription) controlDescription,
+					variableManager.createChild(), this.interpreter, this.editingDomain);
+			containerLifecycleManager.createControl(parent, formContainer);
+			lifecycleManagers.add(containerLifecycleManager);
+		} else if (controlDescription instanceof EEFWidgetDescription) {
+			lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription,
+					variableManager.createChild()));
+		} else if (controlDescription instanceof EEFDynamicMappingFor) {
+			lifecycleManagers.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription,
+					variableManager));
+		}
+		return lifecycleManagers;
+	}
+
+	/**
+	 * Creates the control for the widget with the given {@link EEFWidgetDescription}.
+	 *
+	 * @param parent
+	 *            The composite parent
+	 * @param formContainer
+	 *            The form container
+	 * @param widgetDescription
+	 *            The description of the widget to create
+	 * @param childVariableManager
+	 *            The child variable manager
+	 * @return The lifecycle managers created for the widget(s)
+	 */
+	private List<ILifecycleManager> createWidgetControl(Composite parent, IEEFFormContainer formContainer, EEFWidgetDescription widgetDescription,
+			IVariableManager childVariableManager) {
+		List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+		if (widgetDescription instanceof EEFTextDescription) {
+			EEFTextDescription eefTextDescription = (EEFTextDescription) widgetDescription;
+
+			EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter,
+					editingDomain);
+			eefTextLifecycleManager.createControl(parent, formContainer);
+
+			lifecycleManagers.add(eefTextLifecycleManager);
+		} else if (widgetDescription instanceof EEFLabelDescription) {
+			EEFLabelDescription eefLabelDescription = (EEFLabelDescription) widgetDescription;
+
+			EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter,
+					editingDomain);
+			eefLabelLifecycleManager.createControl(parent, formContainer);
+
+			lifecycleManagers.add(eefLabelLifecycleManager);
+		} else if (widgetDescription instanceof EEFSelectDescription) {
+			EEFSelectDescription eefSelectDescription = (EEFSelectDescription) widgetDescription;
+
+			EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager,
+					interpreter, editingDomain);
+			eefSelectLifecycleManager.createControl(parent, formContainer);
+
+			lifecycleManagers.add(eefSelectLifecycleManager);
+		} else if (widgetDescription instanceof EEFRadioDescription) {
+			EEFRadioDescription eefRadioDescription = (EEFRadioDescription) widgetDescription;
+
+			EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager, interpreter,
+					editingDomain);
+			eefRadioLifecycleManager.createControl(parent, formContainer);
+
+			lifecycleManagers.add(eefRadioLifecycleManager);
+		} else if (widgetDescription instanceof EEFCheckboxDescription) {
+			EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) widgetDescription;
+
+			EEFCheckboxLifecycleManager eefCheckboxLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription, childVariableManager,
+					interpreter, editingDomain);
+			eefCheckboxLifecycleManager.createControl(parent, formContainer);
+
+			lifecycleManagers.add(eefCheckboxLifecycleManager);
+		} else if (widgetDescription instanceof EEFButtonDescription) {
+			EEFButtonDescription eefButtonDescription = (EEFButtonDescription) widgetDescription;
+
+			EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager,
+					interpreter, editingDomain);
+			eefButtonLifecycleManager.createControl(parent, formContainer);
+
+			lifecycleManagers.add(eefButtonLifecycleManager);
+		} else if (widgetDescription instanceof EEFCustomWidgetDescription) {
+			EEFCustomWidgetDescription eefCustomDescription = (EEFCustomWidgetDescription) widgetDescription;
+			ILifecycleManager eefCustomWidgetLifecycleManager = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManager(eefCustomDescription,
+					childVariableManager, interpreter, editingDomain);
+			if (eefCustomWidgetLifecycleManager != null) {
+				eefCustomWidgetLifecycleManager.createControl(parent, formContainer);
+				lifecycleManagers.add(eefCustomWidgetLifecycleManager);
+			} else {
+				String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, eefCustomDescription.getIdentifier());
+				EEFIdeUiPlugin.getPlugin().error(message);
+			}
+		}
+		return lifecycleManagers;
+	}
+
+	/**
+	 * Creates the widgets for the dynamic mapping defined in the description.
+	 *
+	 * @param parent
+	 *            The composite parent
+	 * @param formContainer
+	 *            The form container
+	 * @param dynamicMappingFor
+	 *            The root of a dynamic mapping definition
+	 * @param variableManager
+	 *            The variable manager
+	 * @return The list of the lifecycle manager created
+	 */
+	private List<ILifecycleManager> createDynamicMappingControl(Composite parent, IEEFFormContainer formContainer,
+			EEFDynamicMappingFor dynamicMappingFor, IVariableManager variableManager) {
+		List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+
+		String domainClassExpression = dynamicMappingFor.getDomainClassExpression();
+		EAttribute domainClassEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION;
+		String iterator = dynamicMappingFor.getIterator();
+
+		EAttribute ifExpressionEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION;
+
+		Object domainClassExpressionResult = new Eval(this.interpreter, variableManager).get(domainClassEAttribute, domainClassExpression,
+				Object.class);
+		for (Object object : Util.asIterable(domainClassExpressionResult, Object.class)) {
+			Map<String, Object> switchExpressionVariables = new HashMap<String, Object>();
+			switchExpressionVariables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
+			switchExpressionVariables.put(iterator, object);
+
+			EEFWidgetDescription eefWidgetDescription = null;
+			List<EEFDynamicMappingIf> dynamicMappingIfs = dynamicMappingFor.getIfs();
+			for (EEFDynamicMappingIf dynamicMappingIf : dynamicMappingIfs) {
+				Boolean isValid = new Eval(this.interpreter, switchExpressionVariables).get(ifExpressionEAttribute,
+						dynamicMappingIf.getPredicateExpression(), Boolean.class);
+				if (isValid != null && isValid.booleanValue()) {
+					eefWidgetDescription = dynamicMappingIf.getWidget();
+					break;
+				}
+			}
+
+			if (eefWidgetDescription != null) {
+				IVariableManager childVariableManager = variableManager.createChild();
+				childVariableManager.put(iterator, object);
+				lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, eefWidgetDescription, childVariableManager));
+			}
+		}
+
+		return lifecycleManagers;
+	}
+}

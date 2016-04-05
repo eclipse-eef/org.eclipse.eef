@@ -151,7 +151,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTAINER);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		}
@@ -222,7 +222,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case EefPackage.EEF_GROUP_DESCRIPTION__CONTAINER:
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -241,8 +241,32 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTAINER,
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
 				EefFactory.eINSTANCE.createEEFContainerDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFTextDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFLabelDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFButtonDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFCheckboxDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFSelectDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFRadioDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES,
 				EefFactory.eINSTANCE.createEEFSemanticValidationRuleDescription()));

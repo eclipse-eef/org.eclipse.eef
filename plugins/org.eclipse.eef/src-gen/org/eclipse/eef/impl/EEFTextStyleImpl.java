@@ -301,7 +301,6 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	 *
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

@@ -15,6 +15,7 @@ import com.google.common.base.Objects;
 import java.util.List;
 
 import org.eclipse.eef.EEFConditionalStyle;
+import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
@@ -39,11 +40,9 @@ import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
 
 /**
  * Parent of all the lifecycle managers.
@@ -51,30 +50,6 @@ import org.eclipse.swt.widgets.Control;
  * @author sbegaudeau
  */
 public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifecycleManager {
-
-	/**
-	 * Horizontal space to leave between related widgets. Each section should use these values for spacing its widgets.
-	 * For example, you can use +/- HSPACE as the offset of a left or right FlatFormAttachment.
-	 *
-	 * The tabbed property composite also inserts VSPACE pixels between section composites if more than one section is
-	 * displayed.
-	 */
-	public static final int HSPACE = 5;
-
-	/**
-	 * The label width that will be used for section names.
-	 **/
-	public static final int LABEL_WIDTH = 232;
-
-	/**
-	 * The gap between the label and the widget with the help icon.
-	 */
-	public static final int GAP_WITH_HELP = 25;
-
-	/**
-	 * The gap between the label and the widget without the help icon.
-	 */
-	public static final int GAP_WITHOUT_HELP = 20;
 
 	/**
 	 * The variable manager.
@@ -129,38 +104,66 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		Composite composite = widgetFactory.createFlatFormComposite(parent);
-		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
-		composite.setLayoutData(gridData);
+		Composite composite = parent;
+
+		// If we are in a group, we will always create a label (empty or not) for the 3 columns layout of the group.
+		boolean isInGroup = this.getWidgetDescription().eContainer() instanceof EEFGroupDescription;
+
+		// Some widgets (like a checkbox) will not have a separated "label" widget for their label. Those widgets will
+		// thus never create another widget expect in the group (for the layout).
+		boolean needsSeparatedLabel = this.needSeparatedLabel();
+
+		// Finally if the label expression is blank, we will not create a label inside of a group (for the layout).
+		boolean isBlankLabel = Util.isBlank(this.getWidgetDescription().getLabelExpression());
+
+		boolean needsLabel = isInGroup || (!isBlankLabel && needsSeparatedLabel);
+		boolean needsHelp = isInGroup || !Util.isBlank(this.getWidgetDescription().getHelpExpression());
+
+		// If we are not in a group, we will create a composite to hold all the label and help of the widget if
+		// necessary
+		if (!isInGroup && (needsLabel || needsHelp)) {
+			composite = widgetFactory.createComposite(parent);
+
+			// We will only create the necessary number of columns for this "invisible" composite
+			int numColumn = 1;
+			if (needsLabel) {
+				numColumn = numColumn + 1;
+			}
+			if (needsHelp) {
+				numColumn = numColumn + 1;
+			}
+			GridLayout layout = new GridLayout(numColumn, false);
+			composite.setLayout(layout);
+
+			GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
+			layoutData.horizontalSpan = 1;
+			composite.setLayoutData(layoutData);
+		}
+
+		if (needsLabel) {
+			this.label = widgetFactory.createStyledText(composite, SWT.NONE);
+			this.label.setEditable(false);
+			this.label.setLayoutData(new GridData(GridData.VERTICAL_ALIGN_BEGINNING));
+		}
+
+		if (needsHelp) {
+			this.help = widgetFactory.createCLabel(composite, ""); //$NON-NLS-1$
+			if (!Util.isBlank(this.getWidgetDescription().getHelpExpression())) {
+				this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));
+				this.help.setToolTipText(""); //$NON-NLS-1$
+			}
+		}
 
 		this.createMainControl(composite, formContainer);
+	}
 
-		Control control = this.getValidationControl();
-
-		boolean hasHelp = !Util.isBlank(this.getWidgetDescription().getHelpExpression());
-
-		int gap = GAP_WITHOUT_HELP;
-		if (hasHelp) {
-			gap = GAP_WITH_HELP;
-		}
-
-		this.label = widgetFactory.createStyledText(composite, SWT.NONE);
-		this.label.setEditable(false);
-		FormData labelFormData = new FormData();
-		labelFormData.left = new FormAttachment(0, 0);
-		labelFormData.right = new FormAttachment(control, -HSPACE - gap);
-		labelFormData.top = new FormAttachment(control, 0, SWT.TOP);
-		this.label.setLayoutData(labelFormData);
-
-		if (hasHelp) {
-			this.help = widgetFactory.createCLabel(composite, ""); //$NON-NLS-1$
-			FormData helpFormData = new FormData();
-			helpFormData.top = new FormAttachment(control, 0, SWT.TOP);
-			helpFormData.left = new FormAttachment(this.label);
-			this.help.setLayoutData(helpFormData);
-			this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));
-			this.help.setToolTipText(""); //$NON-NLS-1$
-		}
+	/**
+	 * Indicates if the widget should create a label widget for its label.
+	 *
+	 * @return <code>true</code> if a label should be created, <code>false</code> otherwise.
+	 */
+	protected boolean needSeparatedLabel() {
+		return true;
 	}
 
 	/**

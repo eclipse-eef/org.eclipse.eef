@@ -31,8 +31,6 @@ import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.ColorDialog;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -87,15 +85,9 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
     protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
         EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-        FormData formData = new FormData();
-        formData.left = new FormAttachment(0, LABEL_WIDTH);
-        formData.right = new FormAttachment(100, 0);
-
         // Create the color picker
         this.colorPicker = new ColorPicker(parent);
         widgetFactory.paintBordersFor(parent);
-
-        this.colorPicker.setLayoutData(formData);
 
         this.controller = new ColorPickerController(this.description, this.variableManager, this.interpreter, this.editingDomain);
     }

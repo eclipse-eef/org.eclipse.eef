@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
  * </li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getContainer <em>Container</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
  * </ul>
@@ -153,27 +153,16 @@ public interface EEFGroupDescription extends EObject {
 	void setPreconditionExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Container</b></em>' containment reference. <!-- begin-user-doc --> <!--
-	 * end-user-doc --> <!-- begin-model-doc --> Contains the container related to a group. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list. The list contents are of type
+	 * {@link org.eclipse.eef.EEFControlDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
+	 * --> Contains the controls related to a group. <!-- end-model-doc -->
 	 *
-	 * @return the value of the '<em>Container</em>' containment reference.
-	 * @see #setContainer(EEFContainerDescription)
-	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Container()
+	 * @return the value of the '<em>Controls</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Controls()
 	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
-	EEFContainerDescription getContainer();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getContainer <em>Container</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Container</em>' containment reference.
-	 * @see #getContainer()
-	 * @generated
-	 */
-	void setContainer(EEFContainerDescription value);
+	EList<EEFControlDescription> getControls();
 
 	/**
 	 * Returns the value of the '<em><b>Semantic Validation Rules</b></em>' containment reference list. The list

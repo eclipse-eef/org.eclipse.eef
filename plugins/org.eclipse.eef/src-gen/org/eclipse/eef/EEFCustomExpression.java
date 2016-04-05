@@ -52,7 +52,7 @@ public interface EEFCustomExpression extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Custom Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * --> <!-- begin-model-doc --> The label of the Widget visible by the end-users. <!-- end-model-doc -->
+	 * --> <!-- begin-model-doc --> Defines the behavior associated to a custom expression. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Custom Expression</em>' attribute.
 	 * @see #setCustomExpression(String)

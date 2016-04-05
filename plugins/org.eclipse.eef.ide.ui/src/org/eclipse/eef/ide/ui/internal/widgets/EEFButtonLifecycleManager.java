@@ -34,8 +34,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -94,14 +93,11 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		final int buttonWidth = 80;
+		this.button = widgetFactory.createButton(parent, "", SWT.NONE); //$NON-NLS-1$
 
-		FormData buttonFormData = new FormData();
-		buttonFormData.left = new FormAttachment(0, LABEL_WIDTH);
-		buttonFormData.width = buttonWidth;
-
-		this.button = widgetFactory.createButton(parent, "DO IT", SWT.NONE); //$NON-NLS-1$
-		this.button.setLayoutData(buttonFormData);
+		final int minimumWidth = 80;
+		GridData layoutData = new GridData(minimumWidth, SWT.DEFAULT);
+		this.button.setLayoutData(layoutData);
 
 		widgetFactory.paintBordersFor(parent);
 

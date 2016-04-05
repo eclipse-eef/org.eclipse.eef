@@ -6,13 +6,9 @@
     xmlns:eef="http://www.eclipse.org/eef"
     xsi:schemaLocation="http://www.eclipse.org/eef ../../../../org.eclipse.eef/model/eef.ecore">
   <groups>
-    <container>
-      <widgets
-          xsi:type="eef:EEFLabelDescription"
-          identifier=""
-          labelExpression="aql:'Documentation:'"
-          helpExpression=""/>
-    </container>
+    <controls
+        xsi:type="eef:EEFLabelDescription"
+        labelExpression="aql:'Documentation:'"/>
   </groups>
   <pages groups="//@groups.0"/>
 </eef:EEFViewDescription>
