@@ -533,6 +533,98 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFButtonStyleItemProvider eefButtonStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFButtonStyleAdapter() {
+		if (eefButtonStyleItemProvider == null) {
+			eefButtonStyleItemProvider = new EEFButtonStyleItemProvider(this);
+		}
+
+		return eefButtonStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFCheckboxStyleItemProvider eefCheckboxStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFCheckboxStyleAdapter() {
+		if (eefCheckboxStyleItemProvider == null) {
+			eefCheckboxStyleItemProvider = new EEFCheckboxStyleItemProvider(this);
+		}
+
+		return eefCheckboxStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSelectStyleItemProvider eefSelectStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSelectStyleAdapter() {
+		if (eefSelectStyleItemProvider == null) {
+			eefSelectStyleItemProvider = new EEFSelectStyleItemProvider(this);
+		}
+
+		return eefSelectStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFRadioStyleItemProvider eefRadioStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFRadioStyleAdapter() {
+		if (eefRadioStyleItemProvider == null) {
+			eefRadioStyleItemProvider = new EEFRadioStyleItemProvider(this);
+		}
+
+		return eefRadioStyleItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -691,6 +783,18 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefLabelStyleItemProvider != null) {
 			eefLabelStyleItemProvider.dispose();
+		}
+		if (eefButtonStyleItemProvider != null) {
+			eefButtonStyleItemProvider.dispose();
+		}
+		if (eefCheckboxStyleItemProvider != null) {
+			eefCheckboxStyleItemProvider.dispose();
+		}
+		if (eefSelectStyleItemProvider != null) {
+			eefSelectStyleItemProvider.dispose();
+		}
+		if (eefRadioStyleItemProvider != null) {
+			eefRadioStyleItemProvider.dispose();
 		}
 	}
 

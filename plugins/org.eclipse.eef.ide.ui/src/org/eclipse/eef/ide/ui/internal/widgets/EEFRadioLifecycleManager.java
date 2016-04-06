@@ -148,7 +148,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 */
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
-		return null;
+		return this.description.getStyle();
 	}
 
 	/**

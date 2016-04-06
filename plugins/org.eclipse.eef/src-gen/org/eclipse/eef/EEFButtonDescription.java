@@ -19,6 +19,7 @@ package org.eclipse.eef;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,28 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setPushExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Defines the text style <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Style</em>' containment reference.
+	 * @see #setStyle(EEFButtonStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFButtonDescription_Style()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFButtonStyle getStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Style</em>' containment reference.
+	 * @see #getStyle()
+	 * @generated
+	 */
+	void setStyle(EEFButtonStyle value);
 
 } // EEFButtonDescription

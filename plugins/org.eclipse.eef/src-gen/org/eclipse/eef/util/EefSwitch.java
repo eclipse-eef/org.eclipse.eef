@@ -9,7 +9,9 @@
 package org.eclipse.eef.util;
 
 import org.eclipse.eef.EEFButtonDescription;
+import org.eclipse.eef.EEFButtonStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
@@ -21,8 +23,10 @@ import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
@@ -297,6 +301,50 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFLabelStyle(eefLabelStyle);
 			if (result == null) {
 				result = caseEEFWidgetStyle(eefLabelStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_BUTTON_STYLE: {
+			EEFButtonStyle eefButtonStyle = (EEFButtonStyle) theEObject;
+			T result = caseEEFButtonStyle(eefButtonStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefButtonStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_CHECKBOX_STYLE: {
+			EEFCheckboxStyle eefCheckboxStyle = (EEFCheckboxStyle) theEObject;
+			T result = caseEEFCheckboxStyle(eefCheckboxStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefCheckboxStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SELECT_STYLE: {
+			EEFSelectStyle eefSelectStyle = (EEFSelectStyle) theEObject;
+			T result = caseEEFSelectStyle(eefSelectStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefSelectStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_RADIO_STYLE: {
+			EEFRadioStyle eefRadioStyle = (EEFRadioStyle) theEObject;
+			T result = caseEEFRadioStyle(eefRadioStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefRadioStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -652,6 +700,66 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFLabelStyle(EEFLabelStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Button Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Button Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFButtonStyle(EEFButtonStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Checkbox Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Checkbox Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFCheckboxStyle(EEFCheckboxStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Select Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Select Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSelectStyle(EEFSelectStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Radio Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Radio Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFRadioStyle(EEFRadioStyle object) {
 		return null;
 	}
 

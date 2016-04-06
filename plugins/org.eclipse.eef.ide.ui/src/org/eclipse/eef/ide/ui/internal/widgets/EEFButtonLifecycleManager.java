@@ -131,7 +131,7 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 */
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
-		return null;
+		return this.description.getStyle();
 	}
 
 	@Override

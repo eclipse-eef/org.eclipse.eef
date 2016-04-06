@@ -9,7 +9,9 @@
 package org.eclipse.eef.util;
 
 import org.eclipse.eef.EEFButtonDescription;
+import org.eclipse.eef.EEFButtonStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
@@ -21,8 +23,10 @@ import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
@@ -201,6 +205,26 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFLabelStyle(EEFLabelStyle object) {
 			return createEEFLabelStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFButtonStyle(EEFButtonStyle object) {
+			return createEEFButtonStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFCheckboxStyle(EEFCheckboxStyle object) {
+			return createEEFCheckboxStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFSelectStyle(EEFSelectStyle object) {
+			return createEEFSelectStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFRadioStyle(EEFRadioStyle object) {
+			return createEEFRadioStyleAdapter();
 		}
 
 		@Override
@@ -538,6 +562,59 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFLabelStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFButtonStyle <em>EEF Button Style</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFButtonStyle
+	 * @generated
+	 */
+	public Adapter createEEFButtonStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxStyle
+	 * <em>EEF Checkbox Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFCheckboxStyle
+	 * @generated
+	 */
+	public Adapter createEEFCheckboxStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSelectStyle <em>EEF Select Style</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFSelectStyle
+	 * @generated
+	 */
+	public Adapter createEEFSelectStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRadioStyle <em>EEF Radio Style</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFRadioStyle
+	 * @generated
+	 */
+	public Adapter createEEFRadioStyleAdapter() {
 		return null;
 	}
 

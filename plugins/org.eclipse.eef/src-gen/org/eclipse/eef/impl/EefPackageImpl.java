@@ -9,7 +9,9 @@
 package org.eclipse.eef.impl;
 
 import org.eclipse.eef.EEFButtonDescription;
+import org.eclipse.eef.EEFButtonStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
@@ -21,8 +23,10 @@ import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
@@ -207,6 +211,34 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefLabelStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefButtonStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefCheckboxStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefSelectStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefRadioStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -836,6 +868,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFButtonDescription_Style() {
+		return (EReference) eefButtonDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFCheckboxDescription() {
 		return eefCheckboxDescriptionEClass;
 	}
@@ -858,6 +900,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EAttribute getEEFCheckboxDescription_EditExpression() {
 		return (EAttribute) eefCheckboxDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFCheckboxDescription_Style() {
+		return (EReference) eefCheckboxDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -916,6 +968,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFSelectDescription_Style() {
+		return (EReference) eefSelectDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFRadioDescription() {
 		return eefRadioDescriptionEClass;
 	}
@@ -958,6 +1020,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EAttribute getEEFRadioDescription_CandidateDisplayExpression() {
 		return (EAttribute) eefRadioDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFRadioDescription_Style() {
+		return (EReference) eefRadioDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1266,6 +1338,46 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFButtonStyle() {
+		return eefButtonStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFCheckboxStyle() {
+		return eefCheckboxStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFSelectStyle() {
+		return eefSelectStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFRadioStyle() {
+		return eefRadioStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION() {
 		return eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum;
 	}
@@ -1367,22 +1479,26 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefButtonDescriptionEClass = createEClass(EefPackage.EEF_BUTTON_DESCRIPTION);
 		createEAttribute(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION);
 		createEAttribute(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION);
+		createEReference(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__STYLE);
 
 		eefCheckboxDescriptionEClass = createEClass(EefPackage.EEF_CHECKBOX_DESCRIPTION);
 		createEAttribute(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION);
+		createEReference(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE);
 
 		eefSelectDescriptionEClass = createEClass(EefPackage.EEF_SELECT_DESCRIPTION);
 		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION);
 		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION);
 		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
+		createEReference(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__STYLE);
 
 		eefRadioDescriptionEClass = createEClass(EefPackage.EEF_RADIO_DESCRIPTION);
 		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION);
 		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION);
 		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
+		createEReference(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__STYLE);
 
 		eefDynamicMappingForEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_FOR);
 		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR);
@@ -1420,6 +1536,14 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__FONT_NAME_EXPRESSION);
 		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__FONT_SIZE_EXPRESSION);
 		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__FONT_STYLE_EXPRESSION);
+
+		eefButtonStyleEClass = createEClass(EefPackage.EEF_BUTTON_STYLE);
+
+		eefCheckboxStyleEClass = createEClass(EefPackage.EEF_CHECKBOX_STYLE);
+
+		eefSelectStyleEClass = createEClass(EefPackage.EEF_SELECT_STYLE);
+
+		eefRadioStyleEClass = createEClass(EefPackage.EEF_RADIO_STYLE);
 
 		// Create enums
 		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION);
@@ -1468,6 +1592,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefCustomWidgetDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefTextStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefLabelStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefButtonStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefCheckboxStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefSelectStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefRadioStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
@@ -1696,6 +1824,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFButtonDescription_PushExpression(),
 				theEcorePackage.getEString(),
 				"pushExpression", null, 0, 1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFButtonDescription_Style(),
+				this.getEEFButtonStyle(),
+				null,
+				"style", null, 0, 1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefCheckboxDescriptionEClass, EEFCheckboxDescription.class,
 				"EEFCheckboxDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1707,6 +1840,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFCheckboxDescription_EditExpression(),
 				theEcorePackage.getEString(),
 				"editExpression", null, 0, 1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFCheckboxDescription_Style(),
+				this.getEEFCheckboxStyle(),
+				null,
+				"style", null, 0, 1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefSelectDescriptionEClass, EEFSelectDescription.class,
 				"EEFSelectDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1726,6 +1864,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFSelectDescription_CandidateDisplayExpression(),
 				theEcorePackage.getEString(),
 				"candidateDisplayExpression", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFSelectDescription_Style(),
+				this.getEEFSelectStyle(),
+				null,
+				"style", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefRadioDescriptionEClass, EEFRadioDescription.class,
 				"EEFRadioDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1745,6 +1888,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFRadioDescription_CandidateDisplayExpression(),
 				theEcorePackage.getEString(),
 				"candidateDisplayExpression", null, 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFRadioDescription_Style(),
+				this.getEEFRadioStyle(),
+				null,
+				"style", null, 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefDynamicMappingForEClass, EEFDynamicMappingFor.class,
 				"EEFDynamicMappingFor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1861,6 +2009,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFLabelStyle_FontStyleExpression(),
 				ecorePackage.getEString(),
 				"fontStyleExpression", null, 0, 1, EEFLabelStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefButtonStyleEClass, EEFButtonStyle.class,
+				"EEFButtonStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefCheckboxStyleEClass, EEFCheckboxStyle.class,
+				"EEFCheckboxStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefSelectStyleEClass, EEFSelectStyle.class,
+				"EEFSelectStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefRadioStyleEClass, EEFRadioStyle.class,
+				"EEFRadioStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.class,

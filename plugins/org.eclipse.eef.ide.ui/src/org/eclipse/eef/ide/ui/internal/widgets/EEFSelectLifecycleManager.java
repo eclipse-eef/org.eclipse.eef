@@ -151,7 +151,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 */
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
-		return null;
+		return this.description.getStyle();
 	}
 
 	/**

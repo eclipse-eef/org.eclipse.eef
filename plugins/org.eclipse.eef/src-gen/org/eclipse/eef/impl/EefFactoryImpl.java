@@ -9,7 +9,9 @@
 package org.eclipse.eef.impl;
 
 import org.eclipse.eef.EEFButtonDescription;
+import org.eclipse.eef.EEFButtonStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
@@ -21,8 +23,10 @@ import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
@@ -118,6 +122,14 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFTextStyle();
 		case EefPackage.EEF_LABEL_STYLE:
 			return createEEFLabelStyle();
+		case EefPackage.EEF_BUTTON_STYLE:
+			return createEEFButtonStyle();
+		case EefPackage.EEF_CHECKBOX_STYLE:
+			return createEEFCheckboxStyle();
+		case EefPackage.EEF_SELECT_STYLE:
+			return createEEFSelectStyle();
+		case EefPackage.EEF_RADIO_STYLE:
+			return createEEFRadioStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -371,6 +383,50 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFLabelStyle createEEFLabelStyle() {
 		EEFLabelStyleImpl eefLabelStyle = new EEFLabelStyleImpl();
 		return eefLabelStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFButtonStyle createEEFButtonStyle() {
+		EEFButtonStyleImpl eefButtonStyle = new EEFButtonStyleImpl();
+		return eefButtonStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFCheckboxStyle createEEFCheckboxStyle() {
+		EEFCheckboxStyleImpl eefCheckboxStyle = new EEFCheckboxStyleImpl();
+		return eefCheckboxStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFSelectStyle createEEFSelectStyle() {
+		EEFSelectStyleImpl eefSelectStyle = new EEFSelectStyleImpl();
+		return eefSelectStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFRadioStyle createEEFRadioStyle() {
+		EEFRadioStyleImpl eefRadioStyle = new EEFRadioStyleImpl();
+		return eefRadioStyle;
 	}
 
 	/**

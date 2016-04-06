@@ -133,7 +133,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	 */
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
-		return null;
+		return this.description.getStyle();
 	}
 
 	/**
