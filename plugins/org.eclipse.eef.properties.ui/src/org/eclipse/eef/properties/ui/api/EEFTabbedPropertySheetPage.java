@@ -334,6 +334,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 */
 	private synchronized void doSetInput(IWorkbenchPart part, ISelection selection) {
 		isRenderingInProgress.set(true);
+		this.tabbedPropertyComposite.setRedraw(false);
 		try {
 			this.currentPart = part;
 			this.currentSelection = selection;
@@ -362,6 +363,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 				this.selectionQueueLocked = false;
 			}
 		} finally {
+			this.tabbedPropertyComposite.setRedraw(true);
 			isRenderingInProgress.set(false);
 		}
 	}
