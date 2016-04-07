@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_3aba3128",
+        "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-07T09:07:01Z",
+      "side": 1,
+      "message": "not useful anymore IIRC",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 57
+      },
+      "revId": "692cdb5aab622cafb75cca98d2bfd4fb29a2b0f1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5ac45da7",
+        "filename": "plugins/org.eclipse.eef.edit/plugin.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-07T09:07:01Z",
+      "side": 1,
+      "message": "not useful anymore too IIRC",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 51
+      },
+      "revId": "692cdb5aab622cafb75cca98d2bfd4fb29a2b0f1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_1a8e558b",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-07T09:07:01Z",
+      "side": 1,
+      "message": "label",
+      "range": {
+        "startLine": 281,
+        "startChar": 56,
+        "endLine": 281,
+        "endChar": 60
+      },
+      "revId": "692cdb5aab622cafb75cca98d2bfd4fb29a2b0f1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_fa9a89c4",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-07T09:07:01Z",
+      "side": 1,
+      "message": "button",
+      "range": {
+        "startLine": 303,
+        "startChar": 56,
+        "endLine": 303,
+        "endChar": 60
+      },
+      "revId": "692cdb5aab622cafb75cca98d2bfd4fb29a2b0f1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_da978d9c",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-07T09:07:01Z",
+      "side": 1,
+      "message": "checkbox",
+      "range": {
+        "startLine": 324,
+        "startChar": 56,
+        "endLine": 324,
+        "endChar": 60
+      },
+      "revId": "692cdb5aab622cafb75cca98d2bfd4fb29a2b0f1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_bac561a2",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-07T09:07:01Z",
+      "side": 1,
+      "message": "select",
+      "range": {
+        "startLine": 356,
+        "startChar": 56,
+        "endLine": 356,
+        "endChar": 60
+      },
+      "revId": "692cdb5aab622cafb75cca98d2bfd4fb29a2b0f1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_9aca65b1",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-07T09:07:01Z",
+      "side": 1,
+      "message": "radio",
+      "range": {
+        "startLine": 388,
+        "startChar": 56,
+        "endLine": 388,
+        "endChar": 60
+      },
+      "revId": "692cdb5aab622cafb75cca98d2bfd4fb29a2b0f1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
