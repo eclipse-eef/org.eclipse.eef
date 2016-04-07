@@ -8,14 +8,20 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
+
+import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Select Description</b></em>'. <!--
@@ -29,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display
  * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -124,6 +131,16 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	 * @ordered
 	 */
 	protected EEFSelectStyle style;
+
+	/**
+	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getConditionalStyles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFSelectConditionalStyle> conditionalStyles;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -333,10 +350,26 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	 * @generated
 	 */
 	@Override
+	public EList<EEFSelectConditionalStyle> getConditionalStyles() {
+		if (conditionalStyles == null) {
+			conditionalStyles = new EObjectContainmentEList.Resolving<EEFSelectConditionalStyle>(EEFSelectConditionalStyle.class, this,
+					EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES);
+		}
+		return conditionalStyles;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_SELECT_DESCRIPTION__STYLE:
 			return basicSetStyle(null, msgs);
+		case EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES:
+			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -362,6 +395,8 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 				return getStyle();
 			}
 			return basicGetStyle();
+		case EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES:
+			return getConditionalStyles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -371,6 +406,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -388,6 +424,10 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 			return;
 		case EefPackage.EEF_SELECT_DESCRIPTION__STYLE:
 			setStyle((EEFSelectStyle) newValue);
+			return;
+		case EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			getConditionalStyles().addAll((Collection<? extends EEFSelectConditionalStyle>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -416,6 +456,9 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 		case EefPackage.EEF_SELECT_DESCRIPTION__STYLE:
 			setStyle((EEFSelectStyle) null);
 			return;
+		case EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -442,6 +485,8 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 			: !EEFSelectDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
 		case EefPackage.EEF_SELECT_DESCRIPTION__STYLE:
 			return style != null;
+		case EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES:
+			return conditionalStyles != null && !conditionalStyles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

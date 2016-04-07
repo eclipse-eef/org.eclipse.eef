@@ -11,30 +11,28 @@ package org.eclipse.eef.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.eef.EEFButtonDescription;
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFButtonDescription} object. <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFTextConditionalStyle} object. <!-- begin-user-doc
+ * --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
+public class EEFTextConditionalStyleItemProvider extends EEFConditionalStyleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public EEFButtonDescriptionItemProvider(AdapterFactory adapterFactory) {
+	public EEFTextConditionalStyleItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -48,42 +46,8 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addButtonLabelExpressionPropertyDescriptor(object);
-			addPushExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Button Label Expression feature. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addButtonLabelExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFButtonDescription_buttonLabelExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFButtonDescription_buttonLabelExpression_feature", "_UI_EEFButtonDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Push Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addPushExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFButtonDescription_pushExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFButtonDescription_pushExpression_feature", "_UI_EEFButtonDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-				null));
 	}
 
 	/**
@@ -98,8 +62,7 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__STYLE);
-			childrenFeatures.add(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES);
+			childrenFeatures.add(EefPackage.Literals.EEF_TEXT_CONDITIONAL_STYLE__STYLE);
 		}
 		return childrenFeatures;
 	}
@@ -118,13 +81,13 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	}
 
 	/**
-	 * This returns EEFButtonDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns EEFTextConditionalStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFButtonDescription")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFTextConditionalStyle")); //$NON-NLS-1$
 	}
 
 	/**
@@ -144,9 +107,9 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EEFButtonDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFButtonDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFButtonDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EEFTextConditionalStyle) object).getPreconditionExpression();
+		return label == null || label.length() == 0 ? getString("_UI_EEFTextConditionalStyle_type") : //$NON-NLS-1$
+			getString("_UI_EEFTextConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -160,13 +123,8 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EEFButtonDescription.class)) {
-		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION:
-		case EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case EefPackage.EEF_BUTTON_DESCRIPTION__STYLE:
-		case EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES:
+		switch (notification.getFeatureID(EEFTextConditionalStyle.class)) {
+		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE__STYLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -183,10 +141,8 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFButtonStyle()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES,
-				EefFactory.eINSTANCE.createEEFButtonConditionalStyle()));
+		newChildDescriptors
+		.add(createChildParameter(EefPackage.Literals.EEF_TEXT_CONDITIONAL_STYLE__STYLE, EefFactory.eINSTANCE.createEEFTextStyle()));
 	}
 
 }

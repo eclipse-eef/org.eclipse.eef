@@ -8,6 +8,8 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Label Description</b></em>'. <!--
  * end-user-doc -->
@@ -19,6 +21,7 @@ package org.eclipse.eef;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getBodyExpression <em>Body Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFLabelDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,5 +75,17 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setStyle(EEFLabelStyle value);
+
+	/**
+	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
+	 * of type {@link org.eclipse.eef.EEFButtonConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * begin-model-doc --> Defines the label style associated to a precondition <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_ConditionalStyles()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFLabelConditionalStyle> getConditionalStyles();
 
 } // EEFLabelDescription

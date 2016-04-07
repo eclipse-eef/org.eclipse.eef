@@ -8,14 +8,20 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
+
+import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Label Description</b></em>'. <!--
@@ -25,6 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getBodyExpression <em>Body Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +67,16 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @ordered
 	 */
 	protected EEFLabelStyle style;
+
+	/**
+	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getConditionalStyles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFLabelConditionalStyle> conditionalStyles;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -194,10 +211,26 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @generated
 	 */
 	@Override
+	public EList<EEFLabelConditionalStyle> getConditionalStyles() {
+		if (conditionalStyles == null) {
+			conditionalStyles = new EObjectContainmentEList.Resolving<EEFLabelConditionalStyle>(EEFLabelConditionalStyle.class, this,
+					EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
+		}
+		return conditionalStyles;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			return basicSetStyle(null, msgs);
+		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
+			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,6 +250,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 				return getStyle();
 			}
 			return basicGetStyle();
+		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
+			return getConditionalStyles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -226,6 +261,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -234,6 +270,10 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			setStyle((EEFLabelStyle) newValue);
+			return;
+		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			getConditionalStyles().addAll((Collection<? extends EEFLabelConditionalStyle>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,6 +293,9 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			setStyle((EEFLabelStyle) null);
 			return;
+		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -270,6 +313,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			: !EEFLabelDescriptionImpl.BODY_EXPRESSION_EDEFAULT.equals(bodyExpression);
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			return style != null;
+		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
+			return conditionalStyles != null && !conditionalStyles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

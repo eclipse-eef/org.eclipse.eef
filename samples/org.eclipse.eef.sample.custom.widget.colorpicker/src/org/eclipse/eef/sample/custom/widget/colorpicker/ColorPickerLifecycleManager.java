@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.sample.custom.widget.colorpicker;
 
+import java.util.List;
+
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
@@ -122,6 +124,17 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
      */
     @Override
     protected EEFWidgetStyle getWidgetStyle() {
+        return null;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle()
+     */
+    @SuppressWarnings("rawtypes")
+    @Override
+    protected List getWidgetConditionalStyles() {
         return null;
     }
 

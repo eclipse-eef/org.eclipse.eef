@@ -12,7 +12,11 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import com.google.common.base.Objects;
 
+import java.util.List;
+
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
+import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -21,6 +25,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -147,6 +152,17 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetConditionalStyles()
+	 */
+	@SuppressWarnings("rawtypes")
+	@Override
+	protected List getWidgetConditionalStyles() {
+		return this.description.getConditionalStyles();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
 	 */
 	@Override
@@ -166,18 +182,38 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.controller.onNewValue(new IConsumer<String>() {
 			@Override
 			public void apply(String value) {
-				// Set style
 				if (!text.isDisposed()) {
 					if (!(text.getText() != null && text.getText().equals(value))) {
 						text.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					}
-					setTextStyle(description.getStyle(), text);
+					// Set style
+					setStyle();
 					if (!text.isEnabled()) {
 						text.setEnabled(true);
 					}
 				}
 			}
+
 		});
+	}
+
+	/**
+	 * Set the style.
+	 */
+	private void setStyle() {
+		EEFTextStyle textStyle = description.getStyle();
+		List<EEFTextConditionalStyle> conditionalStyles = description.getConditionalStyles();
+		if (conditionalStyles != null) {
+			for (EEFTextConditionalStyle eefTextConditionalStyle : conditionalStyles) {
+				String preconditionExpression = eefTextConditionalStyle.getPreconditionExpression();
+				Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+				if (preconditionValid != null && preconditionValid.booleanValue()) {
+					textStyle = eefTextConditionalStyle.getStyle();
+					break;
+				}
+			}
+		}
+		setTextStyle(textStyle, text);
 	}
 
 	/**

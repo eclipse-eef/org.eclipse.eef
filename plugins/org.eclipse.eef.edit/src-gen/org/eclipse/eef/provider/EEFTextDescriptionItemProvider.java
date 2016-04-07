@@ -111,6 +111,7 @@ public class EEFTextDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EefPackage.Literals.EEF_TEXT_DESCRIPTION__STYLE);
+			childrenFeatures.add(EefPackage.Literals.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return childrenFeatures;
 	}
@@ -178,6 +179,7 @@ public class EEFTextDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_TEXT_DESCRIPTION__STYLE:
+		case EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -195,6 +197,9 @@ public class EEFTextDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_TEXT_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFTextStyle()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES,
+				EefFactory.eINSTANCE.createEEFTextConditionalStyle()));
 	}
 
 }

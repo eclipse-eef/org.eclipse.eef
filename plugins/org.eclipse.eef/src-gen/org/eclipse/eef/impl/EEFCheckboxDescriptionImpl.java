@@ -8,14 +8,20 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
+
+import org.eclipse.eef.EEFCheckboxConditionalStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Checkbox Description</b></em>'. <!--
@@ -26,6 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +88,16 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	 * @ordered
 	 */
 	protected EEFCheckboxStyle style;
+
+	/**
+	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getConditionalStyles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFCheckboxConditionalStyle> conditionalStyles;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -241,10 +258,26 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	 * @generated
 	 */
 	@Override
+	public EList<EEFCheckboxConditionalStyle> getConditionalStyles() {
+		if (conditionalStyles == null) {
+			conditionalStyles = new EObjectContainmentEList.Resolving<EEFCheckboxConditionalStyle>(EEFCheckboxConditionalStyle.class, this,
+					EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES);
+		}
+		return conditionalStyles;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
 			return basicSetStyle(null, msgs);
+		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:
+			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -266,6 +299,8 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 				return getStyle();
 			}
 			return basicGetStyle();
+		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:
+			return getConditionalStyles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,6 +310,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -286,6 +322,10 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 			return;
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
 			setStyle((EEFCheckboxStyle) newValue);
+			return;
+		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			getConditionalStyles().addAll((Collection<? extends EEFCheckboxConditionalStyle>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,6 +348,9 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
 			setStyle((EEFCheckboxStyle) null);
 			return;
+		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -328,6 +371,8 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 			: !EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
 			return style != null;
+		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:
+			return conditionalStyles != null && !conditionalStyles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

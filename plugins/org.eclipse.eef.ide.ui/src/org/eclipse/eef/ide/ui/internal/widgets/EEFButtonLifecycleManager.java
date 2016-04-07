@@ -12,6 +12,8 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import com.google.common.base.Objects;
 
+import java.util.List;
+
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
@@ -132,6 +134,17 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
 		return this.description.getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetConditionalStyles()
+	 */
+	@SuppressWarnings("rawtypes")
+	@Override
+	protected List getWidgetConditionalStyles() {
+		return this.description.getConditionalStyles();
 	}
 
 	@Override

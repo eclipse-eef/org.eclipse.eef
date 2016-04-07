@@ -8,6 +8,8 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Text Description</b></em>'. <!--
  * end-user-doc -->
@@ -21,6 +23,7 @@ package org.eclipse.eef;
  * <li>{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getLineCount <em>Line Count</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFTextDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -126,5 +129,17 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setStyle(EEFTextStyle value);
+
+	/**
+	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
+	 * of type {@link org.eclipse.eef.EEFTextConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * begin-model-doc --> Defines the text style associated to a precondition <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_ConditionalStyles()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFTextConditionalStyle> getConditionalStyles();
 
 } // EEFTextDescription

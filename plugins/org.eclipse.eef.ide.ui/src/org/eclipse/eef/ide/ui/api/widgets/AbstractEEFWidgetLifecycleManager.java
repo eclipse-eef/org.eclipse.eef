@@ -12,6 +12,15 @@ package org.eclipse.eef.ide.ui.api.widgets;
 
 import com.google.common.base.Objects;
 
+import java.util.List;
+
+import org.eclipse.eef.EEFButtonConditionalStyle;
+import org.eclipse.eef.EEFCheckboxConditionalStyle;
+import org.eclipse.eef.EEFConditionalStyle;
+import org.eclipse.eef.EEFLabelConditionalStyle;
+import org.eclipse.eef.EEFRadioConditionalStyle;
+import org.eclipse.eef.EEFSelectConditionalStyle;
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
@@ -183,6 +192,14 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected abstract EEFWidgetStyle getWidgetStyle();
 
 	/**
+	 * Returns the conditional style of the widget.
+	 *
+	 * @return The conditional style of the widget
+	 */
+	@SuppressWarnings("rawtypes")
+	protected abstract List getWidgetConditionalStyles();
+
+	/**
 	 * Create the main control.
 	 *
 	 * @param parent
@@ -208,22 +225,17 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 					label.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					// Set label style
 					EEFWidgetStyle style = getWidgetStyle();
+					@SuppressWarnings("unchecked")
+					List<EEFConditionalStyle> conditionalStyles = getWidgetConditionalStyles();
+					if (conditionalStyles != null && !conditionalStyles.isEmpty()) {
+						style = getConditionalStyle(conditionalStyles);
+					}
 					if (style != null) {
-						// Set font
-						setFont(style.getLabelFontNameExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION,
-								style.getLabelFontSizeExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION,
-								style.getLabelFontStyleExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION, label);
-
-						// Set background color
-						setBackgroundColor(style.getLabelBackgroundColorExpression(),
-								EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION, label);
-
-						// Set foreground color
-						setForegroundColor(style.getLabelForegroundColorExpression(),
-								EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION, label);
+						setLabelFontStyle(style);
 					}
 				}
 			}
+
 		});
 
 		this.getController().onNewHelp(new IConsumer<String>() {
@@ -234,6 +246,62 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 				}
 			}
 		});
+	}
+
+	/**
+	 * Set label font style.
+	 *
+	 * @param style
+	 *            Label style
+	 */
+	private void setLabelFontStyle(EEFWidgetStyle style) {
+		// Set font
+		setFont(style.getLabelFontNameExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION,
+				style.getLabelFontSizeExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION,
+				style.getLabelFontStyleExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION, label);
+
+		// Set background color
+		setBackgroundColor(style.getLabelBackgroundColorExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION, label);
+
+		// Set foreground color
+		setForegroundColor(style.getLabelForegroundColorExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION, label);
+	}
+
+	/**
+	 * Get valid conditional style.
+	 *
+	 * @param conditionalStyles
+	 *            Conditional styles
+	 * @return Return the first valid conditional style else null
+	 */
+	private EEFWidgetStyle getConditionalStyle(List<EEFConditionalStyle> conditionalStyles) {
+		EEFWidgetStyle style = null;
+		for (EEFConditionalStyle eefConditionalStyle : conditionalStyles) {
+			String preconditionExpression = eefConditionalStyle.getPreconditionExpression();
+			Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+			if (preconditionValid != null && preconditionValid.booleanValue()) {
+				if (eefConditionalStyle instanceof EEFTextConditionalStyle) {
+					style = ((EEFTextConditionalStyle) eefConditionalStyle).getStyle();
+					break;
+				} else if (eefConditionalStyle instanceof EEFLabelConditionalStyle) {
+					style = ((EEFLabelConditionalStyle) eefConditionalStyle).getStyle();
+					break;
+				} else if (eefConditionalStyle instanceof EEFCheckboxConditionalStyle) {
+					style = ((EEFCheckboxConditionalStyle) eefConditionalStyle).getStyle();
+					break;
+				} else if (eefConditionalStyle instanceof EEFButtonConditionalStyle) {
+					style = ((EEFButtonConditionalStyle) eefConditionalStyle).getStyle();
+					break;
+				} else if (eefConditionalStyle instanceof EEFRadioConditionalStyle) {
+					style = ((EEFRadioConditionalStyle) eefConditionalStyle).getStyle();
+					break;
+				} else if (eefConditionalStyle instanceof EEFSelectConditionalStyle) {
+					style = ((EEFSelectConditionalStyle) eefConditionalStyle).getStyle();
+					break;
+				}
+			}
+		}
+		return style;
 	}
 
 	/**

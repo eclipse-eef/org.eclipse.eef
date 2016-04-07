@@ -154,6 +154,17 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetConditionalStyles()
+	 */
+	@SuppressWarnings("rawtypes")
+	@Override
+	protected List getWidgetConditionalStyles() {
+		return this.description.getConditionalStyles();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getValidationControl()
 	 */
 	@Override

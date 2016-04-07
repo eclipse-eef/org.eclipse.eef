@@ -8,8 +8,10 @@
  */
 package org.eclipse.eef.impl;
 
+import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFButtonStyle;
+import org.eclipse.eef.EEFCheckboxConditionalStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFContainerDescription;
@@ -18,16 +20,20 @@ import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
+import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
+import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
@@ -130,6 +136,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFSelectStyle();
 		case EefPackage.EEF_RADIO_STYLE:
 			return createEEFRadioStyle();
+		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE:
+			return createEEFTextConditionalStyle();
+		case EefPackage.EEF_BUTTON_CONDITIONAL_STYLE:
+			return createEEFButtonConditionalStyle();
+		case EefPackage.EEF_LABEL_CONDITIONAL_STYLE:
+			return createEEFLabelConditionalStyle();
+		case EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE:
+			return createEEFCheckboxConditionalStyle();
+		case EefPackage.EEF_SELECT_CONDITIONAL_STYLE:
+			return createEEFSelectConditionalStyle();
+		case EefPackage.EEF_RADIO_CONDITIONAL_STYLE:
+			return createEEFRadioConditionalStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -427,6 +445,72 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFRadioStyle createEEFRadioStyle() {
 		EEFRadioStyleImpl eefRadioStyle = new EEFRadioStyleImpl();
 		return eefRadioStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFTextConditionalStyle createEEFTextConditionalStyle() {
+		EEFTextConditionalStyleImpl eefTextConditionalStyle = new EEFTextConditionalStyleImpl();
+		return eefTextConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFButtonConditionalStyle createEEFButtonConditionalStyle() {
+		EEFButtonConditionalStyleImpl eefButtonConditionalStyle = new EEFButtonConditionalStyleImpl();
+		return eefButtonConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFLabelConditionalStyle createEEFLabelConditionalStyle() {
+		EEFLabelConditionalStyleImpl eefLabelConditionalStyle = new EEFLabelConditionalStyleImpl();
+		return eefLabelConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFCheckboxConditionalStyle createEEFCheckboxConditionalStyle() {
+		EEFCheckboxConditionalStyleImpl eefCheckboxConditionalStyle = new EEFCheckboxConditionalStyleImpl();
+		return eefCheckboxConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFSelectConditionalStyle createEEFSelectConditionalStyle() {
+		EEFSelectConditionalStyleImpl eefSelectConditionalStyle = new EEFSelectConditionalStyleImpl();
+		return eefSelectConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFRadioConditionalStyle createEEFRadioConditionalStyle() {
+		EEFRadioConditionalStyleImpl eefRadioConditionalStyle = new EEFRadioConditionalStyleImpl();
+		return eefRadioConditionalStyle;
 	}
 
 	/**

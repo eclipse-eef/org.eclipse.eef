@@ -8,6 +8,8 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Select Description</b></em>'. <!--
  * end-user-doc -->
@@ -23,6 +25,7 @@ package org.eclipse.eef;
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression <em>Candidates Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFSelectDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -146,5 +149,17 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setStyle(EEFSelectStyle value);
+
+	/**
+	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
+	 * of type {@link org.eclipse.eef.EEFSelectConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * begin-model-doc --> Defines the select style associated to a precondition <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_ConditionalStyles()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFSelectConditionalStyle> getConditionalStyles();
 
 } // EEFSelectDescription
