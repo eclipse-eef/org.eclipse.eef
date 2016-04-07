@@ -223,6 +223,77 @@ public interface EefFactory extends EFactory {
 	EEFRadioStyle createEEFRadioStyle();
 
 	/**
+	 * Returns a new object of class '<em>EEF Custom Widget Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Custom Widget Style</em>'.
+	 * @generated
+	 */
+	EEFCustomWidgetStyle createEEFCustomWidgetStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Text Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Text Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFTextConditionalStyle createEEFTextConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Button Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Button Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFButtonConditionalStyle createEEFButtonConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Label Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Label Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFLabelConditionalStyle createEEFLabelConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Checkbox Conditional Style</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Checkbox Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFCheckboxConditionalStyle createEEFCheckboxConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Select Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Select Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFSelectConditionalStyle createEEFSelectConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Radio Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Radio Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFRadioConditionalStyle createEEFRadioConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Custom Widget Conditional Style</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Custom Widget Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFCustomWidgetConditionalStyle createEEFCustomWidgetConditionalStyle();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the package supported by this factory.

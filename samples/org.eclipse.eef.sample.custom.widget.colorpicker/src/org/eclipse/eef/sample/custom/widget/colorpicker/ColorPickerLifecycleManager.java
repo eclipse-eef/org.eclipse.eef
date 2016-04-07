@@ -10,6 +10,11 @@
  *******************************************************************************/
 package org.eclipse.eef.sample.custom.widget.colorpicker;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.eef.EEFConditionalStyle;
+import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
@@ -122,7 +127,29 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
      */
     @Override
     protected EEFWidgetStyle getWidgetStyle() {
-        return null;
+        return this.description.getStyle();
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle(org.eclipse.eef.EEFConditionalStyle)
+     */
+    @Override
+    protected EEFWidgetStyle getWidgetStyle(EEFConditionalStyle conditionalStyle) {
+        return ((EEFCustomWidgetConditionalStyle) conditionalStyle).getStyle();
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetConditionalStyles()
+     */
+    @Override
+    protected List<EEFConditionalStyle> getWidgetConditionalStyles() {
+        List<EEFConditionalStyle> widgetConditionalStyles = new ArrayList<EEFConditionalStyle>();
+        widgetConditionalStyles.addAll(this.description.getConditionalStyles());
+        return widgetConditionalStyles;
     }
 
     /**

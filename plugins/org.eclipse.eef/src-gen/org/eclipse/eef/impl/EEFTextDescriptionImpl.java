@@ -8,14 +8,20 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
+
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Text Description</b></em>'. <!--
@@ -27,6 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getLineCount <em>Line Count</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,6 +109,16 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	 * @ordered
 	 */
 	protected EEFTextStyle style;
+
+	/**
+	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getConditionalStyles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFTextConditionalStyle> conditionalStyles;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -283,10 +300,26 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	 * @generated
 	 */
 	@Override
+	public EList<EEFTextConditionalStyle> getConditionalStyles() {
+		if (conditionalStyles == null) {
+			conditionalStyles = new EObjectContainmentEList.Resolving<EEFTextConditionalStyle>(EEFTextConditionalStyle.class, this,
+					EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
+		}
+		return conditionalStyles;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_TEXT_DESCRIPTION__STYLE:
 			return basicSetStyle(null, msgs);
+		case EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES:
+			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -310,6 +343,8 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 				return getStyle();
 			}
 			return basicGetStyle();
+		case EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES:
+			return getConditionalStyles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,6 +354,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -333,6 +369,10 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return;
 		case EefPackage.EEF_TEXT_DESCRIPTION__STYLE:
 			setStyle((EEFTextStyle) newValue);
+			return;
+		case EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			getConditionalStyles().addAll((Collection<? extends EEFTextConditionalStyle>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -358,6 +398,9 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		case EefPackage.EEF_TEXT_DESCRIPTION__STYLE:
 			setStyle((EEFTextStyle) null);
 			return;
+		case EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -380,6 +423,8 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return lineCount != EEFTextDescriptionImpl.LINE_COUNT_EDEFAULT;
 		case EefPackage.EEF_TEXT_DESCRIPTION__STYLE:
 			return style != null;
+		case EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES:
+			return conditionalStyles != null && !conditionalStyles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

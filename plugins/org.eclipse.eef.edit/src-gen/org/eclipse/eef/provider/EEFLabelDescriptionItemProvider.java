@@ -80,6 +80,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EefPackage.Literals.EEF_LABEL_DESCRIPTION__STYLE);
+			childrenFeatures.add(EefPackage.Literals.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return childrenFeatures;
 	}
@@ -145,6 +146,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
+		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -162,6 +164,9 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_LABEL_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFLabelStyle()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES,
+				EefFactory.eINSTANCE.createEEFLabelConditionalStyle()));
 	}
 
 }

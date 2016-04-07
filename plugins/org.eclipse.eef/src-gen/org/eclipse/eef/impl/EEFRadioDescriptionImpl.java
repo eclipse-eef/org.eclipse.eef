@@ -8,14 +8,20 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
+
+import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Radio Description</b></em>'. <!--
@@ -30,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -145,6 +152,16 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @ordered
 	 */
 	protected int numberOfColumns = EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getConditionalStyles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFRadioConditionalStyle> conditionalStyles;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -379,10 +396,26 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @generated
 	 */
 	@Override
+	public EList<EEFRadioConditionalStyle> getConditionalStyles() {
+		if (conditionalStyles == null) {
+			conditionalStyles = new EObjectContainmentEList.Resolving<EEFRadioConditionalStyle>(EEFRadioConditionalStyle.class, this,
+					EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES);
+		}
+		return conditionalStyles;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
 			return basicSetStyle(null, msgs);
+		case EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES:
+			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -410,6 +443,8 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return basicGetStyle();
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
 			return getNumberOfColumns();
+		case EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES:
+			return getConditionalStyles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -419,6 +454,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 *
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -439,6 +475,10 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
 			setNumberOfColumns((Integer) newValue);
+			return;
+		case EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			getConditionalStyles().addAll((Collection<? extends EEFRadioConditionalStyle>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -470,6 +510,9 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
 			setNumberOfColumns(EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT);
 			return;
+		case EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -484,20 +527,22 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		switch (featureID) {
 		case EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-					: !EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			: !EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION:
 			return EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-					: !EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+			: !EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION:
 			return EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT == null ? candidatesExpression != null
-					: !EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
+			: !EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
-					: !EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
+			: !EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
 			return numberOfColumns != EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
+		case EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES:
+			return conditionalStyles != null && !conditionalStyles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -8,26 +8,35 @@
  */
 package org.eclipse.eef.impl;
 
+import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFButtonStyle;
+import org.eclipse.eef.EEFCheckboxConditionalStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
+import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFCustomExpression;
+import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
 import org.eclipse.eef.EEFCustomWidgetDescription;
+import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
+import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
+import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
@@ -239,6 +248,69 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefRadioStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefCustomWidgetStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefTextConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefButtonConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefLabelConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefCheckboxConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefSelectConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefRadioConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefCustomWidgetConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -838,6 +910,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFTextDescription_ConditionalStyles() {
+		return (EReference) eefTextDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFLabelDescription() {
 		return eefLabelDescriptionEClass;
 	}
@@ -860,6 +942,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EReference getEEFLabelDescription_Style() {
 		return (EReference) eefLabelDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFLabelDescription_ConditionalStyles() {
+		return (EReference) eefLabelDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -908,6 +1000,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFButtonDescription_ConditionalStyles() {
+		return (EReference) eefButtonDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFCheckboxDescription() {
 		return eefCheckboxDescriptionEClass;
 	}
@@ -940,6 +1042,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EReference getEEFCheckboxDescription_Style() {
 		return (EReference) eefCheckboxDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFCheckboxDescription_ConditionalStyles() {
+		return (EReference) eefCheckboxDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1000,6 +1112,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EReference getEEFSelectDescription_Style() {
 		return (EReference) eefSelectDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFSelectDescription_ConditionalStyles() {
+		return (EReference) eefSelectDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1070,6 +1192,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EAttribute getEEFRadioDescription_NumberOfColumns() {
 		return (EAttribute) eefRadioDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFRadioDescription_ConditionalStyles() {
+		return (EReference) eefRadioDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1160,6 +1292,26 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EReference getEEFCustomWidgetDescription_CustomExpressions() {
 		return (EReference) eefCustomWidgetDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFCustomWidgetDescription_Style() {
+		return (EReference) eefCustomWidgetDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFCustomWidgetDescription_ConditionalStyles() {
+		return (EReference) eefCustomWidgetDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1418,6 +1570,176 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFCustomWidgetStyle() {
+		return eefCustomWidgetStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFConditionalStyle() {
+		return eefConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFConditionalStyle_PreconditionExpression() {
+		return (EAttribute) eefConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFTextConditionalStyle() {
+		return eefTextConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFTextConditionalStyle_Style() {
+		return (EReference) eefTextConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFButtonConditionalStyle() {
+		return eefButtonConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFButtonConditionalStyle_Style() {
+		return (EReference) eefButtonConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFLabelConditionalStyle() {
+		return eefLabelConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFLabelConditionalStyle_Style() {
+		return (EReference) eefLabelConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFCheckboxConditionalStyle() {
+		return eefCheckboxConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFCheckboxConditionalStyle_Style() {
+		return (EReference) eefCheckboxConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFSelectConditionalStyle() {
+		return eefSelectConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFSelectConditionalStyle_Style() {
+		return (EReference) eefSelectConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFRadioConditionalStyle() {
+		return eefRadioConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFRadioConditionalStyle_Style() {
+		return (EReference) eefRadioConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFCustomWidgetConditionalStyle() {
+		return eefCustomWidgetConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFCustomWidgetConditionalStyle_Style() {
+		return (EReference) eefCustomWidgetConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION() {
 		return eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum;
 	}
@@ -1514,20 +1836,24 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION);
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT);
 		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__STYLE);
+		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefLabelDescriptionEClass = createEClass(EefPackage.EEF_LABEL_DESCRIPTION);
 		createEAttribute(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION);
 		createEReference(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__STYLE);
+		createEReference(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefButtonDescriptionEClass = createEClass(EefPackage.EEF_BUTTON_DESCRIPTION);
 		createEAttribute(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION);
 		createEAttribute(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION);
 		createEReference(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__STYLE);
+		createEReference(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefCheckboxDescriptionEClass = createEClass(EefPackage.EEF_CHECKBOX_DESCRIPTION);
 		createEAttribute(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION);
 		createEReference(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE);
+		createEReference(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefSelectDescriptionEClass = createEClass(EefPackage.EEF_SELECT_DESCRIPTION);
 		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION);
@@ -1535,6 +1861,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION);
 		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
 		createEReference(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__STYLE);
+		createEReference(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefRadioDescriptionEClass = createEClass(EefPackage.EEF_RADIO_DESCRIPTION);
 		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION);
@@ -1543,6 +1870,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
 		createEReference(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__STYLE);
 		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS);
+		createEReference(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefDynamicMappingForEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_FOR);
 		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR);
@@ -1555,6 +1883,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		eefCustomWidgetDescriptionEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION);
 		createEReference(eefCustomWidgetDescriptionEClass, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS);
+		createEReference(eefCustomWidgetDescriptionEClass, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE);
+		createEReference(eefCustomWidgetDescriptionEClass, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefCustomExpressionEClass = createEClass(EefPackage.EEF_CUSTOM_EXPRESSION);
 		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__IDENTIFIER);
@@ -1588,6 +1918,32 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefSelectStyleEClass = createEClass(EefPackage.EEF_SELECT_STYLE);
 
 		eefRadioStyleEClass = createEClass(EefPackage.EEF_RADIO_STYLE);
+
+		eefCustomWidgetStyleEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_STYLE);
+
+		eefConditionalStyleEClass = createEClass(EefPackage.EEF_CONDITIONAL_STYLE);
+		createEAttribute(eefConditionalStyleEClass, EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION);
+
+		eefTextConditionalStyleEClass = createEClass(EefPackage.EEF_TEXT_CONDITIONAL_STYLE);
+		createEReference(eefTextConditionalStyleEClass, EefPackage.EEF_TEXT_CONDITIONAL_STYLE__STYLE);
+
+		eefButtonConditionalStyleEClass = createEClass(EefPackage.EEF_BUTTON_CONDITIONAL_STYLE);
+		createEReference(eefButtonConditionalStyleEClass, EefPackage.EEF_BUTTON_CONDITIONAL_STYLE__STYLE);
+
+		eefLabelConditionalStyleEClass = createEClass(EefPackage.EEF_LABEL_CONDITIONAL_STYLE);
+		createEReference(eefLabelConditionalStyleEClass, EefPackage.EEF_LABEL_CONDITIONAL_STYLE__STYLE);
+
+		eefCheckboxConditionalStyleEClass = createEClass(EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE);
+		createEReference(eefCheckboxConditionalStyleEClass, EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE);
+
+		eefSelectConditionalStyleEClass = createEClass(EefPackage.EEF_SELECT_CONDITIONAL_STYLE);
+		createEReference(eefSelectConditionalStyleEClass, EefPackage.EEF_SELECT_CONDITIONAL_STYLE__STYLE);
+
+		eefRadioConditionalStyleEClass = createEClass(EefPackage.EEF_RADIO_CONDITIONAL_STYLE);
+		createEReference(eefRadioConditionalStyleEClass, EefPackage.EEF_RADIO_CONDITIONAL_STYLE__STYLE);
+
+		eefCustomWidgetConditionalStyleEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE);
+		createEReference(eefCustomWidgetConditionalStyleEClass, EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE);
 
 		// Create enums
 		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION);
@@ -1640,6 +1996,14 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefCheckboxStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefSelectStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefRadioStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefCustomWidgetStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefTextConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefButtonConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefLabelConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefCheckboxConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefSelectConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefRadioConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefCustomWidgetConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
@@ -1857,6 +2221,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFTextStyle(),
 				null,
 				"style", null, 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFTextDescription_ConditionalStyles(),
+				this.getEEFTextConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefLabelDescriptionEClass, EEFLabelDescription.class,
 				"EEFLabelDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1869,6 +2238,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFLabelStyle(),
 				null,
 				"style", null, 0, 1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFLabelDescription_ConditionalStyles(),
+				this.getEEFLabelConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefButtonDescriptionEClass, EEFButtonDescription.class,
 				"EEFButtonDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1885,6 +2259,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFButtonStyle(),
 				null,
 				"style", null, 0, 1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFButtonDescription_ConditionalStyles(),
+				this.getEEFButtonConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefCheckboxDescriptionEClass, EEFCheckboxDescription.class,
 				"EEFCheckboxDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1901,6 +2280,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFCheckboxStyle(),
 				null,
 				"style", null, 0, 1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFCheckboxDescription_ConditionalStyles(),
+				this.getEEFCheckboxConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefSelectDescriptionEClass, EEFSelectDescription.class,
 				"EEFSelectDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1925,6 +2309,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFSelectStyle(),
 				null,
 				"style", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFSelectDescription_ConditionalStyles(),
+				this.getEEFSelectConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefRadioDescriptionEClass, EEFRadioDescription.class,
 				"EEFRadioDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1953,6 +2342,11 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFRadioDescription_NumberOfColumns(),
 				theEcorePackage.getEInt(),
 				"numberOfColumns", "-1", 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEReference(
+				getEEFRadioDescription_ConditionalStyles(),
+				this.getEEFRadioConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefDynamicMappingForEClass, EEFDynamicMappingFor.class,
 				"EEFDynamicMappingFor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -1989,6 +2383,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFCustomExpression(),
 				null,
 				"customExpressions", null, 0, -1, EEFCustomWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFCustomWidgetDescription_Style(),
+				this.getEEFCustomWidgetStyle(),
+				null,
+				"style", null, 0, 1, EEFCustomWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFCustomWidgetDescription_ConditionalStyles(),
+				this.getEEFCustomWidgetConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFCustomWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefCustomExpressionEClass, EEFCustomExpression.class,
 				"EEFCustomExpression", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -2081,6 +2485,72 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		initEClass(eefRadioStyleEClass, EEFRadioStyle.class,
 				"EEFRadioStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefCustomWidgetStyleEClass, EEFCustomWidgetStyle.class,
+				"EEFCustomWidgetStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefConditionalStyleEClass, EEFConditionalStyle.class,
+				"EEFConditionalStyle", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFConditionalStyle_PreconditionExpression(),
+				ecorePackage.getEString(),
+				"preconditionExpression", null, 0, 1, EEFConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefTextConditionalStyleEClass, EEFTextConditionalStyle.class,
+				"EEFTextConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFTextConditionalStyle_Style(),
+				this.getEEFTextStyle(),
+				null,
+				"style", null, 0, 1, EEFTextConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefButtonConditionalStyleEClass, EEFButtonConditionalStyle.class,
+				"EEFButtonConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFButtonConditionalStyle_Style(),
+				this.getEEFButtonStyle(),
+				null,
+				"style", null, 0, 1, EEFButtonConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefLabelConditionalStyleEClass, EEFLabelConditionalStyle.class,
+				"EEFLabelConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFLabelConditionalStyle_Style(),
+				this.getEEFLabelStyle(),
+				null,
+				"style", null, 0, 1, EEFLabelConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefCheckboxConditionalStyleEClass, EEFCheckboxConditionalStyle.class,
+				"EEFCheckboxConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFCheckboxConditionalStyle_Style(),
+				this.getEEFCheckboxStyle(),
+				null,
+				"style", null, 0, 1, EEFCheckboxConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefSelectConditionalStyleEClass, EEFSelectConditionalStyle.class,
+				"EEFSelectConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFSelectConditionalStyle_Style(),
+				this.getEEFSelectStyle(),
+				null,
+				"style", null, 0, 1, EEFSelectConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefRadioConditionalStyleEClass, EEFRadioConditionalStyle.class,
+				"EEFRadioConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFRadioConditionalStyle_Style(),
+				this.getEEFRadioStyle(),
+				null,
+				"style", null, 0, 1, EEFRadioConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefCustomWidgetConditionalStyleEClass, EEFCustomWidgetConditionalStyle.class,
+				"EEFCustomWidgetConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFCustomWidgetConditionalStyle_Style(),
+				this.getEEFCustomWidgetStyle(),
+				null,
+				"style", null, 0, 1, EEFCustomWidgetConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.class,

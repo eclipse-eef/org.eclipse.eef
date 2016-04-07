@@ -8,6 +8,8 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Radio Description</b></em>'. <!--
  * end-user-doc -->
@@ -23,6 +25,7 @@ package org.eclipse.eef;
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getNumberOfColumns <em>Number Of Columns</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFRadioDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -170,5 +173,17 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setNumberOfColumns(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
+	 * of type {@link org.eclipse.eef.EEFRadioConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * begin-model-doc --> Defines the radio style associated to a precondition <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFRadioDescription_ConditionalStyles()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFRadioConditionalStyle> getConditionalStyles();
 
 } // EEFRadioDescription

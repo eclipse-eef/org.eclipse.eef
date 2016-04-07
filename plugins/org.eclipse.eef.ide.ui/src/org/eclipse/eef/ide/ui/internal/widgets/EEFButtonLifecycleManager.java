@@ -12,7 +12,12 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import com.google.common.base.Objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
+import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -132,6 +137,28 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
 		return this.description.getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle(org.eclipse.eef.EEFConditionalStyle)
+	 */
+	@Override
+	protected EEFWidgetStyle getWidgetStyle(EEFConditionalStyle conditionalStyle) {
+		return ((EEFButtonConditionalStyle) conditionalStyle).getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetConditionalStyles()
+	 */
+	@Override
+	protected List<EEFConditionalStyle> getWidgetConditionalStyles() {
+		List<EEFConditionalStyle> widgetConditionalStyles = new ArrayList<EEFConditionalStyle>();
+		widgetConditionalStyles.addAll(this.description.getConditionalStyles());
+		return widgetConditionalStyles;
 	}
 
 	@Override

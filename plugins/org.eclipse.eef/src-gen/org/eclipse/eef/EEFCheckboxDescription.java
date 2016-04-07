@@ -8,6 +8,8 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Checkbox Description</b></em>'. <!--
  * end-user-doc -->
@@ -20,6 +22,7 @@ package org.eclipse.eef;
  * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,5 +100,17 @@ public interface EEFCheckboxDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setStyle(EEFCheckboxStyle value);
+
+	/**
+	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
+	 * of type {@link org.eclipse.eef.EEFCheckboxConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * begin-model-doc --> Defines the checkbox style associated to a precondition <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFCheckboxDescription_ConditionalStyles()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFCheckboxConditionalStyle> getConditionalStyles();
 
 } // EEFCheckboxDescription

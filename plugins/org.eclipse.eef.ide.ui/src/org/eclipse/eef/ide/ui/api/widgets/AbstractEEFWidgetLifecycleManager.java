@@ -12,6 +12,9 @@ package org.eclipse.eef.ide.ui.api.widgets;
 
 import com.google.common.base.Objects;
 
+import java.util.List;
+
+import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
@@ -183,6 +186,22 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected abstract EEFWidgetStyle getWidgetStyle();
 
 	/**
+	 * Returns the style of the widget associated to a conditional style.
+	 *
+	 * @param conditionalStyle
+	 *            The conditional style
+	 * @return The style of the widget associated to a conditional style
+	 */
+	protected abstract EEFWidgetStyle getWidgetStyle(EEFConditionalStyle conditionalStyle);
+
+	/**
+	 * Returns the conditional style of the widget.
+	 *
+	 * @return The conditional style of the widget
+	 */
+	protected abstract List<EEFConditionalStyle> getWidgetConditionalStyles();
+
+	/**
 	 * Create the main control.
 	 *
 	 * @param parent
@@ -208,22 +227,16 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 					label.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					// Set label style
 					EEFWidgetStyle style = getWidgetStyle();
+					List<EEFConditionalStyle> conditionalStyles = getWidgetConditionalStyles();
+					if (conditionalStyles != null && !conditionalStyles.isEmpty()) {
+						style = getConditionalStyle(conditionalStyles, style);
+					}
 					if (style != null) {
-						// Set font
-						setFont(style.getLabelFontNameExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION,
-								style.getLabelFontSizeExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION,
-								style.getLabelFontStyleExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION, label);
-
-						// Set background color
-						setBackgroundColor(style.getLabelBackgroundColorExpression(),
-								EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION, label);
-
-						// Set foreground color
-						setForegroundColor(style.getLabelForegroundColorExpression(),
-								EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION, label);
+						setLabelFontStyle(style);
 					}
 				}
 			}
+
 		});
 
 		this.getController().onNewHelp(new IConsumer<String>() {
@@ -234,6 +247,46 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 				}
 			}
 		});
+	}
+
+	/**
+	 * Set label font style.
+	 *
+	 * @param style
+	 *            Label style
+	 */
+	private void setLabelFontStyle(EEFWidgetStyle style) {
+		// Set font
+		setFont(style.getLabelFontNameExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION,
+				style.getLabelFontSizeExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION,
+				style.getLabelFontStyleExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION, label);
+
+		// Set background color
+		setBackgroundColor(style.getLabelBackgroundColorExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION, label);
+
+		// Set foreground color
+		setForegroundColor(style.getLabelForegroundColorExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION, label);
+	}
+
+	/**
+	 * Get valid conditional style.
+	 *
+	 * @param conditionalStyles
+	 *            Conditional styles
+	 * @param defaultStyle
+	 *            Default style
+	 * @return Return the first valid conditional style else null
+	 */
+	private EEFWidgetStyle getConditionalStyle(List<EEFConditionalStyle> conditionalStyles, EEFWidgetStyle defaultStyle) {
+		EEFWidgetStyle style = defaultStyle;
+		for (EEFConditionalStyle eefConditionalStyle : conditionalStyles) {
+			String preconditionExpression = eefConditionalStyle.getPreconditionExpression();
+			Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+			if (preconditionValid != null && preconditionValid.booleanValue()) {
+				style = this.getWidgetStyle(eefConditionalStyle);
+			}
+		}
+		return style;
 	}
 
 	/**

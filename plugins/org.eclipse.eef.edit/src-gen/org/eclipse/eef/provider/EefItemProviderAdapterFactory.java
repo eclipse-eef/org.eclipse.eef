@@ -535,7 +535,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFButtonStyleItemProvider eefButtonStyleItemProvider;
@@ -543,7 +543,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -558,7 +558,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCheckboxStyleItemProvider eefCheckboxStyleItemProvider;
@@ -566,7 +566,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -581,7 +581,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFSelectStyleItemProvider eefSelectStyleItemProvider;
@@ -589,7 +589,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -604,7 +604,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFRadioStyleItemProvider eefRadioStyleItemProvider;
@@ -612,7 +612,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -622,6 +622,190 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 
 		return eefRadioStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFCustomWidgetStyleItemProvider eefCustomWidgetStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFCustomWidgetStyleAdapter() {
+		if (eefCustomWidgetStyleItemProvider == null) {
+			eefCustomWidgetStyleItemProvider = new EEFCustomWidgetStyleItemProvider(this);
+		}
+
+		return eefCustomWidgetStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextConditionalStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFTextConditionalStyleItemProvider eefTextConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFTextConditionalStyleAdapter() {
+		if (eefTextConditionalStyleItemProvider == null) {
+			eefTextConditionalStyleItemProvider = new EEFTextConditionalStyleItemProvider(this);
+		}
+
+		return eefTextConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonConditionalStyle} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFButtonConditionalStyleItemProvider eefButtonConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFButtonConditionalStyleAdapter() {
+		if (eefButtonConditionalStyleItemProvider == null) {
+			eefButtonConditionalStyleItemProvider = new EEFButtonConditionalStyleItemProvider(this);
+		}
+
+		return eefButtonConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelConditionalStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFLabelConditionalStyleItemProvider eefLabelConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFLabelConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFLabelConditionalStyleAdapter() {
+		if (eefLabelConditionalStyleItemProvider == null) {
+			eefLabelConditionalStyleItemProvider = new EEFLabelConditionalStyleItemProvider(this);
+		}
+
+		return eefLabelConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxConditionalStyle} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFCheckboxConditionalStyleItemProvider eefCheckboxConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFCheckboxConditionalStyleAdapter() {
+		if (eefCheckboxConditionalStyleItemProvider == null) {
+			eefCheckboxConditionalStyleItemProvider = new EEFCheckboxConditionalStyleItemProvider(this);
+		}
+
+		return eefCheckboxConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectConditionalStyle} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSelectConditionalStyleItemProvider eefSelectConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSelectConditionalStyleAdapter() {
+		if (eefSelectConditionalStyleItemProvider == null) {
+			eefSelectConditionalStyleItemProvider = new EEFSelectConditionalStyleItemProvider(this);
+		}
+
+		return eefSelectConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioConditionalStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFRadioConditionalStyleItemProvider eefRadioConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFRadioConditionalStyleAdapter() {
+		if (eefRadioConditionalStyleItemProvider == null) {
+			eefRadioConditionalStyleItemProvider = new EEFRadioConditionalStyleItemProvider(this);
+		}
+
+		return eefRadioConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}
+	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFCustomWidgetConditionalStyleItemProvider eefCustomWidgetConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFCustomWidgetConditionalStyleAdapter() {
+		if (eefCustomWidgetConditionalStyleItemProvider == null) {
+			eefCustomWidgetConditionalStyleItemProvider = new EEFCustomWidgetConditionalStyleItemProvider(this);
+		}
+
+		return eefCustomWidgetConditionalStyleItemProvider;
 	}
 
 	/**
@@ -795,6 +979,30 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefRadioStyleItemProvider != null) {
 			eefRadioStyleItemProvider.dispose();
+		}
+		if (eefCustomWidgetStyleItemProvider != null) {
+			eefCustomWidgetStyleItemProvider.dispose();
+		}
+		if (eefTextConditionalStyleItemProvider != null) {
+			eefTextConditionalStyleItemProvider.dispose();
+		}
+		if (eefButtonConditionalStyleItemProvider != null) {
+			eefButtonConditionalStyleItemProvider.dispose();
+		}
+		if (eefLabelConditionalStyleItemProvider != null) {
+			eefLabelConditionalStyleItemProvider.dispose();
+		}
+		if (eefCheckboxConditionalStyleItemProvider != null) {
+			eefCheckboxConditionalStyleItemProvider.dispose();
+		}
+		if (eefSelectConditionalStyleItemProvider != null) {
+			eefSelectConditionalStyleItemProvider.dispose();
+		}
+		if (eefRadioConditionalStyleItemProvider != null) {
+			eefRadioConditionalStyleItemProvider.dispose();
+		}
+		if (eefCustomWidgetConditionalStyleItemProvider != null) {
+			eefCustomWidgetConditionalStyleItemProvider.dispose();
 		}
 	}
 

@@ -20,6 +20,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.eef.EEFCustomWidgetDescription#getCustomExpressions <em>Custom Expressions</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFCustomWidgetDescription#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFCustomWidgetDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,5 +45,40 @@ public interface EEFCustomWidgetDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	EList<EEFCustomExpression> getCustomExpressions();
+
+	/**
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Defines the custom widget style <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Style</em>' containment reference.
+	 * @see #setStyle(EEFCustomStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFCustomWidgetDescription_Style()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFCustomWidgetStyle getStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomWidgetDescription#getStyle <em>Style</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Style</em>' containment reference.
+	 * @see #getStyle()
+	 * @generated
+	 */
+	void setStyle(EEFCustomWidgetStyle value);
+
+	/**
+	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
+	 * of type {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc --> Defines the select style associated to a precondition <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFCustomWidgetDescription_ConditionalStyles()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFCustomWidgetConditionalStyle> getConditionalStyles();
 
 } // EEFCustomWidgetDescription

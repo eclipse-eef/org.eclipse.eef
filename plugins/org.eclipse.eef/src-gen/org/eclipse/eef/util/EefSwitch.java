@@ -8,26 +8,35 @@
  */
 package org.eclipse.eef.util;
 
+import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFButtonStyle;
+import org.eclipse.eef.EEFCheckboxConditionalStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
+import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFCustomExpression;
+import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
 import org.eclipse.eef.EEFCustomWidgetDescription;
+import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
+import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
+import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
@@ -345,6 +354,102 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFRadioStyle(eefRadioStyle);
 			if (result == null) {
 				result = caseEEFWidgetStyle(eefRadioStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_CUSTOM_WIDGET_STYLE: {
+			EEFCustomWidgetStyle eefCustomWidgetStyle = (EEFCustomWidgetStyle) theEObject;
+			T result = caseEEFCustomWidgetStyle(eefCustomWidgetStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefCustomWidgetStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_CONDITIONAL_STYLE: {
+			EEFConditionalStyle eefConditionalStyle = (EEFConditionalStyle) theEObject;
+			T result = caseEEFConditionalStyle(eefConditionalStyle);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE: {
+			EEFTextConditionalStyle eefTextConditionalStyle = (EEFTextConditionalStyle) theEObject;
+			T result = caseEEFTextConditionalStyle(eefTextConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefTextConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_BUTTON_CONDITIONAL_STYLE: {
+			EEFButtonConditionalStyle eefButtonConditionalStyle = (EEFButtonConditionalStyle) theEObject;
+			T result = caseEEFButtonConditionalStyle(eefButtonConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefButtonConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_LABEL_CONDITIONAL_STYLE: {
+			EEFLabelConditionalStyle eefLabelConditionalStyle = (EEFLabelConditionalStyle) theEObject;
+			T result = caseEEFLabelConditionalStyle(eefLabelConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefLabelConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE: {
+			EEFCheckboxConditionalStyle eefCheckboxConditionalStyle = (EEFCheckboxConditionalStyle) theEObject;
+			T result = caseEEFCheckboxConditionalStyle(eefCheckboxConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefCheckboxConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SELECT_CONDITIONAL_STYLE: {
+			EEFSelectConditionalStyle eefSelectConditionalStyle = (EEFSelectConditionalStyle) theEObject;
+			T result = caseEEFSelectConditionalStyle(eefSelectConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefSelectConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_RADIO_CONDITIONAL_STYLE: {
+			EEFRadioConditionalStyle eefRadioConditionalStyle = (EEFRadioConditionalStyle) theEObject;
+			T result = caseEEFRadioConditionalStyle(eefRadioConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefRadioConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE: {
+			EEFCustomWidgetConditionalStyle eefCustomWidgetConditionalStyle = (EEFCustomWidgetConditionalStyle) theEObject;
+			T result = caseEEFCustomWidgetConditionalStyle(eefCustomWidgetConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefCustomWidgetConditionalStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -760,6 +865,141 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFRadioStyle(EEFRadioStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFCustomWidgetStyle(EEFCustomWidgetStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFConditionalStyle(EEFConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Text Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Text Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFTextConditionalStyle(EEFTextConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Button Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Button Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFButtonConditionalStyle(EEFButtonConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Label Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Label Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFLabelConditionalStyle(EEFLabelConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Checkbox Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Checkbox Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFCheckboxConditionalStyle(EEFCheckboxConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Select Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Select Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSelectConditionalStyle(EEFSelectConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Radio Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Radio Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFRadioConditionalStyle(EEFRadioConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFCustomWidgetConditionalStyle(EEFCustomWidgetConditionalStyle object) {
 		return null;
 	}
 

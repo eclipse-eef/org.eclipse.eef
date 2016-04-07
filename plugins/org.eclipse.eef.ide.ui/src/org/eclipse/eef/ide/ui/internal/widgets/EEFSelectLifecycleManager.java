@@ -10,10 +10,13 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.eef.EEFConditionalStyle;
+import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
@@ -152,6 +155,28 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
 		return this.description.getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetStyle(org.eclipse.eef.EEFConditionalStyle)
+	 */
+	@Override
+	protected EEFWidgetStyle getWidgetStyle(EEFConditionalStyle conditionalStyle) {
+		return ((EEFSelectConditionalStyle) conditionalStyle).getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getWidgetConditionalStyles()
+	 */
+	@Override
+	protected List<EEFConditionalStyle> getWidgetConditionalStyles() {
+		List<EEFConditionalStyle> widgetConditionalStyles = new ArrayList<EEFConditionalStyle>();
+		widgetConditionalStyles.addAll(this.description.getConditionalStyles());
+		return widgetConditionalStyles;
 	}
 
 	/**

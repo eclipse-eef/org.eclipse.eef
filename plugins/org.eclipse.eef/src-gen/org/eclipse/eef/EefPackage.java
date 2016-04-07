@@ -714,13 +714,22 @@ public interface EefPackage extends EPackage {
 	int EEF_TEXT_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>EEF Text Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TEXT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+	int EEF_TEXT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl <em>EEF Label Description</em>}'
@@ -784,13 +793,22 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>EEF Label Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl <em>EEF Button Description</em>}
@@ -863,13 +881,22 @@ public interface EefPackage extends EPackage {
 	int EEF_BUTTON_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>EEF Button Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_BUTTON_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_BUTTON_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl
@@ -942,13 +969,22 @@ public interface EefPackage extends EPackage {
 	int EEF_CHECKBOX_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>EEF Checkbox Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CHECKBOX_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_CHECKBOX_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl <em>EEF Select Description</em>}
@@ -1039,13 +1075,22 @@ public interface EefPackage extends EPackage {
 	int EEF_SELECT_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>EEF Select Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_SELECT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
+	int EEF_SELECT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl <em>EEF Radio Description</em>}'
@@ -1145,13 +1190,22 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>EEF Radio Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_RADIO_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
+	int EEF_RADIO_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
@@ -1289,13 +1343,31 @@ public interface EefPackage extends EPackage {
 	int EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>EEF Custom Widget Description</em>' class. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_CUSTOM_WIDGET_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+	int EEF_CUSTOM_WIDGET_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl <em>EEF Custom Expression</em>}'
@@ -1872,6 +1944,357 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
+	 * <em>EEF Custom Widget Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetStyle()
+	 * @generated
+	 */
+	int EEF_CUSTOM_WIDGET_STYLE = 27;
+
+	/**
+	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Foreground Color Expression</b></em>' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Font Name Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Font Size Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Font Style Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>EEF Custom Widget Style</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFConditionalStyleImpl <em>EEF Conditional Style</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFConditionalStyle()
+	 * @generated
+	 */
+	int EEF_CONDITIONAL_STYLE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Conditional Style</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CONDITIONAL_STYLE_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFTextConditionalStyleImpl
+	 * <em>EEF Text Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFTextConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
+	 * @generated
+	 */
+	int EEF_TEXT_CONDITIONAL_STYLE = 29;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Text Conditional Style</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TEXT_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
+	 * <em>EEF Button Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonConditionalStyle()
+	 * @generated
+	 */
+	int EEF_BUTTON_CONDITIONAL_STYLE = 30;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Button Conditional Style</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_BUTTON_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
+	 * <em>EEF Label Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
+	 * @generated
+	 */
+	int EEF_LABEL_CONDITIONAL_STYLE = 31;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Label Conditional Style</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
+	 * <em>EEF Checkbox Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
+	 * @generated
+	 */
+	int EEF_CHECKBOX_CONDITIONAL_STYLE = 32;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Checkbox Conditional Style</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CHECKBOX_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
+	 * <em>EEF Select Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
+	 * @generated
+	 */
+	int EEF_SELECT_CONDITIONAL_STYLE = 33;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Select Conditional Style</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_SELECT_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
+	 * <em>EEF Radio Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
+	 * @generated
+	 */
+	int EEF_RADIO_CONDITIONAL_STYLE = 34;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Radio Conditional Style</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_RADIO_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
+	 * <em>EEF Custom Widget Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetConditionalStyle()
+	 * @generated
+	 */
+	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = 35;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Custom Widget Conditional Style</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1879,7 +2302,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
 	 * @generated
 	 */
-	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 27;
+	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 36;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
@@ -2456,6 +2879,18 @@ public interface EefPackage extends EPackage {
 	EReference getEEFTextDescription_Style();
 
 	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFTextDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFTextDescription#getConditionalStyles()
+	 * @see #getEEFTextDescription()
+	 * @generated
+	 */
+	EReference getEEFTextDescription_ConditionalStyles();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFLabelDescription <em>EEF Label Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2486,6 +2921,18 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFLabelDescription_Style();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFLabelDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFLabelDescription#getConditionalStyles()
+	 * @see #getEEFLabelDescription()
+	 * @generated
+	 */
+	EReference getEEFLabelDescription_ConditionalStyles();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFButtonDescription <em>EEF Button Description</em>}'.
@@ -2531,6 +2978,18 @@ public interface EefPackage extends EPackage {
 	EReference getEEFButtonDescription_Style();
 
 	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFButtonDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFButtonDescription#getConditionalStyles()
+	 * @see #getEEFButtonDescription()
+	 * @generated
+	 */
+	EReference getEEFButtonDescription_ConditionalStyles();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCheckboxDescription
 	 * <em>EEF Checkbox Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2572,6 +3031,18 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFCheckboxDescription_Style();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFCheckboxDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFCheckboxDescription#getConditionalStyles()
+	 * @see #getEEFCheckboxDescription()
+	 * @generated
+	 */
+	EReference getEEFCheckboxDescription_ConditionalStyles();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSelectDescription <em>EEF Select Description</em>}'.
@@ -2638,6 +3109,18 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFSelectDescription_Style();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFSelectDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFSelectDescription#getConditionalStyles()
+	 * @see #getEEFSelectDescription()
+	 * @generated
+	 */
+	EReference getEEFSelectDescription_ConditionalStyles();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRadioDescription <em>EEF Radio Description</em>}'.
@@ -2715,6 +3198,18 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFRadioDescription_NumberOfColumns();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFRadioDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFRadioDescription#getConditionalStyles()
+	 * @see #getEEFRadioDescription()
+	 * @generated
+	 */
+	EReference getEEFRadioDescription_ConditionalStyles();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFDynamicMappingFor <em>EEF Dynamic Mapping For</em>}
@@ -2812,6 +3307,30 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFCustomWidgetDescription_CustomExpressions();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.eef.EEFCustomWidgetDescription#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription#getStyle()
+	 * @see #getEEFCustomWidgetDescription()
+	 * @generated
+	 */
+	EReference getEEFCustomWidgetDescription_Style();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFCustomWidgetDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetDescription#getConditionalStyles()
+	 * @see #getEEFCustomWidgetDescription()
+	 * @generated
+	 */
+	EReference getEEFCustomWidgetDescription_ConditionalStyles();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomExpression <em>EEF Custom Expression</em>}'.
@@ -3081,6 +3600,186 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEEFRadioStyle();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetStyle <em>EEF Custom Widget Style</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Custom Widget Style</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetStyle
+	 * @generated
+	 */
+	EClass getEEFCustomWidgetStyle();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFConditionalStyle <em>EEF Conditional Style</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFConditionalStyle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFConditionalStyle#getPreconditionExpression
+	 * <em>Precondition Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Precondition Expression</em>'.
+	 * @see org.eclipse.eef.EEFConditionalStyle#getPreconditionExpression()
+	 * @see #getEEFConditionalStyle()
+	 * @generated
+	 */
+	EAttribute getEEFConditionalStyle_PreconditionExpression();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFTextConditionalStyle
+	 * <em>EEF Text Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Text Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFTextConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFTextConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFTextConditionalStyle#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFTextConditionalStyle#getStyle()
+	 * @see #getEEFTextConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFTextConditionalStyle_Style();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFButtonConditionalStyle
+	 * <em>EEF Button Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Button Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFButtonConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFButtonConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFButtonConditionalStyle#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFButtonConditionalStyle#getStyle()
+	 * @see #getEEFButtonConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFButtonConditionalStyle_Style();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFLabelConditionalStyle
+	 * <em>EEF Label Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Label Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFLabelConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFLabelConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFLabelConditionalStyle#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFLabelConditionalStyle#getStyle()
+	 * @see #getEEFLabelConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFLabelConditionalStyle_Style();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCheckboxConditionalStyle
+	 * <em>EEF Checkbox Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Checkbox Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFCheckboxConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFCheckboxConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.eef.EEFCheckboxConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFCheckboxConditionalStyle#getStyle()
+	 * @see #getEEFCheckboxConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFCheckboxConditionalStyle_Style();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSelectConditionalStyle
+	 * <em>EEF Select Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Select Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFSelectConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFSelectConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFSelectConditionalStyle#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFSelectConditionalStyle#getStyle()
+	 * @see #getEEFSelectConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFSelectConditionalStyle_Style();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRadioConditionalStyle
+	 * <em>EEF Radio Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Radio Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFRadioConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFRadioConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFRadioConditionalStyle#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFRadioConditionalStyle#getStyle()
+	 * @see #getEEFRadioConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFRadioConditionalStyle_Style();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle
+	 * <em>EEF Custom Widget Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Custom Widget Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFCustomWidgetConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle()
+	 * @see #getEEFCustomWidgetConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFCustomWidgetConditionalStyle_Style();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -3553,6 +4252,14 @@ public interface EefPackage extends EPackage {
 		EReference EEF_TEXT_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFTextDescription_Style();
 
 		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFTextDescription_ConditionalStyles();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl
 		 * <em>EEF Label Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -3577,6 +4284,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_LABEL_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFLabelDescription_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFLabelDescription_ConditionalStyles();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl
@@ -3613,6 +4328,14 @@ public interface EefPackage extends EPackage {
 		EReference EEF_BUTTON_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFButtonDescription_Style();
 
 		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFButtonDescription_ConditionalStyles();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl
 		 * <em>EEF Checkbox Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -3645,6 +4368,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_CHECKBOX_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFCheckboxDescription_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFCheckboxDescription_ConditionalStyles();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl
@@ -3695,6 +4426,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_SELECT_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFSelectDescription_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFSelectDescription_ConditionalStyles();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl
@@ -3753,6 +4492,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS = EefPackage.eINSTANCE.getEEFRadioDescription_NumberOfColumns();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFRadioDescription_ConditionalStyles();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
@@ -3831,6 +4578,22 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS = EefPackage.eINSTANCE.getEEFCustomWidgetDescription_CustomExpressions();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFCustomWidgetDescription_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFCustomWidgetDescription_ConditionalStyles();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl
@@ -4047,6 +4810,160 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EEF_RADIO_STYLE = EefPackage.eINSTANCE.getEEFRadioStyle();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
+		 * <em>EEF Custom Widget Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetStyle()
+		 * @generated
+		 */
+		EClass EEF_CUSTOM_WIDGET_STYLE = EefPackage.eINSTANCE.getEEFCustomWidgetStyle();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFConditionalStyleImpl
+		 * <em>EEF Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.eINSTANCE.getEEFConditionalStyle_PreconditionExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextConditionalStyleImpl
+		 * <em>EEF Text Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFTextConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_TEXT_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFTextConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_TEXT_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFTextConditionalStyle_Style();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
+		 * <em>EEF Button Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_BUTTON_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFButtonConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_BUTTON_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFButtonConditionalStyle_Style();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
+		 * <em>EEF Label Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_LABEL_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFLabelConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_LABEL_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFLabelConditionalStyle_Style();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
+		 * <em>EEF Checkbox Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_CHECKBOX_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFCheckboxConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFCheckboxConditionalStyle_Style();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
+		 * <em>EEF Select Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_SELECT_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFSelectConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_SELECT_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFSelectConditionalStyle_Style();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
+		 * <em>EEF Radio Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_RADIO_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFRadioConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_RADIO_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFRadioConditionalStyle_Style();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
+		 * <em>EEF Custom Widget Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFCustomWidgetConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFCustomWidgetConditionalStyle_Style();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION

@@ -99,6 +99,7 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__STYLE);
+			childrenFeatures.add(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return childrenFeatures;
 	}
@@ -165,6 +166,7 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_BUTTON_DESCRIPTION__STYLE:
+		case EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -182,6 +184,9 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFButtonStyle()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES,
+				EefFactory.eINSTANCE.createEEFButtonConditionalStyle()));
 	}
 
 }

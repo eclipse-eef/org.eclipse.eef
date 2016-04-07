@@ -8,26 +8,35 @@
  */
 package org.eclipse.eef.util;
 
+import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFButtonStyle;
+import org.eclipse.eef.EEFCheckboxConditionalStyle;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
+import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFCustomExpression;
+import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
 import org.eclipse.eef.EEFCustomWidgetDescription;
+import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
+import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
+import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
@@ -225,6 +234,51 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFRadioStyle(EEFRadioStyle object) {
 			return createEEFRadioStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFCustomWidgetStyle(EEFCustomWidgetStyle object) {
+			return createEEFCustomWidgetStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFConditionalStyle(EEFConditionalStyle object) {
+			return createEEFConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFTextConditionalStyle(EEFTextConditionalStyle object) {
+			return createEEFTextConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFButtonConditionalStyle(EEFButtonConditionalStyle object) {
+			return createEEFButtonConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFLabelConditionalStyle(EEFLabelConditionalStyle object) {
+			return createEEFLabelConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFCheckboxConditionalStyle(EEFCheckboxConditionalStyle object) {
+			return createEEFCheckboxConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFSelectConditionalStyle(EEFSelectConditionalStyle object) {
+			return createEEFSelectConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFRadioConditionalStyle(EEFRadioConditionalStyle object) {
+			return createEEFRadioConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFCustomWidgetConditionalStyle(EEFCustomWidgetConditionalStyle object) {
+			return createEEFCustomWidgetConditionalStyleAdapter();
 		}
 
 		@Override
@@ -615,6 +669,132 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFRadioStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetStyle
+	 * <em>EEF Custom Widget Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFCustomWidgetStyle
+	 * @generated
+	 */
+	public Adapter createEEFCustomWidgetStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFConditionalStyle
+	 * <em>EEF Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFTextConditionalStyle
+	 * <em>EEF Text Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFTextConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFTextConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFButtonConditionalStyle
+	 * <em>EEF Button Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFButtonConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFButtonConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLabelConditionalStyle
+	 * <em>EEF Label Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFLabelConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFLabelConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxConditionalStyle
+	 * <em>EEF Checkbox Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFCheckboxConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFCheckboxConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSelectConditionalStyle
+	 * <em>EEF Select Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFSelectConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFSelectConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRadioConditionalStyle
+	 * <em>EEF Radio Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFRadioConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFRadioConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle
+	 * <em>EEF Custom Widget Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null
+	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFCustomWidgetConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFCustomWidgetConditionalStyleAdapter() {
 		return null;
 	}
 
