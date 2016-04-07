@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-Copyright (c) 2015 Obeo.
-All rights reserved. This program and the accompanying materials
-are made available under the terms of the Eclipse Public License v1.0
-which accompanies this distribution, and is available at
-http://www.eclipse.org/legal/epl-v10.html
-
-Contributors:
-    Obeo - initial API and implementation
--->
+<!-- Copyright (c) 2015 Obeo. All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public 
+  License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html Contributors: Obeo - initial API and implementation -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -22,6 +14,7 @@ Contributors:
   <properties>
     <tycho-version>0.24.0</tycho-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <platform-version-name>neon</platform-version-name>
   </properties>
 
   <build>
@@ -48,6 +41,13 @@ Contributors:
               <arch>x86_64</arch>
             </environment>
           </environments>
+          <target>
+            <artifact>
+              <groupId>org.eclipse.eef</groupId>
+              <artifactId>${platform-version-name}</artifactId>
+              <version>1.0.0-SNAPSHOT</version>
+            </artifact>
+          </target>
         </configuration>
       </plugin>
       <plugin>
@@ -58,55 +58,29 @@ Contributors:
       </plugin>
     </plugins>
   </build>
+  <modules>
+    <module>targetplatforms/${platform-version-name}</module>
 
-  <profiles>
-    <profile>
-      <id>neon</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.eclipse.tycho</groupId>
-            <artifactId>target-platform-configuration</artifactId>
-            <configuration>
-              <target>
-                <artifact>
-                  <groupId>org.eclipse.eef</groupId>
-                  <artifactId>neon</artifactId>
-                  <version>1.0.0-SNAPSHOT</version>
-                </artifact>
-              </target>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-      <modules>
-        <module>targetplatforms/neon</module>
+    <module>../../plugins/org.eclipse.eef.properties.ui</module>
+    <module>../../plugins/org.eclipse.eef.properties.ui.legacy</module>
 
-        <module>../../plugins/org.eclipse.eef.properties.ui</module>
-        <module>../../plugins/org.eclipse.eef.properties.ui.legacy</module>
-        
-        <module>../../plugins/org.eclipse.eef</module>
-        <module>../../plugins/org.eclipse.eef.edit</module>
+    <module>../../plugins/org.eclipse.eef</module>
+    <module>../../plugins/org.eclipse.eef.edit</module>
 
-        <module>../../plugins/org.eclipse.eef.common</module>
-        <module>../../plugins/org.eclipse.eef.common.ui</module>
-        <module>../../plugins/org.eclipse.eef.core</module>
-        <module>../../plugins/org.eclipse.eef.ide</module>
-        <module>../../plugins/org.eclipse.eef.ide.ui</module>
+    <module>../../plugins/org.eclipse.eef.common</module>
+    <module>../../plugins/org.eclipse.eef.common.ui</module>
+    <module>../../plugins/org.eclipse.eef.core</module>
+    <module>../../plugins/org.eclipse.eef.ide</module>
+    <module>../../plugins/org.eclipse.eef.ide.ui</module>
 
-        <module>../../plugins/org.eclipse.eef.ide.ui.properties</module>
+    <module>../../plugins/org.eclipse.eef.ide.ui.properties</module>
 
-        <module>../../tests/org.eclipse.eef.tests</module>
+    <module>../../tests/org.eclipse.eef.tests</module>
 
-        <module>../../doc/org.eclipse.eef.documentation</module>
+    <module>../../doc/org.eclipse.eef.documentation</module>
 
-        <module>../../features/org.eclipse.eef.sdk-feature</module>
-        
-        <module>../../releng/org.eclipse.eef.update</module> 
-      </modules>
-    </profile>
-  </profiles>
+    <module>../../features/org.eclipse.eef.sdk-feature</module>
+
+    <module>../../releng/org.eclipse.eef.update</module>
+  </modules>
 </project>

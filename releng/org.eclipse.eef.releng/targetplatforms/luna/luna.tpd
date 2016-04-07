@@ -1,0 +1,37 @@
+target "Eclipse Luna"
+
+include "http://download.eclipse.org/sirius/updates/nightly/targets/modules/aql-nightly.tpd"
+
+with source requirements
+
+location Eclipse-Luna "http://download.eclipse.org/releases/luna" {
+	org.eclipse.platform.feature.group lazy
+	org.eclipse.sdk.feature.group lazy
+	org.eclipse.uml2.uml.feature.group lazy
+	org.eclipse.uml2.uml.editor lazy
+	org.eclipse.xtext.sdk.feature.group lazy
+	org.eclipse.xtend.sdk.feature.group lazy
+	org.eclipse.emf.mwe2.runtime.sdk.feature.group lazy
+	org.eclipse.emf.transaction.feature.group lazy
+}
+
+/*location Sirius-Core "http://download.eclipse.org/sirius/updates/nightly/latest/neon" {
+	org.eclipse.sirius.doc.feature.feature.group lazy
+	org.eclipse.sirius.runtime.acceleo.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.runtime.ide.xtext.feature.group lazy
+	org.eclipse.sirius.runtime.ocl.feature.group lazy
+	org.eclipse.sirius.runtime.aql.feature.group lazy
+	org.eclipse.sirius.samples.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.aql.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.feature.group lazy
+	org.eclipse.sirius.tests.support.feature.group lazy
+}*/
+
+location Sirius-Incubation "http://download.eclipse.org/sirius/updates/nightly/latest/mars/incubation" {
+	org.eclipse.sirius.incubation.interpreter.feature.group lazy
+}

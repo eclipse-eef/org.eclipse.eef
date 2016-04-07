@@ -173,7 +173,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		this.selectionListener = new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				IStructuredSelection selection = radioGroupViewer.getStructuredSelection();
+				IStructuredSelection selection = getStructuredSelection(radioGroupViewer);
 				Object newValue = selection.getFirstElement();
 				controller.updateValue(newValue);
 			}

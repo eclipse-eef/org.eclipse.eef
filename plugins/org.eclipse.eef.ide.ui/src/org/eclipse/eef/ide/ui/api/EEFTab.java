@@ -111,7 +111,7 @@ public class EEFTab {
 			IStructuredSelection iStructuredSelection = (IStructuredSelection) selection;
 			Object object = iStructuredSelection.getFirstElement();
 
-			InputDescriptor input = Platform.getAdapterManager().getAdapter(object, InputDescriptor.class);
+			InputDescriptor input = (InputDescriptor) Platform.getAdapterManager().getAdapter(object, InputDescriptor.class);
 
 			if (input != null) {
 				// TODO we should create a whole context with the current selection etc for the context

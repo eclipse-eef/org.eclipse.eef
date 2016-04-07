@@ -28,6 +28,9 @@ import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -456,5 +459,26 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		text.setStyleRange(styleRange);
 		return fontStyle;
+	}
+
+	/**
+	 * Returns the <code>IStructuredSelection</code> of the specified viewer.
+	 * <p>
+	 * Backport of <code>StructuredViewer.getStructuredSelection()</code> which was introduced in JFace 3.11 (Mars) to
+	 * work with JFace 3.10 (Luna).
+	 * </p>
+	 *
+	 * @param viewer
+	 *            the viewer.
+	 * @return IStructuredSelection
+	 * @throws ClassCastException
+	 *             if the selection of the viewer is not an instance of IStructuredSelection
+	 */
+	protected IStructuredSelection getStructuredSelection(StructuredViewer viewer) throws ClassCastException {
+		ISelection selection = viewer.getSelection();
+		if (selection instanceof IStructuredSelection) {
+			return (IStructuredSelection) selection;
+		}
+		throw new ClassCastException("StructuredViewer should return an instance of IStructuredSelection from its getSelection() method."); //$NON-NLS-1$
 	}
 }

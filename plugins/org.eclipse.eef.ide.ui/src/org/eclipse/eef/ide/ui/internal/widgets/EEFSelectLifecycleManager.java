@@ -176,7 +176,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		this.selectionListener = new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				IStructuredSelection selection = comboViewer.getStructuredSelection();
+				IStructuredSelection selection = getStructuredSelection(comboViewer);
 				Object newValue = selection.getFirstElement();
 				controller.updateValue(newValue);
 			}

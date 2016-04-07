@@ -474,7 +474,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			/*
 			 * Is the part is a IContributedContentsView for the contributor, for example, outline view.
 			 */
-			view = part.getAdapter(IContributedContentsView.class);
+			view = (IContributedContentsView) part.getAdapter(IContributedContentsView.class);
 		}
 
 		if (view == null || (view.getContributingPart() != null && !view.getContributingPart().equals(contributor))) {
