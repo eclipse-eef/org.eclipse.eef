@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_c6c96f9e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "This method can also be removed because all its implementations are also the same. You can use here in this superclass this.getWidgetDescription().getStyle().",
+      "range": {
+        "startLine": 187,
+        "startChar": 1,
+        "endLine": 192,
+        "endChar": 52
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_a6ce23a5",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "This method can be removed since all implementation will be the same. You can use here this.getWidgetDescription().getWidgetStyle().",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 200,
+        "endChar": 54
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_e6dbcb60",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "to be removed :)",
+      "range": {
+        "startLine": 228,
+        "startChar": 5,
+        "endLine": 228,
+        "endChar": 35
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_06dfd74e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "You will be able to remove this if you want because, EMF will not return a \"null\" list",
+      "range": {
+        "startLine": 230,
+        "startChar": 9,
+        "endLine": 230,
+        "endChar": 34
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_66efbbf9",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "This approach seems odd because it means that the superclass depends on all of its implementations and I can\u0027t have the support for a conditional style without modifying the superclass.\n\nA better approach may use the fact that all those objects have a common parent and you are requiring the same property on all those objects. A derived feature or a method on EEFConditionalStyle may be cleaner.",
+      "range": {
+        "startLine": 283,
+        "startChar": 4,
+        "endLine": 301,
+        "endChar": 5
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_a6e54317",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFButtonLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "this code can be removed because the superclass can compute it.",
+      "range": {
+        "startLine": 129,
+        "startChar": 1,
+        "endLine": 148,
+        "endChar": 2
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_c6e08f06",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFCheckboxLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "this code can be removed because the superclass can compute it.",
+      "range": {
+        "startLine": 134,
+        "startChar": 1,
+        "endLine": 150,
+        "endChar": 2
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_e6066b5b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "this code can be removed because the superclass can compute it.",
+      "range": {
+        "startLine": 196,
+        "startChar": 1,
+        "endLine": 211,
+        "endChar": 2
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_060a775f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFRadioLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "this code can be removed because the superclass can compute it.",
+      "range": {
+        "startLine": 149,
+        "startChar": 1,
+        "endLine": 163,
+        "endChar": 2
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_4610ff89",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "this code can be removed because the superclass can compute it.",
+      "range": {
+        "startLine": 152,
+        "startChar": 1,
+        "endLine": 166,
+        "endChar": 2
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_86f5a7be",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "this code can be removed because the superclass can compute it.",
+      "range": {
+        "startLine": 146,
+        "startChar": 1,
+        "endLine": 161,
+        "endChar": 2
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_a600e339",
+        "filename": "samples/org.eclipse.eef.sample.custom.widget.colorpicker/src/org/eclipse/eef/sample/custom/widget/colorpicker/ColorPickerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-08T09:58:28Z",
+      "side": 1,
+      "message": "this code can be removed because the superclass can compute it.",
+      "range": {
+        "startLine": 125,
+        "startChar": 3,
+        "endLine": 139,
+        "endChar": 5
+      },
+      "revId": "d51348826f9c5e98c3553efce38ddceeec7761c2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
