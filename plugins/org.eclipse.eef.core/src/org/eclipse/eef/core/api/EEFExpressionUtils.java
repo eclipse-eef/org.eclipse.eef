@@ -97,11 +97,16 @@ public final class EEFExpressionUtils {
 	}
 
 	/**
-	 * Utility class containing the constants related to the {@link org.eclipse.eef.core.api.EEFMultiReferences}.
+	 * Utility class containing the constants related to the reference widgets.
 	 *
 	 * @author mbats
 	 */
-	public final class EEFMultiReferences {
+	public final class EEFReference {
+		/**
+		 * The name of the variable value.
+		 */
+		public static final String VALUE = "value"; //$NON-NLS-1$
+
 		/**
 		 * The name of the variable selection.
 		 */
@@ -110,7 +115,7 @@ public final class EEFExpressionUtils {
 		/**
 		 * The constructor.
 		 */
-		private EEFMultiReferences() {
+		private EEFReference() {
 			// prevent instantiation
 		}
 	}

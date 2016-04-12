@@ -24,6 +24,8 @@ import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
+import org.eclipse.eef.EEFReferenceDescription;
+import org.eclipse.eef.EEFReferenceStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
@@ -32,6 +34,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
@@ -118,6 +121,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetDescription();
 		case EefPackage.EEF_CUSTOM_EXPRESSION:
 			return createEEFCustomExpression();
+		case EefPackage.EEF_REFERENCE_DESCRIPTION:
+			return createEEFReferenceDescription();
 		case EefPackage.EEF_TEXT_STYLE:
 			return createEEFTextStyle();
 		case EefPackage.EEF_LABEL_STYLE:
@@ -130,6 +135,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFSelectStyle();
 		case EefPackage.EEF_RADIO_STYLE:
 			return createEEFRadioStyle();
+		case EefPackage.EEF_WIDGET_ACTION:
+			return createEEFWidgetAction();
+		case EefPackage.EEF_REFERENCE_STYLE:
+			return createEEFReferenceStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -369,6 +378,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public EEFReferenceDescription createEEFReferenceDescription() {
+		EEFReferenceDescriptionImpl eefReferenceDescription = new EEFReferenceDescriptionImpl();
+		return eefReferenceDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFTextStyle createEEFTextStyle() {
 		EEFTextStyleImpl eefTextStyle = new EEFTextStyleImpl();
 		return eefTextStyle;
@@ -427,6 +447,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFRadioStyle createEEFRadioStyle() {
 		EEFRadioStyleImpl eefRadioStyle = new EEFRadioStyleImpl();
 		return eefRadioStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFWidgetAction createEEFWidgetAction() {
+		EEFWidgetActionImpl eefWidgetAction = new EEFWidgetActionImpl();
+		return eefWidgetAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFReferenceStyle createEEFReferenceStyle() {
+		EEFReferenceStyleImpl eefReferenceStyle = new EEFReferenceStyleImpl();
+		return eefReferenceStyle;
 	}
 
 	/**

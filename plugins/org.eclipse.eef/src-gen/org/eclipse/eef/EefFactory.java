@@ -175,6 +175,14 @@ public interface EefFactory extends EFactory {
 	EEFCustomExpression createEEFCustomExpression();
 
 	/**
+	 * Returns a new object of class '<em>EEF Reference Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Reference Description</em>'.
+	 * @generated
+	 */
+	EEFReferenceDescription createEEFReferenceDescription();
+
+	/**
 	 * Returns a new object of class '<em>EEF Text Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Text Style</em>'.
@@ -221,6 +229,22 @@ public interface EefFactory extends EFactory {
 	 * @generated
 	 */
 	EEFRadioStyle createEEFRadioStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Widget Action</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Widget Action</em>'.
+	 * @generated
+	 */
+	EEFWidgetAction createEEFWidgetAction();
+
+	/**
+	 * Returns a new object of class '<em>EEF Reference Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Reference Style</em>'.
+	 * @generated
+	 */
+	EEFReferenceStyle createEEFReferenceStyle();
 
 	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
