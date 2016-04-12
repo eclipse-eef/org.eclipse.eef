@@ -24,6 +24,7 @@ import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
+import org.eclipse.eef.EEFReferenceDescription;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
@@ -32,6 +33,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
@@ -44,13 +46,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static EefFactory init() {
@@ -67,7 +69,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EefFactoryImpl() {
@@ -76,7 +78,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,6 +120,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetDescription();
 		case EefPackage.EEF_CUSTOM_EXPRESSION:
 			return createEEFCustomExpression();
+		case EefPackage.EEF_REFERENCE_DESCRIPTION:
+			return createEEFReferenceDescription();
 		case EefPackage.EEF_TEXT_STYLE:
 			return createEEFTextStyle();
 		case EefPackage.EEF_LABEL_STYLE:
@@ -130,6 +134,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFSelectStyle();
 		case EefPackage.EEF_RADIO_STYLE:
 			return createEEFRadioStyle();
+		case EefPackage.EEF_WIDGET_ACTION:
+			return createEEFWidgetAction();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -137,7 +143,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,7 +158,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,7 +173,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -178,7 +184,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -189,7 +195,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -200,7 +206,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,7 +217,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -222,7 +228,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -233,7 +239,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -244,7 +250,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -255,7 +261,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -266,7 +272,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -277,7 +283,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -288,7 +294,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -299,7 +305,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -310,7 +316,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -321,7 +327,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -332,7 +338,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -343,7 +349,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -354,7 +360,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -365,7 +371,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EEFReferenceDescription createEEFReferenceDescription() {
+		EEFReferenceDescriptionImpl eefReferenceDescription = new EEFReferenceDescriptionImpl();
+		return eefReferenceDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -376,7 +393,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -387,7 +404,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -398,7 +415,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -409,7 +426,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -420,7 +437,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -431,7 +448,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EEFWidgetAction createEEFWidgetAction() {
+		EEFWidgetActionImpl eefWidgetAction = new EEFWidgetActionImpl();
+		return eefWidgetAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEF_VALIDATION_SEVERITY_DESCRIPTION createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(EDataType eDataType, String initialValue) {
@@ -444,7 +472,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public String convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(EDataType eDataType, Object instanceValue) {
@@ -453,7 +481,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -463,7 +491,7 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

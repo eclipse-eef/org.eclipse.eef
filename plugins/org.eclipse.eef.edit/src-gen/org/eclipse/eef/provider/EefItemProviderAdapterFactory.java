@@ -488,6 +488,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFReferenceDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFReferenceDescriptionItemProvider eefReferenceDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFReferenceDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFReferenceDescriptionAdapter() {
+		if (eefReferenceDescriptionItemProvider == null) {
+			eefReferenceDescriptionItemProvider = new EEFReferenceDescriptionItemProvider(this);
+		}
+
+		return eefReferenceDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -535,7 +558,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFButtonStyleItemProvider eefButtonStyleItemProvider;
@@ -543,7 +566,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -558,7 +581,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCheckboxStyleItemProvider eefCheckboxStyleItemProvider;
@@ -566,7 +589,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -581,7 +604,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFSelectStyleItemProvider eefSelectStyleItemProvider;
@@ -589,7 +612,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -604,7 +627,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFRadioStyleItemProvider eefRadioStyleItemProvider;
@@ -612,7 +635,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -622,6 +645,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 
 		return eefRadioStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFWidgetAction} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFWidgetActionItemProvider eefWidgetActionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFWidgetAction}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFWidgetActionAdapter() {
+		if (eefWidgetActionItemProvider == null) {
+			eefWidgetActionItemProvider = new EEFWidgetActionItemProvider(this);
+		}
+
+		return eefWidgetActionItemProvider;
 	}
 
 	/**
@@ -778,6 +824,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		if (eefCustomExpressionItemProvider != null) {
 			eefCustomExpressionItemProvider.dispose();
 		}
+		if (eefReferenceDescriptionItemProvider != null) {
+			eefReferenceDescriptionItemProvider.dispose();
+		}
 		if (eefTextStyleItemProvider != null) {
 			eefTextStyleItemProvider.dispose();
 		}
@@ -795,6 +844,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefRadioStyleItemProvider != null) {
 			eefRadioStyleItemProvider.dispose();
+		}
+		if (eefWidgetActionItemProvider != null) {
+			eefWidgetActionItemProvider.dispose();
 		}
 	}
 
