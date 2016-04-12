@@ -1334,6 +1334,112 @@ public interface EefPackage extends EPackage {
 	int EEF_CUSTOM_EXPRESSION_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFReferenceDescriptionImpl
+	 * <em>EEF Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFReferenceDescriptionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceDescription()
+	 * @generated
+	 */
+	int EEF_REFERENCE_DESCRIPTION = 20;
+
+	/**
+	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
+
+	/**
+	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
+
+	/**
+	 * The feature id for the '<em><b>Multiple</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__MULTIPLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__VALUE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>On Click Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__ACTIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of structural features of the '<em>EEF Reference Description</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetStyleImpl <em>EEF Widget Style</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1341,7 +1447,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetStyle()
 	 * @generated
 	 */
-	int EEF_WIDGET_STYLE = 20;
+	int EEF_WIDGET_STYLE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1405,7 +1511,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_STYLE = 21;
+	int EEF_TEXT_STYLE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1514,7 +1620,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_STYLE = 22;
+	int EEF_LABEL_STYLE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1623,7 +1729,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonStyle()
 	 * @generated
 	 */
-	int EEF_BUTTON_STYLE = 23;
+	int EEF_BUTTON_STYLE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1687,7 +1793,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_STYLE = 24;
+	int EEF_CHECKBOX_STYLE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1751,7 +1857,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_STYLE = 25;
+	int EEF_SELECT_STYLE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1815,7 +1921,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_STYLE = 26;
+	int EEF_RADIO_STYLE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -1872,6 +1978,107 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetActionImpl <em>EEF Widget Action</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFWidgetActionImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetAction()
+	 * @generated
+	 */
+	int EEF_WIDGET_ACTION = 28;
+
+	/**
+	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_ACTION__LABEL_EXPRESSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Action Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_ACTION__ACTION_EXPRESSION = 1;
+
+	/**
+	 * The number of structural features of the '<em>EEF Widget Action</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_WIDGET_ACTION_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFReferenceStyleImpl <em>EEF Reference Style</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFReferenceStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceStyle()
+	 * @generated
+	 */
+	int EEF_REFERENCE_STYLE = 29;
+
+	/**
+	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Foreground Color Expression</b></em>' attribute. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Font Name Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_STYLE__LABEL_FONT_NAME_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Font Size Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_STYLE__LABEL_FONT_SIZE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Label Font Style Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_STYLE__LABEL_FONT_STYLE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>EEF Reference Style</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_REFERENCE_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1879,7 +2086,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
 	 * @generated
 	 */
-	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 27;
+	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 30;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
@@ -2846,6 +3053,83 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFCustomExpression_CustomExpression();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFReferenceDescription
+	 * <em>EEF Reference Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Reference Description</em>'.
+	 * @see org.eclipse.eef.EEFReferenceDescription
+	 * @generated
+	 */
+	EClass getEEFReferenceDescription();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#isMultiple
+	 * <em>Multiple</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Multiple</em>'.
+	 * @see org.eclipse.eef.EEFReferenceDescription#isMultiple()
+	 * @see #getEEFReferenceDescription()
+	 * @generated
+	 */
+	EAttribute getEEFReferenceDescription_Multiple();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#getValueExpression
+	 * <em>Value Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Value Expression</em>'.
+	 * @see org.eclipse.eef.EEFReferenceDescription#getValueExpression()
+	 * @see #getEEFReferenceDescription()
+	 * @generated
+	 */
+	EAttribute getEEFReferenceDescription_ValueExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#getDisplayExpression
+	 * <em>Display Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Display Expression</em>'.
+	 * @see org.eclipse.eef.EEFReferenceDescription#getDisplayExpression()
+	 * @see #getEEFReferenceDescription()
+	 * @generated
+	 */
+	EAttribute getEEFReferenceDescription_DisplayExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#getOnClickExpression
+	 * <em>On Click Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>On Click Expression</em>'.
+	 * @see org.eclipse.eef.EEFReferenceDescription#getOnClickExpression()
+	 * @see #getEEFReferenceDescription()
+	 * @generated
+	 */
+	EAttribute getEEFReferenceDescription_OnClickExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFReferenceDescription#getActions <em>Actions</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Actions</em>'.
+	 * @see org.eclipse.eef.EEFReferenceDescription#getActions()
+	 * @see #getEEFReferenceDescription()
+	 * @generated
+	 */
+	EReference getEEFReferenceDescription_Actions();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFReferenceDescription#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFReferenceDescription#getStyle()
+	 * @see #getEEFReferenceDescription()
+	 * @generated
+	 */
+	EReference getEEFReferenceDescription_Style();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFWidgetStyle <em>EEF Widget Style</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -3081,6 +3365,48 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEEFRadioStyle();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFWidgetAction <em>EEF Widget Action</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Widget Action</em>'.
+	 * @see org.eclipse.eef.EEFWidgetAction
+	 * @generated
+	 */
+	EClass getEEFWidgetAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetAction#getLabelExpression
+	 * <em>Label Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Label Expression</em>'.
+	 * @see org.eclipse.eef.EEFWidgetAction#getLabelExpression()
+	 * @see #getEEFWidgetAction()
+	 * @generated
+	 */
+	EAttribute getEEFWidgetAction_LabelExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetAction#getActionExpression
+	 * <em>Action Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Action Expression</em>'.
+	 * @see org.eclipse.eef.EEFWidgetAction#getActionExpression()
+	 * @see #getEEFWidgetAction()
+	 * @generated
+	 */
+	EAttribute getEEFWidgetAction_ActionExpression();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFReferenceStyle <em>EEF Reference Style</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Reference Style</em>'.
+	 * @see org.eclipse.eef.EEFReferenceStyle
+	 * @generated
+	 */
+	EClass getEEFReferenceStyle();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -3859,6 +4185,64 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression_CustomExpression();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFReferenceDescriptionImpl
+		 * <em>EEF Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFReferenceDescriptionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceDescription()
+		 * @generated
+		 */
+		EClass EEF_REFERENCE_DESCRIPTION = EefPackage.eINSTANCE.getEEFReferenceDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Multiple</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_REFERENCE_DESCRIPTION__MULTIPLE = EefPackage.eINSTANCE.getEEFReferenceDescription_Multiple();
+
+		/**
+		 * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_REFERENCE_DESCRIPTION__VALUE_EXPRESSION = EefPackage.eINSTANCE.getEEFReferenceDescription_ValueExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Display Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFReferenceDescription_DisplayExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>On Click Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.eINSTANCE.getEEFReferenceDescription_OnClickExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_REFERENCE_DESCRIPTION__ACTIONS = EefPackage.eINSTANCE.getEEFReferenceDescription_Actions();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_REFERENCE_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFReferenceDescription_Style();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFWidgetStyleImpl <em>EEF Widget Style</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -4047,6 +4431,42 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EEF_RADIO_STYLE = EefPackage.eINSTANCE.getEEFRadioStyle();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFWidgetActionImpl <em>EEF Widget Action</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFWidgetActionImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetAction()
+		 * @generated
+		 */
+		EClass EEF_WIDGET_ACTION = EefPackage.eINSTANCE.getEEFWidgetAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Label Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_WIDGET_ACTION__LABEL_EXPRESSION = EefPackage.eINSTANCE.getEEFWidgetAction_LabelExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Action Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_WIDGET_ACTION__ACTION_EXPRESSION = EefPackage.eINSTANCE.getEEFWidgetAction_ActionExpression();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFReferenceStyleImpl
+		 * <em>EEF Reference Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFReferenceStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceStyle()
+		 * @generated
+		 */
+		EClass EEF_REFERENCE_STYLE = EefPackage.eINSTANCE.getEEFReferenceStyle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
