@@ -24,6 +24,8 @@ import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
+import org.eclipse.eef.EEFReferenceDescription;
+import org.eclipse.eef.EEFReferenceStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
@@ -33,6 +35,7 @@ import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefFactory;
@@ -196,6 +199,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 *
 	 * @generated
 	 */
+	private EClass eefReferenceDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass eefWidgetStyleEClass = null;
 
 	/**
@@ -239,6 +249,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefRadioStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefWidgetActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefReferenceStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1198,6 +1222,76 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFReferenceDescription() {
+		return eefReferenceDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFReferenceDescription_Multiple() {
+		return (EAttribute) eefReferenceDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFReferenceDescription_ValueExpression() {
+		return (EAttribute) eefReferenceDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFReferenceDescription_DisplayExpression() {
+		return (EAttribute) eefReferenceDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFReferenceDescription_OnClickExpression() {
+		return (EAttribute) eefReferenceDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFReferenceDescription_Actions() {
+		return (EReference) eefReferenceDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFReferenceDescription_Style() {
+		return (EReference) eefReferenceDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFWidgetStyle() {
 		return eefWidgetStyleEClass;
 	}
@@ -1418,6 +1512,46 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFWidgetAction() {
+		return eefWidgetActionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFWidgetAction_LabelExpression() {
+		return (EAttribute) eefWidgetActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFWidgetAction_ActionExpression() {
+		return (EAttribute) eefWidgetActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFReferenceStyle() {
+		return eefReferenceStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION() {
 		return eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum;
 	}
@@ -1560,6 +1694,14 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__IDENTIFIER);
 		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION);
 
+		eefReferenceDescriptionEClass = createEClass(EefPackage.EEF_REFERENCE_DESCRIPTION);
+		createEAttribute(eefReferenceDescriptionEClass, EefPackage.EEF_REFERENCE_DESCRIPTION__MULTIPLE);
+		createEAttribute(eefReferenceDescriptionEClass, EefPackage.EEF_REFERENCE_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefReferenceDescriptionEClass, EefPackage.EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION);
+		createEAttribute(eefReferenceDescriptionEClass, EefPackage.EEF_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION);
+		createEReference(eefReferenceDescriptionEClass, EefPackage.EEF_REFERENCE_DESCRIPTION__ACTIONS);
+		createEReference(eefReferenceDescriptionEClass, EefPackage.EEF_REFERENCE_DESCRIPTION__STYLE);
+
 		eefWidgetStyleEClass = createEClass(EefPackage.EEF_WIDGET_STYLE);
 		createEAttribute(eefWidgetStyleEClass, EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION);
 		createEAttribute(eefWidgetStyleEClass, EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION);
@@ -1588,6 +1730,12 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefSelectStyleEClass = createEClass(EefPackage.EEF_SELECT_STYLE);
 
 		eefRadioStyleEClass = createEClass(EefPackage.EEF_RADIO_STYLE);
+
+		eefWidgetActionEClass = createEClass(EefPackage.EEF_WIDGET_ACTION);
+		createEAttribute(eefWidgetActionEClass, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION);
+		createEAttribute(eefWidgetActionEClass, EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION);
+
+		eefReferenceStyleEClass = createEClass(EefPackage.EEF_REFERENCE_STYLE);
 
 		// Create enums
 		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION);
@@ -1634,12 +1782,14 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefSelectDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefRadioDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefCustomWidgetDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
+		eefReferenceDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefTextStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefLabelStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefButtonStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefCheckboxStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefSelectStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefRadioStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefReferenceStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
@@ -2001,6 +2151,35 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				ecorePackage.getEString(),
 				"customExpression", null, 0, 1, EEFCustomExpression.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
+		initEClass(eefReferenceDescriptionEClass, EEFReferenceDescription.class,
+				"EEFReferenceDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFReferenceDescription_Multiple(),
+				ecorePackage.getEBoolean(),
+				"multiple", null, 0, 1, EEFReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFReferenceDescription_ValueExpression(),
+				theEcorePackage.getEString(),
+				"valueExpression", null, 0, 1, EEFReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFReferenceDescription_DisplayExpression(),
+				theEcorePackage.getEString(),
+				"displayExpression", null, 0, 1, EEFReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFReferenceDescription_OnClickExpression(),
+				theEcorePackage.getEString(),
+				"onClickExpression", null, 0, 1, EEFReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFReferenceDescription_Actions(),
+				this.getEEFWidgetAction(),
+				null,
+				"actions", null, 0, -1, EEFReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFReferenceDescription_Style(),
+				this.getEEFReferenceStyle(),
+				null,
+				"style", null, 0, 1, EEFReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(eefWidgetStyleEClass, EEFWidgetStyle.class,
 				"EEFWidgetStyle", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(
@@ -2081,6 +2260,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		initEClass(eefRadioStyleEClass, EEFRadioStyle.class,
 				"EEFRadioStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefWidgetActionEClass, EEFWidgetAction.class,
+				"EEFWidgetAction", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFWidgetAction_LabelExpression(),
+				ecorePackage.getEString(),
+				"labelExpression", null, 0, 1, EEFWidgetAction.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFWidgetAction_ActionExpression(),
+				ecorePackage.getEString(),
+				"actionExpression", null, 0, 1, EEFWidgetAction.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefReferenceStyleEClass, EEFReferenceStyle.class,
+				"EEFReferenceStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Initialize enums and add enum literals
 		initEEnum(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.class,

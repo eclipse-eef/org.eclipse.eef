@@ -10,13 +10,17 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import java.util.List;
+
+import org.eclipse.eef.EEFWidgetAction;
+
 /**
- * The IEEFSingleReferenceController is responsible of supporting all the interactions with the widgets created for a
- * single reference viewer.
+ * The IEEFReferenceController is responsible of supporting all the interactions with the widgets created for a
+ * reference viewer.
  *
  * @author mbats
  */
-public interface IEEFSingleReferenceController extends IEEFWidgetController {
+public interface IEEFReferenceController extends IEEFWidgetController {
 	/**
 	 * Register a consumer which will be called with the new value of the text when it will change.
 	 *
@@ -31,29 +35,21 @@ public interface IEEFSingleReferenceController extends IEEFWidgetController {
 	void removeNewValueConsumer();
 
 	/**
-	 * Invoked when the user pushes the create button.
-	 */
-	void create();
-
-	/**
-	 * Invoked when the user pushes the search button.
-	 */
-	void search();
-
-	/**
-	 * Invoked when the user pushes the unset button.
-	 *
-	 * @param element
-	 *            Semantic element
-	 */
-	void unset(Object element);
-
-	/**
 	 * Invoked when the user clicks on an hyperlink.
 	 *
 	 * @param element
 	 *            Semantic element
 	 */
 	void onClick(Object element);
+
+	/**
+	 * Invoked when the user clicks on an action button.
+	 *
+	 * @param action
+	 *            Widget action
+	 * @param selection
+	 *            The selected elements
+	 */
+	void action(EEFWidgetAction action, List<Object> selection);
 
 }

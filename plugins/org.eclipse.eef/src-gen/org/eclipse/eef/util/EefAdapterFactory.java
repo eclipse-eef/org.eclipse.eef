@@ -24,6 +24,8 @@ import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
+import org.eclipse.eef.EEFReferenceDescription;
+import org.eclipse.eef.EEFReferenceStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
@@ -33,6 +35,7 @@ import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.EefPackage;
@@ -193,6 +196,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseEEFReferenceDescription(EEFReferenceDescription object) {
+			return createEEFReferenceDescriptionAdapter();
+		}
+
+		@Override
 		public Adapter caseEEFWidgetStyle(EEFWidgetStyle object) {
 			return createEEFWidgetStyleAdapter();
 		}
@@ -225,6 +233,16 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFRadioStyle(EEFRadioStyle object) {
 			return createEEFRadioStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFWidgetAction(EEFWidgetAction object) {
+			return createEEFWidgetActionAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFReferenceStyle(EEFReferenceStyle object) {
+			return createEEFReferenceStyleAdapter();
 		}
 
 		@Override
@@ -527,6 +545,20 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFReferenceDescription
+	 * <em>EEF Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFReferenceDescription
+	 * @generated
+	 */
+	public Adapter createEEFReferenceDescriptionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetStyle <em>EEF Widget Style</em>}'.
 	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
 	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
@@ -615,6 +647,33 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFRadioStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetAction <em>EEF Widget Action</em>}
+	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFWidgetAction
+	 * @generated
+	 */
+	public Adapter createEEFWidgetActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFReferenceStyle
+	 * <em>EEF Reference Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFReferenceStyle
+	 * @generated
+	 */
+	public Adapter createEEFReferenceStyleAdapter() {
 		return null;
 	}
 
