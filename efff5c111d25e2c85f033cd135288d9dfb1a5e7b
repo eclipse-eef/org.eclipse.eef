@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_b472bf87",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T07:33:00Z",
+      "side": 1,
+      "message": "Set the message in the plugin.properties and the key in org.eclipse.eef.ide.ui.internal.Messages",
+      "range": {
+        "startLine": 482,
+        "startChar": 31,
+        "endLine": 482,
+        "endChar": 131
+      },
+      "revId": "efff5c111d25e2c85f033cd135288d9dfb1a5e7b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
