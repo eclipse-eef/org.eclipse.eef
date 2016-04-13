@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_947dc325",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "I do not like the idea that the abstract class depends on a specific description",
+      "range": {
+        "startLine": 17,
+        "startChar": 23,
+        "endLine": 17,
+        "endChar": 45
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_f44527ee",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "How could we not be in a group ?",
+      "range": {
+        "startLine": 108,
+        "startChar": 10,
+        "endLine": 108,
+        "endChar": 19
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_d452ebb3",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "Add some comment here to explain the exclusive cases",
+      "range": {
+        "startLine": 113,
+        "startChar": 6,
+        "endLine": 113,
+        "endChar": 16
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_b4babf58",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "Could you add some comments ?",
+      "range": {
+        "startLine": 97,
+        "startChar": 3,
+        "endLine": 98,
+        "endChar": 40
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_54a97b11",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "Why not just else? As there is only 2 possibilities",
+      "range": {
+        "startLine": 111,
+        "startChar": 9,
+        "endLine": 111,
+        "endChar": 93
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_94af8315",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "Same at this point if the layout exists it must be a grid layout",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 56
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_b4a1df28",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "I would just get the layout to use in the ifs and do the composite.setLayout outside of the ifs.",
+      "range": {
+        "startLine": 119,
+        "startChar": 30,
+        "endLine": 120,
+        "endChar": 35
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_34478fd5",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "Add comment why 3?",
+      "range": {
+        "startLine": 131,
+        "startChar": 42,
+        "endLine": 131,
+        "endChar": 43
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_74103707",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "If no layout is defined, the widgets are not visible, so it should be [1..1]",
+      "range": {
+        "startLine": 228,
+        "startChar": 59,
+        "endLine": 228,
+        "endChar": 65
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_f43367a9",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "The horizontal layout does not work as I expect. If I create 4 text widgets with label, I got:\n|Text1 text_field| Text2 text_field|\n|Text3 text_field| Text4 text_field|\nAnd I would expect all on the same line:\n|Text1 text_field| Text2 text_field|Text3 text_field| Text4 text_field|",
+      "range": {
+        "startLine": 237,
+        "startChar": 59,
+        "endLine": 237,
+        "endChar": 70
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_b43d5f7c",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "My first try was to create a 3 columns grid for 4 text widgets. I defined a label for each widgets. What I expect would be :\nLabel1 text_field| Label2 text_field| Label3 text field|\nLabel4 text_field|\nand I got:\nLabel1    | text_field | Label2    |\ntext_field| Label3     | text_field|\nLabel4    | text_field |\n\nSo the weird fact is that the label is not visible in the VSM as a widget but it takes a column.",
+      "range": {
+        "startLine": 245,
+        "startChar": 59,
+        "endLine": 245,
+        "endChar": 74
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_74275766",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-13T09:32:58Z",
+      "side": 1,
+      "message": "We might propose something like % instead of only equal size ? I am not sure if it is possible or even interesting ;)",
+      "range": {
+        "startLine": 251,
+        "startChar": 59,
+        "endLine": 251,
+        "endChar": 84
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
