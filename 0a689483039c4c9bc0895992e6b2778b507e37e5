@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_54717bfe",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "I\u0027ve updated the code to allow the behavior of the checkbox on any widget",
+      "parentUuid": "e7dfcf21_947dc325",
+      "range": {
+        "startLine": 17,
+        "startChar": 23,
+        "endLine": 17,
+        "endChar": 45
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_f44527ee",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-04-13T09:32:58Z",
       "side": 1,
       "message": "How could we not be in a group ?",
+      "range": {
+        "startLine": 108,
+        "startChar": 10,
+        "endLine": 108,
+        "endChar": 19
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_74a117f0",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "We can be in a container :)",
+      "parentUuid": "e7dfcf21_f44527ee",
       "range": {
         "startLine": 108,
         "startChar": 10,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_747cb7d8",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_d452ebb3",
+      "range": {
+        "startLine": 113,
+        "startChar": 6,
+        "endLine": 113,
+        "endChar": 16
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_b4babf58",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2016-04-13T09:32:58Z",
       "side": 1,
       "message": "Could you add some comments ?",
+      "range": {
+        "startLine": 97,
+        "startChar": 3,
+        "endLine": 98,
+        "endChar": 40
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_345dcf72",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_b4babf58",
       "range": {
         "startLine": 97,
         "startChar": 3,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_efd470e9",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "I prefer to be sure and I don\u0027t want this code to break if we add something else",
+      "parentUuid": "e7dfcf21_54a97b11",
+      "range": {
+        "startLine": 111,
+        "startChar": 9,
+        "endLine": 111,
+        "endChar": 93
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_94af8315",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2016-04-13T09:32:58Z",
       "side": 1,
       "message": "Same at this point if the layout exists it must be a grid layout",
+      "range": {
+        "startLine": 116,
+        "startChar": 9,
+        "endLine": 116,
+        "endChar": 56
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_0fd8bc19",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "For now it must be a gridlayout, since I must cast the value, I prefer to have a test on the type of the value.",
+      "parentUuid": "e7dfcf21_94af8315",
       "range": {
         "startLine": 116,
         "startChar": 9,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_2fc2d82b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_b4a1df28",
+      "range": {
+        "startLine": 119,
+        "startChar": 30,
+        "endLine": 120,
+        "endChar": 35
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_34478fd5",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
         "patchSetId": 3
@@ -174,6 +342,30 @@
       "writtenOn": "2016-04-13T09:32:58Z",
       "side": 1,
       "message": "Add comment why 3?",
+      "range": {
+        "startLine": 131,
+        "startChar": 42,
+        "endLine": 131,
+        "endChar": 43
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_cff89473",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_34478fd5",
       "range": {
         "startLine": 131,
         "startChar": 42,
@@ -232,6 +424,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_ef7d5061",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_f43367a9",
+      "range": {
+        "startLine": 237,
+        "startChar": 59,
+        "endLine": 237,
+        "endChar": 70
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_b43d5f7c",
         "filename": "plugins/org.eclipse.eef/model/eef.ecore",
         "patchSetId": 3
@@ -255,6 +471,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_0f819cd7",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_b43d5f7c",
+      "range": {
+        "startLine": 245,
+        "startChar": 59,
+        "endLine": 245,
+        "endChar": 74
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_74275766",
         "filename": "plugins/org.eclipse.eef/model/eef.ecore",
         "patchSetId": 3
@@ -266,6 +506,30 @@
       "writtenOn": "2016-04-13T09:32:58Z",
       "side": 1,
       "message": "We might propose something like % instead of only equal size ? I am not sure if it is possible or even interesting ;)",
+      "range": {
+        "startLine": 251,
+        "startChar": 59,
+        "endLine": 251,
+        "endChar": 84
+      },
+      "revId": "0a689483039c4c9bc0895992e6b2778b507e37e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_efeb909c",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-13T12:39:43Z",
+      "side": 1,
+      "message": "SWT only provides a boolean for this option",
+      "parentUuid": "e7dfcf21_74275766",
       "range": {
         "startLine": 251,
         "startChar": 59,
