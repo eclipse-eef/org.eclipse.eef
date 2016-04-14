@@ -91,6 +91,8 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 
 		this.body = new StyledText(parent, SWT.WRAP);
 		this.body.setLayoutData(buttonFormData);
+		this.body.setEnabled(false);
+		this.body.setEditable(false);
 
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter);
 	}
@@ -235,5 +237,4 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	protected Control getValidationControl() {
 		return this.body;
 	}
-
 }

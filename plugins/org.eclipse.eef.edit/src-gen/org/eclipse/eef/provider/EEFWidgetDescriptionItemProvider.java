@@ -57,6 +57,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 			addIdentifierPropertyDescriptor(object);
 			addLabelExpressionPropertyDescriptor(object);
 			addHelpExpressionPropertyDescriptor(object);
+			addIsEnabledExpressionPropertyDescriptor(object);
 			addPropertyValidationRulesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -100,6 +101,24 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFWidgetDescription_helpExpression_feature", "_UI_EEFWidgetDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Enabled Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	protected void addIsEnabledExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+		.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EEFWidgetDescription_isEnabledExpression_feature"), //$NON-NLS-1$
+				getString(
+						"_UI_PropertyDescriptor_description", "_UI_EEFWidgetDescription_isEnabledExpression_feature", "_UI_EEFWidgetDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -165,6 +184,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		case EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER:
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
 		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
+		case EefPackage.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
