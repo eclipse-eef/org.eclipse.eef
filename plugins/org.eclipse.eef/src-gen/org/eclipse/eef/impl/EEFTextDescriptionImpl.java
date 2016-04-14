@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getHintExpression <em>Hint Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getLineCount <em>Line Count</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
@@ -79,6 +80,26 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	 * @ordered
 	 */
 	protected String editExpression = EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getHintExpression() <em>Hint Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getHintExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String HINT_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getHintExpression() <em>Hint Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getHintExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String hintExpression = EEFTextDescriptionImpl.HINT_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLineCount() <em>Line Count</em>}' attribute. <!-- begin-user-doc --> <!--
@@ -185,6 +206,30 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		editExpression = newEditExpression;
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION, oldEditExpression, editExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getHintExpression() {
+		return hintExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setHintExpression(String newHintExpression) {
+		String oldHintExpression = hintExpression;
+		hintExpression = newHintExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_DESCRIPTION__HINT_EXPRESSION, oldHintExpression, hintExpression));
 		}
 	}
 
@@ -336,6 +381,8 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return getValueExpression();
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			return getEditExpression();
+		case EefPackage.EEF_TEXT_DESCRIPTION__HINT_EXPRESSION:
+			return getHintExpression();
 		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
 			return getLineCount();
 		case EefPackage.EEF_TEXT_DESCRIPTION__STYLE:
@@ -363,6 +410,9 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return;
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			setEditExpression((String) newValue);
+			return;
+		case EefPackage.EEF_TEXT_DESCRIPTION__HINT_EXPRESSION:
+			setHintExpression((String) newValue);
 			return;
 		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
 			setLineCount((Integer) newValue);
@@ -392,6 +442,9 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			setEditExpression(EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_TEXT_DESCRIPTION__HINT_EXPRESSION:
+			setHintExpression(EEFTextDescriptionImpl.HINT_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
 			setLineCount(EEFTextDescriptionImpl.LINE_COUNT_EDEFAULT);
 			return;
@@ -419,6 +472,9 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		case EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION:
 			return EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
 			: !EEFTextDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+		case EefPackage.EEF_TEXT_DESCRIPTION__HINT_EXPRESSION:
+			return EEFTextDescriptionImpl.HINT_EXPRESSION_EDEFAULT == null ? hintExpression != null
+			: !EEFTextDescriptionImpl.HINT_EXPRESSION_EDEFAULT.equals(hintExpression);
 		case EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT:
 			return lineCount != EEFTextDescriptionImpl.LINE_COUNT_EDEFAULT;
 		case EefPackage.EEF_TEXT_DESCRIPTION__STYLE:
@@ -445,6 +501,8 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		result.append(valueExpression);
 		result.append(", editExpression: "); //$NON-NLS-1$
 		result.append(editExpression);
+		result.append(", hintExpression: "); //$NON-NLS-1$
+		result.append(hintExpression);
 		result.append(", lineCount: "); //$NON-NLS-1$
 		result.append(lineCount);
 		result.append(')');

@@ -21,6 +21,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -34,12 +35,15 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -184,22 +188,47 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
+		final String hint = new Eval(interpreter, variableManager).get(description.getHintExpression(), String.class);
 
 		this.modifyListener = new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent event) {
-				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
+				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && !text.getText().equals(hint)) {
+					if (!"".equals(text.getText())) { //$NON-NLS-1$
+						text.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_WIDGET_FOREGROUND));
+					}
 					controller.updateValue(text.getText());
 				}
 			}
 		};
 		this.text.addModifyListener(this.modifyListener);
+		this.text.addFocusListener(new FocusListener() {
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				text.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_WIDGET_FOREGROUND));
+				if (text.getText().length() == 0 && !Util.isBlank(hint)) {
+					text.setText(hint);
+					text.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
+				}
+			}
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (text.getText().equals(hint)) {
+					text.setText(""); //$NON-NLS-1$
+				}
+			}
+		});
 
 		this.controller.onNewValue(new IConsumer<String>() {
 			@Override
 			public void apply(String value) {
 				if (!text.isDisposed()) {
-					if (!(text.getText() != null && text.getText().equals(value))) {
+					if ((Util.isBlank(value) && !text.isFocusControl()) && !Util.isBlank(hint)) {
+						text.setText(hint);
+						text.setForeground(Display.getDefault().getSystemColor(SWT.COLOR_WIDGET_NORMAL_SHADOW));
+					} else if (!(text.getText() != null && (text.getText().equals(value)))) {
 						text.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 					}
 					// Set style

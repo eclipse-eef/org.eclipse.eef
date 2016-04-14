@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFTextDescription#getHintExpression <em>Hint Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getLineCount <em>Line Count</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
@@ -78,6 +79,29 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setEditExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Hint Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Indicates how to display the input value. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Hint Expression</em>' attribute.
+	 * @see #setHintExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFTextDescription_HintExpression()
+	 * @model
+	 * @generated
+	 */
+	String getHintExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFTextDescription#getHintExpression <em>Hint Expression</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Hint Expression</em>' attribute.
+	 * @see #getHintExpression()
+	 * @generated
+	 */
+	void setHintExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Line Count</b></em>' attribute. The default value is <code>"1"</code>. <!--
