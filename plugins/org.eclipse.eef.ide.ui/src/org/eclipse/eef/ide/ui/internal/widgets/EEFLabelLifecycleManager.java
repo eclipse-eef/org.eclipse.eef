@@ -91,6 +91,8 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 
 		this.body = new StyledText(parent, SWT.WRAP);
 		this.body.setLayoutData(buttonFormData);
+		this.body.setEnabled(false);
+		this.body.setEditable(false);
 
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter);
 	}
@@ -234,6 +236,16 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	@Override
 	protected Control getValidationControl() {
 		return this.body;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#disable()
+	 */
+	@Override
+	protected void disable() {
+		this.body.setEnabled(false);
 	}
 
 }

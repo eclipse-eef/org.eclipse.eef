@@ -40,6 +40,7 @@ import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -209,7 +210,6 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 					}
 				}
 			}
-
 		});
 	}
 
@@ -255,5 +255,16 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			this.text.removeModifyListener(this.modifyListener);
 		}
 		this.controller.removeNewValueConsumer();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#disable()
+	 */
+	@Override
+	protected void disable() {
+		this.text.setEnabled(false);
+		this.text.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
 	}
 }

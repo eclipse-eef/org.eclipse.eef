@@ -267,6 +267,16 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#disable()
+	 */
+	@Override
+	protected void disable() {
+		this.radioGroup.setEnabled(false);
+	}
+
+	/**
 	 * Radio widget label provider.
 	 *
 	 * @author mbats

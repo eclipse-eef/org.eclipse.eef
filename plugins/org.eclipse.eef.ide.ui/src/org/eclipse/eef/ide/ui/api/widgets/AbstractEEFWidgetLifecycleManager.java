@@ -146,6 +146,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		this.label = widgetFactory.createStyledText(composite, SWT.NONE);
 		this.label.setEditable(false);
+		this.label.setEnabled(false);
 		FormData labelFormData = new FormData();
 		labelFormData.left = new FormAttachment(0, 0);
 		labelFormData.right = new FormAttachment(control, -HSPACE - gap);
@@ -510,4 +511,33 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		text.setStyleRange(styleRange);
 		return fontStyle;
 	}
+
+	/**
+	 * Check if a widget is enabled.
+	 *
+	 * @return True if the widget should be enabled otherwise false.
+	 */
+	private boolean isEnabled() {
+		Eval eval = new Eval(interpreter, variableManager);
+		return eval.get(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION, getWidgetDescription().getIsEnabledExpression(),
+				Boolean.class);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#refresh()
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
+		if (!isEnabled()) {
+			disable();
+		}
+	}
+
+	/**
+	 * Disable the widget.
+	 */
+	protected abstract void disable();
 }

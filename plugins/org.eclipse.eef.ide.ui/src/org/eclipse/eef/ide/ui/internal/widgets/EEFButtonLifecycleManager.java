@@ -205,4 +205,14 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		}
 		this.controller.removeNewButtonLabelConsumer();
 	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#disable()
+	 */
+	@Override
+	protected void disable() {
+		this.button.setEnabled(false);
+	}
 }
