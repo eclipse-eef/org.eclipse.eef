@@ -244,6 +244,11 @@
         <details key="documentation" value="The tooltip of the help icon visible by the end-users"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnabledExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The enablement rules to use for the widget."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="propertyValidationRules"
         upperBound="-1" eType="#//EEFPropertyValidationRuleDescription" eOpposite="#//EEFPropertyValidationRuleDescription/targets">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

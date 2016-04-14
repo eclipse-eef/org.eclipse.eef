@@ -174,7 +174,6 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
-
 		this.selectionListener = new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
@@ -212,5 +211,16 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 			this.checkbox.removeSelectionListener(this.selectionListener);
 		}
 		this.controller.removeNewValueConsumer();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
+		this.checkbox.setEnabled(isEnabled());
 	}
 }

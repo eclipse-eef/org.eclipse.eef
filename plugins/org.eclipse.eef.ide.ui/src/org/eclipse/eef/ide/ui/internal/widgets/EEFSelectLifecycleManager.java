@@ -121,7 +121,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		FormData comboFormData = new FormData();
 		comboFormData.left = new FormAttachment(0, LABEL_WIDTH);
 		comboFormData.right = new FormAttachment(100, 0);
-		this.comboViewer.getCombo().setLayoutData(comboFormData);
+		this.combo.setLayoutData(comboFormData);
 
 		this.controller = new EEFControllersFactory().createSelectController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
@@ -267,6 +267,17 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		}
 		this.controller.removeNewValueConsumer();
 		this.controller.removeNewCandidatesConsumer();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
+		this.combo.setEnabled(isEnabled());
 	}
 
 	/**
