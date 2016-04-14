@@ -890,7 +890,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFTextDescription_LineCount() {
+	public EAttribute getEEFTextDescription_HintExpression() {
 		return (EAttribute) eefTextDescriptionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -900,8 +900,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEEFTextDescription_LineCount() {
+		return (EAttribute) eefTextDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EReference getEEFTextDescription_Style() {
-		return (EReference) eefTextDescriptionEClass.getEStructuralFeatures().get(3);
+		return (EReference) eefTextDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -911,7 +921,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 */
 	@Override
 	public EReference getEEFTextDescription_ConditionalStyles() {
-		return (EReference) eefTextDescriptionEClass.getEStructuralFeatures().get(4);
+		return (EReference) eefTextDescriptionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1834,6 +1844,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefTextDescriptionEClass = createEClass(EefPackage.EEF_TEXT_DESCRIPTION);
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION);
+		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__HINT_EXPRESSION);
 		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT);
 		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__STYLE);
 		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
@@ -2212,6 +2223,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFTextDescription_EditExpression(),
 				theEcorePackage.getEString(),
 				"editExpression", null, 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFTextDescription_HintExpression(),
+				theEcorePackage.getEString(),
+				"hintExpression", null, 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
 				getEEFTextDescription_LineCount(),
 				ecorePackage.getEInt(),
