@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_33a4feb8",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EditionContextAdapter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-04-14T15:22:05Z",
+      "side": 1,
+      "message": "2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "3bf1ce07e442e7d45f8e3da4d2a5862483c435e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_1399c284",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EditionContextAdapter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-04-14T15:22:05Z",
+      "side": 1,
+      "message": "Typo: duplicate word.",
+      "range": {
+        "startLine": 28,
+        "startChar": 26,
+        "endLine": 28,
+        "endChar": 37
+      },
+      "revId": "3bf1ce07e442e7d45f8e3da4d2a5862483c435e5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
