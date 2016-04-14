@@ -241,7 +241,7 @@ public class EEFWidgetFactory extends FormToolkit {
 	 */
 	public StyledText createStyledText(Composite parent, int style) {
 		final StyledText styledText = new StyledText(parent, style);
-		styledText.setBackground(parent.getBackground());
+		 styledText.setBackground(parent.getBackground());
 		return styledText;
 	}
 

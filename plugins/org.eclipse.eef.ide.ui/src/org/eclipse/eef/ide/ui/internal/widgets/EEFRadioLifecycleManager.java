@@ -120,6 +120,10 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		radioGroupFormData.left = new FormAttachment(0, LABEL_WIDTH);
 		this.radioGroup.setLayoutData(radioGroupFormData);
 
+		if (!isEnabled()) {
+			this.radioGroup.setEnabled(false);
+		}
+
 		this.controller = new EEFControllersFactory().createRadioController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
 	}
@@ -225,7 +229,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 						selection = null;
 					}
 					radioGroupViewer.setSelection(selection);
-					if (!radioGroup.isEnabled()) {
+					if (isEnabled() && !radioGroup.isEnabled()) {
 						radioGroup.setEnabled(true);
 					}
 				}
@@ -242,7 +246,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 					} else {
 						radioGroupViewer.setInput(null);
 					}
-					if (!radioGroup.isEnabled()) {
+					if (isEnabled() && !radioGroup.isEnabled()) {
 						radioGroup.setEnabled(true);
 					}
 					radioGroupViewer.refresh(true);

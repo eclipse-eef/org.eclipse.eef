@@ -97,6 +97,10 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 		this.checkbox = widgetFactory.createButton(parent, "", SWT.CHECK); //$NON-NLS-1$
 		this.checkbox.setLayoutData(buttonFormData);
 
+		if (!isEnabled()) {
+			this.checkbox.setEnabled(false);
+		}
+
 		this.controller = new EEFControllersFactory().createCheckboxController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
 	}

@@ -105,6 +105,10 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 
 		widgetFactory.paintBordersFor(parent);
 
+		if (!isEnabled()) {
+			this.button.setEnabled(false);
+		}
+
 		this.controller = new EEFControllersFactory().createButtonController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
 	}

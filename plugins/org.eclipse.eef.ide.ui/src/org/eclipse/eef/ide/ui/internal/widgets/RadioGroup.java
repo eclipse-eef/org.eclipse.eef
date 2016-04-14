@@ -229,4 +229,17 @@ public class RadioGroup extends Composite {
 		}
 		super.dispose();
 	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.swt.widgets.Control#setEnabled(boolean)
+	 */
+	@Override
+	public void setEnabled(boolean enabled) {
+		super.setEnabled(enabled);
+		for (Button button : buttons.values()) {
+			button.setEnabled(enabled);
+		}
+	}
 }

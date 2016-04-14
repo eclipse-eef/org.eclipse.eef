@@ -850,8 +850,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEEFWidgetDescription_IsEnabledExpression() {
+		return (EAttribute) eefWidgetDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EReference getEEFWidgetDescription_PropertyValidationRules() {
-		return (EReference) eefWidgetDescriptionEClass.getEStructuralFeatures().get(3);
+		return (EReference) eefWidgetDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1829,6 +1839,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER);
 		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
 		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION);
+		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION);
 		createEReference(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 
 		eefTextDescriptionEClass = createEClass(EefPackage.EEF_TEXT_DESCRIPTION);
@@ -2196,6 +2207,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				getEEFWidgetDescription_HelpExpression(),
 				ecorePackage.getEString(),
 				"helpExpression", null, 0, 1, EEFWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFWidgetDescription_IsEnabledExpression(),
+				ecorePackage.getEString(),
+				"isEnabledExpression", null, 0, 1, EEFWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getEEFWidgetDescription_PropertyValidationRules(),
 				this.getEEFPropertyValidationRuleDescription(),

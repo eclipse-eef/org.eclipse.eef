@@ -40,6 +40,7 @@ import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -116,6 +117,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		widgetFactory.paintBordersFor(parent);
 
 		this.text.setLayoutData(formData);
+
+		if (!isEnabled()) {
+			this.text.setEnabled(false);
+			this.text.setBackground(Display.getDefault().getSystemColor(SWT.COLOR_WIDGET_BACKGROUND));
+		}
 
 		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
@@ -204,7 +210,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 					}
 					// Set style
 					setStyle();
-					if (!text.isEnabled()) {
+					if (isEnabled() && !text.isEnabled()) {
 						text.setEnabled(true);
 					}
 				}

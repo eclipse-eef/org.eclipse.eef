@@ -121,7 +121,11 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		FormData comboFormData = new FormData();
 		comboFormData.left = new FormAttachment(0, LABEL_WIDTH);
 		comboFormData.right = new FormAttachment(100, 0);
-		this.comboViewer.getCombo().setLayoutData(comboFormData);
+		this.combo.setLayoutData(comboFormData);
+
+		if (!isEnabled()) {
+			this.combo.setEnabled(false);
+		}
 
 		this.controller = new EEFControllersFactory().createSelectController(this.description, this.variableManager, this.interpreter,
 				this.editingDomain);
@@ -228,7 +232,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 						selection = null;
 					}
 					comboViewer.setSelection(selection);
-					if (!combo.isEnabled()) {
+					if (isEnabled() && !combo.isEnabled()) {
 						combo.setEnabled(true);
 					}
 				}
@@ -245,7 +249,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 					} else {
 						comboViewer.setInput(null);
 					}
-					if (!combo.isEnabled()) {
+					if (isEnabled() && !combo.isEnabled()) {
 						combo.setEnabled(true);
 					}
 				}
