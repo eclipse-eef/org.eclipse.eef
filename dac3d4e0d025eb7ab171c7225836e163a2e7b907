@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "e7dfcf21_71403bee",
+        "filename": "plugins/org.eclipse.eef.core/META-INF/MANIFEST.MF",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T14:42:43Z",
+      "side": 1,
+      "message": "why?",
+      "range": {
+        "startLine": 8,
+        "startChar": 16,
+        "endLine": 8,
+        "endChar": 71
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_31c9539d",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFViewFactory.java",
         "patchSetId": 5
