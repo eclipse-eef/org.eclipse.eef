@@ -27,6 +27,8 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -189,5 +191,40 @@ public interface EEFGroupDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules();
+
+	/**
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> Defines the group style <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Style</em>' containment reference.
+	 * @see #setStyle(EEFTextStyle)
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Style()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EEFGroupStyle getStyle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getStyle <em>Style</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Style</em>' containment reference.
+	 * @see #getStyle()
+	 * @generated
+	 */
+	void setStyle(EEFGroupStyle value);
+
+	/**
+	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
+	 * of type {@link org.eclipse.eef.EEFGroupConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
+	 * begin-model-doc --> Defines the text style associated to a precondition <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_ConditionalStyles()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFGroupConditionalStyle> getConditionalStyles();
 
 } // EEFGroupDescription

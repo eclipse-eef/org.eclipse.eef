@@ -25,7 +25,9 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFFillLayoutDescription;
 import org.eclipse.eef.EEFGridLayoutDescription;
+import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFGroupStyle;
 import org.eclipse.eef.EEFHyperlinkConditionalStyle;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFHyperlinkStyle;
@@ -328,6 +330,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 *
 	 * @generated
 	 */
+	private EClass eefGroupStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass eefConditionalStyleEClass = null;
 
 	/**
@@ -405,6 +414,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 *
 	 * @generated
 	 */
+	private EClass eefGroupConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EEnum eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = null;
 
 	/**
@@ -413,6 +429,20 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EEnum eeF_FILL_LAYOUT_ORIENTATIONEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EEnum eeF_TOGGLE_STYLEEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EEnum eeF_TITLE_BAR_STYLEEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -857,6 +887,26 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EReference getEEFGroupDescription_PropertyValidationRules() {
 		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFGroupDescription_Style() {
+		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFGroupDescription_ConditionalStyles() {
+		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1945,6 +1995,86 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFGroupStyle() {
+		return eefGroupStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupStyle_BackgroundColorExpression() {
+		return (EAttribute) eefGroupStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupStyle_ForegroundColorExpression() {
+		return (EAttribute) eefGroupStyleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupStyle_FontNameExpression() {
+		return (EAttribute) eefGroupStyleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupStyle_FontSizeExpression() {
+		return (EAttribute) eefGroupStyleEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupStyle_BarStyle() {
+		return (EAttribute) eefGroupStyleEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupStyle_ToggleStyle() {
+		return (EAttribute) eefGroupStyleEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFGroupStyle_ExpandedByDefault() {
+		return (EAttribute) eefGroupStyleEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFConditionalStyle() {
 		return eefConditionalStyleEClass;
 	}
@@ -2175,6 +2305,26 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFGroupConditionalStyle() {
+		return eefGroupConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFGroupConditionalStyle_Style() {
+		return (EReference) eefGroupConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION() {
 		return eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum;
 	}
@@ -2187,6 +2337,26 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EEnum getEEF_FILL_LAYOUT_ORIENTATION() {
 		return eeF_FILL_LAYOUT_ORIENTATIONEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEnum getEEF_TOGGLE_STYLE() {
+		return eeF_TOGGLE_STYLEEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEnum getEEF_TITLE_BAR_STYLE() {
+		return eeF_TITLE_BAR_STYLEEEnum;
 	}
 
 	/**
@@ -2264,6 +2434,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
+		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__STYLE);
+		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefControlDescriptionEClass = createEClass(EefPackage.EEF_CONTROL_DESCRIPTION);
 		createEAttribute(eefControlDescriptionEClass, EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER);
@@ -2401,6 +2573,15 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		eefReferenceStyleEClass = createEClass(EefPackage.EEF_REFERENCE_STYLE);
 
+		eefGroupStyleEClass = createEClass(EefPackage.EEF_GROUP_STYLE);
+		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__BAR_STYLE);
+		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__TOGGLE_STYLE);
+		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT);
+
 		eefConditionalStyleEClass = createEClass(EefPackage.EEF_CONDITIONAL_STYLE);
 		createEAttribute(eefConditionalStyleEClass, EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION);
 
@@ -2435,9 +2616,14 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefReferenceConditionalStyleEClass = createEClass(EefPackage.EEF_REFERENCE_CONDITIONAL_STYLE);
 		createEReference(eefReferenceConditionalStyleEClass, EefPackage.EEF_REFERENCE_CONDITIONAL_STYLE__STYLE);
 
+		eefGroupConditionalStyleEClass = createEClass(EefPackage.EEF_GROUP_CONDITIONAL_STYLE);
+		createEReference(eefGroupConditionalStyleEClass, EefPackage.EEF_GROUP_CONDITIONAL_STYLE__STYLE);
+
 		// Create enums
 		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION);
 		eeF_FILL_LAYOUT_ORIENTATIONEEnum = createEEnum(EefPackage.EEF_FILL_LAYOUT_ORIENTATION);
+		eeF_TOGGLE_STYLEEEnum = createEEnum(EefPackage.EEF_TOGGLE_STYLE);
+		eeF_TITLE_BAR_STYLEEEnum = createEEnum(EefPackage.EEF_TITLE_BAR_STYLE);
 	}
 
 	/**
@@ -2506,6 +2692,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefHyperlinkConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 		eefCustomWidgetConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 		eefReferenceConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefGroupConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
@@ -2666,6 +2853,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFPropertyValidationRuleDescription(),
 				null,
 				"propertyValidationRules", null, 0, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFGroupDescription_Style(),
+				this.getEEFGroupStyle(),
+				null,
+				"style", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFGroupDescription_ConditionalStyles(),
+				this.getEEFGroupConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefControlDescriptionEClass, EEFControlDescription.class,
 				"EEFControlDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -3097,6 +3294,37 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEClass(eefReferenceStyleEClass, EEFReferenceStyle.class,
 				"EEFReferenceStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
+		initEClass(eefGroupStyleEClass, EEFGroupStyle.class,
+				"EEFGroupStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGroupStyle_BackgroundColorExpression(),
+				ecorePackage.getEString(),
+				"backgroundColorExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGroupStyle_ForegroundColorExpression(),
+				ecorePackage.getEString(),
+				"foregroundColorExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGroupStyle_FontNameExpression(),
+				ecorePackage.getEString(),
+				"fontNameExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGroupStyle_FontSizeExpression(),
+				ecorePackage.getEString(),
+				"fontSizeExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGroupStyle_BarStyle(),
+				this.getEEF_TITLE_BAR_STYLE(),
+				"barStyle", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGroupStyle_ToggleStyle(),
+				this.getEEF_TOGGLE_STYLE(),
+				"toggleStyle", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getEEFGroupStyle_ExpandedByDefault(),
+				ecorePackage.getEBoolean(),
+				"expandedByDefault", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
 		initEClass(eefConditionalStyleEClass, EEFConditionalStyle.class,
 				"EEFConditionalStyle", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(
@@ -3187,6 +3415,14 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				null,
 				"style", null, 0, 1, EEFReferenceConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
+		initEClass(eefGroupConditionalStyleEClass, EEFGroupConditionalStyle.class,
+				"EEFGroupConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFGroupConditionalStyle_Style(),
+				this.getEEFGroupStyle(),
+				null,
+				"style", null, 0, 1, EEFGroupConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
 		// Initialize enums and add enum literals
 		initEEnum(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.class,
 				"EEF_VALIDATION_SEVERITY_DESCRIPTION"); //$NON-NLS-1$
@@ -3197,6 +3433,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEEnum(eeF_FILL_LAYOUT_ORIENTATIONEEnum, org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION.class, "EEF_FILL_LAYOUT_ORIENTATION"); //$NON-NLS-1$
 		addEEnumLiteral(eeF_FILL_LAYOUT_ORIENTATIONEEnum, org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION.VERTICAL);
 		addEEnumLiteral(eeF_FILL_LAYOUT_ORIENTATIONEEnum, org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION.HORIZONTAL);
+
+		initEEnum(eeF_TOGGLE_STYLEEEnum, org.eclipse.eef.EEF_TOGGLE_STYLE.class, "EEF_TOGGLE_STYLE"); //$NON-NLS-1$
+		addEEnumLiteral(eeF_TOGGLE_STYLEEEnum, org.eclipse.eef.EEF_TOGGLE_STYLE.TWISTIE);
+		addEEnumLiteral(eeF_TOGGLE_STYLEEEnum, org.eclipse.eef.EEF_TOGGLE_STYLE.TREE_NODE);
+		addEEnumLiteral(eeF_TOGGLE_STYLEEEnum, org.eclipse.eef.EEF_TOGGLE_STYLE.NONE);
+
+		initEEnum(eeF_TITLE_BAR_STYLEEEnum, org.eclipse.eef.EEF_TITLE_BAR_STYLE.class, "EEF_TITLE_BAR_STYLE"); //$NON-NLS-1$
+		addEEnumLiteral(eeF_TITLE_BAR_STYLEEEnum, org.eclipse.eef.EEF_TITLE_BAR_STYLE.TITLE_BAR);
+		addEEnumLiteral(eeF_TITLE_BAR_STYLEEEnum, org.eclipse.eef.EEF_TITLE_BAR_STYLE.SHORT_TITLE_BAR);
+		addEEnumLiteral(eeF_TITLE_BAR_STYLEEEnum, org.eclipse.eef.EEF_TITLE_BAR_STYLE.NO_TITLE);
 
 		// Create resource
 		createResource(EefPackage.eNS_URI);

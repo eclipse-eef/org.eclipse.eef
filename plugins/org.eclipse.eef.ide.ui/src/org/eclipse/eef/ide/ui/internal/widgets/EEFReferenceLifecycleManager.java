@@ -230,9 +230,8 @@ public class EEFReferenceLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		scrolledComposite.setLayoutData(gridData);
 
 		final int clientWidth = scrolledComposite.getClientArea().width;
-
-		this.tableViewer = new TableViewer(scrolledComposite, SWT.READ_ONLY | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.MULTI);
-		this.table = tableViewer.getTable();
+		this.table = widgetFactory.createTable(scrolledComposite, SWT.READ_ONLY | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.MULTI);
+		this.tableViewer = new TableViewer(this.table);
 		this.table.setLayoutData(new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1));
 		this.tableViewer.setContentProvider(ArrayContentProvider.getInstance());
 		this.tableViewer.setLabelProvider(new EEFTableReferencesLabelProvider());

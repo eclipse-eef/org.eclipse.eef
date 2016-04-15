@@ -154,6 +154,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__STYLE);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return childrenFeatures;
 	}
@@ -225,6 +227,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
+		case EefPackage.EEF_GROUP_DESCRIPTION__STYLE:
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -263,6 +267,9 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 				EefFactory.eINSTANCE.createEEFRadioDescription()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
 				EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONTROLS,
@@ -276,6 +283,11 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES,
 				EefFactory.eINSTANCE.createEEFPropertyValidationRuleDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFGroupStyle()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES,
+				EefFactory.eINSTANCE.createEEFGroupConditionalStyle()));
 	}
 
 	/**

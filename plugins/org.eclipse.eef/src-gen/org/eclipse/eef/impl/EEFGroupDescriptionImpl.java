@@ -11,7 +11,9 @@ package org.eclipse.eef.impl;
 import java.util.Collection;
 
 import org.eclipse.eef.EEFControlDescription;
+import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFGroupStyle;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
@@ -42,6 +44,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
  * </em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getStyle <em>Style</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
  * </p>
  *
@@ -177,6 +181,26 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected EList<EEFPropertyValidationRuleDescription> propertyValidationRules;
+
+	/**
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @see #getStyle()
+	 * @generated
+	 * @ordered
+	 */
+	protected EEFGroupStyle style;
+
+	/**
+	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getConditionalStyles()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFGroupConditionalStyle> conditionalStyles;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -368,6 +392,103 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
+	public EEFGroupStyle getStyle() {
+		if (style != null && style.eIsProxy()) {
+			InternalEObject oldStyle = (InternalEObject) style;
+			style = (EEFGroupStyle) eResolveProxy(oldStyle);
+			if (style != oldStyle) {
+				InternalEObject newStyle = (InternalEObject) style;
+				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, null);
+				if (newStyle.eInternalContainer() == null) {
+					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
+				}
+				if (msgs != null) {
+					msgs.dispatch();
+				}
+				if (eNotificationRequired()) {
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_GROUP_DESCRIPTION__STYLE, oldStyle, style));
+				}
+			}
+		}
+		return style;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public EEFGroupStyle basicGetStyle() {
+		return style;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public NotificationChain basicSetStyle(EEFGroupStyle newStyle, NotificationChain msgs) {
+		EEFGroupStyle oldStyle = style;
+		style = newStyle;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__STYLE, oldStyle,
+					newStyle);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setStyle(EEFGroupStyle newStyle) {
+		if (newStyle != style) {
+			NotificationChain msgs = null;
+			if (style != null) {
+				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
+			}
+			if (newStyle != null) {
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
+						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
+			}
+			msgs = basicSetStyle(newStyle, msgs);
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_DESCRIPTION__STYLE, newStyle, newStyle));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<EEFGroupConditionalStyle> getConditionalStyles() {
+		if (conditionalStyles == null) {
+			conditionalStyles = new EObjectContainmentEList.Resolving<EEFGroupConditionalStyle>(EEFGroupConditionalStyle.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
+		}
+		return conditionalStyles;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
@@ -376,6 +497,10 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return ((InternalEList<?>) getSemanticValidationRules()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			return ((InternalEList<?>) getPropertyValidationRules()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_GROUP_DESCRIPTION__STYLE:
+			return basicSetStyle(null, msgs);
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
+			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -404,6 +529,13 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return getSemanticValidationRules();
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			return getPropertyValidationRules();
+		case EefPackage.EEF_GROUP_DESCRIPTION__STYLE:
+			if (resolve) {
+				return getStyle();
+			}
+			return basicGetStyle();
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
+			return getConditionalStyles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -444,6 +576,13 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			getPropertyValidationRules().clear();
 			getPropertyValidationRules().addAll((Collection<? extends EEFPropertyValidationRuleDescription>) newValue);
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__STYLE:
+			setStyle((EEFGroupStyle) newValue);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			getConditionalStyles().addAll((Collection<? extends EEFGroupConditionalStyle>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -480,6 +619,12 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			getPropertyValidationRules().clear();
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__STYLE:
+			setStyle((EEFGroupStyle) null);
+			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
+			getConditionalStyles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -513,6 +658,10 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return semanticValidationRules != null && !semanticValidationRules.isEmpty();
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			return propertyValidationRules != null && !propertyValidationRules.isEmpty();
+		case EefPackage.EEF_GROUP_DESCRIPTION__STYLE:
+			return style != null;
+		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
+			return conditionalStyles != null && !conditionalStyles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

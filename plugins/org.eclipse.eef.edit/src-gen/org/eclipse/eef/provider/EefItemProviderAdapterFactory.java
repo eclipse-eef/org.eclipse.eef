@@ -786,6 +786,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFGroupStyleItemProvider eefGroupStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFGroupStyleAdapter() {
+		if (eefGroupStyleItemProvider == null) {
+			eefGroupStyleItemProvider = new EEFGroupStyleItemProvider(this);
+		}
+
+		return eefGroupStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1016,6 +1039,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupConditionalStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFGroupConditionalStyleItemProvider eefGroupConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFGroupConditionalStyleAdapter() {
+		if (eefGroupConditionalStyleItemProvider == null) {
+			eefGroupConditionalStyleItemProvider = new EEFGroupConditionalStyleItemProvider(this);
+		}
+
+		return eefGroupConditionalStyleItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
@@ -1208,6 +1254,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		if (eefReferenceStyleItemProvider != null) {
 			eefReferenceStyleItemProvider.dispose();
 		}
+		if (eefGroupStyleItemProvider != null) {
+			eefGroupStyleItemProvider.dispose();
+		}
 		if (eefTextConditionalStyleItemProvider != null) {
 			eefTextConditionalStyleItemProvider.dispose();
 		}
@@ -1237,6 +1286,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefReferenceConditionalStyleItemProvider != null) {
 			eefReferenceConditionalStyleItemProvider.dispose();
+		}
+		if (eefGroupConditionalStyleItemProvider != null) {
+			eefGroupConditionalStyleItemProvider.dispose();
 		}
 	}
 

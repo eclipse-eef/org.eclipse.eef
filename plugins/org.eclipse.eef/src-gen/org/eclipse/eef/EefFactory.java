@@ -273,6 +273,22 @@ public interface EefFactory extends EFactory {
 	EEFCustomWidgetStyle createEEFCustomWidgetStyle();
 
 	/**
+	 * Returns a new object of class '<em>EEF Reference Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Reference Style</em>'.
+	 * @generated
+	 */
+	EEFReferenceStyle createEEFReferenceStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Group Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Group Style</em>'.
+	 * @generated
+	 */
+	EEFGroupStyle createEEFGroupStyle();
+
+	/**
 	 * Returns a new object of class '<em>EEF Text Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 *
@@ -362,12 +378,13 @@ public interface EefFactory extends EFactory {
 	EEFReferenceConditionalStyle createEEFReferenceConditionalStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Reference Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns a new object of class '<em>EEF Group Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 *
-	 * @return a new object of class '<em>EEF Reference Style</em>'.
+	 * @return a new object of class '<em>EEF Group Conditional Style</em>'.
 	 * @generated
 	 */
-	EEFReferenceStyle createEEFReferenceStyle();
+	EEFGroupConditionalStyle createEEFGroupConditionalStyle();
 
 	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->

@@ -23,7 +23,9 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFFillLayoutDescription;
 import org.eclipse.eef.EEFGridLayoutDescription;
+import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFGroupStyle;
 import org.eclipse.eef.EEFHyperlinkConditionalStyle;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFHyperlinkStyle;
@@ -50,6 +52,8 @@ import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION;
+import org.eclipse.eef.EEF_TITLE_BAR_STYLE;
+import org.eclipse.eef.EEF_TOGGLE_STYLE;
 import org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
@@ -162,6 +166,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetStyle();
 		case EefPackage.EEF_REFERENCE_STYLE:
 			return createEEFReferenceStyle();
+		case EefPackage.EEF_GROUP_STYLE:
+			return createEEFGroupStyle();
 		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE:
 			return createEEFTextConditionalStyle();
 		case EefPackage.EEF_BUTTON_CONDITIONAL_STYLE:
@@ -182,6 +188,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFWidgetAction();
 		case EefPackage.EEF_REFERENCE_CONDITIONAL_STYLE:
 			return createEEFReferenceConditionalStyle();
+		case EefPackage.EEF_GROUP_CONDITIONAL_STYLE:
+			return createEEFGroupConditionalStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -199,6 +207,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(eDataType, initialValue);
 		case EefPackage.EEF_FILL_LAYOUT_ORIENTATION:
 			return createEEF_FILL_LAYOUT_ORIENTATIONFromString(eDataType, initialValue);
+		case EefPackage.EEF_TOGGLE_STYLE:
+			return createEEF_TOGGLE_STYLEFromString(eDataType, initialValue);
+		case EefPackage.EEF_TITLE_BAR_STYLE:
+			return createEEF_TITLE_BAR_STYLEFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -216,6 +228,10 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(eDataType, instanceValue);
 		case EefPackage.EEF_FILL_LAYOUT_ORIENTATION:
 			return convertEEF_FILL_LAYOUT_ORIENTATIONToString(eDataType, instanceValue);
+		case EefPackage.EEF_TOGGLE_STYLE:
+			return convertEEF_TOGGLE_STYLEToString(eDataType, instanceValue);
+		case EefPackage.EEF_TITLE_BAR_STYLE:
+			return convertEEF_TITLE_BAR_STYLEToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -557,6 +573,28 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public EEFReferenceStyle createEEFReferenceStyle() {
+		EEFReferenceStyleImpl eefReferenceStyle = new EEFReferenceStyleImpl();
+		return eefReferenceStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFGroupStyle createEEFGroupStyle() {
+		EEFGroupStyleImpl eefGroupStyle = new EEFGroupStyleImpl();
+		return eefGroupStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFTextConditionalStyle createEEFTextConditionalStyle() {
 		EEFTextConditionalStyleImpl eefTextConditionalStyle = new EEFTextConditionalStyleImpl();
 		return eefTextConditionalStyle;
@@ -667,9 +705,9 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
-	public EEFReferenceStyle createEEFReferenceStyle() {
-		EEFReferenceStyleImpl eefReferenceStyle = new EEFReferenceStyleImpl();
-		return eefReferenceStyle;
+	public EEFGroupConditionalStyle createEEFGroupConditionalStyle() {
+		EEFGroupConditionalStyleImpl eefGroupConditionalStyle = new EEFGroupConditionalStyleImpl();
+		return eefGroupConditionalStyle;
 	}
 
 	/**
@@ -713,6 +751,50 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	public String convertEEF_FILL_LAYOUT_ORIENTATIONToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public EEF_TOGGLE_STYLE createEEF_TOGGLE_STYLEFromString(EDataType eDataType, String initialValue) {
+		EEF_TOGGLE_STYLE result = EEF_TOGGLE_STYLE.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertEEF_TOGGLE_STYLEToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public EEF_TITLE_BAR_STYLE createEEF_TITLE_BAR_STYLEFromString(EDataType eDataType, String initialValue) {
+		EEF_TITLE_BAR_STYLE result = EEF_TITLE_BAR_STYLE.get(initialValue);
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	public String convertEEF_TITLE_BAR_STYLEToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
