@@ -529,13 +529,31 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES = 7;
 
 	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__STYLE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES = 9;
+
+	/**
 	 * The number of structural features of the '<em>EEF Group Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 8;
+	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
@@ -2008,6 +2026,86 @@ public interface EefPackage extends EPackage {
 	int EEF_CUSTOM_WIDGET_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGroupStyleImpl <em>EEF Group Style</em>}' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFGroupStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupStyle()
+	 * @generated
+	 */
+	int EEF_GROUP_STYLE = 28;
+
+	/**
+	 * The feature id for the '<em><b>Background Color Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Foreground Color Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Font Name Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE__FONT_NAME_EXPRESSION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Font Size Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Bar Style</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE__BAR_STYLE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Toggle Style</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE__TOGGLE_STYLE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Expanded By Default</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT = 6;
+
+	/**
+	 * The number of structural features of the '<em>EEF Group Style</em>' class. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_STYLE_FEATURE_COUNT = 7;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFConditionalStyleImpl <em>EEF Conditional Style</em>}'
 	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2015,7 +2113,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CONDITIONAL_STYLE = 28;
+	int EEF_CONDITIONAL_STYLE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2043,7 +2141,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_CONDITIONAL_STYLE = 29;
+	int EEF_TEXT_CONDITIONAL_STYLE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2080,7 +2178,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonConditionalStyle()
 	 * @generated
 	 */
-	int EEF_BUTTON_CONDITIONAL_STYLE = 30;
+	int EEF_BUTTON_CONDITIONAL_STYLE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2117,7 +2215,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_CONDITIONAL_STYLE = 31;
+	int EEF_LABEL_CONDITIONAL_STYLE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2154,7 +2252,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_CONDITIONAL_STYLE = 32;
+	int EEF_CHECKBOX_CONDITIONAL_STYLE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2191,7 +2289,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_CONDITIONAL_STYLE = 33;
+	int EEF_SELECT_CONDITIONAL_STYLE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2228,7 +2326,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_CONDITIONAL_STYLE = 34;
+	int EEF_RADIO_CONDITIONAL_STYLE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2265,7 +2363,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = 35;
+	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2295,6 +2393,43 @@ public interface EefPackage extends EPackage {
 	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
+	 * <em>EEF Group Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupConditionalStyle()
+	 * @generated
+	 */
+	int EEF_GROUP_CONDITIONAL_STYLE = 37;
+
+	/**
+	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>EEF Group Conditional Style</em>' class. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_GROUP_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2302,7 +2437,27 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
 	 * @generated
 	 */
-	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 36;
+	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 38;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.EEF_TOGGLE_STYLE <em>EEF TOGGLE STYLE</em>}' enum. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.EEF_TOGGLE_STYLE
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_TOGGLE_STYLE()
+	 * @generated
+	 */
+	int EEF_TOGGLE_STYLE = 39;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.eef.EEF_TITLE_BAR_STYLE <em>EEF TITLE BAR STYLE</em>}' enum. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see org.eclipse.eef.EEF_TITLE_BAR_STYLE
+	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_TITLE_BAR_STYLE()
+	 * @generated
+	 */
+	int EEF_TITLE_BAR_STYLE = 40;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
@@ -2723,6 +2878,29 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFGroupDescription_PropertyValidationRules();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFGroupDescription#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getStyle()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EReference getEEFGroupDescription_Style();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFGroupDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
+	 * @see org.eclipse.eef.EEFGroupDescription#getConditionalStyles()
+	 * @see #getEEFGroupDescription()
+	 * @generated
+	 */
+	EReference getEEFGroupDescription_ConditionalStyles();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFContainerDescription
@@ -3612,6 +3790,93 @@ public interface EefPackage extends EPackage {
 	EClass getEEFCustomWidgetStyle();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGroupStyle <em>EEF Group Style</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Group Style</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle
+	 * @generated
+	 */
+	EClass getEEFGroupStyle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression
+	 * <em>Background Color Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Background Color Expression</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression()
+	 * @see #getEEFGroupStyle()
+	 * @generated
+	 */
+	EAttribute getEEFGroupStyle_BackgroundColorExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression
+	 * <em>Foreground Color Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Foreground Color Expression</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression()
+	 * @see #getEEFGroupStyle()
+	 * @generated
+	 */
+	EAttribute getEEFGroupStyle_ForegroundColorExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression
+	 * <em>Font Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Font Name Expression</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle#getFontNameExpression()
+	 * @see #getEEFGroupStyle()
+	 * @generated
+	 */
+	EAttribute getEEFGroupStyle_FontNameExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression
+	 * <em>Font Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Font Size Expression</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle#getFontSizeExpression()
+	 * @see #getEEFGroupStyle()
+	 * @generated
+	 */
+	EAttribute getEEFGroupStyle_FontSizeExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getBarStyle <em>Bar Style</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Bar Style</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle#getBarStyle()
+	 * @see #getEEFGroupStyle()
+	 * @generated
+	 */
+	EAttribute getEEFGroupStyle_BarStyle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle
+	 * <em>Toggle Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Toggle Style</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle#getToggleStyle()
+	 * @see #getEEFGroupStyle()
+	 * @generated
+	 */
+	EAttribute getEEFGroupStyle_ToggleStyle();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault
+	 * <em>Expanded By Default</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Expanded By Default</em>'.
+	 * @see org.eclipse.eef.EEFGroupStyle#isExpandedByDefault()
+	 * @see #getEEFGroupStyle()
+	 * @generated
+	 */
+	EAttribute getEEFGroupStyle_ExpandedByDefault();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFConditionalStyle <em>EEF Conditional Style</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -3782,6 +4047,27 @@ public interface EefPackage extends EPackage {
 	EReference getEEFCustomWidgetConditionalStyle_Style();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGroupConditionalStyle
+	 * <em>EEF Group Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for class '<em>EEF Group Conditional Style</em>'.
+	 * @see org.eclipse.eef.EEFGroupConditionalStyle
+	 * @generated
+	 */
+	EClass getEEFGroupConditionalStyle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFGroupConditionalStyle#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the containment reference '<em>Style</em>'.
+	 * @see org.eclipse.eef.EEFGroupConditionalStyle#getStyle()
+	 * @see #getEEFGroupConditionalStyle()
+	 * @generated
+	 */
+	EReference getEEFGroupConditionalStyle_Style();
+
+	/**
 	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -3790,6 +4076,26 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_TOGGLE_STYLE <em>EEF TOGGLE STYLE</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>EEF TOGGLE STYLE</em>'.
+	 * @see org.eclipse.eef.EEF_TOGGLE_STYLE
+	 * @generated
+	 */
+	EEnum getEEF_TOGGLE_STYLE();
+
+	/**
+	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_TITLE_BAR_STYLE <em>EEF TITLE BAR STYLE</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for enum '<em>EEF TITLE BAR STYLE</em>'.
+	 * @see org.eclipse.eef.EEF_TITLE_BAR_STYLE
+	 * @generated
+	 */
+	EEnum getEEF_TITLE_BAR_STYLE();
 
 	/**
 	 * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -4132,6 +4438,22 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFGroupDescription_PropertyValidationRules();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_GROUP_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFGroupDescription_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFGroupDescription_ConditionalStyles();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
@@ -4822,6 +5144,72 @@ public interface EefPackage extends EPackage {
 		EClass EEF_CUSTOM_WIDGET_STYLE = EefPackage.eINSTANCE.getEEFCustomWidgetStyle();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGroupStyleImpl <em>EEF Group Style</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFGroupStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupStyle()
+		 * @generated
+		 */
+		EClass EEF_GROUP_STYLE = EefPackage.eINSTANCE.getEEFGroupStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Background Color Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupStyle_BackgroundColorExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Foreground Color Expression</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupStyle_ForegroundColorExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Font Name Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_STYLE__FONT_NAME_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupStyle_FontNameExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Font Size Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION = EefPackage.eINSTANCE.getEEFGroupStyle_FontSizeExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Bar Style</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_STYLE__BAR_STYLE = EefPackage.eINSTANCE.getEEFGroupStyle_BarStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Toggle Style</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_STYLE__TOGGLE_STYLE = EefPackage.eINSTANCE.getEEFGroupStyle_ToggleStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Expanded By Default</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT = EefPackage.eINSTANCE.getEEFGroupStyle_ExpandedByDefault();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFConditionalStyleImpl
 		 * <em>EEF Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -4966,6 +5354,24 @@ public interface EefPackage extends EPackage {
 		EReference EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFCustomWidgetConditionalStyle_Style();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
+		 * <em>EEF Group Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupConditionalStyle()
+		 * @generated
+		 */
+		EClass EEF_GROUP_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFGroupConditionalStyle();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_GROUP_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFGroupConditionalStyle_Style();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 		 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -4974,6 +5380,26 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum EEF_VALIDATION_SEVERITY_DESCRIPTION = EefPackage.eINSTANCE.getEEF_VALIDATION_SEVERITY_DESCRIPTION();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.EEF_TOGGLE_STYLE <em>EEF TOGGLE STYLE</em>}' enum.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.EEF_TOGGLE_STYLE
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_TOGGLE_STYLE()
+		 * @generated
+		 */
+		EEnum EEF_TOGGLE_STYLE = EefPackage.eINSTANCE.getEEF_TOGGLE_STYLE();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.EEF_TITLE_BAR_STYLE <em>EEF TITLE BAR STYLE</em>}'
+		 * enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @see org.eclipse.eef.EEF_TITLE_BAR_STYLE
+		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_TITLE_BAR_STYLE()
+		 * @generated
+		 */
+		EEnum EEF_TITLE_BAR_STYLE = EefPackage.eINSTANCE.getEEF_TITLE_BAR_STYLE();
 
 	}
 

@@ -22,7 +22,9 @@ import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFGroupStyle;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
@@ -371,6 +373,14 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_GROUP_STYLE: {
+			EEFGroupStyle eefGroupStyle = (EEFGroupStyle) theEObject;
+			T result = caseEEFGroupStyle(eefGroupStyle);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case EefPackage.EEF_CONDITIONAL_STYLE: {
 			EEFConditionalStyle eefConditionalStyle = (EEFConditionalStyle) theEObject;
 			T result = caseEEFConditionalStyle(eefConditionalStyle);
@@ -450,6 +460,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFCustomWidgetConditionalStyle(eefCustomWidgetConditionalStyle);
 			if (result == null) {
 				result = caseEEFConditionalStyle(eefCustomWidgetConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_GROUP_CONDITIONAL_STYLE: {
+			EEFGroupConditionalStyle eefGroupConditionalStyle = (EEFGroupConditionalStyle) theEObject;
+			T result = caseEEFGroupConditionalStyle(eefGroupConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefGroupConditionalStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -884,6 +905,21 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Group Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Group Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFGroupStyle(EEFGroupStyle object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -1000,6 +1036,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFCustomWidgetConditionalStyle(EEFCustomWidgetConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Group Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Group Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFGroupConditionalStyle(EEFGroupConditionalStyle object) {
 		return null;
 	}
 
