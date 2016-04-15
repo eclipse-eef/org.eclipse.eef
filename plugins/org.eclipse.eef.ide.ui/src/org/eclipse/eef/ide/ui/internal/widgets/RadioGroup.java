@@ -55,6 +55,8 @@ public class RadioGroup extends Composite {
 	public RadioGroup(Composite parent, EEFWidgetFactory widgetFactory, int numberOfColumns) {
 		super(parent, SWT.RADIO);
 		this.widgetFactory = widgetFactory;
+		setBackground(parent.getBackground());
+		setForeground(parent.getForeground());
 
 		if (numberOfColumns <= 0) {
 			this.setLayout(new RowLayout(SWT.HORIZONTAL));
@@ -106,6 +108,8 @@ public class RadioGroup extends Composite {
 	public void add(String string, int index) {
 		if (buttons.get(index) == null) {
 			Button button = widgetFactory.createButton(this, string, SWT.RADIO);
+			button.setBackground(this.getBackground());
+			button.setForeground(this.getForeground());
 			buttons.put(index, button);
 		}
 	}

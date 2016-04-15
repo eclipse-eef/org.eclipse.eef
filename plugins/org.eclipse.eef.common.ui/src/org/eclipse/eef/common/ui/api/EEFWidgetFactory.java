@@ -19,11 +19,13 @@ import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.List;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.Section;
 
 /**
  * A FormToolkit customized for use by tabbed property sheet page and others.
@@ -90,6 +92,9 @@ public class EEFWidgetFactory extends FormToolkit {
 	@Override
 	public Composite createComposite(Composite parent, int style) {
 		Composite c = super.createComposite(parent, style);
+		c.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		c.setBackground(parent.getBackground());
+		c.setForeground(parent.getForeground());
 		this.paintBordersFor(c);
 		return c;
 	}
@@ -116,7 +121,6 @@ public class EEFWidgetFactory extends FormToolkit {
 	 */
 	public Composite createPlainComposite(Composite parent, int style) {
 		Composite c = super.createComposite(parent, style);
-		c.setBackground(parent.getBackground());
 		this.paintBordersFor(c);
 		return c;
 	}
@@ -177,8 +181,9 @@ public class EEFWidgetFactory extends FormToolkit {
 	public Group createGroup(Composite parent, String text) {
 		Group group = new Group(parent, SWT.SHADOW_NONE);
 		group.setText(text);
-		group.setBackground(getColors().getBackground());
-		group.setForeground(getColors().getForeground());
+		group.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		group.setBackground(parent.getBackground());
+		group.setForeground(parent.getForeground());
 		return group;
 	}
 
@@ -226,6 +231,7 @@ public class EEFWidgetFactory extends FormToolkit {
 	public CLabel createCLabel(Composite parent, String text, int style) {
 		final CLabel label = new CLabel(parent, style);
 		label.setBackground(parent.getBackground());
+		label.setForeground(parent.getForeground());
 		label.setText(text);
 		return label;
 	}
@@ -241,8 +247,38 @@ public class EEFWidgetFactory extends FormToolkit {
 	 */
 	public StyledText createStyledText(Composite parent, int style) {
 		final StyledText styledText = new StyledText(parent, style);
+		styledText.setBackgroundMode(SWT.INHERIT_DEFAULT);
 		styledText.setBackground(parent.getBackground());
+		styledText.setForeground(parent.getForeground());
 		return styledText;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.ui.forms.widgets.FormToolkit#createButton(org.eclipse.swt.widgets.Composite, java.lang.String,
+	 *      int)
+	 */
+	@Override
+	public Button createButton(Composite parent, String text, int style) {
+		Button button = super.createButton(parent, text, style);
+		button.setBackground(parent.getBackground());
+		button.setForeground(parent.getForeground());
+		return button;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.ui.forms.widgets.FormToolkit#createSection(org.eclipse.swt.widgets.Composite, int)
+	 */
+	@Override
+	public Section createSection(Composite parent, int sectionStyle) {
+		Section section = super.createSection(parent, sectionStyle);
+		section.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		section.setBackground(parent.getBackground());
+		section.setForeground(parent.getForeground());
+		return section;
 	}
 
 	/**

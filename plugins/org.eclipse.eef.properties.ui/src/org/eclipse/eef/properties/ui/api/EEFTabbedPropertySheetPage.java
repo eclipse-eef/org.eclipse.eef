@@ -610,6 +610,8 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		Composite result = this.widgetFactory.createComposite(tabbedPropertyComposite.getTabComposite(), SWT.NO_FOCUS);
 		result.setVisible(false);
 		result.setLayout(new FillLayout());
+		result.setBackground(this.widgetFactory.getColors().getBackground());
+		result.setForeground(this.widgetFactory.getColors().getForeground());
 		FormData data = new FormData();
 		data.top = new FormAttachment(0, 0);
 		data.bottom = new FormAttachment(100, 0);

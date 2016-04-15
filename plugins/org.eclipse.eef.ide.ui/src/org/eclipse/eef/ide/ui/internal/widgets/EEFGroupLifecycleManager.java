@@ -16,7 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.eef.EEFContainerDescription;
+import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFGroupStyle;
+import org.eclipse.eef.EEF_TITLE_BAR_STYLE;
+import org.eclipse.eef.EEF_TOGGLE_STYLE;
+import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -26,9 +31,14 @@ import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
+import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
+import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -112,7 +122,32 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		Composite groupComposite = widgetFactory.createComposite(parent);
 		groupComposite.setLayout(new GridLayout(1, false));
 
-		this.section = widgetFactory.createSection(groupComposite, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		EEFGroupStyle styleDescription = this.description.getStyle();
+		List<EEFGroupConditionalStyle> conditionalStyles = description.getConditionalStyles();
+		if (conditionalStyles != null) {
+			for (EEFGroupConditionalStyle eefGroupConditionalStyle : conditionalStyles) {
+				String preconditionExpression = eefGroupConditionalStyle.getPreconditionExpression();
+				Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+				if (preconditionValid != null && preconditionValid.booleanValue()) {
+					styleDescription = eefGroupConditionalStyle.getStyle();
+					break;
+				}
+			}
+		}
+
+		int style = Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED;
+		if (styleDescription != null) {
+			// Get bar style & toggle style from expression
+			style = getBarStyle(styleDescription.getBarStyle()) | getToggleStyle(styleDescription.getToggleStyle());
+
+			// Get if the group is expanded by default
+			boolean isExpandedByDefault = styleDescription.isExpandedByDefault();
+			if (isExpandedByDefault) {
+				style |= Section.EXPANDED;
+			}
+		}
+
+		this.section = widgetFactory.createSection(groupComposite, style);
 		this.section.setText(""); //$NON-NLS-1$
 
 		String labelExpression = this.description.getLabelExpression();
@@ -126,10 +161,45 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		GridData sectionLayoutData = new GridData(GridData.FILL_HORIZONTAL);
 		sectionLayoutData.horizontalSpan = 1;
 		this.section.setLayoutData(sectionLayoutData);
+
 		Composite group = widgetFactory.createComposite(this.section);
 		GridLayout groupLayout = new GridLayout();
 		groupLayout.numColumns = 1;
 		group.setLayout(groupLayout);
+
+		if (styleDescription != null) {
+			// Get background color from expression
+			Eval eval = new Eval(interpreter, variableManager);
+			String backgroundValue = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION,
+					styleDescription.getBackgroundColorExpression(), String.class);
+			if (backgroundValue != null) {
+				Color backgroundColor = new EEFColor(backgroundValue).getColor();
+				this.section.setBackground(backgroundColor);
+				group.setBackground(backgroundColor);
+			}
+
+			// Get foreground color from expression
+			String foregroundValue = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION,
+					styleDescription.getForegroundColorExpression(), String.class);
+			if (foregroundValue != null) {
+				Color foregroundColor = new EEFColor(foregroundValue).getColor();
+				groupComposite.setForeground(foregroundColor);
+				this.section.setTitleBarForeground(foregroundColor);
+				this.section.setToggleColor(foregroundColor);
+				this.section.setForeground(foregroundColor);
+				group.setForeground(foregroundColor);
+			}
+
+			// Get font name and size from expression
+			String fontName = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION, styleDescription.getFontNameExpression(),
+					String.class);
+			Integer fontSize = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION, styleDescription.getFontSizeExpression(),
+					Integer.class);
+			Font font = new EEFFont(fontName, fontSize, SWT.BOLD).getFont();
+			this.section.setFont(font);
+			group.setFont(font);
+		}
+
 		this.section.setClient(group);
 
 		this.controller = new EEFControllersFactory().createGroupController(this.description, this.variableManager, this.interpreter);
@@ -144,6 +214,52 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 			this.lifecycleManagers.add(containerLifecycleManager);
 		}
+	}
+
+	/**
+	 * Get the bar style.
+	 *
+	 * @param barStyleEnum
+	 *            Bar style
+	 * @return Section bar style
+	 */
+	private int getBarStyle(EEF_TITLE_BAR_STYLE barStyleEnum) {
+		int barStyle = SWT.NONE;
+		switch (barStyleEnum) {
+		case SHORT_TITLE_BAR:
+			barStyle = Section.SHORT_TITLE_BAR;
+			break;
+		case NO_TITLE:
+			barStyle = Section.NO_TITLE;
+			break;
+		default:
+			barStyle = Section.TITLE_BAR;
+			break;
+		}
+		return barStyle;
+	}
+
+	/**
+	 * Get the toggle style.
+	 *
+	 * @param toggleStyleEnum
+	 *            Toggle style
+	 * @return The section toggle style
+	 */
+	private int getToggleStyle(EEF_TOGGLE_STYLE toggleStyleEnum) {
+		int toggleStyle = Section.TWISTIE;
+		switch (toggleStyleEnum) {
+		case TREE_NODE:
+			toggleStyle = Section.TREE_NODE;
+			break;
+		case NONE:
+			toggleStyle = SWT.NONE;
+			break;
+		default:
+			toggleStyle = Section.TWISTIE;
+			break;
+		}
+		return toggleStyle;
 	}
 
 	/**

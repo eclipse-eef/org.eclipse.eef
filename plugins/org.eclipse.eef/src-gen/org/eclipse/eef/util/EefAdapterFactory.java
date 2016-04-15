@@ -22,7 +22,9 @@ import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFGroupStyle;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
@@ -242,6 +244,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseEEFGroupStyle(EEFGroupStyle object) {
+			return createEEFGroupStyleAdapter();
+		}
+
+		@Override
 		public Adapter caseEEFConditionalStyle(EEFConditionalStyle object) {
 			return createEEFConditionalStyleAdapter();
 		}
@@ -279,6 +286,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFCustomWidgetConditionalStyle(EEFCustomWidgetConditionalStyle object) {
 			return createEEFCustomWidgetConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFGroupConditionalStyle(EEFGroupConditionalStyle object) {
+			return createEEFGroupConditionalStyleAdapter();
 		}
 
 		@Override
@@ -687,6 +699,19 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGroupStyle <em>EEF Group Style</em>}'.
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
+	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFGroupStyle
+	 * @generated
+	 */
+	public Adapter createEEFGroupStyleAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFConditionalStyle
 	 * <em>EEF Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
 	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
@@ -795,6 +820,20 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFCustomWidgetConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGroupConditionalStyle
+	 * <em>EEF Group Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFGroupConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFGroupConditionalStyleAdapter() {
 		return null;
 	}
 
