@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_31c9539d",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFViewFactory.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "I\u0027m not fan of having a variable name not that meaningful (here and everywhere it is used)",
+      "range": {
+        "startLine": 33,
+        "startChar": 11,
+        "endLine": 33,
+        "endChar": 14
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_d1c74f8a",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EditionContextAdapter.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "2015, 2016",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_d19d8f73",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "Why does it implements EditionContextAdapter to delegate everything to another EditionContextAdapter?",
+      "range": {
+        "startLine": 237,
+        "startChar": 1,
+        "endLine": 260,
+        "endChar": 2
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_d16bcfe2",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/AbstractEEFControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 189,
+        "startChar": 2,
+        "endLine": 189,
+        "endChar": 60
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_b161e305",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/AbstractEEFControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "why those changes?",
+      "range": {
+        "startLine": 212,
+        "startChar": 1,
+        "endLine": 245,
+        "endChar": 41
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_117297d3",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/EEFButtonControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 38,
+        "startChar": 42,
+        "endLine": 38,
+        "endChar": 68
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_316dd3f5",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/EEFButtonControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 39,
+        "startChar": 20,
+        "endLine": 39,
+        "endChar": 44
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_f1660b1a",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/EEFButtonControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 59,
+        "startChar": 2,
+        "endLine": 63,
+        "endChar": 41
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_513fbfe2",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/EEFCheckboxControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 37,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 2
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7142fb67",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/EEFRadioControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 37,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 1
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_51aa5f8d",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/EEFSelectControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 37,
+        "startChar": 1,
+        "endLine": 65,
+        "endChar": 1
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_71ad9ba2",
+        "filename": "tests/org.eclipse.eef.tests/src/org/eclipse/eef/tests/internal/controllers/EEFTextControllerTests.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-15T13:15:06Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 2
+      },
+      "revId": "dac3d4e0d025eb7ab171c7225836e163a2e7b907",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
