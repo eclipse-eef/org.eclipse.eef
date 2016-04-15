@@ -21,6 +21,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
+import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
@@ -29,6 +30,7 @@ import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
+import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -36,6 +38,9 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.widgets.Composite;
@@ -70,6 +75,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	private ModifyListener modifyListener;
 
 	/**
+	 * Parent composite.
+	 */
+	private Composite composite;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -95,6 +105,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
+		this.composite = parent;
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		FormData formData = new FormData();
@@ -148,7 +159,36 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 */
 	@Override
 	protected EEFWidgetStyle getWidgetStyle() {
-		return this.description.getStyle();
+		EEFWidgetStyle style = this.description.getStyle();
+		if (style == null) {
+			EEFTextStyle textStyle = EefFactory.eINSTANCE.createEEFTextStyle();
+			super.setDefaultInheritedLabelStyle(textStyle, composite);
+			setDefaultInheritedStyle(textStyle);
+			style = textStyle;
+		}
+		return style;
+	}
+
+	/**
+	 * Set style inherited from the parent group.
+	 *
+	 * @param style
+	 *            Style
+	 */
+	private void setDefaultInheritedStyle(EEFTextStyle style) {
+		// Set default foreground color
+		Color foreground = composite.getForeground();
+		if (foreground != null) {
+			style.setForegroundColorExpression(new EEFColor(foreground).colorToString());
+		}
+		// Set default font
+		Font font = composite.getFont();
+		if (font != null) {
+			FontData[] fontData = font.getFontData();
+			if (fontData != null && fontData.length > 0) {
+				style.setFontNameExpression(fontData[0].getName());
+			}
+		}
 	}
 
 	/**
@@ -217,7 +257,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * Set the style.
 	 */
 	private void setStyle() {
-		EEFTextStyle textStyle = description.getStyle();
+		EEFTextStyle textStyle = (EEFTextStyle) getWidgetStyle();
 		List<EEFTextConditionalStyle> conditionalStyles = description.getConditionalStyles();
 		if (conditionalStyles != null) {
 			for (EEFTextConditionalStyle eefTextConditionalStyle : conditionalStyles) {

@@ -203,6 +203,18 @@
         <details key="documentation" value="The validation rules used to validate widgets of the group."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFGroupStyle"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the group style"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
+        eType="#//EEFGroupConditionalStyle" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the text style associated to a precondition"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFContainerDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
@@ -280,7 +292,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalStyles" upperBound="-1"
         eType="#//EEFTextConditionalStyle" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Defines the text style associated to a precondition"/>
+        <details key="documentation" value="Defines the group style associated to a precondition"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -633,6 +645,33 @@
       <details key="documentation" value="Represents a style that can be applied on custom widgets."/>
     </eAnnotations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFGroupStyle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColorExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the background color of the widget. It must be defined as hex (#000000) or RGB (rgb(0,0,0))."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foregroundColorExpression"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the foreground color of the widget. It must be defined as hex (#000000) or RGB (rgb(0,0,0))."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontNameExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the font's name of the widget."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontSizeExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defines the font's size of the widget."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="barStyle" eType="#//EEF_TITLE_BAR_STYLE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toggleStyle" eType="#//EEF_TOGGLE_STYLE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expandedByDefault" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFConditionalStyle" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="preconditionExpression"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -685,5 +724,22 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFCustomWidgetStyle"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EEFGroupConditionalStyle" eSuperTypes="#//EEFConditionalStyle">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents a conditional style that can be applied on groups."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFGroupStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EEF_TOGGLE_STYLE">
+    <eLiterals name="TWISTIE"/>
+    <eLiterals name="TREE_NODE" value="1"/>
+    <eLiterals name="NONE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EEF_TITLE_BAR_STYLE">
+    <eLiterals name="TITLE_BAR"/>
+    <eLiterals name="SHORT_TITLE_BAR" value="1"/>
+    <eLiterals name="NO_TITLE" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

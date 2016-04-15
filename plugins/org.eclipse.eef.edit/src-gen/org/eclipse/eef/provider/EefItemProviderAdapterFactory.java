@@ -627,7 +627,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCustomWidgetStyleItemProvider eefCustomWidgetStyleItemProvider;
@@ -645,6 +645,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 
 		return eefCustomWidgetStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFGroupStyleItemProvider eefGroupStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFGroupStyleAdapter() {
+		if (eefGroupStyleItemProvider == null) {
+			eefGroupStyleItemProvider = new EEFGroupStyleItemProvider(this);
+		}
+
+		return eefGroupStyleItemProvider;
 	}
 
 	/**
@@ -806,6 +829,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 
 		return eefCustomWidgetConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupConditionalStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFGroupConditionalStyleItemProvider eefGroupConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFGroupConditionalStyleAdapter() {
+		if (eefGroupConditionalStyleItemProvider == null) {
+			eefGroupConditionalStyleItemProvider = new EEFGroupConditionalStyleItemProvider(this);
+		}
+
+		return eefGroupConditionalStyleItemProvider;
 	}
 
 	/**
@@ -983,6 +1029,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		if (eefCustomWidgetStyleItemProvider != null) {
 			eefCustomWidgetStyleItemProvider.dispose();
 		}
+		if (eefGroupStyleItemProvider != null) {
+			eefGroupStyleItemProvider.dispose();
+		}
 		if (eefTextConditionalStyleItemProvider != null) {
 			eefTextConditionalStyleItemProvider.dispose();
 		}
@@ -1003,6 +1052,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefCustomWidgetConditionalStyleItemProvider != null) {
 			eefCustomWidgetConditionalStyleItemProvider.dispose();
+		}
+		if (eefGroupConditionalStyleItemProvider != null) {
+			eefGroupConditionalStyleItemProvider.dispose();
 		}
 	}
 

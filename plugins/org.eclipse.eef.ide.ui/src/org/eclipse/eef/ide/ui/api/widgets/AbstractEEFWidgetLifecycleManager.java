@@ -41,6 +41,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.layout.FormAttachment;
@@ -134,6 +135,10 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		Composite composite = widgetFactory.createFlatFormComposite(parent);
+		composite.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		composite.setBackground(parent.getBackground());
+		composite.setForeground(parent.getForeground());
+		composite.setFont(parent.getFont());
 		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
 		composite.setLayoutData(gridData);
 
@@ -534,5 +539,29 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			return (IStructuredSelection) selection;
 		}
 		throw new ClassCastException(Messages.AbstractEEFWidgetLifecycleManager_invalidSelectionType);
+	}
+
+	/**
+	 * Set label style inherited from the parent group.
+	 *
+	 * @param style
+	 *            to update
+	 * @param parent
+	 *            Parent
+	 */
+	public void setDefaultInheritedLabelStyle(EEFWidgetStyle style, Control parent) {
+		// Set default foreground color
+		Color foreground = parent.getForeground();
+		if (foreground != null) {
+			style.setLabelForegroundColorExpression(new EEFColor(foreground).colorToString());
+		}
+		// Set default font
+		Font font = parent.getFont();
+		if (font != null) {
+			FontData[] fontData = font.getFontData();
+			if (fontData != null && fontData.length > 0) {
+				style.setLabelFontNameExpression(fontData[0].getName());
+			}
+		}
 	}
 }
