@@ -19,6 +19,7 @@ import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
@@ -90,6 +91,8 @@ public class EEFWidgetFactory extends FormToolkit {
 	@Override
 	public Composite createComposite(Composite parent, int style) {
 		Composite c = super.createComposite(parent, style);
+		c.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		c.setBackground(parent.getBackground());
 		this.paintBordersFor(c);
 		return c;
 	}
@@ -243,6 +246,19 @@ public class EEFWidgetFactory extends FormToolkit {
 		final StyledText styledText = new StyledText(parent, style);
 		styledText.setBackground(parent.getBackground());
 		return styledText;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.ui.forms.widgets.FormToolkit#createButton(org.eclipse.swt.widgets.Composite, java.lang.String,
+	 *      int)
+	 */
+	@Override
+	public Button createButton(Composite parent, String text, int style) {
+		Button button = super.createButton(parent, text, style);
+		button.setBackground(parent.getBackground());
+		return button;
 	}
 
 	/**

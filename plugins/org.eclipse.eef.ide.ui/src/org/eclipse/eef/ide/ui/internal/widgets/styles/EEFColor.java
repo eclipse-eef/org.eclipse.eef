@@ -60,6 +60,25 @@ public class EEFColor {
 	}
 
 	/**
+	 * Constructor.
+	 *
+	 * @param color
+	 *            Color
+	 */
+	public EEFColor(Color color) {
+		this.color = color;
+	}
+
+	/**
+	 * Get the color as an rgb string.
+	 *
+	 * @return RGB string as rgb(0,0,0)
+	 */
+	public String colorToString() {
+		return "rgb(" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + ")"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+	}
+
+	/**
 	 * Convert an hex color code to a color.
 	 *
 	 * @param colorCode

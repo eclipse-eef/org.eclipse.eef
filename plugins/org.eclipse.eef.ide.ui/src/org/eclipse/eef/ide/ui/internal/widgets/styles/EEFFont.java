@@ -56,11 +56,21 @@ public class EEFFont {
 	 * @return The font
 	 */
 	private Font getFont(String name, int height, int style) {
-		String key = getFontKey(name, height, style);
+		FontData defaultFontData = JFaceResources.getFontRegistry().defaultFont().getFontData()[0];
+		String fontName = name;
+		if (fontName == null) {
+			fontName = defaultFontData.getName();
+		}
+		int fontHeight = height;
+		if (fontHeight == 0) {
+			fontHeight = defaultFontData.getHeight();
+		}
+
+		String key = getFontKey(fontName, fontHeight, style);
 		if (JFaceResources.getFontRegistry().hasValueFor(key)) {
 			return JFaceResources.getFontRegistry().get(key);
 		} else {
-			JFaceResources.getFontRegistry().put(key, new FontData[] { new FontData(name, height, style) });
+			JFaceResources.getFontRegistry().put(key, new FontData[] { new FontData(fontName, fontHeight, style) });
 			return getFont(key);
 		}
 	}
