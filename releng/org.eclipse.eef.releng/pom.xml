@@ -78,6 +78,7 @@
     <module>../../tests/org.eclipse.eef.tests</module>
 
     <module>../../doc/org.eclipse.eef.documentation</module>
+    <module>../../doc/org.eclipse.eef.documentation.export</module>
 
     <module>../../features/org.eclipse.eef.sdk-feature</module>
 
