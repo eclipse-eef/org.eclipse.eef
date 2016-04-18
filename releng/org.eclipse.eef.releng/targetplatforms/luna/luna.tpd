@@ -35,3 +35,7 @@ location Eclipse-Luna "http://download.eclipse.org/releases/luna" {
 location Sirius-Incubation "http://download.eclipse.org/sirius/updates/nightly/latest/mars/incubation" {
 	org.eclipse.sirius.incubation.interpreter.feature.group lazy
 }
+
+location "http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository" {
+	org.hamcrest.library
+}

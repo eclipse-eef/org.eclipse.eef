@@ -1,0 +1,19 @@
+h2. Release Notes for Eclipse EEF
+
+{toc:style=disc|minLevel=2|maxLevel=3}
+
+This document contains the release notes for recent major releases of EEF.
+
+h3(#eef1.6.0). Changes in EEF 1.6.0
+
+h4. User-Visible Changes
+
+* <span class="label label-success">Added</span> The user interface has been recreated from scratch with a new runtime. As a result multiple small changes can be visible in the user interface. See the description of the "*text widget*":metamodel/text.html
+
+h4. Specifier-Visible Changes
+
+* <span class="label label-success">Added</span> A brand new DSL is available to create your user interface. Have a look at the documentation for additional details.
+
+h4. Developer-Visible Changes
+
+* <span class="label label-success">Added</span> A brand new API is available to create your user interface. Have a look at the documentation for additional details.

@@ -35,3 +35,7 @@ location Eclipse-Neon "http://download.eclipse.org/releases/neon" {
 location Sirius-Incubation "http://download.eclipse.org/sirius/updates/nightly/latest/neon/incubation" {
 	org.eclipse.sirius.incubation.interpreter.feature.group lazy
 }
+
+location "http://download.eclipse.org/tools/orbit/downloads/drops/R20150519210750/repository" {
+	org.hamcrest.library
+}
