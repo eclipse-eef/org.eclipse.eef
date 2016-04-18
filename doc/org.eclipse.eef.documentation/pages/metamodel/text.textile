@@ -1,0 +1,9 @@
+h2. The text widget
+
+{toc:style=disc|minLevel=2|maxLevel=3}
+
+This document will detail all the features of the text widget.
+
+h3(#description). Description
+
+The text widget is a new feature in our "*release notes*":../releasenotes.html.
