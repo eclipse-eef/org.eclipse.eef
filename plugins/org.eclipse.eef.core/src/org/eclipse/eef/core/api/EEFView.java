@@ -13,7 +13,6 @@ package org.eclipse.eef.core.api;
 import java.util.List;
 
 import org.eclipse.eef.EEFViewDescription;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -66,10 +65,9 @@ public interface EEFView {
 	IInterpreter getInterpreter();
 
 	/**
-	 * Returns the {@link TransactionalEditingDomain} through which the current input is being edited. May be
-	 * <code>null</code>.
+	 * Returns the edition context adapter.
 	 *
-	 * @return the {@link TransactionalEditingDomain}.
+	 * @return the context adapter.
 	 */
-	TransactionalEditingDomain getEditingDomain();
+	EditionContextAdapter getContextAdapter();
 }

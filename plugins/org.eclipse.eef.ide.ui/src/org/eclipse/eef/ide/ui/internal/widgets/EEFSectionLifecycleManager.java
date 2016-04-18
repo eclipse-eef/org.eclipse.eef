@@ -16,6 +16,7 @@ import java.util.List;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
@@ -71,8 +72,9 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 		List<EEFGroup> eefGroups = this.eefPage.getGroups();
 		for (EEFGroup eefGroup : eefGroups) {
+			EditionContextAdapter contextAdapter = eefGroup.getPage().getView().getContextAdapter();
 			EEFGroupLifecycleManager groupLifecycleManager = new EEFGroupLifecycleManager(eefGroup.getDescription(), eefGroup.getVariableManager(),
-					eefGroup.getInterpreter(), eefGroup.getEditingDomain());
+					eefGroup.getInterpreter(), contextAdapter);
 			groupLifecycleManager.createControl(parent, formContainer);
 
 			this.lifecycleManagers.add(groupLifecycleManager);

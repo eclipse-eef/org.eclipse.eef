@@ -19,6 +19,7 @@ import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
@@ -26,7 +27,6 @@ import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.layout.GridData;
@@ -53,9 +53,9 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	private IInterpreter interpreter;
 
 	/**
-	 * The editing domain.
+	 * The editing context adapter.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private EditionContextAdapter contextAdapter;
 
 	/**
 	 * The description of the container.
@@ -86,15 +86,15 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param contextAdapter
+	 *            The editing context adapter
 	 */
 	public EEFGroupLifecycleManager(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+			EditionContextAdapter contextAdapter) {
 		this.description = description;
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
-		this.editingDomain = editingDomain;
+		this.contextAdapter = contextAdapter;
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		EEFContainerDescription containerDescription = this.description.getContainer();
 		if (containerDescription != null) {
 			EEFContainerLifecycleManager containerLifecycleManager = new EEFContainerLifecycleManager(containerDescription,
-					this.variableManager.createChild(), this.interpreter, this.editingDomain);
+					this.variableManager.createChild(), this.interpreter, this.contextAdapter);
 			containerLifecycleManager.createControl(group, formContainer);
 
 			parent.layout();

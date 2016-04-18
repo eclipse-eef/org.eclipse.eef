@@ -39,7 +39,7 @@ public class EEFCheckboxControllerTests extends AbstractEEFControllerTests {
 	private IEEFCheckboxController checkboxController(String modelPath) {
 		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
 		EEFCheckboxDescription description = widget(group(page(modelPath, 0), 0), EEFCheckboxDescription.class, 0);
-		return new EEFCheckboxController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		return new EEFCheckboxController(description, newVariableManager(eClassifier), this.interpreter, this.contextAdapter);
 	}
 
 	@Test

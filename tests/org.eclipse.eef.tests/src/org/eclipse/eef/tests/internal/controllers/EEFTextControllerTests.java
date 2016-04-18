@@ -40,7 +40,7 @@ public class EEFTextControllerTests extends AbstractEEFControllerTests {
 	private IEEFTextController textController(String modelPath) {
 		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
 		EEFTextDescription description = widget(group(page(modelPath, 0), 0), EEFTextDescription.class, 0);
-		return new EEFTextController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		return new EEFTextController(description, newVariableManager(eClassifier), this.interpreter, this.contextAdapter);
 	}
 
 	@Test

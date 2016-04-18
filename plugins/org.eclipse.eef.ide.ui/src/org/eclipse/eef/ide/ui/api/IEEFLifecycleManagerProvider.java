@@ -11,7 +11,7 @@
 package org.eclipse.eef.ide.ui.api;
 
 import org.eclipse.eef.EEFCustomWidgetDescription;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -30,12 +30,12 @@ public interface IEEFLifecycleManagerProvider {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param contextAdapter
+	 *            The editing context adapter
 	 *
 	 * @return An {@link ILifecycleManager}
 	 */
 	ILifecycleManager getLifecycleManager(EEFCustomWidgetDescription customWidgetDescription, IVariableManager variableManager,
-			IInterpreter interpreter, TransactionalEditingDomain editingDomain);
+			IInterpreter interpreter, EditionContextAdapter contextAdapter);
 
 }

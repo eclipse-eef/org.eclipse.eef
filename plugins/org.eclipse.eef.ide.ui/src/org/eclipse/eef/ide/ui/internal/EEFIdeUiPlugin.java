@@ -17,6 +17,7 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.common.api.AbstractEEFEclipsePlugin;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.ide.api.extensions.AbstractRegistryEventListener;
 import org.eclipse.eef.ide.api.extensions.IItemDescriptor;
 import org.eclipse.eef.ide.api.extensions.IItemRegistry;
@@ -26,7 +27,6 @@ import org.eclipse.eef.ide.ui.api.IEEFLifecycleManagerProvider;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -165,7 +165,7 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 
 		/**
 		 * Returns the image for the given URL.
-		 * 
+		 *
 		 * @param url
 		 *            The url of the image
 		 * @return The image found or <code>null</code> if it could not be found
@@ -232,19 +232,19 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 		 *            The variable manager to use for the widget to create
 		 * @param interpreter
 		 *            The interpreter
-		 * @param editingDomain
-		 *            The editing domain
+		 * @param contextAdapter
+		 *            The editing context adapter
 		 * @return The lifecycle manager
 		 */
 		public ILifecycleManager getEEFLifecycleManager(EEFCustomWidgetDescription eefWidgetDescription, IVariableManager variableManager,
-				IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+				IInterpreter interpreter, EditionContextAdapter contextAdapter) {
 			for (IItemDescriptor<IEEFLifecycleManagerProvider> itemDescriptor : this.eefLifecycleManagerProviderRegistry.getItemDescriptors()) {
 				String eefLifecyleManagerID = itemDescriptor.getID();
 				// Search the lifecycle manager in the contribution
 				if (eefWidgetDescription.getIdentifier().equals(eefLifecyleManagerID)) {
 					IEEFLifecycleManagerProvider eefLifecycleManagerProvider = itemDescriptor.getItem();
 					ILifecycleManager eefLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(eefWidgetDescription, variableManager,
-							interpreter, editingDomain);
+							interpreter, contextAdapter);
 					if (eefLifecycleManager != null) {
 						return eefLifecycleManager;
 					} else {

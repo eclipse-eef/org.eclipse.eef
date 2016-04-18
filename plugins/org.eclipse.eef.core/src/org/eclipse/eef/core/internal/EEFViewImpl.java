@@ -24,11 +24,11 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.InputDescriptor;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -54,9 +54,9 @@ public class EEFViewImpl implements EEFView {
 	private EEFViewDescription eefViewDescription;
 
 	/**
-	 * The editing domain.
+	 * The editing context adapter.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private EditionContextAdapter contextAdapter;
 
 	/**
 	 * The {@link EEFPage} of the view.
@@ -77,17 +77,17 @@ public class EEFViewImpl implements EEFView {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param contextAdapter
+	 *            The editing context adapter.
 	 * @param domainClassTester
 	 *            The domain class tester
 	 */
 	public EEFViewImpl(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain, EEFDomainClassTester domainClassTester) {
+			EditionContextAdapter contextAdapter, EEFDomainClassTester domainClassTester) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefViewDescription = eefViewDescription;
-		this.editingDomain = editingDomain;
+		this.contextAdapter = contextAdapter;
 		this.domainClassTester = domainClassTester;
 	}
 
@@ -109,8 +109,8 @@ public class EEFViewImpl implements EEFView {
 				new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
 					@Override
 					public void apply(Object value) {
-						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), eefViewDescription
-								.getEPackages(), domainClassTester);
+						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(),
+								eefViewDescription.getEPackages(), domainClassTester);
 						Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
 						Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
 
@@ -150,7 +150,7 @@ public class EEFViewImpl implements EEFView {
 		if (semanticCandidate != null) {
 			childVariableManager.put(EEFExpressionUtils.SELF, semanticCandidate);
 		}
-		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.editingDomain, this.domainClassTester, isUnique);
+		return new EEFPageImpl(this, description, childVariableManager, this.interpreter, this.domainClassTester, isUnique);
 	}
 
 	/**
@@ -236,16 +236,6 @@ public class EEFViewImpl implements EEFView {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.EEFView#getEditingDomain()
-	 */
-	@Override
-	public TransactionalEditingDomain getEditingDomain() {
-		return this.editingDomain;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
 	 * @see org.eclipse.eef.core.api.EEFView#getInterpreter()
 	 */
 	@Override
@@ -261,6 +251,16 @@ public class EEFViewImpl implements EEFView {
 	@Override
 	public IVariableManager getVariableManager() {
 		return this.variableManager;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.EEFView#getContextAdapter()
+	 */
+	@Override
+	public EditionContextAdapter getContextAdapter() {
+		return this.contextAdapter;
 	}
 
 }

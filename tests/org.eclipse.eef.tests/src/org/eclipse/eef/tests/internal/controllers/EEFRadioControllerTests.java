@@ -39,7 +39,7 @@ public class EEFRadioControllerTests extends AbstractEEFControllerTests {
 	private IEEFRadioController radioController(String modelPath) {
 		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
 		EEFRadioDescription description = widget(group(page(modelPath, 0), 0), EEFRadioDescription.class, 0);
-		return new EEFRadioController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		return new EEFRadioController(description, newVariableManager(eClassifier), this.interpreter, this.contextAdapter);
 	}
 
 	@Test

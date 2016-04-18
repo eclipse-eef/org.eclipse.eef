@@ -13,7 +13,6 @@ package org.eclipse.eef.core.internal;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -44,11 +43,6 @@ public class EEFGroupImpl implements EEFGroup {
 	private EEFPage eefPage;
 
 	/**
-	 * The editing domain.
-	 */
-	private TransactionalEditingDomain editingDomain;
-
-	/**
 	 * The constructor.
 	 *
 	 * @param eefPage
@@ -59,16 +53,12 @@ public class EEFGroupImpl implements EEFGroup {
 	 *            The variable manager.
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
 	 */
-	public EEFGroupImpl(EEFPage eefPage, EEFGroupDescription eefGroupDescription, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+	public EEFGroupImpl(EEFPage eefPage, EEFGroupDescription eefGroupDescription, IVariableManager variableManager, IInterpreter interpreter) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefPage = eefPage;
 		this.eefGroupDescription = eefGroupDescription;
-		this.editingDomain = editingDomain;
 	}
 
 	/**
@@ -106,13 +96,4 @@ public class EEFGroupImpl implements EEFGroup {
 		return this.interpreter;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.core.api.EEFGroup#getEditingDomain()
-	 */
-	@Override
-	public TransactionalEditingDomain getEditingDomain() {
-		return this.editingDomain;
-	}
 }

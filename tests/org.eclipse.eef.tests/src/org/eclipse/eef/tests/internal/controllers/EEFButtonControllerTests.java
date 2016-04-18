@@ -39,7 +39,7 @@ public class EEFButtonControllerTests extends AbstractEEFControllerTests {
 	private IEEFButtonController buttonController(String modelPath) {
 		EClassifier eClassifier = this.ePackage(DART_ECORE, 0).getEClassifier(PROJECT_ECLASS_NAME);
 		EEFButtonDescription description = widget(group(page(modelPath, 0), 0), EEFButtonDescription.class, 0);
-		return new EEFButtonController(description, newVariableManager(eClassifier), this.interpreter, this.editingDomain);
+		return new EEFButtonController(description, newVariableManager(eClassifier), this.interpreter, this.contextAdapter);
 	}
 
 	@Test
@@ -58,8 +58,8 @@ public class EEFButtonControllerTests extends AbstractEEFControllerTests {
 		IEEFButtonController controller = this.buttonController(EEFDataTests.EEFBUTTONCONTROLLERTESTS_BUTTONLABEL);
 		controller.onNewButtonLabel(label -> {
 			assertThat(label, is("OK")); //$NON-NLS-1$
-				atomicBoolean.set(true);
-			});
+			atomicBoolean.set(true);
+		});
 		controller.refresh();
 		assertTrue(atomicBoolean.get());
 	}

@@ -17,15 +17,12 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.command.CommandStack;
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.transaction.RecordingCommand;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -41,9 +38,9 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	private EEFCheckboxDescription description;
 
 	/**
-	 * The editing domain.
+	 * The editing context adapter.
 	 */
-	private TransactionalEditingDomain editingDomain;
+	private EditionContextAdapter contextAdapter;
 
 	/**
 	 * The consumer of a new value of the checkbox.
@@ -59,21 +56,21 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param contextAdapter
+	 *            The editing context adapter
 	 */
 	public EEFCheckboxController(EEFCheckboxDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
+			EditionContextAdapter contextAdapter) {
 		super(variableManager, interpreter);
 		this.description = description;
-		this.editingDomain = editingDomain;
+		this.contextAdapter = contextAdapter;
 	}
 
 	@Override
 	public void updateValue(final boolean checkbox) {
-		final Command command = new RecordingCommand(this.editingDomain) {
+		contextAdapter.performModelChange(new Runnable() {
 			@Override
-			protected void doExecute() {
+			public void run() {
 				String editExpression = EEFCheckboxController.this.description.getEditExpression();
 				EAttribute eAttribute = EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION;
 
@@ -83,15 +80,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 
 				new Eval(EEFCheckboxController.this.interpreter, variables).call(eAttribute, editExpression);
 			}
-
-			@Override
-			public boolean canExecute() {
-				return true;
-			}
-		};
-
-		CommandStack commandStack = EEFCheckboxController.this.editingDomain.getCommandStack();
-		commandStack.execute(command);
+		});
 	}
 
 	/**

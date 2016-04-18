@@ -23,13 +23,13 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -78,12 +78,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param editingDomain
-	 *            The editing domain
+	 * @param contextAdapter
+	 *            The editing context adapter
 	 */
 	public EEFTextLifecycleManager(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			TransactionalEditingDomain editingDomain) {
-		super(variableManager, interpreter, editingDomain);
+			EditionContextAdapter contextAdapter) {
+		super(variableManager, interpreter, contextAdapter);
 		this.description = description;
 	}
 
@@ -117,8 +117,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		this.text.setLayoutData(formData);
 
-		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
-				this.editingDomain);
+		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter, this.contextAdapter);
 	}
 
 	/**

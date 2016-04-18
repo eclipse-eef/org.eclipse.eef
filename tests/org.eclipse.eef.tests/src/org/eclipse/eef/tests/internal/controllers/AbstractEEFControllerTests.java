@@ -20,6 +20,7 @@ import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.EditionContextAdapter;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.tests.internal.AQLInterpreter;
 import org.eclipse.eef.tests.internal.EEFDataTests;
@@ -32,7 +33,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.sirius.common.interpreter.api.VariableManagerFactory;
@@ -41,7 +41,6 @@ import org.junit.Before;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
-
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -57,11 +56,6 @@ public abstract class AbstractEEFControllerTests {
 	public static final String DART_ECORE = "/data/dart.ecore"; //$NON-NLS-1$
 
 	/**
-	 * The editing domain.
-	 */
-	protected TransactionalEditingDomainImpl editingDomain;
-
-	/**
 	 * The resource set.
 	 */
 	protected ResourceSetImpl resourceSet;
@@ -71,6 +65,11 @@ public abstract class AbstractEEFControllerTests {
 	 */
 	protected IInterpreter interpreter;
 
+	/**
+	 * The editing context adapter.
+	 */
+	protected EditionContextAdapter contextAdapter;
+
 	@Before
 	public void setUp() {
 		this.resourceSet = new ResourceSetImpl();
@@ -79,8 +78,6 @@ public abstract class AbstractEEFControllerTests {
 		this.resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl()); //$NON-NLS-1$
 
 		AdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-		this.editingDomain = new TransactionalEditingDomainImpl(adapterFactory, this.resourceSet);
-
 		this.interpreter = new AQLInterpreter();
 	}
 
