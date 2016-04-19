@@ -23,6 +23,9 @@ import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFHyperlinkConditionalStyle;
+import org.eclipse.eef.EEFHyperlinkDescription;
+import org.eclipse.eef.EEFHyperlinkStyle;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
@@ -251,6 +254,17 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION: {
+			EEFHyperlinkDescription eefHyperlinkDescription = (EEFHyperlinkDescription) theEObject;
+			T result = caseEEFHyperlinkDescription(eefHyperlinkDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefHyperlinkDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR: {
 			EEFDynamicMappingFor eefDynamicMappingFor = (EEFDynamicMappingFor) theEObject;
 			T result = caseEEFDynamicMappingFor(eefDynamicMappingFor);
@@ -360,6 +374,17 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_HYPERLINK_STYLE: {
+			EEFHyperlinkStyle eefHyperlinkStyle = (EEFHyperlinkStyle) theEObject;
+			T result = caseEEFHyperlinkStyle(eefHyperlinkStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefHyperlinkStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case EefPackage.EEF_CUSTOM_WIDGET_STYLE: {
 			EEFCustomWidgetStyle eefCustomWidgetStyle = (EEFCustomWidgetStyle) theEObject;
 			T result = caseEEFCustomWidgetStyle(eefCustomWidgetStyle);
@@ -439,6 +464,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFRadioConditionalStyle(eefRadioConditionalStyle);
 			if (result == null) {
 				result = caseEEFConditionalStyle(eefRadioConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE: {
+			EEFHyperlinkConditionalStyle eefHyperlinkConditionalStyle = (EEFHyperlinkConditionalStyle) theEObject;
+			T result = caseEEFHyperlinkConditionalStyle(eefHyperlinkConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefHyperlinkConditionalStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -704,6 +740,21 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Hyperlink Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Hyperlink Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFHyperlinkDescription(EEFHyperlinkDescription object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -869,6 +920,21 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Hyperlink Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Hyperlink Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFHyperlinkStyle(EEFHyperlinkStyle object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -985,6 +1051,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFRadioConditionalStyle(EEFRadioConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Hyperlink Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Hyperlink Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFHyperlinkConditionalStyle(EEFHyperlinkConditionalStyle object) {
 		return null;
 	}
 

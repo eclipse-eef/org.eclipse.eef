@@ -142,6 +142,14 @@ public interface EefFactory extends EFactory {
 	EEFRadioDescription createEEFRadioDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Hyperlink Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Hyperlink Description</em>'.
+	 * @generated
+	 */
+	EEFHyperlinkDescription createEEFHyperlinkDescription();
+
+	/**
 	 * Returns a new object of class '<em>EEF Dynamic Mapping For</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Dynamic Mapping For</em>'.
@@ -223,6 +231,14 @@ public interface EefFactory extends EFactory {
 	EEFRadioStyle createEEFRadioStyle();
 
 	/**
+	 * Returns a new object of class '<em>EEF Hyperlink Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Hyperlink Style</em>'.
+	 * @generated
+	 */
+	EEFHyperlinkStyle createEEFHyperlinkStyle();
+
+	/**
 	 * Returns a new object of class '<em>EEF Custom Widget Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Custom Widget Style</em>'.
@@ -283,6 +299,15 @@ public interface EefFactory extends EFactory {
 	 * @generated
 	 */
 	EEFRadioConditionalStyle createEEFRadioConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Hyperlink Conditional Style</em>'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Hyperlink Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFHyperlinkConditionalStyle createEEFHyperlinkConditionalStyle();
 
 	/**
 	 * Returns a new object of class '<em>EEF Custom Widget Conditional Style</em>'. <!-- begin-user-doc --> <!--
