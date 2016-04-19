@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_5b08b59e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFReferenceLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-04-19T09:16:58Z",
+      "side": 1,
+      "message": "I had to add a\n\n  scrolledComposite.setExpandVertical(true);\n\nhere to see an actual list widget (at least recognizable as such) when having multiple values.",
+      "range": {
+        "startLine": 248,
+        "startChar": 2,
+        "endLine": 248,
+        "endChar": 46
+      },
+      "revId": "7c7e0dd2f21ea716fe5feb6980633870e9e5dfcf",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
