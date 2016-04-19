@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_5e098369",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "Why is the widget lifecycle manager modified with a review for the style of a group? I don\u0027t think that we should try to inherit or extends things before having discussed in details the extension/replacement after the release.\n\nI am also against having this public method here since there are only four public methods in this class (API):\n- createControls\n- aboutToBeShown\n- aboutToBeHidden\n- dispose\n\nAnd while I am not against having additional public methods, I don\u0027t think that this one is needed.",
+      "range": {
+        "startLine": 544,
+        "startChar": 1,
+        "endLine": 566,
+        "endChar": 2
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7ed1df3d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "Why are you creating another text style object?",
+      "range": {
+        "startLine": 164,
+        "startChar": 3,
+        "endLine": 164,
+        "endChar": 70
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_1ec9bb9c",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "huh... why super?",
+      "range": {
+        "startLine": 165,
+        "startChar": 3,
+        "endLine": 165,
+        "endChar": 61
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_bef9a7bb",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "Why is the text lifecycle manager modified for a review of the style of a group? And why the text lifecycle manager and not the label one or other ones?",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 191,
+        "endChar": 3
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_9ed4eb2f",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "why are the conditional styles of a text related to the group?",
+      "range": {
+        "startLine": 295,
+        "startChar": 56,
+        "endLine": 295,
+        "endChar": 61
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_3e06775c",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "group",
+      "range": {
+        "startLine": 652,
+        "startChar": 80,
+        "endLine": 652,
+        "endChar": 86
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_1ee0db02",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "group",
+      "range": {
+        "startLine": 658,
+        "startChar": 80,
+        "endLine": 658,
+        "endChar": 86
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_dee913f4",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "group",
+      "range": {
+        "startLine": 663,
+        "startChar": 75,
+        "endLine": 663,
+        "endChar": 81
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_beee07fb",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:22:03Z",
+      "side": 1,
+      "message": "group",
+      "range": {
+        "startLine": 668,
+        "startChar": 75,
+        "endLine": 668,
+        "endChar": 81
+      },
+      "revId": "b02dcdf48fac3d63ccf8984b645ebcb205bc719b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
