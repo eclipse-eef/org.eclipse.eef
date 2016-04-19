@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_1bc54da0",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:17:58Z",
+      "side": 1,
+      "message": "to remove",
+      "range": {
+        "startLine": 123,
+        "startChar": 2,
+        "endLine": 124,
+        "endChar": 98
+      },
+      "revId": "d34dd2c4bd9dfcf9a1f819ad4d337ab5f446da98",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_3b820958",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:17:58Z",
+      "side": 1,
+      "message": "If I understand this correctly, if the specifier as configured a hint for a text field, the text field will never be able to have the same value as the hint?\n\nIf I have a text field \"name\" with the hint \"John Doe\", nobody can be named \"John Doe\"?\n\nIn the first \"if\", you are testing that !text.getText().equals(hint) and just after you are testing the opposite. That seems odd.",
+      "range": {
+        "startLine": 198,
+        "startChar": 71,
+        "endLine": 201,
+        "endChar": 6
+      },
+      "revId": "d34dd2c4bd9dfcf9a1f819ad4d337ab5f446da98",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5b85155d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:17:58Z",
+      "side": 1,
+      "message": "Util.isBlank",
+      "range": {
+        "startLine": 215,
+        "startChar": 41,
+        "endLine": 215,
+        "endChar": 52
+      },
+      "revId": "d34dd2c4bd9dfcf9a1f819ad4d337ab5f446da98",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7b881176",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:17:58Z",
+      "side": 1,
+      "message": "Util.isBlank",
+      "range": {
+        "startLine": 233,
+        "startChar": 10,
+        "endLine": 233,
+        "endChar": 48
+      },
+      "revId": "d34dd2c4bd9dfcf9a1f819ad4d337ab5f446da98",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
