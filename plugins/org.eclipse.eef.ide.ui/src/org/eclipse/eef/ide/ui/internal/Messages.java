@@ -43,6 +43,30 @@ public final class Messages {
 	@TranslatableMessage
 	public static String AbstractEEFWidgetLifecycleManager_invalidSelectionType;
 
+	@TranslatableMessage
+	public static String EEFQuickFixWizard_windowTitle;
+
+	@TranslatableMessage
+	public static String EEFQuickFixWizard_applyQuickFix;
+
+	@TranslatableMessage
+	public static String EEFQuickFixPage_title;
+
+	@TranslatableMessage
+	public static String EEFQuickFixPage_description;
+
+	@TranslatableMessage
+	public static String EEFQuickFixPage_label;
+
+	@TranslatableMessage
+	public static String EEFValidationRulesPage_title;
+
+	@TranslatableMessage
+	public static String EEFValidationRulesPage_description;
+
+	@TranslatableMessage
+	public static String EEFValidationRulesPage_label;
+
 	// CHECKSTYLE:ON
 
 	/**

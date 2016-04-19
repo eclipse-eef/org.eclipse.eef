@@ -45,4 +45,29 @@ public interface Icons {
 	 * Down.
 	 */
 	String DOWN = "icons/full/down.gif"; //$NON-NLS-1$
+
+	/**
+	 * Quick fix.
+	 */
+	String QUICK_FIX = "icons/full/wizban/quick_fix.png"; //$NON-NLS-1$
+
+	/**
+	 * Info.
+	 */
+	String INFO = "icons/full/info.gif"; //$NON-NLS-1$
+
+	/**
+	 * Warning.
+	 */
+	String WARNING = "icons/full/warning.gif"; //$NON-NLS-1$
+
+	/**
+	 * Error.
+	 */
+	String ERROR = "icons/full/error.gif"; //$NON-NLS-1$
+
+	/**
+	 * Fix.
+	 */
+	String FIX = "icons/full/fix.gif"; //$NON-NLS-1$
 }

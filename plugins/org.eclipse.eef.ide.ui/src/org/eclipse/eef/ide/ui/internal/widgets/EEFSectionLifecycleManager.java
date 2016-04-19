@@ -22,8 +22,10 @@ import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
 import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
+import org.eclipse.eef.ide.ui.internal.widgets.quickfix.EEFMessageHyperlinkListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.ui.forms.events.IHyperlinkListener;
 
 /**
  * The lifecycle manager of the section.
@@ -48,6 +50,11 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	private List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
 
 	/**
+	 * The hyperlink listener.
+	 */
+	private IHyperlinkListener hyperlinkListener;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param eefPage
@@ -66,6 +73,8 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
 		super.createControl(parent, formContainer);
+
+		this.hyperlinkListener = new EEFMessageHyperlinkListener(formContainer.getShell());
 
 		this.controller = new EEFControllersFactory().createSectionController(this.eefPage.getDescription(), this.eefPage.getVariableManager(),
 				this.eefPage.getInterpreter());
@@ -89,6 +98,8 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
+
+		this.container.getForm().addMessageHyperlinkListener(this.hyperlinkListener);
 
 		for (ILifecycleManager lifecycleManager : this.lifecycleManagers) {
 			lifecycleManager.aboutToBeShown();
@@ -122,6 +133,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
 
+		this.container.getForm().removeMessageHyperlinkListener(this.hyperlinkListener);
 		this.container.getForm().getMessageManager().removeAllMessages();
 
 		for (ILifecycleManager lifecycleManager : this.lifecycleManagers) {

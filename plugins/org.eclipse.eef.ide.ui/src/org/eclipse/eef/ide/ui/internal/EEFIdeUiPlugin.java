@@ -124,6 +124,10 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 			this.imageRegistry.put(Icons.UNSET, this.getImageDescriptor(Icons.UNSET));
 			this.imageRegistry.put(Icons.UP, this.getImageDescriptor(Icons.UP));
 			this.imageRegistry.put(Icons.DOWN, this.getImageDescriptor(Icons.DOWN));
+			this.imageRegistry.put(Icons.INFO, this.getImageDescriptor(Icons.INFO));
+			this.imageRegistry.put(Icons.WARNING, this.getImageDescriptor(Icons.WARNING));
+			this.imageRegistry.put(Icons.ERROR, this.getImageDescriptor(Icons.ERROR));
+			this.imageRegistry.put(Icons.FIX, this.getImageDescriptor(Icons.FIX));
 		}
 
 		/**
@@ -159,7 +163,7 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 		 *            The path of the image in the bundle
 		 * @return The image descriptor of the image
 		 */
-		private ImageDescriptor getImageDescriptor(final String path) {
+		public ImageDescriptor getImageDescriptor(final String path) {
 			return AbstractUIPlugin.imageDescriptorFromPlugin(EEFIdeUiPlugin.PLUGIN_ID, path);
 		}
 

@@ -40,6 +40,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.ScrollBar;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
@@ -844,6 +845,16 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	@Override
 	public Form getForm() {
 		return this.form;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.common.ui.api.IEEFFormContainer#getShell()
+	 */
+	@Override
+	public Shell getShell() {
+		return this.getSite().getShell();
 	}
 
 }

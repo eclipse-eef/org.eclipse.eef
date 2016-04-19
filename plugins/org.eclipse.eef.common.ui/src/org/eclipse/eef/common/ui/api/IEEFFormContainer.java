@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.common.ui.api;
 
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.forms.widgets.Form;
 
 /**
@@ -25,6 +26,13 @@ public interface IEEFFormContainer {
 	 * @return The form
 	 */
 	Form getForm();
+
+	/**
+	 * Returns the shell used by the container.
+	 * 
+	 * @return The shell used by the container
+	 */
+	Shell getShell();
 
 	/**
 	 * Returns the widget factory.

@@ -157,9 +157,10 @@ public abstract class AbstractEEFController implements IEEFController {
 			if (isValid) {
 				validationRuleResults.add(new ValidationRuleResult(validationRule));
 			} else {
+				Eval eval = this.newEval();
 				String messageExpression = validationRule.getMessageExpression();
-				String message = this.newEval().get(messageEAttribute, messageExpression, String.class);
-				validationRuleResults.add(new InvalidValidationRuleResult(validationRule, message, null, validationRule.getSeverity().getValue()));
+				String message = eval.get(messageEAttribute, messageExpression, String.class);
+				validationRuleResults.add(new InvalidValidationRuleResult(validationRule, message, eval, validationRule.getSeverity().getValue()));
 			}
 		}
 
