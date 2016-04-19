@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_9e26abeb",
+        "filename": "plugins/org.eclipse.eef.common.ui/src/org/eclipse/eef/common/ui/api/EEFWidgetFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "huh?",
+      "range": {
+        "startLine": 244,
+        "startChar": 2,
+        "endLine": 244,
+        "endChar": 3
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_3e58375d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFButtonLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this need to be done in the refresh instead of during the creation of the controls?",
+      "range": {
+        "startLine": 108,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 3
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5e5b4359",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFCheckboxLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this need to be done in the refresh instead of during the creation of the controls?",
+      "range": {
+        "startLine": 100,
+        "startChar": 2,
+        "endLine": 102,
+        "endChar": 3
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7e5e3f4a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFRadioLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this need to be done in the refresh instead of during the creation of the controls?",
+      "range": {
+        "startLine": 123,
+        "startChar": 2,
+        "endLine": 125,
+        "endChar": 3
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_9e614b06",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFRadioLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Why? If the control is not enabled, the user cannot modified this but the value can still be updated remotely (for example) or thanks to a computed value.",
+      "range": {
+        "startLine": 232,
+        "startChar": 9,
+        "endLine": 232,
+        "endChar": 23
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_be6b67e3",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFRadioLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Why? If the control is not enabled, the user cannot modified this but the value can still be updated remotely (for example) or thanks to a computed value.",
+      "range": {
+        "startLine": 249,
+        "startChar": 9,
+        "endLine": 249,
+        "endChar": 24
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_de66731a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this need to be done in the refresh instead of during the creation of the controls?",
+      "range": {
+        "startLine": 126,
+        "startChar": 2,
+        "endLine": 128,
+        "endChar": 3
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_fe716fcf",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Same as with the radio",
+      "range": {
+        "startLine": 235,
+        "startChar": 9,
+        "endLine": 235,
+        "endChar": 24
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_1e6d3bf5",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Same as with the radio",
+      "range": {
+        "startLine": 252,
+        "startChar": 9,
+        "endLine": 252,
+        "endChar": 24
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_3e3f57e4",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this need to be done in the refresh instead of during the creation of the controls?",
+      "range": {
+        "startLine": 121,
+        "startChar": 2,
+        "endLine": 124,
+        "endChar": 3
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5e426367",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-19T09:20:35Z",
+      "side": 1,
+      "message": "I wonder if setting this up on the widget is a good solution. What would it look like for a label?",
+      "range": {
+        "startLine": 247,
+        "startChar": 4,
+        "endLine": 251,
+        "endChar": 26
+      },
+      "revId": "0da063ad107cf71da29368130c1e5084b27ea45c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
