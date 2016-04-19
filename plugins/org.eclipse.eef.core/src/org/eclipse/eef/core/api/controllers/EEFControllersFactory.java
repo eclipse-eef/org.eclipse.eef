@@ -13,6 +13,7 @@ package org.eclipse.eef.core.api.controllers;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
@@ -21,6 +22,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.internal.controllers.EEFButtonController;
 import org.eclipse.eef.core.internal.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.internal.controllers.EEFGroupController;
+import org.eclipse.eef.core.internal.controllers.EEFHyperlinkController;
 import org.eclipse.eef.core.internal.controllers.EEFLabelController;
 import org.eclipse.eef.core.internal.controllers.EEFRadioController;
 import org.eclipse.eef.core.internal.controllers.EEFSectionController;
@@ -171,5 +173,23 @@ public class EEFControllersFactory {
 	 */
 	public IEEFSectionController createSectionController(EEFPageDescription description, IVariableManager variableManager, IInterpreter interpreter) {
 		return new EEFSectionController(variableManager, interpreter, description);
+	}
+
+	/**
+	 * Creates a new hyperlink controller.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param editingDomain
+	 *            The editing domain
+	 * @return A hyperlink controller
+	 */
+	public IEEFHyperlinkController createHyperlinkController(EEFHyperlinkDescription description, IVariableManager variableManager,
+			IInterpreter interpreter, TransactionalEditingDomain editingDomain) {
+		return new EEFHyperlinkController(description, variableManager, interpreter, editingDomain);
 	}
 }

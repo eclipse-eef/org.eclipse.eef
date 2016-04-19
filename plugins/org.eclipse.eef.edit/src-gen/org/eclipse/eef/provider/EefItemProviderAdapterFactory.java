@@ -396,6 +396,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFHyperlinkDescriptionItemProvider eefHyperlinkDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFHyperlinkDescriptionAdapter() {
+		if (eefHyperlinkDescriptionItemProvider == null) {
+			eefHyperlinkDescriptionItemProvider = new EEFHyperlinkDescriptionItemProvider(this);
+		}
+
+		return eefHyperlinkDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -625,9 +648,32 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	protected EEFHyperlinkStyleItemProvider eefHyperlinkStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFHyperlinkStyleAdapter() {
+		if (eefHyperlinkStyleItemProvider == null) {
+			eefHyperlinkStyleItemProvider = new EEFHyperlinkStyleItemProvider(this);
+		}
+
+		return eefHyperlinkStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCustomWidgetStyleItemProvider eefCustomWidgetStyleItemProvider;
@@ -783,6 +829,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 
 		return eefRadioConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkConditionalStyle} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFHyperlinkConditionalStyleItemProvider eefHyperlinkConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFHyperlinkConditionalStyleAdapter() {
+		if (eefHyperlinkConditionalStyleItemProvider == null) {
+			eefHyperlinkConditionalStyleItemProvider = new EEFHyperlinkConditionalStyleItemProvider(this);
+		}
+
+		return eefHyperlinkConditionalStyleItemProvider;
 	}
 
 	/**
@@ -950,6 +1019,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		if (eefRadioDescriptionItemProvider != null) {
 			eefRadioDescriptionItemProvider.dispose();
 		}
+		if (eefHyperlinkDescriptionItemProvider != null) {
+			eefHyperlinkDescriptionItemProvider.dispose();
+		}
 		if (eefDynamicMappingForItemProvider != null) {
 			eefDynamicMappingForItemProvider.dispose();
 		}
@@ -980,6 +1052,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		if (eefRadioStyleItemProvider != null) {
 			eefRadioStyleItemProvider.dispose();
 		}
+		if (eefHyperlinkStyleItemProvider != null) {
+			eefHyperlinkStyleItemProvider.dispose();
+		}
 		if (eefCustomWidgetStyleItemProvider != null) {
 			eefCustomWidgetStyleItemProvider.dispose();
 		}
@@ -1000,6 +1075,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory implements 
 		}
 		if (eefRadioConditionalStyleItemProvider != null) {
 			eefRadioConditionalStyleItemProvider.dispose();
+		}
+		if (eefHyperlinkConditionalStyleItemProvider != null) {
+			eefHyperlinkConditionalStyleItemProvider.dispose();
 		}
 		if (eefCustomWidgetConditionalStyleItemProvider != null) {
 			eefCustomWidgetConditionalStyleItemProvider.dispose();
