@@ -114,4 +114,23 @@ public final class EEFExpressionUtils {
 			// prevent instantiation
 		}
 	}
+
+	/**
+	 * Utility class containing the constants related to the EEFHyperlink.
+	 *
+	 * @author mbats
+	 */
+	public final class EEFHyperlink {
+		/**
+		 * The name of the variable selection.
+		 */
+		public static final String SELECTION = "selection"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFHyperlink() {
+			// prevent instantiation
+		}
+	}
 }

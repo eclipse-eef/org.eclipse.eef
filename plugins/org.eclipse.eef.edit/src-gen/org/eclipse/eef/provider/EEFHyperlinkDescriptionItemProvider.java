@@ -11,38 +11,30 @@ package org.eclipse.eef.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFDynamicMappingIf} object. <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFHyperlinkDescription} object. <!-- begin-user-doc
+ * --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFHyperlinkDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public EEFDynamicMappingIfItemProvider(AdapterFactory adapterFactory) {
+	public EEFHyperlinkDescriptionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,26 +48,44 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPredicateExpressionPropertyDescriptor(object);
+			addValueExpressionPropertyDescriptor(object);
+			addOnClickExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Predicate Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
+	 * This adds a property descriptor for the Value Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected void addPredicateExpressionPropertyDescriptor(Object object) {
+	protected void addValueExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 		.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFDynamicMappingIf_predicateExpression_feature"), //$NON-NLS-1$
+				getString("_UI_EEFHyperlinkDescription_valueExpression_feature"), //$NON-NLS-1$
 				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingIf_predicateExpression_feature", "_UI_EEFDynamicMappingIf_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION, true, false, false,
+						"_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkDescription_valueExpression_feature", "_UI_EEFHyperlinkDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the On Click Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 */
+	protected void addOnClickExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+		.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EEFHyperlinkDescription_onClickExpression_feature"), //$NON-NLS-1$
+				getString(
+						"_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkDescription_onClickExpression_feature", "_UI_EEFHyperlinkDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -91,7 +101,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET);
+			childrenFeatures.add(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__STYLE);
+			childrenFeatures.add(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return childrenFeatures;
 	}
@@ -110,13 +121,13 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This returns EEFDynamicMappingIf.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns EEFHyperlinkDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFDynamicMappingIf")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFHyperlinkDescription")); //$NON-NLS-1$
 	}
 
 	/**
@@ -136,9 +147,9 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EEFDynamicMappingIf) object).getPredicateExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingIf_type") : //$NON-NLS-1$
-			getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EEFHyperlinkDescription) object).getIdentifier();
+		return label == null || label.length() == 0 ? getString("_UI_EEFHyperlinkDescription_type") : //$NON-NLS-1$
+			getString("_UI_EEFHyperlinkDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -152,11 +163,13 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EEFDynamicMappingIf.class)) {
-		case EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION:
+		switch (notification.getFeatureID(EEFHyperlinkDescription.class)) {
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION:
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET:
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE:
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -173,39 +186,11 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFTextDescription()));
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__STYLE,
+				EefFactory.eINSTANCE.createEEFHyperlinkStyle()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFLabelDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFButtonDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFCheckboxDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFSelectDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFRadioDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
-
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return EefEditPlugin.INSTANCE;
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES,
+				EefFactory.eINSTANCE.createEEFHyperlinkConditionalStyle()));
 	}
 
 }

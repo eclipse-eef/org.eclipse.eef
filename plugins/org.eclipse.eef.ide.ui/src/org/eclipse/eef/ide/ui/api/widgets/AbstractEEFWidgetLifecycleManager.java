@@ -418,7 +418,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *            Default font data
 	 * @return Font name
 	 */
-	private String getFontName(String fontNameExpression, EAttribute eAttribute, FontData defaultFontData) {
+	protected String getFontName(String fontNameExpression, EAttribute eAttribute, FontData defaultFontData) {
 		String fontName = defaultFontData.getName();
 		Eval eval = new Eval(interpreter, variableManager);
 		if (fontNameExpression != null && !fontNameExpression.isEmpty()) {
@@ -442,7 +442,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *            Default font data
 	 * @return Font size
 	 */
-	private int getFontSize(String fontSizeExpression, EAttribute eAttribute, FontData defaultFontData) {
+	protected int getFontSize(String fontSizeExpression, EAttribute eAttribute, FontData defaultFontData) {
 		int fontSize = defaultFontData.getHeight();
 		if (fontSizeExpression != null && !fontSizeExpression.isEmpty()) {
 			Eval eval = new Eval(interpreter, variableManager);
@@ -467,7 +467,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *            The text
 	 * @return Font style
 	 */
-	private int getFontStyle(String fontStyleExpression, EAttribute eAttribute, FontData defaultFontData, StyledText text) {
+	protected int getFontStyle(String fontStyleExpression, EAttribute eAttribute, FontData defaultFontData, StyledText text) {
 		int fontStyle = defaultFontData.getStyle();
 		if (fontStyleExpression != null && !fontStyleExpression.isEmpty()) {
 			Eval eval = new Eval(interpreter, variableManager);

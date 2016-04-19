@@ -22,6 +22,9 @@ import org.eclipse.eef.EEFCustomWidgetStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFHyperlinkConditionalStyle;
+import org.eclipse.eef.EEFHyperlinkDescription;
+import org.eclipse.eef.EEFHyperlinkStyle;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
@@ -118,6 +121,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFSelectDescription();
 		case EefPackage.EEF_RADIO_DESCRIPTION:
 			return createEEFRadioDescription();
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION:
+			return createEEFHyperlinkDescription();
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR:
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
@@ -138,6 +143,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFSelectStyle();
 		case EefPackage.EEF_RADIO_STYLE:
 			return createEEFRadioStyle();
+		case EefPackage.EEF_HYPERLINK_STYLE:
+			return createEEFHyperlinkStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_STYLE:
 			return createEEFCustomWidgetStyle();
 		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE:
@@ -152,6 +159,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFSelectConditionalStyle();
 		case EefPackage.EEF_RADIO_CONDITIONAL_STYLE:
 			return createEEFRadioConditionalStyle();
+		case EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE:
+			return createEEFHyperlinkConditionalStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE:
 			return createEEFCustomWidgetConditionalStyle();
 		default:
@@ -349,6 +358,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public EEFHyperlinkDescription createEEFHyperlinkDescription() {
+		EEFHyperlinkDescriptionImpl eefHyperlinkDescription = new EEFHyperlinkDescriptionImpl();
+		return eefHyperlinkDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFDynamicMappingFor createEEFDynamicMappingFor() {
 		EEFDynamicMappingForImpl eefDynamicMappingFor = new EEFDynamicMappingForImpl();
 		return eefDynamicMappingFor;
@@ -459,6 +479,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public EEFHyperlinkStyle createEEFHyperlinkStyle() {
+		EEFHyperlinkStyleImpl eefHyperlinkStyle = new EEFHyperlinkStyleImpl();
+		return eefHyperlinkStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFCustomWidgetStyle createEEFCustomWidgetStyle() {
 		EEFCustomWidgetStyleImpl eefCustomWidgetStyle = new EEFCustomWidgetStyleImpl();
 		return eefCustomWidgetStyle;
@@ -528,6 +559,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFRadioConditionalStyle createEEFRadioConditionalStyle() {
 		EEFRadioConditionalStyleImpl eefRadioConditionalStyle = new EEFRadioConditionalStyleImpl();
 		return eefRadioConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFHyperlinkConditionalStyle createEEFHyperlinkConditionalStyle() {
+		EEFHyperlinkConditionalStyleImpl eefHyperlinkConditionalStyle = new EEFHyperlinkConditionalStyleImpl();
+		return eefHyperlinkConditionalStyle;
 	}
 
 	/**
