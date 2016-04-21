@@ -106,7 +106,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			gridData.minimumHeight = lineCount * text.getLineHeight();
 			this.text.setLayoutData(gridData);
 		} else {
-			this.text = widgetFactory.createStyledText(parent, SWT.NONE);
+			this.text = widgetFactory.createStyledText(parent, SWT.SINGLE);
 			this.text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		}
 
