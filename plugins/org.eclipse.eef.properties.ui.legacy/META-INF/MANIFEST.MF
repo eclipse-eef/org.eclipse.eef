@@ -15,4 +15,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Export-Package: org.eclipse.eef.properties.ui.legacy.internal;version="1.6.0";x-internal:=true,
- org.eclipse.eef.properties.ui.legacy.internal.extension;version="1.6.0";x-internal:=true
+ org.eclipse.eef.properties.ui.legacy.internal.eef2legacy;version="1.6.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.legacy.internal.extension;version="1.6.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.legacy.internal.extension.impl;version="1.6.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.legacy.internal.legacy2eef;version="1.6.0";x-internal:=true

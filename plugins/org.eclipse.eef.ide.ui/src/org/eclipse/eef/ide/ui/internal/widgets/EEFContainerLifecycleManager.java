@@ -23,7 +23,7 @@ import org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
-import org.eclipse.eef.ide.ui.api.ILifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.layout.GridData;
@@ -35,7 +35,7 @@ import org.eclipse.swt.widgets.Composite;
  *
  * @author sbegaudeau
  */
-public class EEFContainerLifecycleManager implements ILifecycleManager {
+public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 
 	/**
 	 * The variable manager.
@@ -60,7 +60,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	/**
 	 * The lifecycle managers of the child of the container.
 	 */
-	private List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+	private List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
 	/**
 	 * The constructor.
@@ -85,7 +85,7 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
@@ -132,11 +132,11 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeShown()
 	 */
 	@Override
 	public void aboutToBeShown() {
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.aboutToBeShown();
 		}
 	}
@@ -144,11 +144,11 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#refresh()
 	 */
 	@Override
 	public void refresh() {
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.refresh();
 		}
 	}
@@ -156,11 +156,11 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.aboutToBeHidden();
 		}
 	}
@@ -168,11 +168,11 @@ public class EEFContainerLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#dispose()
 	 */
 	@Override
 	public void dispose() {
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.dispose();
 		}
 	}

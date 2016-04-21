@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-   <extension-point id="eefViewDescriptionProvider" name="%PluginXML_eefViewDescriptionProviderExtensionPointName" schema="schema/eefViewDescriptionProvider.exsd"/>
-   <extension-point id="interpreterProvider" name="%PluginXML_interpreterProviderExtensionPointName" schema="schema/interpreterProvider.exsd"/>
-
-</plugin>
