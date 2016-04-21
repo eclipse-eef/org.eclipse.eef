@@ -18,11 +18,11 @@ import java.util.List;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.common.api.utils.Util;
-import org.eclipse.eef.core.api.EEFDomainClassTester;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.IEEFDomainClassTester;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.emf.ecore.EObject;
@@ -63,7 +63,7 @@ public class EEFPageImpl implements EEFPage {
 	/**
 	 * The domain class tester.
 	 */
-	private EEFDomainClassTester domainClassTester;
+	private IEEFDomainClassTester domainClassTester;
 
 	/**
 	 * Indicates if the description of this page has been instantiated multiple times.
@@ -87,7 +87,7 @@ public class EEFPageImpl implements EEFPage {
 	 *            Indicates if the description from this page has been instantiated multiple times
 	 */
 	public EEFPageImpl(EEFView eefView, EEFPageDescription eefPageDescription, IVariableManager variableManager, IInterpreter interpreter,
-			EEFDomainClassTester domainClassTester, boolean isUnique) {
+			IEEFDomainClassTester domainClassTester, boolean isUnique) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefView = eefView;
@@ -111,8 +111,7 @@ public class EEFPageImpl implements EEFPage {
 				new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
 					@Override
 					public void apply(Object value) {
-						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(),
-								eefView.getDescription().getEPackages(), domainClassTester);
+						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester);
 						Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
 						Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
 						for (EObject eObject : eObjects) {
