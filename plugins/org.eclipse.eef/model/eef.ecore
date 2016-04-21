@@ -31,7 +31,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ePackages" upperBound="-1"
-        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFPageDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
