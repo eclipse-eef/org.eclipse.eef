@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_f3851d91",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-21T10:01:35Z",
+      "side": 1,
+      "message": "I disagree with this behavior. If the user types exactly what is suggested by the hint, it looks like everything work but it does not. I think that the hint should be visible if we have nothing in the text field but otherwise it should not interact or restrict with the user input.",
+      "range": {
+        "startLine": 196,
+        "startChar": 75,
+        "endLine": 196,
+        "endChar": 103
+      },
+      "revId": "14a2913c56b8a9d6aee47b409534074ba4847694",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_130c49cb",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-21T10:01:35Z",
+      "side": 1,
+      "message": "I just thought about something, this setText will trigger a change in the model because of the controller. Same with the \"setText\" in the \"addFocusListener\".\n\nAfter a couple of tests, clicking in and out of a text field will set the value of the model to \"\" and then to the value of the hint. It tries modifies my diagram just by clicking in and out of the text field!\n\nGiven the fact that we do not have a Text widget and thus access to org.eclipse.swt.widgets.Text.setMessage(String), I am not sure that we can safely realize this feature at all.",
+      "range": {
+        "startLine": 208,
+        "startChar": 3,
+        "endLine": 221,
+        "endChar": 4
+      },
+      "revId": "14a2913c56b8a9d6aee47b409534074ba4847694",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
