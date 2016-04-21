@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.core.api;
+package org.eclipse.eef.core.internal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.core.api.IEEFDomainClassTester;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
@@ -27,24 +28,34 @@ import org.eclipse.emf.ecore.EcorePackage;
  *
  * @author sbegaudeau
  */
-public class EEFDomainClassTester {
+public class EEFDomainClassTester implements IEEFDomainClassTester {
 	/**
 	 * The pattern used to match the separator used by both Sirius and AQL.
 	 */
 	private static final Pattern SEPARATOR = Pattern.compile("(::?|\\.)"); //$NON-NLS-1$
 
 	/**
-	 * Indicates if the given eObject matches the given domainClass.
+	 * The EPackages.
+	 */
+	private List<EPackage> ePackages = new ArrayList<EPackage>();
+
+	/**
+	 * The constructor.
 	 *
 	 * @param ePackages
-	 *            The EPackages used to find the EClasses represented by the given domainClass
-	 * @param eObject
-	 *            The EObject
-	 * @param domainClass
-	 *            The domain class
-	 * @return <code>true</code> if the eObject matches the given domain, <code>false</code> otherwise
+	 *            The EPackage used for the match
 	 */
-	public boolean eInstanceOf(List<EPackage> ePackages, EObject eObject, String domainClass) {
+	public EEFDomainClassTester(List<EPackage> ePackages) {
+		this.ePackages.addAll(ePackages);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.IEEFDomainClassTester#eInstanceOf(org.eclipse.emf.ecore.EObject, java.lang.String)
+	 */
+	@Override
+	public boolean eInstanceOf(EObject eObject, String domainClass) {
 		List<EPackage> ePackagesToConsider = ePackages;
 		if (!ePackagesToConsider.contains(EcorePackage.eINSTANCE)) {
 			ePackagesToConsider.add(EcorePackage.eINSTANCE);
@@ -81,7 +92,7 @@ public class EEFDomainClassTester {
 	/**
 	 * Returns all the EClasses from the given EPackages matching the given packageName with the given className.
 	 *
-	 * @param ePackages
+	 * @param ePackagesToConsider
 	 *            The EPackages to consider
 	 * @param packageName
 	 *            The name of the package
@@ -89,9 +100,9 @@ public class EEFDomainClassTester {
 	 *            The name of the class
 	 * @return The list of EClass matching the given parameters
 	 */
-	private List<EClass> getEClasses(List<EPackage> ePackages, String packageName, String className) {
+	private List<EClass> getEClasses(List<EPackage> ePackagesToConsider, String packageName, String className) {
 		List<EClass> eClasses = new ArrayList<EClass>();
-		for (EPackage ePackage : ePackages) {
+		for (EPackage ePackage : ePackagesToConsider) {
 			if (!Util.isBlank(packageName) && !Util.isBlank(className) && ePackage.getName().equals(packageName)) {
 				EClassifier eClassifier = ePackage.getEClassifier(className);
 				if (eClassifier instanceof EClass) {

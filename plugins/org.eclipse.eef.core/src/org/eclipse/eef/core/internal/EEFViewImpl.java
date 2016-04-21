@@ -19,12 +19,12 @@ import java.util.List;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.common.api.utils.Util;
-import org.eclipse.eef.core.api.EEFDomainClassTester;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.core.api.IEEFDomainClassTester;
 import org.eclipse.eef.core.api.InputDescriptor;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
@@ -66,7 +66,7 @@ public class EEFViewImpl implements EEFView {
 	/**
 	 * The domain class tester.
 	 */
-	private EEFDomainClassTester domainClassTester;
+	private IEEFDomainClassTester domainClassTester;
 
 	/**
 	 * The constructor.
@@ -83,7 +83,7 @@ public class EEFViewImpl implements EEFView {
 	 *            The domain class tester
 	 */
 	public EEFViewImpl(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter, EEFDomainClassTester domainClassTester) {
+			EditingContextAdapter contextAdapter, IEEFDomainClassTester domainClassTester) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
 		this.eefViewDescription = eefViewDescription;
@@ -109,8 +109,7 @@ public class EEFViewImpl implements EEFView {
 				new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
 					@Override
 					public void apply(Object value) {
-						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(),
-								eefViewDescription.getEPackages(), domainClassTester);
+						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester);
 						Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
 						Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
 

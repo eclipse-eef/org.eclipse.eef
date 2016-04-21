@@ -11,6 +11,7 @@
 package org.eclipse.eef.core.api;
 
 import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.core.internal.EEFDomainClassTester;
 import org.eclipse.eef.core.internal.EEFViewImpl;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -38,7 +39,8 @@ public class EEFViewFactory {
 	 */
 	public EEFView createEEFView(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
 			EditingContextAdapter contextAdapter, InputDescriptor input) {
-		return this.createEEFView(eefViewDescription, variableManager, interpreter, contextAdapter, new EEFDomainClassTester(), input);
+		return this.createEEFView(eefViewDescription, variableManager, interpreter, contextAdapter,
+				new EEFDomainClassTester(eefViewDescription.getEPackages()), input);
 	}
 
 	/**
@@ -59,7 +61,7 @@ public class EEFViewFactory {
 	 * @return The {@link EEFView} fully initialized
 	 */
 	public EEFView createEEFView(EEFViewDescription eefViewDescription, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter, EEFDomainClassTester domainClassTester, InputDescriptor input) {
+			EditingContextAdapter contextAdapter, IEEFDomainClassTester domainClassTester, InputDescriptor input) {
 		EEFView eefView = new EEFViewImpl(eefViewDescription, variableManager, interpreter, contextAdapter, domainClassTester);
 		eefView.setInput(input);
 		eefView.initialize();
