@@ -17,7 +17,6 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
 import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
-import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.IMessageManager;
@@ -27,7 +26,7 @@ import org.eclipse.ui.forms.IMessageManager;
  *
  * @author sbegaudeau
  */
-public abstract class AbstractEEFLifecycleManager implements ILifecycleManager {
+public abstract class AbstractEEFLifecycleManager implements IEEFLifecycleManager {
 
 	/**
 	 * The form container.
@@ -37,7 +36,7 @@ public abstract class AbstractEEFLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
@@ -48,7 +47,7 @@ public abstract class AbstractEEFLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeShown()
 	 */
 	@Override
 	public void aboutToBeShown() {
@@ -95,7 +94,7 @@ public abstract class AbstractEEFLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#refresh()
 	 */
 	@Override
 	public void refresh() {
@@ -105,7 +104,7 @@ public abstract class AbstractEEFLifecycleManager implements ILifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {

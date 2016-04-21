@@ -94,7 +94,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeShown()
 	 */
 	@Override
 	public void aboutToBeShown() {
@@ -159,7 +159,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {
@@ -170,7 +170,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#dispose()
 	 */
 	@Override
 	protected IEEFWidgetController getController() {

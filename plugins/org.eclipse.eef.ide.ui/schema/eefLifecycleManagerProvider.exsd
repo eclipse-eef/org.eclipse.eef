@@ -6,7 +6,7 @@
          <meta.schema plugin="org.eclipse.eef.ide.ui" id="eefLifecycleManagerProvider" name="EEF Lifecycle Manager Provider"/>
       </appinfo>
       <documentation>
-         Provides an EEF lifecycle manager which can be used by custom widgets.
+         This extension point allows the contribution of an &lt;code&gt;org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider&lt;/code&gt; which can be used to create an instance of &lt;code&gt;org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager&lt;/code&gt; for the description of some controls. With this mechanism, you can not only provide the compulsory lifecycle manager of a custom widget but you can also replace the default lifecycle manager of any widget or container which gives you the ability to change the behavior and appearance of each part of the user interface (excluding groups and pages).
       </documentation>
    </annotation>
 
@@ -52,31 +52,31 @@
          <attribute name="id" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The identifier of the contribution.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="label" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The label of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="description" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The description of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The implementation of the IEEFLifecycleManagerProvider.
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":org.eclipse.eef.ide.ui.api.IEEFLifecycleManagerProvider"/>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider"/>
                </appinfo>
             </annotation>
          </attribute>
@@ -88,7 +88,7 @@
          <meta.section type="since"/>
       </appinfo>
       <documentation>
-         1.6.0
+         This extension point has been available since Eclipse EEF 1.6.0 (Eclipse Neon release in June 2016).
       </documentation>
    </annotation>
 
@@ -97,7 +97,67 @@
          <meta.section type="examples"/>
       </appinfo>
       <documentation>
-         [Enter extension point usage example here.]
+         &lt;pre&gt;
+&lt;extension
+      point=&quot;org.eclipse.eef.ide.ui.eefLifecycleManagerProvider&quot;&gt;
+   &lt;descriptor
+         class=&quot;org.eclipse.eef.sample.internal.extensions.SampleLifecycleManagerProvider&quot;
+         description=&quot;Provides EEF Lifecycle Managers&quot;
+         id=&quot;org.eclipse.eef.sample.eefLifecycleManagerProvider&quot;
+         label=&quot;EEF Sample Lifecycle Manager Provider&quot;&gt;
+   &lt;/descriptor&gt;
+&lt;/extension&gt;
+&lt;/pre&gt;
+Example of IEEFLifecycleManagerProvider contribution. In this example, we are providing a contribution to provider an IEEFLifecycleManager for a custom widget description. Once EEF has retrieved the description of the user interface to create, it will navigate in this description in order to build the necessary widgets and containers. For each description of containers or widgets found, it will ask the IEEFLifecycleManagerProviders registered if they can handle the description. The first lifecycle manager provider which can handle the given description will thus be used to create the lifecycle manager for this description using the whole available context. The lifecycle manager returned will have the following responsibilities:
+&lt;ul&gt;
+  &lt;li&gt;Creation of the SWT widgets for the description - IEEFLifecycleManager#createControls(...)&lt;/li&gt;
+  &lt;li&gt;Registration of the listeners between the widgets - IEEFLifecycleManager#aboutToBeShown(...)&lt;/li&gt;
+  &lt;li&gt;Refresh of the widgets - IEEFLifecycleManager#refresh(...)&lt;/li&gt;
+  &lt;li&gt;Unregistration of the listeners - IEEFLifecycleManager#aboutToBeDisposed(...)&lt;/li&gt;
+  &lt;li&gt;Removal of all additional resources - IEEFLifecycleManager#dispose(...)&lt;/li&gt;
+&lt;/ul&gt;
+In order to perform those duties, the architecture of EEF encourages the creator of an IEEFLifecycleManager to separate the user interface-related behavior from the business behavior by using a controller to handle the business part. The controller should implement &lt;code&gt;org.eclipse.eef.core.api.controllers.IEEFController&lt;/code&gt; in order to perform basic task in a similar fashion as other controllers. There are several abstract classes available in order to build a new controller quite easily:
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;org.eclipse.eef.core.api.controllers.AbstractEEFController&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;org.eclipse.eef.core.api.controllers.AbstractEEFCustomWidgetController&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+The AbstractEEFController provides support for the validation and the refresh. The AbstractEEFWidgetController, which extends the AbstractEEFController, adds support for the refresh of the label and the help of the widgets and finally the AbstractEEFCustomWidgetController, which extends the AbstractEEFWidgetController, adds on top of that utility methods for the execution of command expressions.
+&lt;pre&gt;
+package org.eclipse.eef.sample.internal.extensions;
+
+import org.eclipse.eef.EEFControlDescription;
+import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+
+public class SampleLifecycleManagerProvider implements IEEFLifecycleManagerProvider {
+
+    private static final String DESCRIPTION_IDENTIFIER = &quot;org.eclipse.eef.sample.customwidget&quot;;
+
+    @Override
+    public boolean canHandle(EEFControlDescription controlDescription) {
+        // Only handle the control with our description
+        return DESCRIPTION_IDENTIFIER.equals(controlDescription.getIdentifier());
+    }
+
+    @Override
+    public IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription, IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter contextAdapter) {
+        // Returns a lifecycle manager for the control supported
+        return new SampleLifecycleManager(controlDescription, variableManager, interpreter, contextAdapter);
+    }
+
+}
+&lt;/pre&gt;
+This example requires at least the following dependencies:
+&lt;ul&gt;
+  &lt;li&gt;org.eclipse.sirius.common.interpreter&lt;/li&gt;
+  &lt;li&gt;org.eclipse.eef&lt;/li&gt;
+  &lt;li&gt;org.eclipse.eef.core&lt;/li&gt;
+  &lt;li&gt;org.eclipse.eef.ide.ui&lt;/li&gt;
+&lt;/ul&gt;
       </documentation>
    </annotation>
 
@@ -106,7 +166,7 @@
          <meta.section type="apiinfo"/>
       </appinfo>
       <documentation>
-         [Enter API information here.]
+         The IEEFLifecycleManagerProvider allows the contribution of an IEEFLifecycleManager for a custm widget or the replacement of a default IEEFLifecycleManager for any widget or container.
       </documentation>
    </annotation>
 
@@ -115,9 +175,29 @@
          <meta.section type="implementation"/>
       </appinfo>
       <documentation>
-         [Enter information about supplied implementation of this extension point.]
+         EEF does not supply directly any implementation of the &lt;code&gt;org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider&lt;/code&gt; but you can find an example in the sample project with the implementation of a custom widget, the color picker.
+
+While we do not have any implementation for the lifecycle manager provider, there are several abstract implementations of &lt;code&gt;org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager&lt;/code&gt; are provided by this plugin:
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+The class AbstractEEFLifecycleManager provides the support for validation and refresh of the controller automatically. In order to subclass it, you will have to provide a subclass of org.eclipse.swt.widgets.Control which will be used in order to &quot;attach&quot; the validation icons in the user interface. The class AbstractEEFWidgetLifecycleManager extends the class AbstractEEFLifecycleManager and as a result it also provides support for the validation but on top of that it brings support for the label and help widgets. By subclassing AbstractEEFWidgetLifecycleManager, your main responsibility will be the creation of the &quot;main control&quot; of your widget. It does not have to be &quot;one&quot; SWT control only. If you have access to the EEF source code, you can also look for the subclasses of those lifecycle managers to see the default implementations of all the widgets and the container.
       </documentation>
    </annotation>
 
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2016 Obeo&lt;br/&gt;
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+&lt;a href=&quot;http://www.eclipse.org/legal/epl-v10.html&quot;&gt;http://www.eclipse.org/legal/epl-v10.html&lt;/a&gt;
+      </documentation>
+   </annotation>
 
 </schema>

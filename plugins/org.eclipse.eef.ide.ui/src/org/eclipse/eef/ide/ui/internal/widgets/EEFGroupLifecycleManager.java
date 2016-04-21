@@ -25,8 +25,8 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.layout.GridData;
@@ -65,7 +65,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * The lifecycle managers of the child of the container.
 	 */
-	private List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+	private List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
 	/**
 	 * The controller.
@@ -168,7 +168,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeShown()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeShown()
 	 */
 	@Override
 	public void aboutToBeShown() {
@@ -181,7 +181,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 			}
 		});
 
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.aboutToBeShown();
 		}
 	}
@@ -189,13 +189,13 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#refresh()
 	 */
 	@Override
 	public void refresh() {
 		super.refresh();
 
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.refresh();
 		}
 	}
@@ -203,7 +203,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeHidden()
 	 */
 	@Override
 	public void aboutToBeHidden() {
@@ -211,7 +211,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.controller.removeNewLabelConsumer();
 
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.aboutToBeHidden();
 		}
 	}
@@ -219,11 +219,11 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#dispose()
 	 */
 	@Override
 	public void dispose() {
-		for (ILifecycleManager lifecycleManager : lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.dispose();
 		}
 	}
