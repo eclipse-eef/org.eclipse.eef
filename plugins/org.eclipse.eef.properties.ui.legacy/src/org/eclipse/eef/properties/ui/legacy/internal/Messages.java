@@ -8,10 +8,9 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.properties.ui.legacy;
+package org.eclipse.eef.properties.ui.legacy.internal;
 
-import org.eclipse.eef.properties.ui.legacy.I18N.TranslatableMessage;
-import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.eef.properties.ui.legacy.internal.I18N.TranslatableMessage;
 
 /**
  * Utility class used to hold the messages of the bundle.

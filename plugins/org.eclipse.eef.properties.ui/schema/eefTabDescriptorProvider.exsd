@@ -6,7 +6,7 @@
          <meta.schema plugin="org.eclipse.eef.properties.ui" id="eefTabDescriptorProvider" name="EEF Tab Descriptor Provider"/>
       </appinfo>
       <documentation>
-         Describes a list of tabs that will be contributed to the EEF tabbed property sheet page.
+         This extension point allows the contribution of new tabs to the EEF tabbed property sheet page by implementing &lt;code&gt;org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider&lt;/code&gt;. See &lt;code&gt;org.eclipse.eef.properties.ui.api.IEEFTabDescriptor&lt;/code&gt; and &lt;code&gt;org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor&lt;/code&gt; for more details.
       </documentation>
    </annotation>
 
@@ -52,28 +52,28 @@
          <attribute name="id" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The identifier of the contribution.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="label" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The label of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="description" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The description of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The implementation of the IEEFTabDescriptorProvider.
                </documentation>
                <appinfo>
                   <meta.attribute kind="java" basedOn=":org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider"/>
@@ -88,7 +88,7 @@
          <meta.section type="since"/>
       </appinfo>
       <documentation>
-         1.6.0
+         This extension point has been available since Eclipse EEF 1.6.0 (Eclipse Neon release in June 2016).
       </documentation>
    </annotation>
 
@@ -97,7 +97,100 @@
          <meta.section type="examples"/>
       </appinfo>
       <documentation>
-         [Enter extension point usage example here.]
+         &lt;pre&gt;
+&lt;extension
+      point=&quot;org.eclipse.eef.properties.ui.eefTabDescriptorProvider&quot;&gt;
+   &lt;descriptor
+         class=&quot;org.eclipse.eef.sample.internal.extensions.SampleTabDescriptorProvider&quot;
+         description=&quot;Provides EEF Tab descriptors&quot;
+         id=&quot;org.eclipse.eef.sample.eefTabDescriptorProvider&quot;
+         label=&quot;EEF Sample Tab Descriptor Provider&quot;&gt;
+   &lt;/descriptor&gt;
+&lt;/extension&gt;
+&lt;/pre&gt;
+Example of IEEFTabDescriptorProvider contribution. In this example, we are providing a contribution used to add new tabs to the Properties view created by EEF. In order to link an editor with the EEF-based Properties view, you will first need to use the method &lt;code&gt;org.eclipse.core.runtime.IAdaptable.getAdapter(Class)&lt;/code&gt; of your editor to return an EEF-based property sheet page.
+&lt;pre&gt;
+@Override
+public Object getAdapter(@SuppressWarnings(&quot;rawtypes&quot;) Class type) {
+    if (type == IPropertySheetPage.class) {
+        // Must be unique for your editor, should be stored in a static constant
+        String contributorId = &quot;org.eclipse.eef.sample.contributorId&quot;;
+        return new EEFTabbedPropertySheetPage(type, contributorId);
+    }
+
+    return super.getAdapter(type);
+}
+&lt;/pre&gt;
+Once the Eclipse platform has retrieved this EEF-based tabbed property sheet page, EEF will look for the list of tabs to display in this property view using all its IEEFTabDescriptorProvider. Here is an implementation of an example:
+&lt;pre&gt;
+package org.eclipse.eef.sample.internal.extensions;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.EEFPage;
+import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.EEFViewFactory;
+import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.ide.ui.properties.api.EEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.sirius.common.interpreter.api.VariableManagerFactory;
+import org.eclipse.ui.IWorkbenchPart;
+
+public class SampleTabDescriptorProvider implements IEEFTabDescriptorProvider {
+
+    @Override
+    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection) {
+        if (selection instanceof IStructuredSelection) {
+            IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+            Object[] objects = structuredSelection.toArray();
+
+            // We will first retrieve the description of the user interface
+            EEFViewDescription viewDescription = this.getViewDescription(objects);
+            EEFView eefView = this.createEEFView(viewDescription, objects);
+
+            List&lt;IEEFTabDescriptor&gt; descriptors = new ArrayList&lt;IEEFTabDescriptor&gt;();
+            List&lt;EEFPage&gt; eefPages = eefView.getPages();
+            for (EEFPage eefPage : eefPages) {
+                descriptors.add(new EEFTabDescriptor(eefPage));
+            }
+            return descriptors;
+        }
+        return new ArrayList&lt;IEEFTabDescriptor&gt;();
+    }
+
+    private EEFViewDescription getViewDescription(Object object) {
+        // Programmatically create the description of the view or load it from an EMF model
+        return null;
+    }
+
+    private EEFView createEEFView(EEFViewDescription viewDescription, Object object) {
+        IVariableManager variableManager = new VariableManagerFactory().createVariableManager();
+        variableManager.put(EEFExpressionUtils.SELF, object);
+        
+        // See the documentation regarding the interpreter and the editing context adapter
+        EEFView eefView = new EEFViewFactory().createEEFView(viewDescription, variableManager, new SampleInterpreter(), new SampleEditingContextAdapter(), object);
+        return eefView;
+    }
+}
+&lt;/pre&gt;
+This example requires at least the following dependencies:
+&lt;ul&gt;
+  &lt;li&gt;org.eclipse.sirius.common.interpreter&lt;/li&gt;
+  &lt;li&gt;org.eclipse.eef&lt;/li&gt;
+  &lt;li&gt;org.eclipse.eef.core&lt;/li&gt;
+  &lt;li&gt;org.eclipse.eef.ide.ui.properties&lt;/li&gt;
+  &lt;li&gt;org.eclipse.eef.properties.ui&lt;/li&gt;
+  &lt;li&gt;org.eclipse.ui.workbench&lt;/li&gt;
+  &lt;li&gt;org.eclipse.jface&lt;/li&gt;
+&lt;/ul&gt;
       </documentation>
    </annotation>
 
@@ -106,7 +199,7 @@
          <meta.section type="apiinfo"/>
       </appinfo>
       <documentation>
-         [Enter API information here.]
+         The IEEFTabDescriptorProvider allows the contribution of a set of tabs for the EEF-based tabbed property sheet page.
       </documentation>
    </annotation>
 
@@ -115,9 +208,21 @@
          <meta.section type="implementation"/>
       </appinfo>
       <documentation>
-         [Enter information about supplied implementation of this extension point.]
+         EEF does not provide any implementation of this API. The Eclipse Sirius project provides a complex implementation of this API. To understand the basic concepts of this API, have a look at the example in this description first.
       </documentation>
    </annotation>
 
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2016 Obeo&lt;br/&gt;
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+&lt;a href=&quot;http://www.eclipse.org/legal/epl-v10.html&quot;&gt;http://www.eclipse.org/legal/epl-v10.html&lt;/a&gt;
+      </documentation>
+   </annotation>
 
 </schema>

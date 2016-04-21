@@ -13,8 +13,8 @@ package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 import java.text.MessageFormat;
 
 import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.eef.properties.ui.legacy.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.AbstractRegistryEventListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;

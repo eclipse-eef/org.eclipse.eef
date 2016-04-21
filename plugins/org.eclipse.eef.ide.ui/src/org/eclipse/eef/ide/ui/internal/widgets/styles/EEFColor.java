@@ -102,9 +102,9 @@ public class EEFColor {
 		Matcher m = c.matcher(colorCode);
 
 		if (m.matches()) {
-			return getColor(Integer.valueOf(m.group(1)), // r
-					Integer.valueOf(m.group(2)), // g
-					Integer.valueOf(m.group(3))); // b
+			return getColor(Integer.valueOf(m.group(1)).intValue(), // r
+					Integer.valueOf(m.group(2)).intValue(), // g
+					Integer.valueOf(m.group(3)).intValue()); // b
 		}
 		return null;
 	}

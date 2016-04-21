@@ -93,7 +93,7 @@ public class RadioGroup extends Composite {
 	public void setItem(int index, String string) {
 		add(string, index);
 
-		Button button = buttons.get(index);
+		Button button = buttons.get(Integer.valueOf(index));
 		button.setText(string);
 	}
 
@@ -106,11 +106,11 @@ public class RadioGroup extends Composite {
 	 *            the index for the item
 	 */
 	public void add(String string, int index) {
-		if (buttons.get(index) == null) {
+		if (buttons.get(Integer.valueOf(index)) == null) {
 			Button button = widgetFactory.createButton(this, string, SWT.RADIO);
 			button.setBackground(this.getBackground());
 			button.setForeground(this.getForeground());
-			buttons.put(index, button);
+			buttons.put(Integer.valueOf(index), button);
 		}
 	}
 
@@ -156,7 +156,7 @@ public class RadioGroup extends Composite {
 		for (Map.Entry<Integer, Button> entry : buttons.entrySet()) {
 			Button button = entry.getValue();
 			if (button.getSelection()) {
-				return new int[] { entry.getKey() };
+				return new int[] { entry.getKey().intValue() };
 			}
 		}
 		return new int[] { -1 };
@@ -193,10 +193,10 @@ public class RadioGroup extends Composite {
 	 *            the index for the item
 	 */
 	public void remove(int index) {
-		Button button = buttons.get(index);
+		Button button = buttons.get(Integer.valueOf(index));
 		if (button != null && !button.isDisposed()) {
 			button.dispose();
-			buttons.remove(index);
+			buttons.remove(Integer.valueOf(index));
 		}
 
 	}
@@ -209,7 +209,7 @@ public class RadioGroup extends Composite {
 	 *            the index of the item to select
 	 */
 	public void select(int index) {
-		buttons.get(index).setSelection(true);
+		buttons.get(Integer.valueOf(index)).setSelection(true);
 	}
 
 	/**

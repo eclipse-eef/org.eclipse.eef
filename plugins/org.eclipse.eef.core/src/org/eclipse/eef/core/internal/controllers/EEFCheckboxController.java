@@ -76,7 +76,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 
 				Map<String, Object> variables = new HashMap<String, Object>();
 				variables.putAll(EEFCheckboxController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFCheckbox.NEW_VALUE, checkbox);
+				variables.put(EEFExpressionUtils.EEFCheckbox.NEW_VALUE, Boolean.valueOf(checkbox));
 
 				new Eval(EEFCheckboxController.this.interpreter, variables).call(eAttribute, editExpression);
 			}

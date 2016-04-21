@@ -20,8 +20,8 @@ import org.eclipse.eef.properties.ui.api.EEFTabContents;
 import org.eclipse.eef.properties.ui.api.EEFTabbedPropertySheetPage;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
-import org.eclipse.eef.properties.ui.legacy.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacyTabSelectionListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.LabelProviderChangedEvent;
@@ -40,7 +40,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 /**
  * Wraps an {@link EEFTabbedPropertySheetPage} to a {@link TabbedPropertySheetPage}.
- * 
+ *
  * @author mbats
  */
 public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
@@ -48,7 +48,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 	/**
 	 * ControlsCreated field of the TabContents class.
 	 */
-	private static final String CONTROLS_CREATED_FIELD = "controlsCreated";
+	private static final String CONTROLS_CREATED_FIELD = "controlsCreated"; //$NON-NLS-1$
 
 	/**
 	 * The EEF tabbed property sheet page.
@@ -57,7 +57,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param eefTabbedPropertySheetPage
 	 *            EEF tabbed property sheet page
 	 */
@@ -69,7 +69,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#addTabSelectionListener(ITabSelectionListener)
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#createControl(Composite)
 	 */
 	@Override
@@ -89,7 +89,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#dispose()
 	 */
 	@Override
@@ -99,7 +99,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getActiveTabs()
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getControl()
 	 */
 	@Override
@@ -126,7 +126,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getCurrentTab()
 	 */
 	@Override
@@ -146,7 +146,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 		try {
 			Field field = TabContents.class.getField(CONTROLS_CREATED_FIELD);
 			field.setAccessible(true);
-			field.set(tabContents, controlsHaveBeenCreated);
+			field.set(tabContents, Boolean.valueOf(controlsHaveBeenCreated));
 		} catch (NoSuchFieldException e) {
 			String message = MessageFormat.format(Messages.Eef2LegacyWrapper_failedToAccessField, CONTROLS_CREATED_FIELD);
 			EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
@@ -166,7 +166,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getSelectedTab()
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getTitleImage(ISelection)
 	 */
 	@Override
@@ -188,7 +188,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getTitleText(ISelection)
 	 */
 	@Override
@@ -200,7 +200,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getWidgetFactory()
 	 */
 	@Override
@@ -210,7 +210,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#labelProviderChanged(LabelProviderChangedEvent)
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#overrideTabs()
 	 */
 	@Override
@@ -231,7 +231,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#refresh()
 	 */
 	@Override
@@ -241,7 +241,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#removeTabSelectionListener(ITabSelectionListener)
 	 */
 	@Override
@@ -251,7 +251,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#resizeScrolledComposite()
 	 */
 	@Override
@@ -261,7 +261,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#selectionChanged(IWorkbenchPart, ISelection)
 	 */
 	@Override
@@ -271,7 +271,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#setActionBars(IActionBars)
 	 */
 	@Override
@@ -281,7 +281,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#setFocus()
 	 */
 	@Override
@@ -291,7 +291,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#setSelectedTab(String)
 	 */
 	@Override
@@ -301,7 +301,7 @@ public class LegacyTabbedPropertySheetPage extends TabbedPropertySheetPage {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see TabbedPropertySheetPage#getSite()
 	 */
 	@Override

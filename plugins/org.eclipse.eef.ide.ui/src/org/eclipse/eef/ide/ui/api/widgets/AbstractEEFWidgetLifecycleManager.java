@@ -348,7 +348,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#dispose()
 	 */
 	@Override
 	public void dispose() {
@@ -488,7 +488,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			Eval eval = new Eval(interpreter, variableManager);
 			Integer fontSizeValue = eval.get(eAttribute, fontSizeExpression, Integer.class);
 			if (fontSizeValue != null && fontSizeValue.intValue() != fontSize) {
-				fontSize = fontSizeValue;
+				fontSize = fontSizeValue.intValue();
 			}
 		}
 		return fontSize;

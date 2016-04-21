@@ -11,26 +11,21 @@
 package org.eclipse.eef.ide.ui.internal;
 
 import java.net.URL;
-import java.text.MessageFormat;
 
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.eef.EEFCustomWidgetDescription;
+import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.common.api.AbstractEEFEclipsePlugin;
-import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.ide.api.extensions.AbstractRegistryEventListener;
 import org.eclipse.eef.ide.api.extensions.IItemDescriptor;
 import org.eclipse.eef.ide.api.extensions.IItemRegistry;
 import org.eclipse.eef.ide.api.extensions.impl.DescriptorRegistryEventListener;
 import org.eclipse.eef.ide.api.extensions.impl.ItemRegistry;
-import org.eclipse.eef.ide.ui.api.IEEFLifecycleManagerProvider;
-import org.eclipse.eef.ide.ui.api.ILifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.sirius.common.interpreter.api.IInterpreter;
-import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTError;
 import org.eclipse.swt.graphics.Image;
@@ -228,36 +223,18 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 		}
 
 		/**
-		 * Return the lifecycle manager.
+		 * Return the lifecycle manager provider supporting the given description.
 		 *
-		 * @param eefWidgetDescription
-		 *            The description of the widget to create
-		 * @param variableManager
-		 *            The variable manager to use for the widget to create
-		 * @param interpreter
-		 *            The interpreter
-		 * @param contextAdapter
-		 *            The editing context adapter
-		 * @return The lifecycle manager
+		 * @param eefControlDescription
+		 *            The description of the control to create
+		 * @return The lifecycle manager provider
 		 */
-		public ILifecycleManager getEEFLifecycleManager(EEFCustomWidgetDescription eefWidgetDescription, IVariableManager variableManager,
-				IInterpreter interpreter, EditingContextAdapter contextAdapter) {
+		public IEEFLifecycleManagerProvider getEEFLifecycleManagerProvider(EEFControlDescription eefControlDescription) {
 			for (IItemDescriptor<IEEFLifecycleManagerProvider> itemDescriptor : this.eefLifecycleManagerProviderRegistry.getItemDescriptors()) {
-				String eefLifecyleManagerID = itemDescriptor.getID();
-				// Search the lifecycle manager in the contribution
-				if (eefWidgetDescription.getIdentifier().equals(eefLifecyleManagerID)) {
-					IEEFLifecycleManagerProvider eefLifecycleManagerProvider = itemDescriptor.getItem();
-					ILifecycleManager eefLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(eefWidgetDescription, variableManager,
-							interpreter, contextAdapter);
-					if (eefLifecycleManager != null) {
-						return eefLifecycleManager;
-					} else {
-						String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerInvalid, eefLifecyleManagerID);
-						EEFIdeUiPlugin.getPlugin().error(message);
-					}
-				} else {
-					String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, eefLifecyleManagerID);
-					EEFIdeUiPlugin.getPlugin().error(message);
+				// Search the first lifecycle manager in the contribution supporting the given control
+				IEEFLifecycleManagerProvider eefLifecycleManagerProvider = itemDescriptor.getItem();
+				if (eefLifecycleManagerProvider.canHandle(eefControlDescription)) {
+					return eefLifecycleManagerProvider;
 				}
 			}
 			return null;

@@ -27,120 +27,120 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 
 /**
- * This class is used to provide utilities to single reference viewer
- * controller.
+ * This class is used to provide utilities to single reference viewer controller.
  *
  * @author mbats
  */
 public class ColorPickerController extends AbstractEEFCustomWidgetController implements IColorPickerController {
 
-    /**
-     * Default color code.
-     */
-    private static final int DEFAULT_COLOR_CODE = 255;
+	/**
+	 * Default color code.
+	 */
+	private static final int DEFAULT_COLOR_CODE = 255;
 
-    /**
-     * Value expression id.
-     */
-    private static final String VALUE_EXPRESSION_ID = "valueExpression";
+	/**
+	 * Value expression id.
+	 */
+	private static final String VALUE_EXPRESSION_ID = "valueExpression"; //$NON-NLS-1$
 
-    /**
-     * Add expression id.
-     */
-    private static final String EDIT_EXPRESSION_ID = "editExpression";
+	/**
+	 * Add expression id.
+	 */
+	private static final String EDIT_EXPRESSION_ID = "editExpression"; //$NON-NLS-1$
 
-    /**
-     * Separator.
-     */
-    private static final String SEPARATOR = ",";
+	/**
+	 * Separator.
+	 */
+	private static final String SEPARATOR = ","; //$NON-NLS-1$
 
-    /**
-     * The consumer of a new value of the color.
-     */
-    private IConsumer<Color> newValueConsumer;
+	/**
+	 * The consumer of a new value of the color.
+	 */
+	private IConsumer<Color> newValueConsumer;
 
-    /**
-     * The constructor.
-     *
-     * @param description
-     *            The description
-     * @param variableManager
-     *            The variable manager
-     * @param interpreter
-     *            The interpreter
-     * @param contextAdapter
-     *            The editing context adapter
-     */
-    public ColorPickerController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter contextAdapter) {
-        super(description, variableManager, interpreter, contextAdapter);
-    }
+	/**
+	 * The constructor.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param contextAdapter
+	 *            The editing context adapter
+	 */
+	public ColorPickerController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter contextAdapter) {
+		super(description, variableManager, interpreter, contextAdapter);
+	}
 
-    /**
-     * {@inheritDoc}
-     *
-     * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController.refresh()
-     */
-    @Override
-    public void refresh() {
-        super.refresh();
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController.refresh()
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
 
-        String valueExpression = getCustomExpression(VALUE_EXPRESSION_ID);
-        EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
+		String valueExpression = getCustomExpression(VALUE_EXPRESSION_ID);
+		EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
 
-        this.newEval().call(eAttribute, valueExpression, String.class, new IConsumer<String>() {
-            @Override
-            public void apply(String value) {
-                int red = DEFAULT_COLOR_CODE;
-                int green = DEFAULT_COLOR_CODE;
-                int blue = DEFAULT_COLOR_CODE;
-                if (value != null) {
-                    String[] rgb = value.split(SEPARATOR);
-                    if (rgb.length == 3) {
-                        try {
-                            red = Integer.parseInt(rgb[0]);
-                            green = Integer.parseInt(rgb[1]);
-                            blue = Integer.parseInt(rgb[2]);
-                            Color color = ColorHelper.getColor(red, green, blue);
-                            ColorPickerController.this.newValueConsumer.apply(color);
-                        } catch (NumberFormatException e) {
-                            // TODO Log warning about unexpected result format from the expression.
-                        }
-                    }
-                }
-            }
-        });
-    }
+		this.newEval().call(eAttribute, valueExpression, String.class, new IConsumer<String>() {
+			@Override
+			public void apply(String value) {
+				int red = DEFAULT_COLOR_CODE;
+				int green = DEFAULT_COLOR_CODE;
+				int blue = DEFAULT_COLOR_CODE;
+				if (value != null) {
+					String[] rgb = value.split(SEPARATOR);
+					if (rgb.length == 3) {
+						try {
+							red = Integer.parseInt(rgb[0]);
+							green = Integer.parseInt(rgb[1]);
+							blue = Integer.parseInt(rgb[2]);
+							Color color = ColorHelper.getColor(red, green, blue);
+							ColorPickerController.this.newValueConsumer.apply(color);
+						} catch (NumberFormatException e) {
+							// TODO Log warning about unexpected result format from the expression.
+						}
+					}
+				}
+			}
+		});
+	}
 
-    @Override
-    public void onNewValue(IConsumer<Color> consumer) {
-        this.newValueConsumer = consumer;
-    }
+	@Override
+	public void onNewValue(IConsumer<Color> consumer) {
+		this.newValueConsumer = consumer;
+	}
 
-    @Override
-    public void removeNewValueConsumer() {
-        this.newValueConsumer = null;
-    }
+	@Override
+	public void removeNewValueConsumer() {
+		this.newValueConsumer = null;
+	}
 
-    @Override
-    protected EEFCustomWidgetDescription getDescription() {
-        return this.description;
-    }
+	@Override
+	protected EEFCustomWidgetDescription getDescription() {
+		return this.description;
+	}
 
-    @Override
-    public void updateValue(final RGB color) {
-        contextAdapter.performModelChange(new Runnable() {
-            @Override
-            public void run() {
-                String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);
-                EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
+	@Override
+	public void updateValue(final RGB color) {
+		contextAdapter.performModelChange(new Runnable() {
+			@Override
+			public void run() {
+				String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);
+				EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
 
-                Map<String, Object> variables = new HashMap<String, Object>();
-                variables.putAll(ColorPickerController.this.variableManager.getVariables());
-                variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, color.red + SEPARATOR + color.green + SEPARATOR + color.blue);
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(ColorPickerController.this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, color.red + SEPARATOR + color.green + SEPARATOR + color.blue);
 
-                new Eval(ColorPickerController.this.interpreter, variables).call(eAttribute, editExpression);
-            }
-        });
-    }
+				new Eval(ColorPickerController.this.interpreter, variables).call(eAttribute, editExpression);
+			}
+		});
+	}
 
 }

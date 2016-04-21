@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.properties.ui.legacy;
+package org.eclipse.eef.properties.ui.legacy.internal;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
