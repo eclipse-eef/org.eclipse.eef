@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_e96c4cfb",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-21T14:41:22Z",
+      "side": 1,
+      "message": "else {\nenableOnceAgain() ? ^^\u0027\n}\n\nRight know you can\u0027t enabled the widget once again. The expression disable could be transformed into switchEnablement(boolean)? switchStatus(boolean)? setEnable(boolean)?\n\nor as another solution, if all the widget lifecycle managers should implement yet another method for something that can only occur during the refresh, in each lifecycle manager of the widgets:\n\npublic void refresh() {\n    super.refresh();\n    this.\u003cinsert widget kind like text, button, etcc\u003esetEnabled(this.isEnabled();\n}\n\nYou just have to keep isEnabled protected and child lifecycle manager don\u0027t even have to implement a new method.",
+      "range": {
+        "startLine": 534,
+        "startChar": 2,
+        "endLine": 536,
+        "endChar": 3
+      },
+      "revId": "cf6117fea66ff5ee4cf106b249e1597f177673c3",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
