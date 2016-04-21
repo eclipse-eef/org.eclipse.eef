@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.api;
+package org.eclipse.eef.ide.ui.api.widgets;
 
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.swt.widgets.Composite;
@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Composite;
  *
  * @author sbegaudeau
  */
-public interface ILifecycleManager {
+public interface IEEFLifecycleManager {
 	/**
 	 * Creates the controls for the description.
 	 *

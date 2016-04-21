@@ -34,7 +34,8 @@ import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.eef.ide.ui.api.ILifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
@@ -85,14 +86,24 @@ public class EEFControlSwitch {
 	 * @return The list of all the lifecycle manager that have been created. One description can create multiple
 	 *         controls and thus multiple lifecycle managers (for example dynamic mappings).
 	 */
-	public List<ILifecycleManager> doCreate(Composite parent, IEEFFormContainer formContainer, EEFControlDescription controlDescription,
+	public List<IEEFLifecycleManager> doCreate(Composite parent, IEEFFormContainer formContainer, EEFControlDescription controlDescription,
 			IVariableManager variableManager) {
-		List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+		List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 		if (controlDescription instanceof EEFContainerDescription) {
-			EEFContainerLifecycleManager containerLifecycleManager = new EEFContainerLifecycleManager((EEFContainerDescription) controlDescription,
-					variableManager.createChild(), this.interpreter, this.contextAdapter);
-			containerLifecycleManager.createControl(parent, formContainer);
-			lifecycleManagers.add(containerLifecycleManager);
+			IVariableManager childVariableManager = variableManager.createChild();
+			IEEFLifecycleManager eefContainerLifecycleManager = null;
+
+			IEEFLifecycleManagerProvider eefLifecycleManagerProvider = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManagerProvider(controlDescription);
+			if (eefLifecycleManagerProvider != null) {
+				eefContainerLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(controlDescription, childVariableManager, interpreter,
+						contextAdapter);
+			} else {
+				eefContainerLifecycleManager = new EEFContainerLifecycleManager((EEFContainerDescription) controlDescription, childVariableManager,
+						this.interpreter, this.contextAdapter);
+			}
+
+			eefContainerLifecycleManager.createControl(parent, formContainer);
+			lifecycleManagers.add(eefContainerLifecycleManager);
 		} else if (controlDescription instanceof EEFWidgetDescription) {
 			lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription,
 					variableManager.createChild()));
@@ -116,69 +127,75 @@ public class EEFControlSwitch {
 	 *            The child variable manager
 	 * @return The lifecycle managers created for the widget(s)
 	 */
-	private List<ILifecycleManager> createWidgetControl(Composite parent, IEEFFormContainer formContainer, EEFWidgetDescription widgetDescription,
+	private List<IEEFLifecycleManager> createWidgetControl(Composite parent, IEEFFormContainer formContainer, EEFWidgetDescription widgetDescription,
 			IVariableManager childVariableManager) {
-		List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
-		if (widgetDescription instanceof EEFTextDescription) {
-			EEFTextDescription eefTextDescription = (EEFTextDescription) widgetDescription;
+		List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
-			EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter,
-					contextAdapter);
-			eefTextLifecycleManager.createControl(parent, formContainer);
-
-			lifecycleManagers.add(eefTextLifecycleManager);
-		} else if (widgetDescription instanceof EEFLabelDescription) {
-			EEFLabelDescription eefLabelDescription = (EEFLabelDescription) widgetDescription;
-
-			EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter,
-					contextAdapter);
-			eefLabelLifecycleManager.createControl(parent, formContainer);
-
-			lifecycleManagers.add(eefLabelLifecycleManager);
-		} else if (widgetDescription instanceof EEFSelectDescription) {
-			EEFSelectDescription eefSelectDescription = (EEFSelectDescription) widgetDescription;
-
-			EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager,
+		// First, let's see if an external contributor does not want to handle this description
+		IEEFLifecycleManagerProvider eefLifecycleManagerProvider = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManagerProvider(widgetDescription);
+		if (eefLifecycleManagerProvider != null) {
+			// We have a lifecycle manager provider, let's use it
+			IEEFLifecycleManager eefLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(widgetDescription, childVariableManager,
 					interpreter, contextAdapter);
-			eefSelectLifecycleManager.createControl(parent, formContainer);
-
-			lifecycleManagers.add(eefSelectLifecycleManager);
-		} else if (widgetDescription instanceof EEFRadioDescription) {
-			EEFRadioDescription eefRadioDescription = (EEFRadioDescription) widgetDescription;
-
-			EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager, interpreter,
-					contextAdapter);
-			eefRadioLifecycleManager.createControl(parent, formContainer);
-
-			lifecycleManagers.add(eefRadioLifecycleManager);
-		} else if (widgetDescription instanceof EEFCheckboxDescription) {
-			EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) widgetDescription;
-
-			EEFCheckboxLifecycleManager eefCheckboxLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription, childVariableManager,
-					interpreter, contextAdapter);
-			eefCheckboxLifecycleManager.createControl(parent, formContainer);
-
-			lifecycleManagers.add(eefCheckboxLifecycleManager);
-		} else if (widgetDescription instanceof EEFButtonDescription) {
-			EEFButtonDescription eefButtonDescription = (EEFButtonDescription) widgetDescription;
-
-			EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager,
-					interpreter, contextAdapter);
-			eefButtonLifecycleManager.createControl(parent, formContainer);
-
-			lifecycleManagers.add(eefButtonLifecycleManager);
+			eefLifecycleManager.createControl(parent, formContainer);
+			lifecycleManagers.add(eefLifecycleManager);
 		} else if (widgetDescription instanceof EEFCustomWidgetDescription) {
-			EEFCustomWidgetDescription eefCustomDescription = (EEFCustomWidgetDescription) widgetDescription;
-			ILifecycleManager eefCustomWidgetLifecycleManager = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManager(eefCustomDescription,
-					childVariableManager, interpreter, contextAdapter);
-			if (eefCustomWidgetLifecycleManager != null) {
-				eefCustomWidgetLifecycleManager.createControl(parent, formContainer);
-				lifecycleManagers.add(eefCustomWidgetLifecycleManager);
-			} else {
-				String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, eefCustomDescription.getIdentifier());
-				EEFIdeUiPlugin.getPlugin().error(message);
+			// A custom widget cannot be supported if the lifecycle manager retrieved is null
+			String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, widgetDescription.getIdentifier());
+			EEFIdeUiPlugin.getPlugin().error(message);
+		} else {
+			// We have not found a custom lifecycle manager, fallback to the default behavior
+			if (widgetDescription instanceof EEFTextDescription) {
+				EEFTextDescription eefTextDescription = (EEFTextDescription) widgetDescription;
+
+				EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter,
+						contextAdapter);
+				eefTextLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefTextLifecycleManager);
+			} else if (widgetDescription instanceof EEFLabelDescription) {
+				EEFLabelDescription eefLabelDescription = (EEFLabelDescription) widgetDescription;
+
+				EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager,
+						interpreter, contextAdapter);
+				eefLabelLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefLabelLifecycleManager);
+			} else if (widgetDescription instanceof EEFSelectDescription) {
+				EEFSelectDescription eefSelectDescription = (EEFSelectDescription) widgetDescription;
+
+				EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager,
+						interpreter, contextAdapter);
+				eefSelectLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefSelectLifecycleManager);
+			} else if (widgetDescription instanceof EEFRadioDescription) {
+				EEFRadioDescription eefRadioDescription = (EEFRadioDescription) widgetDescription;
+
+				EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager,
+						interpreter, contextAdapter);
+				eefRadioLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefRadioLifecycleManager);
+			} else if (widgetDescription instanceof EEFCheckboxDescription) {
+				EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) widgetDescription;
+
+				EEFCheckboxLifecycleManager eefCheckboxLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription,
+						childVariableManager, interpreter, contextAdapter);
+				eefCheckboxLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefCheckboxLifecycleManager);
+			} else if (widgetDescription instanceof EEFButtonDescription) {
+				EEFButtonDescription eefButtonDescription = (EEFButtonDescription) widgetDescription;
+
+				EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager,
+						interpreter, contextAdapter);
+				eefButtonLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefButtonLifecycleManager);
 			}
 		}
+
 		return lifecycleManagers;
 	}
 
@@ -195,9 +212,9 @@ public class EEFControlSwitch {
 	 *            The variable manager
 	 * @return The list of the lifecycle manager created
 	 */
-	private List<ILifecycleManager> createDynamicMappingControl(Composite parent, IEEFFormContainer formContainer,
+	private List<IEEFLifecycleManager> createDynamicMappingControl(Composite parent, IEEFFormContainer formContainer,
 			EEFDynamicMappingFor dynamicMappingFor, IVariableManager variableManager) {
-		List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+		List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
 		String domainClassExpression = dynamicMappingFor.getDomainClassExpression();
 		EAttribute domainClassEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION;

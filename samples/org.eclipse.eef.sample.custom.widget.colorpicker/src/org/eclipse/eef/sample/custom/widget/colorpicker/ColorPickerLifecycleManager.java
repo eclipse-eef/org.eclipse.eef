@@ -197,7 +197,7 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
     /**
      * {@inheritDoc}
      *
-     * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#aboutToBeHidden()
+     * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#aboutToBeHidden()
      */
     @Override
     public void aboutToBeHidden() {

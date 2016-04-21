@@ -20,8 +20,8 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
-import org.eclipse.eef.ide.ui.api.ILifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -45,7 +45,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * The lifecycle managers of this section.
 	 */
-	private List<ILifecycleManager> lifecycleManagers = new ArrayList<ILifecycleManager>();
+	private List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
 	/**
 	 * The constructor.
@@ -90,7 +90,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		for (ILifecycleManager lifecycleManager : this.lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
 			lifecycleManager.aboutToBeShown();
 		}
 	}
@@ -106,7 +106,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.controller.refresh();
 
-		for (ILifecycleManager lifecycleManager : this.lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
 			lifecycleManager.refresh();
 		}
 
@@ -124,7 +124,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.container.getForm().getMessageManager().removeAllMessages();
 
-		for (ILifecycleManager lifecycleManager : this.lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
 			lifecycleManager.aboutToBeHidden();
 		}
 	}
@@ -152,11 +152,11 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#dispose()
 	 */
 	@Override
 	public void dispose() {
-		for (ILifecycleManager lifecycleManager : this.lifecycleManagers) {
+		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
 			lifecycleManager.dispose();
 		}
 	}

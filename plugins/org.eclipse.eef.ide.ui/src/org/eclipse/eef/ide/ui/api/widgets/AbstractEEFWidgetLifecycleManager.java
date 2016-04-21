@@ -332,7 +332,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.ILifecycleManager#dispose()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#dispose()
 	 */
 	@Override
 	public void dispose() {
