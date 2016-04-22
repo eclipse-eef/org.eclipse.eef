@@ -28,6 +28,9 @@ public final class Messages {
 	@TranslatableMessage
 	public static String AbstractEEFWidgetController_InvalidValueForExpression;
 
+	@TranslatableMessage
+	public static String AbstractEEFWidgetController_NoCustomExpressionFoundForID;
+
 	// CHECKSTYLE:ON
 
 	/**

@@ -10,10 +10,14 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import java.text.MessageFormat;
+
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.core.internal.EEFCorePlugin;
+import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -77,7 +81,10 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 				}
 			}
 		}
-		// TODO log error
+
+		String message = MessageFormat.format(Messages.AbstractEEFWidgetController_NoCustomExpressionFoundForID, customExpressionId);
+		EEFCorePlugin.getPlugin().error(message);
+
 		return null;
 	}
 
