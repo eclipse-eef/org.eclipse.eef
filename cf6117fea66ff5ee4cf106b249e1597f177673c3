@@ -22,6 +22,30 @@
       "revId": "cf6117fea66ff5ee4cf106b249e1597f177673c3",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_5ebb2a5e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-26T09:32:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_e96c4cfb",
+      "range": {
+        "startLine": 534,
+        "startChar": 2,
+        "endLine": 536,
+        "endChar": 3
+      },
+      "revId": "cf6117fea66ff5ee4cf106b249e1597f177673c3",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }
