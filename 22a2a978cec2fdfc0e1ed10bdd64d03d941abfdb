@@ -22,6 +22,30 @@
       "revId": "22a2a978cec2fdfc0e1ed10bdd64d03d941abfdb",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7e9706cd",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/ActionButton.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-26T09:39:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_7ee1c68c",
+      "range": {
+        "startLine": 35,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 44
+      },
+      "revId": "22a2a978cec2fdfc0e1ed10bdd64d03d941abfdb",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }
