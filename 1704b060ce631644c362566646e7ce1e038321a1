@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_de3f3a3d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-26T09:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_09eb3871",
+      "range": {
+        "startLine": 421,
+        "startChar": 1,
+        "endLine": 421,
+        "endChar": 10
+      },
+      "revId": "1704b060ce631644c362566646e7ce1e038321a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_e9d8cce8",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "e7dfcf21_5edfaa86",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-26T09:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_e9d8cce8",
+      "range": {
+        "startLine": 445,
+        "startChar": 1,
+        "endLine": 445,
+        "endChar": 10
+      },
+      "revId": "1704b060ce631644c362566646e7ce1e038321a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7dfcf21_c9ddd0d9",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2016-04-21T15:41:53Z",
       "side": 1,
       "message": "not useful, you are not using this method outside of the AbstractEEFLifecycleManager",
+      "range": {
+        "startLine": 470,
+        "startChar": 1,
+        "endLine": 470,
+        "endChar": 10
+      },
+      "revId": "1704b060ce631644c362566646e7ce1e038321a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_7ee46656",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-04-26T09:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7dfcf21_c9ddd0d9",
       "range": {
         "startLine": 470,
         "startChar": 1,
