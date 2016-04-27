@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_ec77e944",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-04-27T08:36:51Z",
+      "side": 1,
+      "message": "The auto boxing can make this code crash in an NPE. If it is null, then we should use a default behavior (return true to keep the default behavior of the widget ?)",
+      "range": {
+        "startLine": 522,
+        "startChar": 2,
+        "endLine": 523,
+        "endChar": 19
+      },
+      "revId": "85c7aa40c784f22383d7f9d976e4205c7b307670",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
