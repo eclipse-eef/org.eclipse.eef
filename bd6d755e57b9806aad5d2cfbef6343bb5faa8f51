@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_5b7ed1d8",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/EEFViewImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-04-28T08:57:48Z",
+      "side": 1,
+      "message": "Could this pattern be supported directly by a variant of Eval.call(), with an optional \"default value\" argument (which in these cases would be this.variableManager.getVariables().get(EEFExpressionUtils.SELF))?",
+      "range": {
+        "startLine": 129,
+        "startChar": 4,
+        "endLine": 134,
+        "endChar": 5
+      },
+      "revId": "bd6d755e57b9806aad5d2cfbef6343bb5faa8f51",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
