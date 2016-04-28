@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import com.google.common.base.Objects;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +19,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
@@ -196,12 +195,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		};
 		this.text.addModifyListener(this.modifyListener);
 
-		this.controller.onNewValue(new IConsumer<String>() {
+		this.controller.onNewValue(new IConsumer<Object>() {
 			@Override
-			public void apply(String value) {
+			public void apply(Object value) {
 				if (!text.isDisposed()) {
-					if (!(text.getText() != null && text.getText().equals(value))) {
-						text.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					if (value != null && !(text.getText() != null && text.getText().equals(value.toString()))) {
+						text.setText(Util.firstNonBlank(value.toString(), "")); //$NON-NLS-1$
 					}
 					// Set style
 					setStyle();

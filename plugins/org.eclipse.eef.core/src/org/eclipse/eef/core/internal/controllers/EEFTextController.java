@@ -49,7 +49,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	/**
 	 * The consumer of a new value of the text.
 	 */
-	private IConsumer<String> newValueConsumer;
+	private IConsumer<Object> newValueConsumer;
 
 	/**
 	 * Executor service used to run the update of the text field.
@@ -119,7 +119,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 		String valueExpression = this.description.getValueExpression();
 		EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION;
 
-		this.newEval().call(eAttribute, valueExpression, String.class, EEFTextController.this.newValueConsumer);
+		this.newEval().call(eAttribute, valueExpression, Object.class, EEFTextController.this.newValueConsumer);
 	}
 
 	/**
@@ -128,7 +128,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
 	 */
 	@Override
-	public void onNewValue(IConsumer<String> consumer) {
+	public void onNewValue(IConsumer<Object> consumer) {
 		this.newValueConsumer = consumer;
 	}
 

@@ -27,12 +27,13 @@ public interface IEEFTextController extends IEEFWidgetController {
 	void updateValue(String text);
 
 	/**
-	 * Register a consumer which will be called with the new value of the text when it will change.
+	 * Register a consumer which will be called with the new value of the text when it will change. The consumer will
+	 * have the responsibility to transform the given object into text
 	 *
 	 * @param consumer
 	 *            The consumer of the new value of the text
 	 */
-	void onNewValue(IConsumer<String> consumer);
+	void onNewValue(IConsumer<Object> consumer);
 
 	/**
 	 * Remove the consumer of the new value of the text.
