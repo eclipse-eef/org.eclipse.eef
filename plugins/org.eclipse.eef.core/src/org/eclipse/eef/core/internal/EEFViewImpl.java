@@ -103,10 +103,7 @@ public class EEFViewImpl implements EEFView {
 			String preconditionExpression = eefPageDescription.getPreconditionExpression();
 			Boolean preconditionValid = new Eval(this.interpreter, this.variableManager).get(preconditionExpression, Boolean.class);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
-				String semanticCandidatesExpression = Util.firstNonBlank(eefPageDescription.getSemanticCandidateExpression(),
-						org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-
-				new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
+				IConsumer<Object> consumer = new IConsumer<Object>() {
 					@Override
 					public void apply(Object value) {
 						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester);
@@ -126,7 +123,15 @@ public class EEFViewImpl implements EEFView {
 							EEFViewImpl.this.eefPages.add(ePage);
 						}
 					}
-				});
+				};
+
+				// If we do not have a semantic candidate expression, we will reuse self by default if it exists
+				String pageSemanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
+				if (!Util.isBlank(pageSemanticCandidateExpression)) {
+					new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, consumer);
+				} else if (this.variableManager.getVariables().get(EEFExpressionUtils.SELF) != null) {
+					consumer.apply(this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
+				}
 			}
 
 		}
@@ -186,27 +191,39 @@ public class EEFViewImpl implements EEFView {
 			// All your update process for EEFPages need to be updated. It's not simple in any way or shape, I know.
 
 			for (final EEFPage eefPage : this.eefPages) {
-				String pageSemanticCandidateExpression = Util.firstNonBlank(eefPage.getDescription().getSemanticCandidateExpression(),
-						org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-				new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, new IConsumer<Object>() {
+				IConsumer<Object> pageConsumer = new IConsumer<Object>() {
 					@Override
 					public void apply(Object value) {
 						for (Object pageSemanticCandidate : Util.asIterable(value, Object.class)) {
 							eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
 						}
 					}
-				});
+				};
+
+				// If the semantic candidate expression is blank, we will use the variable self of the view
+				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
+				if (!Util.isBlank(pageSemanticCandidateExpression)) {
+					new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, pageConsumer);
+				} else {
+					pageConsumer.apply(this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
+				}
 
 				List<EEFGroup> groups = eefPage.getGroups();
 				for (final EEFGroup eefGroup : groups) {
-					String groupSemanticCandidateExpression = Util.firstNonBlank(eefGroup.getDescription().getSemanticCandidateExpression(),
-							org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-					new Eval(this.interpreter, this.variableManager).call(groupSemanticCandidateExpression, new IConsumer<Object>() {
+					IConsumer<Object> groupConsumer = new IConsumer<Object>() {
 						@Override
 						public void apply(Object value) {
 							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, value);
 						}
-					});
+					};
+
+					// If the semantic candidate expression is blank, we will use the variable self of the page
+					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
+					if (!Util.isBlank(groupSemanticCandidateExpression)) {
+						new Eval(this.interpreter, eefPage.getVariableManager()).call(groupSemanticCandidateExpression, groupConsumer);
+					} else if (eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF) != null) {
+						groupConsumer.apply(eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF));
+					}
 				}
 			}
 		}

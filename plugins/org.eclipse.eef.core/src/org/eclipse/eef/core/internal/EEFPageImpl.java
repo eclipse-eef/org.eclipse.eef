@@ -105,10 +105,7 @@ public class EEFPageImpl implements EEFPage {
 			String preconditionExpression = eefGroupDescription.getPreconditionExpression();
 			Boolean preconditionValid = new Eval(this.interpreter, this.variableManager).get(preconditionExpression, Boolean.class);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
-				String semanticCandidatesExpression = Util.firstNonBlank(eefGroupDescription.getSemanticCandidateExpression(),
-						org.eclipse.eef.core.api.EEFExpressionUtils.VAR_SELF);
-
-				new Eval(this.interpreter, this.variableManager).call(semanticCandidatesExpression, new IConsumer<Object>() {
+				IConsumer<Object> consumer = new IConsumer<Object>() {
 					@Override
 					public void apply(Object value) {
 						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester);
@@ -121,7 +118,14 @@ public class EEFPageImpl implements EEFPage {
 							eefGroups.add(eefGroupImpl);
 						}
 					}
-				});
+				};
+
+				String groupSemanticCandidateExpression = eefGroupDescription.getSemanticCandidateExpression();
+				if (!Util.isBlank(groupSemanticCandidateExpression)) {
+					new Eval(this.interpreter, this.variableManager).call(groupSemanticCandidateExpression, consumer);
+				} else if (this.variableManager.getVariables().get(EEFExpressionUtils.SELF) != null) {
+					consumer.apply(this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
+				}
 			}
 		}
 	}

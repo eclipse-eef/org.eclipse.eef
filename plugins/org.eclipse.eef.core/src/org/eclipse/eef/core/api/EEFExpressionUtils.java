@@ -28,11 +28,6 @@ public final class EEFExpressionUtils {
 	public static final String INPUT = "input"; //$NON-NLS-1$
 
 	/**
-	 * The expression used to retrieve self.
-	 */
-	public static final String VAR_SELF = "var:self"; //$NON-NLS-1$
-
-	/**
 	 * The constructor.
 	 */
 	private EEFExpressionUtils() {
