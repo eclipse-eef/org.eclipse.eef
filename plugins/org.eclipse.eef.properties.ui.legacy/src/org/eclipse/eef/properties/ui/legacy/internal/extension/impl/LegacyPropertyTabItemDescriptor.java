@@ -51,7 +51,7 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param category
 	 *            The category
 	 * @param id
@@ -113,7 +113,7 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	@Override
 	public String getAfterTab() {
 		if (this.afterTab == null) {
-			return "";
+			return ""; //$NON-NLS-1$
 		}
 		return this.afterTab;
 	}
