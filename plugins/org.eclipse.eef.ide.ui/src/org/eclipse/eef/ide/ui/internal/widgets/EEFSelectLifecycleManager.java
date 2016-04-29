@@ -55,6 +55,17 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
  * @author mbats
  */
 public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager {
+
+	/**
+	 * Special value to replace "null" as a combo value.
+	 */
+	private static final Object NO_VALUE = new Object() {
+		@Override
+		public String toString() {
+			return "<null>"; //$NON-NLS-1$
+		}
+	};
+
 	/**
 	 * The description.
 	 */
@@ -197,9 +208,14 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		this.selectionListener = new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				IStructuredSelection selection = getStructuredSelection(comboViewer);
-				Object newValue = selection.getFirstElement();
-				controller.updateValue(newValue);
+				if (!EEFSelectLifecycleManager.this.container.isRenderingInProgress()) {
+					IStructuredSelection selection = getStructuredSelection(comboViewer);
+					Object newValue = selection.getFirstElement();
+					if (newValue == NO_VALUE) {
+						newValue = null;
+					}
+					controller.updateValue(newValue);
+				}
 			}
 
 			@Override
@@ -234,7 +250,13 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 			public void apply(List<Object> value) {
 				if (!combo.isDisposed()) {
 					if (value != null) {
-						comboViewer.setInput(value.toArray());
+						Object[] candidates = value.toArray();
+						for (int i = 0; i < candidates.length; i++) {
+							if (candidates[i] == null) {
+								candidates[i] = NO_VALUE;
+							}
+						}
+						comboViewer.setInput(candidates);
 					} else {
 						comboViewer.setInput(null);
 					}
