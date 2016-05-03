@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7dfcf21_ccecd48a",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/AbstractEEFController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-05-03T12:54:22Z",
+      "side": 1,
+      "message": "out of date",
+      "range": {
+        "startLine": 64,
+        "startChar": 18,
+        "endLine": 64,
+        "endChar": 39
+      },
+      "revId": "13975a9c16a835e8567ef78918574d22b070a3dc",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_4cf8c43d",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/utils/Eval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-05-03T12:54:22Z",
+      "side": 1,
+      "message": "EvalBuilder",
+      "range": {
+        "startLine": 41,
+        "startChar": 25,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "13975a9c16a835e8567ef78918574d22b070a3dc",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_6cf58043",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/utils/Eval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-05-03T12:54:22Z",
+      "side": 1,
+      "message": "EvalBuilder",
+      "range": {
+        "startLine": 54,
+        "startChar": 25,
+        "endLine": 54,
+        "endChar": 29
+      },
+      "revId": "13975a9c16a835e8567ef78918574d22b070a3dc",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_6c82e0a3",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/utils/Eval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-05-03T12:54:22Z",
+      "side": 1,
+      "message": "I\u0027m not sure I understand the design, as from what I see Eval is now mostly empty except for static factory methods, and EvalBuilder does not really \"build\" anything, but actually performs the evaluation.",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 54
+      },
+      "revId": "13975a9c16a835e8567ef78918574d22b070a3dc",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7dfcf21_0c74fc41",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/utils/Eval.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-05-03T12:54:22Z",
+      "side": 1,
+      "message": "The name \"get\" does not really convey the idea that this is the method where the actual evaluation will be done. It sounds like an \"innocent/plain\" getter.",
+      "range": {
+        "startLine": 230,
+        "startChar": 14,
+        "endLine": 230,
+        "endChar": 17
+      },
+      "revId": "13975a9c16a835e8567ef78918574d22b070a3dc",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
