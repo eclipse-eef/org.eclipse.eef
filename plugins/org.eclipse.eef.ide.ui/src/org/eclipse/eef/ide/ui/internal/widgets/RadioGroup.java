@@ -22,7 +22,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.TypedListener;
 
 /**
  * Group of radio widgets.
@@ -40,6 +39,8 @@ public class RadioGroup extends Composite {
 	 * The widget factory.
 	 */
 	private EEFWidgetFactory widgetFactory;
+
+	private SelectionListener selectionListener;
 
 	/**
 	 * Constructs a new instance of this class given its parent and a style value describing its behavior and
@@ -111,6 +112,9 @@ public class RadioGroup extends Composite {
 			button.setBackground(this.getBackground());
 			button.setForeground(this.getForeground());
 			buttons.put(Integer.valueOf(index), button);
+			if (selectionListener != null) {
+				button.addSelectionListener(this.selectionListener);
+			}
 		}
 	}
 
@@ -130,9 +134,7 @@ public class RadioGroup extends Composite {
 	 *            The selection listener
 	 */
 	public void addSelectionListener(SelectionListener listener) {
-		TypedListener typedListener = new TypedListener(listener);
-		addListener(SWT.Selection, typedListener);
-		addListener(SWT.DefaultSelection, typedListener);
+		selectionListener = listener;
 	}
 
 	/**
@@ -142,8 +144,9 @@ public class RadioGroup extends Composite {
 	 *            The selection listener
 	 */
 	public void removeSelectionListener(SelectionListener listener) {
-		removeListener(SWT.Selection, listener);
-		removeListener(SWT.DefaultSelection, listener);
+		for (Button button : buttons.values()) {
+			button.removeSelectionListener(listener);
+		}
 	}
 
 	/**
