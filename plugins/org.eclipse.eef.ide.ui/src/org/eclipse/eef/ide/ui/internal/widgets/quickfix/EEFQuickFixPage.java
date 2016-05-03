@@ -17,7 +17,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
@@ -59,7 +59,7 @@ public class EEFQuickFixPage extends WizardPage {
 	/**
 	 * The evaluation utility class.
 	 */
-	private Eval eval;
+	private Eval<?> eval;
 
 	/**
 	 * The selected {@link IMessage}.
@@ -76,7 +76,7 @@ public class EEFQuickFixPage extends WizardPage {
 	 * @param eval
 	 *            The evaluation utility class
 	 */
-	public EEFQuickFixPage(IMessage message, EEFValidationRuleDescription validationRule, Eval eval) {
+	public EEFQuickFixPage(IMessage message, EEFValidationRuleDescription validationRule, Eval<?> eval) {
 		super(message.getMessage());
 		this.setTitle(Messages.EEFQuickFixPage_title);
 		this.setDescription(MessageFormat.format(Messages.EEFQuickFixPage_description, message.getMessage()));
@@ -87,7 +87,7 @@ public class EEFQuickFixPage extends WizardPage {
 
 	/**
 	 * Returns the selected {@link IMessage}.
-	 * 
+	 *
 	 * @return The selected {@link IMessage}
 	 */
 	public IMessage getSelectedMessage() {
@@ -170,7 +170,7 @@ public class EEFQuickFixPage extends WizardPage {
 							// Run the quick fix using the given eval
 							EEFValidationFixDescription validationFix = (EEFValidationFixDescription) element;
 							EAttribute expressionEAttribute = EefPackage.Literals.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION;
-							EEFQuickFixPage.this.eval.call(expressionEAttribute, validationFix.getFixExpression());
+							EEFQuickFixPage.this.eval.logIfBlank(expressionEAttribute).call(validationFix.getFixExpression());
 						}
 					}
 

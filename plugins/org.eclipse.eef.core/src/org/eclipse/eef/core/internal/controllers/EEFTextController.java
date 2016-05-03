@@ -25,7 +25,7 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -73,7 +73,8 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	 * @param contextAdapter
 	 *            The editing context adapter
 	 */
-	public EEFTextController(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter contextAdapter) {
+	public EEFTextController(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter contextAdapter) {
 		super(variableManager, interpreter);
 		this.description = description;
 		this.contextAdapter = contextAdapter;
@@ -98,7 +99,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 						variables.putAll(EEFTextController.this.variableManager.getVariables());
 						variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-						new Eval(EEFTextController.this.interpreter, variables).call(eAttribute, editExpression);
+						EvalFactory.of(EEFTextController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 					}
 				});
 			}
@@ -117,9 +118,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(eAttribute, valueExpression, Object.class, EEFTextController.this.newValueConsumer);
+		this.newEval().call(valueExpression, this.newValueConsumer);
 	}
 
 	/**

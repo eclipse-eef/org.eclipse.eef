@@ -133,8 +133,10 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
 
-		this.container.getForm().removeMessageHyperlinkListener(this.hyperlinkListener);
-		this.container.getForm().getMessageManager().removeAllMessages();
+		if (!this.container.getForm().isDisposed()) {
+			this.container.getForm().removeMessageHyperlinkListener(this.hyperlinkListener);
+			this.container.getForm().getMessageManager().removeAllMessages();
+		}
 
 		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
 			lifecycleManager.aboutToBeHidden();

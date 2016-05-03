@@ -27,7 +27,7 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.IEEFDomainClassTester;
 import org.eclipse.eef.core.api.InputDescriptor;
 import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -101,7 +101,8 @@ public class EEFViewImpl implements EEFView {
 		EEFCorePlugin.getPlugin().debug("EEFViewImpl#initialize()"); //$NON-NLS-1$
 		for (final EEFPageDescription eefPageDescription : this.getDescription().getPages()) {
 			String preconditionExpression = eefPageDescription.getPreconditionExpression();
-			Boolean preconditionValid = new Eval(this.interpreter, this.variableManager).get(preconditionExpression, Boolean.class);
+			Boolean preconditionValid = EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class)
+					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
 				IConsumer<Object> consumer = new IConsumer<Object>() {
 					@Override
@@ -126,12 +127,9 @@ public class EEFViewImpl implements EEFView {
 				};
 
 				// If we do not have a semantic candidate expression, we will reuse self by default if it exists
+				Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
 				String pageSemanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
-				if (!Util.isBlank(pageSemanticCandidateExpression)) {
-					new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, consumer);
-				} else if (this.variableManager.getVariables().get(EEFExpressionUtils.SELF) != null) {
-					consumer.apply(this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
-				}
+				EvalFactory.of(this.interpreter, this.variableManager).defaultValue(self).call(pageSemanticCandidateExpression, consumer);
 			}
 
 		}
@@ -201,12 +199,9 @@ public class EEFViewImpl implements EEFView {
 				};
 
 				// If the semantic candidate expression is blank, we will use the variable self of the view
+				Object viewSelf = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
 				String pageSemanticCandidateExpression = eefPage.getDescription().getSemanticCandidateExpression();
-				if (!Util.isBlank(pageSemanticCandidateExpression)) {
-					new Eval(this.interpreter, this.variableManager).call(pageSemanticCandidateExpression, pageConsumer);
-				} else {
-					pageConsumer.apply(this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
-				}
+				EvalFactory.of(this.interpreter, this.variableManager).defaultValue(viewSelf).call(pageSemanticCandidateExpression, pageConsumer);
 
 				List<EEFGroup> groups = eefPage.getGroups();
 				for (final EEFGroup eefGroup : groups) {
@@ -218,12 +213,10 @@ public class EEFViewImpl implements EEFView {
 					};
 
 					// If the semantic candidate expression is blank, we will use the variable self of the page
+					Object pageSelf = eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF);
 					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
-					if (!Util.isBlank(groupSemanticCandidateExpression)) {
-						new Eval(this.interpreter, eefPage.getVariableManager()).call(groupSemanticCandidateExpression, groupConsumer);
-					} else if (eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF) != null) {
-						groupConsumer.apply(eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF));
-					}
+					EvalFactory.of(this.interpreter, eefPage.getVariableManager()).defaultValue(pageSelf)
+					.call(groupSemanticCandidateExpression, groupConsumer);
 				}
 			}
 		}

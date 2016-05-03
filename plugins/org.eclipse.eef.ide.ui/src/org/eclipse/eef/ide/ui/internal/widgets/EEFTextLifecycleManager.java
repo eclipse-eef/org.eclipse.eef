@@ -27,7 +27,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -224,7 +224,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * Set the style.
 	 */
 	private void setStyle() {
-		setTextStyle(getTextStyle(), text);
+		EEFTextStyle style = this.getTextStyle();
+		if (style != null) {
+			this.setFont(style.getFontNameExpression(), style.getFontSizeExpression(), style.getFontStyleExpression(), text);
+			this.setBackgroundColor(style.getBackgroundColorExpression(), text);
+			this.setForegroundColor(style.getForegroundColorExpression(), text);
+		}
 	}
 
 	/**
@@ -238,7 +243,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		if (conditionalStyles != null) {
 			for (EEFTextConditionalStyle eefTextConditionalStyle : conditionalStyles) {
 				String preconditionExpression = eefTextConditionalStyle.getPreconditionExpression();
-				Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+				Boolean preconditionValid = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Boolean.class)
+						.evaluate(preconditionExpression);
 				if (preconditionValid != null && preconditionValid.booleanValue()) {
 					textStyle = eefTextConditionalStyle.getStyle();
 					break;

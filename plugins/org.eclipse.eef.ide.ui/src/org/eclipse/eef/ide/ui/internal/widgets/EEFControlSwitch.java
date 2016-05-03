@@ -35,7 +35,7 @@ import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
@@ -240,8 +240,8 @@ public class EEFControlSwitch {
 
 		EAttribute ifExpressionEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION;
 
-		Object domainClassExpressionResult = new Eval(this.interpreter, variableManager).get(domainClassEAttribute, domainClassExpression,
-				Object.class);
+		Object domainClassExpressionResult = EvalFactory.of(this.interpreter, variableManager).logIfBlank(domainClassEAttribute)
+				.evaluate(domainClassExpression);
 		for (Object object : Util.asIterable(domainClassExpressionResult, Object.class)) {
 			Map<String, Object> switchExpressionVariables = new HashMap<String, Object>();
 			switchExpressionVariables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
@@ -250,8 +250,8 @@ public class EEFControlSwitch {
 			EEFWidgetDescription eefWidgetDescription = null;
 			List<EEFDynamicMappingIf> dynamicMappingIfs = dynamicMappingFor.getIfs();
 			for (EEFDynamicMappingIf dynamicMappingIf : dynamicMappingIfs) {
-				Boolean isValid = new Eval(this.interpreter, switchExpressionVariables).get(ifExpressionEAttribute,
-						dynamicMappingIf.getPredicateExpression(), Boolean.class);
+				Boolean isValid = EvalFactory.of(this.interpreter, switchExpressionVariables).logIfInvalidType(Boolean.class)
+						.logIfBlank(ifExpressionEAttribute).evaluate(dynamicMappingIf.getPredicateExpression());
 				if (isValid != null && isValid.booleanValue()) {
 					eefWidgetDescription = dynamicMappingIf.getWidget();
 					break;

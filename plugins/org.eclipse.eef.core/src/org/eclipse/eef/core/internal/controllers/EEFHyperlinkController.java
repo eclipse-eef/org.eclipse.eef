@@ -21,7 +21,7 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFHyperlinkController;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -76,9 +76,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(eAttribute, valueExpression, String.class, EEFHyperlinkController.this.newValueConsumer);
+		this.newEval().logIfInvalidType(String.class).call(valueExpression, this.newValueConsumer);
 	}
 
 	/**
@@ -98,7 +96,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 				variables.putAll(EEFHyperlinkController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFHyperlink.SELECTION, element);
 
-				new Eval(EEFHyperlinkController.this.interpreter, variables).call(attr, expression);
+				EvalFactory.of(EEFHyperlinkController.this.interpreter, variables).logIfBlank(attr).call(expression);
 			}
 		});
 	}

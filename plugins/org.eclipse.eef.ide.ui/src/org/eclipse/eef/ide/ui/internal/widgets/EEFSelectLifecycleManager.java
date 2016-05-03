@@ -30,7 +30,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -288,7 +288,8 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 			variables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
 			variables.put(EEFSelect.CANDIDATE, element);
 
-			return new Eval(EEFSelectLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
+			return EvalFactory.of(EEFSelectLifecycleManager.this.interpreter, variables).logIfInvalidType(String.class).logIfBlank(eAttribute)
+					.evaluate(expression);
 		}
 	}
 }
