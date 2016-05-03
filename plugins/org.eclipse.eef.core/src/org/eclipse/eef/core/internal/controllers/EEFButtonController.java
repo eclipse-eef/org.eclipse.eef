@@ -79,10 +79,9 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	@Override
 	public void refresh() {
 		super.refresh();
-		String buttonLabelExpression = this.description.getButtonLabelExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION;
 
-		this.newEval().call(eAttribute, buttonLabelExpression, String.class, EEFButtonController.this.newButtonLabelConsumer);
+		String buttonLabelExpression = this.description.getButtonLabelExpression();
+		this.newEval().logIfInvalidType(String.class).call(buttonLabelExpression, this.newButtonLabelConsumer);
 	}
 
 	@Override
@@ -92,7 +91,7 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 			public void run() {
 				String pushExpression = EEFButtonController.this.description.getPushExpression();
 				EAttribute attr = EefPackage.Literals.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION;
-				EEFButtonController.this.newEval().call(attr, pushExpression);
+				EEFButtonController.this.newEval().logIfBlank(attr).call(pushExpression);
 			}
 		});
 	}

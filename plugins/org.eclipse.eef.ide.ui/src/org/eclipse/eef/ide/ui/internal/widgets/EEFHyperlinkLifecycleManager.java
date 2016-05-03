@@ -21,7 +21,6 @@ import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFHyperlinkStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
@@ -30,7 +29,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFHyperlinkController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -225,7 +224,8 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		if (conditionalStyles != null) {
 			for (EEFHyperlinkConditionalStyle eefHyperlinkConditionalStyle : conditionalStyles) {
 				String preconditionExpression = eefHyperlinkConditionalStyle.getPreconditionExpression();
-				Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+				Boolean preconditionValid = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Boolean.class)
+						.evaluate(preconditionExpression);
 				if (preconditionValid != null && preconditionValid.booleanValue()) {
 					hyperlinkStyle = eefHyperlinkConditionalStyle.getStyle();
 					break;
@@ -243,13 +243,8 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	 */
 	protected void setHyperlinkStyle(EEFHyperlinkStyle style) {
 		if (style != null) {
-			// Set font
-			setFont(style.getFontNameExpression(), EefPackage.Literals.EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION, style.getFontSizeExpression(),
-					EefPackage.Literals.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION, style.getFontStyleExpression(),
-					EefPackage.Literals.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION, hyperlink);
-
-			// Set background color
-			setBackgroundColor(style.getBackgroundColorExpression(), EefPackage.Literals.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION, hyperlink);
+			setFont(style.getFontNameExpression(), style.getFontSizeExpression(), style.getFontStyleExpression(), hyperlink);
+			setBackgroundColor(style.getBackgroundColorExpression(), hyperlink);
 		}
 		StyleRange[] styleRanges = hyperlink.getStyleRanges();
 		StyleRange styleRange;

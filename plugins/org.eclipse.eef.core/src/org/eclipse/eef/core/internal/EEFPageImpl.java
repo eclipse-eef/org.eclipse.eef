@@ -24,7 +24,7 @@ import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.IEEFDomainClassTester;
 import org.eclipse.eef.core.api.controllers.IConsumer;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -103,7 +103,8 @@ public class EEFPageImpl implements EEFPage {
 		EEFCorePlugin.getPlugin().debug("EEFPageImpl#initialize()"); //$NON-NLS-1$
 		for (final EEFGroupDescription eefGroupDescription : eefPageDescription.getGroups()) {
 			String preconditionExpression = eefGroupDescription.getPreconditionExpression();
-			Boolean preconditionValid = new Eval(this.interpreter, this.variableManager).get(preconditionExpression, Boolean.class);
+			Boolean preconditionValid = EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class)
+					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
 				IConsumer<Object> consumer = new IConsumer<Object>() {
 					@Override
@@ -120,12 +121,9 @@ public class EEFPageImpl implements EEFPage {
 					}
 				};
 
+				Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
 				String groupSemanticCandidateExpression = eefGroupDescription.getSemanticCandidateExpression();
-				if (!Util.isBlank(groupSemanticCandidateExpression)) {
-					new Eval(this.interpreter, this.variableManager).call(groupSemanticCandidateExpression, consumer);
-				} else if (this.variableManager.getVariables().get(EEFExpressionUtils.SELF) != null) {
-					consumer.apply(this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
-				}
+				EvalFactory.of(this.interpreter, this.variableManager).defaultValue(self).call(groupSemanticCandidateExpression, consumer);
 			}
 		}
 	}

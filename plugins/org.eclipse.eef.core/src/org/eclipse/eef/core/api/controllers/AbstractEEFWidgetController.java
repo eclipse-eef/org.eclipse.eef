@@ -12,7 +12,6 @@ package org.eclipse.eef.core.api.controllers;
 
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -124,11 +123,10 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 		super.refresh();
 
 		String labelExpression = this.getDescription().getLabelExpression();
-		EAttribute labelEAttribute = EefPackage.Literals.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
-		this.newEval().call(labelEAttribute, labelExpression, String.class, AbstractEEFWidgetController.this.newLabelConsumer);
+		this.newEval().logIfInvalidType(String.class).call(labelExpression, AbstractEEFWidgetController.this.newLabelConsumer);
 
 		String helpExpression = this.getDescription().getHelpExpression();
-		this.newEval().call(helpExpression, String.class, AbstractEEFWidgetController.this.newHelpConsumer);
+		this.newEval().logIfInvalidType(String.class).call(helpExpression, AbstractEEFWidgetController.this.newHelpConsumer);
 	}
 
 }

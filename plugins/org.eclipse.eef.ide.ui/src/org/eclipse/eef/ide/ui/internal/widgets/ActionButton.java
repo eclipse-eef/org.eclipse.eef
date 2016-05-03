@@ -10,13 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import com.google.common.base.Objects;
-
 import org.eclipse.eef.EEFWidgetAction;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
-import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -65,9 +61,9 @@ public class ActionButton {
 			IVariableManager variableManager) {
 		this.action = action;
 		this.button = widgetFactory.createButton(parent, "", SWT.NONE); //$NON-NLS-1$
+
 		String expression = action.getLabelExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__LABEL_EXPRESSION;
-		String buttonLabel = Objects.firstNonNull(new Eval(interpreter, variableManager).get(eAttribute, expression, String.class), "..."); //$NON-NLS-1$
+		String buttonLabel = EvalFactory.of(interpreter, variableManager).logIfInvalidType(String.class).defaultValue("...").evaluate(expression); //$NON-NLS-1$
 		button.setText(buttonLabel);
 	}
 

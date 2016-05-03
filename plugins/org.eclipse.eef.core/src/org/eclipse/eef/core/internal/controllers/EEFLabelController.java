@@ -12,11 +12,9 @@ package org.eclipse.eef.core.internal.controllers;
 
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFWidgetDescription;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -60,10 +58,9 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	@Override
 	public void refresh() {
 		super.refresh();
-		String bodyExpression = this.description.getBodyExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION;
 
-		this.newEval().call(eAttribute, bodyExpression, String.class, EEFLabelController.this.newBodyConsumer);
+		String bodyExpression = this.description.getBodyExpression();
+		this.newEval().logIfInvalidType(String.class).call(bodyExpression, this.newBodyConsumer);
 	}
 
 	/**

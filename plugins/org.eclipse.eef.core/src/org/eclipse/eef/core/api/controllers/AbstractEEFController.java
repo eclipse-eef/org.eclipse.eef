@@ -16,7 +16,8 @@ import java.util.List;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
 import org.eclipse.eef.core.internal.controllers.InvalidValidationRuleResult;
 import org.eclipse.eef.core.internal.controllers.ValidationRuleResult;
 import org.eclipse.emf.ecore.EAttribute;
@@ -64,8 +65,8 @@ public abstract class AbstractEEFController implements IEEFController {
 	 *
 	 * @return a new Eval.
 	 */
-	protected Eval newEval() {
-		return new Eval(this.interpreter, this.variableManager);
+	protected Eval<Object> newEval() {
+		return EvalFactory.of(this.interpreter, this.variableManager);
 	}
 
 	/**
@@ -146,7 +147,7 @@ public abstract class AbstractEEFController implements IEEFController {
 
 			for (EEFRuleAuditDescription audit : validationRule.getAudits()) {
 				String auditExpression = audit.getAuditExpression();
-				Boolean result = this.newEval().get(auditEAttribute, auditExpression, Boolean.class);
+				Boolean result = this.newEval().logIfBlank(auditEAttribute).logIfInvalidType(Boolean.class).evaluate(auditExpression);
 				isValid = isValid && (result != null && result.booleanValue());
 
 				if (!isValid) {
@@ -157,10 +158,12 @@ public abstract class AbstractEEFController implements IEEFController {
 			if (isValid) {
 				validationRuleResults.add(new ValidationRuleResult(validationRule));
 			} else {
-				Eval eval = this.newEval();
+				Eval<Object> eval = this.newEval();
 				String messageExpression = validationRule.getMessageExpression();
-				String message = eval.get(messageEAttribute, messageExpression, String.class);
-				validationRuleResults.add(new InvalidValidationRuleResult(validationRule, message, eval, validationRule.getSeverity().getValue()));
+				String message = eval.logIfBlank(messageEAttribute).logIfInvalidType(String.class).evaluate(messageExpression);
+
+				validationRuleResults.add(new InvalidValidationRuleResult(validationRule, message, this.newEval(), validationRule.getSeverity()
+						.getValue()));
 			}
 		}
 

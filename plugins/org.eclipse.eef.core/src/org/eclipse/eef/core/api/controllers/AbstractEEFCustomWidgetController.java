@@ -100,7 +100,7 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 			public void run() {
 				String pushExpression = getCustomExpression(customExpressionId);
 				EAttribute attr = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
-				AbstractEEFCustomWidgetController.this.newEval().call(attr, pushExpression);
+				AbstractEEFCustomWidgetController.this.newEval().logIfBlank(attr).call(pushExpression);
 			}
 		});
 	}

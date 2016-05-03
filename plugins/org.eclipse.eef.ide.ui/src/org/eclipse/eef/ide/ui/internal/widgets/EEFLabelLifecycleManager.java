@@ -21,7 +21,6 @@ import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
@@ -29,7 +28,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -125,7 +124,8 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		if (conditionalStyles != null) {
 			for (EEFLabelConditionalStyle eefTextConditionalStyle : conditionalStyles) {
 				String preconditionExpression = eefTextConditionalStyle.getPreconditionExpression();
-				Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+				Boolean preconditionValid = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Boolean.class)
+						.evaluate(preconditionExpression);
 				if (preconditionValid != null && preconditionValid.booleanValue()) {
 					textStyle = eefTextConditionalStyle.getStyle();
 					break;
@@ -145,16 +145,9 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 */
 	private void setLabelStyle(EEFLabelStyle style, StyledText text) {
 		if (style != null) {
-			// Set font
-			setFont(style.getFontNameExpression(), EefPackage.Literals.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION, style.getFontSizeExpression(),
-					EefPackage.Literals.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION, style.getFontStyleExpression(),
-					EefPackage.Literals.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION, text);
-
-			// Set background color
-			setBackgroundColor(style.getBackgroundColorExpression(), EefPackage.Literals.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION, text);
-
-			// Set foreground color
-			setForegroundColor(style.getForegroundColorExpression(), EefPackage.Literals.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION, text);
+			this.setFont(style.getFontNameExpression(), style.getFontSizeExpression(), style.getFontStyleExpression(), text);
+			this.setBackgroundColor(style.getBackgroundColorExpression(), text);
+			this.setForegroundColor(style.getForegroundColorExpression(), text);
 		}
 	}
 
