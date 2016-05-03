@@ -23,6 +23,7 @@ import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -141,7 +142,22 @@ public class EEFQuickFixPage extends WizardPage {
 		Dialog.applyDialogFont(control);
 
 		// Select the first quick fix available
-		this.quickFixesList.setSelection(new StructuredSelection(this.quickFixesList.getElementAt(0)));
+		Object firstElement = this.quickFixesList.getElementAt(0);
+		if (firstElement != null) {
+			this.quickFixesList.setSelection(new StructuredSelection(firstElement));
+		} else {
+			this.setMessage(Messages.EEFQuickFixWizard_noQuickFixAvailable, IMessageProvider.ERROR);
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.wizard.WizardPage#isPageComplete()
+	 */
+	@Override
+	public boolean isPageComplete() {
+		return this.quickFixesList != null && this.validationRule.getFixes().size() > 0 && !this.quickFixesList.getSelection().isEmpty();
 	}
 
 	/**

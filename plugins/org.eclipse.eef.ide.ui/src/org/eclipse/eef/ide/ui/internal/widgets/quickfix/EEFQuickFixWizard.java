@@ -105,10 +105,13 @@ public class EEFQuickFixWizard extends Wizard {
 			// The second page will show the quick fixes of the message of the first page
 			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof EvalBuilder) {
 				EEFValidationRuleDescription validationRule = (EEFValidationRuleDescription) message.getKey();
-				EvalBuilder<?> eval = (EvalBuilder<?>) message.getData();
-				this.quickFixPage = new EEFQuickFixPage(message, validationRule, eval);
-				this.quickFixPage.setWizard(this);
-				return this.quickFixPage;
+
+				if (validationRule.getFixes().size() > 0) {
+					EvalBuilder<?> eval = (EvalBuilder<?>) message.getData();
+					this.quickFixPage = new EEFQuickFixPage(message, validationRule, eval);
+					this.quickFixPage.setWizard(this);
+					return this.quickFixPage;
+				}
 			}
 		}
 		return super.getNextPage(page);
@@ -129,6 +132,7 @@ public class EEFQuickFixWizard extends Wizard {
 			this.quickFixPage = null;
 			return this.validationMessagesPage;
 		}
+
 		return super.getPreviousPage(page);
 	}
 
@@ -139,10 +143,22 @@ public class EEFQuickFixWizard extends Wizard {
 	 */
 	@Override
 	public boolean needsPreviousAndNextButtons() {
-		if (this.messages.length != 1) {
-			return true;
-		}
-		return super.needsPreviousAndNextButtons();
+		return this.messages.length > 1;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.wizard.Wizard#canFinish()
+	 */
+	@Override
+	public boolean canFinish() {
+		boolean canFinish = this.getContainer().getCurrentPage() == this.quickFixPage;
+
+		canFinish = canFinish && (this.validationMessagesPage == null || this.validationMessagesPage.isPageComplete());
+		canFinish = canFinish && (this.quickFixPage != null && this.quickFixPage.isPageComplete());
+
+		return canFinish;
 	}
 
 	/**

@@ -10,9 +10,11 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets.quickfix;
 
+import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
+import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -108,8 +110,6 @@ public class EEFValidationMessagesPage extends WizardPage {
 		this.validationMessagesList.addSelectionChangedListener(new ISelectionChangedListener() {
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				EEFValidationMessagesPage.this.setPageComplete(true);
-
 				// Sets the new selected message
 				ISelection selection = event.getSelection();
 				if (selection instanceof IStructuredSelection) {
@@ -119,6 +119,17 @@ public class EEFValidationMessagesPage extends WizardPage {
 						EEFValidationMessagesPage.this.selectedMessage = (IMessage) element;
 					}
 				}
+
+				if (EEFValidationMessagesPage.this.selectedMessage.getKey() instanceof EEFValidationRuleDescription) {
+					EEFValidationRuleDescription validationRuleDescription = (EEFValidationRuleDescription) EEFValidationMessagesPage.this.selectedMessage
+							.getKey();
+					if (validationRuleDescription.getFixes().size() == 0) {
+						EEFValidationMessagesPage.this.setMessage(Messages.EEFQuickFixWizard_noQuickFixAvailable, IMessageProvider.ERROR);
+					} else {
+						EEFValidationMessagesPage.this.setMessage(null);
+					}
+				}
+				EEFValidationMessagesPage.this.setPageComplete(true);
 			}
 		});
 
@@ -135,6 +146,17 @@ public class EEFValidationMessagesPage extends WizardPage {
 
 		// Select the first quick fix available
 		this.validationMessagesList.setSelection(new StructuredSelection(this.validationMessagesList.getElementAt(0)));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.wizard.WizardPage#isPageComplete()
+	 */
+	@Override
+	public boolean isPageComplete() {
+		// There is always a next page
+		return true;
 	}
 
 	/**

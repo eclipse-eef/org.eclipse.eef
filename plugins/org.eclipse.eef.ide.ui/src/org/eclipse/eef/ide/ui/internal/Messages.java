@@ -67,6 +67,9 @@ public final class Messages {
 	@TranslatableMessage
 	public static String EEFValidationRulesPage_label;
 
+	@TranslatableMessage
+	public static String EEFQuickFixWizard_noQuickFixAvailable;
+
 	// CHECKSTYLE:ON
 
 	/**
