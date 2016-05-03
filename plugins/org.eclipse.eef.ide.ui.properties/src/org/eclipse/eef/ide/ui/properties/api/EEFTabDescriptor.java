@@ -70,7 +70,8 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 		String labelExpression = this.eefPage.getDescription().getLabelExpression();
 		EAttribute eAttribute = EefPackage.Literals.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION;
 
-		return new Eval(this.eefPage.getInterpreter(), this.eefPage.getVariableManager()).get(eAttribute, labelExpression, String.class);
+		return Eval.of(this.eefPage.getInterpreter(), this.eefPage.getVariableManager()).logIfBlank(eAttribute).logIfInvalidType(String.class)
+				.get(labelExpression);
 	}
 
 	/**

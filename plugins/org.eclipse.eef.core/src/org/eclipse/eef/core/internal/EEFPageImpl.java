@@ -103,7 +103,7 @@ public class EEFPageImpl implements EEFPage {
 		EEFCorePlugin.getPlugin().debug("EEFPageImpl#initialize()"); //$NON-NLS-1$
 		for (final EEFGroupDescription eefGroupDescription : eefPageDescription.getGroups()) {
 			String preconditionExpression = eefGroupDescription.getPreconditionExpression();
-			Boolean preconditionValid = new Eval(this.interpreter, this.variableManager).get(preconditionExpression, Boolean.class);
+			Boolean preconditionValid = Eval.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class).get(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
 				IConsumer<Object> consumer = new IConsumer<Object>() {
 					@Override
@@ -120,12 +120,9 @@ public class EEFPageImpl implements EEFPage {
 					}
 				};
 
+				Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
 				String groupSemanticCandidateExpression = eefGroupDescription.getSemanticCandidateExpression();
-				if (!Util.isBlank(groupSemanticCandidateExpression)) {
-					new Eval(this.interpreter, this.variableManager).call(groupSemanticCandidateExpression, consumer);
-				} else if (this.variableManager.getVariables().get(EEFExpressionUtils.SELF) != null) {
-					consumer.apply(this.variableManager.getVariables().get(EEFExpressionUtils.SELF));
-				}
+				Eval.of(this.interpreter, this.variableManager).defaultValue(self).call(groupSemanticCandidateExpression, consumer);
 			}
 		}
 	}

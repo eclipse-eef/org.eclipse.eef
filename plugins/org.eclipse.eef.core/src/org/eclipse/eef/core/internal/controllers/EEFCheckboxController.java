@@ -78,7 +78,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 				variables.putAll(EEFCheckboxController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFCheckbox.NEW_VALUE, Boolean.valueOf(checkbox));
 
-				new Eval(EEFCheckboxController.this.interpreter, variables).call(eAttribute, editExpression);
+				Eval.of(EEFCheckboxController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 			}
 		});
 	}
@@ -93,9 +93,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(eAttribute, valueExpression, Boolean.class, EEFCheckboxController.this.newValueConsumer);
+		this.newEval().logIfInvalidType(Boolean.class).call(valueExpression, this.newValueConsumer);
 	}
 
 	/**

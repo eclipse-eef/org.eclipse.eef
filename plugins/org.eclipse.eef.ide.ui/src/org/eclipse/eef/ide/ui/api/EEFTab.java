@@ -13,7 +13,6 @@ package org.eclipse.eef.ide.ui.api;
 import java.net.URL;
 
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFPage;
@@ -23,7 +22,6 @@ import org.eclipse.eef.core.api.utils.Eval;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Updater;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFSectionLifecycleManager;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
@@ -129,17 +127,14 @@ public class EEFTab {
 
 		EEFView eefView = this.eefPage.getView();
 
-		EAttribute labelExpressionEAttribute = EefPackage.Literals.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION;
 		String labelExpression = eefView.getDescription().getLabelExpression();
-		String title = new Eval(eefView.getInterpreter(), eefView.getVariableManager()).get(labelExpressionEAttribute, labelExpression, String.class);
+		String title = Eval.of(eefView.getInterpreter(), eefView.getVariableManager()).logIfInvalidType(String.class).get(labelExpression);
 		if (!Util.isBlank(title)) {
 			this.formContainer.getForm().setText(title);
 		}
 
-		EAttribute imageExpressionEAttribute = EefPackage.Literals.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION;
 		String imageExpression = eefView.getDescription().getImageExpression();
-		Object object = new Eval(eefView.getInterpreter(), eefView.getVariableManager())
-				.get(imageExpressionEAttribute, imageExpression, Object.class);
+		Object object = Eval.of(eefView.getInterpreter(), eefView.getVariableManager()).get(imageExpression);
 		if (object instanceof URL) {
 			Image image = EEFIdeUiPlugin.getPlugin().getImage((URL) object);
 			this.formContainer.getForm().setImage(image);

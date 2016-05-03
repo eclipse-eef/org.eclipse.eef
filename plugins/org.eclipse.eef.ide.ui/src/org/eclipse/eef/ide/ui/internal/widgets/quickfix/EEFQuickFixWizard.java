@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.eef.EEFValidationRuleDescription;
-import org.eclipse.eef.core.api.utils.Eval;
+import org.eclipse.eef.core.api.utils.Eval.EvalBuilder;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Icons;
 import org.eclipse.eef.ide.ui.internal.Messages;
@@ -76,9 +76,9 @@ public class EEFQuickFixWizard extends Wizard {
 		if (this.messages.length == 1) {
 			// We have only one validation rule violated, let's show only the fix available
 			IMessage message = this.messages[0];
-			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof Eval) {
+			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof EvalBuilder) {
 				EEFValidationRuleDescription validationRule = (EEFValidationRuleDescription) message.getKey();
-				Eval eval = (Eval) message.getData();
+				EvalBuilder<?> eval = (EvalBuilder<?>) message.getData();
 
 				this.quickFixPage = new EEFQuickFixPage(message, validationRule, eval);
 				this.addPage(this.quickFixPage);
@@ -103,9 +103,9 @@ public class EEFQuickFixWizard extends Wizard {
 			IMessage message = validationRulesPage.getSelectedMessage();
 
 			// The second page will show the quick fixes of the message of the first page
-			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof Eval) {
+			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof EvalBuilder) {
 				EEFValidationRuleDescription validationRule = (EEFValidationRuleDescription) message.getKey();
-				Eval eval = (Eval) message.getData();
+				EvalBuilder<?> eval = (EvalBuilder<?>) message.getData();
 				this.quickFixPage = new EEFQuickFixPage(message, validationRule, eval);
 				this.quickFixPage.setWizard(this);
 				return this.quickFixPage;
@@ -159,8 +159,10 @@ public class EEFQuickFixWizard extends Wizard {
 				subMonitor.worked(1);
 
 				if (EEFQuickFixWizard.this.quickFixPage != null) {
+					// Use submonitor.split once we get to Neon as the minimum target platfom
+
 					EEFQuickFixWizard.this.getShell().getDisplay().readAndDispatch();
-					EEFQuickFixWizard.this.quickFixPage.performFinish(subMonitor.split(SUBMONITOR_TASK_WORK));
+					EEFQuickFixWizard.this.quickFixPage.performFinish(subMonitor.newChild(SUBMONITOR_TASK_WORK));
 				}
 			}
 		};

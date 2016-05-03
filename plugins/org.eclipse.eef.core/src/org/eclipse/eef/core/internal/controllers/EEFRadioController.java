@@ -85,7 +85,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 				variables.putAll(EEFRadioController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-				new Eval(EEFRadioController.this.interpreter, variables).call(eAttribute, editExpression);
+				Eval.of(EEFRadioController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 			}
 		});
 	}
@@ -101,7 +101,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 		String candidatesExpression = this.description.getCandidatesExpression();
 		EAttribute candidatesExpressionEAttribute = EefPackage.Literals.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION;
 
-		this.newEval().call(candidatesExpressionEAttribute, candidatesExpression, new IConsumer<Object>() {
+		this.newEval().logIfBlank(candidatesExpressionEAttribute).call(candidatesExpression, new IConsumer<Object>() {
 			@Override
 			public void apply(Object value) {
 				if (value instanceof Iterable<?>) {
@@ -115,9 +115,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 		});
 
 		String valueExpression = this.description.getValueExpression();
-		EAttribute valueExpressionEAttribute = EefPackage.Literals.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(valueExpressionEAttribute, valueExpression, EEFRadioController.this.newValueConsumer);
+		this.newEval().call(valueExpression, EEFRadioController.this.newValueConsumer);
 	}
 
 	/**

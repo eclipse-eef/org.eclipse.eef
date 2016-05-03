@@ -17,6 +17,7 @@ import org.eclipse.eef.tests.internal.controllers.EEFRadioControllerTests;
 import org.eclipse.eef.tests.internal.controllers.EEFSelectControllerTests;
 import org.eclipse.eef.tests.internal.controllers.EEFTextControllerTests;
 import org.eclipse.eef.tests.internal.core.EEFDomainClassTesterTests;
+import org.eclipse.eef.tests.internal.core.EvalTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -27,8 +28,8 @@ import org.junit.runners.Suite.SuiteClasses;
  * @author sbegaudeau
  */
 @RunWith(Suite.class)
-@SuiteClasses({ EEFDataTests.class, EEFTextControllerTests.class, EEFLabelControllerTests.class, EEFButtonControllerTests.class,
-	EEFCheckboxControllerTests.class, EEFRadioControllerTests.class, EEFSelectControllerTests.class, EEFDomainClassTesterTests.class })
+@SuiteClasses({ EvalTests.class, EEFDataTests.class, EEFTextControllerTests.class, EEFLabelControllerTests.class, EEFButtonControllerTests.class,
+		EEFCheckboxControllerTests.class, EEFRadioControllerTests.class, EEFSelectControllerTests.class, EEFDomainClassTesterTests.class })
 public final class AllTests {
 	/**
 	 * The constructor.

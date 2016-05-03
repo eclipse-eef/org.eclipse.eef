@@ -78,9 +78,7 @@ public class EEFReferenceController extends AbstractEEFWidgetController implemen
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_REFERENCE_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(eAttribute, valueExpression, Object.class, EEFReferenceController.this.newValueConsumer);
+		this.newEval().call(valueExpression, this.newValueConsumer);
 	}
 
 	@Override
@@ -105,7 +103,7 @@ public class EEFReferenceController extends AbstractEEFWidgetController implemen
 				variables.putAll(EEFReferenceController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFReference.SELECTION, element);
 
-				new Eval(EEFReferenceController.this.interpreter, variables).call(attr, expression);
+				Eval.of(EEFReferenceController.this.interpreter, variables).logIfBlank(attr).call(expression);
 			}
 		});
 	}
@@ -126,9 +124,11 @@ public class EEFReferenceController extends AbstractEEFWidgetController implemen
 	public void action(EEFWidgetAction action, List<Object> elements) {
 		String expression = action.getActionExpression();
 		EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
+
 		Map<String, Object> variables = new HashMap<String, Object>();
 		variables.putAll(EEFReferenceController.this.variableManager.getVariables());
 		variables.put(EEFExpressionUtils.EEFReference.SELECTION, elements);
-		new Eval(EEFReferenceController.this.interpreter, variables).call(eAttribute, expression);
+
+		Eval.of(EEFReferenceController.this.interpreter, variables).logIfBlank(eAttribute).call(expression);
 	}
 }

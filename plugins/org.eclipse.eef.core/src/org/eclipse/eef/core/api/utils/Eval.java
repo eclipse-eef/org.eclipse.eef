@@ -29,216 +29,229 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  * @author sbegaudeau
  */
 public final class Eval {
-	/**
-	 * The interpreter.
-	 */
-	private IInterpreter interpreter;
-
-	/**
-	 * The variables.
-	 */
-	private Map<String, Object> variables = new HashMap<String, Object>();
 
 	/**
 	 * The constructor.
+	 */
+	private Eval() {
+		// Prevent the instantiation
+	}
+
+	/**
+	 * Creates a new {@link Eval} with the given interpreter and variables.
 	 *
 	 * @param interpreter
 	 *            The interpreter
 	 * @param variables
 	 *            The variables
+	 * @return The new {@link Eval} builder
 	 */
-	public Eval(IInterpreter interpreter, Map<String, Object> variables) {
-		this.interpreter = interpreter;
-		this.variables.putAll(variables);
+	public static EvalBuilder<Object> of(IInterpreter interpreter, Map<String, Object> variables) {
+		return new EvalBuilder<Object>(interpreter, variables, Object.class);
 	}
 
 	/**
-	 * The constructor.
+	 * Creates a new {@link Eval} with the given interpreter and variable manager.
 	 *
 	 * @param interpreter
 	 *            The interpreter
 	 * @param variableManager
 	 *            The variable manager
+	 * @return The new {@link Eval} builder
 	 */
-	public Eval(IInterpreter interpreter, IVariableManager variableManager) {
-		this(interpreter, variableManager.getVariables());
+	public static EvalBuilder<Object> of(IInterpreter interpreter, IVariableManager variableManager) {
+		return new EvalBuilder<Object>(interpreter, variableManager, Object.class);
 	}
 
 	/**
-	 * Verifies that the expression is not blank, evaluates it, verify the type of the result and logs any potential
-	 * error.
+	 * This class will be used to build the {@link Eval}.
 	 *
-	 * @param expressionEAttribute
-	 *            The EAttribute containing the expression
-	 * @param expression
-	 *            The expression to evaluate
-	 * @param expectedResultType
-	 *            The expected type of the result
-	 * @param consumer
-	 *            The consumer which will receive the result
-	 * @param <T>
-	 *            The type of the result expected
-	 */
-	public <T> void call(EAttribute expressionEAttribute, String expression, Class<T> expectedResultType, IConsumer<T> consumer) {
-		if (!Util.isBlank(expression)) {
-			this.call(expression, expectedResultType, consumer);
-		} else if (EEFCorePlugin.getPlugin() != null) {
-			EEFCorePlugin.getPlugin().blank(expressionEAttribute);
-		}
-	}
-
-	/**
-	 * Evaluates the expression, verify the type of the result and logs any potential error.
+	 * @author sbegaudeau
 	 *
-	 * @param expression
-	 *            The expression to evaluate
-	 * @param expectedResultType
-	 *            The expected type of the result
-	 * @param consumer
-	 *            The consumer which will receive the result
-	 * @param <T>
-	 *            The type of the result expected
+	 * @param <TYPE>
+	 *            The type of the result returned by the execution of the expression
 	 */
-	public <T> void call(String expression, Class<T> expectedResultType, IConsumer<T> consumer) {
-		if (Util.isBlank(expression)) {
-			return;
+	public static final class EvalBuilder<TYPE> {
+		/**
+		 * The interpreter.
+		 */
+		private IInterpreter interpreter;
+
+		/**
+		 * The variables.
+		 */
+		private Map<String, Object> variables = new HashMap<String, Object>();
+
+		/**
+		 * The EAttribute containing the expression. It will be used, if not null, to log an error if the expression is
+		 * blank.
+		 */
+		private EAttribute eAttribute;
+
+		/**
+		 * The value to use by default if the evaluation of the expression returns null.
+		 */
+		private TYPE defaultValue;
+
+		/**
+		 * The expected type of the result.
+		 */
+		private Class<TYPE> type;
+
+		/**
+		 * The constructor.
+		 *
+		 * @param interpreter
+		 *            The interpreter
+		 * @param variables
+		 *            The variables
+		 * @param type
+		 *            The expected type of the result
+		 */
+		private EvalBuilder(IInterpreter interpreter, Map<String, Object> variables, Class<TYPE> type) {
+			this.interpreter = interpreter;
+			this.variables.putAll(variables);
+			this.type = type;
 		}
 
-		IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
-		if (evaluationResult.success()) {
-			Object value = evaluationResult.getValue();
-			if (expectedResultType.isInstance(value) || (value == null && !expectedResultType.isPrimitive())) {
-				T castValue = expectedResultType.cast(value);
-				consumer.apply(castValue);
-			} else if (EEFCorePlugin.getPlugin() != null) {
-				String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
-						expectedResultType.getName(), value);
-				EEFCorePlugin.getPlugin().error(message);
+		/**
+		 * The constructor.
+		 *
+		 * @param interpreter
+		 *            The interpreter
+		 * @param variableManager
+		 *            The variable manager
+		 * @param type
+		 *            The expected type of the result
+		 */
+		private EvalBuilder(IInterpreter interpreter, IVariableManager variableManager, Class<TYPE> type) {
+			this(interpreter, variableManager.getVariables(), type);
+		}
+
+		/**
+		 * Indicates that an error should be logged using the given EAttribute if the expression to execute is blank.
+		 *
+		 * @param attribute
+		 *            The EAttribute containing the expression to execute
+		 * @return The current {@link Eval} builder
+		 */
+		public EvalBuilder<TYPE> logIfBlank(EAttribute attribute) {
+			this.eAttribute = attribute;
+			return this;
+		}
+
+		/**
+		 * Indicates that the result should have the same type as the given class. It will log an error if the type of
+		 * the result does not match the given type.
+		 *
+		 * @param expectedType
+		 *            The expected type
+		 * @param <E>
+		 *            The expected type of the execution of the expression
+		 * @return The current {@link Eval} builder
+		 *
+		 */
+		public <E> EvalBuilder<E> logIfInvalidType(Class<E> expectedType) {
+			E value = null;
+			if (expectedType.isInstance(this.defaultValue)) {
+				value = expectedType.cast(this.defaultValue);
 			}
-		} else if (EEFCorePlugin.getPlugin() != null) {
-			EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
+			return new EvalBuilder<E>(this.interpreter, this.variables, expectedType).logIfBlank(this.eAttribute).defaultValue(value);
 		}
-	}
 
-	/**
-	 * Verifies that the expression is not blank, evaluates it and logs any potential error.
-	 *
-	 * @param expressionEAttribute
-	 *            The EAttribute containing the expression
-	 * @param expression
-	 *            The expression to evaluate
-	 * @param consumer
-	 *            The consumer which will receive the result
-	 */
-	public void call(EAttribute expressionEAttribute, String expression, IConsumer<Object> consumer) {
-		if (!Util.isBlank(expression)) {
-			this.call(expression, consumer);
-		} else if (EEFCorePlugin.getPlugin() != null) {
-			EEFCorePlugin.getPlugin().blank(expressionEAttribute);
+		/**
+		 * Indicates the value to use by default if the result of the evaluation of the expression is null.
+		 *
+		 * @param value
+		 *            The default value
+		 * @return The current {@link Eval} builder
+		 */
+		public EvalBuilder<TYPE> defaultValue(TYPE value) {
+			this.defaultValue = value;
+			return this;
 		}
-	}
 
-	/**
-	 * Verifies that the expression is not blank, evaluates it and logs any potential error.
-	 *
-	 * @param expression
-	 *            The expression to evaluate
-	 * @param consumer
-	 *            The consumer which will receive the result
-	 */
-	public void call(String expression, IConsumer<Object> consumer) {
-		IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
-		if (evaluationResult.success()) {
-			Object value = evaluationResult.getValue();
-			consumer.apply(value);
-		} else if (EEFCorePlugin.getPlugin() != null) {
-			EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
+		/**
+		 * Executes the given expression and process its result using the given consumer.
+		 *
+		 * @param expression
+		 *            The expression
+		 */
+		public void call(String expression) {
+			this.call(expression, null);
 		}
-	}
 
-	/**
-	 * Verifies that the expression is not blank, evaluates it and logs any potential error.
-	 *
-	 * @param expressionEAttribute
-	 *            The EAttribute containing the expression
-	 * @param expression
-	 *            The expression to evaluate
-	 */
-	public void call(EAttribute expressionEAttribute, String expression) {
-		if (!Util.isBlank(expression)) {
-			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
-			if (!evaluationResult.success()) {
-				EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
-			}
-		} else if (EEFCorePlugin.getPlugin() != null) {
-			EEFCorePlugin.getPlugin().blank(expressionEAttribute);
-		}
-	}
-
-	/**
-	 * Verifies that the expression is not blank, evaluates it and returns its result if its matches the given result
-	 * type.
-	 *
-	 * @param expressionEAttribute
-	 *            The EAttribute containing the expression
-	 * @param expression
-	 *            The expression
-	 * @param expectedResultType
-	 *            The expected result type
-	 * @param <T>
-	 *            The type expected
-	 * @return The result of the expression
-	 */
-	public <T> T get(EAttribute expressionEAttribute, String expression, Class<T> expectedResultType) {
-		if (!Util.isBlank(expression)) {
-			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
-			if (evaluationResult.success()) {
-				Object value = evaluationResult.getValue();
-				if (expectedResultType.isInstance(value) || (value == null && !expectedResultType.isPrimitive())) {
-					T castValue = expectedResultType.cast(value);
-					return castValue;
-				} else if (EEFCorePlugin.getPlugin() != null) {
-					String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
-							expectedResultType.getName(), value);
-					EEFCorePlugin.getPlugin().error(message);
+		/**
+		 * Executes the given expression and process its result using the given consumer.
+		 *
+		 * @param expression
+		 *            The expression
+		 * @param consumer
+		 *            The consumer
+		 */
+		public void call(String expression, IConsumer<TYPE> consumer) {
+			if (Util.isBlank(expression)) {
+				if (this.eAttribute != null && EEFCorePlugin.getPlugin() != null) {
+					EEFCorePlugin.getPlugin().blank(this.eAttribute);
 				}
-			} else if (EEFCorePlugin.getPlugin() != null) {
-				EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
-			}
-		} else if (EEFCorePlugin.getPlugin() != null) {
-			EEFCorePlugin.getPlugin().blank(expressionEAttribute);
-		}
-		return null;
-	}
 
-	/**
-	 * Evaluates the expression and returns its result if its matches the given result type.
-	 *
-	 * @param expression
-	 *            The expression
-	 * @param expectedResultType
-	 *            The expected result type
-	 * @param <T>
-	 *            The type expected
-	 * @return The result of the expression
-	 */
-	public <T> T get(String expression, Class<T> expectedResultType) {
-		if (!Util.isBlank(expression)) {
+				if (this.defaultValue != null) {
+					consumer.apply(this.defaultValue);
+				}
+				return;
+			}
+
 			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
 			if (evaluationResult.success()) {
-				Object value = evaluationResult.getValue();
-				if (expectedResultType.isInstance(value) || (value == null && !expectedResultType.isPrimitive())) {
-					T castValue = expectedResultType.cast(value);
-					return castValue;
-				} else if (EEFCorePlugin.getPlugin() != null) {
-					String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
-							expectedResultType.getName(), value);
-					EEFCorePlugin.getPlugin().error(message);
+				if (consumer != null) {
+					TYPE returnValue = this.defaultValue;
+					Object value = evaluationResult.getValue();
+					if (value != null && this.type.isInstance(value)) {
+						returnValue = this.type.cast(value);
+					} else if (EEFCorePlugin.getPlugin() != null) {
+						String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
+								this.type.getName(), value);
+						EEFCorePlugin.getPlugin().error(message);
+					}
+					consumer.apply(returnValue);
 				}
 			} else if (EEFCorePlugin.getPlugin() != null) {
 				EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
 			}
 		}
-		return null;
+
+		/**
+		 * Executes the given expression.
+		 *
+		 * @param expression
+		 *            The expression
+		 * @return The result of the expression
+		 */
+		public TYPE get(String expression) {
+			if (Util.isBlank(expression)) {
+				if (this.eAttribute != null && EEFCorePlugin.getPlugin() != null) {
+					EEFCorePlugin.getPlugin().blank(this.eAttribute);
+				}
+
+				return this.defaultValue;
+			}
+
+			TYPE result = this.defaultValue;
+			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(this.variables, expression);
+			if (evaluationResult.success()) {
+				Object value = evaluationResult.getValue();
+				if (value != null && this.type.isInstance(value)) {
+					TYPE castValue = this.type.cast(value);
+					result = castValue;
+				} else if (EEFCorePlugin.getPlugin() != null) {
+					String message = MessageFormat.format(Messages.AbstractEEFWidgetController_InvalidValueForExpression, expression,
+							this.type.getName(), value);
+					EEFCorePlugin.getPlugin().error(message);
+				}
+			} else if (EEFCorePlugin.getPlugin() != null) {
+				EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());
+			}
+			return result;
+		}
 	}
 }

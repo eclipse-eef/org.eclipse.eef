@@ -76,9 +76,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(eAttribute, valueExpression, String.class, EEFHyperlinkController.this.newValueConsumer);
+		this.newEval().logIfInvalidType(String.class).call(valueExpression, this.newValueConsumer);
 	}
 
 	/**
@@ -98,7 +96,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 				variables.putAll(EEFHyperlinkController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFHyperlink.SELECTION, element);
 
-				new Eval(EEFHyperlinkController.this.interpreter, variables).call(attr, expression);
+				Eval.of(EEFHyperlinkController.this.interpreter, variables).logIfBlank(attr).call(expression);
 			}
 		});
 	}

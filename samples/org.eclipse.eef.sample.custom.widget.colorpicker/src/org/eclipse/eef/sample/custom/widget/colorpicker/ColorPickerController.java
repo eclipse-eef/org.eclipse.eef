@@ -14,13 +14,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.eef.EEFCustomWidgetDescription;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFCustomWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.Eval;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.graphics.Color;
@@ -85,9 +83,7 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 		super.refresh();
 
 		String valueExpression = getCustomExpression(VALUE_EXPRESSION_ID);
-		EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
-
-		this.newEval().call(eAttribute, valueExpression, String.class, new IConsumer<String>() {
+		this.newEval().logIfInvalidType(String.class).call(valueExpression, new IConsumer<String>() {
 			@Override
 			public void apply(String value) {
 				int red = DEFAULT_COLOR_CODE;
@@ -132,13 +128,12 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 			@Override
 			public void run() {
 				String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);
-				EAttribute eAttribute = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
 
 				Map<String, Object> variables = new HashMap<String, Object>();
 				variables.putAll(ColorPickerController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, color.red + SEPARATOR + color.green + SEPARATOR + color.blue);
 
-				new Eval(ColorPickerController.this.interpreter, variables).call(eAttribute, editExpression);
+				Eval.of(ColorPickerController.this.interpreter, variables).call(editExpression);
 			}
 		});
 	}

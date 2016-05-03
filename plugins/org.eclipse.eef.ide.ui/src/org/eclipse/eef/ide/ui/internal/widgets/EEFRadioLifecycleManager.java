@@ -286,7 +286,8 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 			variables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
 			variables.put(EEFSelect.CANDIDATE, element);
 
-			return new Eval(EEFRadioLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
+			return Eval.of(EEFRadioLifecycleManager.this.interpreter, variables).logIfInvalidType(String.class).logIfBlank(eAttribute)
+					.get(expression);
 		}
 	}
 }

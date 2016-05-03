@@ -18,10 +18,8 @@ import org.eclipse.eef.EEFConditionalStyle;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
-import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
@@ -34,7 +32,6 @@ import org.eclipse.eef.ide.ui.internal.Icons;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -300,16 +297,9 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *            Label style
 	 */
 	private void setLabelFontStyle(EEFWidgetStyle style) {
-		// Set font
-		setFont(style.getLabelFontNameExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION,
-				style.getLabelFontSizeExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION,
-				style.getLabelFontStyleExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION, label);
-
-		// Set background color
-		setBackgroundColor(style.getLabelBackgroundColorExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION, label);
-
-		// Set foreground color
-		setForegroundColor(style.getLabelForegroundColorExpression(), EefPackage.Literals.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION, label);
+		this.setFont(style.getLabelFontNameExpression(), style.getLabelFontSizeExpression(), style.getLabelFontStyleExpression(), label);
+		this.setBackgroundColor(style.getLabelBackgroundColorExpression(), label);
+		this.setForegroundColor(style.getLabelForegroundColorExpression(), label);
 	}
 
 	/**
@@ -325,7 +315,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		EEFWidgetStyle style = defaultStyle;
 		for (EEFConditionalStyle eefConditionalStyle : conditionalStyles) {
 			String preconditionExpression = eefConditionalStyle.getPreconditionExpression();
-			Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+			Boolean preconditionValid = Eval.of(interpreter, variableManager).logIfInvalidType(Boolean.class).get(preconditionExpression);
 			if (preconditionValid != null && preconditionValid.booleanValue()) {
 				style = this.getWidgetStyle(eefConditionalStyle);
 			}
@@ -356,41 +346,15 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	}
 
 	/**
-	 * Set the text style.
-	 *
-	 * @param style
-	 *            Style
-	 * @param text
-	 *            The text
-	 */
-	protected void setTextStyle(EEFTextStyle style, StyledText text) {
-		if (style != null) {
-			// Set font
-			setFont(style.getFontNameExpression(), EefPackage.Literals.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION, style.getFontSizeExpression(),
-					EefPackage.Literals.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION, style.getFontStyleExpression(),
-					EefPackage.Literals.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION, text);
-
-			// Set background color
-			setBackgroundColor(style.getBackgroundColorExpression(), EefPackage.Literals.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION, text);
-
-			// Set foreground color
-			setForegroundColor(style.getForegroundColorExpression(), EefPackage.Literals.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION, text);
-		}
-	}
-
-	/**
 	 * Set the foreground color.
 	 *
 	 * @param foregroundColorExpression
 	 *            Foreground color expression
-	 * @param eAttribute
-	 *            The eAttribute
 	 * @param text
 	 *            The text
 	 */
-	protected void setForegroundColor(String foregroundColorExpression, EAttribute eAttribute, StyledText text) {
-		Eval eval = new Eval(interpreter, variableManager);
-		String foregroundColorCode = eval.get(eAttribute, foregroundColorExpression, String.class);
+	protected void setForegroundColor(String foregroundColorExpression, StyledText text) {
+		String foregroundColorCode = Eval.of(interpreter, variableManager).logIfInvalidType(String.class).get(foregroundColorExpression);
 		if (foregroundColorCode != null && !foregroundColorCode.isEmpty()) {
 			EEFColor foregroundColor = new EEFColor(foregroundColorCode);
 			text.setForeground(foregroundColor.getColor());
@@ -401,15 +365,12 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * Set the background color.
 	 *
 	 * @param backgroundColorExpression
-	 *            Style
-	 * @param eAttribute
-	 *            The eAttribute
+	 *            Background color expression
 	 * @param text
 	 *            Text
 	 */
-	protected void setBackgroundColor(String backgroundColorExpression, EAttribute eAttribute, StyledText text) {
-		Eval eval = new Eval(interpreter, variableManager);
-		String backgroundColorCode = eval.get(eAttribute, backgroundColorExpression, String.class);
+	protected void setBackgroundColor(String backgroundColorExpression, StyledText text) {
+		String backgroundColorCode = Eval.of(interpreter, variableManager).logIfInvalidType(String.class).get(backgroundColorExpression);
 		if (backgroundColorCode != null && !backgroundColorCode.isEmpty()) {
 			EEFColor backgroundColor = new EEFColor(backgroundColorCode);
 			text.setBackground(backgroundColor.getColor());
@@ -421,77 +382,26 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *
 	 * @param fontNameExpression
 	 *            Font name expression
-	 * @param fontNameAttribute
-	 *            Font name attribute
 	 * @param fontSizeExpression
 	 *            Font size expression
-	 * @param fontSizeAttribute
-	 *            Font size attribute
 	 * @param fontStyleExpression
 	 *            Font style expression
-	 * @param fontStyleAttribute
-	 *            Font style attribute
 	 * @param text
 	 *            Text
-	 * @param text
 	 */
-	protected void setFont(String fontNameExpression, EAttribute fontNameAttribute, String fontSizeExpression, EAttribute fontSizeAttribute,
-			String fontStyleExpression, EAttribute fontStyleAttribute, StyledText text) {
+	protected void setFont(String fontNameExpression, String fontSizeExpression, String fontStyleExpression, StyledText text) {
 		// Get default font
 		Font defaultFont = text.getFont();
 		FontData defaultFontData = defaultFont.getFontData()[0];
-		String fontName = getFontName(fontNameExpression, fontNameAttribute, defaultFontData);
-		int fontSize = getFontSize(fontSizeExpression, fontSizeAttribute, defaultFontData);
-		int fontStyle = getFontStyle(fontStyleExpression, fontStyleAttribute, defaultFontData, text);
+
+		String fontName = Eval.of(interpreter, variableManager).logIfInvalidType(String.class).defaultValue(defaultFontData.getName())
+				.get(fontNameExpression);
+		int fontSize = Eval.of(interpreter, variableManager).logIfInvalidType(Integer.class)
+				.defaultValue(Integer.valueOf(defaultFontData.getHeight())).get(fontSizeExpression).intValue();
+
+		int fontStyle = getFontStyle(fontStyleExpression, defaultFontData, text);
 		EEFFont font = new EEFFont(fontName, fontSize, fontStyle);
 		text.setFont(font.getFont());
-	}
-
-	/**
-	 * Get the font name.
-	 *
-	 * @param fontNameExpression
-	 *            Font name expression
-	 * @param eAttribute
-	 *            The eAttribute
-	 * @param defaultFontData
-	 *            Default font data
-	 * @return Font name
-	 */
-	private String getFontName(String fontNameExpression, EAttribute eAttribute, FontData defaultFontData) {
-		String fontName = defaultFontData.getName();
-		Eval eval = new Eval(interpreter, variableManager);
-		if (fontNameExpression != null && !fontNameExpression.isEmpty()) {
-			String fontNameValue = eval.get(eAttribute, fontNameExpression, String.class);
-			if (fontNameValue != null) {
-				// Get font name
-				fontName = fontNameValue;
-			}
-		}
-		return fontName;
-	}
-
-	/**
-	 * Get the font size.
-	 *
-	 * @param fontSizeExpression
-	 *            Font size expression
-	 * @param eAttribute
-	 *            The eAttribute
-	 * @param defaultFontData
-	 *            Default font data
-	 * @return Font size
-	 */
-	private int getFontSize(String fontSizeExpression, EAttribute eAttribute, FontData defaultFontData) {
-		int fontSize = defaultFontData.getHeight();
-		if (fontSizeExpression != null && !fontSizeExpression.isEmpty()) {
-			Eval eval = new Eval(interpreter, variableManager);
-			Integer fontSizeValue = eval.get(eAttribute, fontSizeExpression, Integer.class);
-			if (fontSizeValue != null && fontSizeValue.intValue() != fontSize) {
-				fontSize = fontSizeValue.intValue();
-			}
-		}
-		return fontSize;
 	}
 
 	/**
@@ -499,19 +409,16 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *
 	 * @param fontStyleExpression
 	 *            Font style expression
-	 * @param eAttribute
-	 *            The eAttribute
 	 * @param defaultFontData
 	 *            Default font data
 	 * @param text
 	 *            The text
 	 * @return Font style
 	 */
-	private int getFontStyle(String fontStyleExpression, EAttribute eAttribute, FontData defaultFontData, StyledText text) {
+	private int getFontStyle(String fontStyleExpression, FontData defaultFontData, StyledText text) {
 		int fontStyle = defaultFontData.getStyle();
 		if (fontStyleExpression != null && !fontStyleExpression.isEmpty()) {
-			Eval eval = new Eval(interpreter, variableManager);
-			String fontStyleValue = eval.get(eAttribute, fontStyleExpression, String.class);
+			String fontStyleValue = Eval.of(interpreter, variableManager).logIfInvalidType(String.class).get(fontStyleExpression);
 			fontStyle = getFontStyle(fontStyleValue, fontStyle, text);
 		}
 		return fontStyle;
@@ -582,12 +489,8 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * @return True if the widget should be enabled otherwise false.
 	 */
 	protected boolean isEnabled() {
-		Eval eval = new Eval(interpreter, variableManager);
-		Boolean result = eval.get(EefPackage.Literals.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION, getWidgetDescription().getIsEnabledExpression(),
-				Boolean.class);
-		if (result != null) {
-			return result.booleanValue();
-		}
-		return true;
+		Boolean result = Eval.of(interpreter, variableManager).logIfInvalidType(Boolean.class).defaultValue(Boolean.TRUE)
+				.get(getWidgetDescription().getIsEnabledExpression());
+		return result.booleanValue();
 	}
 }

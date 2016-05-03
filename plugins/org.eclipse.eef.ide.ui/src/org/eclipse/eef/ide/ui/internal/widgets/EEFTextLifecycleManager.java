@@ -224,7 +224,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * Set the style.
 	 */
 	private void setStyle() {
-		setTextStyle(getTextStyle(), text);
+		EEFTextStyle style = this.getTextStyle();
+		if (style != null) {
+			this.setFont(style.getFontNameExpression(), style.getFontSizeExpression(), style.getFontStyleExpression(), text);
+			this.setBackgroundColor(style.getBackgroundColorExpression(), text);
+			this.setForegroundColor(style.getForegroundColorExpression(), text);
+		}
 	}
 
 	/**
@@ -238,7 +243,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		if (conditionalStyles != null) {
 			for (EEFTextConditionalStyle eefTextConditionalStyle : conditionalStyles) {
 				String preconditionExpression = eefTextConditionalStyle.getPreconditionExpression();
-				Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+				Boolean preconditionValid = Eval.of(interpreter, variableManager).logIfInvalidType(Boolean.class).get(preconditionExpression);
 				if (preconditionValid != null && preconditionValid.booleanValue()) {
 					textStyle = eefTextConditionalStyle.getStyle();
 					break;

@@ -326,10 +326,11 @@ public class EEFReferenceLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	 */
 	private void setSingleValuedReference(Object value) {
 		String expression = description.getDisplayExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION;
+
 		Map<String, Object> variables = new HashMap<String, Object>();
 		variables.put(EEFExpressionUtils.SELF, value);
-		String display = new Eval(EEFReferenceLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
+		String display = Eval.of(EEFReferenceLifecycleManager.this.interpreter, variables).logIfInvalidType(String.class).get(expression);
+
 		if (display != null) {
 			if (hyperlink != null && !hyperlink.isDisposed() && !(hyperlink.getText() != null && hyperlink.getText().equals(value))) {
 				hyperlink.setText(display);
@@ -474,7 +475,8 @@ public class EEFReferenceLifecycleManager extends AbstractEEFWidgetLifecycleMana
 
 			String expression = description.getDisplayExpression();
 			EAttribute eAttribute = EefPackage.Literals.EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION;
-			String value = new Eval(EEFReferenceLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
+			String value = Eval.of(EEFReferenceLifecycleManager.this.interpreter, variables).logIfInvalidType(String.class).logIfBlank(eAttribute)
+					.get(expression);
 			cell.setText(value);
 			super.update(cell);
 		}

@@ -21,7 +21,6 @@ import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFGroupStyle;
 import org.eclipse.eef.EEF_TITLE_BAR_STYLE;
 import org.eclipse.eef.EEF_TOGGLE_STYLE;
-import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
@@ -127,7 +126,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		if (conditionalStyles != null) {
 			for (EEFGroupConditionalStyle eefGroupConditionalStyle : conditionalStyles) {
 				String preconditionExpression = eefGroupConditionalStyle.getPreconditionExpression();
-				Boolean preconditionValid = new Eval(interpreter, variableManager).get(preconditionExpression, Boolean.class);
+				Boolean preconditionValid = Eval.of(interpreter, variableManager).logIfInvalidType(Boolean.class).get(preconditionExpression);
 				if (preconditionValid != null && preconditionValid.booleanValue()) {
 					styleDescription = eefGroupConditionalStyle.getStyle();
 					break;
@@ -151,7 +150,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		this.section.setText(""); //$NON-NLS-1$
 
 		String labelExpression = this.description.getLabelExpression();
-		new Eval(this.interpreter, this.variableManager).call(labelExpression, String.class, new IConsumer<String>() {
+		Eval.of(this.interpreter, this.variableManager).logIfInvalidType(String.class).call(labelExpression, new IConsumer<String>() {
 			@Override
 			public void apply(String value) {
 				EEFGroupLifecycleManager.this.section.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
@@ -170,9 +169,8 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 		if (styleDescription != null) {
 			// Get background color from expression
-			Eval eval = new Eval(interpreter, variableManager);
-			String backgroundValue = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION,
-					styleDescription.getBackgroundColorExpression(), String.class);
+			String backgroundValue = Eval.of(interpreter, variableManager).logIfInvalidType(String.class)
+					.get(styleDescription.getBackgroundColorExpression());
 			if (backgroundValue != null) {
 				Color backgroundColor = new EEFColor(backgroundValue).getColor();
 				this.section.setBackground(backgroundColor);
@@ -180,8 +178,8 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 			}
 
 			// Get foreground color from expression
-			String foregroundValue = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION,
-					styleDescription.getForegroundColorExpression(), String.class);
+			String foregroundValue = Eval.of(interpreter, variableManager).logIfInvalidType(String.class)
+					.get(styleDescription.getForegroundColorExpression());
 			if (foregroundValue != null) {
 				Color foregroundColor = new EEFColor(foregroundValue).getColor();
 				groupComposite.setForeground(foregroundColor);
@@ -192,10 +190,8 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 			}
 
 			// Get font name and size from expression
-			String fontName = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION, styleDescription.getFontNameExpression(),
-					String.class);
-			Integer fontSize = eval.get(EefPackage.Literals.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION, styleDescription.getFontSizeExpression(),
-					Integer.class);
+			String fontName = Eval.of(interpreter, variableManager).logIfInvalidType(String.class).get(styleDescription.getFontNameExpression());
+			Integer fontSize = Eval.of(interpreter, variableManager).logIfInvalidType(Integer.class).get(styleDescription.getFontSizeExpression());
 			if (fontSize == null) {
 				fontSize = Integer.valueOf(0);
 			}

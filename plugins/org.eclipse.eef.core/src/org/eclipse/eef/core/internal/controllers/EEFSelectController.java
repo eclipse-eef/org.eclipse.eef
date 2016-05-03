@@ -85,7 +85,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 				variables.putAll(EEFSelectController.this.variableManager.getVariables());
 				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-				new Eval(EEFSelectController.this.interpreter, variables).call(eAttribute, editExpression);
+				Eval.of(EEFSelectController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 			}
 		});
 	}
@@ -102,7 +102,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 		String candidatesExpression = this.description.getCandidatesExpression();
 		EAttribute candidatesExpressionEAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION;
 
-		this.newEval().call(candidatesExpressionEAttribute, candidatesExpression, new IConsumer<Object>() {
+		this.newEval().logIfBlank(candidatesExpressionEAttribute).call(candidatesExpression, new IConsumer<Object>() {
 			@Override
 			public void apply(Object value) {
 				if (value instanceof Iterable<?>) {
@@ -116,9 +116,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 		});
 
 		String valueExpression = this.description.getValueExpression();
-		EAttribute valueExpressionEAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION;
-
-		this.newEval().call(valueExpressionEAttribute, valueExpression, EEFSelectController.this.newValueConsumer);
+		this.newEval().call(valueExpression, this.newValueConsumer);
 	}
 
 	/**

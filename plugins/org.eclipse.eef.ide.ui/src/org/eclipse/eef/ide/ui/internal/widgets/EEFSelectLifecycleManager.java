@@ -288,7 +288,8 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 			variables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
 			variables.put(EEFSelect.CANDIDATE, element);
 
-			return new Eval(EEFSelectLifecycleManager.this.interpreter, variables).get(eAttribute, expression, String.class);
+			return Eval.of(EEFSelectLifecycleManager.this.interpreter, variables).logIfInvalidType(String.class).logIfBlank(eAttribute)
+					.get(expression);
 		}
 	}
 }
