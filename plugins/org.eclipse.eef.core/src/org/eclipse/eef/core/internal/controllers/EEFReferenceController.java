@@ -123,12 +123,19 @@ public class EEFReferenceController extends AbstractEEFWidgetController implemen
 	 * @see org.eclipse.eef.core.api.controllers.IEEFReferenceController#action()
 	 */
 	@Override
-	public void action(EEFWidgetAction action, List<Object> elements) {
-		String expression = action.getActionExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
-		Map<String, Object> variables = new HashMap<String, Object>();
-		variables.putAll(EEFReferenceController.this.variableManager.getVariables());
-		variables.put(EEFExpressionUtils.EEFReference.SELECTION, elements);
-		new Eval(EEFReferenceController.this.interpreter, variables).call(eAttribute, expression);
+	public void action(final EEFWidgetAction action, final List<Object> elements) {
+		contextAdapter.performModelChange(new Runnable() {
+			@Override
+			public void run() {
+				String expression = action.getActionExpression();
+				EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
+
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(EEFReferenceController.this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFReference.SELECTION, elements);
+
+				new Eval(EEFReferenceController.this.interpreter, variables).call(eAttribute, expression);
+			}
+		});
 	}
 }
