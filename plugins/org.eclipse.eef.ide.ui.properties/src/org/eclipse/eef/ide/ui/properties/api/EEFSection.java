@@ -80,13 +80,4 @@ public class EEFSection implements IEEFSection {
 	public boolean shouldUseExtraSpace() {
 		return true;
 	}
-
-	/**
-	 * Return the eefPage.
-	 *
-	 * @return the eefPage
-	 */
-	public EEFPage getEEFPage() {
-		return this.tab.getEEFPage();
-	}
 }

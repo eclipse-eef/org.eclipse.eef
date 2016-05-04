@@ -19,7 +19,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author sbegaudeau
  */
-public interface EEFGroup extends EEFContainerParent {
+public interface EEFGroup {
 	/**
 	 * Returns the description of the {@link EEFGroup}.
 	 *

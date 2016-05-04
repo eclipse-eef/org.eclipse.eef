@@ -82,13 +82,4 @@ public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 			}
 		};
 	}
-
-	/**
-	 * Returns the EEFPage used to managed this section descriptor.
-	 *
-	 * @return The EEFPage used to managed this section descriptor
-	 */
-	public EEFPage getEEFPage() {
-		return eefPage;
-	}
 }
