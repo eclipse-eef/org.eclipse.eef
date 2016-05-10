@@ -81,7 +81,7 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 		super.refresh();
 
 		String buttonLabelExpression = this.description.getButtonLabelExpression();
-		this.newEval().logIfInvalidType(String.class).call(buttonLabelExpression, this.newButtonLabelConsumer);
+		this.newEval().logIfInvalidType(String.class).defaultValue("...").call(buttonLabelExpression, this.newButtonLabelConsumer); //$NON-NLS-1$
 	}
 
 	@Override
