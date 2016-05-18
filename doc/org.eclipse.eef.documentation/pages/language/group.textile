@@ -1,0 +1,43 @@
+h2. Group
+
+h3(#description). Description
+
+The group is a reusable part of the user interface that can be shared between multiple "pages":page.html. It can contain various widgets with their validation rules and a specific layout.
+
+h3(#properties). Properties
+
+* identifier: The identifier of the group is used to identify the group.
+* labelExpression: The label expression is used to compute the label of the group. This expression must return a string.
+* domainClass: The domain class is used to ensure that this group will only be displayed if the current context of the page, computed from the semantic candidate expression of the page containing the group, matches the domain class.
+* semanticCandidateExpression: The semantic candidate expression is used to compute the current context of the group in a similar fashion as the semantic candidate expression of the page. This expression must return one object or a collection of objects to be used as the new context of the group. More information are available below in order to create multiple groups from one definition.
+* preconditionExpression: The precondition expression is used to determine if the group should be created. This expression must return a boolean.
+* controls: The list of all "widgets":widgets.html and "container":container.html used in this group.
+* semanticValidationRules: The validation rules of the group. For more details regarding the validation in EEF, have a look at the documentation of the "validation":validation.html.
+* propertyValidationRules: The validation rules of the "widgets":widgets.html of the group. For more details regarding the validation in EEF, have a look at the documentation of the "validation":validation.html.
+* style: The style of the group is used to modify the appearance of the group in the user interface.
+* conditionalStyles: The conditional styles is the list of all the alternate appearance that can be used when a specific condition is fulfilled.
+
+h3(#variables). Variables
+
+The semantic candidate expression will have access to two different variables, @self@ computed from the semantic candidate expression of the page and @input@ the input of the view. Using those variables, the semantic candidate expression of the group will compute a new value which will be available under the name @self@ for all the other expressions in the group. If you have used another value for the semantic candidate expression of the group than the one available in the containing page, you will not be able to access directly the value of @self@ of the page. you may be able to compute it back from the value of @self@ of your group. If you do not have any semantic candidate expression specified, it will reuse the value of @self@ of the containing page, just like the page did with the value of @self@ from the view.
+
+The label expression, the precondition expression, the controls, the styles and the validation rules will all have access to the value of @self@ computed from the semantic candidate expression of the group and @input@, the input of the view. 
+
+
+h3(#multiplegroupsfromonedefinition). Create multiple groups from one definition
+
+In a similar fashion to what can be done in the page, a single definition of a group can create multiple groups in the user interface. For that, you just have to use a semantic candidate expression which will return a collection. For additional details regarding this mechanism, have a look at the documentation of the "page":page.html.
+
+h3(#style). Styles and conditional styles
+
+Another aspect of the influence of Eclipse Sirius over EEF is the introduction of styling. Styles allow you to customize the appearance of an element of the user interface, here the groups, easily. An EEF group style contains the following properties:
+
+* backgroundColorExpression: The background color expression is used to compute the background color of the group. This expression must return a string with a hexadecimal-based color, for example @#FFFFFF@, or a rgb-based one, for example @rgb(30,30,30)@.
+* foregroundColorExpression: The foreground color expression is used to compute the color of the label of the group. This expression must return a string with a hexadecimal-based color, for example @#FFFFFF@, or a rgb-based one, for example @rgb(30,30,30)@.
+* fontNameExpression: The font name expression is used to compute the name of the font used by the label of the group. This expression must return a string with the name of a font.
+* fontSizeExpression: The font size expression is used to compute the size of the font of the label of the group. This expression must return an integer.
+* barStyle: The style of the bar of the group. This style can be either the regular title bar, a short title bar or no title bar at all.
+* toggleStyle: The style of toggle for the group. This can be either twistie, tree node or nothing at all.
+* expandedByDefault: Indicates if the group should be expanded or collapsed by default.
+
+On top of regular group style, you have access to conditional styles. A conditional style is a style requiring a precondition in order to be applied. For example, a red style that should only be applied if you have an issue in your data. All those expressions have access to the variables @self@, computed by the semantic candidate expression of the group, and @input@, the input of the view. 

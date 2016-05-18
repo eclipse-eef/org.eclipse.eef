@@ -1,0 +1,5 @@
+h2. Developer Guide
+
+In this developer guide, you will find some documentation in order to use programmatically the Eclipse EEF runtime.
+
+* "Extension Points":extensionpoints.html

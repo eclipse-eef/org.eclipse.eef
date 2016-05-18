@@ -1,0 +1,12 @@
+h2. Container & Layout
+
+h3(#description). Description
+
+A container is a kind of control which can be contained in a "group":group.html or in another container and used to create a complex layout.
+
+h3(#properties). Properties
+
+* identifier: The identifier of the container is used when you need to programmatically customize the appearance of the container.
+* controls: The "widgets":widgets.html, sub-container and "dynamic mappings":dynamicmappings.html contained in the container.
+* layout: The layout of the container. There are two kind of layout available, the fill layout and the grid layout. The fill layout will organize the controls in a horizontal or vertical line while the grid layout will create a grid with a specific number of columns and then it will populate each column until the end before creating a new line of controls.
+

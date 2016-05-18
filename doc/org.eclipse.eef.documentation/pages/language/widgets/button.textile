@@ -1,0 +1,17 @@
+h2. Button
+
+h3(#description). Description
+
+The button widget can be used to execute an action in your user interface. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
+
+* buttonLabelExpression: This expression is used to compute the label of the button. This expression must return a string.
+* pushExpression: This expression will be executed once the end user will click on the button. This expression does not have to return anything.
+* style: The style of the button widget.
+* conditionalStyle: All the conditional styles of the button widget.
+
+h3(#displayanaction). Display an action
+
+In order to create an action using a button widget, you can use the following properties:
+
+* buttonLabelExpression: @aql:'Click'@
+* pushExpression: @aql:self.doSomething()@

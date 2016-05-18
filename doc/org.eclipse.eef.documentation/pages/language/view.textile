@@ -1,0 +1,29 @@
+h2. View
+
+h3(#description). Description
+
+The view is the root concept of the EEF language. It is used mainly to contain the various "pages":page.html and "groups":page.html.
+
+h3(#properties). Properties
+
+The view contains the following properties:
+
+* identifier: This property is used to identify the view, while it has no direct use today, it is helpful in order to make sure that you are manipulating the view that you want.
+* labelExpression: The label expression is used in order to compute the label of the form in which the user interface is created. This expression must return a java.lang.String.
+* imageExpression: The image expression is used in order to compute the image that will be displayed for the form in which the interface is created. This expression must return a java.net.URL, additional return types may be supported later.
+* ePackages: The list of all the EPackages used by the expressions in the EEF definition. While this concept is unused today, it will be helpful to provide additional features like the validation of the expressions in the EEF definition.
+* pages: The list of the "pages":page.html that may be used to create the user interface. Using the Sirius integration, each page will make EEF create a new tab in the Properties view.
+* groups: The "groups":page.html that may be used in any of the pages. Each group of the page will create a dedicated section in the user interface.
+
+h4(#variables). Variables
+
+In order to compute the label expression and the image expression, you have access to several variables:
+
+* self: An instance of @org.eclipse.emf.ecore.EObject@ which will be the semantic element representing the input
+* input: An instance of @org.eclipse.eef.core.api.InputDescriptor@ which will contain both the original input of the view and its the semantic element which you can access using the variable @self@. In other concepts of your definition, @self@ may be redefined so if you want to access the original input of your view, it can always be retrieved thanks to the variable @input@.
+
+h3(#pagesandgroups). Organization of pages and groups
+
+p(image). !(view-page-group)view-page-group.png!
+
+Groups are not under pages in order to be able to reuse groups in various pages. For example, in a complex meta-model with hundreds of EClasses and thousands of EStructuralFeatures, you may have dozens of those EClasses sharing some common properties (i.e. name, description), by having the ability to use a group in multiple pages, you can define a component of your user interface with various widgets, validation rules and even a specific layout that you can reuse easily.
