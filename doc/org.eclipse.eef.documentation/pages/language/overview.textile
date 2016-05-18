@@ -1,0 +1,32 @@
+h2. Overview
+
+The new language for Eclipse EEF has been created to let the specifiers build easily their user interfaces. Given the fact that lot of Sirius specifiers need to build complex Properties view to match their designers, this new language has embraced the same philosophy as Eclipse Sirius to help Sirius specifiers get on board quickly.
+
+Most of the concepts of the language can be configured using expressions based on various interpreters. By using EEF along with Sirius, you can leverage all the interpreters available in Sirius and if you want to use EEF out of Eclipse Sirius, you can easily plug your own interpreter. By using EEF with AQL, you can navigate very easily in the concepts of your models to compute what you want to display and edit.
+
+In order to be as powerful to build a form-based user interface as Sirius is for diagrams, the language used by EEF is not linked to the EMF-based meta-models of the specifier. The EEF language could have easily decided that an EMF attribute with the type EString must create a text widget with the value of the attribute but by not being linked in this fashion with the meta-model of the specifiers, you can create text widget and set its value to anything that you can compute in an expression.
+
+Our goal is to provide a language which can handle simple use cases easily and yet support complex use cases with advanced features like dynamic mappings and semantic candidates.
+
+h3(#overview). Overview of the language
+
+p(image). !(language)language.png!
+
+The EEF language can be summarized using a couple of concepts. The root container of all the other concept is the view, which contains the various pages of the user interface. In the view you can also find the groups, which represent various sections of the pages. The pages can use various groups and an unique group can be used by several pages. Inside of a group, you can create different kind of controls:
+
+* widgets
+* containers
+* dynamic mappings
+
+While the concept of widgets is pretty straightforward, containers are used to specify a custom layout (grid, vertical, horizontal) and dynamic mappings are used to create multiple widgets from one definition. On top of those concepts, EEF also provides some additional concepts for the validation and styling of the various widgets.
+
+h3(#concepts). Concepts of the language
+
+* "View":view.html
+* "Page":page.html
+* "Group":group.html
+* "Widgets":widgets.html
+* "Container & Layout":container.html
+* "Dynamic Mappings":dynamicmappings.html
+* "Validation":validation.html
+

@@ -1,0 +1,16 @@
+h2. Dynamic Mappings
+
+h3(#description). Description
+
+The dynamic mapping is an advanced concept used to handle complex meta-model more easily. In a very complex meta-model, you cannot define the "widgets":widgets.html of your properties, as such a more powerful mechanism is needed to define your user interface more quickly. This concept has been created to fulfill the following requirement: "how can we create a text widget for each property with the type EString?".
+
+h3(#properties). Properties
+
+* domainClassExpression: This expression will use concepts of the meta-model in order to compute the number of element to take into account. This expression must return a collection of element on which we will iterate to create the widgets. For example, to fulfill our requirement of one text widget for each property with the type EString, you could type the following domainClassExpression @aql:self.eClass().eAllStructuralFeatures@.
+* iterator: The iterator will be used to define a name to manipulate the result of the domain class expression. To fulfill our requirement, we could use the name @eStructuralFeature@.
+* ifs: This property will contain all the use cases that can be handled by our dynamic mapping.
+
+An "if" contains the following two properties:
+
+* predicateExpression: The expression that needs to be validated in order to create the widget of the if. This expression must return a boolean. To fulfill our requirement, we would use the expression @aql:eStructuralFeature.eType = ecore::EString@. This expression will thus be executed for all the properties of our object given the fact that we are iterating on all its structural feature with our domain class expression and then for each structural feature, accessible in a variable named eStructuralFeature, we will ensure that the type of the feature is EString. 
+* widget: The widget to create. In our example, we would create a text widget in order to have a text widget for each property with the type EString.

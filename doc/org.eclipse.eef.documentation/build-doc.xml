@@ -34,5 +34,12 @@
 			</fileset>
 			<stylesheet url="../assets/css/stylesheet.css"/>
 		</wikitext-to-html>
+		
+		<wikitext-to-html markupLanguage="Textile" formatOutput="true" failonvalidationerror="true" failonvalidationwarning="true" validate="true">
+			<fileset dir="${basedir}">
+				<include name="pages/*/*/*.textile" />
+			</fileset>
+			<stylesheet url="../../assets/css/stylesheet.css"/>
+		</wikitext-to-html>
 	</target>
 </project>
