@@ -9,7 +9,49 @@
   Contributors:
        Obeo - Initial API and implementation
 -->
-<toc label="EEF">
+<toc label="EEF" topic="pages/index.html">
   <topic href="pages/releasenotes.html" label="Release Notes">
+  </topic>
+  <topic href="pages/language/overview.html" label="Language">
+     <topic href="pages/language/view.html" label="View">
+     </topic>
+     <topic href="pages/language/page.html" label="Page">
+     </topic>
+     <topic href="pages/language/group.html" label="Group">
+     </topic>
+     <topic href="pages/language/widgets.html" label="Widgets">
+        <topic href="pages/language/widgets/text.html" label="Text">
+        </topic>
+        <topic href="pages/language/widgets/checkbox.html" label="Checkbox">
+        </topic>
+        <topic href="pages/language/widgets/radio.html" label="Radio">
+        </topic>
+        <topic href="pages/language/widgets/select.html" label="Select">
+        </topic>
+        <topic href="pages/language/widgets/label.html" label="Label">
+        </topic>
+        <topic href="pages/language/widgets/reference.html" label="Reference">
+        </topic>
+        <topic href="pages/language/widgets/hyperlink.html" label="Hyperlink">
+        </topic>
+        <topic href="pages/language/widgets/button.html" label="Button">
+        </topic>
+     </topic>
+     <topic href="pages/language/container.html" label="Container and Layout">
+     </topic>
+     <topic href="pages/language/dynamicmappings.html" label="Dynamic Mappings">
+     </topic>
+     <topic href="pages/language/validation.html" label="Validation">
+     </topic>
+  </topic>
+  <topic href="pages/developerguide/overview.html" label="Developer Guide">
+     <topic href="pages/developerguide/extensionpoints.html" label="Extension Points">
+        <topic href="pages/developerguide/extensionpoints.html#eeflifecyclemanagerprovider" label="IEEFLifecycleManagerProvider">
+        </topic>
+        <topic href="pages/developerguide/extensionpoints.html#eeftabdescriptorprovider" label="IEEFTabDescriptorProvider">
+        </topic>
+     </topic>
+  </topic>
+  <topic href="pages/glossary.html" label="Glossary">
   </topic>
 </toc>

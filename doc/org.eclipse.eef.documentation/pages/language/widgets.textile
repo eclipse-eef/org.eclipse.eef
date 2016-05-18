@@ -1,0 +1,51 @@
+h2. Widgets
+
+h3(#description). Description
+
+A "group":group.html or a "container":container.html can contain various widgets available in order to build your user interface:
+
+* "Text":widgets/text.html
+* "Checkbox":widgets/checkbox.html
+* "Radio":widgets/radio.html
+* "Select":widgets/select.html
+* "Label":widgets/label.html
+* "Reference":widgets/reference.html
+* "Hyperlink":widgets/hyperlink.html
+* "Button":widgets/button.html
+
+h3(#commonproperties). Common properties
+
+All the widgets in EEF share the following set of properties:
+
+* identifier: The identifier is used to identify the widget, this property is used if you want to customize programmatically the behavior of your widget.
+* labelExpression: The label expression is used to compute the label of the widget.
+* helpExpression: The help expression is used to compute the help tooltip.
+* isEnabledExpression: This expression is used to determine if the widget should be enabled or disabled.
+* propertyValidationRules: The validation rule that the widget should use. Those validation rules will be contained in the group containing the widget but referenced here. For more details regarding the validation in EEF, have a look at the documentation of the "validation":validation.html.
+
+
+h3(#style). Styles and conditional styles
+
+Just like the "groups":group.html, most of the widgets have support for styling with dedicated style and conditional styles. The style of most widgets extends the EEFWidgetStyle. This style contains a set of properties for all the widget styles including:
+
+* labelBackgroundColorExpression: This expression will determine the color of the background of the label.
+* labelForegroundColorExpression: This expression is used to compute the foreground color of the label.
+* labelFontNameExpression: This expression is used to compute the name of the font of the label.
+* labelFontSizeExpression: This expression is used to compute the size of the font of the label.
+* labelFontStyleExpression: This expression is used to compute the style (bold, italic, strikeout, underline) of the font of the label.
+
+h3(#customwidgets). Custom Widgets
+
+You also have the ability to use the custom widget definition in order to provide a "low cost" integration for a custom widget. This custom widget description contains the common properties of all the widgets but it also contains the following properties:
+
+* customExpressions: This property will contain all the custom expressions. A custom expression contains both an identifier and an expression.
+* style: The style of the custom widget.
+* conditionalStyles: The condtional styles of the custom widget.
+
+Imagine that you want to create a color picker, in order to let your specifier use the color picker you will need two pieces of information from him: "what is the value of the color picker?" and "what happens when a new value is selected?". In order to achieve this, you just need create programmatically the definition of your custom widget and tell the specifier who will need to use it to create a custom widget with the kind of identifier that you are expecting and then to specify the proper customExpressions. In this example, to set the value of the color picker widget, your code may be expecting a custom expression with the identifier "valueExpression" and an expression like @aql:self.colorValue@. In order to update the value of the color, your code may be expecting a custom expression with the identifier "editExpression" and an expression like @aql:self.updateColor(newValue)@.
+
+With the concept of custom widget in the language, you only have to create the code which will handle the widget, you don't have to contribute to the EEF language to add your new widget. To contribute the code used to create and handle your custom widget, have a look at the "extension points":../developerguide/extensionpoints.html documentation.
+
+h3(#replacedefaultwidgets). Replace Default Widgets
+
+EEF provides some APIs in order to let developers modify or replace the behavior of existing widget. Have a look at the "extension points":../developerguide/extensionpoints.html documentation for additional details. 

@@ -1,0 +1,17 @@
+h2. Hyperlink
+
+h3(#description). Description
+
+The hyperlink widget can be used to display a read-only piece of text in your user interface and allow the user to click on it. Its behavior is almost the same as the "label":label.html or the "text":text.html widgets. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
+
+* valueExpression: This expression is used in order to compute the text of the hyperlink.
+* onClickExpression: This expression will be executed once the end user will click on the hyperlink.
+* style: The style of the hyperlink widget.
+* conditionalStyles: All the conditional styles of the hyperlink widget.
+
+h3(#displayanaction). Display an action
+
+In order to create a hyperlink widget, you can use the following properties:
+
+* valueExpression: @aql:'Click'@
+* onClickExpression: @aql:self.doSomething()@
