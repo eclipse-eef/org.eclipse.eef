@@ -2383,6 +2383,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_33d6936c",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/label.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:46:32Z",
+      "side": 1,
+      "message": "Guilty as charged, I did indeed copy and paste it on all the widgets, I\u0027ll remove it here :)",
+      "parentUuid": "87e453f8_f38eebb7",
+      "range": {
+        "startLine": 18,
+        "startChar": 281,
+        "endLine": 18,
+        "endChar": 323
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_3824b038",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
         "patchSetId": 1
@@ -3335,6 +3359,30 @@
       "side": 1,
       "message": "Yes what I was proposing is to add a special topics also for custom widget as you did for classical widgets",
       "parentUuid": "87e453f8_f35c2bc8",
+      "range": {
+        "startLine": 22,
+        "startChar": 39,
+        "endLine": 22,
+        "endChar": 40
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_73073b90",
+        "filename": "doc/org.eclipse.eef.documentation/pages/toc.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:46:32Z",
+      "side": 1,
+      "message": "Ah ok, sure, since I have a hyperlink for them :)",
+      "parentUuid": "87e453f8_93e5a754",
       "range": {
         "startLine": 22,
         "startChar": 39,
