@@ -85,7 +85,7 @@ public class ExporterTests {
 
 		String expected = line;
 
-		assertThat(new Exporter().fixLinks(line, null, null), is(expected));
+		assertThat(new Exporter().fixLine(line, null, null), is(expected));
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class ExporterTests {
 
 		String expected = "This is a line with <a href=\"#/documentation/1.6.0/main/doc/releasenotes\">a relative link</a> somewhere"; //$NON-NLS-1$
 
-		assertThat(new Exporter().fixLinks(line, path, version), is(expected));
+		assertThat(new Exporter().fixLine(line, path, version), is(expected));
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class ExporterTests {
 
 		String expected = line;
 
-		assertThat(new Exporter().fixLinks(line, null, null), is(expected));
+		assertThat(new Exporter().fixLine(line, null, null), is(expected));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class ExporterTests {
 
 		String expected = "This is <a href=\"#/documentation/1.6.0/main/folder/subfolder/page#top\">an anchor link</a> to somewhere"; //$NON-NLS-1$;
 
-		assertThat(new Exporter().fixLinks(line, path, version), is(expected));
+		assertThat(new Exporter().fixLine(line, path, version), is(expected));
 	}
 
 	/**
@@ -139,6 +139,20 @@ public class ExporterTests {
 
 		String expected = "This is a line with <a href=\"http://google.com\">multiple</a> <a href=\"#/documentation/1.6.0/main/folder/otherpage\">links</a>, <a href=\"#/documentation/1.6.0/topic\">relative</a> or <a href=\"https://eclipse.org\">absolute</a>"; //$NON-NLS-1$
 
-		assertThat(new Exporter().fixLinks(line, path, version), is(expected));
+		assertThat(new Exporter().fixLine(line, path, version), is(expected));
+	}
+
+	/**
+	 * Test that a line with an image is properly converted.
+	 */
+	@Test
+	public void testFixLineWithImage() {
+		String path = "main/folder/subfolder/page.html"; //$NON-NLS-1$
+		String version = "1.6.0"; //$NON-NLS-1$
+		String line = "This is a line with an image <img class=\"image\" src=\"image.png\"> and with some other content"; //$NON-NLS-1$
+
+		String expected = "This is a line with an image <img class=\"image\" src=\"sections/documentation/1.6.0/main/folder/subfolder/image.png\"> and with some other content"; //$NON-NLS-1$
+
+		assertThat(new Exporter().fixLine(line, path, version), is(expected));
 	}
 }

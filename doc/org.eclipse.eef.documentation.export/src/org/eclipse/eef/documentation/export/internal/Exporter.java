@@ -61,6 +61,21 @@ public class Exporter {
 	public static final String HTML_EXTENSION = ".html"; //$NON-NLS-1$
 
 	/**
+	 * The start of an "img" element.
+	 */
+	public static final String IMG_ELEMENT_START = "<img"; //$NON-NLS-1$
+
+	/**
+	 * The start of the "src" attribute of the "img" element.
+	 */
+	public static final String IMG_SRC_ATTRIBUTE_START = "src=\""; //$NON-NLS-1$
+
+	/**
+	 * The end of the "src" attribute of the "img" element.
+	 */
+	public static final String IMG_SRC_ATTRIBUTE_END = "\""; //$NON-NLS-1$
+
+	/**
 	 * The start of an "a" element.
 	 */
 	public static final String A_ELEMENT_START = "<a href=\""; //$NON-NLS-1$
@@ -89,6 +104,11 @@ public class Exporter {
 	 * The URL of the root of the documentation on the website.
 	 */
 	public static final String ROOT_DOCUMENTATION_URL = "#/documentation"; //$NON-NLS-1$
+
+	/**
+	 * The URL of the root of the documentation for static assets.
+	 */
+	public static final String ROOT_DOCUMENTATION_ASSET_URL = "sections/documentation/"; //$NON-NLS-1$
 
 	/**
 	 * Exports the documentation for the website.
@@ -197,7 +217,7 @@ public class Exporter {
 		for (String line : lines) {
 			hasFoundStopBody = hasFoundStopBody || line.contains("</body>"); //$NON-NLS-1$
 			if (hasFoundStartBody && !hasFoundStopBody) {
-				linesToKeep.add(this.fixLinks(line, path, documentationVersion));
+				linesToKeep.add(this.fixLine(line, path, documentationVersion));
 			}
 			hasFoundStartBody = hasFoundStartBody || line.contains("<body>"); //$NON-NLS-1$
 		}
@@ -217,39 +237,150 @@ public class Exporter {
 	 *            The version of the documentation
 	 * @return The line with its links fixed
 	 */
-	public String fixLinks(String line, String path, String documentationVersion) {
+	public String fixLine(String line, String path, String documentationVersion) {
 		StringBuilder builder = new StringBuilder();
 
 		int startIndex = 0;
 		int endIndex = 0;
 
 		while (startIndex != -1 && endIndex != -1) {
-			startIndex = this.getNextLinkStart(line, endIndex);
-			if (startIndex != -1) {
-				// Append the content before this link
-				builder.append(line.substring(endIndex, startIndex));
+			int nextLinkStartIndex = this.getNextLinkStart(line, endIndex);
+			int nextImageSrcStartIndex = this.getNextImageSrcStart(line, endIndex);
 
-				endIndex = this.getNextLinkEnd(line, startIndex + A_ELEMENT_START.length());
-				if (endIndex != -1) {
-					// We have found at least one link in the line
-					String link = line.substring(startIndex + A_ELEMENT_START.length(), endIndex);
-
-					// Let's convert it
-					String convertedLink = this.convertLink(link, path, documentationVersion);
-
-					// Now append it to the builder
-					builder.append(A_ELEMENT_START);
-					builder.append(convertedLink);
-				} else {
-					// Should not occur, the link is invalid
-				}
-			} else {
-				// No more link on the line, append the rest
+			if (nextLinkStartIndex == -1 && nextImageSrcStartIndex == -1) {
+				// No image or link remaining
 				builder.append(line.substring(endIndex));
+				endIndex = -1;
+			} else if (nextLinkStartIndex == -1 && nextImageSrcStartIndex != -1) {
+				// At least one image but no link remaining
+				startIndex = nextImageSrcStartIndex;
+				endIndex = this.handleImageSrc(builder, line, nextImageSrcStartIndex, endIndex, path, documentationVersion);
+			} else if (nextLinkStartIndex != -1 && nextImageSrcStartIndex == -1) {
+				// At least one link but no image remaining
+				startIndex = nextLinkStartIndex;
+				endIndex = this.handleLink(builder, line, nextLinkStartIndex, endIndex, path, documentationVersion);
+			} else if (nextLinkStartIndex != -1 && nextImageSrcStartIndex != -1) {
+				// At least one image and one link remaining
+				boolean linkBeforeImage = nextLinkStartIndex < nextImageSrcStartIndex;
+				if (linkBeforeImage) {
+					startIndex = nextLinkStartIndex;
+					endIndex = this.handleLink(builder, line, nextLinkStartIndex, endIndex, path, documentationVersion);
+				} else {
+					startIndex = nextImageSrcStartIndex;
+					endIndex = this.handleImageSrc(builder, line, nextImageSrcStartIndex, endIndex, path, documentationVersion);
+				}
 			}
 		}
 
 		return builder.toString();
+	}
+
+	/**
+	 * Handles the image.
+	 * 
+	 * @param builder
+	 *            The builder
+	 * @param line
+	 *            The line
+	 * @param startIndex
+	 *            The start index
+	 * @param endIndex
+	 *            The end index
+	 * @param path
+	 *            The path of the HTML file
+	 * @param documentationVersion
+	 *            The version of the documentation
+	 * @return The end index of the image
+	 */
+	private int handleImageSrc(StringBuilder builder, String line, int startIndex, int endIndex, String path, String documentationVersion) {
+		int newEndIndex = endIndex;
+		// Append the content before this image
+		builder.append(line.substring(newEndIndex, startIndex));
+
+		newEndIndex = this.getNextImageSrcEnd(line, startIndex + IMG_SRC_ATTRIBUTE_START.length());
+		if (newEndIndex != -1) {
+			// We have found at least one image in the line
+			String imageSrc = line.substring(startIndex + IMG_SRC_ATTRIBUTE_START.length(), newEndIndex);
+
+			// Let's convert it
+			String convertedImageSrc = this.convertImageSrc(imageSrc, path, documentationVersion);
+
+			// Now append it to the builder
+			builder.append(IMG_SRC_ATTRIBUTE_START);
+			builder.append(convertedImageSrc);
+		} else {
+			// Should not occur, the link is invalid
+		}
+		return newEndIndex;
+	}
+
+	/**
+	 * Handles the link.
+	 *
+	 * @param builder
+	 *            The builder
+	 * @param line
+	 *            The line
+	 * @param startIndex
+	 *            The start index of the link
+	 * @param endIndex
+	 *            The end index of the link
+	 * @param path
+	 *            The path of the HTML file
+	 * @param documentationVersion
+	 *            The version of the documentation
+	 * @return The end index of the link
+	 */
+	private int handleLink(StringBuilder builder, String line, int startIndex, int endIndex, String path, String documentationVersion) {
+		int newEndIndex = endIndex;
+		// Append the content before this link
+		builder.append(line.substring(newEndIndex, startIndex));
+
+		newEndIndex = this.getNextLinkEnd(line, startIndex + A_ELEMENT_START.length());
+		if (newEndIndex != -1) {
+			// We have found at least one link in the line
+			String link = line.substring(startIndex + A_ELEMENT_START.length(), newEndIndex);
+
+			// Let's convert it
+			String convertedLink = this.convertLink(link, path, documentationVersion);
+
+			// Now append it to the builder
+			builder.append(A_ELEMENT_START);
+			builder.append(convertedLink);
+		} else {
+			// Should not occur, the link is invalid
+		}
+		return newEndIndex;
+	}
+
+	/**
+	 * Returns the index of the start of the src attribute of the next image.
+	 *
+	 * @param line
+	 *            The line
+	 * @param fromIndex
+	 *            The index from which the search should start.
+	 * @return The index of the start of the src attribute or -1 if none could be found
+	 */
+	private int getNextImageSrcStart(String line, int fromIndex) {
+		int imgStartIndex = line.indexOf(IMG_ELEMENT_START, fromIndex);
+		if (imgStartIndex != -1) {
+			return line.indexOf(IMG_SRC_ATTRIBUTE_START, imgStartIndex);
+		}
+		return -1;
+	}
+
+	/**
+	 * Returns the index of the end of the "src" attribute of an "img" element.
+	 *
+	 * @param line
+	 *            The line
+	 * @param fromIndex
+	 *            The index from which the search should start
+	 * @return The index of the end of the "src" attribute or -1 if none could be found
+	 */
+	private int getNextImageSrcEnd(String line, int fromIndex) {
+		return line.indexOf(IMG_SRC_ATTRIBUTE_END, fromIndex);
 	}
 
 	/**
@@ -259,7 +390,7 @@ public class Exporter {
 	 *            The line
 	 * @param fromIndex
 	 *            The index from which the search should start
-	 * @return The index of the start of the next link or -1 if none could be find
+	 * @return The index of the start of the next link or -1 if none could be found
 	 */
 	private int getNextLinkStart(String line, int fromIndex) {
 		return line.indexOf(A_ELEMENT_START, fromIndex);
@@ -272,7 +403,7 @@ public class Exporter {
 	 *            The line
 	 * @param fromIndex
 	 *            The index from which the search should start
-	 * @return The index of the end of the next link or -1 if none could be find
+	 * @return The index of the end of the next link or -1 if none could be found
 	 */
 	private int getNextLinkEnd(String line, int fromIndex) {
 		return line.indexOf(A_HREF_ATTRIBUTE_END, fromIndex);
@@ -290,6 +421,32 @@ public class Exporter {
 			return path.substring(0, path.length() - HTML_EXTENSION.length());
 		}
 		return path;
+	}
+
+	/**
+	 * Converts the image "src" attribute.
+	 *
+	 * @param imageSrc
+	 *            The "src" attribute of the image
+	 * @param path
+	 *            The path of the HTML file containing the image
+	 * @param documentationVersion
+	 *            The version of the documentation
+	 * @return The converted src
+	 */
+	public String convertImageSrc(String imageSrc, String path, String documentationVersion) {
+		try {
+			String prefix = "http://host.tld/"; //$NON-NLS-1$
+			URL prefixedURL = new URL(new URL("http", "host.tld", "/" + path), imageSrc); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			String prefixedResolvedLink = prefixedURL.toString();
+			String resolvedPath = prefixedResolvedLink.substring(prefix.length());
+
+			String rootDocumentationPrefix = ROOT_DOCUMENTATION_ASSET_URL + documentationVersion + "/"; //$NON-NLS-1$
+			return rootDocumentationPrefix + resolvedPath;
+		} catch (MalformedURLException e) {
+			fail(e.getMessage());
+		}
+		return imageSrc;
 	}
 
 	/**
