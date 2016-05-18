@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_33477373",
+        "filename": "doc/org.eclipse.eef.documentation/pages/glossary.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_782558b2",
+      "range": {
+        "startLine": 13,
+        "startChar": 95,
+        "endLine": 13,
+        "endChar": 99
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_134a777b",
+        "filename": "doc/org.eclipse.eef.documentation/pages/glossary.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_1817f451",
+      "range": {
+        "startLine": 13,
+        "startChar": 91,
+        "endLine": 13,
+        "endChar": 94
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_981a2474",
         "filename": "doc/org.eclipse.eef.documentation/pages/glossary.textile",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "View",
+      "range": {
+        "startLine": 21,
+        "startChar": 15,
+        "endLine": 21,
+        "endChar": 19
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f34c2b9a",
+        "filename": "doc/org.eclipse.eef.documentation/pages/glossary.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_981a2474",
       "range": {
         "startLine": 21,
         "startChar": 15,
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_73ac9ba8",
+        "filename": "doc/org.eclipse.eef.documentation/pages/index.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_58f97c8d",
+      "range": {
+        "startLine": 11,
+        "startChar": 134,
+        "endLine": 11,
+        "endChar": 146
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b8e7e0a0",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/dynamicmappings.textile",
         "patchSetId": 1
@@ -105,6 +201,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f37eeb89",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/dynamicmappings.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b8e7e0a0",
       "range": {
         "startLine": 9,
         "startChar": 2,
@@ -163,6 +283,54 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_33a213ae",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/dynamicmappings.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f8f8883f",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_13a517b6",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/dynamicmappings.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_382bd083",
+      "range": {
+        "startLine": 15,
+        "startChar": 313,
+        "endLine": 15,
+        "endChar": 322
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_38f3d060",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
         "patchSetId": 1
@@ -174,6 +342,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return a string",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_53f95f8d",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_38f3d060",
       "range": {
         "startLine": 10,
         "startChar": 2,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_73fe5b78",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f85fa8f0",
+      "range": {
+        "startLine": 11,
+        "startChar": 134,
+        "endLine": 11,
+        "endChar": 138
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_58133c1a",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
         "patchSetId": 1
@@ -220,6 +436,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 29
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_b308e336",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_58133c1a",
       "range": {
         "startLine": 12,
         "startChar": 2,
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_f3098b38",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_7818f835",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_58f25c93",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
         "patchSetId": 1
@@ -272,6 +536,24 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_1317d751",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "I did it at first but 99% of the time it\u0027s the same two variables, so I changed it to have only one paragraph explaining why it\u0027s always the same things and why does it change sometimes.",
+      "parentUuid": "87e453f8_58f25c93",
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_186d34a7",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
         "patchSetId": 1
@@ -283,6 +565,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "the",
+      "range": {
+        "startLine": 33,
+        "startChar": 226,
+        "endLine": 33,
+        "endChar": 229
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_73257bb2",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_186d34a7",
       "range": {
         "startLine": 33,
         "startChar": 226,
@@ -318,6 +624,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_93d5a7e6",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_981dc427",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 35,
+        "endChar": 27
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b822805f",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
         "patchSetId": 1
@@ -329,6 +659,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 36,
+        "startChar": 2,
+        "endLine": 36,
+        "endChar": 27
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_d3be4fab",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b822805f",
       "range": {
         "startLine": 36,
         "startChar": 2,
@@ -387,6 +741,54 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_f3bb4bb8",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_386af08e",
+      "range": {
+        "startLine": 37,
+        "startChar": 92,
+        "endLine": 37,
+        "endChar": 94
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_13c9974e",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d8066cd8",
+      "range": {
+        "startLine": 37,
+        "startChar": 2,
+        "endLine": 37,
+        "endChar": 20
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_f80328c5",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
         "patchSetId": 1
@@ -410,6 +812,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_33c6933e",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f80328c5",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b8ac4077",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/overview.textile",
         "patchSetId": 1
@@ -421,6 +847,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "has",
+      "range": {
+        "startLine": 3,
+        "startChar": 33,
+        "endLine": 3,
+        "endChar": 35
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_b3f1c38c",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/overview.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b8ac4077",
       "range": {
         "startLine": 3,
         "startChar": 33,
@@ -502,6 +952,78 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_93ecc7b8",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/overview.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_18929428",
+      "range": {
+        "startLine": 15,
+        "startChar": 107,
+        "endLine": 15,
+        "endChar": 109
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_53f23f93",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/overview.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_9879446f",
+      "range": {
+        "startLine": 15,
+        "startChar": 223,
+        "endLine": 15,
+        "endChar": 227
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_73f73b82",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/overview.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d8974c19",
+      "range": {
+        "startLine": 15,
+        "startChar": 126,
+        "endLine": 15,
+        "endChar": 133
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_1811b40b",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
         "patchSetId": 1
@@ -513,6 +1035,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f3e26bbe",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_1811b40b",
       "range": {
         "startLine": 10,
         "startChar": 2,
@@ -548,6 +1094,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_13e0b7b4",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_380e70ef",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 29
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_583a5c84",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
         "patchSetId": 1
@@ -559,6 +1129,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 24
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_33ddb300",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_583a5c84",
       "range": {
         "startLine": 13,
         "startChar": 2,
@@ -594,6 +1188,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_539ddf45",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_58c17cfa",
+      "range": {
+        "startLine": 29,
+        "startChar": 352,
+        "endLine": 29,
+        "endChar": 359
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_78c63815",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
         "patchSetId": 1
@@ -617,6 +1235,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_13bb57aa",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "I have explained that with the semantic candidate expression, you can change the context of the page but here I am also explaining that you can create multiple pages from one definition.",
+      "parentUuid": "87e453f8_78c63815",
+      "range": {
+        "startLine": 31,
+        "startChar": 193,
+        "endLine": 31,
+        "endChar": 201
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b8d0c0c3",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
         "patchSetId": 1
@@ -628,6 +1270,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "mechanisms",
+      "range": {
+        "startLine": 5,
+        "startChar": 102,
+        "endLine": 5,
+        "endChar": 111
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_33b853ab",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b8d0c0c3",
       "range": {
         "startLine": 5,
         "startChar": 102,
@@ -686,6 +1352,54 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_7389fb02",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d8d4acb8",
+      "range": {
+        "startLine": 11,
+        "startChar": 97,
+        "endLine": 11,
+        "endChar": 115
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_5384ffeb",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d82d8c4a",
+      "range": {
+        "startLine": 11,
+        "startChar": 81,
+        "endLine": 11,
+        "endChar": 97
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_f82a482f",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
         "patchSetId": 1
@@ -697,6 +1411,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 13,
+        "startChar": 138,
+        "endLine": 13,
+        "endChar": 152
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_937e875c",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "nothing muhuhahahaha :)",
+      "parentUuid": "87e453f8_f82a482f",
       "range": {
         "startLine": 13,
         "startChar": 138,
@@ -732,6 +1470,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_b38383e0",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/view.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_38dcb0db",
+      "range": {
+        "startLine": 23,
+        "startChar": 191,
+        "endLine": 23,
+        "endChar": 195
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_5865fc92",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
         "patchSetId": 1
@@ -743,6 +1505,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 21,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_3341330d",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_5865fc92",
       "range": {
         "startLine": 21,
         "startChar": 2,
@@ -778,6 +1564,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_1344371d",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_786ab865",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 16
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_986f8473",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
         "patchSetId": 1
@@ -789,6 +1599,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 23,
+        "startChar": 2,
+        "endLine": 23,
+        "endChar": 21
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f346eb26",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_986f8473",
       "range": {
         "startLine": 23,
         "startChar": 2,
@@ -824,6 +1658,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_d349ef39",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b8744044",
+      "range": {
+        "startLine": 31,
+        "startChar": 2,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_d8782c39",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
         "patchSetId": 1
@@ -835,6 +1693,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 32
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_b35543cd",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d8782c39",
       "range": {
         "startLine": 32,
         "startChar": 2,
@@ -870,6 +1752,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_935047dd",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f875e83d",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 25
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_188374a7",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
         "patchSetId": 1
@@ -881,6 +1787,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 34,
+        "startChar": 2,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_735bbb02",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_188374a7",
       "range": {
         "startLine": 34,
         "startChar": 2,
@@ -916,6 +1846,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_5356bfdb",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_38803098",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_f85c08c8",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
         "patchSetId": 1
@@ -927,6 +1881,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 41,
+        "startChar": 2,
+        "endLine": 41,
+        "endChar": 19
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_336a138f",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f85c08c8",
       "range": {
         "startLine": 41,
         "startChar": 2,
@@ -962,6 +1940,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_73c65b15",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/button.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b8c600e0",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_d8aaec08",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/button.textile",
         "patchSetId": 1
@@ -973,6 +1975,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_93cbe71a",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/button.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d8aaec08",
       "range": {
         "startLine": 8,
         "startChar": 2,
@@ -1008,6 +2034,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_b3d0e3c3",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/checkbox.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_78a3982f",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_989864fe",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/checkbox.textile",
         "patchSetId": 1
@@ -1019,6 +2069,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f3d18bc5",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/checkbox.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_989864fe",
       "range": {
         "startLine": 8,
         "startChar": 2,
@@ -1054,6 +2128,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_13dfd7d2",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/hyperlink.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_188c54be",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_388910ae",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/hyperlink.textile",
         "patchSetId": 1
@@ -1065,6 +2163,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_53e87f74",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/hyperlink.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_388910ae",
       "range": {
         "startLine": 8,
         "startChar": 2,
@@ -1100,6 +2222,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_33f3f360",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/label.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b818c004",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_1827f43f",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/label.textile",
         "patchSetId": 1
@@ -1111,6 +2257,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "?",
+      "range": {
+        "startLine": 18,
+        "startChar": 281,
+        "endLine": 18,
+        "endChar": 323
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_13f6f750",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/label.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Yes ?\n\nIn my examples, I am using eSet(String, Object) instead of eSet(EStructuralFeature, Object) because it\u0027s way shorter to write self.eSet(\u0027name\u0027, newValue) but since neither exist in AQL, I am specifying that the developer who will use EEF will have to register this service in AQL.",
+      "parentUuid": "87e453f8_1827f43f",
       "range": {
         "startLine": 18,
         "startChar": 281,
@@ -1146,6 +2316,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_f3034bc5",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_3824b038",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_58309c71",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
         "patchSetId": 1
@@ -1157,6 +2351,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_d3064fd8",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_58309c71",
       "range": {
         "startLine": 8,
         "startChar": 2,
@@ -1215,6 +2433,54 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_b322a35f",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_78355860",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_931da727",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_982a2402",
+      "range": {
+        "startLine": 9,
+        "startChar": 73,
+        "endLine": 9,
+        "endChar": 79
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b82fe011",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
         "patchSetId": 1
@@ -1238,6 +2504,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_73181b36",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b82fe011",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_d843ccc6",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
         "patchSetId": 1
@@ -1249,6 +2539,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "radio",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 32
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_53131f1a",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/radio.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d843ccc6",
       "range": {
         "startLine": 12,
         "startChar": 26,
@@ -1307,6 +2621,54 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_9334c795",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_383bd051",
+      "range": {
+        "startLine": 5,
+        "startChar": 53,
+        "endLine": 5,
+        "endChar": 55
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_b339c38d",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f84088bc",
+      "range": {
+        "startLine": 5,
+        "startChar": 28,
+        "endLine": 5,
+        "endChar": 31
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_78e0f842",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
         "patchSetId": 1
@@ -1318,6 +2680,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_733f3b73",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_78e0f842",
       "range": {
         "startLine": 8,
         "startChar": 2,
@@ -1353,6 +2739,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_533a3f84",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_98e5c454",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 19
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b8ea8020",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
         "patchSetId": 1
@@ -1364,6 +2774,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 19
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_330e93ef",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b8ea8020",
       "range": {
         "startLine": 10,
         "startChar": 2,
@@ -1399,6 +2833,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_736adb65",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/reference.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_38d6706c",
+      "range": {
+        "startLine": 11,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 9
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b801a07a",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/select.textile",
         "patchSetId": 1
@@ -1410,6 +2868,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_7351fbaf",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/select.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_b801a07a",
       "range": {
         "startLine": 7,
         "startChar": 2,
@@ -1445,6 +2927,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_534cff1c",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/select.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_d8f58cf7",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_f8f2480c",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/select.textile",
         "patchSetId": 1
@@ -1456,6 +2962,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f3750b3e",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/select.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f8f2480c",
       "range": {
         "startLine": 9,
         "startChar": 2,
@@ -1514,6 +3044,54 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_d3780f39",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/select.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_38ed902e",
+      "range": {
+        "startLine": 10,
+        "startChar": 2,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_b3746344",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/select.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_58adfcf3",
+      "range": {
+        "startLine": 10,
+        "startChar": 57,
+        "endLine": 10,
+        "endChar": 63
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_f8bde81e",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/text.textile",
         "patchSetId": 1
@@ -1525,6 +3103,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "This expression must return...",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_b34b8301",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/text.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_f8bde81e",
       "range": {
         "startLine": 7,
         "startChar": 2,
@@ -1560,6 +3162,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_934687f9",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/text.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87e453f8_18cb74b8",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 16
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_f8a40805",
         "filename": "doc/org.eclipse.eef.documentation/pages/toc.xml",
         "patchSetId": 1
@@ -1571,6 +3197,30 @@
       "writtenOn": "2016-05-18T14:26:59Z",
       "side": 1,
       "message": "custom widgets ?",
+      "range": {
+        "startLine": 22,
+        "startChar": 39,
+        "endLine": 22,
+        "endChar": 40
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f35c2bc8",
+        "filename": "doc/org.eclipse.eef.documentation/pages/toc.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-05-18T15:30:47Z",
+      "side": 1,
+      "message": "nop, information regarding all widgets (including custom widgets)",
+      "parentUuid": "87e453f8_f8a40805",
       "range": {
         "startLine": 22,
         "startChar": 39,
