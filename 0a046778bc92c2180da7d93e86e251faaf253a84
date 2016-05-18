@@ -554,6 +554,24 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_53307f71",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-05-18T15:42:06Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "87e453f8_1317d751",
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_186d34a7",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/group.textile",
         "patchSetId": 1
@@ -1259,6 +1277,30 @@
     },
     {
       "key": {
+        "uuid": "87e453f8_333bf351",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/page.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-05-18T15:42:06Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "87e453f8_13bb57aa",
+      "range": {
+        "startLine": 31,
+        "startChar": 193,
+        "endLine": 31,
+        "endChar": 201
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87e453f8_b8d0c0c3",
         "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
         "patchSetId": 1
@@ -1435,6 +1477,30 @@
       "side": 1,
       "message": "nothing muhuhahahaha :)",
       "parentUuid": "87e453f8_f82a482f",
+      "range": {
+        "startLine": 13,
+        "startChar": 138,
+        "endLine": 13,
+        "endChar": 152
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f3a7cb3d",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/validation.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-05-18T15:42:06Z",
+      "side": 1,
+      "message": "Love your satanic laugh ;)",
+      "parentUuid": "87e453f8_937e875c",
       "range": {
         "startLine": 13,
         "startChar": 138,
@@ -2281,6 +2347,30 @@
       "side": 1,
       "message": "Yes ?\n\nIn my examples, I am using eSet(String, Object) instead of eSet(EStructuralFeature, Object) because it\u0027s way shorter to write self.eSet(\u0027name\u0027, newValue) but since neither exist in AQL, I am specifying that the developer who will use EEF will have to register this service in AQL.",
       "parentUuid": "87e453f8_1827f43f",
+      "range": {
+        "startLine": 18,
+        "startChar": 281,
+        "endLine": 18,
+        "endChar": 323
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_f38eebb7",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/label.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-05-18T15:42:06Z",
+      "side": 1,
+      "message": "Ok but here you do not use eSet in your example so I think you just did a copy/paste",
+      "parentUuid": "87e453f8_13f6f750",
       "range": {
         "startLine": 18,
         "startChar": 281,
@@ -3221,6 +3311,30 @@
       "side": 1,
       "message": "nop, information regarding all widgets (including custom widgets)",
       "parentUuid": "87e453f8_f8a40805",
+      "range": {
+        "startLine": 22,
+        "startChar": 39,
+        "endLine": 22,
+        "endChar": 40
+      },
+      "revId": "0a046778bc92c2180da7d93e86e251faaf253a84",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_93e5a754",
+        "filename": "doc/org.eclipse.eef.documentation/pages/toc.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-05-18T15:42:06Z",
+      "side": 1,
+      "message": "Yes what I was proposing is to add a special topics also for custom widget as you did for classical widgets",
+      "parentUuid": "87e453f8_f35c2bc8",
       "range": {
         "startLine": 22,
         "startChar": 39,
