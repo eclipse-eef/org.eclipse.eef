@@ -10,7 +10,7 @@ Our goal is to provide a language which can handle simple use cases easily and y
 
 h3(#overview). Overview of the language
 
-p(image). !(language)language.png!
+p(image). !(language1-6-0)language.png!
 
 The EEF language can be summarized using a couple of concepts. The root container of all the other concept is the view, which contains the various pages of the user interface. In the view you can also find the groups, which represent various sections of the pages. The pages can use various groups and an unique group can be used by several pages. Inside of a group, you can create different kind of controls:
 

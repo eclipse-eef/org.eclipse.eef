@@ -18,6 +18,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.Lists;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -66,11 +67,14 @@ public class ExporterTests {
 		//@formatter:on
 
 		// Version and path can be null since we do not have any links
-		List<String> actual = new Exporter().getBody(lines, null, null);
+		List<String> actual = new Exporter().getBody(lines, "/pages/language/page.html", "1.6.0", new ArrayList<>()); //$NON-NLS-1$ //$NON-NLS-2$
 
 		// The result must have a specific first and last line with only the body inside
 		List<String> expected = lines.subList(5, 9);
 		expected.add(0, Exporter.ROOT_ELEMENT_START);
+		expected.add(1, "  <ul class=\"breadcrumb\">"); //$NON-NLS-1$
+		expected.add(2, "    <li><a href=\"#/documentation/1.6.0\">1.6.0</a></li>"); //$NON-NLS-1$
+		expected.add(3, "  </ul>"); //$NON-NLS-1$
 		expected.add(Exporter.ROOT_ELEMENT_END);
 
 		assertThat(actual, contains(expected.toArray(new String[expected.size()])));
