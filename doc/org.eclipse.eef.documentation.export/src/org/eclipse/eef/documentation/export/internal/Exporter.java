@@ -13,6 +13,7 @@ package org.eclipse.eef.documentation.export.internal;
 import static org.junit.Assert.fail;
 
 import com.google.common.base.Charsets;
+import com.google.common.collect.Lists;
 import com.google.common.io.ByteStreams;
 import com.google.common.io.CharStreams;
 import com.google.common.io.Closeables;
@@ -28,6 +29,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
@@ -111,6 +113,11 @@ public class Exporter {
 	public static final String ROOT_DOCUMENTATION_ASSET_URL = "sections/documentation/"; //$NON-NLS-1$
 
 	/**
+	 * The path of the toc.xml file.
+	 */
+	public static final String TOC_XML_PATH = "/pages/toc.xml"; //$NON-NLS-1$
+
+	/**
 	 * Exports the documentation for the website.
 	 */
 	@Test
@@ -118,6 +125,7 @@ public class Exporter {
 		Bundle bundle = Platform.getBundle("org.eclipse.eef.documentation"); //$NON-NLS-1$
 		if (bundle != null) {
 			String version = this.getVersion(bundle);
+			List<Topic> topics = this.getTopics(bundle);
 
 			// Find all the documentation pages recursively in the documentation bundle
 			Enumeration<URL> entries = bundle.findEntries(DOCUMENTATION_PAGES_ROOT_PATH, "*.*", true); //$NON-NLS-1$
@@ -125,10 +133,12 @@ public class Exporter {
 				URL entry = entries.nextElement();
 				String path = entry.getPath().substring((DOCUMENTATION_PAGES_ROOT_PATH + "/").length()); //$NON-NLS-1$
 
+				List<Topic> breadcrumbTopics = this.getBreadcrumbTopics(topics, path);
+
 				if (entry.getFile().endsWith(HTML_EXTENSION)) {
 					// Read, process and write the processed HTML files
 					List<String> lines = this.readLines(entry);
-					List<String> linesToKeep = this.getBody(lines, path, version);
+					List<String> linesToKeep = this.getBody(lines, path, version, breadcrumbTopics);
 					this.writeLines(linesToKeep, path, version);
 				} else if (this.shouldCopy(path)) {
 					// Let's copy other resources directly at its new location (images, video, etc)
@@ -136,6 +146,68 @@ public class Exporter {
 				}
 			}
 		}
+	}
+
+	public List<Topic> getBreadcrumbTopics(List<Topic> topics, String path) {
+		List<Topic> breadcrumbTopics = new ArrayList<>();
+
+		// Find the topic matching the path
+		Topic topic = this.find(topics, path);
+
+		// Compute its parent topics
+		if (topic != null) {
+			breadcrumbTopics.addAll(this.getParents(topic));
+		}
+
+		return Lists.reverse(breadcrumbTopics);
+	}
+
+	private List<Topic> getParents(Topic topic) {
+		List<Topic> parents = new ArrayList<>();
+
+		if (topic.getParent() != null) {
+			parents.add(topic.getParent());
+			parents.addAll(this.getParents(topic.getParent()));
+		}
+
+		return parents;
+	}
+
+	private Topic find(List<Topic> topics, String path) {
+		Topic topic = null;
+
+		Iterator<Topic> iterator = topics.iterator();
+		while (topic == null && iterator.hasNext()) {
+			Topic next = iterator.next();
+			if (("pages/" + path).equals(next.getHref())) { //$NON-NLS-1$
+				topic = next;
+			} else {
+				topic = this.find(next.getTopics(), path);
+			}
+		}
+		return topic;
+	}
+
+	public List<Topic> getTopics(Bundle bundle) {
+		List<Topic> topics = new ArrayList<>();
+		// Find the toc.xml file
+		URL tocXmlEntry = bundle.getEntry(TOC_XML_PATH);
+		if (tocXmlEntry != null) {
+			InputStream inputStream = null;
+			try {
+				inputStream = tocXmlEntry.openStream();
+				topics.addAll(new TocReader().getTopics(inputStream));
+			} catch (IOException e) {
+				fail(e.getMessage());
+			} finally {
+				try {
+					Closeables.close(inputStream, false);
+				} catch (IOException e) {
+					fail(e.getMessage());
+				}
+			}
+		}
+		return topics;
 	}
 
 	/**
@@ -206,12 +278,18 @@ public class Exporter {
 	 *            The path of the file
 	 * @param documentationVersion
 	 *            The version of the documentation
+	 * @param breadcrumbTopics
+	 *            The breadcrumb topics
 	 * @return The content of the file to save
 	 */
-	public List<String> getBody(List<String> lines, String path, String documentationVersion) {
+	public List<String> getBody(List<String> lines, String path, String documentationVersion, List<Topic> breadcrumbTopics) {
 		List<String> linesToKeep = new ArrayList<>();
 		linesToKeep.add(ROOT_ELEMENT_START);
 
+		if (!"index.html".equalsIgnoreCase(path)) { //$NON-NLS-1$
+			List<String> breadcrumb = this.createBreadcrumb(breadcrumbTopics, documentationVersion);
+			linesToKeep.addAll(breadcrumb);
+		}
 		boolean hasFoundStartBody = false;
 		boolean hasFoundStopBody = false;
 		for (String line : lines) {
@@ -224,6 +302,45 @@ public class Exporter {
 
 		linesToKeep.add(ROOT_ELEMENT_END);
 		return linesToKeep;
+	}
+
+	/**
+	 * @param breadcrumbTopics
+	 * @return
+	 */
+	private List<String> createBreadcrumb(List<Topic> breadcrumbTopics, String documentationVersion) {
+		List<String> lines = new ArrayList<>();
+
+		lines.add("  <ul class=\"breadcrumb\">"); //$NON-NLS-1$
+		if (breadcrumbTopics.size() > 0) {
+			lines.add("    <li><a href=\"" + ROOT_DOCUMENTATION_URL + '/' + documentationVersion + "\">" + documentationVersion + "</a> <span class=\"divider\">/</span></li>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		} else {
+			lines.add("    <li><a href=\"" + ROOT_DOCUMENTATION_URL + '/' + documentationVersion + "\">" + documentationVersion + "</a></li>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		}
+		int i = 0;
+		for (Topic topic : breadcrumbTopics) {
+			String href = topic.getHref();
+
+			if (href.startsWith(DOCUMENTATION_PAGES_ROOT_PATH.substring(1))) {
+				href = href.substring(DOCUMENTATION_PAGES_ROOT_PATH.substring(1).length());
+			}
+			if (href.endsWith(HTML_EXTENSION)) {
+				href = href.substring(0, href.length() - HTML_EXTENSION.length());
+			}
+
+			href = ROOT_DOCUMENTATION_URL + '/' + documentationVersion + href;
+
+			if (i + 1 < breadcrumbTopics.size()) {
+				lines.add("    <li><a href=\"" + href + "\">" + topic.getLabel() + "</a> <span class=\"divider\">/</span></li>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			} else {
+				lines.add("    <li><a href=\"" + href + "\">" + topic.getLabel() + "</a></li>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			}
+
+			i = i + 1;
+		}
+		lines.add("  </ul>"); //$NON-NLS-1$
+
+		return lines;
 	}
 
 	/**
@@ -277,7 +394,7 @@ public class Exporter {
 
 	/**
 	 * Handles the image.
-	 * 
+	 *
 	 * @param builder
 	 *            The builder
 	 * @param line

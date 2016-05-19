@@ -4,7 +4,7 @@ h3(#description). Description
 
 EEF provides three different mechanisms in order to add validation in the user interface. Those three mechanisms can be divided in two categories, the semantic validation rules and the property validation rules.
 
-p(image). !(validation)validation.png!
+p(image). !(validation1-6-0)validation.png!
 
 The semantic validation rules will run an expression in the context of a "page":page.html or a "group":group.html. The result of those validation rules will be visible directly on their containing page or group. The property validation rules are only available on a group and they allow the specifier to link validation rules to a specific set of widgets.
 
