@@ -69,377 +69,377 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefViewDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefPageDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefValidationRuleDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefRuleAuditDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefValidationFixDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefPropertyValidationRuleDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefSemanticValidationRuleDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefGroupDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefControlDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefContainerDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefLayoutDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefFillLayoutDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefGridLayoutDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefWidgetDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefTextDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefLabelDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefButtonDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefCheckboxDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefSelectDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefRadioDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefHyperlinkDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefDynamicMappingForEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefDynamicMappingIfEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefCustomWidgetDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefCustomExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefReferenceDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefWidgetStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefTextStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefLabelStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefButtonStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefCheckboxStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefSelectStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefRadioStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefHyperlinkStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefCustomWidgetStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefReferenceStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefGroupStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefTextConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefButtonConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefLabelConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefCheckboxConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefSelectConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefRadioConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefHyperlinkConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefCustomWidgetConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefWidgetActionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefReferenceConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefGroupConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEnum eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEnum eeF_FILL_LAYOUT_ORIENTATIONEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEnum eeF_TOGGLE_STYLEEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEnum eeF_TITLE_BAR_STYLEEEnum = null;
@@ -463,7 +463,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -475,7 +475,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * This method is used to initialize {@link EefPackage#eINSTANCE} when that field is accessed. Clients should not
 	 * invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
@@ -511,7 +511,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -521,7 +521,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -531,7 +531,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -541,7 +541,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -551,7 +551,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -561,7 +561,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -571,7 +571,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -581,7 +581,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -591,7 +591,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -601,7 +601,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -611,7 +611,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -621,7 +621,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -631,7 +631,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -641,7 +641,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -651,7 +651,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -661,7 +661,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -671,7 +671,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -681,7 +681,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -691,7 +691,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -701,7 +701,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -711,7 +711,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -721,7 +721,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -731,7 +731,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -741,7 +741,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -751,7 +751,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -761,7 +761,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -771,7 +771,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -781,7 +781,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -791,7 +791,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -801,7 +801,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -811,7 +811,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -821,7 +821,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -831,7 +831,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -841,7 +841,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -851,7 +851,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -861,7 +861,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -871,7 +871,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -881,7 +881,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -891,7 +891,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -901,7 +901,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -911,7 +911,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -921,7 +921,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -931,7 +931,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -941,7 +941,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -951,27 +951,17 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFContainerDescription_DynamicMappings() {
+	public EReference getEEFContainerDescription_Layout() {
 		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EReference getEEFContainerDescription_Layout() {
-		return (EReference) eefContainerDescriptionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -981,7 +971,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -991,7 +981,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1001,7 +991,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1011,7 +1001,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1021,7 +1011,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1031,7 +1021,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1041,7 +1031,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1051,7 +1041,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1061,7 +1051,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1071,7 +1061,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1081,7 +1071,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1091,7 +1081,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1101,7 +1091,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1111,7 +1101,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1121,7 +1111,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1131,7 +1121,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1141,7 +1131,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1151,17 +1141,17 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEEFLabelDescription_BodyExpression() {
+	public EAttribute getEEFLabelDescription_ValueExpression() {
 		return (EAttribute) eefLabelDescriptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1171,7 +1161,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1181,7 +1171,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1191,7 +1181,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1201,7 +1191,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1211,7 +1201,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1221,7 +1211,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1231,7 +1221,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1241,7 +1231,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1251,7 +1241,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1261,7 +1251,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1271,7 +1261,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1281,7 +1271,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1291,7 +1281,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1301,7 +1291,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1311,7 +1301,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1321,7 +1311,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1331,7 +1321,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1341,7 +1331,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1351,7 +1341,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1361,7 +1351,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1371,7 +1361,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1381,7 +1371,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1391,7 +1381,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1401,7 +1391,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1411,7 +1401,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1421,7 +1411,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1431,7 +1421,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1441,7 +1431,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1451,7 +1441,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1461,7 +1451,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1471,7 +1461,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1481,7 +1471,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1491,7 +1481,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1501,7 +1491,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1511,7 +1501,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1521,7 +1511,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1531,7 +1521,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1541,7 +1531,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1551,7 +1541,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1561,7 +1551,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1571,7 +1561,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1581,7 +1571,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1591,7 +1581,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1601,7 +1591,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1611,7 +1601,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1621,7 +1611,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1631,7 +1621,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1641,7 +1631,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1651,7 +1641,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1661,7 +1651,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1671,7 +1661,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1681,7 +1671,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1691,7 +1681,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1701,7 +1691,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1711,7 +1701,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1721,7 +1711,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1731,7 +1721,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1741,7 +1731,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1751,7 +1741,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1761,7 +1751,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1771,7 +1761,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1781,7 +1771,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1791,7 +1781,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1801,7 +1791,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1811,7 +1801,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1821,7 +1811,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1831,7 +1821,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1841,7 +1831,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1851,7 +1841,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1861,7 +1851,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1871,7 +1861,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1881,7 +1871,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1891,7 +1881,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1901,7 +1891,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1911,7 +1901,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1921,7 +1911,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1931,7 +1921,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1941,7 +1931,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1951,7 +1941,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1961,7 +1951,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1971,7 +1961,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1981,7 +1971,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1991,7 +1981,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2001,7 +1991,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2011,7 +2001,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2021,7 +2011,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2031,7 +2021,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2041,7 +2031,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2051,7 +2041,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2061,7 +2051,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2071,7 +2061,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2081,7 +2071,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2091,7 +2081,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2101,7 +2091,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2111,7 +2101,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2121,7 +2111,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2131,7 +2121,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2141,7 +2131,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2151,7 +2141,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2161,7 +2151,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2171,7 +2161,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2181,7 +2171,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2191,7 +2181,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2201,7 +2191,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2211,7 +2201,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2221,7 +2211,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2231,7 +2221,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2241,7 +2231,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2251,7 +2241,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2261,7 +2251,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2271,7 +2261,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2281,7 +2271,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2291,7 +2281,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2301,7 +2291,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2311,7 +2301,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2321,7 +2311,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2331,7 +2321,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2341,7 +2331,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2351,7 +2341,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2361,7 +2351,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -2371,7 +2361,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -2379,7 +2369,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	/**
 	 * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but
 	 * its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -2442,7 +2432,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		eefContainerDescriptionEClass = createEClass(EefPackage.EEF_CONTAINER_DESCRIPTION);
 		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS);
-		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS);
 		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT);
 
 		eefLayoutDescriptionEClass = createEClass(EefPackage.EEF_LAYOUT_DESCRIPTION);
@@ -2468,7 +2457,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
 
 		eefLabelDescriptionEClass = createEClass(EefPackage.EEF_LABEL_DESCRIPTION);
-		createEAttribute(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION);
+		createEAttribute(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION);
 		createEReference(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__STYLE);
 		createEReference(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
 
@@ -2628,7 +2617,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -2636,7 +2625,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	/**
 	 * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any
 	 * invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -2700,7 +2689,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(
 				getEEFViewDescription_Identifier(),
 				ecorePackage.getEString(),
-				"identifier", null, 1, 1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+				"identifier", null, 0, 1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
 				getEEFViewDescription_LabelExpression(),
 				theEcorePackage.getEString(),
@@ -2721,7 +2710,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				"pages", null, 1, -1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getEEFViewDescription_EPackages(),
-				theEcorePackage.getEPackage(),
+				ecorePackage.getEPackage(),
 				null,
 				"ePackages", null, 0, -1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
@@ -2730,7 +2719,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(
 				getEEFPageDescription_Identifier(),
 				ecorePackage.getEString(),
-				"identifier", null, 1, 1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+				"identifier", null, 0, 1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
 				getEEFPageDescription_LabelExpression(),
 				ecorePackage.getEString(),
@@ -2821,7 +2810,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(
 				getEEFGroupDescription_Identifier(),
 				ecorePackage.getEString(),
-				"identifier", null, 1, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+				"identifier", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
 				getEEFGroupDescription_LabelExpression(),
 				ecorePackage.getEString(),
@@ -2869,7 +2858,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(
 				getEEFControlDescription_Identifier(),
 				ecorePackage.getEString(),
-				"identifier", null, 1, 1, EEFControlDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+				"identifier", null, 0, 1, EEFControlDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(eefContainerDescriptionEClass, EEFContainerDescription.class,
 				"EEFContainerDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
@@ -2878,11 +2867,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				this.getEEFControlDescription(),
 				null,
 				"controls", null, 1, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFContainerDescription_DynamicMappings(),
-				this.getEEFDynamicMappingFor(),
-				null,
-				"dynamicMappings", null, 0, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getEEFContainerDescription_Layout(),
 				this.getEEFLayoutDescription(),
@@ -2958,9 +2942,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEClass(eefLabelDescriptionEClass, EEFLabelDescription.class,
 				"EEFLabelDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(
-				getEEFLabelDescription_BodyExpression(),
+				getEEFLabelDescription_ValueExpression(),
 				ecorePackage.getEString(),
-				"bodyExpression", null, 0, 1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+				"valueExpression", null, 0, 1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getEEFLabelDescription_Style(),
 				this.getEEFLabelStyle(),

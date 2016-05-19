@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getBodyExpression <em>Body Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -39,29 +39,29 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements EEFLabelDescription {
 	/**
-	 * The default value of the '{@link #getBodyExpression() <em>Body Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
-	 * @see #getBodyExpression()
+	 * 
+	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String BODY_EXPRESSION_EDEFAULT = null;
+	protected static final String VALUE_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getBodyExpression() <em>Body Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
-	 * @see #getBodyExpression()
+	 * 
+	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String bodyExpression = EEFLabelDescriptionImpl.BODY_EXPRESSION_EDEFAULT;
+	protected String valueExpression = EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFLabelDescriptionImpl() {
@@ -89,7 +89,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -99,32 +99,32 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
-	public String getBodyExpression() {
-		return bodyExpression;
+	public String getValueExpression() {
+		return valueExpression;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
-	public void setBodyExpression(String newBodyExpression) {
-		String oldBodyExpression = bodyExpression;
-		bodyExpression = newBodyExpression;
+	public void setValueExpression(String newValueExpression) {
+		String oldValueExpression = valueExpression;
+		valueExpression = newValueExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION, oldBodyExpression,
-					bodyExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION, oldValueExpression,
+					valueExpression));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,7 +152,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFLabelStyle basicGetStyle() {
@@ -161,7 +161,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFLabelStyle newStyle, NotificationChain msgs) {
@@ -181,7 +181,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -207,7 +207,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -221,7 +221,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -237,14 +237,14 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION:
-			return getBodyExpression();
+		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
+			return getValueExpression();
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			if (resolve) {
 				return getStyle();
@@ -258,15 +258,15 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION:
-			setBodyExpression((String) newValue);
+		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
+			setValueExpression((String) newValue);
 			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			setStyle((EEFLabelStyle) newValue);
@@ -281,14 +281,14 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION:
-			setBodyExpression(EEFLabelDescriptionImpl.BODY_EXPRESSION_EDEFAULT);
+		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
+			setValueExpression(EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			setStyle((EEFLabelStyle) null);
@@ -302,15 +302,15 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION:
-			return EEFLabelDescriptionImpl.BODY_EXPRESSION_EDEFAULT == null ? bodyExpression != null
-			: !EEFLabelDescriptionImpl.BODY_EXPRESSION_EDEFAULT.equals(bodyExpression);
+		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
+			return EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
+					: !EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
@@ -321,7 +321,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -331,8 +331,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		}
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (bodyExpression: "); //$NON-NLS-1$
-		result.append(bodyExpression);
+		result.append(" (valueExpression: "); //$NON-NLS-1$
+		result.append(valueExpression);
 		result.append(')');
 		return result.toString();
 	}

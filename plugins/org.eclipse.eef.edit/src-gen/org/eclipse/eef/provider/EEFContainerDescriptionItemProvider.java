@@ -63,7 +63,6 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS);
-			childrenFeatures.add(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS);
 			childrenFeatures.add(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT);
 		}
 		return childrenFeatures;
@@ -118,7 +117,7 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +126,6 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 
 		switch (notification.getFeatureID(EEFContainerDescription.class)) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -178,35 +176,11 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
 				EefFactory.eINSTANCE.createEEFReferenceDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS,
-				EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
-
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT,
 				EefFactory.eINSTANCE.createEEFFillLayoutDescription()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT,
 				EefFactory.eINSTANCE.createEEFGridLayoutDescription()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS
-				|| childFeature == EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", //$NON-NLS-1$
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

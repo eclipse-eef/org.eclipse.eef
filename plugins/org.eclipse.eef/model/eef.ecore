@@ -2,8 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eef" nsURI="http://www.eclipse.org/eef" nsPrefix="eef">
   <eClassifiers xsi:type="ecore:EClass" name="EEFViewDescription">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific View instance."/>
       </eAnnotations>
@@ -34,8 +33,7 @@
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFPageDescription">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific Page instance."/>
       </eAnnotations>
@@ -157,8 +155,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFGroupDescription">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific Group in a Page."/>
       </eAnnotations>
@@ -217,8 +214,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFControlDescription" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Used to identify a specific control."/>
       </eAnnotations>
@@ -229,12 +225,6 @@
         upperBound="-1" eType="#//EEFControlDescription" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="References the widgets to hold."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicMappings" upperBound="-1"
-        eType="#//EEFDynamicMappingFor" containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="References the dynamic mappings to hold."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="layout" eType="#//EEFLayoutDescription"
@@ -336,7 +326,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Represents a label in the user interface."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bodyExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The body of the label containing the meaningful content"/>
       </eAnnotations>
