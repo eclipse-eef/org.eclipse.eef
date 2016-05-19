@@ -59,7 +59,7 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	public void refresh() {
 		super.refresh();
 
-		String bodyExpression = this.description.getBodyExpression();
+		String bodyExpression = this.description.getValueExpression();
 		this.newEval().logIfInvalidType(String.class).call(bodyExpression, this.newBodyConsumer);
 	}
 

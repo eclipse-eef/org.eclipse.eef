@@ -18,7 +18,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.EEFContainerDescription#getDynamicMappings <em>Dynamic Mappings</em>}</li>
  * <li>{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
@@ -41,18 +40,6 @@ public interface EEFContainerDescription extends EEFControlDescription {
 	EList<EEFControlDescription> getControls();
 
 	/**
-	 * Returns the value of the '<em><b>Dynamic Mappings</b></em>' containment reference list. The list contents are of
-	 * type {@link org.eclipse.eef.EEFDynamicMappingFor}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
-	 * begin-model-doc --> References the dynamic mappings to hold. <!-- end-model-doc -->
-	 *
-	 * @return the value of the '<em>Dynamic Mappings</em>' containment reference list.
-	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_DynamicMappings()
-	 * @model containment="true" resolveProxies="true"
-	 * @generated
-	 */
-	EList<EEFDynamicMappingFor> getDynamicMappings();
-
-	/**
 	 * Returns the value of the '<em><b>Layout</b></em>' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> The layout of the container. <!-- end-model-doc -->
 	 *
@@ -67,7 +54,7 @@ public interface EEFContainerDescription extends EEFControlDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Layout</em>' containment reference.
 	 * @see #getLayout()

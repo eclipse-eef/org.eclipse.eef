@@ -25,13 +25,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFLabelDescription} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFLabelDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -40,7 +40,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -55,7 +55,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * This adds a property descriptor for the Body Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBodyExpressionPropertyDescriptor(Object object) {
@@ -63,7 +63,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 				getResourceLocator(),
 				getString("_UI_EEFLabelDescription_bodyExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelDescription_bodyExpression_feature", "_UI_EEFLabelDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				EefPackage.Literals.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
 
@@ -72,7 +72,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * This returns EEFLabelDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -110,7 +110,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,14 +120,14 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFLabelDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFLabelDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(EEFLabelDescription.class)) {
-		case EefPackage.EEF_LABEL_DESCRIPTION__BODY_EXPRESSION:
+		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
@@ -156,7 +156,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -12,7 +12,6 @@ import java.util.Collection;
 
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFControlDescription;
-import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFLayoutDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getDynamicMappings <em>Dynamic Mappings</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getLayout <em>Layout</em>}</li>
  * </ul>
  * </p>
@@ -50,19 +48,9 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 	protected EList<EEFControlDescription> controls;
 
 	/**
-	 * The cached value of the '{@link #getDynamicMappings() <em>Dynamic Mappings</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see #getDynamicMappings()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EEFDynamicMappingFor> dynamicMappings;
-
-	/**
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -71,7 +59,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFContainerDescriptionImpl() {
@@ -80,7 +68,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +78,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -104,21 +92,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EList<EEFDynamicMappingFor> getDynamicMappings() {
-		if (dynamicMappings == null) {
-			dynamicMappings = new EObjectContainmentEList.Resolving<EEFDynamicMappingFor>(EEFDynamicMappingFor.class, this,
-					EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS);
-		}
-		return dynamicMappings;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,7 +121,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFLayoutDescription basicGetLayout() {
@@ -156,7 +130,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetLayout(EEFLayoutDescription newLayout, NotificationChain msgs) {
@@ -176,7 +150,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,7 +176,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -210,8 +184,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
 			return ((InternalEList<?>) getControls()).basicRemove(otherEnd, msgs);
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
-			return ((InternalEList<?>) getDynamicMappings()).basicRemove(otherEnd, msgs);
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
 			return basicSetLayout(null, msgs);
 		}
@@ -220,7 +192,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -228,8 +200,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
 			return getControls();
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
-			return getDynamicMappings();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
 			if (resolve) {
 				return getLayout();
@@ -241,7 +211,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -252,10 +222,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 			getControls().clear();
 			getControls().addAll((Collection<? extends EEFControlDescription>) newValue);
 			return;
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
-			getDynamicMappings().clear();
-			getDynamicMappings().addAll((Collection<? extends EEFDynamicMappingFor>) newValue);
-			return;
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
 			setLayout((EEFLayoutDescription) newValue);
 			return;
@@ -265,7 +231,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -273,9 +239,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
 			getControls().clear();
-			return;
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
-			getDynamicMappings().clear();
 			return;
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
 			setLayout((EEFLayoutDescription) null);
@@ -286,7 +249,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -294,8 +257,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 		switch (featureID) {
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
 			return controls != null && !controls.isEmpty();
-		case EefPackage.EEF_CONTAINER_DESCRIPTION__DYNAMIC_MAPPINGS:
-			return dynamicMappings != null && !dynamicMappings.isEmpty();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
 			return layout != null;
 		}

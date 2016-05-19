@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.eef.EEFLabelDescription#getBodyExpression <em>Body Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -31,27 +31,27 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface EEFLabelDescription extends EEFWidgetDescription {
 	/**
-	 * Returns the value of the '<em><b>Body Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * Returns the value of the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> The body of the label containing the meaningful content <!-- end-model-doc -->
-	 *
-	 * @return the value of the '<em>Body Expression</em>' attribute.
-	 * @see #setBodyExpression(String)
-	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_BodyExpression()
+	 * 
+	 * @return the value of the '<em>Value Expression</em>' attribute.
+	 * @see #setValueExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_ValueExpression()
 	 * @model
 	 * @generated
 	 */
-	String getBodyExpression();
+	String getValueExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getBodyExpression <em>Body Expression</em>}'
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
-	 *            the new value of the '<em>Body Expression</em>' attribute.
-	 * @see #getBodyExpression()
+	 *            the new value of the '<em>Value Expression</em>' attribute.
+	 * @see #getValueExpression()
 	 * @generated
 	 */
-	void setBodyExpression(String value);
+	void setValueExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -68,7 +68,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
