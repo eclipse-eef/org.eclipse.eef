@@ -19,7 +19,7 @@ In order to display in the user interface some radio buttons with the value of a
 * labelExpression: @aql:'Visibility:'@
 * valueExpression: @aql:self.visibility@
 * editExpression: @aql:self.eSet('visibility', newValue)@
-* candidatesExpression: @aql:packagename::Visibility.eLiterals@
-* candidateDisplayExpression: @aql:candidate.name@
+* candidatesExpression: @aql:packagename::Visibility.eLiterals.generatedValue@
+* candidateDisplayExpression: @aql:candidate.getName()@
 
-In this scenario, we will display a property with the eType "Visibility" coming from a package with the name "packagename". EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations. The operation @eSet(java.lang.String, java.lang.Object)@ used in the example does not exist in AQL. You would have to create it yourself.
+In this scenario, we will display a property with the eType "Visibility" coming from a package with the name "packagename". EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations. The operation @eSet(java.lang.String, java.lang.Object)@ used in the example does not exist in AQL. You would have to create it yourself. In a similar fashion, you would have to create the service @getName()@ on the EEnum generated value since it does not exist in AQL.
