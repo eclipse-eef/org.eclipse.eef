@@ -116,8 +116,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		// Create text or text area according to the defined line count
 		if (lineCount > 1) {
 			this.text = widgetFactory.createStyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.MULTI);
-			GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, true);
-			gridData.minimumHeight = lineCount * text.getLineHeight();
+			GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+			gridData.heightHint = lineCount * text.getLineHeight();
 			gridData.widthHint = TEXT_AREA_WIDTH_HINT;
 			this.text.setLayoutData(gridData);
 		} else {

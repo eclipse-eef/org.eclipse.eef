@@ -120,6 +120,8 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 		Composite groupComposite = widgetFactory.createComposite(parent);
 		groupComposite.setLayout(new GridLayout(1, false));
+		GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+		groupComposite.setLayoutData(gridData);
 
 		EEFGroupStyle styleDescription = this.description.getStyle();
 		List<EEFGroupConditionalStyle> conditionalStyles = description.getConditionalStyles();
@@ -158,11 +160,13 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 			}
 		});
 
-		GridData sectionLayoutData = new GridData(GridData.FILL_HORIZONTAL);
-		sectionLayoutData.horizontalSpan = 1;
+		this.section.setLayout(new GridLayout(1, false));
+		GridData sectionLayoutData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
 		this.section.setLayoutData(sectionLayoutData);
 
 		Composite group = widgetFactory.createComposite(this.section);
+		GridData groupLayoutData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+		group.setLayoutData(groupLayoutData);
 
 		// Three columns: label, help, widget
 		GridLayout groupLayout = new GridLayout(3, false);

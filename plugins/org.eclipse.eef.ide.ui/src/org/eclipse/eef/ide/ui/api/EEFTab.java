@@ -24,9 +24,8 @@ import org.eclipse.eef.ide.ui.internal.Updater;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFSectionLifecycleManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
 
@@ -82,7 +81,7 @@ public class EEFTab {
 		this.formContainer = container;
 
 		Composite composite = container.getWidgetFactory().createComposite(parent);
-		composite.setLayout(new FillLayout(SWT.VERTICAL));
+		composite.setLayout(new GridLayout(1, false));
 
 		this.lifecycleManager.createControl(composite, container);
 		parent.layout();
