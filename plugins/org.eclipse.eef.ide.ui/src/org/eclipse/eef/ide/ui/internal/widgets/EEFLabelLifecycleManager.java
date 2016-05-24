@@ -29,6 +29,7 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -38,6 +39,14 @@ import org.eclipse.swt.widgets.Control;
  * @author mbats
  */
 public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager {
+
+	/**
+	 * This constant is used in order to tell SWT that the label should be 300px wide even if it is not useful. The
+	 * layout data should work by themselves but it seems that there is a bug with SWT so, this useless information on
+	 * the width of the label make it work. Don't ask me why :)
+	 */
+	private static final int LABEL_WIDTH_HINT = 300;
+
 	/**
 	 * The description.
 	 */
@@ -80,8 +89,13 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
-		this.body = widgetFactory.createStyledText(parent, SWT.WRAP);
-		this.body.setEnabled(false);
+		this.body = widgetFactory.createStyledText(parent, SWT.V_SCROLL | SWT.WRAP);
+		GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+
+		// TODO Add a linecount property to the label and use it to compute the height of the widget
+		gridData.heightHint = this.body.getLineHeight();
+		gridData.widthHint = LABEL_WIDTH_HINT;
+		this.body.setLayoutData(gridData);
 		this.body.setEditable(false);
 
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter);
@@ -122,6 +136,17 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 			styleHelper.applyTextStyle(labelStyle.getFontNameExpression(), labelStyle.getFontSizeExpression(), labelStyle.getFontStyleExpression(),
 					this.body.getFont(), labelStyle.getBackgroundColorExpression(), labelStyle.getForegroundColorExpression(), callback);
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
+		this.body.setEnabled(isEnabled());
 	}
 
 	/**
