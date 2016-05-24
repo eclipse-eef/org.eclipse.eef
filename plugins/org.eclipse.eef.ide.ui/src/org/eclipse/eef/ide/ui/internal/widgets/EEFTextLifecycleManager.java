@@ -166,6 +166,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			public void modifyText(ModifyEvent event) {
 				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
 					controller.updateValue(text.getText());
+					EEFTextLifecycleManager.this.setStyle();
 				}
 			}
 		};

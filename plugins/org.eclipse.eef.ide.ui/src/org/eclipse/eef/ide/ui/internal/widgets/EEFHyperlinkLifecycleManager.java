@@ -31,9 +31,8 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
-import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
-import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -93,6 +92,7 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		this.hyperlink = widgetFactory.createStyledText(parent, SWT.READ_ONLY);
+		this.hyperlink.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		this.hyperlink.setEditable(false);
 		this.hyperlink.setEnabled(true);
 		widgetFactory.paintBordersFor(parent);
@@ -130,29 +130,7 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.hyperlinkListener = new MouseListener() {
-
-			@Override
-			public void mouseDoubleClick(MouseEvent e) {
-				// nothing
-			}
-
-			@Override
-			public void mouseDown(MouseEvent e) {
-				int offset = hyperlink.getOffsetAtLocation(new Point(e.x, e.y));
-				StyleRange stylerange = hyperlink.getStyleRangeAtOffset(offset);
-				if (stylerange != null) {
-					if (!EEFHyperlinkLifecycleManager.this.container.isRenderingInProgress()) {
-						controller.onClick(hyperlink.getData());
-					}
-				}
-			}
-
-			@Override
-			public void mouseUp(MouseEvent e) {
-				// nothing
-			}
-		};
+		this.hyperlinkListener = new EEFHyperlinkListener(this.hyperlink, this.container, this.controller);
 		hyperlink.addMouseListener(hyperlinkListener);
 
 		this.controller.onNewValue(new IConsumer<String>() {
@@ -195,12 +173,14 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 			styleRange = styleRanges[0];
 		} else {
 			styleRange = new StyleRange();
+		}
+
+		if (styleRange != null) {
 			styleRange.start = 0;
 			styleRange.length = hyperlink.getText().length();
 			styleRange.underline = true;
+			styleRange.underlineStyle = SWT.UNDERLINE_LINK;
 		}
-
-		styleRange.underlineStyle = SWT.UNDERLINE_LINK;
 		hyperlink.setStyleRange(styleRange);
 	}
 
