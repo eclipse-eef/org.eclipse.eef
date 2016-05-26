@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?><toc label="EEF Javadoc">
+<topic href="pages/overview-summary.html" label="EEF Javadoc">
+<topic label="Packages">
+<topic href="pages/org/eclipse/eef/package-summary.html" label="org.eclipse.eef"/>
+<topic href="pages/org/eclipse/eef/common/api/package-summary.html" label="org.eclipse.eef.common.api"/>
+<topic href="pages/org/eclipse/eef/common/api/preferences/package-summary.html" label="org.eclipse.eef.common.api.preferences"/>
+<topic href="pages/org/eclipse/eef/common/api/utils/package-summary.html" label="org.eclipse.eef.common.api.utils"/>
+<topic href="pages/org/eclipse/eef/common/internal/package-summary.html" label="org.eclipse.eef.common.internal"/>
+<topic href="pages/org/eclipse/eef/common/internal/preferences/package-summary.html" label="org.eclipse.eef.common.internal.preferences"/>
+<topic href="pages/org/eclipse/eef/common/ui/api/package-summary.html" label="org.eclipse.eef.common.ui.api"/>
+<topic href="pages/org/eclipse/eef/core/api/package-summary.html" label="org.eclipse.eef.core.api"/>
+<topic href="pages/org/eclipse/eef/core/api/controllers/package-summary.html" label="org.eclipse.eef.core.api.controllers"/>
+<topic href="pages/org/eclipse/eef/core/api/utils/package-summary.html" label="org.eclipse.eef.core.api.utils"/>
+<topic href="pages/org/eclipse/eef/core/internal/package-summary.html" label="org.eclipse.eef.core.internal"/>
+<topic href="pages/org/eclipse/eef/core/internal/controllers/package-summary.html" label="org.eclipse.eef.core.internal.controllers"/>
+<topic href="pages/org/eclipse/eef/ide/api/extensions/package-summary.html" label="org.eclipse.eef.ide.api.extensions"/>
+<topic href="pages/org/eclipse/eef/ide/api/extensions/impl/package-summary.html" label="org.eclipse.eef.ide.api.extensions.impl"/>
+<topic href="pages/org/eclipse/eef/ide/internal/package-summary.html" label="org.eclipse.eef.ide.internal"/>
+<topic href="pages/org/eclipse/eef/ide/ui/api/package-summary.html" label="org.eclipse.eef.ide.ui.api"/>
+<topic href="pages/org/eclipse/eef/ide/ui/api/widgets/package-summary.html" label="org.eclipse.eef.ide.ui.api.widgets"/>
+<topic href="pages/org/eclipse/eef/ide/ui/internal/package-summary.html" label="org.eclipse.eef.ide.ui.internal"/>
+<topic href="pages/org/eclipse/eef/ide/ui/internal/preferences/package-summary.html" label="org.eclipse.eef.ide.ui.internal.preferences"/>
+<topic href="pages/org/eclipse/eef/ide/ui/internal/widgets/package-summary.html" label="org.eclipse.eef.ide.ui.internal.widgets"/>
+<topic href="pages/org/eclipse/eef/ide/ui/internal/widgets/quickfix/package-summary.html" label="org.eclipse.eef.ide.ui.internal.widgets.quickfix"/>
+<topic href="pages/org/eclipse/eef/ide/ui/internal/widgets/styles/package-summary.html" label="org.eclipse.eef.ide.ui.internal.widgets.styles"/>
+<topic href="pages/org/eclipse/eef/ide/ui/properties/api/package-summary.html" label="org.eclipse.eef.ide.ui.properties.api"/>
+<topic href="pages/org/eclipse/eef/impl/package-summary.html" label="org.eclipse.eef.impl"/>
+<topic href="pages/org/eclipse/eef/properties/ui/api/package-summary.html" label="org.eclipse.eef.properties.ui.api"/>
+<topic href="pages/org/eclipse/eef/properties/ui/internal/package-summary.html" label="org.eclipse.eef.properties.ui.internal"/>
+<topic href="pages/org/eclipse/eef/properties/ui/internal/extension/package-summary.html" label="org.eclipse.eef.properties.ui.internal.extension"/>
+<topic href="pages/org/eclipse/eef/properties/ui/internal/extension/impl/package-summary.html" label="org.eclipse.eef.properties.ui.internal.extension.impl"/>
+<topic href="pages/org/eclipse/eef/properties/ui/internal/page/package-summary.html" label="org.eclipse.eef.properties.ui.internal.page"/>
+<topic href="pages/org/eclipse/eef/properties/ui/internal/page/propertylist/package-summary.html" label="org.eclipse.eef.properties.ui.internal.page.propertylist"/>
+<topic href="pages/org/eclipse/eef/properties/ui/internal/registry/package-summary.html" label="org.eclipse.eef.properties.ui.internal.registry"/>
+<topic href="pages/org/eclipse/eef/properties/ui/legacy/internal/package-summary.html" label="org.eclipse.eef.properties.ui.legacy.internal"/>
+<topic href="pages/org/eclipse/eef/properties/ui/legacy/internal/eef2legacy/package-summary.html" label="org.eclipse.eef.properties.ui.legacy.internal.eef2legacy"/>
+<topic href="pages/org/eclipse/eef/properties/ui/legacy/internal/extension/package-summary.html" label="org.eclipse.eef.properties.ui.legacy.internal.extension"/>
+<topic href="pages/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/package-summary.html" label="org.eclipse.eef.properties.ui.legacy.internal.extension.impl"/>
+<topic href="pages/org/eclipse/eef/properties/ui/legacy/internal/legacy2eef/package-summary.html" label="org.eclipse.eef.properties.ui.legacy.internal.legacy2eef"/>
+<topic href="pages/org/eclipse/eef/provider/package-summary.html" label="org.eclipse.eef.provider"/>
+<topic href="pages/org/eclipse/eef/util/package-summary.html" label="org.eclipse.eef.util"/>
+</topic>
+<topic href="pages/constant-values.html" label="Constant Values"/>
+<topic href="pages/deprecated-list.html" label="Deprecated List"/>
+</topic>
+</toc>
