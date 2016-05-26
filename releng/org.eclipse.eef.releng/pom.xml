@@ -91,6 +91,11 @@
         </executions>
       </plugin>
       <plugin>
+        <groupId>org.eclipse.tycho.extras</groupId>
+        <artifactId>tycho-document-bundle-plugin</artifactId>
+        <version>${tycho-extras-version}</version>
+      </plugin>
+      <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-packaging-plugin</artifactId>
         <version>${tycho-version}</version>
@@ -135,6 +140,7 @@
     <module>../../tests/org.eclipse.eef.tests</module>
 
     <module>../../doc/org.eclipse.eef.documentation</module>
+    <module>../../doc/org.eclipse.eef.documentation.javadoc</module>
     <module>../../doc/org.eclipse.eef.documentation.export</module>
 
     <module>../../features/org.eclipse.eef.sdk-feature</module>
