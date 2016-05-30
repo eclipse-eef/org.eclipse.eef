@@ -28,6 +28,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * @author sbegaudeau
  */
 public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
+	/**
+	 * The label used by default.
+	 */
+	private static final String DEFAULT_PAGE_LABEL = "Properties"; //$NON-NLS-1$
 
 	/**
 	 * The {@link EEFPage}.
@@ -71,7 +75,7 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 		EAttribute eAttribute = EefPackage.Literals.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION;
 
 		return EvalFactory.of(this.eefPage.getInterpreter(), this.eefPage.getVariableManager()).logIfBlank(eAttribute).logIfInvalidType(String.class)
-				.evaluate(labelExpression);
+				.defaultValue(DEFAULT_PAGE_LABEL).evaluate(labelExpression);
 	}
 
 	/**
