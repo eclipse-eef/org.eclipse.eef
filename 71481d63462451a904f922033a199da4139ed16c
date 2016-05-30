@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87e453f8_45e6d05f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-05-30T13:19:02Z",
+      "side": 1,
+      "message": "IllegalArgUmentException",
+      "range": {
+        "startLine": 7,
+        "startChar": 16,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "71481d63462451a904f922033a199da4139ed16c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87e453f8_85cff8d4",
+        "filename": "plugins/org.eclipse.eef.ide.ui.properties/src/org/eclipse/eef/ide/ui/properties/api/EEFTabDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-05-30T13:19:02Z",
+      "side": 1,
+      "message": "General ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 51,
+        "endLine": 34,
+        "endChar": 61
+      },
+      "revId": "71481d63462451a904f922033a199da4139ed16c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
