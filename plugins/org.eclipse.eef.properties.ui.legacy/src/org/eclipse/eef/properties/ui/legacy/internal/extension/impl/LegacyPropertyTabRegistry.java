@@ -70,7 +70,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 		List<IEEFTabDescriptor> sortedTabs = new ArrayList<IEEFTabDescriptor>(tabs);
 		if (propertyCategories != null) {
 			Collections.sort(sortedTabs, new Comparator<Object>() {
-
+				@Override
 				public int compare(Object arg0, Object arg1) {
 					IEEFTabDescriptor one = (IEEFTabDescriptor) arg0;
 					IEEFTabDescriptor two = (IEEFTabDescriptor) arg1;
@@ -98,6 +98,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 *            Property categories
 	 * @return Sorted list of tabs according to the afterTab attribute
 	 */
+	@SuppressWarnings("cast")
 	private List<IEEFTabDescriptor> sortTabDescriptorsByAfterTab(List<IEEFTabDescriptor> tabs, List<String> propertyCategories) {
 		if (tabs.size() == 0 || propertyCategories == null) {
 			return tabs;
@@ -121,7 +122,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 				}
 			}
 			Collections.sort(categoryList, new Comparator<Object>() {
-
+				@Override
 				public int compare(Object arg0, Object arg1) {
 					IEEFTabDescriptor one = (IEEFTabDescriptor) arg0;
 					IEEFTabDescriptor two = (IEEFTabDescriptor) arg1;
