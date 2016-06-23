@@ -10,11 +10,11 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
+import java.util.List;
+
 import org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
-import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.eef.properties.ui.api.IEEFTypeMapper;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacySection;
 import org.eclipse.jface.viewers.IFilter;
@@ -43,9 +43,9 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	private IFilter filter;
 
 	/**
-	 * The configuration element used to create the section.
+	 * The section class.
 	 */
-	private IConfigurationElement configurationElement;
+	private ISection sectionClass;
 
 	/**
 	 * The enablesFor.
@@ -58,29 +58,40 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	private String afterSection;
 
 	/**
+	 * The input.
+	 */
+	private List<String> inputTypes;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param tab
 	 *            The parent tab
 	 * @param filter
 	 *            The filter
-	 * @param configurationElement
-	 *            The configuration element used to create the section
+	 * @param sectionClass
+	 *            The section class
 	 * @param id
 	 *            The id
 	 * @param afterSection
 	 *            The afterSection
 	 * @param enablesFor
 	 *            The enablesFor
+	 * @param inputTypes
+	 *            The input types
+	 * @param typeMapper
+	 *            The type mapper
 	 */
-	public LegacyPropertySectionItemDescriptor(String tab, IFilter filter, IConfigurationElement configurationElement, String id, int enablesFor,
-			String afterSection) {
+	public LegacyPropertySectionItemDescriptor(String tab, IFilter filter, ISection sectionClass, String id, int enablesFor, String afterSection,
+			List<String> inputTypes, IEEFTypeMapper typeMapper) {
+		super(typeMapper);
 		this.tab = tab;
 		this.filter = filter;
-		this.configurationElement = configurationElement;
+		this.sectionClass = sectionClass;
 		this.id = id;
 		this.enablesFor = enablesFor;
 		this.afterSection = afterSection;
+		this.inputTypes = inputTypes;
 	}
 
 	/**
@@ -100,14 +111,7 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public IEEFSection getSectionClass() {
-		try {
-			ISection sectionClass = (ISection) configurationElement.createExecutableExtension(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR);
-			EEFLegacySection legacySection = new EEFLegacySection(sectionClass);
-			return legacySection;
-		} catch (CoreException e) {
-			EEFPropertiesUiLegacyPlugin.getImplementation().logError(e.getMessage(), e);
-		}
-		return null;
+		return new EEFLegacySection(sectionClass);
 	}
 
 	/**
@@ -148,6 +152,16 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	@Override
 	public int getEnablesFor() {
 		return this.enablesFor;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor#getInputTypes()
+	 */
+	@Override
+	public List<String> getInputTypes() {
+		return this.inputTypes;
 	}
 
 }
