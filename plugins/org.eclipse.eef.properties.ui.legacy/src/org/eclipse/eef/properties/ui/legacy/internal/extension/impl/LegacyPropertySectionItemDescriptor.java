@@ -10,11 +10,11 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
+import java.util.List;
+
 import org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
-import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.eef.properties.ui.api.IEEFTypeMapper;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacySection;
 import org.eclipse.jface.viewers.IFilter;
@@ -43,9 +43,9 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	private IFilter filter;
 
 	/**
-	 * The configuration element used to create the section.
+	 * The section class.
 	 */
-	private IConfigurationElement configurationElement;
+	private ISection sectionClass;
 
 	/**
 	 * The enablesFor.
@@ -58,29 +58,18 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	private String afterSection;
 
 	/**
+	 * The input.
+	 */
+	private List<String> inputTypes;
+
+	/**
 	 * The constructor.
 	 *
-	 * @param tab
-	 *            The parent tab
-	 * @param filter
-	 *            The filter
-	 * @param configurationElement
-	 *            The configuration element used to create the section
-	 * @param id
-	 *            The id
-	 * @param afterSection
-	 *            The afterSection
-	 * @param enablesFor
-	 *            The enablesFor
+	 * @param typeMapper
+	 *            The type mapper
 	 */
-	public LegacyPropertySectionItemDescriptor(String tab, IFilter filter, IConfigurationElement configurationElement, String id, int enablesFor,
-			String afterSection) {
-		this.tab = tab;
-		this.filter = filter;
-		this.configurationElement = configurationElement;
-		this.id = id;
-		this.enablesFor = enablesFor;
-		this.afterSection = afterSection;
+	public LegacyPropertySectionItemDescriptor(IEEFTypeMapper typeMapper) {
+		super(typeMapper);
 	}
 
 	/**
@@ -100,14 +89,7 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public IEEFSection getSectionClass() {
-		try {
-			ISection sectionClass = (ISection) configurationElement.createExecutableExtension(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR);
-			EEFLegacySection legacySection = new EEFLegacySection(sectionClass);
-			return legacySection;
-		} catch (CoreException e) {
-			EEFPropertiesUiLegacyPlugin.getImplementation().logError(e.getMessage(), e);
-		}
-		return null;
+		return new EEFLegacySection(sectionClass);
 	}
 
 	/**
@@ -150,4 +132,83 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 		return this.enablesFor;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor#getInputTypes()
+	 */
+	@Override
+	public List<String> getInputTypes() {
+		return this.inputTypes;
+	}
+
+	/**
+	 * Sets the id.
+	 *
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	/**
+	 * Sets the tab.
+	 *
+	 * @param tab
+	 *            the tab to set
+	 */
+	public void setTab(String tab) {
+		this.tab = tab;
+	}
+
+	/**
+	 * Sets the filter.
+	 *
+	 * @param filter
+	 *            the filter to set
+	 */
+	public void setFilter(IFilter filter) {
+		this.filter = filter;
+	}
+
+	/**
+	 * Sets the sectionClass.
+	 *
+	 * @param sectionClass
+	 *            the sectionClass to set
+	 */
+	public void setSectionClass(ISection sectionClass) {
+		this.sectionClass = sectionClass;
+	}
+
+	/**
+	 * Sets the enablesFor.
+	 *
+	 * @param enablesFor
+	 *            the enablesFor to set
+	 */
+	public void setEnablesFor(int enablesFor) {
+		this.enablesFor = enablesFor;
+	}
+
+	/**
+	 * Sets the afterSection.
+	 *
+	 * @param afterSection
+	 *            the afterSection to set
+	 */
+	public void setAfterSection(String afterSection) {
+		this.afterSection = afterSection;
+	}
+
+	/**
+	 * Sets the inputTypes.
+	 *
+	 * @param inputTypes
+	 *            the inputTypes to set
+	 */
+	public void setInputTypes(List<String> inputTypes) {
+		this.inputTypes = inputTypes;
+	}
 }

@@ -21,19 +21,26 @@ import org.eclipse.swt.graphics.Image;
  * @author mbats
  */
 public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor implements IItemDescriptor {
+	/**
+	 * The contributor id.
+	 */
+	private String contributorId;
 
 	/**
 	 * The category.
 	 */
 	private String category;
+
 	/**
 	 * The id.
 	 */
 	private String id;
+
 	/**
 	 * The label.
 	 */
 	private String label;
+
 	/**
 	 * The afterTab.
 	 */
@@ -52,6 +59,8 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	/**
 	 * The constructor.
 	 *
+	 * @param contributorId
+	 *            The contributor id
 	 * @param category
 	 *            The category
 	 * @param id
@@ -65,14 +74,26 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	 * @param image
 	 *            The image
 	 */
-	public LegacyPropertyTabItemDescriptor(String label, String category, String afterTab, String id, boolean indented, Image image) {
-		setSectionDescriptors(EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry().getPropertySections(id));
+	public LegacyPropertyTabItemDescriptor(String contributorId, String label, String category, String afterTab, String id, boolean indented,
+			Image image) {
+		setSectionDescriptors(EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry()
+				.getPropertySections(contributorId, id));
+		this.contributorId = contributorId;
 		this.category = category;
 		this.id = id;
 		this.label = label;
 		this.afterTab = afterTab;
 		this.indented = indented;
 		this.image = image;
+	}
+
+	/**
+	 * Return the contributorId.
+	 *
+	 * @return the contributorId
+	 */
+	public String getContributorId() {
+		return this.contributorId;
 	}
 
 	/**

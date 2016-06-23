@@ -107,14 +107,21 @@ public class EEFTabbedPropertyRegistry {
 	 * @return List of EEF tab descriptors
 	 */
 	private List<IEEFTabDescriptor> filterTabDescriptors(List<IEEFTabDescriptor> eefTabDescriptors, IWorkbenchPart part, ISelection input) {
-		List<IEEFTabDescriptor> filteredEefTabDescriptors = new ArrayList<IEEFTabDescriptor>();
+		Map<String, IEEFTabDescriptor> filteredEefTabDescriptors = new LinkedHashMap<String, IEEFTabDescriptor>();
 		for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptors) {
 			IEEFTabDescriptor filteredEefTabDescriptor = adaptDescriptorFor(eefTabDescriptor, part, input);
 			if (!filteredEefTabDescriptor.getSectionDescriptors().isEmpty()) {
-				filteredEefTabDescriptors.add(filteredEefTabDescriptor);
+				if (!filteredEefTabDescriptors.containsKey(filteredEefTabDescriptor.getLabel())) {
+					filteredEefTabDescriptors.put(filteredEefTabDescriptor.getLabel(), filteredEefTabDescriptor);
+				}
 			}
 		}
-		return filteredEefTabDescriptors;
+		List<IEEFTabDescriptor> result = null;
+		if (!filteredEefTabDescriptors.isEmpty()) {
+			result = new ArrayList<IEEFTabDescriptor>();
+			result.addAll(filteredEefTabDescriptors.values());
+		}
+		return result;
 	}
 
 	/**

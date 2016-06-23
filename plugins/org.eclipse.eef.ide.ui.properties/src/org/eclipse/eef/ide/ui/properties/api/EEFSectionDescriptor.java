@@ -34,6 +34,7 @@ public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 	 *            The EEFPage
 	 */
 	public EEFSectionDescriptor(EEFPage eefPage) {
+		super(null);
 		this.eefPage = eefPage;
 	}
 

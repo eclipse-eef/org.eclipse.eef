@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension;
 
-
 /**
  * The registry used to track the descriptors of the extensions.
  *
@@ -32,10 +31,9 @@ public interface IItemRegistry {
 	 *
 	 * @param id
 	 *            The identifier
-	 * @return The {@link IItemDescriptor} removed or null if no registered {@link IItemDescriptor} had an identifier
-	 *         matching the given one
+	 * @return True if the element was removed, otherwise false
 	 */
-	IItemDescriptor remove(String id);
+	boolean remove(String id);
 
 	/**
 	 * Clears the registry.
