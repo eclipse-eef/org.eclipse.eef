@@ -35,13 +35,6 @@ public abstract class AbstractEEFSectionDescriptor implements IEEFSectionDescrip
 
 	/**
 	 * The constructor.
-	 */
-	public AbstractEEFSectionDescriptor() {
-		this.classFilter = new EEFTabbedPropertyRegistryClassSectionFilter(null);
-	}
-
-	/**
-	 * The constructor.
 	 *
 	 * @param typeMapper
 	 *            The type mapper for the section

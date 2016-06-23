@@ -15,6 +15,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +26,7 @@ import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemRegistry;
 
 /**
  * The registry used to track the descriptors of the property tab extension.
- * 
+ *
  * @author mbats
  */
 public class LegacyPropertyTabRegistry implements IItemRegistry {
@@ -42,7 +43,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 
 	/**
 	 * Get the property tabs.
-	 * 
+	 *
 	 * @return List of tabs
 	 */
 	public List<IEEFTabDescriptor> getPropertyTabs() {
@@ -59,7 +60,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 
 	/**
 	 * Sorts the tab descriptors in the given list according to category.
-	 * 
+	 *
 	 * @param tabs
 	 *            Tabs to sort
 	 * @param propertyCategories
@@ -71,6 +72,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 		if (propertyCategories != null) {
 			Collections.sort(sortedTabs, new Comparator<Object>() {
 
+				@Override
 				public int compare(Object arg0, Object arg1) {
 					IEEFTabDescriptor one = (IEEFTabDescriptor) arg0;
 					IEEFTabDescriptor two = (IEEFTabDescriptor) arg1;
@@ -85,13 +87,14 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 				}
 			});
 		}
+
 		return sortedTabs;
 
 	}
 
 	/**
 	 * Sorts the tab descriptors in the given list according to afterTab.
-	 * 
+	 *
 	 * @param tabs
 	 *            Tabs to sort
 	 * @param propertyCategories
@@ -105,37 +108,27 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 		List<IEEFTabDescriptor> sorted = new ArrayList<IEEFTabDescriptor>();
 		int categoryIndex = 0;
 		for (int i = 0; i < propertyCategories.size(); i++) {
-			List<IEEFTabDescriptor> categoryList = new ArrayList<IEEFTabDescriptor>();
-			String category = (String) propertyCategories.get(i);
+			// Get all the tabs of a category
+			final List<IEEFTabDescriptor> categoryList = new ArrayList<IEEFTabDescriptor>();
+			String category = propertyCategories.get(i);
 			int topOfCategory = categoryIndex;
 			int endOfCategory = categoryIndex;
-			while (endOfCategory < tabs.size() && ((IEEFTabDescriptor) tabs.get(endOfCategory)).getCategory().equals(category)) {
+			while (endOfCategory < tabs.size() && tabs.get(endOfCategory).getCategory().equals(category)) {
 				endOfCategory++;
 			}
 			for (int j = topOfCategory; j < endOfCategory; j++) {
-				IEEFTabDescriptor tab = (IEEFTabDescriptor) tabs.get(j);
+				IEEFTabDescriptor tab = tabs.get(j);
 				if (tab.getAfterTab().equals(TOP)) {
 					categoryList.add(0, tabs.get(j));
 				} else {
 					categoryList.add(tabs.get(j));
 				}
 			}
-			Collections.sort(categoryList, new Comparator<Object>() {
 
-				public int compare(Object arg0, Object arg1) {
-					IEEFTabDescriptor one = (IEEFTabDescriptor) arg0;
-					IEEFTabDescriptor two = (IEEFTabDescriptor) arg1;
-					int result = 0;
-					if (two.getAfterTab().equals(one.getId())) {
-						result = -1;
-					} else if (one.getAfterTab().equals(two.getId())) {
-						result = 1;
-					}
-					return result;
-				}
-			});
-			for (int j = 0; j < categoryList.size(); j++) {
-				sorted.add((IEEFTabDescriptor) categoryList.get(j));
+			List<IEEFTabDescriptor> sortedTabs = sortCategoryTabsByAfterTab(categoryList);
+
+			for (int j = 0; j < sortedTabs.size(); j++) {
+				sorted.add(sortedTabs.get(j));
 			}
 			categoryIndex = endOfCategory;
 		}
@@ -143,8 +136,49 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	}
 
 	/**
+	 * Sort tabs of a category by after tab.
+	 *
+	 * @param categoryList
+	 *            List of tabs
+	 * @return List of tabs sorted by after tab
+	 */
+	private List<IEEFTabDescriptor> sortCategoryTabsByAfterTab(List<IEEFTabDescriptor> categoryList) {
+		List<IEEFTabDescriptor> sorted = new LinkedList<IEEFTabDescriptor>();
+		for (IEEFTabDescriptor tab : categoryList) {
+			String afterTabId = tab.getAfterTab();
+			int indexOfAfterTab = -1;
+			if (afterTabId != null && !afterTabId.isEmpty()) {
+				IEEFTabDescriptor afterTab = getTab(categoryList, afterTabId);
+				if (afterTab != null) {
+					indexOfAfterTab = sorted.indexOf(afterTab);
+				}
+			}
+			sorted.add(indexOfAfterTab + 1, tab);
+		}
+		return sorted;
+	}
+
+	/**
+	 * Get a tab in a list of tabs according to its id.
+	 *
+	 * @param tabId
+	 *            The tab id
+	 * @param tabs
+	 *            The tabs list
+	 * @return the Tab
+	 */
+	private IEEFTabDescriptor getTab(List<IEEFTabDescriptor> tabs, String tabId) {
+		for (IEEFTabDescriptor tab : tabs) {
+			if (tabId.equals(tab.getId())) {
+				return tab;
+			}
+		}
+		return null;
+	}
+
+	/**
 	 * Returns the index of the given element in the array.
-	 * 
+	 *
 	 * @param array
 	 *            Array
 	 * @param target
@@ -162,7 +196,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 
 	/**
 	 * Read property categories from the extension point.
-	 * 
+	 *
 	 * @return List of categories
 	 */
 	private List<String> readPropertyCategories() {
@@ -172,7 +206,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	/**
 	 * Reads property tab extensions. Returns all tab descriptors for the current contributor id or an empty list if
 	 * none is found.
-	 * 
+	 *
 	 * @return List of static tab descriptors
 	 */
 	private List<IEEFTabDescriptor> readTabDescriptors() {
@@ -190,7 +224,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see IItemRegistry#add(IItemDescriptor)
 	 */
 	@Override
@@ -200,17 +234,17 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see IItemRegistry#add(IItemDescriptor)
 	 */
 	@Override
-	public IItemDescriptor remove(String id) {
-		return this.id2descriptors.remove(id);
+	public boolean remove(String id) {
+		return this.id2descriptors.remove(id) != null;
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see IItemRegistry#clear()
 	 */
 	@Override
