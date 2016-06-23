@@ -111,7 +111,7 @@ public class LegacyPropertyTabsRegistryEventListener extends AbstractRegistryEve
 
 	/**
 	 * Indicates if an attribute of the configuration element is valid.
-	 * 
+	 *
 	 * @param configurationElement
 	 *            The configuration element
 	 * @param attributeName
@@ -129,22 +129,27 @@ public class LegacyPropertyTabsRegistryEventListener extends AbstractRegistryEve
 	 */
 	@Override
 	protected boolean processAddition(IConfigurationElement configurationElement) {
-		if (TAG_PROPERTY_TAB.equals(configurationElement.getName())) {
-			String category = configurationElement.getAttribute(CATEGORY_ATTR);
-			String label = configurationElement.getAttribute(LABEL_ATTR);
-			String id = configurationElement.getAttribute(ID_ATTR);
-			String afterTab = configurationElement.getAttribute(AFTER_TAB_ATTR);
-			String indentedString = configurationElement.getAttribute(INDENTED_ATTR);
-			boolean indented = indentedString != null && "true".equals(indentedString); //$NON-NLS-1$ 
-			String imageString = configurationElement.getAttribute(IMAGE_ATTR);
-			Image image = null;
-			if (imageString != null) {
-				image = AbstractUIPlugin
-						.imageDescriptorFromPlugin(configurationElement.getDeclaringExtension().getNamespaceIdentifier(), imageString).createImage();
-			}
+		if (TAG_PROPERTY_TABS.equals(configurationElement.getName())) {
+			String contributorId = configurationElement.getAttribute(CONTRIBUTOR_ID_ATTR);
+			IConfigurationElement[] propertyTabs = configurationElement.getChildren(TAG_PROPERTY_TAB);
+			for (IConfigurationElement propertyTab : propertyTabs) {
+				String category = propertyTab.getAttribute(CATEGORY_ATTR);
+				String label = propertyTab.getAttribute(LABEL_ATTR);
+				String id = propertyTab.getAttribute(ID_ATTR);
+				String afterTab = propertyTab.getAttribute(AFTER_TAB_ATTR);
+				String indentedString = propertyTab.getAttribute(INDENTED_ATTR);
+				boolean indented = indentedString != null && "true".equals(indentedString); //$NON-NLS-1$
+				String imageString = propertyTab.getAttribute(IMAGE_ATTR);
+				Image image = null;
+				if (imageString != null) {
+					image = AbstractUIPlugin.imageDescriptorFromPlugin(propertyTab.getDeclaringExtension().getNamespaceIdentifier(), imageString)
+							.createImage();
+				}
 
-			LegacyPropertyTabItemDescriptor legacyPropertyTab = new LegacyPropertyTabItemDescriptor(label, category, afterTab, id, indented, image);
-			this.propertyTabRegistry.add(legacyPropertyTab);
+				LegacyPropertyTabItemDescriptor legacyPropertyTab = new LegacyPropertyTabItemDescriptor(contributorId, label, category, afterTab, id,
+						indented, image);
+				this.propertyTabRegistry.add(legacyPropertyTab);
+			}
 		}
 
 		return true;
@@ -157,7 +162,7 @@ public class LegacyPropertyTabsRegistryEventListener extends AbstractRegistryEve
 	 */
 	@Override
 	protected boolean processRemoval(IConfigurationElement configurationElement) {
-		return this.propertyTabRegistry.remove(configurationElement.getAttribute(ID_ATTR)) != null;
+		return this.propertyTabRegistry.remove(configurationElement.getAttribute(ID_ATTR));
 	}
 
 }
