@@ -79,7 +79,7 @@ public abstract class AbstractEEFTabDescriptor implements IEEFTabDescriptor, Clo
 			return true;
 		}
 
-		boolean isEqual = true;
+		boolean isEqual = false;
 		if (this.getClass() == object.getClass()) {
 			AbstractEEFTabDescriptor descriptor = (AbstractEEFTabDescriptor) object;
 			if (this.getCategory().equals(descriptor.getCategory()) && this.getId().equals(descriptor.getId())
@@ -98,6 +98,7 @@ public abstract class AbstractEEFTabDescriptor implements IEEFTabDescriptor, Clo
 						isEqual = false;
 					}
 				}
+				isEqual = true;
 			}
 		} else {
 			isEqual = false;
