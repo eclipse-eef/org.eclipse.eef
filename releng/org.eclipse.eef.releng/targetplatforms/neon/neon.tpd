@@ -20,7 +20,7 @@ location Eclipse-Shared-License "http://download.eclipse.org/cbi/updates/license
 	org.eclipse.license.feature.group lazy
 }
 
-location Sirius-Incubation "http://download.eclipse.org/sirius/updates/nightly/latest/neon/incubation" {
+location Sirius-Interpreter "http://download.eclipse.org/sirius/updates/nightly/latest/neon" {
 	org.eclipse.sirius.interpreter.feature.feature.group lazy
 }
 
