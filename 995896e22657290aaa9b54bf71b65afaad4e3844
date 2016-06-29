@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47b89bd4_d3656c10",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertyContributorItemDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-06-29T13:09:45Z",
+      "side": 1,
+      "message": "I get CheckStyle errors about a constructor with more than 7 parameters.",
+      "range": {
+        "startLine": 89,
+        "startChar": 1,
+        "endLine": 91,
+        "endChar": 72
+      },
+      "revId": "995896e22657290aaa9b54bf71b65afaad4e3844",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47b89bd4_086a4f8e",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertyContributorRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-06-29T13:09:45Z",
+      "side": 1,
+      "message": "Should we return/break early once we found the first match, or is it intended to continue and possibly find others (and only return the last one)?",
+      "range": {
+        "startLine": 66,
+        "startChar": 5,
+        "endLine": 66,
+        "endChar": 107
+      },
+      "revId": "995896e22657290aaa9b54bf71b65afaad4e3844",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47b89bd4_285633db",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertyContributorRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-06-29T13:09:45Z",
+      "side": 1,
+      "message": "Same question as above.",
+      "range": {
+        "startLine": 86,
+        "startChar": 5,
+        "endLine": 87,
+        "endChar": 39
+      },
+      "revId": "995896e22657290aaa9b54bf71b65afaad4e3844",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47b89bd4_b368f8e9",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertySectionItemDescriptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-06-29T13:09:45Z",
+      "side": 1,
+      "message": "I get CheckStyle errors about a constructor with more than 7 parameters.",
+      "range": {
+        "startLine": 85,
+        "startChar": 1,
+        "endLine": 86,
+        "endChar": 56
+      },
+      "revId": "995896e22657290aaa9b54bf71b65afaad4e3844",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
