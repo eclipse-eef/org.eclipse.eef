@@ -4,6 +4,19 @@ h2. Release Notes for Eclipse EEF
 
 This document contains the release notes for recent major releases of EEF.
 
+
+h3(#eef1.7.0). Changes in EEF 1.7.0
+
+h4. User-Visible Changes
+
+
+h4. Specifier-Visible Changes
+
+
+h4. Developer-Visible Changes
+
+
+
 h3(#eef1.6.0). Changes in EEF 1.6.0
 
 h4. User-Visible Changes
