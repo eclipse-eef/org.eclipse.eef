@@ -63,6 +63,36 @@ public class EEFTabContents {
 	}
 
 	/**
+	 * Retrieve a numbered index for the section.
+	 *
+	 * @param section
+	 *            the section.
+	 * @return the section index.
+	 */
+	public int getSectionIndex(IEEFSection section) {
+		for (int i = 0; i < sections.size(); i++) {
+			if (section == sections.get(i)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * Retrieve the section at a numbered index.
+	 *
+	 * @param i
+	 *            a numbered index.
+	 * @return the section.
+	 */
+	public IEEFSection getSectionAtIndex(int i) {
+		if (i >= 0 && i < sections.size()) {
+			return sections.get(i);
+		}
+		return null;
+	}
+
+	/**
 	 * Creates the page's sections controls.
 	 *
 	 * @param parent
