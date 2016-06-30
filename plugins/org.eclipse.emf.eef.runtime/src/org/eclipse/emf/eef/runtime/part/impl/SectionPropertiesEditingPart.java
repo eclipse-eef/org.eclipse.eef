@@ -51,350 +51,384 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  */
 public abstract class SectionPropertiesEditingPart extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, ISection {
 
-	/**
-	 * The tabbed property sheet page
-	 */
-	private TabbedPropertySheetPage tabbedPropertySheetPage;
+    /**
+     * The tabbed property sheet page
+     */
+    private TabbedPropertySheetPage tabbedPropertySheetPage;
 
-	/**
-	 * The editingDomain where the viewer must perform editing commands.
-	 */
-	private EditingDomain editingDomain;
+    /**
+     * The editingDomain where the viewer must perform editing commands.
+     */
+    private EditingDomain editingDomain;
 
-	/**
-	 * The current selected object or the first object in the selection when multiple objects are selected.
-	 */
-	protected EObject eObject;
+    /**
+     * The current selected object or the first object in the selection when
+     * multiple objects are selected.
+     */
+    protected EObject eObject;
 
-	/**
-	 * The list of current selected objects.
-	 */
-	protected List<?> eObjectList;
+    /**
+     * The list of current selected objects.
+     */
+    protected List<?> eObjectList;
 
-	protected Composite container;
+    protected Composite container;
 
-	private boolean usedAsPropertySection;
+    private boolean usedAsPropertySection;
 
-	/**
-	 * Manager for error message
-	 */
-	private PropertiesEditionMessageManager messageManager;
+    /**
+     * Manager for error message
+     */
+    private PropertiesEditionMessageManager messageManager;
 
-	private Composite editingComposite;
+    private Composite editingComposite;
 
-	private ValidationMessageInjector injector;
+    private ValidationMessageInjector injector;
 
-	/**
-	 * 
-	 */
-	protected SectionPropertiesEditingPart() {
-		super();
-		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-	}
+    /**
+     * 
+     */
+    protected SectionPropertiesEditingPart() {
+        super();
+        adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+    }
 
-	public SectionPropertiesEditingPart(IPropertiesEditionComponent editionComponent) {
-		super(editionComponent);
-		this.usedAsPropertySection = false;
-	}
+    public SectionPropertiesEditingPart(IPropertiesEditionComponent editionComponent) {
+        super(editionComponent);
+        this.usedAsPropertySection = false;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#createControls(org.eclipse.swt.widgets.Composite,
-	 *      org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
-	 */
-	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
-		this.tabbedPropertySheetPage = tabbedPropertySheetPage;
-		this.container = tabbedPropertySheetPage.getWidgetFactory().createComposite(parent);
-		container.setLayout(new GridLayout(3, false));
-	}
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#createControls(org.eclipse.swt.widgets.Composite,
+     *      org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage)
+     */
+    public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
+        this.tabbedPropertySheetPage = tabbedPropertySheetPage;
+        this.container = tabbedPropertySheetPage.getWidgetFactory().createComposite(parent);
+        container.setLayout(new GridLayout(3, false));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#setInput(org.eclipse.ui.IWorkbenchPart,
-	 *      org.eclipse.jface.viewers.ISelection)
-	 */
-	public void setInput(IWorkbenchPart part, ISelection selection) {
-		initializeEditingDomain(part, selection);
-		if (!(selection instanceof IStructuredSelection)) {
-			return;
-		}
-		if (resolveSemanticObject(((IStructuredSelection)selection).getFirstElement()) != null) {
-			EObject newEObject = resolveSemanticObject(((IStructuredSelection)selection).getFirstElement());
-			if (newEObject != eObject) {
-				eObject = newEObject;
-				if (eObject != null) {
-					injector = new ValidationMessageInjector(tabbedPropertySheetPage);
-					messageManager = new PropertiesEditionMessageManager() {
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#setInput(org.eclipse.ui.IWorkbenchPart,
+     *      org.eclipse.jface.viewers.ISelection)
+     */
+    public void setInput(IWorkbenchPart part, ISelection selection) {
+        initializeEditingDomain(part, selection);
+        if (!(selection instanceof IStructuredSelection)) {
+            return;
+        }
+        if (resolveSemanticObject(((IStructuredSelection) selection).getFirstElement()) != null) {
+            EObject newEObject = resolveSemanticObject(((IStructuredSelection) selection).getFirstElement());
+            if (newEObject != eObject) {
+                eObject = newEObject;
+                if (eObject != null) {
+                    injector = new ValidationMessageInjector(tabbedPropertySheetPage);
+                    messageManager = new PropertiesEditionMessageManager() {
 
-						@Override
-						protected void updateStatus(String message) {
-							if (injector != null) {
-								injector.setMessage(message, IStatus.OK);
-							}
-						}
+                        @Override
+                        protected void updateStatus(String message) {
+                            if (injector != null) {
+                                injector.setMessage(message, IStatus.OK);
+                            }
+                        }
 
-						@Override
-						protected void updateError(String message) {
-							if (injector != null) {
-								injector.setMessage(message, IStatus.ERROR);
-							}
-						}
+                        @Override
+                        protected void updateError(String message) {
+                            if (injector != null) {
+                                injector.setMessage(message, IStatus.ERROR);
+                            }
+                        }
 
-						@Override
-						protected void updateWarning(String message) {
-							if (injector != null) {
-								injector.setMessage(message, IStatus.WARNING);
-							}
-						}
+                        @Override
+                        protected void updateWarning(String message) {
+                            if (injector != null) {
+                                injector.setMessage(message, IStatus.WARNING);
+                            }
+                        }
 
-					};
-					disposeComponent();
-					refreshComponent();
-				}
-			}
-		}
-		eObjectList = ((IStructuredSelection)selection).toList();
-		this.usedAsPropertySection = true;
-	}
+                    };
+                    disposeComponent();
+                    refreshComponent();
+                }
+            }
+        }
+        eObjectList = ((IStructuredSelection) selection).toList();
+        this.usedAsPropertySection = true;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart#refresh()
-	 */
-	public void refresh() {
-		if (usedAsPropertySection) {
-			initSemanticContents();
-		} else {
-			super.refresh();
-		}
-	}
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart#refresh()
+     */
+    public void refresh() {
+        if (usedAsPropertySection) {
+            initSemanticContents();
+        } else {
+            super.refresh();
+        }
+    }
 
-	protected void initializeEditingDomain(IWorkbenchPart part, ISelection selection) {
-		editingDomain = EditingUtils.getResourceSetFromEditor(part);
-	}
+    protected void initializeEditingDomain(IWorkbenchPart part, ISelection selection) {
+        editingDomain = EditingUtils.getResourceSetFromEditor(part);
+    }
 
-	/**
-	 * @see EEFUtils#resolveSemanticObject(Object)
-	 */
-	protected EObject resolveSemanticObject(Object object) {
-		return EEFUtils.resolveSemanticObject(object);
-	}
+    /**
+     * @see EEFUtils#resolveSemanticObject(Object)
+     */
+    protected EObject resolveSemanticObject(Object object) {
+        return EEFUtils.resolveSemanticObject(object);
+    }
 
-	private void refreshComponent() {
-		DomainPropertiesEditionContext propertiesEditingContext = new DomainPropertiesEditionContext(null,
-				null, editingDomain, adapterFactory, eObject);
-		propertiesEditionComponent = propertiesEditingContext.createPropertiesEditingComponent(
-				IPropertiesEditionComponent.LIVE_MODE, getDescriptor());
-		if (propertiesEditionComponent != null) {
-			this.adapterFactory = propertiesEditionComponent.getEditingContext().getAdapterFactory();
-			propertiesEditingContext.setHelper(new BindingViewHelper(propertiesEditingContext,
-					tabbedPropertySheetPage.getWidgetFactory()));
-			propertiesEditionComponent.setPropertiesEditionPart(
-					propertiesEditionComponent.translatePart(getDescriptor()), 0, this);
-			propertiesEditionComponent.setLiveEditingDomain(editingDomain);
-			if (editingComposite != null) {
-				editingComposite.dispose();
-			}
-			editingComposite = this.createFigure(container, tabbedPropertySheetPage.getWidgetFactory());
-			if (editingComposite != null) {
-				editingComposite.setLayoutData(new GridData(GridData.FILL_BOTH));
-				container.layout();
-			}
-			if (messageManager != null) {
-				messageManager.processMessage(new PropertiesValidationEditionEvent(null,
-						Diagnostic.OK_INSTANCE));
-				propertiesEditionComponent.addListener(new IPropertiesEditionListener() {
+    private void refreshComponent() {
+        DomainPropertiesEditionContext propertiesEditingContext = new DomainPropertiesEditionContext(null, null, editingDomain, adapterFactory, eObject);
+        propertiesEditionComponent = propertiesEditingContext.createPropertiesEditingComponent(IPropertiesEditionComponent.LIVE_MODE, getDescriptor());
+        if (propertiesEditionComponent != null) {
+            this.adapterFactory = propertiesEditionComponent.getEditingContext().getAdapterFactory();
+            propertiesEditingContext.setHelper(new BindingViewHelper(propertiesEditingContext, tabbedPropertySheetPage.getWidgetFactory()));
+            propertiesEditionComponent.setPropertiesEditionPart(propertiesEditionComponent.translatePart(getDescriptor()), 0, this);
+            propertiesEditionComponent.setLiveEditingDomain(editingDomain);
+            if (editingComposite != null) {
+                editingComposite.dispose();
+            }
+            editingComposite = this.createFigure(container, tabbedPropertySheetPage.getWidgetFactory());
+            if (editingComposite != null) {
+                editingComposite.setLayoutData(new GridData(GridData.FILL_BOTH));
+                container.layout();
+            }
+            if (messageManager != null) {
+                messageManager.processMessage(new PropertiesValidationEditionEvent(null, Diagnostic.OK_INSTANCE));
+                propertiesEditionComponent.addListener(new IPropertiesEditionListener() {
 
-					public void firePropertiesChanged(IPropertiesEditionEvent event) {
-						messageManager.processMessage(event);
+                    public void firePropertiesChanged(IPropertiesEditionEvent event) {
+                        messageManager.processMessage(event);
 
-					}
-				});
-			}
-		}
-	}
+                    }
+                });
+            }
+        }
+    }
 
-	/**
-	 * @param descriptor
-	 */
-	protected void initSemanticContents() {
-		propertiesEditionComponent.initPart(propertiesEditionComponent.translatePart(getDescriptor()), 1,
-				eObject);
-	}
+    /**
+     * @param descriptor
+     */
+    protected void initSemanticContents() {
+        propertiesEditionComponent.initPart(propertiesEditionComponent.translatePart(getDescriptor()), 1, eObject);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#aboutToBeShown()
-	 */
-	public void aboutToBeShown() {
-		/* empty default implementation */
-	}
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#aboutToBeShown()
+     */
+    public void aboutToBeShown() {
+        /* empty default implementation */
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#aboutToBeHidden()
-	 */
-	public void aboutToBeHidden() {
-		if (injector != null) {
-			injector.dispose();
-			injector = null;
-		}
-	}
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#aboutToBeHidden()
+     */
+    public void aboutToBeHidden() {
+        if (injector != null) {
+            injector.dispose();
+            injector = null;
+        }
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#dispose()
-	 */
-	public void dispose() {
-		disposeComponent();
-	}
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#dispose()
+     */
+    public void dispose() {
+        disposeComponent();
+    }
 
-	private void disposeComponent() {
-		if (propertiesEditionComponent != null) {
-			PropertiesEditingContext editingContext = propertiesEditionComponent.getEditingContext();
-			if (editingContext != null && editingContext.getParentContext() == null) {
-				editingContext.dispose();
-			}
-			propertiesEditionComponent.dispose();
-		}
-	}
+    private void disposeComponent() {
+        if (propertiesEditionComponent != null) {
+            PropertiesEditingContext editingContext = propertiesEditionComponent.getEditingContext();
+            if (editingContext != null && editingContext.getParentContext() == null) {
+                editingContext.dispose();
+            }
+            propertiesEditionComponent.dispose();
+        }
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#getMinimumHeight()
-	 */
-	public int getMinimumHeight() {
-		return SWT.DEFAULT;
-	}
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#getMinimumHeight()
+     */
+    public int getMinimumHeight() {
+        return SWT.DEFAULT;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ui.views.properties.tabbed.ISection#shouldUseExtraSpace()
-	 */
-	public boolean shouldUseExtraSpace() {
-		return false;
-	}
+    /**
+     * {@inheritDoc}
+     * 
+     * @see org.eclipse.ui.views.properties.tabbed.ISection#shouldUseExtraSpace()
+     */
+    public boolean shouldUseExtraSpace() {
+        return false;
+    }
 
-	/**
-	 * Magic method For eclipse 3.2 & 3.3 & 3.4 & 3.5
-	 * 
-	 * @return
-	 */
-	protected String getDescriptor() {
-		Map<?, ?> descriptor = getPageDescriptor(tabbedPropertySheetPage);
-		for (Iterator<?> iterator = descriptor.keySet().iterator(); iterator.hasNext();) {
-			Object key = iterator.next();
-			Object tab = descriptor.get(key);
-			Method getSectionAtIndex = getMethod(tab, "getSectionAtIndex", int.class); //$NON-NLS-1$
-			if (getSectionAtIndex != null) {
-				Object result = callMethod(tab, getSectionAtIndex, new Integer(0));
-				if (result == this) {
-					Method getId = getMethod(key, "getId"); //$NON-NLS-1$
-					if (getId != null) {
-						String id = (String)callMethod(key, getId);
-						return id;
-					}
-				}
-			}
-		}
-		return ""; //$NON-NLS-1$
-	}
+    /**
+     * Magic method For eclipse 3.2 & 3.3 & 3.4 & 3.5
+     * 
+     * @return
+     */
+    protected String getDescriptor() {
+        Map<?, ?> descriptor = getPageDescriptor(tabbedPropertySheetPage);
+        for (Iterator<?> iterator = descriptor.keySet().iterator(); iterator.hasNext();) {
+            Object key = iterator.next();
+            Object tab = descriptor.get(key);
+            Method getSectionAtIndex = getMethod(tab, "getSectionAtIndex", int.class); //$NON-NLS-1$
+            if (getSectionAtIndex != null) {
+                Object result = callMethod(tab, getSectionAtIndex, new Integer(0));
+                if (result == this) {
+                    Method getId = getMethod(key, "getId"); //$NON-NLS-1$
+                    if (getId != null) {
+                        String id = (String) callMethod(key, getId);
+                        return id;
+                    }
+                } else {
+                    if (result != null) {
+                        boolean oldLegacySectionAccessible = false;
+                        Field legacySectionField = null;
+                        try {
+                            Class<?> cls = result.getClass();
+                            legacySectionField = cls.getDeclaredField("legacySection"); //$NON-NLS-1$
+                            oldLegacySectionAccessible = legacySectionField.isAccessible();
+                            legacySectionField.setAccessible(true);
+                            result = legacySectionField.get(result);
+                            if (result == this) {
+                                Method getId = getMethod(key, "getId"); //$NON-NLS-1$
+                                if (getId != null) {
+                                    String id = (String) callMethod(key, getId);
+                                    return id;
+                                }
+                            }
+                        } catch (NoSuchFieldException e) {
+                            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_legacySection_not_found, e);
+                        } catch (SecurityException e) {
+                            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_legacySection_not_found, e);
+                        } catch (IllegalArgumentException e) {
+                            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_legacySection_not_found, e);
+                        } catch (IllegalAccessException e) {
+                            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_legacySection_not_found, e);
+                        } finally {
+                            if (legacySectionField != null) {
+                                legacySectionField.setAccessible(oldLegacySectionAccessible);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return ""; //$NON-NLS-1$
+    }
 
-	private Map<?, ?> getPageDescriptor(TabbedPropertySheetPage propertySheetPage) {
-		Field descriptorToTabField = null;
-		boolean oldAccessible = false;
-		try {
-			Class<?> cls = propertySheetPage.getClass();
-			while (!cls.equals(TabbedPropertySheetPage.class)) {
-				cls = cls.getSuperclass();
-			}
-			descriptorToTabField = cls.getDeclaredField("descriptorToTab"); //$NON-NLS-1$
-			oldAccessible = descriptorToTabField.isAccessible();
-			descriptorToTabField.setAccessible(true);
-			return (Map<?, ?>)descriptorToTabField.get(propertySheetPage);
+    private Map<?, ?> getPageDescriptor(TabbedPropertySheetPage propertySheetPage) {
+        Field descriptorToTabField = null;
+        Field pageField = null;
+        Object page = propertySheetPage;
+        boolean oldDescriptorToTabAccessible = false;
+        boolean oldPageAccessible = false;
+        try {
+            Class<?> cls = propertySheetPage.getClass();
+            while (!cls.getName().contains("TabbedPropertySheetPage")) {
+                cls = cls.getSuperclass();
+            }
+            try {
+                descriptorToTabField = cls.getDeclaredField("descriptorToTab"); //$NON-NLS-1$
+            } catch (NoSuchFieldException e) {
+                pageField = cls.getDeclaredField("page"); //$NON-NLS-1$
+                cls = pageField.getType();
+                oldPageAccessible = pageField.isAccessible();
+                pageField.setAccessible(true);
+                page = pageField.get(propertySheetPage);
+                descriptorToTabField = cls.getDeclaredField("descriptorToTab"); //$NON-NLS-1$
+            }
+            oldDescriptorToTabAccessible = descriptorToTabField.isAccessible();
+            descriptorToTabField.setAccessible(true);
+            return (Map<?, ?>) descriptorToTabField.get(page);
 
-		} catch (SecurityException e) {
+        } catch (SecurityException e) {
 
-			EEFRuntimePlugin.getDefault().logError(
-					EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
-		} catch (NoSuchFieldException e) {
+            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
+        } catch (NoSuchFieldException e) {
 
-			EEFRuntimePlugin.getDefault().logError(
-					EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
-		} catch (IllegalArgumentException e) {
+            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
+        } catch (IllegalArgumentException e) {
 
-			EEFRuntimePlugin.getDefault().logError(
-					EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
-		} catch (IllegalAccessException e) {
+            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
+        } catch (IllegalAccessException e) {
 
-			EEFRuntimePlugin.getDefault().logError(
-					EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
-		} finally {
-			if (descriptorToTabField != null) {
-				descriptorToTabField.setAccessible(oldAccessible);
-			}
-		}
-		return null;
-	}
+            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_descriptorToTab_not_found, e);
+        } finally {
+            if (descriptorToTabField != null) {
+                descriptorToTabField.setAccessible(oldDescriptorToTabAccessible);
+            }
+            if (pageField != null) {
+                pageField.setAccessible(oldPageAccessible);
+            }
+        }
+        return null;
+    }
 
-	/**
-	 * @param source
-	 *            the source object
-	 * @param name
-	 *            the method to get
-	 * @param argsType
-	 *            the method arguments type
-	 * @return the given method
-	 */
-	private Method getMethod(Object source, String name, Class<?>... argsType) {
-		try {
-			return source.getClass().getDeclaredMethod(name, argsType);
-		} catch (Exception e) {
-			EEFRuntimePlugin.getDefault().logError(
-					EEFRuntimeUIMessages.PropertiesEditionSection_method_not_found + name, e);
-		}
-		return null;
-	}
+    /**
+     * @param source
+     *            the source object
+     * @param name
+     *            the method to get
+     * @param argsType
+     *            the method arguments type
+     * @return the given method
+     */
+    private Method getMethod(Object source, String name, Class<?>... argsType) {
+        try {
+            return source.getClass().getDeclaredMethod(name, argsType);
+        } catch (Exception e) {
+            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_method_not_found + name, e);
+        }
+        return null;
+    }
 
-	/**
-	 * @param source
-	 *            the source object
-	 * @param name
-	 *            the method to get
-	 * @param argsType
-	 *            the method arguments type
-	 * @return the result of the given method
-	 */
-	private Object callMethod(Object source, Method method, Object... args) {
-		try {
-			return method.invoke(source, args);
-		} catch (Exception e) {
-			EEFRuntimePlugin.getDefault().logError(
-					EEFRuntimeUIMessages.PropertiesEditionSection_error_occured_on + method.getName()
-							+ EEFRuntimeUIMessages.PropertiesEditionSection_call, e);
-		}
-		return null;
-	}
+    /**
+     * @param source
+     *            the source object
+     * @param name
+     *            the method to get
+     * @param argsType
+     *            the method arguments type
+     * @return the result of the given method
+     */
+    private Object callMethod(Object source, Method method, Object... args) {
+        try {
+            return method.invoke(source, args);
+        } catch (Exception e) {
+            EEFRuntimePlugin.getDefault().logError(EEFRuntimeUIMessages.PropertiesEditionSection_error_occured_on + method.getName() + EEFRuntimeUIMessages.PropertiesEditionSection_call, e);
+        }
+        return null;
+    }
 
-	/**
-	 * @return the editing domain
-	 */
-	public EditingDomain getEditingDomain() {
-		return editingDomain;
-	}
+    /**
+     * @return the editing domain
+     */
+    public EditingDomain getEditingDomain() {
+        return editingDomain;
+    }
 
-	/**
-	 * @param editingDomain
-	 */
-	public void setEditingDomain(EditingDomain editingDomain) {
-		this.editingDomain = editingDomain;
-	}
+    /**
+     * @param editingDomain
+     */
+    public void setEditingDomain(EditingDomain editingDomain) {
+        this.editingDomain = editingDomain;
+    }
 }

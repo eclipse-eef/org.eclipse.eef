@@ -81,6 +81,8 @@ public class EEFRuntimeUIMessages extends NLS {
 
 	public static String PropertiesEditionSection_descriptorToTab_not_found;
 
+    public static String PropertiesEditionSection_legacySection_not_found;
+
 	public static String PropertiesEditionSection_error_occured_on;
 
 	public static String PropertiesEditionSection_method_not_found;
