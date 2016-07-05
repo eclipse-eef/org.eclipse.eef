@@ -11,6 +11,8 @@
  *******************************************************************************/
 package org.eclipse.eef.common.ui.api;
 
+import org.eclipse.jface.text.Document;
+import org.eclipse.jface.text.source.SourceViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -254,6 +256,25 @@ public class EEFWidgetFactory extends FormToolkit {
 		styledText.setBackground(parent.getBackground());
 		styledText.setForeground(parent.getForeground());
 		return styledText;
+	}
+
+	/**
+	 * Creates a source viewer as part of the form.
+	 *
+	 * @param parent
+	 *            The parent
+	 * @param style
+	 *            The style
+	 * @return The source viewer
+	 */
+	public SourceViewer createSourceViewer(Composite parent, int style) {
+		SourceViewer sourceViewer = new SourceViewer(parent, null, null, false, style);
+		sourceViewer.getTextWidget().setBackgroundMode(SWT.INHERIT_DEFAULT);
+		sourceViewer.getTextWidget().setBackground(parent.getBackground());
+		sourceViewer.getTextWidget().setForeground(parent.getForeground());
+		sourceViewer.setDocument(new Document());
+		// sourceViewer.configure(new TextSourceViewerConfiguration());
+		return sourceViewer;
 	}
 
 	/**

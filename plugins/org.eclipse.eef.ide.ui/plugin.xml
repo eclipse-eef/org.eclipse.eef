@@ -2,6 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="eefLifecycleManagerProvider" name="%eefLifecycleManagerProviderExtensionPoint.name" schema="schema/eefLifecycleManagerProvider.exsd"/>
+   <extension-point id="eefSourceViewerManager" name="%eefSourceViewerManagerExtensionPoint.name" schema="schema/eefSourceViewerManager.exsd"/>
    <extension
          point="org.eclipse.ui.preferencePages">
       <page

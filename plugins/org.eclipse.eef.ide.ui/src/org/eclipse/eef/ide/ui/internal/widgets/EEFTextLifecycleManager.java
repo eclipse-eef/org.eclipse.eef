@@ -23,12 +23,14 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFSourceViewerManager;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
+import org.eclipse.jface.text.source.SourceViewer;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.graphics.Color;
@@ -57,9 +59,9 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	private EEFTextDescription description;
 
 	/**
-	 * The text.
+	 * The source viewer.
 	 */
-	private StyledText text;
+	private SourceViewer sourceViewer;
 
 	/**
 	 * The controller.
@@ -113,22 +115,33 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		// Get text area line count
 		int lineCount = description.getLineCount();
 
-		// Create text or text area according to the defined line count
-		if (lineCount > 1) {
-			this.text = widgetFactory.createStyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.MULTI);
-			GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
-			gridData.heightHint = lineCount * text.getLineHeight();
-			gridData.widthHint = TEXT_AREA_WIDTH_HINT;
-			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
-			this.text.setLayoutData(gridData);
+		IEEFSourceViewerManager eefSourceViewerManager = EEFIdeUiPlugin.getPlugin().getEEFSourceViewerManager(this.description);
+		if (eefSourceViewerManager != null) {
+			if (lineCount > 1) {
+				this.sourceViewer = eefSourceViewerManager.createSourceViewer(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.MULTI);
+			} else {
+				this.sourceViewer = eefSourceViewerManager.createSourceViewer(parent, SWT.SINGLE);
+			}
+		} else if (lineCount > 1) {
+			this.sourceViewer = widgetFactory.createSourceViewer(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.MULTI);
 		} else {
-			this.text = widgetFactory.createStyledText(parent, SWT.SINGLE);
-			GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
-			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
-			this.text.setLayoutData(gridData);
+			this.sourceViewer = widgetFactory.createSourceViewer(parent, SWT.SINGLE);
 		}
 
-		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		// Create text or text area according to the defined line count
+		if (lineCount > 1) {
+			GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+			gridData.heightHint = lineCount * sourceViewer.getTextWidget().getLineHeight();
+			gridData.widthHint = TEXT_AREA_WIDTH_HINT;
+			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+			this.sourceViewer.getTextWidget().setLayoutData(gridData);
+		} else {
+			GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+			this.sourceViewer.getTextWidget().setLayoutData(gridData);
+		}
+
+		this.sourceViewer.getTextWidget().setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
 
 		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
@@ -181,23 +194,24 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void modifyText(ModifyEvent event) {
 				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
-					controller.updateValue(text.getText());
+					controller.updateValue(sourceViewer.getTextWidget().getText());
 					EEFTextLifecycleManager.this.setStyle();
 				}
 			}
 		};
-		this.text.addModifyListener(this.modifyListener);
+		this.sourceViewer.getTextWidget().addModifyListener(this.modifyListener);
 
 		this.controller.onNewValue(new IConsumer<Object>() {
 			@Override
 			public void apply(Object value) {
-				if (!text.isDisposed()) {
-					if (value != null && !(text.getText() != null && text.getText().equals(value.toString()))) {
-						text.setText(Util.firstNonNull(value.toString(), "")); //$NON-NLS-1$
+				if (!sourceViewer.getTextWidget().isDisposed()) {
+					if (value != null
+							&& !(sourceViewer.getTextWidget().getText() != null && sourceViewer.getTextWidget().getText().equals(value.toString()))) {
+						sourceViewer.getTextWidget().setText(Util.firstNonNull(value.toString(), "")); //$NON-NLS-1$
 					}
 					EEFTextLifecycleManager.this.setStyle();
-					if (!text.isEnabled()) {
-						text.setEnabled(true);
+					if (!sourceViewer.getTextWidget().isEnabled()) {
+						sourceViewer.getTextWidget().setEnabled(true);
 					}
 				}
 			}
@@ -213,9 +227,10 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		if (widgetStyle instanceof EEFTextStyle) {
 			EEFTextStyle textStyle = (EEFTextStyle) widgetStyle;
 
-			IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.text);
+			IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.sourceViewer.getTextWidget());
 			styleHelper.applyTextStyle(textStyle.getFontNameExpression(), textStyle.getFontSizeExpression(), textStyle.getFontStyleExpression(),
-					this.text.getFont(), textStyle.getBackgroundColorExpression(), textStyle.getForegroundColorExpression(), callback);
+					this.sourceViewer.getTextWidget().getFont(), textStyle.getBackgroundColorExpression(), textStyle.getForegroundColorExpression(),
+					callback);
 		}
 	}
 
@@ -226,7 +241,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 */
 	@Override
 	protected Control getValidationControl() {
-		return this.text;
+		return this.sourceViewer.getTextWidget();
 	}
 
 	/**
@@ -238,8 +253,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
 
-		if (!text.isDisposed()) {
-			this.text.removeModifyListener(this.modifyListener);
+		if (!sourceViewer.getTextWidget().isDisposed()) {
+			this.sourceViewer.getTextWidget().removeModifyListener(this.modifyListener);
 		}
 		this.controller.removeNewValueConsumer();
 	}
@@ -252,8 +267,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	@Override
 	public void refresh() {
 		super.refresh();
-		this.text.setEnabled(isEnabled());
-		this.text.setBackground(getBackgroundColor());
+		this.sourceViewer.getTextWidget().setEnabled(isEnabled());
+		this.sourceViewer.getTextWidget().setBackground(getBackgroundColor());
 	}
 
 	/**

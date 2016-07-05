@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefSourceViewerManager">
+      <descriptor
+            class="org.eclipse.eef.sample.acceleo.sourceviewer.internal.EEFSourceViewerManager"
+            description="org.eclipse.eef.sample.acceleo.SourceViewer.Description"
+            id="org.eclipse.eef.sample.acceleo.SourceViewer"
+            label="org.eclipse.eef.sample.acceleo.SourceViewer.Name">
+      </descriptor>
+   </extension>
+
+</plugin>

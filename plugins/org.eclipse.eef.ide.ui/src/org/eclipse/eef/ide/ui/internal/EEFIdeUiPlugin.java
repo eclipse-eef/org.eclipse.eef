@@ -15,6 +15,7 @@ import java.net.URL;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.eef.EEFControlDescription;
+import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.common.api.AbstractEEFEclipsePlugin;
 import org.eclipse.eef.ide.api.extensions.AbstractRegistryEventListener;
 import org.eclipse.eef.ide.api.extensions.IItemDescriptor;
@@ -22,6 +23,7 @@ import org.eclipse.eef.ide.api.extensions.IItemRegistry;
 import org.eclipse.eef.ide.api.extensions.impl.DescriptorRegistryEventListener;
 import org.eclipse.eef.ide.api.extensions.impl.ItemRegistry;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFSourceViewerManager;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -89,6 +91,11 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 		private static final String EEF_LIFECYCLE_MANAGER_PROVIDER_EXTENSION_POINT = "eefLifecycleManagerProvider"; //$NON-NLS-1$
 
 		/**
+		 * The name of the extension point for the source viewer manager.
+		 */
+		private static final String EEF_SOURCE_VIEWER_MANAGER_EXTENSION_POINT = "eefSourceViewerManager"; //$NON-NLS-1$
+
+		/**
 		 * The image registry.
 		 */
 		private ImageRegistry imageRegistry;
@@ -104,6 +111,10 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 		 * {@link IEEFLifecycleManagerProvider}.
 		 */
 		private AbstractRegistryEventListener eefLifecycleManagerProviderListener;
+
+		private IItemRegistry<IEEFSourceViewerManager> eefSourceViewerManagerRegistry;
+
+		private AbstractRegistryEventListener eefSourceViewerManagerListener;
 
 		/**
 		 * The constructor.
@@ -204,6 +215,12 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 			registry.addListener(this.eefLifecycleManagerProviderListener, PLUGIN_ID + '.' + EEF_LIFECYCLE_MANAGER_PROVIDER_EXTENSION_POINT);
 			this.eefLifecycleManagerProviderListener.readRegistry(registry);
 
+			this.eefSourceViewerManagerRegistry = new ItemRegistry<IEEFSourceViewerManager>();
+			this.eefSourceViewerManagerListener = new DescriptorRegistryEventListener<IEEFSourceViewerManager>(PLUGIN_ID,
+					EEF_SOURCE_VIEWER_MANAGER_EXTENSION_POINT, this.eefSourceViewerManagerRegistry);
+			registry.addListener(this.eefSourceViewerManagerListener, PLUGIN_ID + '.' + EEF_SOURCE_VIEWER_MANAGER_EXTENSION_POINT);
+			this.eefSourceViewerManagerListener.readRegistry(registry);
+
 		}
 
 		/**
@@ -220,6 +237,10 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 			registry.removeListener(this.eefLifecycleManagerProviderListener);
 			this.eefLifecycleManagerProviderListener = null;
 			this.eefLifecycleManagerProviderRegistry = null;
+
+			registry.removeListener(this.eefSourceViewerManagerListener);
+			this.eefSourceViewerManagerListener = null;
+			this.eefSourceViewerManagerRegistry = null;
 		}
 
 		/**
@@ -235,6 +256,16 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 				IEEFLifecycleManagerProvider eefLifecycleManagerProvider = itemDescriptor.getItem();
 				if (eefLifecycleManagerProvider.canHandle(eefControlDescription)) {
 					return eefLifecycleManagerProvider;
+				}
+			}
+			return null;
+		}
+
+		public IEEFSourceViewerManager getEEFSourceViewerManager(EEFTextDescription description) {
+			for (IItemDescriptor<IEEFSourceViewerManager> itemDescriptor : this.eefSourceViewerManagerRegistry.getItemDescriptors()) {
+				IEEFSourceViewerManager eefSourceViewerManager = itemDescriptor.getItem();
+				if (eefSourceViewerManager.canHandle(description)) {
+					return eefSourceViewerManager;
 				}
 			}
 			return null;
