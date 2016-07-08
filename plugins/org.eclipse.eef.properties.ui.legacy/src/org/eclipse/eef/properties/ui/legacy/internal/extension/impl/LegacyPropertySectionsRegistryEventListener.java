@@ -11,18 +11,13 @@
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.eef.properties.ui.api.IEEFTypeMapper;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
 import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.AbstractRegistryEventListener;
 import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacyTypeMapper;
-import org.eclipse.jface.viewers.IFilter;
-import org.eclipse.ui.views.properties.tabbed.ISection;
 import org.eclipse.ui.views.properties.tabbed.ISectionDescriptor;
 import org.eclipse.ui.views.properties.tabbed.ITypeMapper;
 
@@ -152,63 +147,17 @@ public class LegacyPropertySectionsRegistryEventListener extends AbstractRegistr
 			String contributorId = configurationElement.getAttribute(CONTRIBUTOR_ID_ATTR);
 			IConfigurationElement[] propertySections = configurationElement.getChildren(TAG_PROPERTY_SECTION);
 			for (IConfigurationElement propertySection : propertySections) {
-				String tab = propertySection.getAttribute(TAB_ATTR);
-				String id = propertySection.getAttribute(ID_ATTR);
-				String afterSection = propertySection.getAttribute(AFTER_SECTION_ATTR);
-				int enablesFor = ENABLES_FOR_ANY;
-				IFilter filter = null;
-				ISection sectionClass = null;
-				if (propertySection.getAttribute(ENABLES_FOR_ATTR) != null) {
-					String enablesForStr = propertySection.getAttribute(ENABLES_FOR_ATTR);
-					int enablesForTest = Integer.parseInt(enablesForStr);
-					if (enablesForTest > 0) {
-						enablesFor = enablesForTest;
-					}
+				// Get the type mapper from contributor ID
+				ITypeMapper typeMapper = EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertyContributorRegistry()
+						.getTypeMapper(contributorId);
+
+				IEEFTypeMapper eefTypeMapper = null;
+				if (typeMapper != null) {
+					eefTypeMapper = new EEFLegacyTypeMapper(typeMapper);
 				}
 
-				try {
-					if (propertySection.getAttribute(CLASS_ATTR) != null) {
-						// Get the section class
-						sectionClass = (ISection) propertySection.createExecutableExtension(CLASS_ATTR);
-					}
-
-					if (propertySection.getAttribute(FILTER_ATTR) != null) {
-						filter = (IFilter) propertySection.createExecutableExtension(FILTER_ATTR);
-					}
-
-					List<String> inputTypes = new ArrayList<String>();
-					IConfigurationElement[] elements = propertySection.getChildren(ELEMENT_INPUT);
-					for (IConfigurationElement element : elements) {
-						String type = element.getAttribute(ATT_INPUT_TYPE);
-						if (type != null && !type.isEmpty()) {
-							inputTypes.add(type);
-						}
-					}
-
-					// Get the type mapper from contributor ID
-					ITypeMapper typeMapper = EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertyContributorRegistry()
-							.getTypeMapper(contributorId);
-
-					IEEFTypeMapper eefTypeMapper = null;
-					if (typeMapper != null) {
-						eefTypeMapper = new EEFLegacyTypeMapper(typeMapper);
-					}
-
-					LegacyPropertySectionItemDescriptor legacySectionDescriptor = new LegacyPropertySectionItemDescriptor(eefTypeMapper);
-					legacySectionDescriptor.setId(id);
-					legacySectionDescriptor.setTab(tab);
-					legacySectionDescriptor.setFilter(filter);
-					legacySectionDescriptor.setSectionClass(sectionClass);
-					legacySectionDescriptor.setEnablesFor(enablesFor);
-					legacySectionDescriptor.setAfterSection(afterSection);
-					legacySectionDescriptor.setInputTypes(inputTypes);
-					this.propertySectionRegistry.add(legacySectionDescriptor);
-				} catch (CoreException e) {
-					String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, id);
-					EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
-
-					return false;
-				}
+				LegacyPropertySectionItemDescriptor legacySectionDescriptor = new LegacyPropertySectionItemDescriptor(propertySection, eefTypeMapper);
+				this.propertySectionRegistry.add(legacySectionDescriptor);
 			}
 		}
 

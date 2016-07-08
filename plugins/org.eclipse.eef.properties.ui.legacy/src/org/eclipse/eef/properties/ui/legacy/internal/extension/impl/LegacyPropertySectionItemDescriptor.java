@@ -10,15 +10,22 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
+import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSection;
 import org.eclipse.eef.properties.ui.api.IEEFTypeMapper;
+import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacySection;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.ui.views.properties.tabbed.ISection;
+import org.eclipse.ui.views.properties.tabbed.ISectionDescriptor;
 
 /**
  * The property section descriptor.
@@ -28,48 +35,39 @@ import org.eclipse.ui.views.properties.tabbed.ISection;
 public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescriptor implements IItemDescriptor {
 
 	/**
-	 * The section identifier.
+	 * The configuration element.
 	 */
-	private String id;
+	private IConfigurationElement configurationElement;
 
 	/**
-	 * The parent tab.
+	 * The section descriptor.
 	 */
-	private String tab;
-
-	/**
-	 * The filter class.
-	 */
-	private IFilter filter;
-
-	/**
-	 * The section class.
-	 */
-	private ISection sectionClass;
-
-	/**
-	 * The enablesFor.
-	 */
-	private int enablesFor;
-
-	/**
-	 * The afterSection.
-	 */
-	private String afterSection;
-
-	/**
-	 * The input.
-	 */
-	private List<String> inputTypes;
+	private ISectionDescriptor sectionDescriptor;
 
 	/**
 	 * The constructor.
 	 *
+	 * @param configurationElement
+	 *            The configuration Element
 	 * @param typeMapper
 	 *            The type mapper
 	 */
-	public LegacyPropertySectionItemDescriptor(IEEFTypeMapper typeMapper) {
+	public LegacyPropertySectionItemDescriptor(IConfigurationElement configurationElement, IEEFTypeMapper typeMapper) {
 		super(typeMapper);
+		this.configurationElement = configurationElement;
+	}
+
+	/**
+	 * The constructor.
+	 *
+	 * @param sectionDescriptor
+	 *            The section descriptor
+	 * @param typeMapper
+	 *            The type mapper
+	 */
+	public LegacyPropertySectionItemDescriptor(ISectionDescriptor sectionDescriptor, IEEFTypeMapper typeMapper) {
+		super(typeMapper);
+		this.sectionDescriptor = sectionDescriptor;
 	}
 
 	/**
@@ -79,7 +77,14 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public String getId() {
-		return this.id;
+		String id = null;
+		if (configurationElement != null) {
+			id = configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.ID_ATTR);
+		} else if (sectionDescriptor != null) {
+			id = sectionDescriptor.getId();
+		}
+
+		return id;
 	}
 
 	/**
@@ -89,7 +94,21 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public IEEFSection getSectionClass() {
-		return new EEFLegacySection(sectionClass);
+		ISection section = null;
+		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.FILTER_ATTR) != null) {
+			try {
+				section = (ISection) configurationElement.createExecutableExtension(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR);
+			} catch (CoreException e) {
+				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, getId());
+				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
+			}
+		} else if (sectionDescriptor != null) {
+			section = sectionDescriptor.getSectionClass();
+		}
+		if (section != null) {
+			return new EEFLegacySection(section);
+		}
+		return null;
 	}
 
 	/**
@@ -99,7 +118,14 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public String getTargetTab() {
-		return this.tab;
+		String tab = null;
+		if (configurationElement != null) {
+			tab = configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.TAB_ATTR);
+		} else if (sectionDescriptor != null) {
+			tab = sectionDescriptor.getTargetTab();
+		}
+
+		return tab;
 	}
 
 	/**
@@ -109,7 +135,18 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public IFilter getFilter() {
-		return this.filter;
+		IFilter filter = null;
+		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.FILTER_ATTR) != null) {
+			try {
+				filter = (IFilter) configurationElement.createExecutableExtension(LegacyPropertySectionsRegistryEventListener.FILTER_ATTR);
+			} catch (CoreException e) {
+				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, getId());
+				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
+			}
+		} else if (sectionDescriptor != null) {
+			filter = sectionDescriptor.getFilter();
+		}
+		return filter;
 	}
 
 	/**
@@ -119,7 +156,13 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public String getAfterSection() {
-		return this.afterSection;
+		String section = null;
+		if (configurationElement != null) {
+			section = configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.AFTER_SECTION_ATTR);
+		} else if (sectionDescriptor != null) {
+			section = sectionDescriptor.getAfterSection();
+		}
+		return section;
 	}
 
 	/**
@@ -129,7 +172,17 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public int getEnablesFor() {
-		return this.enablesFor;
+		int enablesFor = ENABLES_FOR_ANY;
+		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.ENABLES_FOR_ATTR) != null) {
+			String enablesForStr = configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.ENABLES_FOR_ATTR);
+			int enablesForTest = Integer.parseInt(enablesForStr);
+			if (enablesForTest > 0) {
+				enablesFor = enablesForTest;
+			}
+		} else if (sectionDescriptor != null) {
+			enablesFor = sectionDescriptor.getEnablesFor();
+		}
+		return enablesFor;
 	}
 
 	/**
@@ -137,78 +190,21 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 *
 	 * @see org.eclipse.eef.properties.ui.api.AbstractEEFSectionDescriptor#getInputTypes()
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getInputTypes() {
-		return this.inputTypes;
-	}
-
-	/**
-	 * Sets the id.
-	 *
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	/**
-	 * Sets the tab.
-	 *
-	 * @param tab
-	 *            the tab to set
-	 */
-	public void setTab(String tab) {
-		this.tab = tab;
-	}
-
-	/**
-	 * Sets the filter.
-	 *
-	 * @param filter
-	 *            the filter to set
-	 */
-	public void setFilter(IFilter filter) {
-		this.filter = filter;
-	}
-
-	/**
-	 * Sets the sectionClass.
-	 *
-	 * @param sectionClass
-	 *            the sectionClass to set
-	 */
-	public void setSectionClass(ISection sectionClass) {
-		this.sectionClass = sectionClass;
-	}
-
-	/**
-	 * Sets the enablesFor.
-	 *
-	 * @param enablesFor
-	 *            the enablesFor to set
-	 */
-	public void setEnablesFor(int enablesFor) {
-		this.enablesFor = enablesFor;
-	}
-
-	/**
-	 * Sets the afterSection.
-	 *
-	 * @param afterSection
-	 *            the afterSection to set
-	 */
-	public void setAfterSection(String afterSection) {
-		this.afterSection = afterSection;
-	}
-
-	/**
-	 * Sets the inputTypes.
-	 *
-	 * @param inputTypes
-	 *            the inputTypes to set
-	 */
-	public void setInputTypes(List<String> inputTypes) {
-		this.inputTypes = inputTypes;
+		List<String> inputTypes = new ArrayList<String>();
+		if (configurationElement != null) {
+			IConfigurationElement[] elements = configurationElement.getChildren(LegacyPropertySectionsRegistryEventListener.ELEMENT_INPUT);
+			for (IConfigurationElement element : elements) {
+				String type = element.getAttribute(LegacyPropertySectionsRegistryEventListener.ATT_INPUT_TYPE);
+				if (type != null && !type.isEmpty()) {
+					inputTypes.add(type);
+				}
+			}
+		} else if (sectionDescriptor != null) {
+			inputTypes = sectionDescriptor.getInputTypes();
+		}
+		return inputTypes;
 	}
 }
