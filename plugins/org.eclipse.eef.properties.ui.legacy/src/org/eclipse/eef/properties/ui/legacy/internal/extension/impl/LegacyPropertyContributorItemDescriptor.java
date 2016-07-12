@@ -10,8 +10,14 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
+import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
+import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.ui.views.properties.tabbed.IActionProvider;
@@ -25,51 +31,19 @@ import org.eclipse.ui.views.properties.tabbed.ITypeMapper;
  * @author mbats
  */
 public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor {
-
 	/**
-	 * The contributor.
+	 * The configuration element.
 	 */
-	private String contributorId;
-
-	/**
-	 * The label provider.
-	 */
-	private ILabelProvider labelProvider;
-
-	/**
-	 * The action provider.
-	 */
-	private IActionProvider actionProvider;
-
-	/**
-	 * The type mapper.
-	 */
-	private ITypeMapper typeMapper;
-
-	/**
-	 * The section descriptor provider.
-	 */
-	private ISectionDescriptorProvider sectionDescriptorProvider;
-
-	/**
-	 * The tab descriptor provider.
-	 */
-	private ITabDescriptorProvider tabDescriptorProvider;
-
-	/**
-	 * The overridable tab list content provider.
-	 */
-	private boolean overridableTabListContentProvider;
-
-	/**
-	 * The categories.
-	 */
-	private List<String> categories;
+	private IConfigurationElement configurationElement;
 
 	/**
 	 * The constructor.
+	 *
+	 * @param configurationElement
+	 *            The configuration element
 	 */
-	public LegacyPropertyContributorItemDescriptor() {
+	public LegacyPropertyContributorItemDescriptor(IConfigurationElement configurationElement) {
+		this.configurationElement = configurationElement;
 	}
 
 	/**
@@ -79,7 +53,11 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 */
 	@Override
 	public String getId() {
-		return this.contributorId;
+		if (configurationElement != null) {
+			return configurationElement.getAttribute(LegacyPropertyContributorRegistryEventListener.CONTRIBUTOR_ID_ATTR);
+
+		}
+		return null;
 	}
 
 	/**
@@ -88,7 +66,18 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 * @return the labelProvider
 	 */
 	public ILabelProvider getLabelProvider() {
-		return this.labelProvider;
+		ILabelProvider labelProvider = null;
+		if (configurationElement != null
+				&& configurationElement.getAttribute(LegacyPropertyContributorRegistryEventListener.LABEL_PROVIDER_ATTR) != null) {
+			try {
+				labelProvider = (ILabelProvider) configurationElement
+						.createExecutableExtension(LegacyPropertyContributorRegistryEventListener.LABEL_PROVIDER_ATTR);
+			} catch (CoreException e) {
+				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, getId());
+				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
+			}
+		}
+		return labelProvider;
 	}
 
 	/**
@@ -97,7 +86,18 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 * @return the actionProvider
 	 */
 	public IActionProvider getActionProvider() {
-		return this.actionProvider;
+		IActionProvider actionProvider = null;
+		if (configurationElement != null
+				&& configurationElement.getAttribute(LegacyPropertyContributorRegistryEventListener.ACTION_PROVIDER_ATTR) != null) {
+			try {
+				actionProvider = (IActionProvider) configurationElement
+						.createExecutableExtension(LegacyPropertyContributorRegistryEventListener.ACTION_PROVIDER_ATTR);
+			} catch (CoreException e) {
+				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, getId());
+				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
+			}
+		}
+		return actionProvider;
 	}
 
 	/**
@@ -106,7 +106,18 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 * @return the typeMapper
 	 */
 	public ITypeMapper getTypeMapper() {
-		return this.typeMapper;
+		ITypeMapper typeMapper = null;
+		if (configurationElement != null
+				&& configurationElement.getAttribute(LegacyPropertyContributorRegistryEventListener.TYPE_MAPPER_ATTR) != null) {
+			try {
+				typeMapper = (ITypeMapper) configurationElement
+						.createExecutableExtension(LegacyPropertyContributorRegistryEventListener.TYPE_MAPPER_ATTR);
+			} catch (CoreException e) {
+				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, getId());
+				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
+			}
+		}
+		return typeMapper;
 	}
 
 	/**
@@ -115,7 +126,18 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 * @return the sectionDescriptorProvider
 	 */
 	public ISectionDescriptorProvider getSectionDescriptorProvider() {
-		return this.sectionDescriptorProvider;
+		ISectionDescriptorProvider sectionDescriptorProvider = null;
+		if (configurationElement != null
+				&& configurationElement.getAttribute(LegacyPropertyContributorRegistryEventListener.SECTION_DESCRIPTOR_PROVIDER_ATTR) != null) {
+			try {
+				sectionDescriptorProvider = (ISectionDescriptorProvider) configurationElement
+						.createExecutableExtension(LegacyPropertyContributorRegistryEventListener.SECTION_DESCRIPTOR_PROVIDER_ATTR);
+			} catch (CoreException e) {
+				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, getId());
+				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
+			}
+		}
+		return sectionDescriptorProvider;
 	}
 
 	/**
@@ -124,7 +146,18 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 * @return the tabDescriptorProvider
 	 */
 	public ITabDescriptorProvider getTabDescriptorProvider() {
-		return this.tabDescriptorProvider;
+		ITabDescriptorProvider tabDescriptorProvider = null;
+		if (configurationElement != null
+				&& configurationElement.getAttribute(LegacyPropertyContributorRegistryEventListener.TAB_DESCRIPTOR_PROVIDER_ATTR) != null) {
+			try {
+				tabDescriptorProvider = (ITabDescriptorProvider) configurationElement
+						.createExecutableExtension(LegacyPropertyContributorRegistryEventListener.TAB_DESCRIPTOR_PROVIDER_ATTR);
+			} catch (CoreException e) {
+				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, getId());
+				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
+			}
+		}
+		return tabDescriptorProvider;
 	}
 
 	/**
@@ -133,7 +166,13 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 * @return the overridableTabListContentProvider
 	 */
 	public boolean isOverridableTabListContentProvider() {
-		return this.overridableTabListContentProvider;
+		if (configurationElement != null && configurationElement
+				.getAttribute(LegacyPropertyContributorRegistryEventListener.OVERRIDABLE_TAB_LIST_CONTENT_PROVIDER_ATTR) != null) {
+			String attributeBoolean = configurationElement
+					.getAttribute(LegacyPropertyContributorRegistryEventListener.OVERRIDABLE_TAB_LIST_CONTENT_PROVIDER_ATTR);
+			return "true".equals(attributeBoolean); //$NON-NLS-1$
+		}
+		return false;
 	}
 
 	/**
@@ -142,87 +181,13 @@ public class LegacyPropertyContributorItemDescriptor implements IItemDescriptor 
 	 * @return The categories
 	 */
 	public List<String> getCategories() {
-		return this.categories;
+		List<String> categories = new ArrayList<String>();
+		if (configurationElement != null) {
+			for (IConfigurationElement element : configurationElement
+					.getChildren(LegacyPropertyContributorRegistryEventListener.TAG_PROPERTY_CATEGORY)) {
+				categories.add(element.getAttribute(LegacyPropertyContributorRegistryEventListener.CATEGORY_ATTR));
+			}
+		}
+		return categories;
 	}
-
-	/**
-	 * Sets the contributorId.
-	 *
-	 * @param contributorId
-	 *            the contributorId to set
-	 */
-	public void setContributorId(String contributorId) {
-		this.contributorId = contributorId;
-	}
-
-	/**
-	 * Sets the labelProvider.
-	 *
-	 * @param labelProvider
-	 *            the labelProvider to set
-	 */
-	public void setLabelProvider(ILabelProvider labelProvider) {
-		this.labelProvider = labelProvider;
-	}
-
-	/**
-	 * Sets the actionProvider.
-	 *
-	 * @param actionProvider
-	 *            the actionProvider to set
-	 */
-	public void setActionProvider(IActionProvider actionProvider) {
-		this.actionProvider = actionProvider;
-	}
-
-	/**
-	 * Sets the typeMapper.
-	 *
-	 * @param typeMapper
-	 *            the typeMapper to set
-	 */
-	public void setTypeMapper(ITypeMapper typeMapper) {
-		this.typeMapper = typeMapper;
-	}
-
-	/**
-	 * Sets the sectionDescriptorProvider.
-	 *
-	 * @param sectionDescriptorProvider
-	 *            the sectionDescriptorProvider to set
-	 */
-	public void setSectionDescriptorProvider(ISectionDescriptorProvider sectionDescriptorProvider) {
-		this.sectionDescriptorProvider = sectionDescriptorProvider;
-	}
-
-	/**
-	 * Sets the tabDescriptorProvider.
-	 *
-	 * @param tabDescriptorProvider
-	 *            the tabDescriptorProvider to set
-	 */
-	public void setTabDescriptorProvider(ITabDescriptorProvider tabDescriptorProvider) {
-		this.tabDescriptorProvider = tabDescriptorProvider;
-	}
-
-	/**
-	 * Sets the overridableTabListContentProvider.
-	 *
-	 * @param overridableTabListContentProvider
-	 *            the overridableTabListContentProvider to set
-	 */
-	public void setOverridableTabListContentProvider(boolean overridableTabListContentProvider) {
-		this.overridableTabListContentProvider = overridableTabListContentProvider;
-	}
-
-	/**
-	 * Sets the categories.
-	 *
-	 * @param categories
-	 *            the categories to set
-	 */
-	public void setCategories(List<String> categories) {
-		this.categories = categories;
-	}
-
 }
