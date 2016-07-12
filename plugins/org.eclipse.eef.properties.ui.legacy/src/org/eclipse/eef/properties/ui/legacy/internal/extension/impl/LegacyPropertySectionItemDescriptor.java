@@ -95,7 +95,7 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	@Override
 	public IEEFSection getSectionClass() {
 		ISection section = null;
-		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.FILTER_ATTR) != null) {
+		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR) != null) {
 			try {
 				section = (ISection) configurationElement.createExecutableExtension(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR);
 			} catch (CoreException e) {
@@ -172,7 +172,7 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	 */
 	@Override
 	public int getEnablesFor() {
-		int enablesFor = ENABLES_FOR_ANY;
+		int enablesFor = ISectionDescriptor.ENABLES_FOR_ANY;
 		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.ENABLES_FOR_ATTR) != null) {
 			String enablesForStr = configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.ENABLES_FOR_ATTR);
 			int enablesForTest = Integer.parseInt(enablesForStr);

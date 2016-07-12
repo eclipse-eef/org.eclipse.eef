@@ -28,8 +28,10 @@ public interface IEEFTabDescriptorProvider {
 	 *            The current part
 	 * @param selection
 	 *            The current selection
+	 * @param contributorId
+	 *            The contributor ID
 	 *
 	 * @return An {@link IEEFTabDescriptor}
 	 */
-	Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection);
+	Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection, String contributorId);
 }

@@ -89,6 +89,8 @@
       </appinfo>
       <documentation>
          This extension point has been available since Eclipse EEF 1.6.0 (Eclipse Neon release in June 2016).
+
+Since 2.0.0, the method public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection, String contributorId) takes one more parameter which is the contributor ID.
       </documentation>
    </annotation>
 
@@ -147,7 +149,7 @@ import org.eclipse.ui.IWorkbenchPart;
 public class SampleTabDescriptorProvider implements IEEFTabDescriptorProvider {
 
     @Override
-    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection) {
+    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection, String contributorId) {
         if (selection instanceof IStructuredSelection) {
             IStructuredSelection structuredSelection = (IStructuredSelection) selection;
             Object[] objects = structuredSelection.toArray();

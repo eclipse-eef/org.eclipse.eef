@@ -42,11 +42,20 @@ public class EEFTabbedPropertyRegistry {
 	private static EEFTabbedPropertyRegistry instance = new EEFTabbedPropertyRegistry();
 
 	/**
+	 * The contributor id.
+	 */
+	private static String contributor;
+
+	/**
 	 * Returns the sole instance of the registry.
+	 *
+	 * @param contributorId
+	 *            the contributorId;
 	 *
 	 * @return The sole instance of the registry
 	 */
-	public static EEFTabbedPropertyRegistry getDefault() {
+	public static EEFTabbedPropertyRegistry getDefault(String contributorId) {
+		contributor = contributorId;
 		return instance;
 	}
 
@@ -67,7 +76,7 @@ public class EEFTabbedPropertyRegistry {
 				.getEEFTabDescriptorProviderRegistry();
 		for (IItemDescriptor<IEEFTabDescriptorProvider> itemDescriptor : eefTabDescriptorProviderRegistry.getItemDescriptors()) {
 			IEEFTabDescriptorProvider eefTabDescriptorProvider = itemDescriptor.getItem();
-			for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptorProvider.get(part, input)) {
+			for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptorProvider.get(part, input, contributor)) {
 				String eefTabDescriptorId = eefTabDescriptor.getId();
 				if (!eefTabDescriptors.containsKey(eefTabDescriptorId)) {
 					eefTabDescriptors.put(eefTabDescriptorId, eefTabDescriptor);
