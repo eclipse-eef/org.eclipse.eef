@@ -119,6 +119,7 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.ide.ui.properties.api.EEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
+import org.eclipse.eef.properties.ui.api.IEEFTabbedPropertySheetPageContributor;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -128,7 +129,7 @@ import org.eclipse.ui.IWorkbenchPart;
 public class SampleTabDescriptorProvider implements IEEFTabDescriptorProvider {
 
     @Override
-    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection) {
+    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection, IEEFTabbedPropertySheetPageContributor contributor) {
         if (selection instanceof IStructuredSelection) {
             IStructuredSelection structuredSelection = (IStructuredSelection) selection;
             Object[] objects = structuredSelection.toArray();

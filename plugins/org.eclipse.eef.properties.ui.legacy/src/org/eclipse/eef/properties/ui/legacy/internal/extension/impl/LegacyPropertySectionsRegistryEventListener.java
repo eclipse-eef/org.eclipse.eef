@@ -18,7 +18,6 @@ import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin
 import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.AbstractRegistryEventListener;
 import org.eclipse.eef.properties.ui.legacy.internal.legacy2eef.EEFLegacyTypeMapper;
-import org.eclipse.ui.views.properties.tabbed.ISectionDescriptor;
 import org.eclipse.ui.views.properties.tabbed.ITypeMapper;
 
 /**
@@ -60,11 +59,6 @@ public class LegacyPropertySectionsRegistryEventListener extends AbstractRegistr
 
 	/** Optional type attribute of extension point. */
 	public static final String ATT_INPUT_TYPE = "type"; //$NON-NLS-1$
-
-	/**
-	 * The enablesFor default value.
-	 */
-	private static final int ENABLES_FOR_ANY = ISectionDescriptor.ENABLES_FOR_ANY;
 
 	/**
 	 * The item registry.
@@ -157,6 +151,7 @@ public class LegacyPropertySectionsRegistryEventListener extends AbstractRegistr
 				}
 
 				LegacyPropertySectionItemDescriptor legacySectionDescriptor = new LegacyPropertySectionItemDescriptor(propertySection, eefTypeMapper);
+
 				this.propertySectionRegistry.add(legacySectionDescriptor);
 			}
 		}

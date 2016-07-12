@@ -20,6 +20,7 @@ import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
+import org.eclipse.eef.properties.ui.api.IEEFTabbedPropertySheetPageContributor;
 import org.eclipse.eef.properties.ui.internal.EEFTabbedPropertyViewPlugin;
 import org.eclipse.eef.properties.ui.internal.Messages;
 import org.eclipse.eef.properties.ui.internal.extension.IItemDescriptor;
@@ -42,11 +43,20 @@ public class EEFTabbedPropertyRegistry {
 	private static EEFTabbedPropertyRegistry instance = new EEFTabbedPropertyRegistry();
 
 	/**
+	 * The contributor.
+	 */
+	private static IEEFTabbedPropertySheetPageContributor contributor;
+
+	/**
 	 * Returns the sole instance of the registry.
+	 *
+	 * @param contributor
+	 *            the contributor
 	 *
 	 * @return The sole instance of the registry
 	 */
-	public static EEFTabbedPropertyRegistry getDefault() {
+	public static EEFTabbedPropertyRegistry getDefault(IEEFTabbedPropertySheetPageContributor eefContributor) {
+		contributor = eefContributor;
 		return instance;
 	}
 
@@ -67,7 +77,7 @@ public class EEFTabbedPropertyRegistry {
 				.getEEFTabDescriptorProviderRegistry();
 		for (IItemDescriptor<IEEFTabDescriptorProvider> itemDescriptor : eefTabDescriptorProviderRegistry.getItemDescriptors()) {
 			IEEFTabDescriptorProvider eefTabDescriptorProvider = itemDescriptor.getItem();
-			for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptorProvider.get(part, input)) {
+			for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptorProvider.get(part, input, contributor)) {
 				String eefTabDescriptorId = eefTabDescriptor.getId();
 				if (!eefTabDescriptors.containsKey(eefTabDescriptorId)) {
 					eefTabDescriptors.put(eefTabDescriptorId, eefTabDescriptor);

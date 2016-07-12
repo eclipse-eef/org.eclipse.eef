@@ -139,7 +139,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	/**
 	 * The registry.
 	 */
-	private EEFTabbedPropertyRegistry registry = EEFTabbedPropertyRegistry.getDefault();
+	private EEFTabbedPropertyRegistry registry;
 
 	/**
 	 * The form used to contain the all the widgets.
@@ -209,6 +209,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		} else {
 			this.contributor = new ContributorWrapper(contributor, contributorId);
 		}
+		this.registry = EEFTabbedPropertyRegistry.getDefault(this.contributor);
 	}
 
 	/**
@@ -344,7 +345,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 
 			// see if the selection provides a new contributor
 			// validateRegistry(selection);
-			List<IEEFTabDescriptor> descriptors = EEFTabbedPropertyRegistry.getDefault().getTabDescriptors(part, selection);
+			List<IEEFTabDescriptor> descriptors = EEFTabbedPropertyRegistry.getDefault(contributor).getTabDescriptors(part, selection);
 			// If there are no descriptors for the given input we do not need to
 			// touch the tab objects. We might reuse them for the next valid
 			// input.
