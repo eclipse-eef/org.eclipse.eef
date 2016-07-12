@@ -76,8 +76,8 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	 */
 	public LegacyPropertyTabItemDescriptor(String contributorId, String label, String category, String afterTab, String id, boolean indented,
 			Image image) {
-		setSectionDescriptors(EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry()
-				.getPropertySections(contributorId, id));
+		setSectionDescriptors(
+				EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry().getPropertySections(contributorId, id));
 		this.contributorId = contributorId;
 		this.category = category;
 		this.id = id;
@@ -85,15 +85,6 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 		this.afterTab = afterTab;
 		this.indented = indented;
 		this.image = image;
-	}
-
-	/**
-	 * Return the contributorId.
-	 *
-	 * @return the contributorId
-	 */
-	public String getContributorId() {
-		return this.contributorId;
 	}
 
 	/**
@@ -114,6 +105,15 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	@Override
 	public String getId() {
 		return this.id;
+	}
+
+	/**
+	 * Get contributor id.
+	 *
+	 * @return The contributor ID
+	 */
+	public String getContributorId() {
+		return this.contributorId;
 	}
 
 	/**

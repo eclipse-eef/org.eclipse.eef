@@ -115,7 +115,7 @@ import org.eclipse.ui.IWorkbenchPart;
 public class SampleTabDescriptorProvider implements IEEFTabDescriptorProvider {
 
     @Override
-    public Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection) {
+    public Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection, String contributorId) {
         if (selection instanceof IStructuredSelection) {
             IStructuredSelection structuredSelection = (IStructuredSelection) selection;
             Object[] objects = structuredSelection.toArray();
