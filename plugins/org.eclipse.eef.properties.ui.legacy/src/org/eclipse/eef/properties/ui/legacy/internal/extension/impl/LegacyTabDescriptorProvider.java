@@ -22,21 +22,21 @@ import org.eclipse.ui.IWorkbenchPart;
 /**
  * Provides the tab descriptors defined thanks to the legacy org.eclipse.ui.views.properties.tabbed.propertyTabs
  * extension point.
- * 
+ *
  * @author mbats
  */
 public class LegacyTabDescriptorProvider implements IEEFTabDescriptorProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
-	 * @see IEEFTabDescriptorProvider#get(IWorkbenchPart part, ISelection selection)
+	 *
+	 * @see IEEFTabDescriptorProvider#get(IWorkbenchPart part, ISelection selection, String contributorId)
 	 */
 	@Override
-	public Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection) {
+	public Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection, String contributorId) {
 		// Get legacy tab descriptors
 		LegacyPropertyTabRegistry legacyTabDescriptorRegistry = EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertyTabsRegistry();
-		List<IEEFTabDescriptor> legacyEefTabDescriptors = legacyTabDescriptorRegistry.getPropertyTabs();
+		List<IEEFTabDescriptor> legacyEefTabDescriptors = legacyTabDescriptorRegistry.getPropertyTabs(contributorId);
 		return legacyEefTabDescriptors;
 	}
 }

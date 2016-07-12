@@ -2,8 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>extensionpoints</title>
-		<link type="text/css" rel="stylesheet" href="../assets/css/stylesheet.css"/>
 	</head>
 	<body>
 		<h2 id="ExtensionPoints">Extension Points</h2>
@@ -128,7 +126,7 @@ import org.eclipse.ui.IWorkbenchPart;
 public class SampleTabDescriptorProvider implements IEEFTabDescriptorProvider {
 
     @Override
-    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection) {
+    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection, String contributorId) {
         if (selection instanceof IStructuredSelection) {
             IStructuredSelection structuredSelection = (IStructuredSelection) selection;
             Object[] objects = structuredSelection.toArray();
