@@ -10,14 +10,15 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
@@ -39,16 +40,19 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	/**
 	 * The map of the identifier of the description to the {@link LegacyPropertyTabItemDescriptor}.
 	 */
-	private Map<String, IItemDescriptor> id2descriptors = new HashMap<String, IItemDescriptor>();
+	private Multimap<String, IItemDescriptor> id2descriptors = ArrayListMultimap.create();
 
 	/**
 	 * Get the property tabs.
 	 *
+	 * @param contributorId
+	 *            The contributor Id
+	 *
 	 * @return List of tabs
 	 */
-	public List<IEEFTabDescriptor> getPropertyTabs() {
+	public List<IEEFTabDescriptor> getPropertyTabs(String contributorId) {
 		// Get tabs
-		List<IEEFTabDescriptor> tabs = readTabDescriptors();
+		List<IEEFTabDescriptor> tabs = readTabDescriptors(contributorId);
 		// Get categories
 		final List<String> propertyCategories = readPropertyCategories();
 		// Sort the tabs according to their categories
@@ -207,19 +211,24 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 * Reads property tab extensions. Returns all tab descriptors for the current contributor id or an empty list if
 	 * none is found.
 	 *
+	 * @param contributorId
+	 *            The contributor id
+	 *
 	 * @return List of static tab descriptors
 	 */
-	private List<IEEFTabDescriptor> readTabDescriptors() {
-		Map<String, IEEFTabDescriptor> eefTabDescriptors = new HashMap<String, IEEFTabDescriptor>();
+	private List<IEEFTabDescriptor> readTabDescriptors(String contributorId) {
+		List<IEEFTabDescriptor> eefTabDescriptors = new ArrayList<IEEFTabDescriptor>();
 		Collection<IItemDescriptor> values = this.id2descriptors.values();
 		for (IItemDescriptor itemDescriptor : values) {
-			if (itemDescriptor instanceof IEEFTabDescriptor) {
-				if (!eefTabDescriptors.containsKey(itemDescriptor.getId())) {
-					eefTabDescriptors.put(itemDescriptor.getId(), (IEEFTabDescriptor) itemDescriptor);
+			if (itemDescriptor instanceof LegacyPropertyTabItemDescriptor) {
+				LegacyPropertyTabItemDescriptor eefTabDescriptor = (LegacyPropertyTabItemDescriptor) itemDescriptor;
+				String eefTabContributorId = eefTabDescriptor.getContributorId();
+				if (eefTabContributorId != null && eefTabContributorId.equals(contributorId)) {
+					eefTabDescriptors.add(eefTabDescriptor);
 				}
 			}
 		}
-		return new ArrayList<IEEFTabDescriptor>(eefTabDescriptors.values());
+		return eefTabDescriptors;
 	}
 
 	/**
@@ -229,7 +238,11 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 */
 	@Override
 	public IItemDescriptor add(IItemDescriptor descriptor) {
-		return this.id2descriptors.put(descriptor.getId(), descriptor);
+		boolean result = this.id2descriptors.put(descriptor.getId(), descriptor);
+		if (result) {
+			return descriptor;
+		}
+		return null;
 	}
 
 	/**
@@ -239,7 +252,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 */
 	@Override
 	public boolean remove(String id) {
-		return this.id2descriptors.remove(id) != null;
+		return !this.id2descriptors.removeAll(id).isEmpty();
 	}
 
 	/**

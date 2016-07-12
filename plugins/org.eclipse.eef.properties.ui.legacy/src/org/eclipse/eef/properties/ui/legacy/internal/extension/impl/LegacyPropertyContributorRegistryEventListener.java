@@ -11,19 +11,11 @@
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
 import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.AbstractRegistryEventListener;
-import org.eclipse.jface.viewers.ILabelProvider;
-import org.eclipse.ui.views.properties.tabbed.IActionProvider;
-import org.eclipse.ui.views.properties.tabbed.ISectionDescriptorProvider;
-import org.eclipse.ui.views.properties.tabbed.ITabDescriptorProvider;
-import org.eclipse.ui.views.properties.tabbed.ITypeMapper;
 
 /**
  * Utility class used to retrieved the descriptors of property contributor extension.
@@ -126,57 +118,7 @@ public class LegacyPropertyContributorRegistryEventListener extends AbstractRegi
 	@Override
 	protected boolean processAddition(IConfigurationElement configurationElement) {
 		if (TAG_PROPERTY_CONTRIBUTOR.equals(configurationElement.getName())) {
-			String contributorId = configurationElement.getAttribute(CONTRIBUTOR_ID_ATTR);
-			ILabelProvider labelProvider = null;
-			IActionProvider actionProvider = null;
-			ITypeMapper typeMapper = null;
-			ISectionDescriptorProvider sectionDescriptorProvider = null;
-			ITabDescriptorProvider tabDescriptorProvider = null;
-			boolean overridableTabListContentProvider = false;
-			List<String> categories = new ArrayList<String>();
-			try {
-				if (configurationElement.getAttribute(LABEL_PROVIDER_ATTR) != null) {
-					labelProvider = (ILabelProvider) configurationElement.createExecutableExtension(LABEL_PROVIDER_ATTR);
-				}
-				if (configurationElement.getAttribute(ACTION_PROVIDER_ATTR) != null) {
-					actionProvider = (IActionProvider) configurationElement.createExecutableExtension(ACTION_PROVIDER_ATTR);
-				}
-				if (configurationElement.getAttribute(TYPE_MAPPER_ATTR) != null) {
-					typeMapper = (ITypeMapper) configurationElement.createExecutableExtension(TYPE_MAPPER_ATTR);
-				}
-				if (configurationElement.getAttribute(SECTION_DESCRIPTOR_PROVIDER_ATTR) != null) {
-					sectionDescriptorProvider = (ISectionDescriptorProvider) configurationElement
-							.createExecutableExtension(SECTION_DESCRIPTOR_PROVIDER_ATTR);
-				}
-				if (configurationElement.getAttribute(TAB_DESCRIPTOR_PROVIDER_ATTR) != null) {
-					tabDescriptorProvider = (ITabDescriptorProvider) configurationElement.createExecutableExtension(TAB_DESCRIPTOR_PROVIDER_ATTR);
-				}
-			} catch (CoreException e) {
-				String message = MessageFormat.format(Messages.RegistryEventListener_cannotInstantiateExtension, contributorId);
-				EEFPropertiesUiLegacyPlugin.getImplementation().logError(message, e);
-
-				return false;
-			}
-			if (configurationElement.getAttribute(OVERRIDABLE_TAB_LIST_CONTENT_PROVIDER_ATTR) != null) {
-				String attributeBoolean = configurationElement.getAttribute(OVERRIDABLE_TAB_LIST_CONTENT_PROVIDER_ATTR);
-				overridableTabListContentProvider = "true".equals(attributeBoolean); //$NON-NLS-1$
-			}
-
-			for (IConfigurationElement element : configurationElement.getChildren(TAG_PROPERTY_CATEGORY)) {
-				categories.add(element.getAttribute(CATEGORY_ATTR));
-			}
-
-			LegacyPropertyContributorItemDescriptor propertyContributor = new LegacyPropertyContributorItemDescriptor();
-			propertyContributor.setContributorId(contributorId);
-			propertyContributor.setLabelProvider(labelProvider);
-			propertyContributor.setActionProvider(actionProvider);
-			propertyContributor.setTypeMapper(typeMapper);
-			propertyContributor.setSectionDescriptorProvider(sectionDescriptorProvider);
-			propertyContributor.setTabDescriptorProvider(tabDescriptorProvider);
-			propertyContributor.setOverridableTabListContentProvider(overridableTabListContentProvider);
-			propertyContributor.setCategories(categories);
-
-			this.propertyContributorRegistry.add(propertyContributor);
+			this.propertyContributorRegistry.add(new LegacyPropertyContributorItemDescriptor(configurationElement));
 		}
 
 		return true;
