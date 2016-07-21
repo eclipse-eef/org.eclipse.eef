@@ -14,6 +14,7 @@ import java.util.List;
 
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.domain.EditingDomain;
 
 /**
  * Connects EEF views with the external context (e.g. an editor) on behalf of which the views display and edit model
@@ -46,4 +47,13 @@ public interface EditingContextAdapter {
 	 * Unregisters the currently set listener. Does nothing if none is currently registered.
 	 */
 	void removeModelChangeConsumer();
+
+	/**
+	 * Returns the editing domain.
+	 * 
+	 * @return The editing domain
+	 * 
+	 * @since 1.7.0
+	 */
+	EditingDomain getEditingDomain();
 }
