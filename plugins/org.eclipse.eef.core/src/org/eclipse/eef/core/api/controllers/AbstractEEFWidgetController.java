@@ -123,10 +123,10 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 		super.refresh();
 
 		String labelExpression = this.getDescription().getLabelExpression();
-		this.newEval().logIfInvalidType(String.class).call(labelExpression, AbstractEEFWidgetController.this.newLabelConsumer);
+		this.newEval().logIfInvalidType(String.class).call(labelExpression, this.newLabelConsumer);
 
 		String helpExpression = this.getDescription().getHelpExpression();
-		this.newEval().logIfInvalidType(String.class).call(helpExpression, AbstractEEFWidgetController.this.newHelpConsumer);
+		this.newEval().logIfInvalidType(String.class).call(helpExpression, this.newHelpConsumer);
 	}
 
 }
