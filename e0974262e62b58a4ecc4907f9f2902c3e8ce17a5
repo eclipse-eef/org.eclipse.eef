@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27af2791_c902fd7f",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertySectionRegistry.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:32:55Z",
+      "side": 1,
+      "message": "tsss tsss, I am pretty sure that this warning can be prevented",
+      "range": {
+        "startLine": 53,
+        "startChar": 1,
+        "endLine": 53,
+        "endChar": 31
+      },
+      "revId": "e0974262e62b58a4ecc4907f9f2902c3e8ce17a5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_a9d6a969",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertySectionRegistry.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:32:55Z",
+      "side": 1,
+      "message": "Why not return \"!this.id2descriptors.removeAll(id).isEmpty();\" like in LegacyPropertyContributorRegistry.java?",
+      "range": {
+        "startLine": 121,
+        "startChar": 2,
+        "endLine": 121,
+        "endChar": 51
+      },
+      "revId": "e0974262e62b58a4ecc4907f9f2902c3e8ce17a5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
