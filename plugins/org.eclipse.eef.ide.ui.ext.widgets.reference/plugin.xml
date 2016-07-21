@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="eefExtReferenceViewerFilterProvider" name="%eefExtReferenceViewerFilterProvider.name" schema="schema/eefExtReferenceViewerFilterProvider.exsd"/>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
+      <descriptor
+            class="org.eclipse.eef.ide.ui.ext.widgets.reference.internal.EEFExtReferenceLifecycleManagerProvider"
+            description="%eefExtWidgetReferenceLifecycleManagerProvider.Description"
+            id="org.eclipse.eef.ide.ui.ext.widgets.reference.EEFExtWidgetReferenceLifecycleManager"
+            label="%eefExtWidgetReferenceLifecycleManagerProvider.Name">
+      </descriptor>
+   </extension>
+
+</plugin>
