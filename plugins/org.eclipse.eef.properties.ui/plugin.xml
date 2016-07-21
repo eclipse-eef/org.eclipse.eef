@@ -2,5 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="eefTabDescriptorProvider" name="%eefTabDescriptorProviderExtensionPoint.name" schema="schema/eefTabDescriptorProvider.exsd"/>
+   <extension-point id="eefTabDescriptorFilter" name="%eefTabDescriptorFilterExtensionPoint.name" schema="schema/eefTabDescriptorFilter.exsd"/>
 
 </plugin>
