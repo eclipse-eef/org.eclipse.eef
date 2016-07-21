@@ -30,7 +30,7 @@ import org.eclipse.eef.properties.ui.internal.extension.IItemRegistry;
  * @param <T>
  *            The type of the Object described
  */
-public class EEFTabDescriptorProviderRegistryEventListener<T> extends AbstractRegistryEventListener {
+public class EEFDescriptorRegistryEventListener<T> extends AbstractRegistryEventListener {
 	/** Id attribute of the extension point. */
 	public static final String ID_DESCRIPTOR_ATTR = "id"; //$NON-NLS-1$
 
@@ -61,7 +61,7 @@ public class EEFTabDescriptorProviderRegistryEventListener<T> extends AbstractRe
 	 * @param itemRegistry
 	 *            The {@link IItemRegistry}
 	 */
-	public EEFTabDescriptorProviderRegistryEventListener(String namespace, String extensionPointID, IItemRegistry<T> itemRegistry) {
+	public EEFDescriptorRegistryEventListener(String namespace, String extensionPointID, IItemRegistry<T> itemRegistry) {
 		super(namespace, extensionPointID);
 		this.itemRegistry = itemRegistry;
 	}

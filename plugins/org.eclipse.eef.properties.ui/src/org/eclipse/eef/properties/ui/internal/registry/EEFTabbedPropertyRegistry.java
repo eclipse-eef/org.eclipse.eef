@@ -19,6 +19,7 @@ import java.util.Map;
 import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorFilter;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
 import org.eclipse.eef.properties.ui.internal.EEFTabbedPropertyViewPlugin;
 import org.eclipse.eef.properties.ui.internal.Messages;
@@ -69,12 +70,31 @@ public class EEFTabbedPropertyRegistry {
 			IEEFTabDescriptorProvider eefTabDescriptorProvider = itemDescriptor.getItem();
 			for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptorProvider.get(part, input)) {
 				String eefTabDescriptorId = eefTabDescriptor.getId();
-				if (!eefTabDescriptors.containsKey(eefTabDescriptorId)) {
+				if (!eefTabDescriptors.containsKey(eefTabDescriptorId) && isVisible(eefTabDescriptor)) {
 					eefTabDescriptors.put(eefTabDescriptorId, eefTabDescriptor);
 				}
 			}
 		}
 		return new ArrayList<IEEFTabDescriptor>(eefTabDescriptors.values());
+	}
+
+	/**
+	 * Returns if a tab descriptor must be filtered or not.
+	 *
+	 * @param eefTabDescriptor
+	 *            The tab descriptor
+	 * @return True if the tab descriptor is visible otherwise false.
+	 */
+	private boolean isVisible(IEEFTabDescriptor eefTabDescriptor) {
+		IItemRegistry<IEEFTabDescriptorFilter> eefTabDescriptorFilterRegistry = EEFTabbedPropertyViewPlugin.getPlugin()
+				.getEEFTabDescriptorFilterRegistry();
+		for (IItemDescriptor<IEEFTabDescriptorFilter> itemDescriptor : eefTabDescriptorFilterRegistry.getItemDescriptors()) {
+			IEEFTabDescriptorFilter eefTabDescriptorFilter = itemDescriptor.getItem();
+			if (!eefTabDescriptorFilter.isVisible(eefTabDescriptor)) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
