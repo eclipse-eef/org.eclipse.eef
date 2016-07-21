@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.eclipse.eef.ide.ui.ext.widgets.reference" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.eclipse.eef.ide.ui.ext.widgets.reference" id="eefExtReferenceViewerFilterProvider" name="%eefExtReferenceViewerFilterProvider.Name"/>
+      </appinfo>
+      <documentation>
+         This extension point allows the contribution of an &lt;code&gt;org.eclipse.eef.ide.ui.ext.widgets.reference.api.IEEFExtReferenceViewerFilterProvider&lt;/code&gt; which can be used to filter the content of the tree viewers used to display the objects that can be selected and where an object can be created using the reference widget.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="descriptor" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="descriptor">
+      <complexType>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The identifier of the contribution.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="label" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The label of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The description of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The implementation of the IEEFExtReferenceViewerFilterProvider
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":org.eclipse.eef.ide.ui.ext.widgets.reference.api.IEEFExtReferenceViewerFilterProvider"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         This extension point has been available since Eclipse EEF 1.7.0 (released in October 2016)
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         &lt;pre&gt;
+&lt;extension
+      point=&quot;org.eclipse.eef.ide.ui.ext.widgets.reference.eefExtReferenceViewerFilterProvider&quot;&gt;
+    &lt;descriptor
+          class=&quot;org.eclipse.sirius.ui.properties.ext.widgets.reference.internal.EEFExtReferenceViewerFilterProvider&quot;
+          description=&quot;%viewerFilterProvider.Description&quot;
+          id=&quot;org.eclipse.sirius.ui.properties.ext.widgets.reference.viewerFilterProvider&quot;
+          label=&quot;%viewerFilterProvider.Label&quot;&gt;
+    &lt;/descriptor&gt;
+&lt;/extension&gt;
+&lt;/pre&gt;
+Example of the contribution of a viewer filter provider. This contribution will let a plugin filter the content displayed in the tree viewers used to show where a new value can be created and which value can be selected for a reference. Eclipse Sirius provides the following basic implementation which is used to filter everything not contained in a semantic resource:
+&lt;pre&gt;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.eef.ide.ui.ext.widgets.reference.api.IEEFExtReferenceViewerFilterProvider;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
+
+
+public class EEFExtReferenceViewerFilterProvider implements IEEFExtReferenceViewerFilterProvider {
+
+    @Override
+    public List&lt;ViewerFilter&gt; getViewerFilters(ContextKind contextKind) {
+        List&lt;ViewerFilter&gt; viewerFilters = new ArrayList&lt;&gt;();
+
+        ViewerFilter viewFilter = new ViewerFilter() {
+            @Override
+            public boolean select(Viewer viewer, Object parentElement, Object element) {
+                // Used to filter aird, odesign, etc
+                if (element instanceof Resource) {
+                    Session session = SessionManager.INSTANCE.getSession((Resource) element);
+                    return session != null;
+                }
+                return true;
+            }
+        };
+
+        viewerFilters.add(viewFilter);
+        return viewerFilters;
+    }
+
+}
+&lt;/pre&gt;
+This example requires at least the following dependencies:
+&lt;ul&gt;
+  &lt;li&gt;org.eclipse.eef.ide.ui.ext.widgets.reference&lt;/li&gt;
+  &lt;li&gt;org.eclipse.emf.ecore&lt;/li&gt;
+  &lt;li&gt;org.eclipse.jface.viewers&lt;/li&gt;
+  &lt;li&gt;org.eclipse.sirius&lt;/li&gt;
+&lt;/ul&gt;
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         The IEEFExtReferenceViewerFilterProvider allows the contribution of a ViewerFilter used to filter the content of the tree viewers used to create and select a value to use.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         EEF does not supply directly any implementation of the &lt;code&gt;org.eclipse.eef.ide.ui.ext.widgets.reference.api.IEEFExtReferenceViewerFilterProvider&lt;/code&gt; but you can find an implementation in the Sirius project.
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2016 Obeo&lt;br/&gt;
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+&lt;a href=&quot;http://www.eclipse.org/legal/epl-v10.html&quot;&gt;http://www.eclipse.org/legal/epl-v10.html&lt;/a&gt;
+      </documentation>
+   </annotation>
+
+</schema>

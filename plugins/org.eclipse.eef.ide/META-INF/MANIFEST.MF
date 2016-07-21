@@ -15,7 +15,7 @@ Import-Package: org.eclipse.eef;version="[1.7.0,2.0.0)",
  org.eclipse.eef.core.api;version="[1.7.0,2.0.0)",
  org.eclipse.eef.core.api.utils;version="[1.7.0,2.0.0)",
  org.eclipse.sirius.common.interpreter.api;version="1.0.0"
-Export-Package: org.eclipse.eef.ide.api.extensions;version="1.7.0";x-friends:="org.eclipse.eef.ide.ui",
- org.eclipse.eef.ide.api.extensions.impl;version="1.7.0";x-friends:="org.eclipse.eef.ide.ui",
+Export-Package: org.eclipse.eef.ide.api.extensions;version="1.7.0",
+ org.eclipse.eef.ide.api.extensions.impl;version="1.7.0",
  org.eclipse.eef.ide.internal;version="1.7.0";x-friends:="org.eclipse.eef.ide.ui"
 

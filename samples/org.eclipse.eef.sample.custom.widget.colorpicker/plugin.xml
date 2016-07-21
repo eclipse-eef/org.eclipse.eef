@@ -5,9 +5,9 @@
          point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
       <descriptor
             class="org.eclipse.eef.sample.custom.widget.colorpicker.ColorPickerProvider"
-            description="Provides a color picker custom widget"
+            description="%eefLifecycleManagerProvider.Description"
             id="org.eclipse.eef.sample.custom.widget.colorpicker"
-            label="Color Picker Widget">
+            label="%eefLifecycleManagerProvider.Label">
       </descriptor>
    </extension>
 

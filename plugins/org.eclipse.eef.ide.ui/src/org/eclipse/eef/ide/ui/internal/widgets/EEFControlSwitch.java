@@ -139,8 +139,10 @@ public class EEFControlSwitch {
 			// We have a lifecycle manager provider, let's use it
 			IEEFLifecycleManager eefLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(widgetDescription, childVariableManager,
 					interpreter, contextAdapter);
-			eefLifecycleManager.createControl(parent, formContainer);
-			lifecycleManagers.add(eefLifecycleManager);
+			if (eefLifecycleManager != null) {
+				eefLifecycleManager.createControl(parent, formContainer);
+				lifecycleManagers.add(eefLifecycleManager);
+			}
 		} else if (widgetDescription instanceof EEFCustomWidgetDescription) {
 			// A custom widget cannot be supported if the lifecycle manager retrieved is null
 			String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, widgetDescription.getIdentifier());
