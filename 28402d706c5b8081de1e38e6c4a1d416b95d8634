@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27af2791_5b4a307c",
+        "filename": "doc/org.eclipse.eef.documentation/pages/developerguide/extensionpoints.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "Why are your removing the CSS? Oô",
+      "range": {
+        "startLine": 3,
+        "startChar": 1,
+        "endLine": 5,
+        "endChar": 8
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_9ba768c4",
+        "filename": "doc/org.eclipse.eef.documentation/pages/developerguide/extensionpoints.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "somewhere here, import org.eclipse.eef.properties.ui.api.IEEFTabbedPropertySheetPageContributor;",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 37
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_3b4d7c94",
+        "filename": "doc/org.eclipse.eef.documentation/pages/developerguide/extensionpoints.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "IEEFTabbedPropertySheetPageContributor contributor",
+      "range": {
+        "startLine": 129,
+        "startChar": 94,
+        "endLine": 129,
+        "endChar": 114
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_bbac2ca9",
+        "filename": "doc/org.eclipse.eef.documentation/pages/developerguide/extensionpoints.textile",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "IEEFTabbedPropertySheetPageContributor contributor",
+      "range": {
+        "startLine": 118,
+        "startChar": 88,
+        "endLine": 118,
+        "endChar": 108
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_5b7cf090",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyTabDescriptorProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "IEEFTabbedPropertySheetPageContributor",
+      "range": {
+        "startLine": 36,
+        "startChar": 85,
+        "endLine": 36,
+        "endChar": 91
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_7b79b49e",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyTabDescriptorProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "contributor.getContributorId()",
+      "range": {
+        "startLine": 39,
+        "startChar": 96,
+        "endLine": 39,
+        "endChar": 109
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_bb934c60",
+        "filename": "plugins/org.eclipse.eef.properties.ui/schema/eefTabDescriptorProvider.exsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "import for the contributor",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 147,
+        "endChar": 37
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_9b8e883c",
+        "filename": "plugins/org.eclipse.eef.properties.ui/schema/eefTabDescriptorProvider.exsd",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "IEEFTabbedPropertySheetPageContributor contributor",
+      "range": {
+        "startLine": 152,
+        "startChar": 94,
+        "endLine": 152,
+        "endChar": 114
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_db880031",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/EEFTabbedPropertySheetPage.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "this.contributor",
+      "range": {
+        "startLine": 212,
+        "startChar": 55,
+        "endLine": 212,
+        "endChar": 90
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_fb8dc43e",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabDescriptorProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "IEEFTabbedPropertySheetPageContributor contributor",
+      "range": {
+        "startLine": 36,
+        "startChar": 78,
+        "endLine": 36,
+        "endChar": 98
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_3b7f3c88",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/registry/EEFTabbedPropertyRegistry.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "IEEFTabbedPropertySheetPageContributor",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 22
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_1b82780c",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/registry/EEFTabbedPropertyRegistry.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-07-21T12:46:20Z",
+      "side": 1,
+      "message": "IEEFTabbedPropertySheetPageContributor",
+      "range": {
+        "startLine": 57,
+        "startChar": 52,
+        "endLine": 57,
+        "endChar": 72
+      },
+      "revId": "28402d706c5b8081de1e38e6c4a1d416b95d8634",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
