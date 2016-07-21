@@ -61,6 +61,9 @@
                <documentation>
                   The label of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
                </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
             </annotation>
          </attribute>
          <attribute name="description" type="string" use="required">
@@ -68,6 +71,9 @@
                <documentation>
                   The description of the provider, this information may be used in the user interface and as such it may be visible by the end user. It should be internationalized if possible.
                </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
             </annotation>
          </attribute>
          <attribute name="class" type="string" use="required">
