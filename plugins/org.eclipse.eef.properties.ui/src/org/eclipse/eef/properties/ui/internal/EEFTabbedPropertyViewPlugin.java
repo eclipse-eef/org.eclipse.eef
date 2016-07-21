@@ -14,10 +14,11 @@ package org.eclipse.eef.properties.ui.internal;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.eef.common.api.AbstractEEFEclipsePlugin;
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorFilter;
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
 import org.eclipse.eef.properties.ui.internal.extension.AbstractRegistryEventListener;
 import org.eclipse.eef.properties.ui.internal.extension.IItemRegistry;
-import org.eclipse.eef.properties.ui.internal.extension.impl.EEFTabDescriptorProviderRegistryEventListener;
+import org.eclipse.eef.properties.ui.internal.extension.impl.EEFDescriptorRegistryEventListener;
 import org.eclipse.eef.properties.ui.internal.extension.impl.ItemRegistry;
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -83,15 +84,31 @@ public class EEFTabbedPropertyViewPlugin extends EMFPlugin {
 		private static final String EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT = "eefTabDescriptorProvider"; //$NON-NLS-1$
 
 		/**
+		 * The name of the extension point for the tab descriptor filter.
+		 */
+		private static final String EEF_TAB_DESCRIPTOR_FILTER_EXTENSION_POINT = "eefTabDescriptorFilter"; //$NON-NLS-1$
+
+		/**
 		 * The {@link IItemRegistry} used to retrieve the tab descriptor provider {@link IEEFTabDescriptorProvider}.
 		 */
 		private IItemRegistry<IEEFTabDescriptorProvider> eefTabDescriptorProviderRegistry;
+
+		/**
+		 * The {@link IItemRegistry} used to retrieve the tab descriptor filter {@link IEEFTabDescriptorFilter}.
+		 */
+		private IItemRegistry<IEEFTabDescriptorFilter> eefTabDescriptorFilterRegistry;
 
 		/**
 		 * The extension registry listener used to populate the registry of tab descriptor provider
 		 * {@link IEEFTabDescriptorProvider}.
 		 */
 		private AbstractRegistryEventListener eefTabDescriptorProviderListener;
+
+		/**
+		 * The extension registry listener used to populate the registry of tab descriptor filter
+		 * {@link IEEFTabDescriptorFilter}.
+		 */
+		private AbstractRegistryEventListener eefTabDescriptorFilterListener;
 
 		/**
 		 * The constructor.
@@ -114,10 +131,16 @@ public class EEFTabbedPropertyViewPlugin extends EMFPlugin {
 			IExtensionRegistry registry = Platform.getExtensionRegistry();
 
 			this.eefTabDescriptorProviderRegistry = new ItemRegistry<IEEFTabDescriptorProvider>();
-			this.eefTabDescriptorProviderListener = new EEFTabDescriptorProviderRegistryEventListener<IEEFTabDescriptorProvider>(PLUGIN_ID,
+			this.eefTabDescriptorProviderListener = new EEFDescriptorRegistryEventListener<IEEFTabDescriptorProvider>(PLUGIN_ID,
 					EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT, this.eefTabDescriptorProviderRegistry);
 			registry.addListener(this.eefTabDescriptorProviderListener, PLUGIN_ID + '.' + EEF_TAB_DESCRIPTOR_PROVIDER_EXTENSION_POINT);
 			this.eefTabDescriptorProviderListener.readRegistry(registry);
+
+			this.eefTabDescriptorFilterRegistry = new ItemRegistry<IEEFTabDescriptorFilter>();
+			this.eefTabDescriptorFilterListener = new EEFDescriptorRegistryEventListener<IEEFTabDescriptorFilter>(PLUGIN_ID,
+					EEF_TAB_DESCRIPTOR_FILTER_EXTENSION_POINT, this.eefTabDescriptorFilterRegistry);
+			registry.addListener(this.eefTabDescriptorFilterListener, PLUGIN_ID + '.' + EEF_TAB_DESCRIPTOR_FILTER_EXTENSION_POINT);
+			this.eefTabDescriptorFilterListener.readRegistry(registry);
 		}
 
 		/**
@@ -132,17 +155,28 @@ public class EEFTabbedPropertyViewPlugin extends EMFPlugin {
 			IExtensionRegistry registry = Platform.getExtensionRegistry();
 
 			registry.removeListener(this.eefTabDescriptorProviderListener);
+			registry.removeListener(this.eefTabDescriptorFilterListener);
 			this.eefTabDescriptorProviderListener = null;
+			this.eefTabDescriptorFilterListener = null;
 			this.eefTabDescriptorProviderRegistry = null;
 		}
 
 		/**
-		 * Return the tabbedPropertyTabsRegistry.
+		 * Return the TabDescriptorProviderRegistry.
 		 *
-		 * @return the tabbedPropertyTabsRegistry
+		 * @return the TabDescriptorProviderRegistry
 		 */
 		public IItemRegistry<IEEFTabDescriptorProvider> getEEFTabDescriptorProviderRegistry() {
 			return this.eefTabDescriptorProviderRegistry;
+		}
+
+		/**
+		 * Return the TabDescriptorFilterRegistry.
+		 *
+		 * @return the TabDescriptorFilterRegistry
+		 */
+		public IItemRegistry<IEEFTabDescriptorFilter> getEEFTabDescriptorFilterRegistry() {
+			return this.eefTabDescriptorFilterRegistry;
 		}
 	}
 
