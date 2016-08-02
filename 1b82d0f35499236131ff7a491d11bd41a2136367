@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27af2791_5a0dadf0",
+        "filename": "plugins/org.eclipse.eef.properties.ui/schema/eefTabDescriptorFilter.exsd",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-02T07:53:22Z",
+      "side": 1,
+      "message": "translatable \u003d true for the label and description",
+      "range": {
+        "startLine": 59,
+        "startChar": 9,
+        "endLine": 72,
+        "endChar": 21
+      },
+      "revId": "1b82d0f35499236131ff7a491d11bd41a2136367",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_3a12b910",
+        "filename": "plugins/org.eclipse.eef.properties.ui/schema/eefTabDescriptorFilter.exsd",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-02T07:53:22Z",
+      "side": 1,
+      "message": "Same feedback as in the code",
+      "range": {
+        "startLine": 119,
+        "startChar": 19,
+        "endLine": 119,
+        "endChar": 28
+      },
+      "revId": "1b82d0f35499236131ff7a491d11bd41a2136367",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_1a0335c8",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/api/IEEFTabDescriptorFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-02T07:53:22Z",
+      "side": 1,
+      "message": "I would have use another name here because even if the developer returns true, it does not mean that the tab will be visible. I would use something like:\n- filter\n- select\n- shouldUse\n- canUse",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 18
+      },
+      "revId": "1b82d0f35499236131ff7a491d11bd41a2136367",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_7a3b5187",
+        "filename": "plugins/org.eclipse.eef.properties.ui/src/org/eclipse/eef/properties/ui/internal/registry/EEFTabbedPropertyRegistry.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-02T07:53:22Z",
+      "side": 1,
+      "message": "Same feedback",
+      "range": {
+        "startLine": 88,
+        "startChar": 17,
+        "endLine": 88,
+        "endChar": 26
+      },
+      "revId": "1b82d0f35499236131ff7a491d11bd41a2136367",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
