@@ -152,63 +152,13 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	private AtomicBoolean isRenderingInProgress = new AtomicBoolean(false);
 
 	/**
-	 * Wrapper for contributors who want to use this version of the framework but can not have a hard dependency (via
-	 * inheritance) towards IEEFTabbedPropertySheetPageContributor.
-	 *
-	 * @author pcdavid
-	 */
-	private static class ContributorWrapper implements IEEFTabbedPropertySheetPageContributor {
-		/**
-		 * The original contributor object.
-		 */
-		private final Object realContributor;
-		/**
-		 * The contributor id.
-		 */
-		private final String contributorId;
-
-		/**
-		 * Creates a wrapper.
-		 *
-		 * @param realContributor
-		 *            the original contributor object.
-		 * @param contributorId
-		 *            the contributor id.
-		 */
-		public ContributorWrapper(Object realContributor, String contributorId) {
-			this.realContributor = realContributor;
-			this.contributorId = contributorId;
-		}
-
-		@Override
-		public String getContributorId() {
-			return contributorId;
-		}
-
-		/**
-		 * Return the original (wrapped) Contributor.
-		 *
-		 * @return the original (wrapped) Contributor.
-		 */
-		public Object getRealContributor() {
-			return this.realContributor;
-		}
-	}
-
-	/**
 	 * The constructor.
 	 *
 	 * @param contributor
 	 *            the contributor.
-	 * @param contributorId
-	 *            the contributor id.
 	 */
-	public EEFTabbedPropertySheetPage(Object contributor, String contributorId) {
-		if (contributor instanceof IEEFTabbedPropertySheetPageContributor) {
-			this.contributor = (IEEFTabbedPropertySheetPageContributor) contributor;
-		} else {
-			this.contributor = new ContributorWrapper(contributor, contributorId);
-		}
+	public EEFTabbedPropertySheetPage(IEEFTabbedPropertySheetPageContributor contributor) {
+		this.contributor = contributor;
 	}
 
 	/**
@@ -341,6 +291,8 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		try {
 			this.currentPart = part;
 			this.currentSelection = selection;
+
+			this.contributor.updateFormTitle(this.form, this.currentSelection);
 
 			// see if the selection provides a new contributor
 			// validateRegistry(selection);
@@ -507,8 +459,8 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 * @return <code>true</code> if the specified part is the same as the contributor we represent.
 	 */
 	private boolean matchesContributor(IWorkbenchPart part) {
-		if (contributor instanceof ContributorWrapper) {
-			ContributorWrapper wrapper = (ContributorWrapper) contributor;
+		if (contributor instanceof AbstractEEFTabbedPropertySheetPageContributorWrapper) {
+			AbstractEEFTabbedPropertySheetPageContributorWrapper wrapper = (AbstractEEFTabbedPropertySheetPageContributorWrapper) contributor;
 			return part.equals(wrapper.getRealContributor());
 		} else {
 			return part.equals(contributor);

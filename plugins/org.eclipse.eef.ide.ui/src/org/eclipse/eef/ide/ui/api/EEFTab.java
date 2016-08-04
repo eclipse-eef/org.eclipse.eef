@@ -10,21 +10,15 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.api;
 
-import java.net.URL;
-
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFPage;
-import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.InputDescriptor;
-import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Updater;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFSectionLifecycleManager;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
@@ -52,11 +46,6 @@ public class EEFTab {
 	private Updater updater;
 
 	/**
-	 * The form container.
-	 */
-	private IEEFFormContainer formContainer;
-
-	/**
 	 * The constructor.
 	 *
 	 * @param eefPage
@@ -77,8 +66,6 @@ public class EEFTab {
 	 */
 	public void createControls(Composite parent, IEEFFormContainer container) {
 		EEFIdeUiPlugin.getPlugin().debug("EEFSection#createControls(...)"); //$NON-NLS-1$
-
-		this.formContainer = container;
 
 		Composite composite = container.getWidgetFactory().createComposite(parent);
 		composite.setLayout(new GridLayout(1, false));
@@ -131,22 +118,6 @@ public class EEFTab {
 	public void refresh() {
 		EEFIdeUiPlugin.getPlugin().debug("EEFSection#refresh(...)"); //$NON-NLS-1$
 
-		EEFView eefView = this.eefPage.getView();
-
-		String labelExpression = eefView.getDescription().getLabelExpression();
-		String title = EvalFactory.of(eefView.getInterpreter(), eefView.getVariableManager()).logIfInvalidType(String.class)
-				.evaluate(labelExpression);
-		if (!Util.isBlank(title)) {
-			this.formContainer.getForm().setText(title);
-		}
-
-		String imageExpression = eefView.getDescription().getImageExpression();
-		Object object = EvalFactory.of(eefView.getInterpreter(), eefView.getVariableManager()).evaluate(imageExpression);
-		if (object instanceof URL) {
-			Image image = EEFIdeUiPlugin.getPlugin().getImage((URL) object);
-			this.formContainer.getForm().setImage(image);
-		}
-
 		this.lifecycleManager.refresh();
 	}
 
@@ -168,7 +139,6 @@ public class EEFTab {
 		EEFIdeUiPlugin.getPlugin().debug("EEFSection#dispose(...)"); //$NON-NLS-1$
 
 		this.lifecycleManager.dispose();
-		this.formContainer = null;
 	}
 
 	/**

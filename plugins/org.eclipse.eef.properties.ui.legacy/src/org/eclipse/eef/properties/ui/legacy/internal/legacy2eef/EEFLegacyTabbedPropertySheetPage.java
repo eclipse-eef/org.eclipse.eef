@@ -28,7 +28,7 @@ public class EEFLegacyTabbedPropertySheetPage extends EEFTabbedPropertySheetPage
 	 *            A legacy tabbed property sheet page
 	 */
 	public EEFLegacyTabbedPropertySheetPage(TabbedPropertySheetPage tabbedPropertySheetPage) {
-		super(new EEFLegacyTabbedPropertySheetPageContributor(), null);
+		super(new EEFLegacyTabbedPropertySheetPageContributor());
 	}
 
 }

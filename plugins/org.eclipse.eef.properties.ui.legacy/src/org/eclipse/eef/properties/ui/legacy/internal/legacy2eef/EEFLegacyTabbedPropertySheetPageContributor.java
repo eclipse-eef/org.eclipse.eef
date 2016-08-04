@@ -12,6 +12,8 @@
 package org.eclipse.eef.properties.ui.legacy.internal.legacy2eef;
 
 import org.eclipse.eef.properties.ui.api.IEEFTabbedPropertySheetPageContributor;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ui.forms.widgets.Form;
 
 /**
  * Wraps a TabbedPropertySheetPage contributor to an {@link IEEFTabbedPropertySheetPageContributor}.
@@ -23,6 +25,17 @@ public class EEFLegacyTabbedPropertySheetPageContributor implements IEEFTabbedPr
 	@Override
 	public String getContributorId() {
 		return null; // no issue here... in theory :)
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.properties.ui.api.IEEFTabbedPropertySheetPageContributor#updateFormTitle(org.eclipse.ui.forms.widgets.Form,
+	 *      org.eclipse.jface.viewers.ISelection)
+	 */
+	@Override
+	public void updateFormTitle(Form form, ISelection selection) {
+		// let's do nothing, this is fine in theory :)
 	}
 
 }

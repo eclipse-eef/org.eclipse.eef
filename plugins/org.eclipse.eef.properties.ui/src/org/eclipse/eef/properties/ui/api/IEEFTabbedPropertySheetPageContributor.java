@@ -11,6 +11,8 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.api;
 
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.ui.forms.widgets.Form;
 
 /**
  * Interface for a workbench part to contribute content to the tabbed property view.
@@ -36,4 +38,14 @@ public interface IEEFTabbedPropertySheetPageContributor {
 	 * @return the contributor ID for the tabbed property sheet page.
 	 */
 	String getContributorId();
+
+	/**
+	 * Updates the text and label.
+	 *
+	 * @param form
+	 *            The form
+	 * @param selection
+	 *            The current selection
+	 */
+	void updateFormTitle(Form form, ISelection selection);
 }
