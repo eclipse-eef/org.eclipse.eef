@@ -95,7 +95,7 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 	@Override
 	public IEEFSection getSectionClass() {
 		ISection section = null;
-		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.FILTER_ATTR) != null) {
+		if (configurationElement != null && configurationElement.getAttribute(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR) != null) {
 			try {
 				section = (ISection) configurationElement.createExecutableExtension(LegacyPropertySectionsRegistryEventListener.CLASS_ATTR);
 			} catch (CoreException e) {
