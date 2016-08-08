@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "27af2791_4740665e",
+        "filename": "samples/org.eclipse.eef.ext.widgets.reference/.project",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T08:08:13Z",
+      "side": 1,
+      "message": "ok, I will move all the relevant plugins out of samples, I had doubts too (that\u0027s why I put them in sample but not named then org.eclipse.eef.samples.x.y.z)",
+      "parentUuid": "27af2791_e68340a4",
+      "range": {
+        "startLine": 3,
+        "startChar": 6,
+        "endLine": 3,
+        "endChar": 44
+      },
+      "revId": "f3200a81089856c195aedf8cf2d60770ed515bf8",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27af2791_66c2d0cf",
         "filename": "samples/org.eclipse.eef.ide.ui.ext.widgets.reference/plugin.properties",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-08-05T13:54:51Z",
       "side": 1,
       "message": "In case of a non containment reference it just unset the reference and does not remove the object",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 33
+      },
+      "revId": "f3200a81089856c195aedf8cf2d60770ed515bf8",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_e7a5fab6",
+        "filename": "samples/org.eclipse.eef.ide.ui.ext.widgets.reference/plugin.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T08:08:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27af2791_66c2d0cf",
       "range": {
         "startLine": 34,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "27af2791_07a10ea8",
+        "filename": "samples/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/api/IEEFExtReferenceViewerFilterProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T08:08:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27af2791_8673645a",
+      "range": {
+        "startLine": 18,
+        "startChar": 29,
+        "endLine": 18,
+        "endChar": 37
+      },
+      "revId": "f3200a81089856c195aedf8cf2d60770ed515bf8",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27af2791_a6ab080c",
         "filename": "samples/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationPage.java",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2016-08-05T13:54:51Z",
       "side": 1,
       "message": "to delete",
+      "range": {
+        "startLine": 52,
+        "startChar": 35,
+        "endLine": 52,
+        "endChar": 36
+      },
+      "revId": "f3200a81089856c195aedf8cf2d60770ed515bf8",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_278ff23a",
+        "filename": "samples/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationPage.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T08:08:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27af2791_a6ab080c",
       "range": {
         "startLine": 52,
         "startChar": 35,
