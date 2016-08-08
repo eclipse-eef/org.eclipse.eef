@@ -16,6 +16,24 @@
       "revId": "ed79012e7e8eda6868b0cc5168174fc1aaba86c5",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_47bb065e",
+        "filename": "features/org.eclipse.eef.ext.widgets.reference-feature/feature.properties",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T14:56:42Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "27af2791_27fa9283",
+      "revId": "ed79012e7e8eda6868b0cc5168174fc1aaba86c5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
     }
   ]
 }

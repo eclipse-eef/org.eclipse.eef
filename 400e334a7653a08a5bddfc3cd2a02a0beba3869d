@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "27af2791_a79222d8",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/AbstractEEFExtReferenceLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T14:56:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27af2791_27cc5264",
+      "range": {
+        "startLine": 56,
+        "startChar": 19,
+        "endLine": 56,
+        "endChar": 36
+      },
+      "revId": "400e334a7653a08a5bddfc3cd2a02a0beba3869d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27af2791_8700be75",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationPage.java",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "27af2791_99d3c247",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationPage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T14:56:42Z",
+      "side": 1,
+      "message": "In fact, it was a bit more complicated",
+      "parentUuid": "27af2791_8700be75",
+      "range": {
+        "startLine": 177,
+        "startChar": 45,
+        "endLine": 177,
+        "endChar": 58
+      },
+      "revId": "400e334a7653a08a5bddfc3cd2a02a0beba3869d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27af2791_a7f6a200",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationPage.java",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2016-08-08T13:15:00Z",
       "side": 1,
       "message": "Inverse order.",
+      "range": {
+        "startLine": 286,
+        "startChar": 73,
+        "endLine": 286,
+        "endChar": 86
+      },
+      "revId": "400e334a7653a08a5bddfc3cd2a02a0beba3869d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27af2791_79dc2e5a",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationPage.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-08-08T14:56:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27af2791_a7f6a200",
       "range": {
         "startLine": 286,
         "startChar": 73,
