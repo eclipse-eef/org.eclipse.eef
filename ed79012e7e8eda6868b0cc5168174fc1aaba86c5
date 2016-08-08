@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27af2791_27fa9283",
+        "filename": "features/org.eclipse.eef.ext.widgets.reference-feature/feature.properties",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-08-08T12:33:39Z",
+      "side": 0,
+      "message": "\"New\" is time-relative. In a year or two it will not mean a lot. \"Simple\"? \"Canonical\"?",
+      "revId": "ed79012e7e8eda6868b0cc5168174fc1aaba86c5",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
