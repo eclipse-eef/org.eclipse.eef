@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.eef.common.ui.api;
 
+import org.eclipse.jface.resource.JFaceColors;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CLabel;
@@ -18,6 +19,7 @@ import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -308,7 +310,10 @@ public class EEFWidgetFactory extends FormToolkit {
 	public Hyperlink createHyperlink(Composite parent, String text, int style) {
 		Hyperlink hyperlink = super.createHyperlink(parent, text, style);
 		hyperlink.setBackground(parent.getBackground());
-		hyperlink.setForeground(parent.getForeground());
+
+		Color hyperlinkText = JFaceColors.getHyperlinkText(hyperlink.getDisplay());
+		hyperlink.setForeground(hyperlinkText);
+
 		return hyperlink;
 	}
 
