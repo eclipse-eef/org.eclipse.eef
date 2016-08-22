@@ -210,7 +210,7 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	@Override
 	protected Control getValidationControl() {
-		return this.text;
+		return this.image;
 	}
 
 }
