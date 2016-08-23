@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27af2791_11e83e9f",
+        "filename": "plugins/org.eclipse.eef.common.ui/src/org/eclipse/eef/common/ui/api/EEFWidgetFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2016-08-23T12:23:06Z",
+      "side": 1,
+      "message": "hyperlinkColor?",
+      "range": {
+        "startLine": 314,
+        "startChar": 8,
+        "endLine": 314,
+        "endChar": 21
+      },
+      "revId": "662abb5c4e1887f5f2a51de7c538094722f003ba",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
