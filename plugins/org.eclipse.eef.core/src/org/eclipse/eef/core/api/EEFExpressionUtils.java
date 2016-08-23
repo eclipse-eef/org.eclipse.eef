@@ -28,6 +28,11 @@ public final class EEFExpressionUtils {
 	public static final String INPUT = "input"; //$NON-NLS-1$
 
 	/**
+	 * The name of the variable which will hold the result of the audit.
+	 */
+	public static final String AUDIT_RESULT = "auditResult"; //$NON-NLS-1$
+
+	/**
 	 * The constructor.
 	 */
 	private EEFExpressionUtils() {
