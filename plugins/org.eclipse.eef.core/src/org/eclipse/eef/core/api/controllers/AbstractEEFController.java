@@ -11,15 +11,20 @@
 package org.eclipse.eef.core.api.controllers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
 import org.eclipse.eef.core.internal.controllers.InvalidValidationRuleResult;
 import org.eclipse.eef.core.internal.controllers.ValidationRuleResult;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -143,30 +148,55 @@ public abstract class AbstractEEFController implements IEEFController {
 		EAttribute messageEAttribute = EefPackage.Literals.EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION;
 
 		for (EEFValidationRuleDescription validationRule : descriptions) {
-			boolean isValid = true;
+			Object result = null;
 
 			for (EEFRuleAuditDescription audit : validationRule.getAudits()) {
 				String auditExpression = audit.getAuditExpression();
-				Boolean result = this.newEval().logIfBlank(auditEAttribute).logIfInvalidType(Boolean.class).evaluate(auditExpression);
-				isValid = isValid && (result != null && result.booleanValue());
+				result = this.newEval().logIfBlank(auditEAttribute).evaluate(auditExpression);
 
-				if (!isValid) {
+				if (!this.isValid(result)) {
 					break;
 				}
 			}
 
-			if (isValid) {
+			if (this.isValid(result)) {
 				validationRuleResults.add(new ValidationRuleResult(validationRule));
 			} else {
-				Eval<Object> eval = this.newEval();
-				String messageExpression = validationRule.getMessageExpression();
-				String message = eval.logIfBlank(messageEAttribute).logIfInvalidType(String.class).evaluate(messageExpression);
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.AUDIT_RESULT, result);
 
-				validationRuleResults.add(new InvalidValidationRuleResult(validationRule, message, this.newEval(), validationRule.getSeverity()
-						.getValue()));
+				Eval<Object> eval = EvalFactory.of(this.interpreter, variables);
+				String message = eval.logIfBlank(messageEAttribute).logIfInvalidType(String.class).evaluate(validationRule.getMessageExpression());
+
+				validationRuleResults.add(new InvalidValidationRuleResult(validationRule, message, eval, validationRule.getSeverity().getValue()));
 			}
 		}
 
 		return validationRuleResults;
+	}
+
+	/**
+	 * Indicates if the result of the evaluation of the audit expression is valid or not. A valid result is either:
+	 * <ul>
+	 * <li>A boolean with the value true</li>
+	 * <li>An IStatus with a severity OK</li>
+	 * <li>A diagnostic with a severity OK</li>
+	 * </ul>
+	 *
+	 * @param result
+	 *            The result of the evaluation of the audit expression
+	 * @return <code>true</code> if the result is valid, <code>false</code> otherwise
+	 */
+	private boolean isValid(Object result) {
+		boolean isValid = false;
+		if (result instanceof Boolean) {
+			isValid = ((Boolean) result).booleanValue();
+		} else if (result instanceof IStatus) {
+			isValid = ((IStatus) result).isOK();
+		} else if (result instanceof Diagnostic) {
+			isValid = ((Diagnostic) result).getSeverity() == Diagnostic.OK;
+		}
+		return isValid;
 	}
 }
