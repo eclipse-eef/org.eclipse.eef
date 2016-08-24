@@ -30,6 +30,8 @@ import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFStyledTextStyleCallback;
+import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
+import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -39,6 +41,8 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -265,10 +269,21 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	private void setLabelFontStyle() {
 		EEFStyleHelper styleHelper = new EEFStyleHelper(interpreter, variableManager);
 		EEFWidgetStyle style = styleHelper.getWidgetStyle(getWidgetDescription());
+		IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.label);
 		if (style != null) {
-			IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.label);
 			styleHelper.applyTextStyle(style.getLabelFontNameExpression(), style.getLabelFontSizeExpression(), style.getLabelFontStyleExpression(),
 					this.label.getFont(), style.getLabelBackgroundColorExpression(), style.getLabelForegroundColorExpression(), callback);
+		} else {
+			// Set everything back to the default value
+			callback.applyForegroundColor(new EEFColor((Color) null));
+			callback.applyBackgroundColor(new EEFColor((Color) null));
+			callback.applyFontStyle(false, false);
+			callback.applyFont(new EEFFont(null, 0, 0) {
+				@Override
+				public Font getFont() {
+					return null;
+				}
+			});
 		}
 	}
 
