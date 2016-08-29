@@ -515,10 +515,10 @@
         <details key="documentation" value="The name of the variable which contain the current value of the iteration."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainClassExpression"
-        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iterableExpression" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Used to compute the mappings to create using the domain class of the current object."/>
+        <details key="documentation" value="Used to compute the mappings to create by iterating on the result of this expression."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ifs" lowerBound="1" upperBound="-1"

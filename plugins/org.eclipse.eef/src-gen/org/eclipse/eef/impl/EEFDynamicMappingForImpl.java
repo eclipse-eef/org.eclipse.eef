@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIterator <em>Iterator</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getDomainClassExpression <em>Domain Class Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIterableExpression <em>Iterable Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIfs <em>Ifs</em>}</li>
  * </ul>
  * </p>
@@ -58,24 +58,24 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	protected String iterator = EEFDynamicMappingForImpl.ITERATOR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDomainClassExpression() <em>Domain Class Expression</em>}' attribute. <!--
+	 * The default value of the '{@link #getIterableExpression() <em>Iterable Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @see #getDomainClassExpression()
+	 * @see #getIterableExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DOMAIN_CLASS_EXPRESSION_EDEFAULT = null;
+	protected static final String ITERABLE_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDomainClassExpression() <em>Domain Class Expression</em>}' attribute. <!--
+	 * The cached value of the '{@link #getIterableExpression() <em>Iterable Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @see #getDomainClassExpression()
+	 * @see #getIterableExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String domainClassExpression = EEFDynamicMappingForImpl.DOMAIN_CLASS_EXPRESSION_EDEFAULT;
+	protected String iterableExpression = EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getIfs() <em>Ifs</em>}' containment reference list. <!-- begin-user-doc --> <!--
@@ -136,8 +136,8 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	 * @generated
 	 */
 	@Override
-	public String getDomainClassExpression() {
-		return domainClassExpression;
+	public String getIterableExpression() {
+		return iterableExpression;
 	}
 
 	/**
@@ -146,12 +146,12 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	 * @generated
 	 */
 	@Override
-	public void setDomainClassExpression(String newDomainClassExpression) {
-		String oldDomainClassExpression = domainClassExpression;
-		domainClassExpression = newDomainClassExpression;
+	public void setIterableExpression(String newIterableExpression) {
+		String oldIterableExpression = iterableExpression;
+		iterableExpression = newIterableExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION,
-					oldDomainClassExpression, domainClassExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION, oldIterableExpression,
+					iterableExpression));
 		}
 	}
 
@@ -192,8 +192,8 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 		switch (featureID) {
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR:
 			return getIterator();
-		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION:
-			return getDomainClassExpression();
+		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION:
+			return getIterableExpression();
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS:
 			return getIfs();
 		}
@@ -212,8 +212,8 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR:
 			setIterator((String) newValue);
 			return;
-		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION:
-			setDomainClassExpression((String) newValue);
+		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION:
+			setIterableExpression((String) newValue);
 			return;
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS:
 			getIfs().clear();
@@ -234,8 +234,8 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR:
 			setIterator(EEFDynamicMappingForImpl.ITERATOR_EDEFAULT);
 			return;
-		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION:
-			setDomainClassExpression(EEFDynamicMappingForImpl.DOMAIN_CLASS_EXPRESSION_EDEFAULT);
+		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION:
+			setIterableExpression(EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS:
 			getIfs().clear();
@@ -255,9 +255,9 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR:
 			return EEFDynamicMappingForImpl.ITERATOR_EDEFAULT == null ? iterator != null : !EEFDynamicMappingForImpl.ITERATOR_EDEFAULT
 			.equals(iterator);
-		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION:
-			return EEFDynamicMappingForImpl.DOMAIN_CLASS_EXPRESSION_EDEFAULT == null ? domainClassExpression != null
-			: !EEFDynamicMappingForImpl.DOMAIN_CLASS_EXPRESSION_EDEFAULT.equals(domainClassExpression);
+		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION:
+			return EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT == null ? iterableExpression != null
+			: !EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT.equals(iterableExpression);
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS:
 			return ifs != null && !ifs.isEmpty();
 		}
@@ -278,8 +278,8 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (iterator: "); //$NON-NLS-1$
 		result.append(iterator);
-		result.append(", domainClassExpression: "); //$NON-NLS-1$
-		result.append(domainClassExpression);
+		result.append(", iterableExpression: "); //$NON-NLS-1$
+		result.append(iterableExpression);
 		result.append(')');
 		return result.toString();
 	}

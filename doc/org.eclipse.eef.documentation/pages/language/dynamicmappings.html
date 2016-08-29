@@ -13,10 +13,10 @@
 		</p>
 		<h3 id="properties">Properties</h3>
 		<ul>
-			<li>domainClassExpression: This expression will use concepts of the meta-model in order to compute the number of element to take into account. This expression must return a collection of element on which we will iterate to create the widgets. For example, to fulfill our requirement of one text widget for each property with the type EString, you could type the following domainClassExpression 
+			<li>iterableExpression: This expression will use concepts of the meta-model in order to compute the number of element to take into account. This expression must return a collection of elements on which we will iterate to create the widgets. For example, to fulfill our requirement of one text widget for each property with the type EString, you could type the following iterableExpression 
 				<code>aql:self.eClass().eAllStructuralFeatures</code>.
 			</li>
-			<li>iterator: The iterator will be used to define a name to manipulate the result of the domain class expression. To fulfill our requirement, we could use the name 
+			<li>iterator: The iterator will be used to define a name to manipulate the result of the iterable expression. To fulfill our requirement, we could use the name 
 				<code>eStructuralFeature</code>.
 			</li>
 			<li>ifs: This property will contain all the use cases that can be handled by our dynamic mapping.</li>

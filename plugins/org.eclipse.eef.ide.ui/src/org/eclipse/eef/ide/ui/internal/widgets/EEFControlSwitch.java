@@ -243,15 +243,15 @@ public class EEFControlSwitch {
 			EEFDynamicMappingFor dynamicMappingFor, IVariableManager variableManager) {
 		List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
-		String domainClassExpression = dynamicMappingFor.getDomainClassExpression();
-		EAttribute domainClassEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION;
+		String iterableExpression = dynamicMappingFor.getIterableExpression();
+		EAttribute iterableEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION;
 		String iterator = dynamicMappingFor.getIterator();
 
 		EAttribute ifExpressionEAttribute = EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION;
 
-		Object domainClassExpressionResult = EvalFactory.of(this.interpreter, variableManager).logIfBlank(domainClassEAttribute)
-				.evaluate(domainClassExpression);
-		for (Object object : Util.asIterable(domainClassExpressionResult, Object.class)) {
+		Object iterableExpressionResult = EvalFactory.of(this.interpreter, variableManager).logIfBlank(iterableEAttribute)
+				.evaluate(iterableExpression);
+		for (Object object : Util.asIterable(iterableExpressionResult, Object.class)) {
 			Map<String, Object> switchExpressionVariables = new HashMap<String, Object>();
 			switchExpressionVariables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
 			switchExpressionVariables.put(iterator, object);
