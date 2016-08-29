@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  * <li>{@link org.eclipse.eef.EEFDynamicMappingFor#getIterator <em>Iterator</em>}</li>
- * <li>{@link org.eclipse.eef.EEFDynamicMappingFor#getDomainClassExpression <em>Domain Class Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression <em>Iterable Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFDynamicMappingFor#getIfs <em>Ifs</em>}</li>
  * </ul>
  * </p>
@@ -53,28 +53,28 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	void setIterator(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Domain Class Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc --> <!-- begin-model-doc --> Used to compute the mappings to create using the domain class of the
-	 * current object. <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Iterable Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Used to compute the mappings to create by iterating on the result of
+	 * this expression. <!-- end-model-doc -->
 	 *
-	 * @return the value of the '<em>Domain Class Expression</em>' attribute.
-	 * @see #setDomainClassExpression(String)
-	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingFor_DomainClassExpression()
+	 * @return the value of the '<em>Iterable Expression</em>' attribute.
+	 * @see #setIterableExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingFor_IterableExpression()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getDomainClassExpression();
+	String getIterableExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getDomainClassExpression
-	 * <em>Domain Class Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression
+	 * <em>Iterable Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *            the new value of the '<em>Domain Class Expression</em>' attribute.
-	 * @see #getDomainClassExpression()
+	 *            the new value of the '<em>Iterable Expression</em>' attribute.
+	 * @see #getIterableExpression()
 	 * @generated
 	 */
-	void setDomainClassExpression(String value);
+	void setIterableExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Ifs</b></em>' containment reference list. The list contents are of type

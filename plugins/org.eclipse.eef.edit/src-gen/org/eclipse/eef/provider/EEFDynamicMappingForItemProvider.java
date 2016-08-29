@@ -49,7 +49,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 			super.getPropertyDescriptors(object);
 
 			addIteratorPropertyDescriptor(object);
-			addDomainClassExpressionPropertyDescriptor(object);
+			addIterableExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -67,20 +67,20 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	}
 
 	/**
-	 * This adds a property descriptor for the Domain Class Expression feature. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * This adds a property descriptor for the Iterable Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
 	 * @generated
 	 */
-	protected void addDomainClassExpressionPropertyDescriptor(Object object) {
+	protected void addIterableExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 		.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_EEFDynamicMappingFor_domainClassExpression_feature"), //$NON-NLS-1$
+				getString("_UI_EEFDynamicMappingFor_iterableExpression_feature"), //$NON-NLS-1$
 				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingFor_domainClassExpression_feature", "_UI_EEFDynamicMappingFor_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION, true, false, false,
+						"_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingFor_iterableExpression_feature", "_UI_EEFDynamicMappingFor_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -159,7 +159,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 		switch (notification.getFeatureID(EEFDynamicMappingFor.class)) {
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR:
-		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION:
+		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS:

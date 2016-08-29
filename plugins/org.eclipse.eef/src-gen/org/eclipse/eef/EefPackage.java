@@ -1524,13 +1524,13 @@ public interface EefPackage extends EPackage {
 	int EEF_DYNAMIC_MAPPING_FOR__ITERATOR = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Domain Class Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
+	 * The feature id for the '<em><b>Iterable Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 1;
+	int EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Ifs</b></em>' containment reference list. <!-- begin-user-doc --> <!--
@@ -4238,15 +4238,15 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFDynamicMappingFor_Iterator();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFDynamicMappingFor#getDomainClassExpression
-	 * <em>Domain Class Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute '<em>Domain Class Expression</em>'.
-	 * @see org.eclipse.eef.EEFDynamicMappingFor#getDomainClassExpression()
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression
+	 * <em>Iterable Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Iterable Expression</em>'.
+	 * @see org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression()
 	 * @see #getEEFDynamicMappingFor()
 	 * @generated
 	 */
-	EAttribute getEEFDynamicMappingFor_DomainClassExpression();
+	EAttribute getEEFDynamicMappingFor_IterableExpression();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFDynamicMappingFor#getIfs
@@ -6015,12 +6015,12 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_DYNAMIC_MAPPING_FOR__ITERATOR = EefPackage.eINSTANCE.getEEFDynamicMappingFor_Iterator();
 
 		/**
-		 * The meta object literal for the '<em><b>Domain Class Expression</b></em>' attribute feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Iterable Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
 		 *
 		 * @generated
 		 */
-		EAttribute EEF_DYNAMIC_MAPPING_FOR__DOMAIN_CLASS_EXPRESSION = EefPackage.eINSTANCE.getEEFDynamicMappingFor_DomainClassExpression();
+		EAttribute EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION = EefPackage.eINSTANCE.getEEFDynamicMappingFor_IterableExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Ifs</b></em>' containment reference list feature. <!-- begin-user-doc
