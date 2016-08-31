@@ -152,6 +152,16 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	private AtomicBoolean isRenderingInProgress = new AtomicBoolean(false);
 
 	/**
+	 * The widget listener used to resize the scrolled composite.
+	 */
+	private ControlAdapter scrolledCompositeListener;
+
+	/**
+	 * The listener used to forward tab selection changes.
+	 */
+	private IEEFTabDescriptorChangedListener viewerSelectionListener;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param contributor
@@ -196,19 +206,21 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		this.widgetFactory.paintBordersFor(form);
 
 		this.tabbedPropertyViewer = new EEFTabbedPropertyViewer(this.tabbedPropertyComposite.getTabbedPropertyList(), this.registry);
-		this.tabbedPropertyViewer.addSelectionListener(new IEEFTabDescriptorChangedListener() {
+		this.viewerSelectionListener = new IEEFTabDescriptorChangedListener() {
 			@Override
 			public void selectionChanged(IEEFTabDescriptor descriptor) {
 				EEFTabbedPropertySheetPage.this.processSelectionChanged(descriptor);
 			}
-		});
+		};
+		this.tabbedPropertyViewer.addSelectionListener(viewerSelectionListener);
 
-		this.tabbedPropertyComposite.getScrolledComposite().addControlListener(new ControlAdapter() {
+		this.scrolledCompositeListener = new ControlAdapter() {
 			@Override
 			public void controlResized(ControlEvent e) {
 				EEFTabbedPropertySheetPage.this.resizeScrolledComposite();
 			}
-		});
+		};
+		this.tabbedPropertyComposite.getScrolledComposite().addControlListener(scrolledCompositeListener);
 
 		this.partActivationListener = new EEFPartListenerAdapter() {
 			@Override
@@ -432,7 +444,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			/*
 			 * Is the part is a IContributedContentsView for the contributor, for example, outline view.
 			 */
-			view = (IContributedContentsView) part.getAdapter(IContributedContentsView.class);
+			view = part.getAdapter(IContributedContentsView.class);
 		}
 
 		if (view == null || (view.getContributingPart() != null && !view.getContributingPart().equals(contributor))) {
@@ -685,6 +697,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	public void dispose() {
 		this.disposeContributor();
 		this.widgetFactory.dispose();
+		this.cachedWorkbenchWindow.getPartService().removePartListener(this.partActivationListener);
 	}
 
 	/**
