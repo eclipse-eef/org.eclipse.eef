@@ -685,6 +685,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	public void dispose() {
 		this.disposeContributor();
 		this.widgetFactory.dispose();
+		this.cachedWorkbenchWindow.getPartService().removePartListener(this.partActivationListener);
 	}
 
 	/**
