@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27af2791_6bd17074",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-08-31T12:36:35Z",
+      "side": 1,
+      "message": "Usually we just put the number 500423",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "f85a36ab8089e3b04b5ab9ab53c4b87426c206bc",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
