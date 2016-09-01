@@ -85,7 +85,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 	/**
 	 * This adds a property descriptor for the Is Enabled Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsEnabledExpressionPropertyDescriptor(Object object) {

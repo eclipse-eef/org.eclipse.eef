@@ -25,6 +25,7 @@ import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFReferenceDescription;
 import org.eclipse.eef.EEFSelectDescription;
@@ -212,6 +213,14 @@ public class EEFControlSwitch {
 				eefReferenceLifecycleManager.createControl(parent, formContainer);
 
 				lifecycleManagers.add(eefReferenceLifecycleManager);
+			} else if (widgetDescription instanceof EEFListDescription) {
+				EEFListDescription eefListDescription = (EEFListDescription) widgetDescription;
+
+				IEEFLifecycleManager eefListLifecycleManager = new EEFListLifecycleManager(eefListDescription, childVariableManager, interpreter,
+						contextAdapter);
+				eefListLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefListLifecycleManager);
 			} else if (widgetDescription instanceof EEFHyperlinkDescription) {
 				EEFHyperlinkDescription eefHyperlinkDescription = (EEFHyperlinkDescription) widgetDescription;
 

@@ -32,7 +32,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getActionExpression() <em>Action Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActionExpression()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getActionExpression() <em>Action Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActionExpression()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFWidgetActionImpl() {
@@ -80,7 +80,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -199,17 +199,17 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
 			return EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT
-					.equals(labelExpression);
+			.equals(labelExpression);
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
 			return EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT == null ? actionExpression != null
-					: !EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
+			: !EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

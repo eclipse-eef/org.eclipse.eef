@@ -69,7 +69,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -90,7 +90,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFViewDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFViewDescriptionItemProvider eefViewDescriptionItemProvider;
@@ -113,7 +113,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFPageDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFPageDescriptionItemProvider eefPageDescriptionItemProvider;
@@ -136,7 +136,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRuleAuditDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFRuleAuditDescriptionItemProvider eefRuleAuditDescriptionItemProvider;
@@ -228,7 +228,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFGroupDescriptionItemProvider eefGroupDescriptionItemProvider;
@@ -251,7 +251,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFContainerDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFContainerDescriptionItemProvider eefContainerDescriptionItemProvider;
@@ -274,7 +274,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFFillLayoutDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFFillLayoutDescriptionItemProvider eefFillLayoutDescriptionItemProvider;
@@ -297,7 +297,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGridLayoutDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFGridLayoutDescriptionItemProvider eefGridLayoutDescriptionItemProvider;
@@ -320,7 +320,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFTextDescriptionItemProvider eefTextDescriptionItemProvider;
@@ -343,7 +343,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFLabelDescriptionItemProvider eefLabelDescriptionItemProvider;
@@ -366,7 +366,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFButtonDescriptionItemProvider eefButtonDescriptionItemProvider;
@@ -389,7 +389,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCheckboxDescriptionItemProvider eefCheckboxDescriptionItemProvider;
@@ -412,7 +412,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFSelectDescriptionItemProvider eefSelectDescriptionItemProvider;
@@ -435,7 +435,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFRadioDescriptionItemProvider eefRadioDescriptionItemProvider;
@@ -458,7 +458,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFHyperlinkDescriptionItemProvider eefHyperlinkDescriptionItemProvider;
@@ -481,7 +481,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFDynamicMappingForItemProvider eefDynamicMappingForItemProvider;
@@ -504,7 +504,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingIf} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFDynamicMappingIfItemProvider eefDynamicMappingIfItemProvider;
@@ -550,7 +550,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomExpression} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCustomExpressionItemProvider eefCustomExpressionItemProvider;
@@ -573,7 +573,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFReferenceDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFReferenceDescriptionItemProvider eefReferenceDescriptionItemProvider;
@@ -594,9 +594,32 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextStyle} instances. <!--
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @generated
+	 */
+	protected EEFListDescriptionItemProvider eefListDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFListDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFListDescriptionAdapter() {
+		if (eefListDescriptionItemProvider == null) {
+			eefListDescriptionItemProvider = new EEFListDescriptionItemProvider(this);
+		}
+
+		return eefListDescriptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EEFTextStyleItemProvider eefTextStyleItemProvider;
@@ -618,7 +641,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFLabelStyleItemProvider eefLabelStyleItemProvider;
@@ -626,7 +649,7 @@ IChildCreationExtender {
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFLabelStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -641,7 +664,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFButtonStyleItemProvider eefButtonStyleItemProvider;
@@ -649,7 +672,7 @@ IChildCreationExtender {
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -664,7 +687,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCheckboxStyleItemProvider eefCheckboxStyleItemProvider;
@@ -672,7 +695,7 @@ IChildCreationExtender {
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -687,7 +710,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFSelectStyleItemProvider eefSelectStyleItemProvider;
@@ -695,7 +718,7 @@ IChildCreationExtender {
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -710,7 +733,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFRadioStyleItemProvider eefRadioStyleItemProvider;
@@ -718,7 +741,7 @@ IChildCreationExtender {
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -733,7 +756,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFHyperlinkStyleItemProvider eefHyperlinkStyleItemProvider;
@@ -756,7 +779,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFCustomWidgetStyleItemProvider eefCustomWidgetStyleItemProvider;
@@ -779,7 +802,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFReferenceStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFReferenceStyleItemProvider eefReferenceStyleItemProvider;
@@ -800,9 +823,31 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupStyle} instances. <!--
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @generated
+	 */
+	protected EEFListStyleItemProvider eefListStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFListStyle}. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFListStyleAdapter() {
+		if (eefListStyleItemProvider == null) {
+			eefListStyleItemProvider = new EEFListStyleItemProvider(this);
+		}
+
+		return eefListStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EEFGroupStyleItemProvider eefGroupStyleItemProvider;
@@ -810,7 +855,7 @@ IChildCreationExtender {
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -825,7 +870,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFTextConditionalStyleItemProvider eefTextConditionalStyleItemProvider;
@@ -871,7 +916,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFLabelConditionalStyleItemProvider eefLabelConditionalStyleItemProvider;
@@ -940,7 +985,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFRadioConditionalStyleItemProvider eefRadioConditionalStyleItemProvider;
@@ -1009,7 +1054,7 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFWidgetAction} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFWidgetActionItemProvider eefWidgetActionItemProvider;
@@ -1017,7 +1062,7 @@ IChildCreationExtender {
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFWidgetAction}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1053,9 +1098,32 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupConditionalStyle} instances. <!--
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @generated
+	 */
+	protected EEFListConditionalStyleItemProvider eefListConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFListConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFListConditionalStyleAdapter() {
+		if (eefListConditionalStyleItemProvider == null) {
+			eefListConditionalStyleItemProvider = new EEFListConditionalStyleItemProvider(this);
+		}
+
+		return eefListConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupConditionalStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EEFGroupConditionalStyleItemProvider eefGroupConditionalStyleItemProvider;
@@ -1270,6 +1338,9 @@ IChildCreationExtender {
 		if (eefReferenceDescriptionItemProvider != null) {
 			eefReferenceDescriptionItemProvider.dispose();
 		}
+		if (eefListDescriptionItemProvider != null) {
+			eefListDescriptionItemProvider.dispose();
+		}
 		if (eefTextStyleItemProvider != null) {
 			eefTextStyleItemProvider.dispose();
 		}
@@ -1296,6 +1367,9 @@ IChildCreationExtender {
 		}
 		if (eefReferenceStyleItemProvider != null) {
 			eefReferenceStyleItemProvider.dispose();
+		}
+		if (eefListStyleItemProvider != null) {
+			eefListStyleItemProvider.dispose();
 		}
 		if (eefGroupStyleItemProvider != null) {
 			eefGroupStyleItemProvider.dispose();
@@ -1329,6 +1403,9 @@ IChildCreationExtender {
 		}
 		if (eefReferenceConditionalStyleItemProvider != null) {
 			eefReferenceConditionalStyleItemProvider.dispose();
+		}
+		if (eefListConditionalStyleItemProvider != null) {
+			eefListConditionalStyleItemProvider.dispose();
 		}
 		if (eefGroupConditionalStyleItemProvider != null) {
 			eefGroupConditionalStyleItemProvider.dispose();

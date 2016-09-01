@@ -35,6 +35,9 @@ import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFLayoutDescription;
+import org.eclipse.eef.EEFListConditionalStyle;
+import org.eclipse.eef.EEFListDescription;
+import org.eclipse.eef.EEFListStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioConditionalStyle;
@@ -245,6 +248,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseEEFListDescription(EEFListDescription object) {
+			return createEEFListDescriptionAdapter();
+		}
+
+		@Override
 		public Adapter caseEEFWidgetStyle(EEFWidgetStyle object) {
 			return createEEFWidgetStyleAdapter();
 		}
@@ -292,6 +300,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFReferenceStyle(EEFReferenceStyle object) {
 			return createEEFReferenceStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFListStyle(EEFListStyle object) {
+			return createEEFListStyleAdapter();
 		}
 
 		@Override
@@ -352,6 +365,11 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseEEFReferenceConditionalStyle(EEFReferenceConditionalStyle object) {
 			return createEEFReferenceConditionalStyleAdapter();
+		}
+
+		@Override
+		public Adapter caseEEFListConditionalStyle(EEFListConditionalStyle object) {
+			return createEEFListConditionalStyleAdapter();
 		}
 
 		@Override
@@ -743,6 +761,20 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFListDescription
+	 * <em>EEF List Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFListDescription
+	 * @generated
+	 */
+	public Adapter createEEFListDescriptionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetStyle <em>EEF Widget Style</em>}'.
 	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful
 	 * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
@@ -873,6 +905,19 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFReferenceStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFListStyle <em>EEF List Style</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's useful to
+	 * ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFListStyle
+	 * @generated
+	 */
+	public Adapter createEEFListStyleAdapter() {
 		return null;
 	}
 
@@ -1039,6 +1084,20 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEEFReferenceConditionalStyleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFListConditionalStyle
+	 * <em>EEF List Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
+	 * @return the new adapter.
+	 * @see org.eclipse.eef.EEFListConditionalStyle
+	 * @generated
+	 */
+	public Adapter createEEFListConditionalStyleAdapter() {
 		return null;
 	}
 

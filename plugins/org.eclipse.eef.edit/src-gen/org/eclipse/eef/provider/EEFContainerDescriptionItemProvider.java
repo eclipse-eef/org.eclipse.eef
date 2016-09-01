@@ -176,6 +176,9 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
 				EefFactory.eINSTANCE.createEEFReferenceDescription()));
 
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
+				EefFactory.eINSTANCE.createEEFListDescription()));
+
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT,
 				EefFactory.eINSTANCE.createEEFFillLayoutDescription()));
 

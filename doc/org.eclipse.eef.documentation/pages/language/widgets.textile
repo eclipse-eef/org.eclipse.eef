@@ -10,6 +10,7 @@ A "group":group.html or a "container":container.html can contain various widgets
 * "Select":widgets/select.html
 * "Label":widgets/label.html
 * "Reference":widgets/reference.html
+* "Reference":widgets/list.html
 * "Hyperlink":widgets/hyperlink.html
 * "Button":widgets/button.html
 
