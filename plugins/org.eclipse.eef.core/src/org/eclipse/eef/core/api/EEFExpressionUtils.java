@@ -96,6 +96,9 @@ public final class EEFExpressionUtils {
 		}
 	}
 
+	// CHECKSTYLE:OFF Some constants are repeated more than twice, it will be fixed with the removal of the reference
+	// widget
+
 	/**
 	 * Utility class containing the constants related to the reference widgets.
 	 *
@@ -131,6 +134,45 @@ public final class EEFExpressionUtils {
 		 * The constructor.
 		 */
 		private EEFReference() {
+			// prevent instantiation
+		}
+	}
+
+	/**
+	 * Utility class containing the constants related to the list widgets.
+	 *
+	 * @author sbegaudeau
+	 */
+	public final class EEFList {
+		/**
+		 * The name of the variable value.
+		 */
+		public static final String VALUE = "value"; //$NON-NLS-1$
+
+		/**
+		 * The name of the variable selection.
+		 */
+		public static final String SELECTION = "selection"; //$NON-NLS-1$
+
+		/**
+		 * The name of the variable used to indicate the kind of click event.
+		 */
+		public static final String ON_CLICK_EVENT_KIND = "onClickEventKind"; //$NON-NLS-1$
+
+		/**
+		 * The value used to indicate a single click.
+		 */
+		public static final String SINGLE_CLICK = "SINGLE_CLICK"; //$NON-NLS-1$
+
+		/**
+		 * The value used to indicate a double click.
+		 */
+		public static final String DOUBLE_CLICK = "DOUBLE_CLICK"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFList() {
 			// prevent instantiation
 		}
 	}

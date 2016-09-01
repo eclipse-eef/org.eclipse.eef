@@ -11,24 +11,24 @@ package org.eclipse.eef.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.eef.EEFRadioStyle;
+import org.eclipse.eef.EEFListStyle;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFRadioStyle} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFListStyle} object. <!-- begin-user-doc --> <!--
  * end-user-doc -->
  * 
  * @generated
  */
-public class EEFRadioStyleItemProvider extends EEFWidgetStyleItemProvider {
+public class EEFListStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public EEFRadioStyleItemProvider(AdapterFactory adapterFactory) {
+	public EEFListStyleItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,13 +47,13 @@ public class EEFRadioStyleItemProvider extends EEFWidgetStyleItemProvider {
 	}
 
 	/**
-	 * This returns EEFRadioStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns EEFListStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFRadioStyle")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFListStyle")); //$NON-NLS-1$
 	}
 
 	/**
@@ -73,16 +73,16 @@ public class EEFRadioStyleItemProvider extends EEFWidgetStyleItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EEFRadioStyle) object).getLabelFontNameExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFRadioStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFRadioStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EEFListStyle) object).getLabelFontNameExpression();
+		return label == null || label.length() == 0 ? getString("_UI_EEFListStyle_type") : //$NON-NLS-1$
+			getString("_UI_EEFListStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

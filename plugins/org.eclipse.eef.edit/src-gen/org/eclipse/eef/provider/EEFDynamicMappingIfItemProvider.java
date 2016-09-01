@@ -200,6 +200,9 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
 				EefFactory.eINSTANCE.createEEFReferenceDescription()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
+				EefFactory.eINSTANCE.createEEFListDescription()));
 	}
 
 	/**

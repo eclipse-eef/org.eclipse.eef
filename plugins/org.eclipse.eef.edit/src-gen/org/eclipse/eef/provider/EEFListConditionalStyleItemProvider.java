@@ -11,7 +11,7 @@ package org.eclipse.eef.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.eef.EEFCustomWidgetConditionalStyle;
+import org.eclipse.eef.EEFListConditionalStyle;
 import org.eclipse.eef.EefFactory;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -21,18 +21,18 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
- *
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFListConditionalStyle} object. <!-- begin-user-doc
+ * --> <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class EEFCustomWidgetConditionalStyleItemProvider extends EEFConditionalStyleItemProvider {
+public class EEFListConditionalStyleItemProvider extends EEFConditionalStyleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public EEFCustomWidgetConditionalStyleItemProvider(AdapterFactory adapterFactory) {
+	public EEFListConditionalStyleItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,7 +62,7 @@ public class EEFCustomWidgetConditionalStyleItemProvider extends EEFConditionalS
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EefPackage.Literals.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE);
+			childrenFeatures.add(EefPackage.Literals.EEF_LIST_CONDITIONAL_STYLE__STYLE);
 		}
 		return childrenFeatures;
 	}
@@ -81,13 +81,13 @@ public class EEFCustomWidgetConditionalStyleItemProvider extends EEFConditionalS
 	}
 
 	/**
-	 * This returns EEFCustomWidgetConditionalStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns EEFListConditionalStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFCustomWidgetConditionalStyle")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFListConditionalStyle")); //$NON-NLS-1$
 	}
 
 	/**
@@ -107,24 +107,24 @@ public class EEFCustomWidgetConditionalStyleItemProvider extends EEFConditionalS
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EEFCustomWidgetConditionalStyle) object).getPreconditionExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetConditionalStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFCustomWidgetConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EEFListConditionalStyle) object).getPreconditionExpression();
+		return label == null || label.length() == 0 ? getString("_UI_EEFListConditionalStyle_type") : //$NON-NLS-1$
+			getString("_UI_EEFListConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EEFCustomWidgetConditionalStyle.class)) {
-		case EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE:
+		switch (notification.getFeatureID(EEFListConditionalStyle.class)) {
+		case EefPackage.EEF_LIST_CONDITIONAL_STYLE__STYLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -141,8 +141,8 @@ public class EEFCustomWidgetConditionalStyleItemProvider extends EEFConditionalS
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE,
-				EefFactory.eINSTANCE.createEEFCustomWidgetStyle()));
+		newChildDescriptors
+		.add(createChildParameter(EefPackage.Literals.EEF_LIST_CONDITIONAL_STYLE__STYLE, EefFactory.eINSTANCE.createEEFListStyle()));
 	}
 
 }

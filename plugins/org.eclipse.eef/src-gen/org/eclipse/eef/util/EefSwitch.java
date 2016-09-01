@@ -35,6 +35,9 @@ import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFLayoutDescription;
+import org.eclipse.eef.EEFListConditionalStyle;
+import org.eclipse.eef.EEFListDescription;
+import org.eclipse.eef.EEFListStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioConditionalStyle;
@@ -395,6 +398,20 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_LIST_DESCRIPTION: {
+			EEFListDescription eefListDescription = (EEFListDescription) theEObject;
+			T result = caseEEFListDescription(eefListDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefListDescription);
+			}
+			if (result == null) {
+				result = caseEEFControlDescription(eefListDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case EefPackage.EEF_WIDGET_STYLE: {
 			EEFWidgetStyle eefWidgetStyle = (EEFWidgetStyle) theEObject;
 			T result = caseEEFWidgetStyle(eefWidgetStyle);
@@ -496,6 +513,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFReferenceStyle(eefReferenceStyle);
 			if (result == null) {
 				result = caseEEFWidgetStyle(eefReferenceStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_LIST_STYLE: {
+			EEFListStyle eefListStyle = (EEFListStyle) theEObject;
+			T result = caseEEFListStyle(eefListStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefListStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -619,6 +647,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFReferenceConditionalStyle(eefReferenceConditionalStyle);
 			if (result == null) {
 				result = caseEEFConditionalStyle(eefReferenceConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_LIST_CONDITIONAL_STYLE: {
+			EEFListConditionalStyle eefListConditionalStyle = (EEFListConditionalStyle) theEObject;
+			T result = caseEEFListConditionalStyle(eefListConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefListConditionalStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -1034,6 +1073,21 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF List Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF List Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFListDescription(EEFListDescription object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Widget Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
@@ -1180,6 +1234,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFReferenceStyle(EEFReferenceStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF List Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF List Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFListStyle(EEFListStyle object) {
 		return null;
 	}
 
@@ -1360,6 +1429,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFReferenceConditionalStyle(EEFReferenceConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF List Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF List Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFListConditionalStyle(EEFListConditionalStyle object) {
 		return null;
 	}
 
