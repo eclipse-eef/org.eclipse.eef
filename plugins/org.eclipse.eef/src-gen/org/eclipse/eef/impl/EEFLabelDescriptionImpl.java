@@ -13,6 +13,7 @@ import java.util.Collection;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
+import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,8 +31,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getDisplayExpression <em>Display Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getActions <em>Actions</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +62,26 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	protected String valueExpression = EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getDisplayExpression() <em>Display Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getDisplayExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DISPLAY_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDisplayExpression() <em>Display Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getDisplayExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String displayExpression = EEFLabelDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
@@ -77,6 +100,16 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @ordered
 	 */
 	protected EList<EEFLabelConditionalStyle> conditionalStyles;
+
+	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFWidgetAction> actions;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -124,7 +157,32 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDisplayExpression() {
+		return displayExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDisplayExpression(String newDisplayExpression) {
+		String oldDisplayExpression = displayExpression;
+		displayExpression = newDisplayExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION, oldDisplayExpression,
+					displayExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -221,7 +279,20 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<EEFWidgetAction> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this, EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS);
+		}
+		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,6 +302,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return basicSetStyle(null, msgs);
 		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
 			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS:
+			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -245,6 +318,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		switch (featureID) {
 		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
 			return getValueExpression();
+		case EefPackage.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION:
+			return getDisplayExpression();
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			if (resolve) {
 				return getStyle();
@@ -252,6 +327,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			return basicGetStyle();
 		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
 			return getConditionalStyles();
+		case EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS:
+			return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,12 +345,19 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
 			setValueExpression((String) newValue);
 			return;
+		case EefPackage.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION:
+			setDisplayExpression((String) newValue);
+			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			setStyle((EEFLabelStyle) newValue);
 			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
 			getConditionalStyles().clear();
 			getConditionalStyles().addAll((Collection<? extends EEFLabelConditionalStyle>) newValue);
+			return;
+		case EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			getActions().addAll((Collection<? extends EEFWidgetAction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -290,11 +374,17 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
 			setValueExpression(EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION:
+			setDisplayExpression(EEFLabelDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			setStyle((EEFLabelStyle) null);
 			return;
 		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
 			getConditionalStyles().clear();
+			return;
+		case EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS:
+			getActions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -310,11 +400,16 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		switch (featureID) {
 		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-					: !EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			: !EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+		case EefPackage.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION:
+			return EEFLabelDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT == null ? displayExpression != null
+			: !EEFLabelDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
 			return conditionalStyles != null && !conditionalStyles.isEmpty();
+		case EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS:
+			return actions != null && !actions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -333,6 +428,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$
 		result.append(valueExpression);
+		result.append(", displayExpression: "); //$NON-NLS-1$
+		result.append(displayExpression);
 		result.append(')');
 		return result.toString();
 	}

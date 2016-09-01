@@ -13,6 +13,7 @@ import java.util.Collection;
 import org.eclipse.eef.EEFHyperlinkConditionalStyle;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFHyperlinkStyle;
+import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,9 +31,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getDisplayExpression <em>Display Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getOnClickExpression <em>On Click Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getActions <em>Actions</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +61,26 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 	 * @ordered
 	 */
 	protected String valueExpression = EEFHyperlinkDescriptionImpl.VALUE_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDisplayExpression() <em>Display Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getDisplayExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DISPLAY_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDisplayExpression() <em>Display Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getDisplayExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String displayExpression = EEFHyperlinkDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getOnClickExpression() <em>On Click Expression</em>}' attribute. <!--
@@ -100,6 +123,16 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 	protected EList<EEFHyperlinkConditionalStyle> conditionalStyles;
 
 	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFWidgetAction> actions;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @generated
@@ -140,6 +173,31 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION, oldValueExpression,
 					valueExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getDisplayExpression() {
+		return displayExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setDisplayExpression(String newDisplayExpression) {
+		String oldDisplayExpression = displayExpression;
+		displayExpression = newDisplayExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION, oldDisplayExpression,
+					displayExpression));
 		}
 	}
 
@@ -272,12 +330,28 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 	 * @generated
 	 */
 	@Override
+	public EList<EEFWidgetAction> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this,
+					EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
+		}
+		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE:
 			return basicSetStyle(null, msgs);
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:
 			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS:
+			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -292,6 +366,8 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		switch (featureID) {
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION:
 			return getValueExpression();
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION:
+			return getDisplayExpression();
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION:
 			return getOnClickExpression();
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE:
@@ -301,6 +377,8 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 			return basicGetStyle();
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:
 			return getConditionalStyles();
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS:
+			return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,6 +395,9 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION:
 			setValueExpression((String) newValue);
 			return;
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION:
+			setDisplayExpression((String) newValue);
+			return;
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION:
 			setOnClickExpression((String) newValue);
 			return;
@@ -326,6 +407,10 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:
 			getConditionalStyles().clear();
 			getConditionalStyles().addAll((Collection<? extends EEFHyperlinkConditionalStyle>) newValue);
+			return;
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			getActions().addAll((Collection<? extends EEFWidgetAction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,6 +427,9 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION:
 			setValueExpression(EEFHyperlinkDescriptionImpl.VALUE_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION:
+			setDisplayExpression(EEFHyperlinkDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION:
 			setOnClickExpression(EEFHyperlinkDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT);
 			return;
@@ -350,6 +438,9 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 			return;
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:
 			getConditionalStyles().clear();
+			return;
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS:
+			getActions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -366,6 +457,9 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFHyperlinkDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
 			: !EEFHyperlinkDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION:
+			return EEFHyperlinkDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT == null ? displayExpression != null
+			: !EEFHyperlinkDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION:
 			return EEFHyperlinkDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT == null ? onClickExpression != null
 			: !EEFHyperlinkDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT.equals(onClickExpression);
@@ -373,6 +467,8 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 			return style != null;
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:
 			return conditionalStyles != null && !conditionalStyles.isEmpty();
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS:
+			return actions != null && !actions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -391,6 +487,8 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$
 		result.append(valueExpression);
+		result.append(", displayExpression: "); //$NON-NLS-1$
+		result.append(displayExpression);
 		result.append(", onClickExpression: "); //$NON-NLS-1$
 		result.append(onClickExpression);
 		result.append(')');

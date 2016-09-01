@@ -331,6 +331,11 @@
         <details key="documentation" value="The body of the label containing the meaningful content"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This function will return the label to display"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFLabelStyle"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -343,6 +348,8 @@
         <details key="documentation" value="Defines the label style associated to a precondition"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//EEFWidgetAction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFButtonDescription" eSuperTypes="#//EEFWidgetDescription">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -490,6 +497,11 @@
         <details key="documentation" value="Indicates how to display the input value."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This function will return the label to display"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="onClickExpression" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Defines the behavior executed when the end-user clicks on the hyperlink."/>
@@ -507,6 +519,8 @@
         <details key="documentation" value="Defines the hyperlink style associated to a precondition"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//EEFWidgetAction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFDynamicMappingFor" eSuperTypes="#//EEFControlDescription">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iterator" lowerBound="1"
