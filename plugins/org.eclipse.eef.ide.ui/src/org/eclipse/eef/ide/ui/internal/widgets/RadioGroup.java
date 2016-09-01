@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -137,7 +138,14 @@ public class RadioGroup extends Composite {
 	 *            The selection listener
 	 */
 	public void addSelectionListener(SelectionListener listener) {
-		selectionListener = listener;
+		this.selectionListener = listener;
+
+		for (Button button : buttons.values()) {
+			Listener[] listeners = button.getListeners(SWT.Selection);
+			if (!Arrays.asList(listeners).contains(listener)) {
+				button.addSelectionListener(this.selectionListener);
+			}
+		}
 	}
 
 	/**
