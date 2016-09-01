@@ -940,13 +940,22 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LABEL_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+	int EEF_LABEL_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -955,7 +964,16 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+	int EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LABEL_DESCRIPTION__ACTIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>EEF Label Description</em>' class. <!-- begin-user-doc --> <!--
@@ -964,7 +982,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl <em>EEF Button Description</em>}
@@ -1462,13 +1480,22 @@ public interface EefPackage extends EPackage {
 	int EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>On Click Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
+	int EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1477,16 +1504,25 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_HYPERLINK_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+	int EEF_HYPERLINK_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_HYPERLINK_DESCRIPTION__ACTIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>EEF Hyperlink Description</em>' class. <!-- begin-user-doc --> <!--
@@ -1495,7 +1531,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_HYPERLINK_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+	int EEF_HYPERLINK_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
@@ -3862,6 +3898,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFLabelDescription_ValueExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression
+	 * <em>Display Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Display Expression</em>'.
+	 * @see org.eclipse.eef.EEFLabelDescription#getDisplayExpression()
+	 * @see #getEEFLabelDescription()
+	 * @generated
+	 */
+	EAttribute getEEFLabelDescription_DisplayExpression();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFLabelDescription#getStyle
 	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -3883,6 +3930,18 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFLabelDescription_ConditionalStyles();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFLabelDescription#getActions <em>Actions</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Actions</em>'.
+	 * @see org.eclipse.eef.EEFLabelDescription#getActions()
+	 * @see #getEEFLabelDescription()
+	 * @generated
+	 */
+	EReference getEEFLabelDescription_Actions();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFButtonDescription <em>EEF Button Description</em>}'.
@@ -4183,9 +4242,20 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFHyperlinkDescription_ValueExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression
+	 * <em>Display Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Display Expression</em>'.
+	 * @see org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression()
+	 * @see #getEEFHyperlinkDescription()
+	 * @generated
+	 */
+	EAttribute getEEFHyperlinkDescription_DisplayExpression();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression
 	 * <em>On Click Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>On Click Expression</em>'.
 	 * @see org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression()
 	 * @see #getEEFHyperlinkDescription()
@@ -4196,7 +4266,7 @@ public interface EefPackage extends EPackage {
 	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFHyperlinkDescription#getStyle
 	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Style</em>'.
 	 * @see org.eclipse.eef.EEFHyperlinkDescription#getStyle()
 	 * @see #getEEFHyperlinkDescription()
@@ -4215,6 +4285,18 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEEFHyperlinkDescription_ConditionalStyles();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.eclipse.eef.EEFHyperlinkDescription#getActions <em>Actions</em>}'. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '<em>Actions</em>'.
+	 * @see org.eclipse.eef.EEFHyperlinkDescription#getActions()
+	 * @see #getEEFHyperlinkDescription()
+	 * @generated
+	 */
+	EReference getEEFHyperlinkDescription_Actions();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFDynamicMappingFor <em>EEF Dynamic Mapping For</em>}
@@ -5731,6 +5813,14 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION = EefPackage.eINSTANCE.getEEFLabelDescription_ValueExpression();
 
 		/**
+		 * The meta object literal for the '<em><b>Display Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFLabelDescription_DisplayExpression();
+
+		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
 		 * --> <!-- end-user-doc -->
 		 * 
@@ -5745,6 +5835,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFLabelDescription_ConditionalStyles();
+
+		/**
+		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference EEF_LABEL_DESCRIPTION__ACTIONS = EefPackage.eINSTANCE.getEEFLabelDescription_Actions();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl
@@ -5767,7 +5865,7 @@ public interface EefPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Push Expression</b></em>' attribute feature. <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION = EefPackage.eINSTANCE.getEEFButtonDescription_PushExpression();
@@ -5775,7 +5873,7 @@ public interface EefPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
 		 * --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference EEF_BUTTON_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFButtonDescription_Style();
@@ -5973,6 +6071,14 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION = EefPackage.eINSTANCE.getEEFHyperlinkDescription_ValueExpression();
 
 		/**
+		 * The meta object literal for the '<em><b>Display Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFHyperlinkDescription_DisplayExpression();
+
+		/**
 		 * The meta object literal for the '<em><b>On Click Expression</b></em>' attribute feature. <!-- begin-user-doc
 		 * --> <!-- end-user-doc -->
 		 * 
@@ -5995,6 +6101,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFHyperlinkDescription_ConditionalStyles();
+
+		/**
+		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EReference EEF_HYPERLINK_DESCRIPTION__ACTIONS = EefPackage.eINSTANCE.getEEFHyperlinkDescription_Actions();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl

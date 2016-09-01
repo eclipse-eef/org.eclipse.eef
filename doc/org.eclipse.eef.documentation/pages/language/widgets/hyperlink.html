@@ -13,7 +13,8 @@
 			<a href="text.html">text</a> widgets. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
 		</p>
 		<ul>
-			<li>valueExpression: This expression is used in order to compute the text of the hyperlink. This expression must return a string.</li>
+			<li>valueExpression: This expression is used in order to compute the text of the hyperlink.</li>
+			<li>displayExpression: This expression will have access to the result of the valueExpression thanks to a variable named value and it should return a string. If this expression is blank, a call to java.lang.Object#toString() will be performed on the result of the valueExpression instead.</li>
 			<li>onClickExpression: This expression will be executed once the end user will click on the hyperlink. This expression does not have to return anything.</li>
 			<li>style: The style of the hyperlink widget.</li>
 			<li>conditionalStyles: All the conditional styles of the hyperlink widget.</li>
@@ -23,6 +24,9 @@
 		<ul>
 			<li>valueExpression: 
 				<code>aql:'Click'</code>
+			</li>
+			<li>displayExpression: 
+				<code>aql:value</code>
 			</li>
 			<li>onClickExpression: 
 				<code>aql:self.doSomething()</code>

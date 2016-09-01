@@ -12,8 +12,12 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import com.google.common.base.Objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFHyperlinkStyle;
+import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -32,7 +36,10 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.MouseListener;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
@@ -52,6 +59,16 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	 * The hyperlink.
 	 */
 	private StyledText hyperlink;
+
+	/**
+	 * The widget factory.
+	 */
+	private EEFWidgetFactory widgetFactory;
+
+	/**
+	 * The action buttons.
+	 */
+	private List<ActionButton> actionButtons = new ArrayList<ActionButton>();
 
 	/**
 	 * The controller.
@@ -89,18 +106,60 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
-		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
+		this.widgetFactory = formContainer.getWidgetFactory();
 
+		// this is the parent composite
+		Composite hyperlinkComposite = this.widgetFactory.createFlatFormComposite(parent);
+		GridLayout layout = new GridLayout(2, false);
+		// Remove the 5px left margin only
+		layout.marginWidth = 0;
+		layout.marginRight = 5;
+		hyperlinkComposite.setLayout(layout);
+
+		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		hyperlinkComposite.setLayoutData(gridData);
+
+		this.createHyperlink(hyperlinkComposite);
+		this.createWidgetActionButtons(hyperlinkComposite);
+
+		this.controller = new EEFControllersFactory().createHyperlinkController(this.description, this.variableManager, this.interpreter,
+				this.contextAdapter);
+	}
+
+	/**
+	 * Create the hyperlink widget.
+	 *
+	 * @param parent
+	 *            The parent composite
+	 */
+	private void createHyperlink(Composite parent) {
 		this.hyperlink = widgetFactory.createStyledText(parent, SWT.READ_ONLY);
 		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		this.hyperlink.setLayoutData(gridData);
 		this.hyperlink.setEditable(false);
-		this.hyperlink.setEnabled(true);
-		widgetFactory.paintBordersFor(parent);
+	}
 
-		this.controller = new EEFControllersFactory().createHyperlinkController(this.description, this.variableManager, this.interpreter,
-				this.contextAdapter);
+	/**
+	 * Creates widget action buttons.
+	 *
+	 * @param parent
+	 *            The parent composite
+	 */
+	private void createWidgetActionButtons(Composite parent) {
+		Composite buttons = this.widgetFactory.createFlatFormComposite(parent);
+
+		GridData gridData = new GridData();
+		gridData.grabExcessHorizontalSpace = false;
+		buttons.setLayoutData(gridData);
+
+		buttons.setLayout(new GridLayout(this.description.getActions().size(), true));
+
+		// Buttons are visible only if an action is defined
+		for (EEFWidgetAction action : this.description.getActions()) {
+			ActionButton actionButton = new ActionButton(action, buttons, this.widgetFactory, this.interpreter, this.variableManager);
+			actionButtons.add(actionButton);
+		}
 	}
 
 	/**
@@ -160,8 +219,18 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 					}
 				}
 			}
-
 		});
+
+		for (final ActionButton actionButton : actionButtons) {
+			SelectionAdapter selectionListener = new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					controller.action(actionButton.getAction());
+				}
+			};
+
+			actionButton.addSelectionListener(selectionListener);
+		}
 	}
 
 	/**
@@ -218,7 +287,13 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		if (!hyperlink.isDisposed()) {
 			this.hyperlink.removeMouseListener(this.hyperlinkListener);
 		}
+
+		for (ActionButton actionButton : this.actionButtons) {
+			actionButton.removeSelectionListener();
+		}
+
 		this.controller.removeNewValueConsumer();
+		this.actionButtons.clear();
 	}
 
 	/**
@@ -230,5 +305,9 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	public void refresh() {
 		super.refresh();
 		this.hyperlink.setEnabled(isEnabled());
+
+		for (ActionButton actionButton : this.actionButtons) {
+			actionButton.setEnabled(this.isEnabled());
+		}
 	}
 }

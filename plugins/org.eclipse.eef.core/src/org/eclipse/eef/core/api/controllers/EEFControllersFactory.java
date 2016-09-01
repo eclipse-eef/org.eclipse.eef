@@ -83,10 +83,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param contextAdapter
+	 *            The context adapter
 	 * @return A label controller
 	 */
-	public IEEFLabelController createLabelController(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter) {
-		return new EEFLabelController(description, variableManager, interpreter);
+	public IEEFLabelController createLabelController(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter contextAdapter) {
+		return new EEFLabelController(description, variableManager, interpreter, contextAdapter);
 	}
 
 	/**

@@ -23,16 +23,24 @@
 		<p>This document contains the release notes for recent major releases of EEF.</p>
 		<h3 id="eef1.7.0">Changes in EEF 1.7.0</h3>
 		<h4 id="UserVisibleChanges">User-Visible Changes</h4>
+		<ul>
+			<li><span class="label label-success">Added</span> Labels and hyperlinks can now have buttons on their right side</li>
+		</ul>
 		<h4 id="SpecifierVisibleChanges">Specifier-Visible Changes</h4>
 		<ul>
 			<li><span class="label label-success">Added</span> A brand new widget outside of the default library is now available to edit references using an easier approach. Only the name of the reference to edit is necessary and the rest will be computed by the EEF runtime.</li>
+			<li><span class="label label-success">Added</span> Widget actions are now available on labels and hyperlinks.</li>
+			<li><span class="label label-success">Added</span> Labels and hyperlinks now have a displayExpression. If unused, the result of the valueExpression will be converted to a string using the 
+				<code>java.lang.Object#toString()</code> operation.
+			</li>
 		</ul>
 		<h4 id="DeveloperVisibleChanges">Developer-Visible Changes</h4>
 		<ul>
 			<li><span class="label label-info">Modified</span> The interface 
 				<code>org.eclipse.eef.core.api.EditingContextAdapter</code> has now a new method 
-				<code>getEditingDomain()</code> which is used to return an EditingDomain for the EEF runtime. 
+				<code>getEditingDomain()</code> which is used to return an EditingDomain for the EEF runtime.
 			</li>
+			<li><span class="label label-info">Modified</span> The constructor of the EEFLabelController now requires an EditingContextAdapter to run the expression of the widget actions. </li>
 		</ul>
 		<h3 id="eef1.6.0">Changes in EEF 1.6.0</h3>
 		<h4 id="UserVisibleChanges2">User-Visible Changes</h4>

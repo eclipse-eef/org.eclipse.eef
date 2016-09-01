@@ -12,7 +12,8 @@
 			<a href="text.html">text</a> widget. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
 		</p>
 		<ul>
-			<li>valueExpression: The value expression is used to compute the body of the label widget. This expression must return a string.</li>
+			<li>valueExpression: The value expression is used to compute the body of the label widget.</li>
+			<li>displayExpression: This expression will have access to the result of the valueExpression thanks to a variable named value and it should return a string. If this expression is blank, a call to java.lang.Object#toString() will be performed on the result of the valueExpression instead.</li>
 			<li>style: The style of the label widget.</li>
 			<li>conditionalStyle: All the conditional styles of the label widget.</li>
 		</ul>
@@ -24,6 +25,9 @@
 			</li>
 			<li>valueExpression: 
 				<code>aql:self.documentation</code>
+			</li>
+			<li>displayExpression: 
+				<code>aql:value</code>
 			</li>
 		</ul>
 		<p>EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations.</p>
