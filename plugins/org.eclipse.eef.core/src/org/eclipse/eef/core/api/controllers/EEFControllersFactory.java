@@ -15,6 +15,7 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
+import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFReferenceDescription;
@@ -26,6 +27,7 @@ import org.eclipse.eef.core.internal.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.internal.controllers.EEFGroupController;
 import org.eclipse.eef.core.internal.controllers.EEFHyperlinkController;
 import org.eclipse.eef.core.internal.controllers.EEFLabelController;
+import org.eclipse.eef.core.internal.controllers.EEFListController;
 import org.eclipse.eef.core.internal.controllers.EEFRadioController;
 import org.eclipse.eef.core.internal.controllers.EEFReferenceController;
 import org.eclipse.eef.core.internal.controllers.EEFSectionController;
@@ -196,6 +198,24 @@ public class EEFControllersFactory {
 	public IEEFReferenceController createReferenceController(EEFReferenceDescription description, IVariableManager variableManager,
 			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
 		return new EEFReferenceController(variableManager, interpreter, description, contextAdapter);
+	}
+
+	/**
+	 * Creates a list controller.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param contextAdapter
+	 *            The editing context adapter
+	 * @return The list controller.
+	 */
+	public IEEFListController createListController(EEFListDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter contextAdapter) {
+		return new EEFListController(variableManager, interpreter, description, contextAdapter);
 	}
 
 	/**

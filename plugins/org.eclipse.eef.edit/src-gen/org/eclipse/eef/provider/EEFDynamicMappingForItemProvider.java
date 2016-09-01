@@ -69,7 +69,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	/**
 	 * This adds a property descriptor for the Iterable Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIterableExpressionPropertyDescriptor(Object object) {

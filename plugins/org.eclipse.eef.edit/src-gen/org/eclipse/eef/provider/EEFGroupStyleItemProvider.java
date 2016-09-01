@@ -155,7 +155,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This adds a property descriptor for the Expanded By Default feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addExpandedByDefaultPropertyDescriptor(Object object) {
