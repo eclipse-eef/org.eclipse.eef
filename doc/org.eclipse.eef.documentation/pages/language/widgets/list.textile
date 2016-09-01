@@ -1,0 +1,20 @@
+h2. List
+
+h3(#description). Description
+
+The list in EEF lets you display and edit a list of elements easily. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
+
+* valueExpression: This expression will be used to compute all the valued will be displayed in the table. This expression must return an object.
+* displayExpression: This expression is used to compute each label of the table. This expression can use the result of the valueExpression thanks to the variable @value@. This expression must return a string.
+* onClickExpression: This expression will be executed when the user will click on the value. The user will be able to double click on a value. To determine whether the click on a single click or a double click, the kind of the click realized is available as a String in the variable @onClickEventKind@ which can have the value @SINGLE_CLICK@ or @DOUBLE_CLICK@. This expression does not have to return anything.
+* actions: The actions are a list of buttons which will be available next to the widget to allow the user to trigger some actions for the list. An action has a labelExpression which must return a string used as the label of the button created for the action. An action also has an action expression used to execute some behavior when the end user will click on the button. The action expression does not have to return anything. The action expression will have access to the selected elements in a variable named @selection@.
+* style: The style of the list widget.
+* conditionalStyles: All the conditional styles of the list widget.
+
+h3(#displayereference). Display an EReference
+
+In order to display in the user interface a list widget with the value of a multi-valued EReference, you can  create a list widget with the following properties:
+
+* labelExpression: @aql:'Children'@
+* valueExpression: @aql:self.children@
+* displayExpression: @aql:value.name@

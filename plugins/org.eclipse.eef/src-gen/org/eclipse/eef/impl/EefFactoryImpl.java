@@ -32,6 +32,9 @@ import org.eclipse.eef.EEFHyperlinkStyle;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
+import org.eclipse.eef.EEFListConditionalStyle;
+import org.eclipse.eef.EEFListDescription;
+import org.eclipse.eef.EEFListStyle;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioConditionalStyle;
@@ -148,6 +151,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomExpression();
 		case EefPackage.EEF_REFERENCE_DESCRIPTION:
 			return createEEFReferenceDescription();
+		case EefPackage.EEF_LIST_DESCRIPTION:
+			return createEEFListDescription();
 		case EefPackage.EEF_TEXT_STYLE:
 			return createEEFTextStyle();
 		case EefPackage.EEF_LABEL_STYLE:
@@ -166,6 +171,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetStyle();
 		case EefPackage.EEF_REFERENCE_STYLE:
 			return createEEFReferenceStyle();
+		case EefPackage.EEF_LIST_STYLE:
+			return createEEFListStyle();
 		case EefPackage.EEF_GROUP_STYLE:
 			return createEEFGroupStyle();
 		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE:
@@ -188,6 +195,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFWidgetAction();
 		case EefPackage.EEF_REFERENCE_CONDITIONAL_STYLE:
 			return createEEFReferenceConditionalStyle();
+		case EefPackage.EEF_LIST_CONDITIONAL_STYLE:
+			return createEEFListConditionalStyle();
 		case EefPackage.EEF_GROUP_CONDITIONAL_STYLE:
 			return createEEFGroupConditionalStyle();
 		default:
@@ -485,6 +494,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public EEFListDescription createEEFListDescription() {
+		EEFListDescriptionImpl eefListDescription = new EEFListDescriptionImpl();
+		return eefListDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFTextStyle createEEFTextStyle() {
 		EEFTextStyleImpl eefTextStyle = new EEFTextStyleImpl();
 		return eefTextStyle;
@@ -576,6 +596,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFReferenceStyle createEEFReferenceStyle() {
 		EEFReferenceStyleImpl eefReferenceStyle = new EEFReferenceStyleImpl();
 		return eefReferenceStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFListStyle createEEFListStyle() {
+		EEFListStyleImpl eefListStyle = new EEFListStyleImpl();
+		return eefListStyle;
 	}
 
 	/**
@@ -697,6 +728,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFReferenceConditionalStyle createEEFReferenceConditionalStyle() {
 		EEFReferenceConditionalStyleImpl eefReferenceConditionalStyle = new EEFReferenceConditionalStyleImpl();
 		return eefReferenceConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFListConditionalStyle createEEFListConditionalStyle() {
+		EEFListConditionalStyleImpl eefListConditionalStyle = new EEFListConditionalStyleImpl();
+		return eefListConditionalStyle;
 	}
 
 	/**

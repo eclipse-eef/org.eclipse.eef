@@ -54,7 +54,7 @@ public interface EEFContainerDescription extends EEFControlDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Layout</em>' containment reference.
 	 * @see #getLayout()

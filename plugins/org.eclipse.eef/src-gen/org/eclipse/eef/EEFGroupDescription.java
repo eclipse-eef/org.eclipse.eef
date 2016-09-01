@@ -40,7 +40,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> Used to identify a specific Group in a Page. <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Identifier()
@@ -52,7 +52,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -76,7 +76,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
@@ -87,7 +87,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> The class of the EObject used as "self" in the page <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Domain Class</em>' attribute.
 	 * @see #setDomainClass(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_DomainClass()
@@ -99,7 +99,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Domain Class</em>' attribute.
 	 * @see #getDomainClass()
@@ -123,7 +123,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression
 	 * <em>Semantic Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #getSemanticCandidateExpression()
@@ -146,7 +146,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression
 	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Precondition Expression</em>' attribute.
 	 * @see #getPreconditionExpression()
@@ -207,7 +207,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
