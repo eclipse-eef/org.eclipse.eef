@@ -61,7 +61,7 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 		// return this.eefPage.getDescription().getIdentifier();
 		// }
 		EObject self = (EObject) this.eefPage.getVariableManager().getVariables().get("self"); //$NON-NLS-1$
-		return this.eefPage.getDescription().getIdentifier() + EcoreUtil.getURI(self);
+		return this.eefPage.getDescription().getIdentifier() + EcoreUtil.getURI(self) + System.identityHashCode(self);
 	}
 
 	/**
