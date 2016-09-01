@@ -49,6 +49,7 @@ public class EEFHyperlinkDescriptionItemProvider extends EEFWidgetDescriptionIte
 			super.getPropertyDescriptors(object);
 
 			addValueExpressionPropertyDescriptor(object);
+			addDisplayExpressionPropertyDescriptor(object);
 			addOnClickExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -68,6 +69,23 @@ public class EEFHyperlinkDescriptionItemProvider extends EEFWidgetDescriptionIte
 				getString(
 						"_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkDescription_valueExpression_feature", "_UI_EEFHyperlinkDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Display Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addDisplayExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+		.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_EEFHyperlinkDescription_displayExpression_feature"), //$NON-NLS-1$
+				getString(
+						"_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkDescription_displayExpression_feature", "_UI_EEFHyperlinkDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -103,6 +121,7 @@ public class EEFHyperlinkDescriptionItemProvider extends EEFWidgetDescriptionIte
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__STYLE);
 			childrenFeatures.add(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES);
+			childrenFeatures.add(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -165,11 +184,13 @@ public class EEFHyperlinkDescriptionItemProvider extends EEFWidgetDescriptionIte
 
 		switch (notification.getFeatureID(EEFHyperlinkDescription.class)) {
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION:
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION:
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE:
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:
+		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -191,6 +212,9 @@ public class EEFHyperlinkDescriptionItemProvider extends EEFWidgetDescriptionIte
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES,
 				EefFactory.eINSTANCE.createEEFHyperlinkConditionalStyle()));
+
+		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__ACTIONS,
+				EefFactory.eINSTANCE.createEEFWidgetAction()));
 	}
 
 }

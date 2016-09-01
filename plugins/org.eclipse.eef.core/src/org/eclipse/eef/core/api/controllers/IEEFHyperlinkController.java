@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.eef.EEFWidgetAction;
+
 /**
  * The EEFHyperlinkController is responsible of supporting all the interactions with the widgets created for an
  * EEFHyperlinkDescription.
@@ -38,5 +40,13 @@ public interface IEEFHyperlinkController extends IEEFWidgetController {
 	 * Remove the consumer of the new value of the hyperlink.
 	 */
 	void removeNewValueConsumer();
+
+	/**
+	 * Invoked when the user clicks on an action button.
+	 *
+	 * @param action
+	 *            Widget action
+	 */
+	void action(EEFWidgetAction action);
 
 }

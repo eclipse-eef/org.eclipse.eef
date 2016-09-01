@@ -9,14 +9,18 @@ h3(#eef1.7.0). Changes in EEF 1.7.0
 
 h4. User-Visible Changes
 
+* <span class="label label-success">Added</span> Labels and hyperlinks can now have buttons on their right side
 
 h4. Specifier-Visible Changes
 
 * <span class="label label-success">Added</span> A brand new widget outside of the default library is now available to edit references using an easier approach. Only the name of the reference to edit is necessary and the rest will be computed by the EEF runtime.
+* <span class="label label-success">Added</span> Widget actions are now available on labels and hyperlinks.
+* <span class="label label-success">Added</span> Labels and hyperlinks now have a displayExpression. If unused, the result of the valueExpression will be converted to a string using the @java.lang.Object#toString()@ operation.
 
 h4. Developer-Visible Changes
 
-* <span class="label label-info">Modified</span> The interface @org.eclipse.eef.core.api.EditingContextAdapter@ has now a new method @getEditingDomain()@ which is used to return an EditingDomain for the EEF runtime. 
+* <span class="label label-info">Modified</span> The interface @org.eclipse.eef.core.api.EditingContextAdapter@ has now a new method @getEditingDomain()@ which is used to return an EditingDomain for the EEF runtime.
+* <span class="label label-info">Modified</span> The constructor of the EEFLabelController now requires an EditingContextAdapter to run the expression of the widget actions. 
 
 
 h3(#eef1.6.0). Changes in EEF 1.6.0
