@@ -117,6 +117,16 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	private IWorkbenchWindow cachedWorkbenchWindow;
 
 	/**
+	 * The widget listener used to resize the scrolled composite.
+	 */
+	private ControlAdapter scrolledCompositeListener;
+
+	/**
+	 * The listener used to forward tab selection changes.
+	 */
+	private IEEFTabDescriptorChangedListener viewerSelectionListener;
+
+	/**
 	 * The part activation listener used to manage a part of the lifecycle of the property sheet page.
 	 */
 	private IPartListener partActivationListener;
@@ -245,19 +255,21 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		this.widgetFactory.paintBordersFor(form);
 
 		this.tabbedPropertyViewer = new EEFTabbedPropertyViewer(this.tabbedPropertyComposite.getTabbedPropertyList(), this.registry);
-		this.tabbedPropertyViewer.addSelectionListener(new IEEFTabDescriptorChangedListener() {
+		this.viewerSelectionListener = new IEEFTabDescriptorChangedListener() {
 			@Override
 			public void selectionChanged(IEEFTabDescriptor descriptor) {
 				EEFTabbedPropertySheetPage.this.processSelectionChanged(descriptor);
 			}
-		});
+		};
+		this.tabbedPropertyViewer.addSelectionListener(viewerSelectionListener);
 
-		this.tabbedPropertyComposite.getScrolledComposite().addControlListener(new ControlAdapter() {
+		this.scrolledCompositeListener = new ControlAdapter() {
 			@Override
 			public void controlResized(ControlEvent e) {
 				EEFTabbedPropertySheetPage.this.resizeScrolledComposite();
 			}
-		});
+		};
+		this.tabbedPropertyComposite.getScrolledComposite().addControlListener(scrolledCompositeListener);
 
 		this.partActivationListener = new EEFPartListenerAdapter() {
 			@Override
@@ -459,8 +471,6 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	 * @param part
 	 *            the new activated part.
 	 */
-	// Used to keep the compatibility with luna
-	@SuppressWarnings("cast")
 	private void handlePartActivated(IWorkbenchPart part) {
 		EEFTabbedPropertyViewPlugin.getPlugin().debug("EEFTabbedPropertySheetPage#partActivated(...)"); //$NON-NLS-1$
 
@@ -479,7 +489,9 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			/*
 			 * Is the part is a IContributedContentsView for the contributor, for example, outline view.
 			 */
-			view = (IContributedContentsView) part.getAdapter(IContributedContentsView.class);
+			// Used to keep the compatibility with luna
+			Object object = part.getAdapter(IContributedContentsView.class);
+			view = (IContributedContentsView) object;
 		}
 
 		if (view == null || (view.getContributingPart() != null && !view.getContributingPart().equals(contributor))) {
@@ -732,6 +744,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	public void dispose() {
 		this.disposeContributor();
 		this.widgetFactory.dispose();
+		this.cachedWorkbenchWindow.getPartService().removePartListener(this.partActivationListener);
 	}
 
 	/**
