@@ -38,12 +38,16 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Cursor;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -87,6 +91,11 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 * The listener on the combo.
 	 */
 	private SelectionListener selectionListener;
+
+	/**
+	 * The mouse listener on the combo.
+	 */
+	private MouseListener mouseListener;
 
 	/**
 	 * The constructor.
@@ -190,6 +199,27 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		};
 		this.combo.addSelectionListener(this.selectionListener);
 
+		this.mouseListener = new MouseListener() {
+
+			@Override
+			public void mouseDoubleClick(MouseEvent e) {
+				// Nothing to do
+			}
+
+			@Override
+			public void mouseDown(MouseEvent e) {
+				// Delay the computation of the candidates until the user click on the combo
+				controller.computeCandidates();
+			}
+
+			@Override
+			public void mouseUp(MouseEvent e) {
+				// Nothing to do
+			}
+
+		};
+		this.combo.addMouseListener(this.mouseListener);
+
 		// Set combo value
 		this.controller.onNewValue(new IConsumer<Object>() {
 			@Override
@@ -201,7 +231,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 					} else {
 						selection = null;
 					}
-					comboViewer.setSelection(selection);
+					comboViewer.setSelection(selection, true);
 					if (!combo.isEnabled()) {
 						combo.setEnabled(true);
 					}
@@ -212,7 +242,8 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		// Set combo items
 		this.controller.onNewCandidates(new IConsumer<List<Object>>() {
 			@Override
-			public void apply(List<Object> value) {
+			public void apply(final List<Object> value) {
+				ISelection selection = comboViewer.getSelection();
 				if (!combo.isDisposed()) {
 					if (value != null) {
 						Object[] candidates = value.toArray();
@@ -225,12 +256,16 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 					} else {
 						comboViewer.setInput(null);
 					}
+					comboViewer.setSelection(selection, true);
 					if (!combo.isEnabled()) {
 						combo.setEnabled(true);
 					}
 				}
+
+				combo.setCursor(new Cursor(Display.getCurrent(), SWT.CURSOR_ARROW));
 			}
 		});
+
 	}
 
 	/**
@@ -244,6 +279,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 
 		if (!combo.isDisposed()) {
 			this.combo.removeSelectionListener(this.selectionListener);
+			this.combo.removeMouseListener(this.mouseListener);
 		}
 		this.controller.removeNewValueConsumer();
 		this.controller.removeNewCandidatesConsumer();

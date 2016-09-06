@@ -10,6 +10,10 @@
  *******************************************************************************/
 package org.eclipse.eef.tests.internal.controllers;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.notNullValue;
+
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
@@ -21,6 +25,7 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.tests.internal.AQLInterpreter;
 import org.eclipse.eef.tests.internal.EEFDataTests;
@@ -125,6 +130,14 @@ public abstract class AbstractEEFControllerTests {
 			assertThat(label, is(expectedLabel));
 			atomicBoolean.set(true);
 		});
+		if (controller instanceof IEEFSelectController) {
+			((IEEFSelectController) controller).onNewCandidates(candidates -> {
+				// do nothing
+			});
+			((IEEFSelectController) controller).onNewValue(value -> {
+				// do nothing
+			});
+		}
 		controller.refresh();
 		assertTrue(atomicBoolean.get());
 	}
@@ -135,6 +148,14 @@ public abstract class AbstractEEFControllerTests {
 			assertThat(help, is(expectedHelp));
 			atomicBoolean.set(true);
 		});
+		if (controller instanceof IEEFSelectController) {
+			((IEEFSelectController) controller).onNewCandidates(candidates -> {
+				// do nothing
+			});
+			((IEEFSelectController) controller).onNewValue(value -> {
+				// do nothing
+			});
+		}
 		controller.refresh();
 		assertTrue(atomicBoolean.get());
 	}

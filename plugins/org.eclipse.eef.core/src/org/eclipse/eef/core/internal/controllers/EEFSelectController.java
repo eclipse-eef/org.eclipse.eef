@@ -99,6 +99,27 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	public void refresh() {
 		super.refresh();
 
+		// Evaluate the value expression
+		String valueExpression = this.description.getValueExpression();
+		Object value = this.newEval().evaluate(valueExpression);
+
+		// By default only the selected value is available in the candidates list
+		// The items list must contain at least one element else the widget is not enabled
+		List<Object> candidates = new ArrayList<Object>();
+		candidates.add(value);
+		EEFSelectController.this.newCandidatesConsumer.apply(candidates);
+
+		// Set the value
+		EEFSelectController.this.newValueConsumer.apply(value);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFSelectController#computeCandidates()
+	 */
+	@Override
+	public void computeCandidates() {
 		String candidatesExpression = this.description.getCandidatesExpression();
 		EAttribute candidatesExpressionEAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION;
 
@@ -114,9 +135,6 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 				}
 			}
 		});
-
-		String valueExpression = this.description.getValueExpression();
-		this.newEval().call(valueExpression, this.newValueConsumer);
 	}
 
 	/**
