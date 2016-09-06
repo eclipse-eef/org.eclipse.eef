@@ -41,4 +41,9 @@ public interface IEEFWidgetController extends IEEFController {
 	 * Removes the consumer of the new value of the help.
 	 */
 	void removeNewHelpConsumer();
+
+	/**
+	 * Compute the help message.
+	 */
+	void computeHelp();
 }

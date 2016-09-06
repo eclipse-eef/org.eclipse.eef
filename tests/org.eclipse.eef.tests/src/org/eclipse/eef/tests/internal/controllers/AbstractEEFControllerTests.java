@@ -135,6 +135,7 @@ public abstract class AbstractEEFControllerTests {
 			assertThat(help, is(expectedHelp));
 			atomicBoolean.set(true);
 		});
+		controller.computeHelp();
 		controller.refresh();
 		assertTrue(atomicBoolean.get());
 	}

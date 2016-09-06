@@ -124,7 +124,15 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 
 		String labelExpression = this.getDescription().getLabelExpression();
 		this.newEval().logIfInvalidType(String.class).call(labelExpression, this.newLabelConsumer);
+	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#computeHelp()
+	 */
+	@Override
+	public void computeHelp() {
 		String helpExpression = this.getDescription().getHelpExpression();
 		this.newEval().logIfInvalidType(String.class).call(helpExpression, this.newHelpConsumer);
 	}
