@@ -571,32 +571,9 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFReferenceDescription} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected EEFReferenceDescriptionItemProvider eefReferenceDescriptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFReferenceDescription}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createEEFReferenceDescriptionAdapter() {
-		if (eefReferenceDescriptionItemProvider == null) {
-			eefReferenceDescriptionItemProvider = new EEFReferenceDescriptionItemProvider(this);
-		}
-
-		return eefReferenceDescriptionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFListDescriptionItemProvider eefListDescriptionItemProvider;
@@ -800,32 +777,9 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFReferenceStyle} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected EEFReferenceStyleItemProvider eefReferenceStyleItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFReferenceStyle}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createEEFReferenceStyleAdapter() {
-		if (eefReferenceStyleItemProvider == null) {
-			eefReferenceStyleItemProvider = new EEFReferenceStyleItemProvider(this);
-		}
-
-		return eefReferenceStyleItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFListStyleItemProvider eefListStyleItemProvider;
@@ -1075,32 +1029,9 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFReferenceConditionalStyle} instances.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected EEFReferenceConditionalStyleItemProvider eefReferenceConditionalStyleItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFReferenceConditionalStyle}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createEEFReferenceConditionalStyleAdapter() {
-		if (eefReferenceConditionalStyleItemProvider == null) {
-			eefReferenceConditionalStyleItemProvider = new EEFReferenceConditionalStyleItemProvider(this);
-		}
-
-		return eefReferenceConditionalStyleItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EEFListConditionalStyleItemProvider eefListConditionalStyleItemProvider;
@@ -1335,9 +1266,6 @@ IChildCreationExtender {
 		if (eefCustomExpressionItemProvider != null) {
 			eefCustomExpressionItemProvider.dispose();
 		}
-		if (eefReferenceDescriptionItemProvider != null) {
-			eefReferenceDescriptionItemProvider.dispose();
-		}
 		if (eefListDescriptionItemProvider != null) {
 			eefListDescriptionItemProvider.dispose();
 		}
@@ -1364,9 +1292,6 @@ IChildCreationExtender {
 		}
 		if (eefCustomWidgetStyleItemProvider != null) {
 			eefCustomWidgetStyleItemProvider.dispose();
-		}
-		if (eefReferenceStyleItemProvider != null) {
-			eefReferenceStyleItemProvider.dispose();
 		}
 		if (eefListStyleItemProvider != null) {
 			eefListStyleItemProvider.dispose();
@@ -1400,9 +1325,6 @@ IChildCreationExtender {
 		}
 		if (eefWidgetActionItemProvider != null) {
 			eefWidgetActionItemProvider.dispose();
-		}
-		if (eefReferenceConditionalStyleItemProvider != null) {
-			eefReferenceConditionalStyleItemProvider.dispose();
 		}
 		if (eefListConditionalStyleItemProvider != null) {
 			eefListConditionalStyleItemProvider.dispose();

@@ -201,14 +201,6 @@ public interface EefFactory extends EFactory {
 	EEFCustomExpression createEEFCustomExpression();
 
 	/**
-	 * Returns a new object of class '<em>EEF Reference Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EEF Reference Description</em>'.
-	 * @generated
-	 */
-	EEFReferenceDescription createEEFReferenceDescription();
-
-	/**
 	 * Returns a new object of class '<em>EEF List Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF List Description</em>'.
@@ -279,14 +271,6 @@ public interface EefFactory extends EFactory {
 	 * @generated
 	 */
 	EEFCustomWidgetStyle createEEFCustomWidgetStyle();
-
-	/**
-	 * Returns a new object of class '<em>EEF Reference Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EEF Reference Style</em>'.
-	 * @generated
-	 */
-	EEFReferenceStyle createEEFReferenceStyle();
 
 	/**
 	 * Returns a new object of class '<em>EEF List Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -383,15 +367,6 @@ public interface EefFactory extends EFactory {
 	 * @generated
 	 */
 	EEFWidgetAction createEEFWidgetAction();
-
-	/**
-	 * Returns a new object of class '<em>EEF Reference Conditional Style</em>'. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @return a new object of class '<em>EEF Reference Conditional Style</em>'.
-	 * @generated
-	 */
-	EEFReferenceConditionalStyle createEEFReferenceConditionalStyle();
 
 	/**
 	 * Returns a new object of class '<em>EEF List Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc

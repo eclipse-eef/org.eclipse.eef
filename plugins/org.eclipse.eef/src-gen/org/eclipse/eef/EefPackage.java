@@ -1749,130 +1749,6 @@ public interface EefPackage extends EPackage {
 	int EEF_CUSTOM_EXPRESSION_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFReferenceDescriptionImpl
-	 * <em>EEF Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.eef.impl.EEFReferenceDescriptionImpl
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceDescription()
-	 * @generated
-	 */
-	int EEF_REFERENCE_DESCRIPTION = 25;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__IDENTIFIER = EefPackage.EEF_WIDGET_DESCRIPTION__IDENTIFIER;
-
-	/**
-	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__LABEL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Help Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__HELP_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Is Enabled Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__IS_ENABLED_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Property Validation Rules</b></em>' reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES;
-
-	/**
-	 * The feature id for the '<em><b>Multiple</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__MULTIPLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__VALUE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>On Click Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Actions</b></em>' containment reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__ACTIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>EEF Reference Description</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 7;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFListDescriptionImpl <em>EEF List Description</em>}'
 	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -1880,7 +1756,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFListDescription()
 	 * @generated
 	 */
-	int EEF_LIST_DESCRIPTION = 26;
+	int EEF_LIST_DESCRIPTION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1996,7 +1872,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetStyle()
 	 * @generated
 	 */
-	int EEF_WIDGET_STYLE = 27;
+	int EEF_WIDGET_STYLE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2060,7 +1936,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_STYLE = 28;
+	int EEF_TEXT_STYLE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2169,7 +2045,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_STYLE = 29;
+	int EEF_LABEL_STYLE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2278,7 +2154,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonStyle()
 	 * @generated
 	 */
-	int EEF_BUTTON_STYLE = 30;
+	int EEF_BUTTON_STYLE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2342,7 +2218,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_STYLE = 31;
+	int EEF_CHECKBOX_STYLE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2406,7 +2282,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_STYLE = 32;
+	int EEF_SELECT_STYLE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2470,7 +2346,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_STYLE = 33;
+	int EEF_RADIO_STYLE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2534,7 +2410,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFHyperlinkStyle()
 	 * @generated
 	 */
-	int EEF_HYPERLINK_STYLE = 34;
+	int EEF_HYPERLINK_STYLE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2634,7 +2510,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetStyle()
 	 * @generated
 	 */
-	int EEF_CUSTOM_WIDGET_STYLE = 35;
+	int EEF_CUSTOM_WIDGET_STYLE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2691,70 +2567,6 @@ public interface EefPackage extends EPackage {
 	int EEF_CUSTOM_WIDGET_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFReferenceStyleImpl <em>EEF Reference Style</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.eef.impl.EEFReferenceStyleImpl
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceStyle()
-	 * @generated
-	 */
-	int EEF_REFERENCE_STYLE = 36;
-
-	/**
-	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Label Foreground Color Expression</b></em>' attribute. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Label Font Name Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_STYLE__LABEL_FONT_NAME_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Label Font Size Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_STYLE__LABEL_FONT_SIZE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Label Font Style Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_STYLE__LABEL_FONT_STYLE_EXPRESSION = EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION;
-
-	/**
-	 * The number of structural features of the '<em>EEF Reference Style</em>' class. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFListStyleImpl <em>EEF List Style</em>}' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -2762,7 +2574,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFListStyle()
 	 * @generated
 	 */
-	int EEF_LIST_STYLE = 37;
+	int EEF_LIST_STYLE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Label Background Color Expression</b></em>' attribute. <!-- begin-user-doc -->
@@ -2826,7 +2638,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupStyle()
 	 * @generated
 	 */
-	int EEF_GROUP_STYLE = 38;
+	int EEF_GROUP_STYLE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Background Color Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2906,7 +2718,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CONDITIONAL_STYLE = 39;
+	int EEF_CONDITIONAL_STYLE = 37;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2934,7 +2746,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
 	 * @generated
 	 */
-	int EEF_TEXT_CONDITIONAL_STYLE = 40;
+	int EEF_TEXT_CONDITIONAL_STYLE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -2971,7 +2783,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonConditionalStyle()
 	 * @generated
 	 */
-	int EEF_BUTTON_CONDITIONAL_STYLE = 41;
+	int EEF_BUTTON_CONDITIONAL_STYLE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3008,7 +2820,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
 	 * @generated
 	 */
-	int EEF_LABEL_CONDITIONAL_STYLE = 42;
+	int EEF_LABEL_CONDITIONAL_STYLE = 40;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3045,7 +2857,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CHECKBOX_CONDITIONAL_STYLE = 43;
+	int EEF_CHECKBOX_CONDITIONAL_STYLE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3082,7 +2894,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
 	 * @generated
 	 */
-	int EEF_SELECT_CONDITIONAL_STYLE = 44;
+	int EEF_SELECT_CONDITIONAL_STYLE = 42;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3119,7 +2931,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
 	 * @generated
 	 */
-	int EEF_RADIO_CONDITIONAL_STYLE = 45;
+	int EEF_RADIO_CONDITIONAL_STYLE = 43;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3156,7 +2968,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFHyperlinkConditionalStyle()
 	 * @generated
 	 */
-	int EEF_HYPERLINK_CONDITIONAL_STYLE = 46;
+	int EEF_HYPERLINK_CONDITIONAL_STYLE = 44;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3193,7 +3005,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetConditionalStyle()
 	 * @generated
 	 */
-	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = 47;
+	int EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE = 45;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3230,7 +3042,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetAction()
 	 * @generated
 	 */
-	int EEF_WIDGET_ACTION = 48;
+	int EEF_WIDGET_ACTION = 46;
 
 	/**
 	 * The feature id for the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -3260,43 +3072,6 @@ public interface EefPackage extends EPackage {
 	int EEF_WIDGET_ACTION_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFReferenceConditionalStyleImpl
-	 * <em>EEF Reference Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @see org.eclipse.eef.impl.EEFReferenceConditionalStyleImpl
-	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceConditionalStyle()
-	 * @generated
-	 */
-	int EEF_REFERENCE_CONDITIONAL_STYLE = 49;
-
-	/**
-	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_CONDITIONAL_STYLE__STYLE = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>EEF Reference Conditional Style</em>' class. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int EEF_REFERENCE_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFListConditionalStyleImpl
 	 * <em>EEF List Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -3304,7 +3079,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFListConditionalStyle()
 	 * @generated
 	 */
-	int EEF_LIST_CONDITIONAL_STYLE = 50;
+	int EEF_LIST_CONDITIONAL_STYLE = 47;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3341,7 +3116,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupConditionalStyle()
 	 * @generated
 	 */
-	int EEF_GROUP_CONDITIONAL_STYLE = 51;
+	int EEF_GROUP_CONDITIONAL_STYLE = 48;
 
 	/**
 	 * The feature id for the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -3378,7 +3153,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
 	 * @generated
 	 */
-	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 52;
+	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 49;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
@@ -3388,7 +3163,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_FILL_LAYOUT_ORIENTATION()
 	 * @generated
 	 */
-	int EEF_FILL_LAYOUT_ORIENTATION = 53;
+	int EEF_FILL_LAYOUT_ORIENTATION = 50;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_TOGGLE_STYLE <em>EEF TOGGLE STYLE</em>}' enum. <!--
@@ -3398,7 +3173,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_TOGGLE_STYLE()
 	 * @generated
 	 */
-	int EEF_TOGGLE_STYLE = 54;
+	int EEF_TOGGLE_STYLE = 51;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.EEF_TITLE_BAR_STYLE <em>EEF TITLE BAR STYLE</em>}' enum. <!--
@@ -3408,7 +3183,7 @@ public interface EefPackage extends EPackage {
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_TITLE_BAR_STYLE()
 	 * @generated
 	 */
-	int EEF_TITLE_BAR_STYLE = 55;
+	int EEF_TITLE_BAR_STYLE = 52;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View Description</em>}'.
@@ -4669,95 +4444,6 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFCustomExpression_CustomExpression();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFReferenceDescription
-	 * <em>EEF Reference Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>EEF Reference Description</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription
-	 * @generated
-	 */
-	EClass getEEFReferenceDescription();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#isMultiple
-	 * <em>Multiple</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Multiple</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription#isMultiple()
-	 * @see #getEEFReferenceDescription()
-	 * @generated
-	 */
-	EAttribute getEEFReferenceDescription_Multiple();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#getValueExpression
-	 * <em>Value Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Value Expression</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription#getValueExpression()
-	 * @see #getEEFReferenceDescription()
-	 * @generated
-	 */
-	EAttribute getEEFReferenceDescription_ValueExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#getDisplayExpression
-	 * <em>Display Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>Display Expression</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription#getDisplayExpression()
-	 * @see #getEEFReferenceDescription()
-	 * @generated
-	 */
-	EAttribute getEEFReferenceDescription_DisplayExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFReferenceDescription#getOnClickExpression
-	 * <em>On Click Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the attribute '<em>On Click Expression</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription#getOnClickExpression()
-	 * @see #getEEFReferenceDescription()
-	 * @generated
-	 */
-	EAttribute getEEFReferenceDescription_OnClickExpression();
-
-	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFReferenceDescription#getActions <em>Actions</em>}'. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @return the meta object for the containment reference list '<em>Actions</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription#getActions()
-	 * @see #getEEFReferenceDescription()
-	 * @generated
-	 */
-	EReference getEEFReferenceDescription_Actions();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFReferenceDescription#getStyle
-	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the containment reference '<em>Style</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription#getStyle()
-	 * @see #getEEFReferenceDescription()
-	 * @generated
-	 */
-	EReference getEEFReferenceDescription_Style();
-
-	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFReferenceDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
-	 * @see org.eclipse.eef.EEFReferenceDescription#getConditionalStyles()
-	 * @see #getEEFReferenceDescription()
-	 * @generated
-	 */
-	EReference getEEFReferenceDescription_ConditionalStyles();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFListDescription <em>EEF List Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -5136,16 +4822,6 @@ public interface EefPackage extends EPackage {
 	EClass getEEFCustomWidgetStyle();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFReferenceStyle <em>EEF Reference Style</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>EEF Reference Style</em>'.
-	 * @see org.eclipse.eef.EEFReferenceStyle
-	 * @generated
-	 */
-	EClass getEEFReferenceStyle();
-
-	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFListStyle <em>EEF List Style</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -5465,28 +5141,6 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEEFWidgetAction_ActionExpression();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFReferenceConditionalStyle
-	 * <em>EEF Reference Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @return the meta object for class '<em>EEF Reference Conditional Style</em>'.
-	 * @see org.eclipse.eef.EEFReferenceConditionalStyle
-	 * @generated
-	 */
-	EClass getEEFReferenceConditionalStyle();
-
-	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.eef.EEFReferenceConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @return the meta object for the containment reference '<em>Style</em>'.
-	 * @see org.eclipse.eef.EEFReferenceConditionalStyle#getStyle()
-	 * @see #getEEFReferenceConditionalStyle()
-	 * @generated
-	 */
-	EReference getEEFReferenceConditionalStyle_Style();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFListConditionalStyle
@@ -6556,72 +6210,6 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression_CustomExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFReferenceDescriptionImpl
-		 * <em>EEF Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.eef.impl.EEFReferenceDescriptionImpl
-		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceDescription()
-		 * @generated
-		 */
-		EClass EEF_REFERENCE_DESCRIPTION = EefPackage.eINSTANCE.getEEFReferenceDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Multiple</b></em>' attribute feature. <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_REFERENCE_DESCRIPTION__MULTIPLE = EefPackage.eINSTANCE.getEEFReferenceDescription_Multiple();
-
-		/**
-		 * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature. <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_REFERENCE_DESCRIPTION__VALUE_EXPRESSION = EefPackage.eINSTANCE.getEEFReferenceDescription_ValueExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_REFERENCE_DESCRIPTION__DISPLAY_EXPRESSION = EefPackage.eINSTANCE.getEEFReferenceDescription_DisplayExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>On Click Expression</b></em>' attribute feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EAttribute EEF_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.eINSTANCE.getEEFReferenceDescription_OnClickExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EReference EEF_REFERENCE_DESCRIPTION__ACTIONS = EefPackage.eINSTANCE.getEEFReferenceDescription_Actions();
-
-		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EReference EEF_REFERENCE_DESCRIPTION__STYLE = EefPackage.eINSTANCE.getEEFReferenceDescription_Style();
-
-		/**
-		 * The meta object literal for the '<em><b>Conditional Styles</b></em>' containment reference list feature. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EReference EEF_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFReferenceDescription_ConditionalStyles();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFListDescriptionImpl
 		 * <em>EEF List Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -6922,16 +6510,6 @@ public interface EefPackage extends EPackage {
 		EClass EEF_CUSTOM_WIDGET_STYLE = EefPackage.eINSTANCE.getEEFCustomWidgetStyle();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFReferenceStyleImpl
-		 * <em>EEF Reference Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.eef.impl.EEFReferenceStyleImpl
-		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceStyle()
-		 * @generated
-		 */
-		EClass EEF_REFERENCE_STYLE = EefPackage.eINSTANCE.getEEFReferenceStyle();
-
-		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFListStyleImpl <em>EEF List Style</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
@@ -7194,24 +6772,6 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_WIDGET_ACTION__ACTION_EXPRESSION = EefPackage.eINSTANCE.getEEFWidgetAction_ActionExpression();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFReferenceConditionalStyleImpl
-		 * <em>EEF Reference Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
-		 * @see org.eclipse.eef.impl.EEFReferenceConditionalStyleImpl
-		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFReferenceConditionalStyle()
-		 * @generated
-		 */
-		EClass EEF_REFERENCE_CONDITIONAL_STYLE = EefPackage.eINSTANCE.getEEFReferenceConditionalStyle();
-
-		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
-		 * @generated
-		 */
-		EReference EEF_REFERENCE_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFReferenceConditionalStyle_Style();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFListConditionalStyleImpl

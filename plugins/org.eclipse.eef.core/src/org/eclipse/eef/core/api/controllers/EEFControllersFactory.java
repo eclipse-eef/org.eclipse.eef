@@ -18,7 +18,6 @@ import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
-import org.eclipse.eef.EEFReferenceDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
@@ -29,7 +28,6 @@ import org.eclipse.eef.core.internal.controllers.EEFHyperlinkController;
 import org.eclipse.eef.core.internal.controllers.EEFLabelController;
 import org.eclipse.eef.core.internal.controllers.EEFListController;
 import org.eclipse.eef.core.internal.controllers.EEFRadioController;
-import org.eclipse.eef.core.internal.controllers.EEFReferenceController;
 import org.eclipse.eef.core.internal.controllers.EEFSectionController;
 import org.eclipse.eef.core.internal.controllers.EEFSelectController;
 import org.eclipse.eef.core.internal.controllers.EEFTextController;
@@ -180,24 +178,6 @@ public class EEFControllersFactory {
 	 */
 	public IEEFSectionController createSectionController(EEFPageDescription description, IVariableManager variableManager, IInterpreter interpreter) {
 		return new EEFSectionController(variableManager, interpreter, description);
-	}
-
-	/**
-	 * Creates a reference controller.
-	 *
-	 * @param description
-	 *            The description
-	 * @param variableManager
-	 *            The variable manager
-	 * @param interpreter
-	 *            The interpreter
-	 * @param contextAdapter
-	 *            The editing context adapter
-	 * @return The reference controller.
-	 */
-	public IEEFReferenceController createReferenceController(EEFReferenceDescription description, IVariableManager variableManager,
-			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
-		return new EEFReferenceController(variableManager, interpreter, description, contextAdapter);
 	}
 
 	/**

@@ -27,7 +27,6 @@ import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFRadioDescription;
-import org.eclipse.eef.EEFReferenceDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -198,21 +197,6 @@ public class EEFControlSwitch {
 				eefButtonLifecycleManager.createControl(parent, formContainer);
 
 				lifecycleManagers.add(eefButtonLifecycleManager);
-			} else if (widgetDescription instanceof EEFReferenceDescription) {
-				EEFReferenceDescription eefReferenceDescription = (EEFReferenceDescription) widgetDescription;
-
-				IEEFLifecycleManager eefReferenceLifecycleManager = null;
-				if (eefReferenceDescription.isMultiple()) {
-					eefReferenceLifecycleManager = new EEFMultipleReferencesLifecycleManager(eefReferenceDescription, childVariableManager,
-							interpreter, contextAdapter);
-				} else {
-					eefReferenceLifecycleManager = new EEFReferenceLifecycleManager(eefReferenceDescription, childVariableManager, interpreter,
-							contextAdapter);
-				}
-
-				eefReferenceLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefReferenceLifecycleManager);
 			} else if (widgetDescription instanceof EEFListDescription) {
 				EEFListDescription eefListDescription = (EEFListDescription) widgetDescription;
 

@@ -40,9 +40,6 @@ import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFRadioStyle;
-import org.eclipse.eef.EEFReferenceConditionalStyle;
-import org.eclipse.eef.EEFReferenceDescription;
-import org.eclipse.eef.EEFReferenceStyle;
 import org.eclipse.eef.EEFRuleAuditDescription;
 import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
@@ -149,8 +146,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetDescription();
 		case EefPackage.EEF_CUSTOM_EXPRESSION:
 			return createEEFCustomExpression();
-		case EefPackage.EEF_REFERENCE_DESCRIPTION:
-			return createEEFReferenceDescription();
 		case EefPackage.EEF_LIST_DESCRIPTION:
 			return createEEFListDescription();
 		case EefPackage.EEF_TEXT_STYLE:
@@ -169,8 +164,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFHyperlinkStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_STYLE:
 			return createEEFCustomWidgetStyle();
-		case EefPackage.EEF_REFERENCE_STYLE:
-			return createEEFReferenceStyle();
 		case EefPackage.EEF_LIST_STYLE:
 			return createEEFListStyle();
 		case EefPackage.EEF_GROUP_STYLE:
@@ -193,8 +186,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetConditionalStyle();
 		case EefPackage.EEF_WIDGET_ACTION:
 			return createEEFWidgetAction();
-		case EefPackage.EEF_REFERENCE_CONDITIONAL_STYLE:
-			return createEEFReferenceConditionalStyle();
 		case EefPackage.EEF_LIST_CONDITIONAL_STYLE:
 			return createEEFListConditionalStyle();
 		case EefPackage.EEF_GROUP_CONDITIONAL_STYLE:
@@ -483,17 +474,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
-	public EEFReferenceDescription createEEFReferenceDescription() {
-		EEFReferenceDescriptionImpl eefReferenceDescription = new EEFReferenceDescriptionImpl();
-		return eefReferenceDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
 	public EEFListDescription createEEFListDescription() {
 		EEFListDescriptionImpl eefListDescription = new EEFListDescriptionImpl();
 		return eefListDescription;
@@ -585,17 +565,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFCustomWidgetStyle createEEFCustomWidgetStyle() {
 		EEFCustomWidgetStyleImpl eefCustomWidgetStyle = new EEFCustomWidgetStyleImpl();
 		return eefCustomWidgetStyle;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EEFReferenceStyle createEEFReferenceStyle() {
-		EEFReferenceStyleImpl eefReferenceStyle = new EEFReferenceStyleImpl();
-		return eefReferenceStyle;
 	}
 
 	/**
@@ -717,17 +686,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFWidgetAction createEEFWidgetAction() {
 		EEFWidgetActionImpl eefWidgetAction = new EEFWidgetActionImpl();
 		return eefWidgetAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EEFReferenceConditionalStyle createEEFReferenceConditionalStyle() {
-		EEFReferenceConditionalStyleImpl eefReferenceConditionalStyle = new EEFReferenceConditionalStyleImpl();
-		return eefReferenceConditionalStyle;
 	}
 
 	/**
