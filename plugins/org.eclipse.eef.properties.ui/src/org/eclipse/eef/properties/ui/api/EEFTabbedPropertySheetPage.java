@@ -281,9 +281,9 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	}
 
 	/**
-	 * Indicates whether or not we are inside the rendering/refresh pahse of the page's lifecycle.
+	 * Indicates whether or not we are inside the rendering/refresh phase of the page's lifecycle.
 	 *
-	 * @return <code>true</code> if we are inside the rendering/refresh pahse of the page's lifecycle.
+	 * @return <code>true</code> if we are inside the rendering/refresh phase of the page's lifecycle.
 	 */
 	@Override
 	public boolean isRenderingInProgress() {

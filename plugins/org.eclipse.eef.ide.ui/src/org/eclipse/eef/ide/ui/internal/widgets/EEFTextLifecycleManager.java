@@ -10,6 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -60,6 +63,16 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * The text.
 	 */
 	private StyledText text;
+
+	/**
+	 * The reference value of the text, as last rendered from the state of the actual model.
+	 */
+	private AtomicReference<String> referenceValue = new AtomicReference<String>(""); //$NON-NLS-1$
+
+	/**
+	 * .
+	 */
+	private final AtomicBoolean resetInProgress = new AtomicBoolean(false);
 
 	/**
 	 * The controller.
@@ -177,23 +190,52 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
+		// CHECKSTYLE:OFF
 		this.modifyListener = new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent event) {
-				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
-					controller.updateValue(text.getText());
+				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && !resetInProgress.get()) {
+					controller.updateValue(text.getText(), new IConsumer<Boolean>() {
+						@Override
+						public void apply(Boolean success) {
+							if (!resetInProgress.get()) {
+								resetReferenceValue();
+							}
+						}
+
+						private void resetReferenceValue() {
+							if (!text.isDisposed()) {
+								text.getDisplay().asyncExec(new Runnable() {
+									@Override
+									public void run() {
+										resetInProgress.set(true);
+										try {
+											// int pos = text.getCaretOffset();
+											text.setText(referenceValue.get());
+											// text.setCaretOffset(pos);
+										} finally {
+											resetInProgress.set(false);
+										}
+									}
+								});
+							}
+						}
+					});
 					EEFTextLifecycleManager.this.setStyle();
 				}
 			}
 		};
 		this.text.addModifyListener(this.modifyListener);
+		// CHECKSTYLE:ON
 
 		this.controller.onNewValue(new IConsumer<Object>() {
 			@Override
 			public void apply(Object value) {
 				if (!text.isDisposed()) {
 					if (value != null && !(text.getText() != null && text.getText().equals(value.toString()))) {
-						text.setText(Util.firstNonNull(value.toString(), "")); //$NON-NLS-1$
+						String newValue = Util.firstNonNull(value.toString(), ""); //$NON-NLS-1$
+						referenceValue.set(newValue);
+						text.setText(newValue);
 					}
 					EEFTextLifecycleManager.this.setStyle();
 					if (!text.isEnabled()) {

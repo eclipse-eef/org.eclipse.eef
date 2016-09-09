@@ -23,8 +23,10 @@ public interface IEEFTextController extends IEEFWidgetController {
 	 *
 	 * @param text
 	 *            The new value of the text
+	 * @param statusCallback
+	 *            the callback to invoke to tell if the update was successful or not.
 	 */
-	void updateValue(String text);
+	void updateValue(String text, IConsumer<Boolean> statusCallback);
 
 	/**
 	 * Register a consumer which will be called with the new value of the text when it will change. The consumer will

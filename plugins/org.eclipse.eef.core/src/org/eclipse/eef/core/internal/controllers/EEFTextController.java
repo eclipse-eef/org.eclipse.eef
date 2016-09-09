@@ -26,6 +26,7 @@ import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.eef.core.internal.EEFCorePlugin;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -81,28 +82,38 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	}
 
 	@Override
-	public void updateValue(final String text) {
+	public void updateValue(final String text, final IConsumer<Boolean> statusCallback) {
 		if (this.currentUpdatedValueFuture != null && !this.currentUpdatedValueFuture.isDone()) {
 			this.currentUpdatedValueFuture.cancel(true);
 		}
 
+		// CHECKSTYLE:OFF
 		Runnable runnable = new Runnable() {
 			@Override
 			public void run() {
-				EEFTextController.this.contextAdapter.performModelChange(new Runnable() {
-					@Override
-					public void run() {
-						String editExpression = EEFTextController.this.description.getEditExpression();
-						EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
+				Boolean status = Boolean.TRUE;
+				try {
+					EEFTextController.this.contextAdapter.performModelChange(new Runnable() {
+						@Override
+						public void run() {
+							String editExpression = EEFTextController.this.description.getEditExpression();
+							EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
 
-						Map<String, Object> variables = new HashMap<String, Object>();
-						variables.putAll(EEFTextController.this.variableManager.getVariables());
-						variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+							Map<String, Object> variables = new HashMap<String, Object>();
+							variables.putAll(EEFTextController.this.variableManager.getVariables());
+							variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-						EvalFactory.of(EEFTextController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
-					}
-				});
+							EvalFactory.of(EEFTextController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
+						}
+					});
+				} catch (RuntimeException e) {
+					EEFCorePlugin.getPlugin().error("Error while applying new text", e); //$NON-NLS-1$
+					status = Boolean.FALSE;
+				} finally {
+					statusCallback.apply(status);
+				}
 			}
+			// CHECKSTYLE:ON
 		};
 		final long scheduleTime = 500L;
 		this.currentUpdatedValueFuture = this.executor.schedule(runnable, scheduleTime, TimeUnit.MILLISECONDS);
