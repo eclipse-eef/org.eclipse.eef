@@ -256,7 +256,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	private void setInput(IWorkbenchPart part, ISelection selection) {
 		EEFTabbedPropertyViewPlugin.getPlugin().debug("EEFTabbedPropertySheetPage#setInput()"); //$NON-NLS-1$
 
-		if (selection.equals(currentSelection)) {
+		if (selection == null || selection.equals(currentSelection)) {
 			return;
 		}
 		doSetInput(part, selection);
