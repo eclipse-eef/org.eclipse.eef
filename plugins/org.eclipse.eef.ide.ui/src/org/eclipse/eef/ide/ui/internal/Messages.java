@@ -70,6 +70,9 @@ public final class Messages {
 	@TranslatableMessage
 	public static String EEFQuickFixWizard_noQuickFixAvailable;
 
+	@TranslatableMessage
+	public static String AbstractEEFWidgetLifecycleManager_noDescriptionAvailable;
+
 	// CHECKSTYLE:ON
 
 	/**
