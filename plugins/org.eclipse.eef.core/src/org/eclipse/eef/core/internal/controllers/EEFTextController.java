@@ -12,10 +12,6 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -52,16 +48,6 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	private IConsumer<Object> newValueConsumer;
 
 	/**
-	 * Executor service used to run the update of the text field.
-	 */
-	private ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-
-	/**
-	 * This future contains the update to be performed.
-	 */
-	private ScheduledFuture<?> currentUpdatedValueFuture;
-
-	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -82,30 +68,19 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 
 	@Override
 	public void updateValue(final String text) {
-		if (this.currentUpdatedValueFuture != null && !this.currentUpdatedValueFuture.isDone()) {
-			this.currentUpdatedValueFuture.cancel(true);
-		}
-
-		Runnable runnable = new Runnable() {
+		this.contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
-				EEFTextController.this.contextAdapter.performModelChange(new Runnable() {
-					@Override
-					public void run() {
-						String editExpression = EEFTextController.this.description.getEditExpression();
-						EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
+				String editExpression = EEFTextController.this.description.getEditExpression();
+				EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
 
-						Map<String, Object> variables = new HashMap<String, Object>();
-						variables.putAll(EEFTextController.this.variableManager.getVariables());
-						variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(EEFTextController.this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-						EvalFactory.of(EEFTextController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
-					}
-				});
+				EvalFactory.of(EEFTextController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 			}
-		};
-		final long scheduleTime = 500L;
-		this.currentUpdatedValueFuture = this.executor.schedule(runnable, scheduleTime, TimeUnit.MILLISECONDS);
+		});
 	}
 
 	/**

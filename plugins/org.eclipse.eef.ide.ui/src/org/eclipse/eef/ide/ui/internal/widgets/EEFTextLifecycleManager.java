@@ -29,8 +29,8 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -67,9 +67,9 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	private IEEFTextController controller;
 
 	/**
-	 * The listener on the text.
+	 * The listener on the text field.
 	 */
-	private ModifyListener modifyListener;
+	private FocusListener focusListener;
 
 	/**
 	 * The widget factory.
@@ -177,16 +177,21 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.modifyListener = new ModifyListener() {
+		this.focusListener = new FocusListener() {
 			@Override
-			public void modifyText(ModifyEvent event) {
+			public void focusLost(FocusEvent e) {
 				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
 					controller.updateValue(text.getText());
 					EEFTextLifecycleManager.this.setStyle();
 				}
 			}
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				// do nothing
+			}
 		};
-		this.text.addModifyListener(this.modifyListener);
+		this.text.addFocusListener(this.focusListener);
 
 		this.controller.onNewValue(new IConsumer<Object>() {
 			@Override
@@ -239,7 +244,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		super.aboutToBeHidden();
 
 		if (!text.isDisposed()) {
-			this.text.removeModifyListener(this.modifyListener);
+			this.text.removeFocusListener(this.focusListener);
 		}
 		this.controller.removeNewValueConsumer();
 	}
