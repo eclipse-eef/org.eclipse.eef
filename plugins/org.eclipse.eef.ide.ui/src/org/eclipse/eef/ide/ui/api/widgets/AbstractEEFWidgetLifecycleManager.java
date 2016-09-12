@@ -257,7 +257,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			@Override
 			public void apply(String value) {
 				if (help != null && !help.isDisposed() && !(help.getText() != null && help.getText().equals(value))) {
-					help.setToolTipText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					help.setToolTipText(Objects.firstNonNull(value, "No description available")); //$NON-NLS-1$
 				}
 			}
 		});
