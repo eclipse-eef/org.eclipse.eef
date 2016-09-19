@@ -18,6 +18,7 @@ import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.ext.widgets.reference.internal.EEFExtReferenceController;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -272,6 +273,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 				} else {
 					this.label.setText(this.eReference.getName());
 				}
+				this.setLabelFontStyle();
 			}
 		}
 
@@ -376,5 +378,15 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 		public void widgetDefaultSelected(SelectionEvent event) {
 			this.contextAdapter.performModelChange(this.runnable);
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getEEFStyleHelper()
+	 */
+	@Override
+	protected EEFStyleHelper getEEFStyleHelper() {
+		return new EEFExtStyleHelper(this.interpreter, this.variableManager);
 	}
 }

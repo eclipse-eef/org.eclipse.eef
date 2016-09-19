@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback;
+import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.swt.custom.StyleRange;
@@ -40,7 +40,7 @@ public class EEFStyledTextStyleCallback implements IEEFTextStyleCallback {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyFont(org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont)
+	 * @see org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyFont(org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont)
 	 */
 	@Override
 	public void applyFont(EEFFont font) {
@@ -50,7 +50,7 @@ public class EEFStyledTextStyleCallback implements IEEFTextStyleCallback {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyFontStyle(boolean, boolean)
+	 * @see org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyFontStyle(boolean, boolean)
 	 */
 	@Override
 	public void applyFontStyle(boolean strikeout, boolean underline) {
@@ -66,7 +66,7 @@ public class EEFStyledTextStyleCallback implements IEEFTextStyleCallback {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyForegroundColor(org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor)
+	 * @see org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyForegroundColor(org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor)
 	 */
 	@Override
 	public void applyForegroundColor(EEFColor color) {
@@ -76,7 +76,7 @@ public class EEFStyledTextStyleCallback implements IEEFTextStyleCallback {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyBackgroundColor(org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor)
+	 * @see org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback#applyBackgroundColor(org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor)
 	 */
 	@Override
 	public void applyBackgroundColor(EEFColor color) {

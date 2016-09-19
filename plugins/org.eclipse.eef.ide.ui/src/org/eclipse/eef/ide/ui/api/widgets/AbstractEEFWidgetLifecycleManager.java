@@ -24,11 +24,10 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Icons;
 import org.eclipse.eef.ide.ui.internal.Messages;
-import org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper;
-import org.eclipse.eef.ide.ui.internal.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.widgets.EEFStyledTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
@@ -266,8 +265,8 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * Set label font style.
 	 */
-	private void setLabelFontStyle() {
-		EEFStyleHelper styleHelper = new EEFStyleHelper(interpreter, variableManager);
+	protected void setLabelFontStyle() {
+		EEFStyleHelper styleHelper = this.getEEFStyleHelper();
 		EEFWidgetStyle style = styleHelper.getWidgetStyle(getWidgetDescription());
 		IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.label);
 		if (style != null) {
@@ -285,6 +284,15 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 				}
 			});
 		}
+	}
+
+	/**
+	 * Returns the style helper used to compute the style of the widget.
+	 *
+	 * @return The style helper
+	 */
+	protected EEFStyleHelper getEEFStyleHelper() {
+		return new EEFStyleHelper(interpreter, variableManager);
 	}
 
 	/**

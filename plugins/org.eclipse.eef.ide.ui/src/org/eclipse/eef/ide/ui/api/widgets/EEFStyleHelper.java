@@ -8,7 +8,7 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.widgets;
+package org.eclipse.eef.ide.ui.api.widgets;
 
 import java.util.Iterator;
 import java.util.List;
@@ -23,6 +23,7 @@ import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.eef.util.EEFConditionalStyleToWidgetStyleSwitch;
 import org.eclipse.eef.util.EEFDescriptionToConditionalStylesSwitch;
 import org.eclipse.eef.util.EEFDescriptionToWidgetStyleSwitch;
+import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -67,22 +68,67 @@ public class EEFStyleHelper {
 	 */
 	public EEFWidgetStyle getWidgetStyle(EEFWidgetDescription widgetDescription) {
 		EEFWidgetStyle widgetStyle = null;
-		List<EEFConditionalStyle> conditionalStyles = new EEFDescriptionToConditionalStylesSwitch().doSwitch(widgetDescription);
+		List<EEFConditionalStyle> conditionalStyles = this.getDescriptionToConditionalStylesSwitch().doSwitch(widgetDescription);
 		Iterator<EEFConditionalStyle> iterator = conditionalStyles.iterator();
 		while (widgetStyle == null && iterator.hasNext()) {
 			EEFConditionalStyle conditionalStyle = iterator.next();
 			String preconditionExpression = conditionalStyle.getPreconditionExpression();
 			Boolean preconditionValid = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Boolean.class).evaluate(preconditionExpression);
 			if (preconditionValid != null && preconditionValid.booleanValue()) {
-				widgetStyle = new EEFConditionalStyleToWidgetStyleSwitch().doSwitch(conditionalStyle);
+				widgetStyle = this.getConditionalStyleToWidgetStyleSwitch().doSwitch(conditionalStyle);
 			}
 		}
 
 		if (widgetStyle == null) {
-			widgetStyle = new EEFDescriptionToWidgetStyleSwitch().doSwitch(widgetDescription);
+			widgetStyle = this.getDescriptionToWidgetStyleSwitch().doSwitch(widgetDescription);
 		}
 
 		return widgetStyle;
+	}
+
+	/**
+	 * Returns the switch to use to find the conditional styles of a widget description. The switch returned should be
+	 * able to handle the default use case, as a result it is highly recommended to return a composed switch with the
+	 * default one and new switches. Example:<br>
+	 * <code>
+	 * return new ComposedSwitch<>(Arrays.asList(new EEFDescriptionToConditionalStylesSwitch(), new
+	 * CustomDescriptionToConditionalStylesSwitch()));
+	 * </code>
+	 *
+	 * @return The switch to use to find the conditional styles of a widget description
+	 */
+	protected Switch<List<EEFConditionalStyle>> getDescriptionToConditionalStylesSwitch() {
+		return new EEFDescriptionToConditionalStylesSwitch();
+	}
+
+	/**
+	 * Returns the switch to use to find the style of a conditional style. The switch returned should be able to handle
+	 * the default use case, as a result it is highly recommended to return a composed switch with the default one and
+	 * new switches. Example:<br>
+	 * <code>
+	 * return new ComposedSwitch<>(Arrays.asList(new EEFConditionalStyleToWidgetStyleSwitch(), new
+	 * CustomConditionalStyleToWidgetStyleSwitch()));
+	 * </code>
+	 *
+	 * @return The switch to use to find the style of a conditional style
+	 */
+	protected Switch<EEFWidgetStyle> getConditionalStyleToWidgetStyleSwitch() {
+		return new EEFConditionalStyleToWidgetStyleSwitch();
+	}
+
+	/**
+	 * Returns the switch to use to find the style of a description. The switch returned should be able to handle the
+	 * default use case, as a result it is highly recommended to return a composed switch with the default one and new
+	 * switches. Example:<br>
+	 * <code>
+	 * return new ComposedSwitch<>(Arrays.asList(new EEFDescriptionToWidgetStyleSwitch(), new
+	 * EEFDescriptionToWidgetStyleSwitch()));
+	 * </code>
+	 *
+	 * @return The switch to use to find the style of a description.
+	 */
+	protected Switch<EEFWidgetStyle> getDescriptionToWidgetStyleSwitch() {
+		return new EEFDescriptionToWidgetStyleSwitch();
 	}
 
 	/**

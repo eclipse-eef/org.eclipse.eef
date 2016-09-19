@@ -21,7 +21,8 @@ h4. Specifier-Visible Changes
 h4. Developer-Visible Changes
 
 * <span class="label label-info">Modified</span> The interface @org.eclipse.eef.core.api.EditingContextAdapter@ has now a new method @getEditingDomain()@ which is used to return an EditingDomain for the EEF runtime.
-* <span class="label label-info">Modified</span> The constructor of the EEFLabelController now requires an EditingContextAdapter to run the expression of the widget actions. 
+* <span class="label label-info">Modified</span> The constructor of the EEFLabelController now requires an EditingContextAdapter to run the expression of the widget actions.
+* <span class="label label-success">Added</span> The class EEFStyleHelper is now API in order to help support style and conditional styles for custom widgets. Developers will need to override org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager.getEEFStyleHelper() to provide their own implementation. The easiest way will need to extend the regular implementation and modify the three switchs to provide using the dedicated getters.
 
 
 h3(#eef1.6.0). Changes in EEF 1.6.0

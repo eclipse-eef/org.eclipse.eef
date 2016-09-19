@@ -8,7 +8,9 @@
  */
 package org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl;
 
+import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
+import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferenceFactory;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferencePackage;
 import org.eclipse.emf.ecore.EClass;
@@ -19,13 +21,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements EefExtWidgetsReferenceFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EefExtWidgetsReferenceFactory init() {
@@ -43,7 +45,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EefExtWidgetsReferenceFactoryImpl() {
@@ -52,7 +54,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,6 +62,10 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 		switch (eClass.getClassifierID()) {
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION:
 			return createEEFExtReferenceDescription();
+		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_WIDGET_STYLE:
+			return createEEFExtReferenceWidgetStyle();
+		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE:
+			return createEEFExtReferenceConditionalStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -67,7 +73,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +84,29 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFExtReferenceWidgetStyle createEEFExtReferenceWidgetStyle() {
+		EEFExtReferenceWidgetStyleImpl eefExtReferenceWidgetStyle = new EEFExtReferenceWidgetStyleImpl();
+		return eefExtReferenceWidgetStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFExtReferenceConditionalStyle createEEFExtReferenceConditionalStyle() {
+		EEFExtReferenceConditionalStyleImpl eefExtReferenceConditionalStyle = new EEFExtReferenceConditionalStyleImpl();
+		return eefExtReferenceConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,7 +116,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

@@ -9,27 +9,43 @@
 package org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl;
 
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
+import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferenceFactory;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferencePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements EefExtWidgetsReferencePackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass eefExtReferenceDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefExtReferenceWidgetStyleEClass = null;
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefExtReferenceConditionalStyleEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry
@@ -50,7 +66,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -76,7 +92,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 		// Obtain or create and register package
 		EefExtWidgetsReferencePackageImpl theEefExtWidgetsReferencePackage = (EefExtWidgetsReferencePackageImpl) (EPackage.Registry.INSTANCE
 				.get(EefExtWidgetsReferencePackage.eNS_URI) instanceof EefExtWidgetsReferencePackageImpl ? EPackage.Registry.INSTANCE
-				.get(EefExtWidgetsReferencePackage.eNS_URI) : new EefExtWidgetsReferencePackageImpl());
+						.get(EefExtWidgetsReferencePackage.eNS_URI) : new EefExtWidgetsReferencePackageImpl());
 
 		EefExtWidgetsReferencePackageImpl.isInited = true;
 
@@ -99,7 +115,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -109,7 +125,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +135,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -129,7 +145,57 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFExtReferenceDescription_Style() {
+		return (EReference) eefExtReferenceDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFExtReferenceDescription_ConditionalStyles() {
+		return (EReference) eefExtReferenceDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFExtReferenceWidgetStyle() {
+		return eefExtReferenceWidgetStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFExtReferenceConditionalStyle() {
+		return eefExtReferenceConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFExtReferenceConditionalStyle_Style() {
+		return (EReference) eefExtReferenceConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +205,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -147,7 +213,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 	/**
 	 * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but
 	 * its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -160,11 +226,18 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 		eefExtReferenceDescriptionEClass = createEClass(EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION);
 		createEAttribute(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_NAME_EXPRESSION);
 		createEAttribute(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_OWNER_EXPRESSION);
+		createEReference(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE);
+		createEReference(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES);
+
+		eefExtReferenceWidgetStyleEClass = createEClass(EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_WIDGET_STYLE);
+
+		eefExtReferenceConditionalStyleEClass = createEClass(EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE);
+		createEReference(eefExtReferenceConditionalStyleEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -172,7 +245,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 	/**
 	 * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any
 	 * invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
@@ -196,6 +269,8 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 		// Add supertypes to classes
 		eefExtReferenceDescriptionEClass.getESuperTypes().add(theEefPackage.getEEFWidgetDescription());
+		eefExtReferenceWidgetStyleEClass.getESuperTypes().add(theEefPackage.getEEFWidgetStyle());
+		eefExtReferenceConditionalStyleEClass.getESuperTypes().add(theEefPackage.getEEFConditionalStyle());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eefExtReferenceDescriptionEClass, EEFExtReferenceDescription.class,
@@ -208,6 +283,27 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 				getEEFExtReferenceDescription_ReferenceOwnerExpression(),
 				theEcorePackage.getEString(),
 				"referenceOwnerExpression", null, 0, 1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFExtReferenceDescription_Style(),
+				this.getEEFExtReferenceWidgetStyle(),
+				null,
+				"style", null, 0, 1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getEEFExtReferenceDescription_ConditionalStyles(),
+				this.getEEFExtReferenceConditionalStyle(),
+				null,
+				"conditionalStyles", null, 0, -1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(eefExtReferenceWidgetStyleEClass, EEFExtReferenceWidgetStyle.class,
+				"EEFExtReferenceWidgetStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+
+		initEClass(eefExtReferenceConditionalStyleEClass, EEFExtReferenceConditionalStyle.class,
+				"EEFExtReferenceConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getEEFExtReferenceConditionalStyle_Style(),
+				this.getEEFExtReferenceWidgetStyle(),
+				null,
+				"style", null, 0, 1, EEFExtReferenceConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
 
 		// Create resource
 		createResource(EefExtWidgetsReferencePackage.eNS_URI);

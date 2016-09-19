@@ -41,7 +41,8 @@
 				<code>org.eclipse.eef.core.api.EditingContextAdapter</code> has now a new method 
 				<code>getEditingDomain()</code> which is used to return an EditingDomain for the EEF runtime.
 			</li>
-			<li><span class="label label-info">Modified</span> The constructor of the EEFLabelController now requires an EditingContextAdapter to run the expression of the widget actions. </li>
+			<li><span class="label label-info">Modified</span> The constructor of the EEFLabelController now requires an EditingContextAdapter to run the expression of the widget actions.</li>
+			<li><span class="label label-success">Added</span> The class EEFStyleHelper is now API in order to help support style and conditional styles for custom widgets. Developers will need to override org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager.getEEFStyleHelper() to provide their own implementation. The easiest way will need to extend the regular implementation and modify the three switchs to provide using the dedicated getters.</li>
 		</ul>
 		<h3 id="eef1.6.0">Changes in EEF 1.6.0</h3>
 		<h4 id="UserVisibleChanges2">User-Visible Changes</h4>
