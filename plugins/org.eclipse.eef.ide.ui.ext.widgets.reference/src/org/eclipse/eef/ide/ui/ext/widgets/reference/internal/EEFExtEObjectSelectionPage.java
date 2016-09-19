@@ -19,6 +19,7 @@ import org.eclipse.eef.ide.ui.ext.widgets.reference.api.IEEFExtReferenceViewerFi
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider;
@@ -110,6 +111,7 @@ public class EEFExtEObjectSelectionPage extends WizardPage {
 		control.setLayout(gridLayout);
 
 		this.composedAdapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		this.composedAdapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		this.createSelectionTreeViewer(control);
 		this.initializeInput();

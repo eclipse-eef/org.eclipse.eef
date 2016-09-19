@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.WizardDialog;
@@ -90,6 +91,7 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 		referenceComposite.setLayoutData(referenceCompositeGridData);
 
 		this.composedAdapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		this.composedAdapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		this.createLabel(referenceComposite);
 

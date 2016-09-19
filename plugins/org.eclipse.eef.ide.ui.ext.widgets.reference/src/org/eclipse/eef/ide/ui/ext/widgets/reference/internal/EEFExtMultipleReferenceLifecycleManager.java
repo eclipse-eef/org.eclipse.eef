@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
@@ -178,6 +179,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 		this.tableViewer.getTable().setLayoutData(tableGridData);
 
 		this.composedAdapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		this.composedAdapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		this.tableViewer.setContentProvider(new EReferenceContentProvider(this.eReference));
 		this.tableViewer.setLabelProvider(new DelegatingStyledCellLabelProvider(new AdapterFactoryLabelProvider.StyledLabelProvider(
