@@ -32,6 +32,8 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.KeyEvent;
+import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -71,6 +73,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * The listener on the text field.
 	 */
 	private FocusListener focusListener;
+
+	/**
+	 * The key listener on the text field (unused for a multi-line text field).
+	 */
+	private KeyListener keyListener;
 
 	/**
 	 * The widget factory.
@@ -194,6 +201,24 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		};
 		this.text.addFocusListener(this.focusListener);
 
+		if (this.description.getLineCount() <= 1) {
+			this.keyListener = new KeyListener() {
+				@Override
+				public void keyReleased(KeyEvent e) {
+					if (e.character == '\r' || e.character == '\n') {
+						controller.updateValue(text.getText());
+						EEFTextLifecycleManager.this.setStyle();
+					}
+				}
+
+				@Override
+				public void keyPressed(KeyEvent e) {
+					// do nothing
+				}
+			};
+			this.text.addKeyListener(this.keyListener);
+		}
+
 		this.controller.onNewValue(new IConsumer<Object>() {
 			@Override
 			public void apply(Object value) {
@@ -248,6 +273,10 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			this.text.removeFocusListener(this.focusListener);
 		}
 		this.controller.removeNewValueConsumer();
+
+		if (this.description.getLineCount() <= 1) {
+			this.text.removeKeyListener(this.keyListener);
+		}
 	}
 
 	/**

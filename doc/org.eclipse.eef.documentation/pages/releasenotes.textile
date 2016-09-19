@@ -17,6 +17,8 @@ h4. Specifier-Visible Changes
 * <span class="label label-success">Added</span> Widget actions are now available on labels and hyperlinks.
 * <span class="label label-success">Added</span> Labels and hyperlinks now have a displayExpression. If unused, the result of the valueExpression will be converted to a string using the @java.lang.Object#toString()@ operation.
 * <span class="label label-success">Added</span> A new widget named List has been added, it has the same behavior as the multiple reference widget of the previous release.
+* <span class="label label-info">Modified</span> The edit operation of a text field can now be triggered by the loss of focus on the text field.
+* <span class="label label-info">Modified</span> The edit operation of a mono-line text field can now be triggered by pressing enter.
 
 h4. Developer-Visible Changes
 
