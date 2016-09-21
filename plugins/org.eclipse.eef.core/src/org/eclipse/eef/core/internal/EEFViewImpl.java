@@ -108,18 +108,18 @@ public class EEFViewImpl implements EEFView {
 					@Override
 					public void apply(Object value) {
 						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester);
-						Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
-						Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
+						Iterable<Object> iterable = Util.asIterable(value, Object.class);
+						Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
 
 						boolean isUnique = true;
-						Iterator<EObject> iterator = eObjects.iterator();
+						Iterator<Object> iterator = objects.iterator();
 						while (iterator.hasNext()) {
-							EObject eObject = iterator.next();
+							Object object = iterator.next();
 
 							if (isUnique && iterator.hasNext()) {
 								isUnique = false;
 							}
-							EEFPageImpl ePage = createPage(eefPageDescription, eObject, isUnique);
+							EEFPageImpl ePage = createPage(eefPageDescription, object, isUnique);
 							ePage.initialize();
 							EEFViewImpl.this.eefPages.add(ePage);
 						}
@@ -215,8 +215,8 @@ public class EEFViewImpl implements EEFView {
 					// If the semantic candidate expression is blank, we will use the variable self of the page
 					Object pageSelf = eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF);
 					String groupSemanticCandidateExpression = eefGroup.getDescription().getSemanticCandidateExpression();
-					EvalFactory.of(this.interpreter, eefPage.getVariableManager()).defaultValue(pageSelf)
-					.call(groupSemanticCandidateExpression, groupConsumer);
+					EvalFactory.of(this.interpreter, eefPage.getVariableManager()).defaultValue(pageSelf).call(groupSemanticCandidateExpression,
+							groupConsumer);
 				}
 			}
 		}

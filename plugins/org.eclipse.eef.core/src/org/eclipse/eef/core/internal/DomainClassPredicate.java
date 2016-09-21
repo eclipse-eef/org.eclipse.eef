@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal;
 
 import com.google.common.base.Predicate;
 
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.IEEFDomainClassTester;
 import org.eclipse.emf.ecore.EObject;
 
@@ -21,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @author pcdavid
  * @author sbegaudeau
  */
-public class DomainClassPredicate implements Predicate<EObject> {
+public class DomainClassPredicate implements Predicate<Object> {
 	/**
 	 * The domain class name.
 	 */
@@ -46,8 +47,11 @@ public class DomainClassPredicate implements Predicate<EObject> {
 	}
 
 	@Override
-	public boolean apply(EObject input) {
-		return this.domainClassTester.eInstanceOf(input, domainClassName);
+	public boolean apply(Object input) {
+		if (input instanceof EObject) {
+			return this.domainClassTester.eInstanceOf((EObject) input, domainClassName);
+		}
+		return Util.isBlank(domainClassName);
 	}
 
 }

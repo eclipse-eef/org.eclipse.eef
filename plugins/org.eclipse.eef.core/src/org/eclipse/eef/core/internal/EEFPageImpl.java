@@ -25,7 +25,6 @@ import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.IEEFDomainClassTester;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.EvalFactory;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
@@ -110,11 +109,11 @@ public class EEFPageImpl implements EEFPage {
 					@Override
 					public void apply(Object value) {
 						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester);
-						Iterable<EObject> iterable = Util.asIterable(value, EObject.class);
-						Iterable<EObject> eObjects = Iterables.filter(iterable, domainClassPredicate);
-						for (EObject eObject : eObjects) {
+						Iterable<Object> iterable = Util.asIterable(value, Object.class);
+						Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
+						for (Object object : objects) {
 							IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
-							childVariableManager.put(EEFExpressionUtils.SELF, eObject);
+							childVariableManager.put(EEFExpressionUtils.SELF, object);
 							EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter);
 							eefGroups.add(eefGroupImpl);
 						}
