@@ -22,7 +22,6 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
-import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
@@ -211,7 +210,7 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 					if (!(hyperlink.getText() != null && hyperlink.getText().equals(value))) {
 						String text = Objects.firstNonNull(value, ""); //$NON-NLS-1$
 						hyperlink.setText(text);
-						hyperlink.setData(variableManager.getVariables().get(EEFExpressionUtils.SELF));
+						hyperlink.setData(value);
 					}
 					EEFHyperlinkLifecycleManager.this.setStyle();
 					if (!hyperlink.isEnabled()) {
