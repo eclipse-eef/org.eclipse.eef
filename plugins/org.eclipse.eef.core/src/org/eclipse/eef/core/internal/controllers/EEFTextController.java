@@ -13,6 +13,7 @@ package org.eclipse.eef.core.internal.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -67,8 +68,8 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	}
 
 	@Override
-	public void updateValue(final String text) {
-		this.contextAdapter.performModelChange(new Runnable() {
+	public IStatus updateValue(final String text) {
+		return this.contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String editExpression = EEFTextController.this.description.getEditExpression();

@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.core.runtime.IStatus;
+
 /**
  * The EEFTextController is responsible of supporting all the interactions with the widgets created for an
  * EEFTextDescription.
@@ -23,8 +25,10 @@ public interface IEEFTextController extends IEEFWidgetController {
 	 *
 	 * @param text
 	 *            The new value of the text
+	 * @return the status of the update execution.
+	 *
 	 */
-	void updateValue(String text);
+	IStatus updateValue(String text);
 
 	/**
 	 * Register a consumer which will be called with the new value of the text when it will change. The consumer will

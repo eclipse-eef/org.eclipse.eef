@@ -13,6 +13,7 @@ package org.eclipse.eef.core.internal.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -67,8 +68,8 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	}
 
 	@Override
-	public void updateValue(final boolean checkbox) {
-		contextAdapter.performModelChange(new Runnable() {
+	public IStatus updateValue(final boolean checkbox) {
+		return contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String editExpression = EEFCheckboxController.this.description.getEditExpression();

@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -74,8 +75,8 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	}
 
 	@Override
-	public void updateValue(final Object text) {
-		contextAdapter.performModelChange(new Runnable() {
+	public IStatus updateValue(final Object text) {
+		return contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String editExpression = EEFRadioController.this.description.getEditExpression();

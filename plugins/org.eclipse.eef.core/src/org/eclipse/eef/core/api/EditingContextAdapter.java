@@ -12,6 +12,7 @@ package org.eclipse.eef.core.api;
 
 import java.util.List;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -30,8 +31,9 @@ public interface EditingContextAdapter {
 	 *
 	 * @param operation
 	 *            the operation.
+	 * @return the status of the operation execution.
 	 */
-	void performModelChange(Runnable operation);
+	IStatus performModelChange(Runnable operation);
 
 	/**
 	 * Registers a listener to notify when the model is modified. The trigger will be called in a context in which it
@@ -50,9 +52,9 @@ public interface EditingContextAdapter {
 
 	/**
 	 * Returns the editing domain.
-	 * 
+	 *
 	 * @return The editing domain
-	 * 
+	 *
 	 * @since 1.7.0
 	 */
 	EditingDomain getEditingDomain();

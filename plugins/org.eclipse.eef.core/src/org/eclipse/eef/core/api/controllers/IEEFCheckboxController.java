@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.core.runtime.IStatus;
+
 /**
  * The EEFCheckboxController is responsible of supporting all the interactions with the widgets created for an
  * EEFCheckboxDescription.
@@ -23,8 +25,9 @@ public interface IEEFCheckboxController extends IEEFWidgetController {
 	 *
 	 * @param checkbox
 	 *            The new value of the checkbox
+	 * @return the status of the update execution.
 	 */
-	void updateValue(boolean checkbox);
+	IStatus updateValue(boolean checkbox);
 
 	/**
 	 * Register a consumer which will be called with the new value of the checkbox when it will change.

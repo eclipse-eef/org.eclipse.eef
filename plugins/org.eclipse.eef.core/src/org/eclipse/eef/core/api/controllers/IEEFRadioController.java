@@ -12,6 +12,8 @@ package org.eclipse.eef.core.api.controllers;
 
 import java.util.List;
 
+import org.eclipse.core.runtime.IStatus;
+
 /**
  * The EEFRadioController is responsible of supporting all the interactions with the widgets created for an
  * EEFRadioDescription.
@@ -25,8 +27,9 @@ public interface IEEFRadioController extends IEEFWidgetController {
 	 *
 	 * @param text
 	 *            The new value of the text
+	 * @return the status of the update execution.
 	 */
-	void updateValue(Object text);
+	IStatus updateValue(Object text);
 
 	/**
 	 * Register a consumer which will be called with the new value of the text when it will change.
