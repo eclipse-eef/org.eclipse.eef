@@ -74,7 +74,7 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 			if (groupSemanticElement instanceof EObject) {
 				identifier.append(EcoreUtil.getURI((EObject) groupSemanticElement));
 			}
-			identifier.append(System.identityHashCode(groupSemanticElement));
+			identifier.append(groupSemanticElement.hashCode());
 		}
 
 		Object pageSemanticElement = this.eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF);
