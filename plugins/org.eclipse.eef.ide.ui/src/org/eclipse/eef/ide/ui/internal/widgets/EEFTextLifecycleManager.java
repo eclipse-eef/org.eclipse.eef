@@ -210,7 +210,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.focusListener = new FocusListener() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
+				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && EEFTextLifecycleManager.this.isDirty) {
 					EEFTextLifecycleManager.this.updateValue();
 				}
 			}
@@ -259,7 +259,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * Updates the value.
 	 */
 	private void updateValue() {
-		if (!this.text.isDisposed()) {
+		if (!this.text.isDisposed() && this.isDirty) {
 			controller.updateValue(text.getText());
 			this.isDirty = false;
 			this.setStyle();
