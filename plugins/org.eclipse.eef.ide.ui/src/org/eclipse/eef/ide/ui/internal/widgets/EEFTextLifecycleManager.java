@@ -200,7 +200,9 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.modifyListener = new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
-				EEFTextLifecycleManager.this.isDirty = true;
+				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
+					EEFTextLifecycleManager.this.isDirty = true;
+				}
 			}
 		};
 		this.text.addModifyListener(this.modifyListener);
