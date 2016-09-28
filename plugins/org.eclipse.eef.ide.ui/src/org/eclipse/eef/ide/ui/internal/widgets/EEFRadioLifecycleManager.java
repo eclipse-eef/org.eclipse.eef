@@ -13,7 +13,9 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -27,6 +29,7 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFRadioController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -74,6 +77,17 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 * The listener on the combo.
 	 */
 	private SelectionListener selectionListener;
+
+	/**
+	 * Used to make the SelectionListener reentrant, to avoid infinite loops when we need to revert the UI state on
+	 * error (as reverting the UI re-triggers the SelectionListener).
+	 */
+	private AtomicBoolean updateInProgress = new AtomicBoolean(false);
+
+	/**
+	 * The reference value of the selection, as last rendered from the state of the actual model.
+	 */
+	private ISelection referenceSelection;
 
 	/**
 	 * The constructor.
@@ -157,12 +171,23 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
+		// UI edited by user => update model if possible, revert UI change otherwise
 		this.selectionListener = new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				IStructuredSelection selection = getStructuredSelection(radioGroupViewer);
-				Object newValue = selection.getFirstElement();
-				controller.updateValue(newValue);
+				if (!updateInProgress.compareAndSet(false, true)) {
+					try {
+						IStructuredSelection selection = getStructuredSelection(radioGroupViewer);
+						Object newValue = selection.getFirstElement();
+						IStatus result = controller.updateValue(newValue);
+						if (result != null && result.getSeverity() == IStatus.ERROR && referenceSelection != null) {
+							EEFIdePlugin.INSTANCE.log(result);
+							radioGroupViewer.setSelection(referenceSelection);
+						}
+					} finally {
+						updateInProgress.set(false);
+					}
+				}
 			}
 
 			@Override
@@ -184,6 +209,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 						selection = null;
 					}
 					radioGroupViewer.setSelection(selection);
+					referenceSelection = selection;
 					if (!radioGroup.isEnabled()) {
 						radioGroup.setEnabled(true);
 					}

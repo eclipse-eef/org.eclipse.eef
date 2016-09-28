@@ -10,6 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -22,6 +25,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
@@ -95,6 +99,17 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * The listener used to indicate that the text field is dirty.
 	 */
 	private ModifyListener modifyListener;
+
+	/**
+	 * Used to make the SelectionListener reentrant, to avoid infinite loops when we need to revert the UI state on
+	 * error (as reverting the UI re-triggers the SelectionListener).
+	 */
+	private AtomicBoolean updateInProgress = new AtomicBoolean(false);
+
+	/**
+	 * The reference value of the text, as last rendered from the state of the actual model.
+	 */
+	private String referenceValue = ""; //$NON-NLS-1$
 
 	/**
 	 * Indicates that the text field is dirty.
@@ -200,7 +215,9 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.modifyListener = new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
-				EEFTextLifecycleManager.this.isDirty = true;
+				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && !updateInProgress.get()) {
+					EEFTextLifecycleManager.this.isDirty = true;
+				}
 			}
 		};
 		this.text.addModifyListener(this.modifyListener);
@@ -208,9 +225,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.focusListener = new FocusListener() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress()) {
-					EEFTextLifecycleManager.this.updateValue();
-				}
+				EEFTextLifecycleManager.this.updateValue();
 			}
 
 			@Override
@@ -243,6 +258,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 				if (!text.isDisposed()) {
 					if (value != null && !(text.getText() != null && text.getText().equals(value.toString()))) {
 						text.setText(Util.firstNonNull(value.toString(), "")); //$NON-NLS-1$
+						referenceValue = text.getText();
 					}
 					EEFTextLifecycleManager.this.setStyle();
 					if (!text.isEnabled()) {
@@ -257,10 +273,21 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * Updates the value.
 	 */
 	private void updateValue() {
-		if (!this.text.isDisposed()) {
-			controller.updateValue(text.getText());
-			this.isDirty = false;
-			this.setStyle();
+		if (!this.text.isDisposed() && !EEFTextLifecycleManager.this.container.isRenderingInProgress()
+				&& updateInProgress.compareAndSet(false, true)) {
+			try {
+				IStatus result = controller.updateValue(text.getText());
+				if (result != null && result.getSeverity() == IStatus.ERROR) {
+					EEFIdePlugin.INSTANCE.log(result);
+					text.setText(referenceValue);
+				} else {
+					referenceValue = text.getText();
+				}
+				this.isDirty = false;
+				this.setStyle();
+			} finally {
+				updateInProgress.set(false);
+			}
 		}
 	}
 

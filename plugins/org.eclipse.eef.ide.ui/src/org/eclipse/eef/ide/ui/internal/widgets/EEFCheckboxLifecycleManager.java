@@ -12,6 +12,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import com.google.common.base.Objects;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFCheckboxStyle;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -23,6 +24,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
@@ -155,11 +157,18 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 				}
 			}
 		});
-
+		// UI edited by user => update model if possible, revert UI change otherwise
 		this.selectionListener = new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				controller.updateValue(checkbox.getSelection());
+				IStatus result = controller.updateValue(checkbox.getSelection());
+				if (result != null && result.getSeverity() == IStatus.ERROR) {
+					EEFIdePlugin.INSTANCE.log(result);
+					// The checkbox widget is a special case with only two possible states, so we can deduce the
+					// reference state to revert to without storing anything.
+					boolean referenceValue = !checkbox.getSelection();
+					checkbox.setSelection(referenceValue);
+				}
 			}
 
 			@Override
@@ -169,6 +178,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 		};
 		this.checkbox.addSelectionListener(this.selectionListener);
 
+		// Model changed => update UI
 		this.controller.onNewValue(new IConsumer<Boolean>() {
 			@Override
 			public void apply(Boolean value) {
