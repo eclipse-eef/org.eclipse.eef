@@ -208,7 +208,9 @@ public class EEFViewImpl implements EEFView {
 					IConsumer<Object> groupConsumer = new IConsumer<Object>() {
 						@Override
 						public void apply(Object value) {
-							eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, value);
+							for (Object groupSemanticCandidate : Util.asIterable(value, Object.class)) {
+								eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, groupSemanticCandidate);
+							}
 						}
 					};
 
