@@ -330,7 +330,9 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	@Override
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
-		this.help.removeMouseTrackListener(mouseTrackListener);
+		if (!this.help.isDisposed()) {
+			this.help.removeMouseTrackListener(mouseTrackListener);
+		}
 
 		this.getController().removeNewLabelConsumer();
 	}
