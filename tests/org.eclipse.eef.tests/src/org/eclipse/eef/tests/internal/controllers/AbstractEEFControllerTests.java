@@ -10,10 +10,6 @@
  *******************************************************************************/
 package org.eclipse.eef.tests.internal.controllers;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNull.notNullValue;
-
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
@@ -41,7 +37,11 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.sirius.common.interpreter.api.VariableManagerFactory;
 import org.junit.Before;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertTrue;
+
 
 /**
  * Common superclass for all the tests of the controllers.
