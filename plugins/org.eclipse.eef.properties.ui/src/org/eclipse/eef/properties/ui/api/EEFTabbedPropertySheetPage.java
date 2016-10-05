@@ -314,12 +314,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			// see if the selection provides a new contributor
 			// validateRegistry(selection);
 			List<IEEFTabDescriptor> descriptors = EEFTabbedPropertyRegistry.getDefault(contributor).getTabDescriptors(part, selection);
-			// If there are no descriptors for the given input we do not need to
-			// touch the tab objects. We might reuse them for the next valid
-			// input.
-			if (descriptors.size() > 0) {
-				this.updateTabs(descriptors);
-			}
+			this.updateTabs(descriptors);
 			// update tabs list
 			this.tabbedPropertyViewer.setInput(part, currentSelection);
 			int lastTabSelectionIndex = this.getLastTabSelection(part, currentSelection);
