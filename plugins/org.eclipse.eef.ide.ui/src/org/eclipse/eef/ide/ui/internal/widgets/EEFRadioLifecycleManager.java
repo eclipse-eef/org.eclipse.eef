@@ -275,6 +275,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 
 			Map<String, Object> variables = new HashMap<String, Object>();
 			variables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
+			variables.put(EEFExpressionUtils.INPUT, variableManager.getVariables().get(EEFExpressionUtils.INPUT));
 			variables.put(EEFSelect.CANDIDATE, element);
 
 			return EvalFactory.of(EEFRadioLifecycleManager.this.interpreter, variables).logIfInvalidType(String.class).logIfBlank(eAttribute)
