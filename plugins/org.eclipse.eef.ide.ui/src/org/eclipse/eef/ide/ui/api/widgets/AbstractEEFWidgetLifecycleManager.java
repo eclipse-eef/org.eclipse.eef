@@ -268,25 +268,27 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			}
 		});
 
-		this.mouseTrackListener = new MouseTrackListener() {
+		if (this.help != null) {
+			this.mouseTrackListener = new MouseTrackListener() {
 
-			@Override
-			public void mouseHover(MouseEvent e) {
-				// Defer the computation of the help message when the user hovers the Help label
-				getController().computeHelp();
-			}
+				@Override
+				public void mouseHover(MouseEvent e) {
+					// Defer the computation of the help message when the user hovers the Help label
+					getController().computeHelp();
+				}
 
-			@Override
-			public void mouseExit(MouseEvent e) {
-				// Nothing todo
-			}
+				@Override
+				public void mouseExit(MouseEvent e) {
+					// Nothing todo
+				}
 
-			@Override
-			public void mouseEnter(MouseEvent e) {
-				// Nothing todo
-			}
-		};
-		this.help.addMouseTrackListener(mouseTrackListener);
+				@Override
+				public void mouseEnter(MouseEvent e) {
+					// Nothing todo
+				}
+			};
+			this.help.addMouseTrackListener(mouseTrackListener);
+		}
 	}
 
 	/**
@@ -330,7 +332,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	@Override
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
-		if (!this.help.isDisposed()) {
+		if (this.help != null && !this.help.isDisposed()) {
 			this.help.removeMouseTrackListener(mouseTrackListener);
 		}
 
