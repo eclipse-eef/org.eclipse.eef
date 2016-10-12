@@ -18,10 +18,10 @@ import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.internal.EEFTabbedPropertyViewPlugin;
 import org.eclipse.eef.properties.ui.internal.page.propertylist.EEFTabbedPropertyList;
 import org.eclipse.eef.properties.ui.internal.registry.EEFTabbedPropertyRegistry;
-import org.eclipse.jface.util.OpenStrategy;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.jface.viewers.StructuredViewer;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.IWorkbenchPart;
 
 /**
@@ -31,32 +31,12 @@ import org.eclipse.ui.IWorkbenchPart;
  * @author Anthony Hunter
  * @author Stephane Begaudeau
  */
-public class EEFTabbedPropertyViewer {
-
-	/**
-	 * Interface used to listen to changes to the currently selected tab.
-	 *
-	 * @author sbegaudeau
-	 */
-	public interface IEEFTabDescriptorChangedListener {
-		/**
-		 * React to a selection change event.
-		 *
-		 * @param descriptor
-		 *            The descriptor selected
-		 */
-		void selectionChanged(IEEFTabDescriptor descriptor);
-	}
+public class EEFTabbedPropertyViewer extends StructuredViewer {
 
 	/**
 	 * The elements displayed in the viewer.
 	 */
 	private List<IEEFTabDescriptor> elements = new ArrayList<IEEFTabDescriptor>();
-
-	/**
-	 * The listeners.
-	 */
-	private List<IEEFTabDescriptorChangedListener> listeners = new ArrayList<EEFTabbedPropertyViewer.IEEFTabDescriptorChangedListener>();
 
 	/**
 	 * The tabbed property list.
@@ -89,43 +69,7 @@ public class EEFTabbedPropertyViewer {
 	public EEFTabbedPropertyViewer(EEFTabbedPropertyList tabbedPropertyList, EEFTabbedPropertyRegistry registry) {
 		this.list = tabbedPropertyList;
 		this.registry = registry;
-
-		OpenStrategy handler = new OpenStrategy(this.list);
-		handler.addSelectionListener(new SelectionListener() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				int index = EEFTabbedPropertyViewer.this.list.getSelectionIndex();
-				IEEFTabDescriptor descriptor = EEFTabbedPropertyViewer.this.getTabDescriptionAtIndex(index);
-				EEFTabbedPropertyViewer.this.fireSelectionChanged(descriptor);
-			}
-
-			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
-				// do nothing
-			}
-		});
-	}
-
-	/**
-	 * Fires a selection changed event.
-	 *
-	 * @param descriptor
-	 *            The newly selected {@link IEEFTabDescriptor}
-	 */
-	private void fireSelectionChanged(IEEFTabDescriptor descriptor) {
-		for (IEEFTabDescriptorChangedListener listener : this.listeners) {
-			listener.selectionChanged(descriptor);
-		}
-	}
-
-	/**
-	 * Adds a selection listener.
-	 *
-	 * @param listener
-	 *            The listener
-	 */
-	public void addSelectionListener(IEEFTabDescriptorChangedListener listener) {
-		this.listeners.add(listener);
+		this.hookControl(this.list);
 	}
 
 	/**
@@ -140,16 +84,7 @@ public class EEFTabbedPropertyViewer {
 		EEFTabbedPropertyViewPlugin.getPlugin().debug("EEFTabbedPropertyViewer#setInput()"); //$NON-NLS-1$
 
 		this.part = workbenchPart;
-		this.input = selection;
-		this.elements.clear();
-
-		List<IEEFTabDescriptor> descriptors = this.registry.getTabDescriptors(this.part, selection);
-		list.removeAll();
-		for (IEEFTabDescriptor descriptor : descriptors) {
-			this.elements.add(descriptor);
-		}
-
-		list.setElements(descriptors.toArray());
+		this.setInput(selection);
 	}
 
 	/**
@@ -157,6 +92,7 @@ public class EEFTabbedPropertyViewer {
 	 *
 	 * @return the input
 	 */
+	@Override
 	public ISelection getInput() {
 		return this.input;
 	}
@@ -222,6 +158,116 @@ public class EEFTabbedPropertyViewer {
 
 			this.list.select(index);
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.StructuredViewer#getSelectionFromWidget()
+	 */
+	@Override
+	protected List getSelectionFromWidget() {
+		List result = new ArrayList();
+		IEEFTabDescriptor tabDescriptor = this.getTabDescriptionAtIndex(this.getSelectionIndex());
+		if (tabDescriptor != null) {
+			result.add(tabDescriptor);
+		}
+		return result;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.StructuredViewer#setSelectionToWidget(java.util.List, boolean)
+	 */
+	@Override
+	protected void setSelectionToWidget(List l, boolean reveal) {
+		IEEFTabDescriptor tabDescriptor = null;
+		if (l != null && l.size() > 0 && l.get(0) instanceof IEEFTabDescriptor) {
+			tabDescriptor = (IEEFTabDescriptor) l.get(0);
+		}
+		this.setSelectedTabDescriptor(tabDescriptor);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.Viewer#getControl()
+	 */
+	@Override
+	public Control getControl() {
+		return this.list;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.Viewer#inputChanged(java.lang.Object, java.lang.Object)
+	 */
+	@Override
+	protected void inputChanged(Object newInput, Object oldInput) {
+		this.elements.clear();
+
+		List<IEEFTabDescriptor> descriptors = this.registry.getTabDescriptors(this.part, this.getSelection());
+		list.removeAll();
+		for (IEEFTabDescriptor descriptor : descriptors) {
+			this.elements.add(descriptor);
+		}
+
+		list.setElements(descriptors.toArray());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.StructuredViewer#internalRefresh(java.lang.Object)
+	 */
+	@Override
+	protected void internalRefresh(Object element) {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.StructuredViewer#doUpdateItem(org.eclipse.swt.widgets.Widget, java.lang.Object,
+	 *      boolean)
+	 */
+	@Override
+	protected void doUpdateItem(Widget item, Object element, boolean fullMap) {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.StructuredViewer#reveal(java.lang.Object)
+	 */
+	@Override
+	public void reveal(Object element) {
+		// do nothing
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.StructuredViewer#doFindInputItem(java.lang.Object)
+	 */
+	@Override
+	protected Widget doFindInputItem(Object element) {
+		// do nothing
+		return null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.jface.viewers.StructuredViewer#doFindItem(java.lang.Object)
+	 */
+	@Override
+	protected Widget doFindItem(Object element) {
+		// do nothing
+		return null;
 	}
 
 }

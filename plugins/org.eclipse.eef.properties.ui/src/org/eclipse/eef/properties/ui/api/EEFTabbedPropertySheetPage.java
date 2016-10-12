@@ -25,9 +25,14 @@ import org.eclipse.eef.properties.ui.internal.page.EEFMessagePrefixProvider;
 import org.eclipse.eef.properties.ui.internal.page.EEFPartListenerAdapter;
 import org.eclipse.eef.properties.ui.internal.page.EEFTabbedPropertyComposite;
 import org.eclipse.eef.properties.ui.internal.page.EEFTabbedPropertyViewer;
-import org.eclipse.eef.properties.ui.internal.page.EEFTabbedPropertyViewer.IEEFTabDescriptorChangedListener;
 import org.eclipse.eef.properties.ui.internal.registry.EEFTabbedPropertyRegistry;
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredContentProvider;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
@@ -159,7 +164,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 	/**
 	 * The listener used to forward tab selection changes.
 	 */
-	private IEEFTabDescriptorChangedListener viewerSelectionListener;
+	private ISelectionChangedListener viewerSelectionListener;
 
 	/**
 	 * The constructor.
@@ -206,13 +211,33 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		this.widgetFactory.paintBordersFor(form);
 
 		this.tabbedPropertyViewer = new EEFTabbedPropertyViewer(this.tabbedPropertyComposite.getTabbedPropertyList(), this.registry);
-		this.viewerSelectionListener = new IEEFTabDescriptorChangedListener() {
+		this.tabbedPropertyViewer.setContentProvider(new IStructuredContentProvider() {
+			private IWorkbenchPart part;
+
 			@Override
-			public void selectionChanged(IEEFTabDescriptor descriptor) {
+			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+				this.part = ((EEFTabbedPropertyViewer) viewer).getWorkbenchPart();
+			}
+
+			@Override
+			public void dispose() {
+				// do nothing
+			}
+
+			@Override
+			public Object[] getElements(Object inputElement) {
+				return registry.getTabDescriptors(this.part, (ISelection) inputElement).toArray();
+			}
+		});
+		this.viewerSelectionListener = new ISelectionChangedListener() {
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+				IEEFTabDescriptor descriptor = (IEEFTabDescriptor) selection.getFirstElement();
 				EEFTabbedPropertySheetPage.this.processSelectionChanged(descriptor);
 			}
 		};
-		this.tabbedPropertyViewer.addSelectionListener(viewerSelectionListener);
+		this.tabbedPropertyViewer.addSelectionChangedListener(viewerSelectionListener);
 
 		this.scrolledCompositeListener = new ControlAdapter() {
 			@Override
@@ -327,9 +352,9 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 			this.selectionQueueLocked = true;
 			try {
 				if (selectedTab == null) {
-					this.tabbedPropertyViewer.setSelectedTabDescriptor(null);
+					this.tabbedPropertyViewer.setSelection(null);
 				} else {
-					this.tabbedPropertyViewer.setSelectedTabDescriptor(selectedTab);
+					this.tabbedPropertyViewer.setSelection(new StructuredSelection(selectedTab));
 				}
 			} finally {
 				this.selectionQueueLocked = false;
@@ -687,7 +712,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		List<IEEFTabDescriptor> elements = this.tabbedPropertyViewer.getElements();
 		for (IEEFTabDescriptor descriptor : elements) {
 			if (descriptor.getId() != null && descriptor.getId().equals(id)) {
-				this.tabbedPropertyViewer.setSelectedTabDescriptor(descriptor);
+				this.tabbedPropertyViewer.setSelection(new StructuredSelection(descriptor), true);
 			}
 		}
 	}
