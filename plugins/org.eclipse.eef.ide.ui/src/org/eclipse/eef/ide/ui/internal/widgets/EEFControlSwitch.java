@@ -250,21 +250,15 @@ public class EEFControlSwitch {
 			switchExpressionVariables.put(EEFExpressionUtils.INPUT, variableManager.getVariables().get(EEFExpressionUtils.INPUT));
 			switchExpressionVariables.put(iterator, object);
 
-			EEFWidgetDescription eefWidgetDescription = null;
 			List<EEFDynamicMappingIf> dynamicMappingIfs = dynamicMappingFor.getIfs();
 			for (EEFDynamicMappingIf dynamicMappingIf : dynamicMappingIfs) {
 				Boolean isValid = EvalFactory.of(this.interpreter, switchExpressionVariables).logIfInvalidType(Boolean.class)
 						.logIfBlank(ifExpressionEAttribute).evaluate(dynamicMappingIf.getPredicateExpression());
 				if (isValid != null && isValid.booleanValue()) {
-					eefWidgetDescription = dynamicMappingIf.getWidget();
-					break;
+					IVariableManager childVariableManager = variableManager.createChild();
+					childVariableManager.put(iterator, object);
+					lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, dynamicMappingIf.getWidget(), childVariableManager));
 				}
-			}
-
-			if (eefWidgetDescription != null) {
-				IVariableManager childVariableManager = variableManager.createChild();
-				childVariableManager.put(iterator, object);
-				lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, eefWidgetDescription, childVariableManager));
 			}
 		}
 
