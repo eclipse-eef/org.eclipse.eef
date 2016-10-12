@@ -56,9 +56,6 @@ public class EEFSelectControllerTests extends AbstractEEFControllerTests {
 	public void testValue() {
 		AtomicBoolean atomicBoolean = new AtomicBoolean(false);
 		IEEFSelectController controller = this.selectController(EEFDataTests.EEFSELECTCONTROLLERTESTS_VALUE);
-		controller.onNewCandidates(candidates -> {
-			// do nothing
-		});
 		controller.onNewValue(value -> {
 			assertThat(value, is("public")); //$NON-NLS-1$
 			atomicBoolean.set(true);

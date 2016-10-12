@@ -57,9 +57,4 @@ public interface IEEFSelectController extends IEEFWidgetController {
 	 */
 	void removeNewCandidatesConsumer();
 
-	/**
-	 * Compute the candidates.
-	 */
-	void computeCandidates();
-
 }
