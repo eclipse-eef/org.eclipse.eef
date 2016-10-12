@@ -208,6 +208,10 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 			this.image.setImage(null);
 			this.text.setText(Messages.SingleReference_noValue);
 		}
+
+		if (this.browseButton != null && !this.browseButton.isDisposed()) {
+			this.browseButton.setEnabled(this.isEnabled());
+		}
 	}
 
 	/**

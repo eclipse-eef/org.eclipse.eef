@@ -291,6 +291,16 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#isEnabled()
+	 */
+	@Override
+	protected boolean isEnabled() {
+		return super.isEnabled() && this.eReference.isChangeable();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#aboutToBeHidden()
 	 */
 	@Override
