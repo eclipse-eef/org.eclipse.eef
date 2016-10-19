@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07b223f6_33f9c3ba",
+        "filename": "doc/org.eclipse.eef.documentation/pages/developerguide/eeflifecyclemanagerprovider.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-10-19T13:32:56Z",
+      "side": 1,
+      "message": "provide",
+      "range": {
+        "startLine": 14,
+        "startChar": 109,
+        "endLine": 14,
+        "endChar": 117
+      },
+      "revId": "5db89b8677c14359b36d3bdd647a4ed88ad8114f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07b223f6_5368f7e6",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/hyperlink.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-10-19T13:32:56Z",
+      "side": 1,
+      "message": "contains",
+      "range": {
+        "startLine": 14,
+        "startChar": 16,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "5db89b8677c14359b36d3bdd647a4ed88ad8114f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07b223f6_d35c0754",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/label.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-10-19T13:32:56Z",
+      "side": 1,
+      "message": "contains",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "5db89b8677c14359b36d3bdd647a4ed88ad8114f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07b223f6_73717bce",
+        "filename": "doc/org.eclipse.eef.documentation/pages/language/widgets/text.textile",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-10-19T13:32:56Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 8,
+        "startChar": 247,
+        "endLine": 8,
+        "endChar": 248
+      },
+      "revId": "5db89b8677c14359b36d3bdd647a4ed88ad8114f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
