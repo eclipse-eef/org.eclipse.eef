@@ -5,7 +5,7 @@ h3(#description). Description
 The select widget can be used to display and edit a mono-valued property which can take one of several existing values. It can thus be used to edit a mono-valued EReference with a sizable list of potential values or an EEnum. The properties available on this widget are very similar to the ones available on a "radio":radio.html widget. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
 
 * valueExpression: The value expression is used to compute the value to select. This expression must return an object.
-* editExpression: This expression will be executed when the user will select a new value. The selected value will be accessible using the variable @newValue@. This expression does not have to return anything.
+* editExpression: This expression will be executed when the user will select a new value. The selected value will be accessible using the variable @newValue@. The variable @newValue@ will contain a candidate selected from the result of the @candidatesExpression@. This expression does not have to return anything.
 * candidatesExpression: This expression is used to compute all the values to display in the select widget. This expression must return a collection of objects.
 * candidateDisplayExpression: This expression is used to compute the label of each value in the select widget. Each value will be accessible using the variable @candidate@. This expression must return a string.
 * style: The style of the select widget.
@@ -19,7 +19,7 @@ In order to display in the user interface a select widget with the value of a mo
 * labelExpression: @aql:'Supertype'@
 * valueExpression: @aql:self.supertype@
 * editExpression: @aql:self.eSet('supertype', newValue)@
-* candidatesExpression: @aql:packagename::Class.allInstances()@
+* candidatesExpression: @aql:aql:self.eResource().getContents().eAllContents(packagename::Class)@
 * candidateDisplayExpression: @aql:candidate.name@
 
 In this scenario, we will display a property with the eType "Class" coming from a package with the name "packagename". EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations. The operation @eSet(java.lang.String, java.lang.Object)@ used in the example does not exist in AQL. You would have to create it yourself.

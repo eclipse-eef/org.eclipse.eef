@@ -19,7 +19,7 @@ h4(#variables). Variables
 
 In order to compute the label expression and the image expression, you have access to several variables:
 
-* self: An instance of @org.eclipse.emf.ecore.EObject@ which will be the semantic element representing the input
+* self: An instance of @java.lang.Object@ (even if most of the time, an instance of @org.eclipse.emf.ecore.EObject@ will be used) which will be the semantic element representing the input
 * input: An instance of @org.eclipse.eef.core.api.InputDescriptor@ which will contain both the original input of the view and its the semantic element which you can access using the variable @self@. In other concepts of your definition, @self@ may be redefined so if you want to access the original input of your view, it can always be retrieved thanks to the variable @input@.
 
 h3(#pagesandgroups). Organization of pages and groups

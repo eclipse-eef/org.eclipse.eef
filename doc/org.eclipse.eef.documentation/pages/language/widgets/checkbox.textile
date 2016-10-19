@@ -5,7 +5,7 @@ h3(#description). Description
 The checkbox can be used to easily display and edit a boolean property. The properties available on this widget are very similar to the ones available on a "*text*":text.html widget. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
 
 * valueExpression: The value expression is used to compute the value to set in the checkbox widget. This expression must return a boolean.
-* editExpression: The edit expression will be executed when the user will click in the checkbox widget. The current value of the checkbox will be accessible in a variable named @newValue@. This expression does not have to return anything.
+* editExpression: The edit expression will be executed when the user will click in the checkbox widget. The current value of the checkbox will be accessible in a variable named @newValue@. The variable @newValue@ is a @java.lang.Boolean@. This expression does not have to return anything.
 * style: The style of the checkbox widget.
 * conditionalStyles: All the conditional styles of the checkbox widget.
 

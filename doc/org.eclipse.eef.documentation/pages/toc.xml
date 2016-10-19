@@ -30,7 +30,7 @@
         </topic>
         <topic href="pages/language/widgets/label.html" label="Label">
         </topic>
-        <topic href="pages/language/widgets/reference.html" label="Reference">
+        <topic href="pages/language/widgets/list.html" label="List">
         </topic>
         <topic href="pages/language/widgets/hyperlink.html" label="Hyperlink">
         </topic>
@@ -38,6 +38,7 @@
         </topic>
         <topic href="pages/language/widgets.html#customwidgets" label="Custom Widgets">
         </topic>
+        <anchor id="eefAdditionalWidgets"/>
      </topic>
      <topic href="pages/language/container.html" label="Container and Layout">
      </topic>
@@ -48,10 +49,13 @@
   </topic>
   <topic href="pages/developerguide/overview.html" label="Developer Guide">
      <topic href="pages/developerguide/extensionpoints.html" label="Extension Points">
-        <topic href="pages/developerguide/extensionpoints.html#eeflifecyclemanagerprovider" label="IEEFLifecycleManagerProvider">
+        <topic href="pages/developerguide/eeflifecyclemanagerprovider.html" label="IEEFLifecycleManagerProvider">
         </topic>
-        <topic href="pages/developerguide/extensionpoints.html#eeftabdescriptorprovider" label="IEEFTabDescriptorProvider">
+        <topic href="pages/developerguide/eeftabdescriptorprovider.html" label="IEEFTabDescriptorProvider">
         </topic>
+        <topic href="pages/developerguide/eeftabdescriptorfilter.html" label="IEEFTabDescriptorFilter">
+        </topic>
+        <anchor id="eefAdditionalExternsionPoints"/>
      </topic>
   </topic>
   <topic href="pages/glossary.html" label="Glossary">

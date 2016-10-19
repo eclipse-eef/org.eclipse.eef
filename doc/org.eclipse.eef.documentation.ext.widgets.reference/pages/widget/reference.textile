@@ -1,0 +1,20 @@
+h2. Reference
+
+h3(#description). Description
+
+The reference widget is used to edit mono-valued and multi-valued references. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
+
+* referenceNameExpression: This expression is used to compute the name of the reference to be displayed. This expression must return a string.
+* referenceOwnerExpression: This expression is used to compute the EObject used to compute the value of the reference. By default, the EObject contained in the variable @self@ will be used. This expression must return an @org.eclipse.emf.ecore.EObject@.
+* style: The style of the reference widget.
+* conditionalStyles: All the conditional styles of the reference widget.
+
+h3(#editanedreference). Edit an EReference named children
+
+In order to edit an EReference named @children@, we can create a reference using the following configuration:
+
+* referenceNameExpression: @aql:'children'@
+
+All the configuration of the reference widget will be based on the EMF Edit framework. As such, you can customize the label, choice of values, images etc by modifying or extending the code generated for the edit part of your metamodel.
+
+EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations.

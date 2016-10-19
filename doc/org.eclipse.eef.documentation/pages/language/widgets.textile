@@ -9,8 +9,7 @@ A "group":group.html or a "container":container.html can contain various widgets
 * "Radio":widgets/radio.html
 * "Select":widgets/select.html
 * "Label":widgets/label.html
-* "Reference":widgets/reference.html
-* "Reference":widgets/list.html
+* "List":widgets/list.html
 * "Hyperlink":widgets/hyperlink.html
 * "Button":widgets/button.html
 
@@ -45,8 +44,8 @@ You also have the ability to use the custom widget definition in order to provid
 
 Imagine that you want to create a color picker, in order to let your specifier use the color picker you will need two pieces of information from him: "what is the value of the color picker?" and "what happens when a new value is selected?". In order to achieve this, you just need create programmatically the definition of your custom widget and tell the specifier who will need to use it to create a custom widget with the kind of identifier that you are expecting and then to specify the proper customExpressions. In this example, to set the value of the color picker widget, your code may be expecting a custom expression with the identifier "valueExpression" and an expression like @aql:self.colorValue@. In order to update the value of the color, your code may be expecting a custom expression with the identifier "editExpression" and an expression like @aql:self.updateColor(newValue)@.
 
-With the concept of custom widget in the language, you only have to create the code which will handle the widget, you don't have to contribute to the EEF language to add your new widget. To contribute the code used to create and handle your custom widget, have a look at the "extension points":../developerguide/extensionpoints.html documentation.
+With the concept of custom widget in the language, you only have to create the code which will handle the widget, you don't have to contribute to the EEF language to add your new widget. To contribute the code used to create and handle your custom widget, have a look at the "EEF Lifecycle Manager extension point":../developerguide/eeflifecyclemanagerprovider.html documentation.
 
 h3(#replacedefaultwidgets). Replace Default Widgets
 
-EEF provides some APIs in order to let developers modify or replace the behavior of existing widget. Have a look at the "extension points":../developerguide/extensionpoints.html documentation for additional details. 
+EEF provides some APIs in order to let developers modify or replace the behavior of existing widget. Have a look at the "EEF Lifecycle Manager extension point":../developerguide/eeflifecyclemanagerprovider.html documentation for additional details. 

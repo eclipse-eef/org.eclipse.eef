@@ -30,7 +30,8 @@
 		<p>In order to compute the label expression and the image expression, you have access to several variables:</p>
 		<ul>
 			<li>self: An instance of 
-				<code>org.eclipse.emf.ecore.EObject</code> which will be the semantic element representing the input
+				<code>java.lang.Object</code> (even if most of the time, an instance of 
+				<code>org.eclipse.emf.ecore.EObject</code> will be used) which will be the semantic element representing the input
 			</li>
 			<li>input: An instance of 
 				<code>org.eclipse.eef.core.api.InputDescriptor</code> which will contain both the original input of the view and its the semantic element which you can access using the variable 

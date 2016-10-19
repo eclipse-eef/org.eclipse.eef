@@ -146,6 +146,7 @@
     <module>../../doc/org.eclipse.eef.documentation</module>
     <module>../../doc/org.eclipse.eef.documentation.javadoc</module>
     <module>../../doc/org.eclipse.eef.documentation.export</module>
+    <module>../../doc/org.eclipse.eef.documentation.ext.widgets.reference</module>
 
     <module>../../features/org.eclipse.eef.sdk-feature</module>
     <module>../../features/org.eclipse.eef.ext.widgets.reference-feature</module>

@@ -5,7 +5,7 @@ h3(#description). Description
 The text widget is one of the most simple widget in EEF, with this widget your can create a single line or multiline text field in your user interface. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
 
 * valueExpression: The value expression is used to compute the value to set in the text field. This expression must return a string.
-* editExpression: The edit expression will be executed when the user will type some content in the text field. The current value of the text field will be accessible in a variable named @newValue@. This expression does not have to return anything. 
+* editExpression: The edit expression will be executed when the user will type some content in the text field. The current value of the text field will be accessible in a variable named @newValue@. The variable @newValue@ is a @java.lang.String@. ‡This expression does not have to return anything. 
 * lineCount: The number of line of the text field. Use @1@ for a single line text field or @5@ (for example) for a multiline text field.
 * style: The style of the text widget.
 * conditionalStyles: All the conditional styles of the text widget.

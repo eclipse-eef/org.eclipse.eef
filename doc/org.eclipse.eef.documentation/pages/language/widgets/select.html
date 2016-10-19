@@ -14,7 +14,9 @@
 		<ul>
 			<li>valueExpression: The value expression is used to compute the value to select. This expression must return an object.</li>
 			<li>editExpression: This expression will be executed when the user will select a new value. The selected value will be accessible using the variable 
-				<code>newValue</code>. This expression does not have to return anything.
+				<code>newValue</code>. The variable 
+				<code>newValue</code> will contain a candidate selected from the result of the 
+				<code>candidatesExpression</code>. This expression does not have to return anything.
 			</li>
 			<li>candidatesExpression: This expression is used to compute all the values to display in the select widget. This expression must return a collection of objects.</li>
 			<li>candidateDisplayExpression: This expression is used to compute the label of each value in the select widget. Each value will be accessible using the variable 
@@ -36,7 +38,7 @@
 				<code>aql:self.eSet('supertype', newValue)</code>
 			</li>
 			<li>candidatesExpression: 
-				<code>aql:packagename::Class.allInstances()</code>
+				<code>aql:aql:self.eResource().getContents().eAllContents(packagename::Class)</code>
 			</li>
 			<li>candidateDisplayExpression: 
 				<code>aql:candidate.name</code>

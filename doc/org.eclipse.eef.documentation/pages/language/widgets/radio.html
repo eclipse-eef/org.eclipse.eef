@@ -14,7 +14,9 @@
 		<ul>
 			<li>valueExpression: The value expression is used to compute the value to select. This expression must return an object.</li>
 			<li>editExpression: This expression will be executed when the user will select a radio button. The selected value will be accessible using the variable 
-				<code>newValue</code>. This expression does not have to return anything.
+				<code>newValue</code>. The variable 
+				<code>newValue</code> will contain a candidate selected from the result of the 
+				<code>candidatesExpression</code>. This expression does not have to return anything.
 			</li>
 			<li>candidatesExpression: This expression is used to compute all the radio buttons to create and the value that will be associated with each of them. This expression must return a collection of objects.</li>
 			<li>candidateDisplayExpression: This expression will compute the label of each radio button using the value associated to the button. This value will be accessible using the variable named 

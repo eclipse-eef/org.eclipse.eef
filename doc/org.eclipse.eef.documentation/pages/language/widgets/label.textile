@@ -8,6 +8,12 @@ The label widget can be used to display a read-only piece of text in your user i
 * displayExpression: This expression will have access to the result of the valueExpression thanks to a variable named value and it should return a string. If this expression is blank, a call to java.lang.Object#toString() will be performed on the result of the valueExpression instead.
 * style: The style of the label widget.
 * conditionalStyle: All the conditional styles of the label widget.
+* actions: All the widget actions of the label. Widget actions will be represented in the user interface by buttons.
+
+A widget action contain only the following properties:
+
+* labelExpression: This expression is used to compute the label of the button. It should return a string.
+* actionExpression: This expression is used to define the behavior of the button. It will be executed when the end user will click on the button. It should not return anything.
 
 h3(#displayreadonlyestringeattribute). Display a read-only EString EAttribute
 
