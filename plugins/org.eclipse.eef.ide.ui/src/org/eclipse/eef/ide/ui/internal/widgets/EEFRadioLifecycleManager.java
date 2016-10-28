@@ -183,6 +183,8 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 						if (result != null && result.getSeverity() == IStatus.ERROR && referenceSelection != null) {
 							EEFIdePlugin.INSTANCE.log(result);
 							radioGroupViewer.setSelection(referenceSelection);
+						} else {
+							refresh();
 						}
 					} finally {
 						updateInProgress.set(false);

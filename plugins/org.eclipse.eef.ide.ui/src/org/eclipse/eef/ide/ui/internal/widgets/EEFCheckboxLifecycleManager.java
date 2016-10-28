@@ -168,6 +168,8 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 					// reference state to revert to without storing anything.
 					boolean referenceValue = !checkbox.getSelection();
 					checkbox.setSelection(referenceValue);
+				} else {
+					refresh();
 				}
 			}
 

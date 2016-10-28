@@ -12,6 +12,7 @@ package org.eclipse.eef.core.api.controllers;
 
 import java.util.List;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFWidgetAction;
 
 /**
@@ -50,7 +51,8 @@ public interface IEEFListController extends IEEFWidgetController {
 	 *            Widget action
 	 * @param selection
 	 *            The selected elements
+	 * @return the status of the action execution
 	 */
-	void action(EEFWidgetAction action, List<Object> selection);
+	IStatus action(EEFWidgetAction action, List<Object> selection);
 
 }

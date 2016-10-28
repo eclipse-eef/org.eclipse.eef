@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFWidgetAction;
 
 /**
@@ -37,6 +38,7 @@ public interface IEEFLabelController extends IEEFWidgetController {
 	 *
 	 * @param action
 	 *            Widget action
+	 * @return the status of the action execution
 	 */
-	void action(EEFWidgetAction action);
+	IStatus action(EEFWidgetAction action);
 }

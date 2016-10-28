@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -85,8 +86,8 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	}
 
 	@Override
-	public void pushed() {
-		contextAdapter.performModelChange(new Runnable() {
+	public IStatus pushed() {
+		return contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String pushExpression = EEFButtonController.this.description.getPushExpression();
