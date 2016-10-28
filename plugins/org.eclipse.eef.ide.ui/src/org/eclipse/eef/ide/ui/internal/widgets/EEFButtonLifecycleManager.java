@@ -12,6 +12,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import com.google.common.base.Objects;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -21,6 +22,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -143,7 +145,14 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		this.selectionListener = new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				controller.pushed();
+				if (!EEFButtonLifecycleManager.this.container.isRenderingInProgress()) {
+					IStatus result = controller.pushed();
+					if (result != null && result.getSeverity() == IStatus.ERROR) {
+						EEFIdePlugin.INSTANCE.log(result);
+					} else {
+						refresh();
+					}
+				}
 			}
 		};
 		this.button.addSelectionListener(this.selectionListener);

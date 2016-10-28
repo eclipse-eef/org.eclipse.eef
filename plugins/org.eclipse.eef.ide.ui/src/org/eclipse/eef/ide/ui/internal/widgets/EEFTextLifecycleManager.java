@@ -284,6 +284,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 					text.setText(referenceValue);
 				} else {
 					referenceValue = text.getText();
+					refresh();
 				}
 				this.isDirty = false;
 				this.setStyle();

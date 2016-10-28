@@ -13,6 +13,7 @@ package org.eclipse.eef.core.internal.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -97,8 +98,8 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	 * @see org.eclipse.eef.core.api.controllers.IEEFHyperlinkController#onClick(java.lang.Object)
 	 */
 	@Override
-	public void onClick(final Object element) {
-		contextAdapter.performModelChange(new Runnable() {
+	public IStatus onClick(final Object element) {
+		return contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String expression = EEFHyperlinkController.this.description.getOnClickExpression();
@@ -145,12 +146,12 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 
 	/**
 	 * {@inheritDoc}
-	 *
+	 * 
 	 * @see org.eclipse.eef.core.api.controllers.IEEFHyperlinkController#action(EEFWidgetAction)
 	 */
 	@Override
-	public void action(final EEFWidgetAction action) {
-		this.contextAdapter.performModelChange(new Runnable() {
+	public IStatus action(final EEFWidgetAction action) {
+		return this.contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String expression = action.getActionExpression();

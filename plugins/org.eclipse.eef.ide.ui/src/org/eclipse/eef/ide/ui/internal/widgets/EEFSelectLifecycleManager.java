@@ -190,6 +190,8 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 					if (result != null && result.getSeverity() == IStatus.ERROR) {
 						EEFIdePlugin.INSTANCE.log(result);
 						comboViewer.setSelection(referenceValue);
+					} else {
+						refresh();
 					}
 				}
 			}

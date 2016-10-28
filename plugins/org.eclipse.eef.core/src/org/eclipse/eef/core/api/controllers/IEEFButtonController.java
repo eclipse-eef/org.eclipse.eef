@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.core.runtime.IStatus;
+
 /**
  * The IEEFButtonController is responsible of supporting all the interactions with the widgets created for an
  * EEFButtonDescription.
@@ -32,7 +34,9 @@ public interface IEEFButtonController extends IEEFWidgetController {
 
 	/**
 	 * Invoked when the user pushes the button.
+	 * 
+	 * @return the status of the pushed execution.
 	 */
-	void pushed();
+	IStatus pushed();
 
 }

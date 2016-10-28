@@ -15,6 +15,7 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFLabelStyle;
 import org.eclipse.eef.EEFWidgetAction;
@@ -27,6 +28,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
@@ -201,7 +203,14 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 			SelectionAdapter selectionListener = new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					controller.action(actionButton.getAction());
+					if (!EEFLabelLifecycleManager.this.container.isRenderingInProgress()) {
+						IStatus result = controller.action(actionButton.getAction());
+						if (result != null && result.getSeverity() == IStatus.ERROR) {
+							EEFIdePlugin.INSTANCE.log(result);
+						} else {
+							refresh();
+						}
+					}
 				}
 			};
 

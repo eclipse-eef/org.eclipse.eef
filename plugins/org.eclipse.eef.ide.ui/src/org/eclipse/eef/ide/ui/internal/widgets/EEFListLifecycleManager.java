@@ -13,6 +13,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -23,6 +24,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFListController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
@@ -227,12 +229,19 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			SelectionAdapter selectionListener = new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					List<Object> selections = new ArrayList<Object>();
-					IStructuredSelection structuredSelection = (IStructuredSelection) tableViewer.getSelection();
-					for (Object selection : structuredSelection.toList()) {
-						selections.add(selection);
+					if (!EEFListLifecycleManager.this.container.isRenderingInProgress()) {
+						List<Object> selections = new ArrayList<Object>();
+						IStructuredSelection structuredSelection = (IStructuredSelection) tableViewer.getSelection();
+						for (Object selection : structuredSelection.toList()) {
+							selections.add(selection);
+						}
+						IStatus result = controller.action(actionButton.getAction(), selections);
+						if (result != null && result.getSeverity() == IStatus.ERROR) {
+							EEFIdePlugin.INSTANCE.log(result);
+						} else {
+							refresh();
+						}
 					}
-					controller.action(actionButton.getAction(), selections);
 				}
 			};
 

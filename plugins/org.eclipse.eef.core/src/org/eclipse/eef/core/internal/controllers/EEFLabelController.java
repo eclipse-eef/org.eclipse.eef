@@ -13,6 +13,7 @@ package org.eclipse.eef.core.internal.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -128,8 +129,8 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	 * @see org.eclipse.eef.core.api.controllers.IEEFLabelController#action(EEFWidgetAction)
 	 */
 	@Override
-	public void action(final EEFWidgetAction action) {
-		this.contextAdapter.performModelChange(new Runnable() {
+	public IStatus action(final EEFWidgetAction action) {
+		return this.contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String expression = action.getActionExpression();
