@@ -41,7 +41,7 @@ public class EEFHyperlinkListener implements MouseListener {
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param hyperlink
 	 *            The hyperlink
 	 * @param container
