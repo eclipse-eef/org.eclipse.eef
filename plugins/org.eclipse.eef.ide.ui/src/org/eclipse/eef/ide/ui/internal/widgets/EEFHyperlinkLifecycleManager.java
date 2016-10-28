@@ -15,6 +15,7 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFHyperlinkStyle;
 import org.eclipse.eef.EEFWidgetAction;
@@ -30,6 +31,7 @@ import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -201,7 +203,7 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.hyperlinkListener = new EEFHyperlinkListener(this.hyperlink, this.container, this.controller);
+		this.hyperlinkListener = new EEFHyperlinkListener(this, this.hyperlink, this.container, this.controller);
 		hyperlink.addMouseListener(hyperlinkListener);
 
 		this.controller.onNewValue(new IConsumer<String>() {
@@ -225,7 +227,14 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 			SelectionAdapter selectionListener = new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
-					controller.action(actionButton.getAction());
+					if (!EEFHyperlinkLifecycleManager.this.container.isRenderingInProgress()) {
+						IStatus result = controller.action(actionButton.getAction());
+						if (result != null && result.getSeverity() == IStatus.ERROR) {
+							EEFIdeUiPlugin.INSTANCE.log(result);
+						} else {
+							refresh();
+						}
+					}
 				}
 			};
 

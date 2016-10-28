@@ -24,10 +24,10 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -63,6 +63,11 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	 * The listener on the checkbox.
 	 */
 	private SelectionListener selectionListener;
+
+	/**
+	 * The reference value of the checkbox, as last rendered from the state of the actual model.
+	 */
+	private boolean referenceValue;
 
 	/**
 	 * The constructor.
@@ -163,11 +168,10 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 			public void widgetSelected(SelectionEvent event) {
 				IStatus result = controller.updateValue(checkbox.getSelection());
 				if (result != null && result.getSeverity() == IStatus.ERROR) {
-					EEFIdePlugin.INSTANCE.log(result);
-					// The checkbox widget is a special case with only two possible states, so we can deduce the
-					// reference state to revert to without storing anything.
-					boolean referenceValue = !checkbox.getSelection();
+					EEFIdeUiPlugin.INSTANCE.log(result);
 					checkbox.setSelection(referenceValue);
+				} else {
+					refresh();
 				}
 			}
 
@@ -185,6 +189,7 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 				if (!checkbox.isDisposed()) {
 					if (value != null && checkbox.getSelection() != value.booleanValue()) {
 						checkbox.setSelection(value.booleanValue());
+						referenceValue = value.booleanValue();
 					}
 				}
 			}

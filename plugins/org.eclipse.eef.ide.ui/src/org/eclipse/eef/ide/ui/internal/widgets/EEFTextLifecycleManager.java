@@ -25,10 +25,10 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
-import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -280,10 +280,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			try {
 				IStatus result = controller.updateValue(text.getText());
 				if (result != null && result.getSeverity() == IStatus.ERROR) {
-					EEFIdePlugin.INSTANCE.log(result);
+					EEFIdeUiPlugin.INSTANCE.log(result);
 					text.setText(referenceValue);
 				} else {
 					referenceValue = text.getText();
+					refresh();
 				}
 				this.isDirty = false;
 				this.setStyle();

@@ -29,8 +29,8 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFRadioController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
-import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
@@ -181,8 +181,10 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 						Object newValue = selection.getFirstElement();
 						IStatus result = controller.updateValue(newValue);
 						if (result != null && result.getSeverity() == IStatus.ERROR && referenceSelection != null) {
-							EEFIdePlugin.INSTANCE.log(result);
+							EEFIdeUiPlugin.INSTANCE.log(result);
 							radioGroupViewer.setSelection(referenceSelection);
+						} else {
+							refresh();
 						}
 					} finally {
 						updateInProgress.set(false);

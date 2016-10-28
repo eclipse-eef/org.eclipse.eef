@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFWidgetAction;
 
 /**
@@ -25,8 +26,9 @@ public interface IEEFHyperlinkController extends IEEFWidgetController {
 	 *
 	 * @param element
 	 *            Semantic element
+	 * @return the status of the onclick execution.
 	 */
-	void onClick(Object element);
+	IStatus onClick(Object element);
 
 	/**
 	 * Register a consumer which will be called with the new value of the hyperlink when it will change.
@@ -46,7 +48,8 @@ public interface IEEFHyperlinkController extends IEEFWidgetController {
 	 *
 	 * @param action
 	 *            Widget action
+	 * @return the status of the action execution
 	 */
-	void action(EEFWidgetAction action);
+	IStatus action(EEFWidgetAction action);
 
 }

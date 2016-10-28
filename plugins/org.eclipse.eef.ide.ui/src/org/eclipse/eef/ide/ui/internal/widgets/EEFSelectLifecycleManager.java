@@ -28,8 +28,8 @@ import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
-import org.eclipse.eef.ide.internal.EEFIdePlugin;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
+import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
@@ -188,8 +188,10 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 					}
 					IStatus result = controller.updateValue(newValue);
 					if (result != null && result.getSeverity() == IStatus.ERROR) {
-						EEFIdePlugin.INSTANCE.log(result);
+						EEFIdeUiPlugin.INSTANCE.log(result);
 						comboViewer.setSelection(referenceValue);
+					} else {
+						refresh();
 					}
 				}
 			}

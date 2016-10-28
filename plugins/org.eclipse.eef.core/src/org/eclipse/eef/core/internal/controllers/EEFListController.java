@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.EEFWidgetDescription;
@@ -140,8 +141,8 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	 *      java.util.List)
 	 */
 	@Override
-	public void action(final EEFWidgetAction action, final List<Object> elements) {
-		contextAdapter.performModelChange(new Runnable() {
+	public IStatus action(final EEFWidgetAction action, final List<Object> elements) {
+		return contextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String expression = action.getActionExpression();
