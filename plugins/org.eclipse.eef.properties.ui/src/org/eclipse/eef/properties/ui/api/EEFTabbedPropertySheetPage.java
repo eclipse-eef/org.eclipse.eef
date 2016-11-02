@@ -489,6 +489,21 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 				// can not cache based on the id - tabs may have the same id,
 				// but different section depending on the selection
 				tab = this.descriptorToTab.get(descriptor);
+				if (tab == null) {
+					// Fallback to a full search in case the descriptor has changed hashCode, which happens if the
+					// underlying EObject has changed URL (e.g. an EClass whose named has changed).
+					for (Map.Entry<IEEFTabDescriptor, EEFTabContents> entry : this.descriptorToTab.entrySet()) {
+						if (entry.getKey() == descriptor) {
+							tab = entry.getValue();
+							break;
+						}
+					}
+					// Last resort
+					if (tab == null) {
+						tab = descriptor.createTab();
+						this.descriptorToTab.put(descriptor, tab);
+					}
+				}
 
 				if (tab != this.currentTab) {
 					this.hideTab(this.currentTab);
