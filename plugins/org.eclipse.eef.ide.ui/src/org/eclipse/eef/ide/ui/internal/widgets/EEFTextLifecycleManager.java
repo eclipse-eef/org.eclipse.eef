@@ -226,7 +226,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void focusLost(FocusEvent e) {
 				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && EEFTextLifecycleManager.this.isDirty) {
-					EEFTextLifecycleManager.this.updateValue();
+					EEFTextLifecycleManager.this.updateValue(false);
 				}
 			}
 
@@ -242,7 +242,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 				@Override
 				public void keyReleased(KeyEvent e) {
 					if (e.character == '\r' || e.character == '\n') {
-						EEFTextLifecycleManager.this.updateValue();
+						EEFTextLifecycleManager.this.updateValue(false);
 					}
 				}
 
@@ -273,10 +273,13 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 	/**
 	 * Updates the value.
+	 *
+	 * @param force
+	 *            if <code>true</code>, update even if we are in the render phase.
 	 */
-	private void updateValue() {
-		if (!this.text.isDisposed() && this.isDirty && !EEFTextLifecycleManager.this.container.isRenderingInProgress()
-				&& updateInProgress.compareAndSet(false, true)) {
+	private void updateValue(boolean force) {
+		boolean b = !EEFTextLifecycleManager.this.container.isRenderingInProgress() || force;
+		if (!this.text.isDisposed() && this.isDirty && b && updateInProgress.compareAndSet(false, true)) {
 			try {
 				IStatus result = controller.updateValue(text.getText());
 				if (result != null && result.getSeverity() == IStatus.ERROR) {
@@ -327,7 +330,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	@Override
 	public void aboutToBeHidden() {
 		if (this.isDirty) {
-			this.updateValue();
+			this.updateValue(true);
 		}
 
 		super.aboutToBeHidden();
@@ -380,4 +383,5 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		}
 		return color;
 	}
+
 }
