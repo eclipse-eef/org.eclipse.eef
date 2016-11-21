@@ -161,7 +161,9 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	 */
 	@Override
 	public void aboutToBeHidden() {
-		this.colorPicker.removeMouseListener(mouseListener);
+		if (!this.colorPicker.isDisposed()) {
+			this.colorPicker.removeMouseListener(mouseListener);
+		}
 		this.controller.removeNewValueConsumer();
 		super.aboutToBeHidden();
 	}
