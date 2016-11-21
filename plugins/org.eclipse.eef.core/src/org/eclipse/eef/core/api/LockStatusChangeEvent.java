@@ -1,0 +1,77 @@
+/*******************************************************************************
+ * Copyright (c) 2016 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Obeo - initial API and implementation
+ *******************************************************************************/
+package org.eclipse.eef.core.api;
+
+import java.text.MessageFormat;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * Represents a change in the lock status of an {@link EObject}.
+ *
+ * @author pcdavid
+ */
+public class LockStatusChangeEvent {
+	/**
+	 * The possible lock status.
+	 *
+	 * @author pcdavid
+	 */
+	public enum LockStatus {
+		/**
+		 * Status to indicate that a EObject is locked by the current editing context.
+		 */
+		LOCKED_BY_ME,
+		/**
+		 * Status to indicate that a EObject is locked by another editing context.
+		 */
+		LOCKED_BY_OTHER,
+		/**
+		 * Status to indicate that a EObject is not locked.
+		 */
+		UNLOCKED
+	}
+
+	/**
+	 * The element whose lock status changed.
+	 */
+	private final EObject element;
+	/**
+	 * The new lock status.
+	 */
+	private final LockStatus status;
+
+	/**
+	 * Creates a new {@link LockStatusChangeEvent}.
+	 *
+	 * @param element
+	 *            the element whose lock status changed.
+	 * @param status
+	 *            the new lock status.
+	 */
+	public LockStatusChangeEvent(EObject element, LockStatus status) {
+		this.element = element;
+		this.status = status;
+	}
+
+	public EObject getElement() {
+		return this.element;
+	}
+
+	public LockStatus getStatus() {
+		return this.status;
+	}
+
+	@Override
+	public String toString() {
+		return MessageFormat.format("{0} => {1}", element, status); //$NON-NLS-1$
+	}
+}
