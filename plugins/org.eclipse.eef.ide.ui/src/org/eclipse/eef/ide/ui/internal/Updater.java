@@ -53,14 +53,14 @@ public class Updater implements IConsumer<List<Notification>> {
 	 */
 	public void enable() {
 		disable();
-		section.getEEFPage().getView().getContextAdapter().onModelChange(this);
+		section.getEEFPage().getView().getContextAdapter().registerModelChangeListener(this);
 	}
 
 	/**
 	 * Stop listening to changes from the editing domain.
 	 */
 	public void disable() {
-		section.getEEFPage().getView().getContextAdapter().removeModelChangeConsumer();
+		section.getEEFPage().getView().getContextAdapter().unregisterModelChangeListener();
 	}
 
 	@Override
