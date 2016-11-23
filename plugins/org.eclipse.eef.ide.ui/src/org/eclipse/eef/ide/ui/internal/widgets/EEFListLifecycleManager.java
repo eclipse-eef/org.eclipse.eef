@@ -314,7 +314,6 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			this.tableViewer.getTable().removeSelectionListener(this.tableSelectionListener);
 		}
 		this.controller.removeNewValueConsumer();
-		this.actionButtons.clear();
 	}
 
 	/**
@@ -345,5 +344,16 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	@Override
 	protected Control getValidationControl() {
 		return this.tableViewer.getTable().getParent();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#dispose()
+	 */
+	@Override
+	public void dispose() {
+		super.dispose();
+		this.actionButtons.clear();
 	}
 }

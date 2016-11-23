@@ -293,7 +293,6 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		}
 
 		this.controller.removeNewValueConsumer();
-		this.actionButtons.clear();
 	}
 
 	/**
@@ -309,5 +308,16 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		for (ActionButton actionButton : this.actionButtons) {
 			actionButton.setEnabled(this.isEnabled());
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#dispose()
+	 */
+	@Override
+	public void dispose() {
+		super.dispose();
+		this.actionButtons.clear();
 	}
 }

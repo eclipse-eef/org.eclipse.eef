@@ -252,7 +252,6 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		}
 
 		this.controller.removeNewValueConsumer();
-		this.actionButtons.clear();
 	}
 
 	/**
@@ -283,5 +282,16 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	@Override
 	protected Control getValidationControl() {
 		return this.body;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#dispose()
+	 */
+	@Override
+	public void dispose() {
+		super.dispose();
+		this.actionButtons.clear();
 	}
 }
