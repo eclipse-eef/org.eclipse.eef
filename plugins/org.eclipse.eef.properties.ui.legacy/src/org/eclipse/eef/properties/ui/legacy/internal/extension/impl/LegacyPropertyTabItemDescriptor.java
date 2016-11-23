@@ -13,6 +13,7 @@ package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -52,7 +53,14 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	private boolean indented;
 
 	/**
-	 * If an image is provided, the icon image is displayed on the tab when the tab is active.
+	 * Image descriptor used to delay the actual {@link Image} creation until really needed. <code>null</code> if no
+	 * image specified if it was already created (in which case the 'image' field will be non-null).
+	 */
+	private ImageDescriptor imageDesc;
+
+	/**
+	 * If an image is provided, the icon image is displayed on the tab when the tab is active. Only allocated on first
+	 * demandn using imageDesc.
 	 */
 	private Image image;
 
@@ -71,11 +79,11 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	 *            The afterTab
 	 * @param indented
 	 *            Is indented
-	 * @param image
-	 *            The image
+	 * @param imageDesc
+	 *            The image descriptor
 	 */
 	public LegacyPropertyTabItemDescriptor(String contributorId, String label, String category, String afterTab, String id, boolean indented,
-			Image image) {
+			ImageDescriptor imageDesc) {
 		setSectionDescriptors(
 				EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry().getPropertySections(contributorId, id));
 		this.contributorId = contributorId;
@@ -84,7 +92,7 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 		this.label = label;
 		this.afterTab = afterTab;
 		this.indented = indented;
-		this.image = image;
+		this.imageDesc = imageDesc;
 	}
 
 	/**
@@ -156,6 +164,20 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	 */
 	@Override
 	public Image getImage() {
+		if (this.image == null && this.imageDesc != null) {
+			this.image = this.imageDesc.createImage();
+			this.imageDesc = null;
+		}
 		return this.image;
+	}
+
+	/**
+	 * Disposes this descriptor.
+	 */
+	public void dispose() {
+		if (image != null) {
+			image.dispose();
+			image = null;
+		}
 	}
 }

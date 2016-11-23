@@ -264,4 +264,15 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	public void clear() {
 		this.id2descriptors.clear();
 	}
+
+	/**
+	 * Disposes this registry.
+	 */
+	public void dispose() {
+		for (IItemDescriptor desc : id2descriptors.values()) {
+			if (desc instanceof LegacyPropertyTabItemDescriptor) {
+				((LegacyPropertyTabItemDescriptor) desc).dispose();
+			}
+		}
+	}
 }

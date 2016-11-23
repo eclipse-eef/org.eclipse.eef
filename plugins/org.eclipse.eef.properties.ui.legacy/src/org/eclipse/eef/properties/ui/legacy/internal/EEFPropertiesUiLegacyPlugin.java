@@ -185,6 +185,7 @@ public class EEFPropertiesUiLegacyPlugin extends EMFPlugin {
 			registry.removeListener(this.tabbedPropertySectionsListener);
 			registry.removeListener(this.tabbedPropertyContributorListener);
 			this.tabbedPropertyTabsListener = null;
+			this.tabbedPropertyTabsRegistry.dispose();
 			this.tabbedPropertyTabsRegistry = null;
 			this.tabbedPropertySectionsListener = null;
 			this.tabbedPropertySectionsRegistry = null;
