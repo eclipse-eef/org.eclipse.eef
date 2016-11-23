@@ -13,6 +13,7 @@ package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 import org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 /**
@@ -54,6 +55,11 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	/**
 	 * If an image is provided, the icon image is displayed on the tab when the tab is active.
 	 */
+	private ImageDescriptor imageDesc;
+
+	/**
+	 * If an image is provided, the icon image is displayed on the tab when the tab is active.
+	 */
 	private Image image;
 
 	/**
@@ -71,11 +77,11 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	 *            The afterTab
 	 * @param indented
 	 *            Is indented
-	 * @param image
-	 *            The image
+	 * @param imageDesc
+	 *            The image descriptor
 	 */
 	public LegacyPropertyTabItemDescriptor(String contributorId, String label, String category, String afterTab, String id, boolean indented,
-			Image image) {
+			ImageDescriptor imageDesc) {
 		setSectionDescriptors(
 				EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertySectionsRegistry().getPropertySections(contributorId, id));
 		this.contributorId = contributorId;
@@ -84,7 +90,7 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 		this.label = label;
 		this.afterTab = afterTab;
 		this.indented = indented;
-		this.image = image;
+		this.imageDesc = imageDesc;
 	}
 
 	/**
@@ -156,6 +162,10 @@ public class LegacyPropertyTabItemDescriptor extends AbstractEEFTabDescriptor im
 	 */
 	@Override
 	public Image getImage() {
+		if (this.image == null && this.imageDesc != null) {
+			this.image = this.imageDesc.createImage();
+			this.imageDesc = null;
+		}
 		return this.image;
 	}
 }
