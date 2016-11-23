@@ -147,6 +147,7 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	 *            The parent composite
 	 */
 	private void createWidgetActionButtons(Composite parent) {
+		this.actionButtons.clear();
 		Composite buttons = this.widgetFactory.createFlatFormComposite(parent);
 
 		GridData gridData = new GridData();
@@ -293,7 +294,6 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		}
 
 		this.controller.removeNewValueConsumer();
-		this.actionButtons.clear();
 	}
 
 	/**

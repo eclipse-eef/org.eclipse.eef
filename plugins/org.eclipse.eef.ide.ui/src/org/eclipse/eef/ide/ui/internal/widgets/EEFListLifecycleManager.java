@@ -185,6 +185,7 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 *            The parent composite
 	 */
 	private void createWidgetActionButtons(Composite parent) {
+		this.actionButtons.clear();
 		Composite buttons = widgetFactory.createFlatFormComposite(parent);
 
 		GridData gridData = new GridData();
@@ -314,7 +315,6 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			this.tableViewer.getTable().removeSelectionListener(this.tableSelectionListener);
 		}
 		this.controller.removeNewValueConsumer();
-		this.actionButtons.clear();
 	}
 
 	/**

@@ -151,6 +151,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 *            The parent composite
 	 */
 	private void createWidgetActionButtons(Composite parent) {
+		this.actionButtons.clear();
 		Composite buttons = this.widgetFactory.createFlatFormComposite(parent);
 
 		GridData gridData = new GridData();
@@ -252,7 +253,6 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		}
 
 		this.controller.removeNewValueConsumer();
-		this.actionButtons.clear();
 	}
 
 	/**
