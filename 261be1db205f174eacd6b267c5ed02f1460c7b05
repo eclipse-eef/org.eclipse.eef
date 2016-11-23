@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_d99f21af",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFButtonLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_3e51dbdf",
+      "range": {
+        "startLine": 151,
+        "startChar": 6,
+        "endLine": 151,
+        "endChar": 18
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_1ec7bf10",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFCheckboxLifecycleManager.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-11-23T09:11:22Z",
       "side": 1,
       "message": "EEFIdeUiPlugin",
+      "range": {
+        "startLine": 166,
+        "startChar": 5,
+        "endLine": 166,
+        "endChar": 17
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_398ad56f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFCheckboxLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_1ec7bf10",
       "range": {
         "startLine": 166,
         "startChar": 5,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_c4cf38a2",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFCheckboxLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "True, I change the code to save the last rendered value and use it to rollback.",
+      "parentUuid": "a7c23755_7ed513b1",
+      "range": {
+        "startLine": 167,
+        "startChar": 5,
+        "endLine": 170,
+        "endChar": 43
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_9ed2efc7",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFHyperlinkLifecycleManager.java",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2016-11-23T09:11:22Z",
       "side": 1,
       "message": "EEFIdeUiPlugin",
+      "range": {
+        "startLine": 233,
+        "startChar": 7,
+        "endLine": 233,
+        "endChar": 19
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_598f917e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFHyperlinkLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_9ed2efc7",
       "range": {
         "startLine": 233,
         "startChar": 7,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_79736d0a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFHyperlinkListener.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_dedc67de",
+      "range": {
+        "startLine": 94,
+        "startChar": 6,
+        "endLine": 94,
+        "endChar": 18
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_fee84376",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2016-11-23T09:11:22Z",
       "side": 1,
       "message": "EEFIdeUiPlugin",
+      "range": {
+        "startLine": 209,
+        "startChar": 7,
+        "endLine": 209,
+        "endChar": 19
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_d97ac1db",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFLabelLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_fee84376",
       "range": {
         "startLine": 209,
         "startChar": 7,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_f9669d47",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFListLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_1eeedf80",
+      "range": {
+        "startLine": 240,
+        "startChar": 7,
+        "endLine": 240,
+        "endChar": 19
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_3ee39b97",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFRadioLifecycleManager.java",
         "patchSetId": 3
@@ -174,6 +342,30 @@
       "writtenOn": "2016-11-23T09:11:22Z",
       "side": 1,
       "message": "EEFIdeUiPlugin",
+      "range": {
+        "startLine": 184,
+        "startChar": 7,
+        "endLine": 184,
+        "endChar": 19
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_196c3927",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFRadioLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_3ee39b97",
       "range": {
         "startLine": 184,
         "startChar": 7,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_99576951",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSelectLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_5ee85771",
+      "range": {
+        "startLine": 191,
+        "startChar": 6,
+        "endLine": 191,
+        "endChar": 18
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_7efc3333",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
         "patchSetId": 3
@@ -220,6 +436,30 @@
       "writtenOn": "2016-11-23T09:11:22Z",
       "side": 1,
       "message": "EEFIdeUiPlugin",
+      "range": {
+        "startLine": 283,
+        "startChar": 5,
+        "endLine": 283,
+        "endChar": 17
+      },
+      "revId": "261be1db205f174eacd6b267c5ed02f1460c7b05",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_b954254d",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFTextLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-11-23T16:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_7efc3333",
       "range": {
         "startLine": 283,
         "startChar": 5,
