@@ -16,7 +16,7 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
 import org.eclipse.eef.properties.ui.legacy.internal.Messages;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.AbstractRegistryEventListener;
-import org.eclipse.swt.graphics.Image;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
@@ -140,14 +140,13 @@ public class LegacyPropertyTabsRegistryEventListener extends AbstractRegistryEve
 				String indentedString = propertyTab.getAttribute(INDENTED_ATTR);
 				boolean indented = indentedString != null && "true".equals(indentedString); //$NON-NLS-1$
 				String imageString = propertyTab.getAttribute(IMAGE_ATTR);
-				Image image = null;
+				ImageDescriptor imageDesc = null;
 				if (imageString != null) {
-					image = AbstractUIPlugin.imageDescriptorFromPlugin(propertyTab.getDeclaringExtension().getNamespaceIdentifier(), imageString)
-							.createImage();
+					imageDesc = AbstractUIPlugin.imageDescriptorFromPlugin(propertyTab.getDeclaringExtension().getNamespaceIdentifier(), imageString);
 				}
 
 				LegacyPropertyTabItemDescriptor legacyPropertyTab = new LegacyPropertyTabItemDescriptor(contributorId, label, category, afterTab, id,
-						indented, image);
+						indented, imageDesc);
 				this.propertyTabRegistry.add(legacyPropertyTab);
 			}
 		}
