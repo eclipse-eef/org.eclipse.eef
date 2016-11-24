@@ -16,6 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.ide.ui.ext.widgets.reference.api.IEEFExtReferenceViewerFilterProvider.ContextKind;
 import org.eclipse.emf.common.notify.Adapter;
@@ -346,7 +347,16 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 		label.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false));
 
 		this.eClassInstanceComboViewer = new ComboViewer(new Combo(parent, SWT.DROP_DOWN | SWT.READ_ONLY));
-		this.eClassInstanceComboViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.composedAdapterFactory));
+		this.eClassInstanceComboViewer.setLabelProvider(new AdapterFactoryLabelProvider(this.composedAdapterFactory) {
+			@Override
+			public String getText(Object object) {
+				String result = super.getText(object);
+				if (Util.isBlank(result) && object instanceof EObject) {
+					result = ((EObject) object).eClass().getName();
+				}
+				return result;
+			}
+		});
 		this.eClassInstanceComboViewer.setContentProvider(new ArrayContentProvider());
 		this.eClassInstanceComboViewer.getCombo().setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 
