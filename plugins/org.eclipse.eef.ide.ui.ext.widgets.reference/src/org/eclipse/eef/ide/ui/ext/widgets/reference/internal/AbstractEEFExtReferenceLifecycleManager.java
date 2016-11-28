@@ -273,9 +273,9 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 				} else {
 					this.label.setText(this.eReference.getName());
 				}
-				this.setLabelFontStyle();
 			}
 		}
+		this.setLabelFontStyle();
 
 		if (this.addButton != null && !this.addButton.isDisposed()) {
 			this.addButton.setEnabled(this.isEnabled());
