@@ -195,6 +195,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 			@Override
 			public void run() {
 				AbstractEEFExtReferenceLifecycleManager.this.browseButtonCallback();
+				refresh();
 			}
 		};
 
@@ -216,6 +217,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 			@Override
 			public void run() {
 				AbstractEEFExtReferenceLifecycleManager.this.addButtonCallback();
+				refresh();
 			}
 		};
 
@@ -237,6 +239,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 			@Override
 			public void run() {
 				AbstractEEFExtReferenceLifecycleManager.this.removeButtonCallback();
+				refresh();
 			}
 		};
 		this.removeButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);

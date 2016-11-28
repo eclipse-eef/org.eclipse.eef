@@ -306,6 +306,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 				values.move(Math.min(values.size() - 1, values.indexOf(object) + 1), values.indexOf(object));
 			}
 		}
+		refresh();
 	}
 
 	/**
