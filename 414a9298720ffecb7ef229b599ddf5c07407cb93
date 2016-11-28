@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c23755_bf8ddb87",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertyTabItemDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-11-28T10:50:10Z",
+      "side": 1,
+      "message": "This command should be updated to explain why we have both an image descriptor and the image",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 91
+      },
+      "revId": "414a9298720ffecb7ef229b599ddf5c07407cb93",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_3f79cbe7",
+        "filename": "plugins/org.eclipse.eef.properties.ui.legacy/src/org/eclipse/eef/properties/ui/legacy/internal/extension/impl/LegacyPropertyTabItemDescriptor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-11-28T10:50:10Z",
+      "side": 1,
+      "message": "Aren\u0027t we now responsible for this image? We can\u0027t dispose it from this class.",
+      "range": {
+        "startLine": 165,
+        "startChar": 2,
+        "endLine": 168,
+        "endChar": 3
+      },
+      "revId": "414a9298720ffecb7ef229b599ddf5c07407cb93",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
