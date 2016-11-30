@@ -258,8 +258,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void apply(Object value) {
 				if (!text.isDisposed()) {
-					if (value != null && !(text.getText() != null && text.getText().equals(value.toString()))) {
-						text.setText(Util.firstNonNull(value.toString(), "")); //$NON-NLS-1$
+					String display = ""; //$NON-NLS-1$
+					if (value != null) {
+						display = Util.firstNonNull(value.toString(), display);
+					}
+					if (!(text.getText() != null && text.getText().equals(display))) {
+						text.setText(display);
 						referenceValue = text.getText();
 					}
 					EEFTextLifecycleManager.this.setStyle();
