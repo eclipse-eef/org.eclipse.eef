@@ -141,7 +141,7 @@ public class EEFTabbedPropertyRegistry {
 		for (IEEFTabDescriptor eefTabDescriptor : eefTabDescriptors) {
 			IEEFTabDescriptor filteredEefTabDescriptor = adaptDescriptorFor(eefTabDescriptor, part, input);
 			if (!filteredEefTabDescriptor.getSectionDescriptors().isEmpty()) {
-				filteredEefTabDescriptors.put(filteredEefTabDescriptor.getLabel(), filteredEefTabDescriptor);
+				filteredEefTabDescriptors.put(filteredEefTabDescriptor.getId(), filteredEefTabDescriptor);
 			}
 		}
 		return new ArrayList<IEEFTabDescriptor>(filteredEefTabDescriptors.values());
