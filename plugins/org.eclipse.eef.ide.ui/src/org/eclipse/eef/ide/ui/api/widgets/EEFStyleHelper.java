@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 
@@ -153,9 +154,13 @@ public class EEFStyleHelper {
 			String backgroundColorExpression, String foregroundColorExpression, IEEFTextStyleCallback callback) {
 		if (!Util.isBlank(foregroundColorExpression)) {
 			this.applyForegroundColor(foregroundColorExpression, callback);
+		} else {
+			callback.applyForegroundColor(new EEFColor((Color) null));
 		}
 		if (!Util.isBlank(backgroundColorExpression)) {
 			this.applyBackgroundColor(backgroundColorExpression, callback);
+		} else {
+			callback.applyBackgroundColor(new EEFColor((Color) null));
 		}
 
 		String fontStyleValue = EvalFactory.of(interpreter, variableManager).logIfInvalidType(String.class).evaluate(fontStyleExpression);
@@ -216,10 +221,11 @@ public class EEFStyleHelper {
 				.defaultValue(Integer.valueOf(defaultFontData.getHeight())).evaluate(fontSizeExpression).intValue();
 
 		int fontStyle = defaultFontData.getStyle();
-		if (fontStyleValue != null && fontStyleValue.contains("bold")) { //$NON-NLS-1$
+		if (fontStyleValue == null) {
+			fontStyle = 0;
+		} else if (fontStyleValue.contains("bold")) { //$NON-NLS-1$
 			fontStyle = fontStyle | SWT.BOLD;
-		}
-		if (fontStyleValue != null && fontStyleValue.contains("italic")) { //$NON-NLS-1$
+		} else if (fontStyleValue.contains("italic")) { //$NON-NLS-1$
 			fontStyle = fontStyle | SWT.ITALIC;
 		}
 		EEFFont font = new EEFFont(fontName, fontSize, fontStyle);
