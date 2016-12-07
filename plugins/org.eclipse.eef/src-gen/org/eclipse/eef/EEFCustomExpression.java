@@ -16,11 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFCustomExpression#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFCustomExpression()
  * @model
@@ -30,7 +30,7 @@ public interface EEFCustomExpression extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> Used to identify a specific widget. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFCustomExpression_Identifier()
@@ -42,7 +42,7 @@ public interface EEFCustomExpression extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -63,9 +63,9 @@ public interface EEFCustomExpression extends EObject {
 	String getCustomExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Custom Expression</em>' attribute.
 	 * @see #getCustomExpression()

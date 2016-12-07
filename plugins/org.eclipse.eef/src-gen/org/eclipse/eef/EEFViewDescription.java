@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>{@link org.eclipse.eef.EEFViewDescription#getPages <em>Pages</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getEPackages <em>EPackages</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFViewDescription()
  * @model
@@ -36,7 +36,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> Used to identify a specific View instance. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Identifier()
@@ -48,7 +48,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -71,7 +71,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
@@ -95,7 +95,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Image Expression</em>' attribute.
 	 * @see #getImageExpression()
@@ -136,7 +136,7 @@ public interface EEFViewDescription extends EObject {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>EPackages</em>' reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_EPackages()
 	 * @model

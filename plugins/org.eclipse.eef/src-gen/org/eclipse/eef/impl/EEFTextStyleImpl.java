@@ -18,14 +18,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Text Style</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -33,7 +35,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The default value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -43,17 +45,17 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The cached value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String backgroundColorExpression = EEFTextStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
+	protected String backgroundColorExpression = BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -63,12 +65,12 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The cached value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String foregroundColorExpression = EEFTextStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT;
+	protected String foregroundColorExpression = FOREGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontNameExpression() <em>Font Name Expression</em>}' attribute. <!--
@@ -88,7 +90,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontNameExpression = EEFTextStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT;
+	protected String fontNameExpression = FONT_NAME_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontSizeExpression() <em>Font Size Expression</em>}' attribute. <!--
@@ -108,7 +110,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontSizeExpression = EEFTextStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT;
+	protected String fontSizeExpression = FONT_SIZE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontStyleExpression() <em>Font Style Expression</em>}' attribute. <!--
@@ -128,11 +130,11 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontStyleExpression = EEFTextStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT;
+	protected String fontStyleExpression = FONT_STYLE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFTextStyleImpl() {
@@ -141,7 +143,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,7 +153,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,22 +163,21 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setBackgroundColorExpression(String newBackgroundColorExpression) {
 		String oldBackgroundColorExpression = backgroundColorExpression;
 		backgroundColorExpression = newBackgroundColorExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION,
 					oldBackgroundColorExpression, backgroundColorExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,22 +187,21 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setForegroundColorExpression(String newForegroundColorExpression) {
 		String oldForegroundColorExpression = foregroundColorExpression;
 		foregroundColorExpression = newForegroundColorExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION,
 					oldForegroundColorExpression, foregroundColorExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,22 +211,21 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontNameExpression(String newFontNameExpression) {
 		String oldFontNameExpression = fontNameExpression;
 		fontNameExpression = newFontNameExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION, oldFontNameExpression,
 					fontNameExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,22 +235,21 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontSizeExpression(String newFontSizeExpression) {
 		String oldFontSizeExpression = fontSizeExpression;
 		fontSizeExpression = newFontSizeExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION, oldFontSizeExpression,
 					fontSizeExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -261,22 +259,21 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontStyleExpression(String newFontStyleExpression) {
 		String oldFontStyleExpression = fontStyleExpression;
 		fontStyleExpression = newFontStyleExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION, oldFontStyleExpression,
 					fontStyleExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -298,7 +295,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -325,26 +322,26 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION:
-			setBackgroundColorExpression(EEFTextStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
+			setBackgroundColorExpression(BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION:
-			setForegroundColorExpression(EEFTextStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT);
+			setForegroundColorExpression(FOREGROUND_COLOR_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION:
-			setFontNameExpression(EEFTextStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT);
+			setFontNameExpression(FONT_NAME_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION:
-			setFontSizeExpression(EEFTextStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT);
+			setFontSizeExpression(FONT_SIZE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION:
-			setFontStyleExpression(EEFTextStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT);
+			setFontStyleExpression(FONT_STYLE_EXPRESSION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -352,41 +349,37 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION:
-			return EEFTextStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
-			: !EEFTextStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
+			return BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
+					: !BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
 		case EefPackage.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION:
-			return EEFTextStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? foregroundColorExpression != null
-			: !EEFTextStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
+			return FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? foregroundColorExpression != null
+					: !FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
 		case EefPackage.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION:
-			return EEFTextStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null
-			: !EEFTextStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
+			return FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null : !FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
 		case EefPackage.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION:
-			return EEFTextStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null
-			: !EEFTextStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
+			return FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null : !FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
 		case EefPackage.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION:
-			return EEFTextStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT == null ? fontStyleExpression != null
-			: !EEFTextStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
+			return FONT_STYLE_EXPRESSION_EDEFAULT == null ? fontStyleExpression != null : !FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (backgroundColorExpression: "); //$NON-NLS-1$

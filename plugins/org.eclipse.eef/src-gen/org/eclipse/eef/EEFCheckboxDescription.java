@@ -18,13 +18,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFCheckboxDescription()
  * @model
@@ -44,9 +44,9 @@ public interface EEFCheckboxDescription extends EEFWidgetDescription {
 	String getValueExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression
-	 * <em>Value Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression <em>Value
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
@@ -70,7 +70,7 @@ public interface EEFCheckboxDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getEditExpression <em>Edit Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Edit Expression</em>' attribute.
 	 * @see #getEditExpression()
@@ -93,7 +93,7 @@ public interface EEFCheckboxDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()

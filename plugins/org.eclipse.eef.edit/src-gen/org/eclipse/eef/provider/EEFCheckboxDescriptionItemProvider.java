@@ -60,15 +60,12 @@ public class EEFCheckboxDescriptionItemProvider extends EEFWidgetDescriptionItem
 	 * @generated
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFCheckboxDescription_valueExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFCheckboxDescription_valueExpression_feature", "_UI_EEFCheckboxDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFCheckboxDescription_valueExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFCheckboxDescription_valueExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFCheckboxDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
@@ -77,15 +74,12 @@ public class EEFCheckboxDescriptionItemProvider extends EEFWidgetDescriptionItem
 	 * @generated
 	 */
 	protected void addEditExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFCheckboxDescription_editExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFCheckboxDescription_editExpression_feature", "_UI_EEFCheckboxDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFCheckboxDescription_editExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFCheckboxDescription_editExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFCheckboxDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
@@ -148,7 +142,7 @@ public class EEFCheckboxDescriptionItemProvider extends EEFWidgetDescriptionItem
 	public String getText(Object object) {
 		String label = ((EEFCheckboxDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFCheckboxDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFCheckboxDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFCheckboxDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -185,8 +179,8 @@ public class EEFCheckboxDescriptionItemProvider extends EEFWidgetDescriptionItem
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__STYLE,
-				EefFactory.eINSTANCE.createEEFCheckboxStyle()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFCheckboxStyle()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES,
 				EefFactory.eINSTANCE.createEEFCheckboxConditionalStyle()));

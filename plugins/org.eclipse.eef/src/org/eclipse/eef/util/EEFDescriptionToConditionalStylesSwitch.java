@@ -21,6 +21,7 @@ import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSpinnerDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.emf.ecore.EObject;
 
@@ -131,6 +132,16 @@ public class EEFDescriptionToConditionalStylesSwitch extends EefSwitch<List<EEFC
 	 */
 	@Override
 	public List<EEFConditionalStyle> caseEEFListDescription(EEFListDescription object) {
+		return this.asConditionalStyleList(object.getConditionalStyles());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.util.EefSwitch#caseEEFSpinnerDescription(org.eclipse.eef.EEFSpinnerDescription)
+	 */
+	@Override
+	public List<EEFConditionalStyle> caseEEFSpinnerDescription(EEFSpinnerDescription object) {
 		return this.asConditionalStyleList(object.getConditionalStyles());
 	}
 }

@@ -109,7 +109,7 @@ public class EEFListConditionalStyleItemProvider extends EEFConditionalStyleItem
 	public String getText(Object object) {
 		String label = ((EEFListConditionalStyle) object).getPreconditionExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFListConditionalStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFListConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFListConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class EEFListConditionalStyleItemProvider extends EEFConditionalStyleItem
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-		.add(createChildParameter(EefPackage.Literals.EEF_LIST_CONDITIONAL_STYLE__STYLE, EefFactory.eINSTANCE.createEEFListStyle()));
+				.add(createChildParameter(EefPackage.Literals.EEF_LIST_CONDITIONAL_STYLE__STYLE, EefFactory.eINSTANCE.createEEFListStyle()));
 	}
 
 }

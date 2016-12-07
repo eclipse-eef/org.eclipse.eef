@@ -19,6 +19,7 @@ import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSpinnerDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.internal.controllers.EEFButtonController;
@@ -30,6 +31,7 @@ import org.eclipse.eef.core.internal.controllers.EEFListController;
 import org.eclipse.eef.core.internal.controllers.EEFRadioController;
 import org.eclipse.eef.core.internal.controllers.EEFSectionController;
 import org.eclipse.eef.core.internal.controllers.EEFSelectController;
+import org.eclipse.eef.core.internal.controllers.EEFSpinnerController;
 import org.eclipse.eef.core.internal.controllers.EEFTextController;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -214,5 +216,23 @@ public class EEFControllersFactory {
 	public IEEFHyperlinkController createHyperlinkController(EEFHyperlinkDescription description, IVariableManager variableManager,
 			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
 		return new EEFHyperlinkController(description, variableManager, interpreter, contextAdapter);
+	}
+
+	/**
+	 * Creates a new spinner controller.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param contextAdapter
+	 *            The editing context adapter
+	 * @return A spinner controller
+	 */
+	public IEEFSpinnerController createSpinnerController(EEFSpinnerDescription description, IVariableManager variableManager,
+			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
+		return new EEFSpinnerController(description, variableManager, interpreter, contextAdapter);
 	}
 }

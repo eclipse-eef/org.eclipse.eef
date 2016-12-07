@@ -73,6 +73,9 @@ public final class Messages {
 	@TranslatableMessage
 	public static String AbstractEEFWidgetLifecycleManager_noDescriptionAvailable;
 
+	@TranslatableMessage
+	public static String EEFSpinnerLifecycleManager_valueOutOfRange;
+
 	// CHECKSTYLE:ON
 
 	/**

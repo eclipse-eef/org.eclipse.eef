@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
 public class EEFCheckboxStyleImpl extends EEFWidgetStyleImpl implements EEFCheckboxStyle {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxStyleImpl() {
@@ -32,7 +32,7 @@ public class EEFCheckboxStyleImpl extends EEFWidgetStyleImpl implements EEFCheck
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
