@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>EEF Property Validation Rule Description</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Property Validation Rule
+ * Description</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -70,7 +70,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 	@Override
 	public EList<EEFWidgetDescription> getTargets() {
 		if (targets == null) {
-			targets = new EObjectWithInverseResolvingEList.ManyInverse<EEFWidgetDescription>(EEFWidgetDescription.class, this,
+			targets = new EObjectWithInverseResolvingEList.ManyInverse<>(EEFWidgetDescription.class, this,
 					EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS, EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		}
 		return targets;

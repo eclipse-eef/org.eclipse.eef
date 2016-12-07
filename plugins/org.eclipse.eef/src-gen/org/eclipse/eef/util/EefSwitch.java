@@ -48,6 +48,9 @@ import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFSpinnerConditionalStyle;
+import org.eclipse.eef.EEFSpinnerDescription;
+import org.eclipse.eef.EEFSpinnerStyle;
 import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
@@ -341,6 +344,20 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_SPINNER_DESCRIPTION: {
+			EEFSpinnerDescription eefSpinnerDescription = (EEFSpinnerDescription) theEObject;
+			T result = caseEEFSpinnerDescription(eefSpinnerDescription);
+			if (result == null) {
+				result = caseEEFWidgetDescription(eefSpinnerDescription);
+			}
+			if (result == null) {
+				result = caseEEFControlDescription(eefSpinnerDescription);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR: {
 			EEFDynamicMappingFor eefDynamicMappingFor = (EEFDynamicMappingFor) theEObject;
 			T result = caseEEFDynamicMappingFor(eefDynamicMappingFor);
@@ -481,6 +498,17 @@ public class EefSwitch<T> extends Switch<T> {
 			}
 			return result;
 		}
+		case EefPackage.EEF_SPINNER_STYLE: {
+			EEFSpinnerStyle eefSpinnerStyle = (EEFSpinnerStyle) theEObject;
+			T result = caseEEFSpinnerStyle(eefSpinnerStyle);
+			if (result == null) {
+				result = caseEEFWidgetStyle(eefSpinnerStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
 		case EefPackage.EEF_CUSTOM_WIDGET_STYLE: {
 			EEFCustomWidgetStyle eefCustomWidgetStyle = (EEFCustomWidgetStyle) theEObject;
 			T result = caseEEFCustomWidgetStyle(eefCustomWidgetStyle);
@@ -590,6 +618,17 @@ public class EefSwitch<T> extends Switch<T> {
 			T result = caseEEFHyperlinkConditionalStyle(eefHyperlinkConditionalStyle);
 			if (result == null) {
 				result = caseEEFConditionalStyle(eefHyperlinkConditionalStyle);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_SPINNER_CONDITIONAL_STYLE: {
+			EEFSpinnerConditionalStyle eefSpinnerConditionalStyle = (EEFSpinnerConditionalStyle) theEObject;
+			T result = caseEEFSpinnerConditionalStyle(eefSpinnerConditionalStyle);
+			if (result == null) {
+				result = caseEEFConditionalStyle(eefSpinnerConditionalStyle);
 			}
 			if (result == null) {
 				result = defaultCase(theEObject);
@@ -718,14 +757,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
 	 *
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Property Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -734,14 +773,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
 	 *
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Semantic Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -960,6 +999,21 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Spinner Description</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Spinner Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSpinnerDescription(EEFSpinnerDescription object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -1155,6 +1209,21 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Spinner Style</em>'. <!-- begin-user-doc
+	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Spinner Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSpinnerStyle(EEFSpinnerStyle object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
@@ -1316,6 +1385,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFHyperlinkConditionalStyle(EEFHyperlinkConditionalStyle object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Spinner Conditional Style</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 *
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Spinner Conditional Style</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFSpinnerConditionalStyle(EEFSpinnerConditionalStyle object) {
 		return null;
 	}
 

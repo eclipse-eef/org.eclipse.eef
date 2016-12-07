@@ -72,7 +72,7 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Font Name Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontNameExpressionPropertyDescriptor(Object object) {
@@ -86,7 +86,7 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Font Size Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontSizeExpressionPropertyDescriptor(Object object) {
@@ -100,7 +100,7 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Font Style Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontStyleExpressionPropertyDescriptor(Object object) {
@@ -139,15 +139,15 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFHyperlinkStyle) object).getLabelFontNameExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFHyperlinkStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFHyperlinkStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFHyperlinkStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFHyperlinkStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

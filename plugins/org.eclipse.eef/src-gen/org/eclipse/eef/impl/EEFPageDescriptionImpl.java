@@ -35,13 +35,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression
- * <em>Semantic Candidate Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getGroups <em>Groups</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation
+ * Rules</em>}</li>
  * </ul>
  *
  * @generated
@@ -317,7 +317,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
-			groups = new EObjectResolvingEList<EEFGroupDescription>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
+			groups = new EObjectResolvingEList<>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
 		}
 		return groups;
 	}
@@ -330,8 +330,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
 		if (semanticValidationRules == null) {
-			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
-					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+			semanticValidationRules = new EObjectContainmentEList.Resolving<>(EEFSemanticValidationRuleDescription.class, this,
+					EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		}
 		return semanticValidationRules;
 	}

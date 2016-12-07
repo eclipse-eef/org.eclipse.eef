@@ -304,7 +304,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	@Override
 	public EList<EEFTextConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFTextConditionalStyle>(EEFTextConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFTextConditionalStyle.class, this,
 					EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;

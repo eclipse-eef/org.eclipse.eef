@@ -45,6 +45,9 @@ import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFSpinnerConditionalStyle;
+import org.eclipse.eef.EEFSpinnerDescription;
+import org.eclipse.eef.EEFSpinnerStyle;
 import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
@@ -138,6 +141,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFRadioDescription();
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION:
 			return createEEFHyperlinkDescription();
+		case EefPackage.EEF_SPINNER_DESCRIPTION:
+			return createEEFSpinnerDescription();
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR:
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
@@ -162,6 +167,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFRadioStyle();
 		case EefPackage.EEF_HYPERLINK_STYLE:
 			return createEEFHyperlinkStyle();
+		case EefPackage.EEF_SPINNER_STYLE:
+			return createEEFSpinnerStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_STYLE:
 			return createEEFCustomWidgetStyle();
 		case EefPackage.EEF_LIST_STYLE:
@@ -182,6 +189,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFRadioConditionalStyle();
 		case EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE:
 			return createEEFHyperlinkConditionalStyle();
+		case EefPackage.EEF_SPINNER_CONDITIONAL_STYLE:
+			return createEEFSpinnerConditionalStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE:
 			return createEEFCustomWidgetConditionalStyle();
 		case EefPackage.EEF_WIDGET_ACTION:
@@ -430,6 +439,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public EEFSpinnerDescription createEEFSpinnerDescription() {
+		EEFSpinnerDescriptionImpl eefSpinnerDescription = new EEFSpinnerDescriptionImpl();
+		return eefSpinnerDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFDynamicMappingFor createEEFDynamicMappingFor() {
 		EEFDynamicMappingForImpl eefDynamicMappingFor = new EEFDynamicMappingForImpl();
 		return eefDynamicMappingFor;
@@ -562,6 +582,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	 * @generated
 	 */
 	@Override
+	public EEFSpinnerStyle createEEFSpinnerStyle() {
+		EEFSpinnerStyleImpl eefSpinnerStyle = new EEFSpinnerStyleImpl();
+		return eefSpinnerStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFCustomWidgetStyle createEEFCustomWidgetStyle() {
 		EEFCustomWidgetStyleImpl eefCustomWidgetStyle = new EEFCustomWidgetStyleImpl();
 		return eefCustomWidgetStyle;
@@ -664,6 +695,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFHyperlinkConditionalStyle createEEFHyperlinkConditionalStyle() {
 		EEFHyperlinkConditionalStyleImpl eefHyperlinkConditionalStyle = new EEFHyperlinkConditionalStyleImpl();
 		return eefHyperlinkConditionalStyle;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFSpinnerConditionalStyle createEEFSpinnerConditionalStyle() {
+		EEFSpinnerConditionalStyleImpl eefSpinnerConditionalStyle = new EEFSpinnerConditionalStyleImpl();
+		return eefSpinnerConditionalStyle;
 	}
 
 	/**

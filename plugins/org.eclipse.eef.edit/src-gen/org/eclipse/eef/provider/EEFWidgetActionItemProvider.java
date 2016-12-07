@@ -114,15 +114,15 @@ public class EEFWidgetActionItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFWidgetAction) object).getLabelExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFWidgetAction_type") //$NON-NLS-1$
-				: getString("_UI_EEFWidgetAction_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFWidgetAction_type") : //$NON-NLS-1$
+				getString("_UI_EEFWidgetAction_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

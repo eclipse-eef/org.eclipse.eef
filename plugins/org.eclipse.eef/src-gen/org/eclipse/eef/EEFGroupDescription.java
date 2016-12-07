@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
@@ -121,8 +121,8 @@ public interface EEFGroupDescription extends EObject {
 	String getSemanticCandidateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression
-	 * <em>Semantic Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic
+	 * Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Semantic Candidate Expression</em>' attribute.
@@ -144,8 +144,8 @@ public interface EEFGroupDescription extends EObject {
 	String getPreconditionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression
-	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Precondition Expression</em>' attribute.
@@ -197,7 +197,7 @@ public interface EEFGroupDescription extends EObject {
 	 * --> <!-- begin-model-doc --> Defines the group style <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Style</em>' containment reference.
-	 * @see #setStyle(EEFTextStyle)
+	 * @see #setStyle(EEFGroupStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Style()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated

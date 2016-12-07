@@ -84,7 +84,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 	/**
 	 * This adds a property descriptor for the On Click Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addOnClickExpressionPropertyDescriptor(Object object) {
@@ -155,15 +155,15 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFListDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFListDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFListDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFListDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFListDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

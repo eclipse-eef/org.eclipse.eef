@@ -33,8 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getSeverity <em>Severity</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getMessageExpression <em>Message Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getMessageExpression <em>Message
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getAudits <em>Audits</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getFixes <em>Fixes</em>}</li>
  * </ul>
@@ -178,8 +178,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	@Override
 	public EList<EEFRuleAuditDescription> getAudits() {
 		if (audits == null) {
-			audits = new EObjectContainmentEList.Resolving<EEFRuleAuditDescription>(EEFRuleAuditDescription.class, this,
-					EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS);
+			audits = new EObjectContainmentEList.Resolving<>(EEFRuleAuditDescription.class, this, EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS);
 		}
 		return audits;
 	}
@@ -192,7 +191,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	@Override
 	public EList<EEFValidationFixDescription> getFixes() {
 		if (fixes == null) {
-			fixes = new EObjectContainmentEList.Resolving<EEFValidationFixDescription>(EEFValidationFixDescription.class, this,
+			fixes = new EObjectContainmentEList.Resolving<>(EEFValidationFixDescription.class, this,
 					EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__FIXES);
 		}
 		return fixes;

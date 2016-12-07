@@ -5,8 +5,9 @@
     editorDirectory="/org.eclipse.eef.editor/src-gen" modelPluginID="org.eclipse.eef"
     modelName="Eef" nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
-    containmentProxies="true" complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
-    importOrganizing="true" cleanup="true">
+    containmentProxies="true" complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.10"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" importOrganizing="true"
+    cleanup="true">
   <foreignModel>eef.ecore</foreignModel>
   <genPackages prefix="Eef" basePackage="org.eclipse" disposableProviderFactory="true"
       extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="eef.ecore#/">
@@ -107,8 +108,10 @@
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFLabelDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFLabelDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFLabelDescription/displayExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFLabelDescription/style"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFLabelDescription/conditionalStyles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFLabelDescription/actions"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFButtonDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFButtonDescription/buttonLabelExpression"/>
@@ -141,13 +144,25 @@
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFHyperlinkDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFHyperlinkDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFHyperlinkDescription/displayExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFHyperlinkDescription/onClickExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFHyperlinkDescription/style"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFHyperlinkDescription/conditionalStyles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFHyperlinkDescription/actions"/>
+    </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFSpinnerDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerDescription/editExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerDescription/digitsExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerDescription/incrementExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerDescription/minExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerDescription/maxExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFSpinnerDescription/style"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFSpinnerDescription/conditionalStyles"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFDynamicMappingFor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFDynamicMappingFor/iterator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFDynamicMappingFor/domainClassExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFDynamicMappingFor/iterableExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFDynamicMappingFor/ifs"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFDynamicMappingIf">
@@ -163,14 +178,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFCustomExpression/identifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFCustomExpression/customExpression"/>
     </genClasses>
-    <genClasses ecoreClass="eef.ecore#//EEFReferenceDescription">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFReferenceDescription/multiple"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFReferenceDescription/valueExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFReferenceDescription/displayExpression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFReferenceDescription/onClickExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFReferenceDescription/actions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFReferenceDescription/style"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFReferenceDescription/conditionalStyles"/>
+    <genClasses ecoreClass="eef.ecore#//EEFListDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFListDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFListDescription/displayExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFListDescription/onClickExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFListDescription/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFListDescription/style"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFListDescription/conditionalStyles"/>
     </genClasses>
     <genClasses image="false" ecoreClass="eef.ecore#//EEFWidgetStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetStyle/labelBackgroundColorExpression"/>
@@ -203,8 +217,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFHyperlinkStyle/fontSizeExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFHyperlinkStyle/fontStyleExpression"/>
     </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFSpinnerStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerStyle/backgroundColorExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerStyle/foregroundColorExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerStyle/fontNameExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerStyle/fontSizeExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFSpinnerStyle/fontStyleExpression"/>
+    </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFCustomWidgetStyle"/>
-    <genClasses ecoreClass="eef.ecore#//EEFReferenceStyle"/>
+    <genClasses ecoreClass="eef.ecore#//EEFListStyle"/>
     <genClasses ecoreClass="eef.ecore#//EEFGroupStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupStyle/backgroundColorExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFGroupStyle/foregroundColorExpression"/>
@@ -238,6 +259,9 @@
     <genClasses ecoreClass="eef.ecore#//EEFHyperlinkConditionalStyle">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFHyperlinkConditionalStyle/style"/>
     </genClasses>
+    <genClasses ecoreClass="eef.ecore#//EEFSpinnerConditionalStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFSpinnerConditionalStyle/style"/>
+    </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFCustomWidgetConditionalStyle">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFCustomWidgetConditionalStyle/style"/>
     </genClasses>
@@ -245,8 +269,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetAction/labelExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFWidgetAction/actionExpression"/>
     </genClasses>
-    <genClasses ecoreClass="eef.ecore#//EEFReferenceConditionalStyle">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFReferenceConditionalStyle/style"/>
+    <genClasses ecoreClass="eef.ecore#//EEFListConditionalStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFListConditionalStyle/style"/>
     </genClasses>
     <genClasses ecoreClass="eef.ecore#//EEFGroupConditionalStyle">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFGroupConditionalStyle/style"/>

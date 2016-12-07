@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFHyperlinkConditionalStyle} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyleItemProvider {
@@ -108,15 +108,15 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFHyperlinkConditionalStyle) object).getPreconditionExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFHyperlinkConditionalStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFHyperlinkConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFHyperlinkConditionalStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFHyperlinkConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
