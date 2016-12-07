@@ -65,7 +65,7 @@ public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter
 	/**
 	 * This adds a property descriptor for the Predicate Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addPredicateExpressionPropertyDescriptor(Object object) {
@@ -135,15 +135,15 @@ public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFDynamicMappingIf) object).getPredicateExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingIf_type") //$NON-NLS-1$
-				: getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingIf_type") : //$NON-NLS-1$
+				getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,6 +191,9 @@ public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter
 
 		newChildDescriptors
 				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
+
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFSpinnerDescription()));
 
 		newChildDescriptors.add(
 				createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));

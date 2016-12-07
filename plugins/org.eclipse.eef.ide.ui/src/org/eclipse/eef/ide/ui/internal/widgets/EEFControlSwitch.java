@@ -28,6 +28,7 @@ import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
+import org.eclipse.eef.EEFSpinnerDescription;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -213,6 +214,14 @@ public class EEFControlSwitch {
 				eefHyperlinkLifecycleManager.createControl(parent, formContainer);
 
 				lifecycleManagers.add(eefHyperlinkLifecycleManager);
+			} else if (widgetDescription instanceof EEFSpinnerDescription) {
+				EEFSpinnerDescription spinnerDescription = (EEFSpinnerDescription) widgetDescription;
+
+				EEFSpinnerLifecycleManager spinnerLifecycleManager = new EEFSpinnerLifecycleManager(spinnerDescription, childVariableManager,
+						interpreter, this.editingContextAdapter);
+				spinnerLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(spinnerLifecycleManager);
 			}
 		}
 

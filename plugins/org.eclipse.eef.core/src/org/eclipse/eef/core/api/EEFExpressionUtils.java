@@ -33,6 +33,11 @@ public final class EEFExpressionUtils {
 	public static final String AUDIT_RESULT = "auditResult"; //$NON-NLS-1$
 
 	/**
+	 * The new value constant.
+	 */
+	private static final String NEWVALUE = "newValue"; //$NON-NLS-1$
+
+	/**
 	 * The constructor.
 	 */
 	private EEFExpressionUtils() {
@@ -48,12 +53,31 @@ public final class EEFExpressionUtils {
 		/**
 		 * The name of the variable newValue.
 		 */
-		public static final String NEW_VALUE = "newValue"; //$NON-NLS-1$
+		public static final String NEW_VALUE = NEWVALUE;
 
 		/**
 		 * The constructor.
 		 */
 		private EEFText() {
+			// prevent instantiation
+		}
+	}
+
+	/**
+	 * Utility class containing the constants related to the Spinner widget.
+	 *
+	 * @author arichard
+	 */
+	public final class EEFSpinner {
+		/**
+		 * The name of the variable newValue.
+		 */
+		public static final String NEW_VALUE = NEWVALUE;
+
+		/**
+		 * The constructor.
+		 */
+		private EEFSpinner() {
 			// prevent instantiation
 		}
 	}
@@ -67,7 +91,7 @@ public final class EEFExpressionUtils {
 		/**
 		 * The name of the variable newValue.
 		 */
-		public static final String NEW_VALUE = "newValue"; //$NON-NLS-1$
+		public static final String NEW_VALUE = NEWVALUE;
 
 		/**
 		 * The constructor.

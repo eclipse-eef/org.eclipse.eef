@@ -38,7 +38,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * factory convert EMF adapter notifications into calls to {@link #fireNotifyChanged fireNotifyChanged}. The adapters
  * also support Eclipse property sheets. Note that most of the adapters are shared among multiple instances. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EefItemProviderAdapterFactory extends EefAdapterFactory
@@ -70,10 +70,10 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+	protected Collection<Object> supportedTypes = new ArrayList<>();
 
 	/**
 	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -91,7 +91,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFViewDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFViewDescriptionItemProvider eefViewDescriptionItemProvider;
@@ -114,7 +114,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFPageDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFPageDescriptionItemProvider eefPageDescriptionItemProvider;
@@ -137,7 +137,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRuleAuditDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRuleAuditDescriptionItemProvider eefRuleAuditDescriptionItemProvider;
@@ -229,7 +229,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGroupDescriptionItemProvider eefGroupDescriptionItemProvider;
@@ -252,7 +252,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFContainerDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFContainerDescriptionItemProvider eefContainerDescriptionItemProvider;
@@ -275,7 +275,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFFillLayoutDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFFillLayoutDescriptionItemProvider eefFillLayoutDescriptionItemProvider;
@@ -298,7 +298,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGridLayoutDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGridLayoutDescriptionItemProvider eefGridLayoutDescriptionItemProvider;
@@ -321,7 +321,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFTextDescriptionItemProvider eefTextDescriptionItemProvider;
@@ -344,7 +344,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFLabelDescriptionItemProvider eefLabelDescriptionItemProvider;
@@ -367,7 +367,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFButtonDescriptionItemProvider eefButtonDescriptionItemProvider;
@@ -390,7 +390,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxDescriptionItemProvider eefCheckboxDescriptionItemProvider;
@@ -413,7 +413,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFSelectDescriptionItemProvider eefSelectDescriptionItemProvider;
@@ -436,7 +436,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRadioDescriptionItemProvider eefRadioDescriptionItemProvider;
@@ -459,7 +459,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFHyperlinkDescriptionItemProvider eefHyperlinkDescriptionItemProvider;
@@ -480,9 +480,32 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSpinnerDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSpinnerDescriptionItemProvider eefSpinnerDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSpinnerDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSpinnerDescriptionAdapter() {
+		if (eefSpinnerDescriptionItemProvider == null) {
+			eefSpinnerDescriptionItemProvider = new EEFSpinnerDescriptionItemProvider(this);
+		}
+
+		return eefSpinnerDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFDynamicMappingForItemProvider eefDynamicMappingForItemProvider;
@@ -505,7 +528,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingIf} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFDynamicMappingIfItemProvider eefDynamicMappingIfItemProvider;
@@ -551,7 +574,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomExpression} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCustomExpressionItemProvider eefCustomExpressionItemProvider;
@@ -574,7 +597,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListDescription} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFListDescriptionItemProvider eefListDescriptionItemProvider;
@@ -597,7 +620,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFTextStyleItemProvider eefTextStyleItemProvider;
@@ -619,7 +642,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFLabelStyleItemProvider eefLabelStyleItemProvider;
@@ -627,7 +650,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFLabelStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -642,7 +665,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFButtonStyleItemProvider eefButtonStyleItemProvider;
@@ -650,7 +673,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -665,7 +688,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxStyleItemProvider eefCheckboxStyleItemProvider;
@@ -673,7 +696,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -688,7 +711,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFSelectStyleItemProvider eefSelectStyleItemProvider;
@@ -696,7 +719,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -711,7 +734,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRadioStyleItemProvider eefRadioStyleItemProvider;
@@ -719,7 +742,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -734,7 +757,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFHyperlinkStyleItemProvider eefHyperlinkStyleItemProvider;
@@ -755,9 +778,32 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSpinnerStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSpinnerStyleItemProvider eefSpinnerStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSpinnerStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSpinnerStyleAdapter() {
+		if (eefSpinnerStyleItemProvider == null) {
+			eefSpinnerStyleItemProvider = new EEFSpinnerStyleItemProvider(this);
+		}
+
+		return eefSpinnerStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCustomWidgetStyleItemProvider eefCustomWidgetStyleItemProvider;
@@ -780,7 +826,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFListStyleItemProvider eefListStyleItemProvider;
@@ -802,7 +848,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGroupStyleItemProvider eefGroupStyleItemProvider;
@@ -810,7 +856,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupStyle}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -825,7 +871,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFTextConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFTextConditionalStyleItemProvider eefTextConditionalStyleItemProvider;
@@ -871,7 +917,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFLabelConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFLabelConditionalStyleItemProvider eefLabelConditionalStyleItemProvider;
@@ -940,7 +986,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFRadioConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRadioConditionalStyleItemProvider eefRadioConditionalStyleItemProvider;
@@ -984,6 +1030,29 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSpinnerConditionalStyle} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSpinnerConditionalStyleItemProvider eefSpinnerConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSpinnerConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSpinnerConditionalStyleAdapter() {
+		if (eefSpinnerConditionalStyleItemProvider == null) {
+			eefSpinnerConditionalStyleItemProvider = new EEFSpinnerConditionalStyleItemProvider(this);
+		}
+
+		return eefSpinnerConditionalStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}
 	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1009,7 +1078,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFWidgetAction} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFWidgetActionItemProvider eefWidgetActionItemProvider;
@@ -1017,7 +1086,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This creates an adapter for a {@link org.eclipse.eef.EEFWidgetAction}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -1032,7 +1101,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFListConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFListConditionalStyleItemProvider eefListConditionalStyleItemProvider;
@@ -1055,7 +1124,7 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFGroupConditionalStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGroupConditionalStyleItemProvider eefGroupConditionalStyleItemProvider;
@@ -1255,6 +1324,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 		if (eefHyperlinkDescriptionItemProvider != null) {
 			eefHyperlinkDescriptionItemProvider.dispose();
 		}
+		if (eefSpinnerDescriptionItemProvider != null) {
+			eefSpinnerDescriptionItemProvider.dispose();
+		}
 		if (eefDynamicMappingForItemProvider != null) {
 			eefDynamicMappingForItemProvider.dispose();
 		}
@@ -1291,6 +1363,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 		if (eefHyperlinkStyleItemProvider != null) {
 			eefHyperlinkStyleItemProvider.dispose();
 		}
+		if (eefSpinnerStyleItemProvider != null) {
+			eefSpinnerStyleItemProvider.dispose();
+		}
 		if (eefCustomWidgetStyleItemProvider != null) {
 			eefCustomWidgetStyleItemProvider.dispose();
 		}
@@ -1320,6 +1395,9 @@ public class EefItemProviderAdapterFactory extends EefAdapterFactory
 		}
 		if (eefHyperlinkConditionalStyleItemProvider != null) {
 			eefHyperlinkConditionalStyleItemProvider.dispose();
+		}
+		if (eefSpinnerConditionalStyleItemProvider != null) {
+			eefSpinnerConditionalStyleItemProvider.dispose();
 		}
 		if (eefCustomWidgetConditionalStyleItemProvider != null) {
 			eefCustomWidgetConditionalStyleItemProvider.dispose();

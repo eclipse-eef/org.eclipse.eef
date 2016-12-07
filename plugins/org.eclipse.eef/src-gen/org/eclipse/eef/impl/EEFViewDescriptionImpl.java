@@ -235,8 +235,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
-			groups = new EObjectContainmentEList.Resolving<EEFGroupDescription>(EEFGroupDescription.class, this,
-					EefPackage.EEF_VIEW_DESCRIPTION__GROUPS);
+			groups = new EObjectContainmentEList.Resolving<>(EEFGroupDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__GROUPS);
 		}
 		return groups;
 	}
@@ -249,7 +248,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFPageDescription> getPages() {
 		if (pages == null) {
-			pages = new EObjectContainmentEList.Resolving<EEFPageDescription>(EEFPageDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
+			pages = new EObjectContainmentEList.Resolving<>(EEFPageDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
 		}
 		return pages;
 	}
@@ -262,7 +261,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EPackage> getEPackages() {
 		if (ePackages == null) {
-			ePackages = new EObjectResolvingEList<EPackage>(EPackage.class, this, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
+			ePackages = new EObjectResolvingEList<>(EPackage.class, this, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
 		}
 		return ePackages;
 	}

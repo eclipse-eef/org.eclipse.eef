@@ -84,8 +84,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 	@Override
 	public EList<EEFControlDescription> getControls() {
 		if (controls == null) {
-			controls = new EObjectContainmentEList.Resolving<EEFControlDescription>(EEFControlDescription.class, this,
-					EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS);
+			controls = new EObjectContainmentEList.Resolving<>(EEFControlDescription.class, this, EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS);
 		}
 		return controls;
 	}

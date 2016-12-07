@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFCustomWidgetDescription} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
@@ -110,15 +110,15 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFCustomWidgetDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

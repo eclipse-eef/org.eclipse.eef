@@ -37,15 +37,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression
- * <em>Semantic Candidate Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules</em>
- * }</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules</em>
- * }</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation
+ * Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation
+ * Rules</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -353,8 +353,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFControlDescription> getControls() {
 		if (controls == null) {
-			controls = new EObjectContainmentEList.Resolving<EEFControlDescription>(EEFControlDescription.class, this,
-					EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
+			controls = new EObjectContainmentEList.Resolving<>(EEFControlDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
 		}
 		return controls;
 	}
@@ -367,8 +366,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
 		if (semanticValidationRules == null) {
-			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
-					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+			semanticValidationRules = new EObjectContainmentEList.Resolving<>(EEFSemanticValidationRuleDescription.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		}
 		return semanticValidationRules;
 	}
@@ -381,8 +380,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules() {
 		if (propertyValidationRules == null) {
-			propertyValidationRules = new EObjectContainmentEList.Resolving<EEFPropertyValidationRuleDescription>(
-					EEFPropertyValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
+			propertyValidationRules = new EObjectContainmentEList.Resolving<>(EEFPropertyValidationRuleDescription.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		}
 		return propertyValidationRules;
 	}
@@ -478,7 +477,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFGroupConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFGroupConditionalStyle>(EEFGroupConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFGroupConditionalStyle.class, this,
 					EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;

@@ -48,6 +48,9 @@ import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFSelectStyle;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFSpinnerConditionalStyle;
+import org.eclipse.eef.EEFSpinnerDescription;
+import org.eclipse.eef.EEFSpinnerStyle;
 import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
@@ -225,6 +228,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 *
 	 * @generated
 	 */
+	private EClass eefSpinnerDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass eefDynamicMappingForEClass = null;
 
 	/**
@@ -316,6 +326,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 *
 	 * @generated
 	 */
+	private EClass eefSpinnerStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
 	private EClass eefCustomWidgetStyleEClass = null;
 
 	/**
@@ -387,6 +404,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefHyperlinkConditionalStyleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefSpinnerConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1515,6 +1539,96 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFSpinnerDescription() {
+		return eefSpinnerDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerDescription_ValueExpression() {
+		return (EAttribute) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerDescription_EditExpression() {
+		return (EAttribute) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerDescription_DigitsExpression() {
+		return (EAttribute) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerDescription_IncrementExpression() {
+		return (EAttribute) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerDescription_MinExpression() {
+		return (EAttribute) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerDescription_MaxExpression() {
+		return (EAttribute) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFSpinnerDescription_Style() {
+		return (EReference) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFSpinnerDescription_ConditionalStyles() {
+		return (EReference) eefSpinnerDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFDynamicMappingFor() {
 		return eefDynamicMappingForEClass;
 	}
@@ -2005,6 +2119,66 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEEFSpinnerStyle() {
+		return eefSpinnerStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerStyle_BackgroundColorExpression() {
+		return (EAttribute) eefSpinnerStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerStyle_ForegroundColorExpression() {
+		return (EAttribute) eefSpinnerStyleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerStyle_FontNameExpression() {
+		return (EAttribute) eefSpinnerStyleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerStyle_FontSizeExpression() {
+		return (EAttribute) eefSpinnerStyleEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFSpinnerStyle_FontStyleExpression() {
+		return (EAttribute) eefSpinnerStyleEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFCustomWidgetStyle() {
 		return eefCustomWidgetStyleEClass;
 	}
@@ -2257,6 +2431,26 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EReference getEEFHyperlinkConditionalStyle_Style() {
 		return (EReference) eefHyperlinkConditionalStyleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFSpinnerConditionalStyle() {
+		return eefSpinnerConditionalStyleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFSpinnerConditionalStyle_Style() {
+		return (EReference) eefSpinnerConditionalStyleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2540,6 +2734,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEReference(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES);
 		createEReference(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
 
+		eefSpinnerDescriptionEClass = createEClass(EefPackage.EEF_SPINNER_DESCRIPTION);
+		createEAttribute(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__EDIT_EXPRESSION);
+		createEAttribute(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__DIGITS_EXPRESSION);
+		createEAttribute(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__INCREMENT_EXPRESSION);
+		createEAttribute(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__MIN_EXPRESSION);
+		createEAttribute(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__MAX_EXPRESSION);
+		createEReference(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__STYLE);
+		createEReference(eefSpinnerDescriptionEClass, EefPackage.EEF_SPINNER_DESCRIPTION__CONDITIONAL_STYLES);
+
 		eefDynamicMappingForEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_FOR);
 		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR);
 		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION);
@@ -2602,6 +2806,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefHyperlinkStyleEClass, EefPackage.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION);
 		createEAttribute(eefHyperlinkStyleEClass, EefPackage.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION);
 
+		eefSpinnerStyleEClass = createEClass(EefPackage.EEF_SPINNER_STYLE);
+		createEAttribute(eefSpinnerStyleEClass, EefPackage.EEF_SPINNER_STYLE__BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefSpinnerStyleEClass, EefPackage.EEF_SPINNER_STYLE__FOREGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefSpinnerStyleEClass, EefPackage.EEF_SPINNER_STYLE__FONT_NAME_EXPRESSION);
+		createEAttribute(eefSpinnerStyleEClass, EefPackage.EEF_SPINNER_STYLE__FONT_SIZE_EXPRESSION);
+		createEAttribute(eefSpinnerStyleEClass, EefPackage.EEF_SPINNER_STYLE__FONT_STYLE_EXPRESSION);
+
 		eefCustomWidgetStyleEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_STYLE);
 
 		eefListStyleEClass = createEClass(EefPackage.EEF_LIST_STYLE);
@@ -2638,6 +2849,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 		eefHyperlinkConditionalStyleEClass = createEClass(EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE);
 		createEReference(eefHyperlinkConditionalStyleEClass, EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE__STYLE);
+
+		eefSpinnerConditionalStyleEClass = createEClass(EefPackage.EEF_SPINNER_CONDITIONAL_STYLE);
+		createEReference(eefSpinnerConditionalStyleEClass, EefPackage.EEF_SPINNER_CONDITIONAL_STYLE__STYLE);
 
 		eefCustomWidgetConditionalStyleEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE);
 		createEReference(eefCustomWidgetConditionalStyleEClass, EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE);
@@ -2704,6 +2918,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefSelectDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefRadioDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefHyperlinkDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
+		eefSpinnerDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefDynamicMappingForEClass.getESuperTypes().add(this.getEEFControlDescription());
 		eefCustomWidgetDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
 		eefListDescriptionEClass.getESuperTypes().add(this.getEEFWidgetDescription());
@@ -2714,6 +2929,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefSelectStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefRadioStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefHyperlinkStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
+		eefSpinnerStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefCustomWidgetStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefListStyleEClass.getESuperTypes().add(this.getEEFWidgetStyle());
 		eefTextConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
@@ -2723,6 +2939,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefSelectConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 		eefRadioConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 		eefHyperlinkConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
+		eefSpinnerConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 		eefCustomWidgetConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 		eefListConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 		eefGroupConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
@@ -2893,8 +3110,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(getEEFGridLayoutDescription_NumberOfColumns(), theEcorePackage.getEInt(), "numberOfColumns", "1", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
 				EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
-		initEAttribute(getEEFGridLayoutDescription_MakeColumnsWithEqualWidth(), theEcorePackage.getEBoolean(), "makeColumnsWithEqualWidth", "1", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
-				EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+		initEAttribute(getEEFGridLayoutDescription_MakeColumnsWithEqualWidth(), theEcorePackage.getEBoolean(), "makeColumnsWithEqualWidth", "false", //$NON-NLS-1$//$NON-NLS-2$
+				0, 1, EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 
 		initEClass(eefWidgetDescriptionEClass, EEFWidgetDescription.class, "EEFWidgetDescription", EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
@@ -3062,6 +3279,35 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
 				EPackageImpl.IS_ORDERED);
 
+		initEClass(eefSpinnerDescriptionEClass, EEFSpinnerDescription.class, "EEFSpinnerDescription", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
+				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFSpinnerDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSpinnerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerDescription_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSpinnerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerDescription_DigitsExpression(), ecorePackage.getEString(), "digitsExpression", "0", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
+				EEFSpinnerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerDescription_IncrementExpression(), ecorePackage.getEString(), "incrementExpression", "1", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
+				EEFSpinnerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerDescription_MinExpression(), ecorePackage.getEString(), "minExpression", "", 0, 1, EEFSpinnerDescription.class, //$NON-NLS-1$//$NON-NLS-2$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerDescription_MaxExpression(), ecorePackage.getEString(), "maxExpression", "", 0, 1, EEFSpinnerDescription.class, //$NON-NLS-1$//$NON-NLS-2$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEReference(getEEFSpinnerDescription_Style(), this.getEEFSpinnerStyle(), null, "style", null, 0, 1, EEFSpinnerDescription.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE,
+				EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+				EPackageImpl.IS_ORDERED);
+		initEReference(getEEFSpinnerDescription_ConditionalStyles(), this.getEEFSpinnerConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFSpinnerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
+				!EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+
 		initEClass(eefDynamicMappingForEClass, EEFDynamicMappingFor.class, "EEFDynamicMappingFor", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
 				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEEFDynamicMappingFor_Iterator(), theEcorePackage.getEString(), "iterator", null, 1, 1, EEFDynamicMappingFor.class, //$NON-NLS-1$
@@ -3217,6 +3463,24 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				EEFHyperlinkStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 
+		initEClass(eefSpinnerStyleEClass, EEFSpinnerStyle.class, "EEFSpinnerStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, //$NON-NLS-1$
+				EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFSpinnerStyle_BackgroundColorExpression(), ecorePackage.getEString(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSpinnerStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE,
+				!EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerStyle_ForegroundColorExpression(), ecorePackage.getEString(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSpinnerStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE,
+				!EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerStyle_FontNameExpression(), ecorePackage.getEString(), "fontNameExpression", null, 0, 1, EEFSpinnerStyle.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerStyle_FontSizeExpression(), ecorePackage.getEString(), "fontSizeExpression", null, 0, 1, EEFSpinnerStyle.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFSpinnerStyle_FontStyleExpression(), ecorePackage.getEString(), "fontStyleExpression", null, 0, 1, EEFSpinnerStyle.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+
 		initEClass(eefCustomWidgetStyleEClass, EEFCustomWidgetStyle.class, "EEFCustomWidgetStyle", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
 				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
 
@@ -3301,6 +3565,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				EEFHyperlinkConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
 				!EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+
+		initEClass(eefSpinnerConditionalStyleEClass, EEFSpinnerConditionalStyle.class, "EEFSpinnerConditionalStyle", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
+				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFSpinnerConditionalStyle_Style(), this.getEEFSpinnerStyle(), null, "style", null, 0, 1, EEFSpinnerConditionalStyle.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE,
+				EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+				EPackageImpl.IS_ORDERED);
 
 		initEClass(eefCustomWidgetConditionalStyleEClass, EEFCustomWidgetConditionalStyle.class, "EEFCustomWidgetConditionalStyle", //$NON-NLS-1$
 				!EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);

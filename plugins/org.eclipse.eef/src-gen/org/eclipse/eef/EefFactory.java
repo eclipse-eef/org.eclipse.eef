@@ -168,6 +168,14 @@ public interface EefFactory extends EFactory {
 	EEFHyperlinkDescription createEEFHyperlinkDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Spinner Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Spinner Description</em>'.
+	 * @generated
+	 */
+	EEFSpinnerDescription createEEFSpinnerDescription();
+
+	/**
 	 * Returns a new object of class '<em>EEF Dynamic Mapping For</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Dynamic Mapping For</em>'.
@@ -265,6 +273,14 @@ public interface EefFactory extends EFactory {
 	EEFHyperlinkStyle createEEFHyperlinkStyle();
 
 	/**
+	 * Returns a new object of class '<em>EEF Spinner Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Spinner Style</em>'.
+	 * @generated
+	 */
+	EEFSpinnerStyle createEEFSpinnerStyle();
+
+	/**
 	 * Returns a new object of class '<em>EEF Custom Widget Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Custom Widget Style</em>'.
@@ -350,6 +366,15 @@ public interface EefFactory extends EFactory {
 	 * @generated
 	 */
 	EEFHyperlinkConditionalStyle createEEFHyperlinkConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Spinner Conditional Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @return a new object of class '<em>EEF Spinner Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFSpinnerConditionalStyle createEEFSpinnerConditionalStyle();
 
 	/**
 	 * Returns a new object of class '<em>EEF Custom Widget Conditional Style</em>'. <!-- begin-user-doc --> <!--

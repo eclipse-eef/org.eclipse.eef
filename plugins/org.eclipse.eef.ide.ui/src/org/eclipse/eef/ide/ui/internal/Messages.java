@@ -82,6 +82,8 @@ public final class Messages {
 	@TranslatableMessage
 	public static String AbstractEEFWidgetLifecycleManager_lockedNoWrite;
 
+	@TranslatableMessage
+	public static String EEFSpinnerLifecycleManager_valueOutOfRange;
 	// CHECKSTYLE:ON
 
 	/**

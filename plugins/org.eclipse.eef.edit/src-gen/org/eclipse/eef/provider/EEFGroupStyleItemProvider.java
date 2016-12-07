@@ -97,7 +97,7 @@ public class EEFGroupStyleItemProvider extends ItemProviderAdapter
 	/**
 	 * This adds a property descriptor for the Font Name Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontNameExpressionPropertyDescriptor(Object object) {
@@ -111,7 +111,7 @@ public class EEFGroupStyleItemProvider extends ItemProviderAdapter
 	/**
 	 * This adds a property descriptor for the Font Size Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addFontSizeExpressionPropertyDescriptor(Object object) {
@@ -149,7 +149,7 @@ public class EEFGroupStyleItemProvider extends ItemProviderAdapter
 	/**
 	 * This adds a property descriptor for the Expanded By Default feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected void addExpandedByDefaultPropertyDescriptor(Object object) {
@@ -188,15 +188,15 @@ public class EEFGroupStyleItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFGroupStyle) object).getFontNameExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFGroupStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFGroupStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFGroupStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFGroupStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

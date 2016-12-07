@@ -79,8 +79,7 @@ public interface EEFWidgetDescription extends EEFControlDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Is Enabled Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc --> <!-- begin-model-doc --> The tooltip of the help icon visible by the end-users <!--
-	 * end-model-doc -->
+	 * end-user-doc --> <!-- begin-model-doc --> The enablement rules to use for the widget. <!-- end-model-doc -->
 	 *
 	 * @return the value of the '<em>Is Enabled Expression</em>' attribute.
 	 * @see #setIsEnabledExpression(String)
@@ -91,8 +90,8 @@ public interface EEFWidgetDescription extends EEFControlDescription {
 	String getIsEnabledExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression
-	 * <em>Is Enabled Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression <em>Is Enabled
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Is Enabled Expression</em>' attribute.
@@ -103,8 +102,8 @@ public interface EEFWidgetDescription extends EEFControlDescription {
 
 	/**
 	 * Returns the value of the '<em><b>Property Validation Rules</b></em>' reference list. The list contents are of
-	 * type {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}. It is bidirectional and its opposite is '
-	 * {@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}'. <!-- begin-user-doc
+	 * type {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}. It is bidirectional and its opposite is
+	 * '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}'. <!-- begin-user-doc
 	 * --> <!-- end-user-doc --> <!-- begin-model-doc --> The property validation rules to use for the widget. <!--
 	 * end-model-doc -->
 	 *

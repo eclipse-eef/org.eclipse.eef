@@ -271,7 +271,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	@Override
 	public EList<EEFLabelConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFLabelConditionalStyle>(EEFLabelConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFLabelConditionalStyle.class, this,
 					EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -285,7 +285,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	@Override
 	public EList<EEFWidgetAction> getActions() {
 		if (actions == null) {
-			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this, EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS);
+			actions = new EObjectContainmentEList.Resolving<>(EEFWidgetAction.class, this, EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS);
 		}
 		return actions;
 	}
