@@ -16,10 +16,10 @@ package org.eclipse.eef;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFGroupConditionalStyle#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFGroupConditionalStyle()
  * @model
@@ -33,7 +33,7 @@ public interface EEFGroupConditionalStyle extends EEFConditionalStyle {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFGroupStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupConditionalStyle_Style()
@@ -45,7 +45,7 @@ public interface EEFGroupConditionalStyle extends EEFConditionalStyle {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupConditionalStyle#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()

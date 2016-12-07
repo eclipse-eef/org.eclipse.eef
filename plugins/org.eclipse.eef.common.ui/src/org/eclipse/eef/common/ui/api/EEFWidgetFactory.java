@@ -27,6 +27,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
+import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Hyperlink;
@@ -256,6 +257,23 @@ public class EEFWidgetFactory extends FormToolkit {
 		styledText.setBackground(parent.getBackground());
 		styledText.setForeground(parent.getForeground());
 		return styledText;
+	}
+
+	/**
+	 * Creates a spinner as a part of the form.
+	 *
+	 * @param parent
+	 *            the parent.
+	 * @param style
+	 *            the style.
+	 * @return the spinner.
+	 */
+	public Spinner createSpinner(Composite parent, int style) {
+		Spinner spinner = new Spinner(parent, style);
+		spinner.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		spinner.setBackground(parent.getBackground());
+		spinner.setForeground(parent.getForeground());
+		return spinner;
 	}
 
 	/**

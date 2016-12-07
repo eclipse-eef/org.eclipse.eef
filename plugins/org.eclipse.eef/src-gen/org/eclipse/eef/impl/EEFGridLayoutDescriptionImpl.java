@@ -19,12 +19,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#isMakeColumnsWithEqualWidth <em>Make Columns With Equal
  * Width</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -42,17 +42,17 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	/**
 	 * The cached value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getNumberOfColumns()
 	 * @generated
 	 * @ordered
 	 */
-	protected int numberOfColumns = EEFGridLayoutDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
+	protected int numberOfColumns = NUMBER_OF_COLUMNS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isMakeColumnsWithEqualWidth() <em>Make Columns With Equal Width</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isMakeColumnsWithEqualWidth()
 	 * @generated
 	 * @ordered
@@ -62,16 +62,16 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	/**
 	 * The cached value of the '{@link #isMakeColumnsWithEqualWidth() <em>Make Columns With Equal Width</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isMakeColumnsWithEqualWidth()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean makeColumnsWithEqualWidth = EEFGridLayoutDescriptionImpl.MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT;
+	protected boolean makeColumnsWithEqualWidth = MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGridLayoutDescriptionImpl() {
@@ -80,7 +80,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,22 +100,21 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setNumberOfColumns(int newNumberOfColumns) {
 		int oldNumberOfColumns = numberOfColumns;
 		numberOfColumns = newNumberOfColumns;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS, oldNumberOfColumns,
 					numberOfColumns));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,22 +124,21 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setMakeColumnsWithEqualWidth(boolean newMakeColumnsWithEqualWidth) {
 		boolean oldMakeColumnsWithEqualWidth = makeColumnsWithEqualWidth;
 		makeColumnsWithEqualWidth = newMakeColumnsWithEqualWidth;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH,
 					oldMakeColumnsWithEqualWidth, makeColumnsWithEqualWidth));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -156,7 +154,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -174,17 +172,17 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS:
-			setNumberOfColumns(EEFGridLayoutDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT);
+			setNumberOfColumns(NUMBER_OF_COLUMNS_EDEFAULT);
 			return;
 		case EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH:
-			setMakeColumnsWithEqualWidth(EEFGridLayoutDescriptionImpl.MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT);
+			setMakeColumnsWithEqualWidth(MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -192,30 +190,29 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS:
-			return numberOfColumns != EEFGridLayoutDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
+			return numberOfColumns != NUMBER_OF_COLUMNS_EDEFAULT;
 		case EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH:
-			return makeColumnsWithEqualWidth != EEFGridLayoutDescriptionImpl.MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT;
+			return makeColumnsWithEqualWidth != MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (numberOfColumns: "); //$NON-NLS-1$

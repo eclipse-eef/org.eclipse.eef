@@ -16,11 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFDynamicMappingIf#getPredicateExpression <em>Predicate Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFDynamicMappingIf#getWidget <em>Widget</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingIf()
  * @model
@@ -41,9 +41,9 @@ public interface EEFDynamicMappingIf extends EObject {
 	String getPredicateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingIf#getPredicateExpression
-	 * <em>Predicate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingIf#getPredicateExpression <em>Predicate
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Predicate Expression</em>' attribute.
 	 * @see #getPredicateExpression()
@@ -67,7 +67,7 @@ public interface EEFDynamicMappingIf extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingIf#getWidget <em>Widget</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Widget</em>' containment reference.
 	 * @see #getWidget()

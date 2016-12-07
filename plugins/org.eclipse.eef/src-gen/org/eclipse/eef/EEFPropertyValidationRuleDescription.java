@@ -11,15 +11,15 @@ package org.eclipse.eef;
 import org.eclipse.emf.common.util.EList;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>EEF Property Validation Rule Description</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>EEF Property Validation Rule
+ * Description</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFPropertyValidationRuleDescription()
  * @model

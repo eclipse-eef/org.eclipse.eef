@@ -41,8 +41,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  *
  * @generated
  */
-public class EefItemProviderAdapterFactory extends EefAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable,
-IChildCreationExtender {
+public class EefItemProviderAdapterFactory extends EefAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -64,7 +64,8 @@ IChildCreationExtender {
 	 * 
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(EefEditPlugin.INSTANCE, EefPackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(EefEditPlugin.INSTANCE,
+			EefPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}. <!--
@@ -479,6 +480,29 @@ IChildCreationExtender {
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSpinnerDescription} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSpinnerDescriptionItemProvider eefSpinnerDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSpinnerDescription}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSpinnerDescriptionAdapter() {
+		if (eefSpinnerDescriptionItemProvider == null) {
+			eefSpinnerDescriptionItemProvider = new EEFSpinnerDescriptionItemProvider(this);
+		}
+
+		return eefSpinnerDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -754,6 +778,29 @@ IChildCreationExtender {
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSpinnerStyle} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSpinnerStyleItemProvider eefSpinnerStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSpinnerStyle}. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSpinnerStyleAdapter() {
+		if (eefSpinnerStyleItemProvider == null) {
+			eefSpinnerStyleItemProvider = new EEFSpinnerStyleItemProvider(this);
+		}
+
+		return eefSpinnerStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -983,6 +1030,29 @@ IChildCreationExtender {
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSpinnerConditionalStyle} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected EEFSpinnerConditionalStyleItemProvider eefSpinnerConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSpinnerConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFSpinnerConditionalStyleAdapter() {
+		if (eefSpinnerConditionalStyleItemProvider == null) {
+			eefSpinnerConditionalStyleItemProvider = new EEFSpinnerConditionalStyleItemProvider(this);
+		}
+
+		return eefSpinnerConditionalStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}
 	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1203,135 +1273,98 @@ IChildCreationExtender {
 	 */
 	@Override
 	public void dispose() {
-		if (eefViewDescriptionItemProvider != null) {
+		if (eefViewDescriptionItemProvider != null)
 			eefViewDescriptionItemProvider.dispose();
-		}
-		if (eefPageDescriptionItemProvider != null) {
+		if (eefPageDescriptionItemProvider != null)
 			eefPageDescriptionItemProvider.dispose();
-		}
-		if (eefRuleAuditDescriptionItemProvider != null) {
+		if (eefRuleAuditDescriptionItemProvider != null)
 			eefRuleAuditDescriptionItemProvider.dispose();
-		}
-		if (eefValidationFixDescriptionItemProvider != null) {
+		if (eefValidationFixDescriptionItemProvider != null)
 			eefValidationFixDescriptionItemProvider.dispose();
-		}
-		if (eefPropertyValidationRuleDescriptionItemProvider != null) {
+		if (eefPropertyValidationRuleDescriptionItemProvider != null)
 			eefPropertyValidationRuleDescriptionItemProvider.dispose();
-		}
-		if (eefSemanticValidationRuleDescriptionItemProvider != null) {
+		if (eefSemanticValidationRuleDescriptionItemProvider != null)
 			eefSemanticValidationRuleDescriptionItemProvider.dispose();
-		}
-		if (eefGroupDescriptionItemProvider != null) {
+		if (eefGroupDescriptionItemProvider != null)
 			eefGroupDescriptionItemProvider.dispose();
-		}
-		if (eefContainerDescriptionItemProvider != null) {
+		if (eefContainerDescriptionItemProvider != null)
 			eefContainerDescriptionItemProvider.dispose();
-		}
-		if (eefFillLayoutDescriptionItemProvider != null) {
+		if (eefFillLayoutDescriptionItemProvider != null)
 			eefFillLayoutDescriptionItemProvider.dispose();
-		}
-		if (eefGridLayoutDescriptionItemProvider != null) {
+		if (eefGridLayoutDescriptionItemProvider != null)
 			eefGridLayoutDescriptionItemProvider.dispose();
-		}
-		if (eefTextDescriptionItemProvider != null) {
+		if (eefTextDescriptionItemProvider != null)
 			eefTextDescriptionItemProvider.dispose();
-		}
-		if (eefLabelDescriptionItemProvider != null) {
+		if (eefLabelDescriptionItemProvider != null)
 			eefLabelDescriptionItemProvider.dispose();
-		}
-		if (eefButtonDescriptionItemProvider != null) {
+		if (eefButtonDescriptionItemProvider != null)
 			eefButtonDescriptionItemProvider.dispose();
-		}
-		if (eefCheckboxDescriptionItemProvider != null) {
+		if (eefCheckboxDescriptionItemProvider != null)
 			eefCheckboxDescriptionItemProvider.dispose();
-		}
-		if (eefSelectDescriptionItemProvider != null) {
+		if (eefSelectDescriptionItemProvider != null)
 			eefSelectDescriptionItemProvider.dispose();
-		}
-		if (eefRadioDescriptionItemProvider != null) {
+		if (eefRadioDescriptionItemProvider != null)
 			eefRadioDescriptionItemProvider.dispose();
-		}
-		if (eefHyperlinkDescriptionItemProvider != null) {
+		if (eefHyperlinkDescriptionItemProvider != null)
 			eefHyperlinkDescriptionItemProvider.dispose();
-		}
-		if (eefDynamicMappingForItemProvider != null) {
+		if (eefSpinnerDescriptionItemProvider != null)
+			eefSpinnerDescriptionItemProvider.dispose();
+		if (eefDynamicMappingForItemProvider != null)
 			eefDynamicMappingForItemProvider.dispose();
-		}
-		if (eefDynamicMappingIfItemProvider != null) {
+		if (eefDynamicMappingIfItemProvider != null)
 			eefDynamicMappingIfItemProvider.dispose();
-		}
-		if (eefCustomWidgetDescriptionItemProvider != null) {
+		if (eefCustomWidgetDescriptionItemProvider != null)
 			eefCustomWidgetDescriptionItemProvider.dispose();
-		}
-		if (eefCustomExpressionItemProvider != null) {
+		if (eefCustomExpressionItemProvider != null)
 			eefCustomExpressionItemProvider.dispose();
-		}
-		if (eefListDescriptionItemProvider != null) {
+		if (eefListDescriptionItemProvider != null)
 			eefListDescriptionItemProvider.dispose();
-		}
-		if (eefTextStyleItemProvider != null) {
+		if (eefTextStyleItemProvider != null)
 			eefTextStyleItemProvider.dispose();
-		}
-		if (eefLabelStyleItemProvider != null) {
+		if (eefLabelStyleItemProvider != null)
 			eefLabelStyleItemProvider.dispose();
-		}
-		if (eefButtonStyleItemProvider != null) {
+		if (eefButtonStyleItemProvider != null)
 			eefButtonStyleItemProvider.dispose();
-		}
-		if (eefCheckboxStyleItemProvider != null) {
+		if (eefCheckboxStyleItemProvider != null)
 			eefCheckboxStyleItemProvider.dispose();
-		}
-		if (eefSelectStyleItemProvider != null) {
+		if (eefSelectStyleItemProvider != null)
 			eefSelectStyleItemProvider.dispose();
-		}
-		if (eefRadioStyleItemProvider != null) {
+		if (eefRadioStyleItemProvider != null)
 			eefRadioStyleItemProvider.dispose();
-		}
-		if (eefHyperlinkStyleItemProvider != null) {
+		if (eefHyperlinkStyleItemProvider != null)
 			eefHyperlinkStyleItemProvider.dispose();
-		}
-		if (eefCustomWidgetStyleItemProvider != null) {
+		if (eefSpinnerStyleItemProvider != null)
+			eefSpinnerStyleItemProvider.dispose();
+		if (eefCustomWidgetStyleItemProvider != null)
 			eefCustomWidgetStyleItemProvider.dispose();
-		}
-		if (eefListStyleItemProvider != null) {
+		if (eefListStyleItemProvider != null)
 			eefListStyleItemProvider.dispose();
-		}
-		if (eefGroupStyleItemProvider != null) {
+		if (eefGroupStyleItemProvider != null)
 			eefGroupStyleItemProvider.dispose();
-		}
-		if (eefTextConditionalStyleItemProvider != null) {
+		if (eefTextConditionalStyleItemProvider != null)
 			eefTextConditionalStyleItemProvider.dispose();
-		}
-		if (eefButtonConditionalStyleItemProvider != null) {
+		if (eefButtonConditionalStyleItemProvider != null)
 			eefButtonConditionalStyleItemProvider.dispose();
-		}
-		if (eefLabelConditionalStyleItemProvider != null) {
+		if (eefLabelConditionalStyleItemProvider != null)
 			eefLabelConditionalStyleItemProvider.dispose();
-		}
-		if (eefCheckboxConditionalStyleItemProvider != null) {
+		if (eefCheckboxConditionalStyleItemProvider != null)
 			eefCheckboxConditionalStyleItemProvider.dispose();
-		}
-		if (eefSelectConditionalStyleItemProvider != null) {
+		if (eefSelectConditionalStyleItemProvider != null)
 			eefSelectConditionalStyleItemProvider.dispose();
-		}
-		if (eefRadioConditionalStyleItemProvider != null) {
+		if (eefRadioConditionalStyleItemProvider != null)
 			eefRadioConditionalStyleItemProvider.dispose();
-		}
-		if (eefHyperlinkConditionalStyleItemProvider != null) {
+		if (eefHyperlinkConditionalStyleItemProvider != null)
 			eefHyperlinkConditionalStyleItemProvider.dispose();
-		}
-		if (eefCustomWidgetConditionalStyleItemProvider != null) {
+		if (eefSpinnerConditionalStyleItemProvider != null)
+			eefSpinnerConditionalStyleItemProvider.dispose();
+		if (eefCustomWidgetConditionalStyleItemProvider != null)
 			eefCustomWidgetConditionalStyleItemProvider.dispose();
-		}
-		if (eefWidgetActionItemProvider != null) {
+		if (eefWidgetActionItemProvider != null)
 			eefWidgetActionItemProvider.dispose();
-		}
-		if (eefListConditionalStyleItemProvider != null) {
+		if (eefListConditionalStyleItemProvider != null)
 			eefListConditionalStyleItemProvider.dispose();
-		}
-		if (eefGroupConditionalStyleItemProvider != null) {
+		if (eefGroupConditionalStyleItemProvider != null)
 			eefGroupConditionalStyleItemProvider.dispose();
-		}
 	}
 
 }

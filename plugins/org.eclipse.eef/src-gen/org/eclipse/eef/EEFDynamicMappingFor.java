@@ -16,12 +16,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFDynamicMappingFor#getIterator <em>Iterator</em>}</li>
  * <li>{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression <em>Iterable Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFDynamicMappingFor#getIfs <em>Ifs</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingFor()
  * @model
@@ -44,7 +44,7 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterator <em>Iterator</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Iterator</em>' attribute.
 	 * @see #getIterator()
@@ -66,9 +66,9 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	String getIterableExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression
-	 * <em>Iterable Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression <em>Iterable
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Iterable Expression</em>' attribute.
 	 * @see #getIterableExpression()

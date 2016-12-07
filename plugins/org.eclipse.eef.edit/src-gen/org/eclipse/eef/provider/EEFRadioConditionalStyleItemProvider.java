@@ -109,7 +109,7 @@ public class EEFRadioConditionalStyleItemProvider extends EEFConditionalStyleIte
 	public String getText(Object object) {
 		String label = ((EEFRadioConditionalStyle) object).getPreconditionExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFRadioConditionalStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFRadioConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFRadioConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -141,8 +141,8 @@ public class EEFRadioConditionalStyleItemProvider extends EEFConditionalStyleIte
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_RADIO_CONDITIONAL_STYLE__STYLE,
-				EefFactory.eINSTANCE.createEEFRadioStyle()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_RADIO_CONDITIONAL_STYLE__STYLE, EefFactory.eINSTANCE.createEEFRadioStyle()));
 	}
 
 }

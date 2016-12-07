@@ -61,8 +61,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFLabelDescription_valueExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFLabelDescription_valueExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelDescription_valueExpression_feature", "_UI_EEFLabelDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -75,8 +74,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 */
 	protected void addDisplayExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFLabelDescription_displayExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFLabelDescription_displayExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelDescription_displayExpression_feature", "_UI_EEFLabelDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -143,7 +141,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	public String getText(Object object) {
 		String label = ((EEFLabelDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFLabelDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -187,7 +185,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 				EefFactory.eINSTANCE.createEEFLabelConditionalStyle()));
 
 		newChildDescriptors
-		.add(createChildParameter(EefPackage.Literals.EEF_LABEL_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFWidgetAction()));
+				.add(createChildParameter(EefPackage.Literals.EEF_LABEL_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFWidgetAction()));
 	}
 
 }

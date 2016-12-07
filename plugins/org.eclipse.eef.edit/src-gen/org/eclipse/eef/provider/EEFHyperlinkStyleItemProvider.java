@@ -61,15 +61,12 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	 * @generated
 	 */
 	protected void addBackgroundColorExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFHyperlinkStyle_backgroundColorExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkStyle_backgroundColorExpression_feature", "_UI_EEFHyperlinkStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFHyperlinkStyle_backgroundColorExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkStyle_backgroundColorExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFHyperlinkStyle_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -80,8 +77,7 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	 */
 	protected void addFontNameExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFHyperlinkStyle_fontNameExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFHyperlinkStyle_fontNameExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkStyle_fontNameExpression_feature", "_UI_EEFHyperlinkStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -95,8 +91,7 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	 */
 	protected void addFontSizeExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFHyperlinkStyle_fontSizeExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFHyperlinkStyle_fontSizeExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkStyle_fontSizeExpression_feature", "_UI_EEFHyperlinkStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -110,8 +105,7 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	 */
 	protected void addFontStyleExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFHyperlinkStyle_fontStyleExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFHyperlinkStyle_fontStyleExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFHyperlinkStyle_fontStyleExpression_feature", "_UI_EEFHyperlinkStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -146,7 +140,7 @@ public class EEFHyperlinkStyleItemProvider extends EEFWidgetStyleItemProvider {
 	public String getText(Object object) {
 		String label = ((EEFHyperlinkStyle) object).getLabelFontNameExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFHyperlinkStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFHyperlinkStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFHyperlinkStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
