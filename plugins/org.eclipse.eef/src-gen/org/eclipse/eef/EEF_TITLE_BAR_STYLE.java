@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
 /**
  * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>EEF TITLE BAR STYLE</b></em>',
  * and utility methods for working with them. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.eef.EefPackage#getEEF_TITLE_BAR_STYLE()
  * @model
  * @generated
@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	/**
 	 * The '<em><b>TITLE BAR</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #TITLE_BAR_VALUE
 	 * @generated
 	 * @ordered
@@ -34,7 +34,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 
 	/**
 	 * The '<em><b>SHORT TITLE BAR</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #SHORT_TITLE_BAR_VALUE
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 
 	/**
 	 * The '<em><b>NO TITLE</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #NO_TITLE_VALUE
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #TITLE_BAR
 	 * @model
 	 * @generated
@@ -72,7 +72,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #SHORT_TITLE_BAR
 	 * @model
 	 * @generated
@@ -87,7 +87,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #NO_TITLE
 	 * @model
 	 * @generated
@@ -106,19 +106,23 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	/**
 	 * A public read-only list of all the '<em><b>EEF TITLE BAR STYLE</b></em>' enumerators. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
-	public static final List<EEF_TITLE_BAR_STYLE> VALUES = Collections.unmodifiableList(Arrays.asList(EEF_TITLE_BAR_STYLE.VALUES_ARRAY));
+	public static final List<EEF_TITLE_BAR_STYLE> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>EEF TITLE BAR STYLE</b></em>' literal with the specified literal value. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * @param literal
+	 *            the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EEF_TITLE_BAR_STYLE get(String literal) {
-		for (EEF_TITLE_BAR_STYLE result : EEF_TITLE_BAR_STYLE.VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			EEF_TITLE_BAR_STYLE result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -129,11 +133,15 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF TITLE BAR STYLE</b></em>' literal with the specified name. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
+	 * @param name
+	 *            the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EEF_TITLE_BAR_STYLE getByName(String name) {
-		for (EEF_TITLE_BAR_STYLE result : EEF_TITLE_BAR_STYLE.VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			EEF_TITLE_BAR_STYLE result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -144,7 +152,10 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF TITLE BAR STYLE</b></em>' literal with the specified integer value. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * @param value
+	 *            the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EEF_TITLE_BAR_STYLE get(int value) {
@@ -161,28 +172,28 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
 	 * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEF_TITLE_BAR_STYLE(int value, String name, String literal) {
@@ -193,7 +204,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,7 +214,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,7 +224,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -224,7 +235,7 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

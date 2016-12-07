@@ -14,10 +14,10 @@ package org.eclipse.eef;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFFillLayoutDescription#getOrientation <em>Orientation</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFFillLayoutDescription()
  * @model
@@ -41,7 +41,7 @@ public interface EEFFillLayoutDescription extends EEFLayoutDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFFillLayoutDescription#getOrientation <em>Orientation</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Orientation</em>' attribute.
 	 * @see org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION

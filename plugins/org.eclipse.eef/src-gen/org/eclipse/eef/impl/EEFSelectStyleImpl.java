@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
 public class EEFSelectStyleImpl extends EEFWidgetStyleImpl implements EEFSelectStyle {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFSelectStyleImpl() {
@@ -32,7 +32,7 @@ public class EEFSelectStyleImpl extends EEFWidgetStyleImpl implements EEFSelectS
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

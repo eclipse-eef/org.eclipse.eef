@@ -18,13 +18,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFButtonDescription()
  * @model
@@ -45,9 +45,9 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	String getButtonLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression
-	 * <em>Button Label Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Button Label Expression</em>' attribute.
 	 * @see #getButtonLabelExpression()
@@ -71,7 +71,7 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Push Expression</em>' attribute.
 	 * @see #getPushExpression()
@@ -94,7 +94,7 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()

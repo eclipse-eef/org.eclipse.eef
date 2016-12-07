@@ -15,14 +15,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>EEF Semantic Validation Rule Description</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>EEF Semantic Validation Rule
+ * Description</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl#getTargetClass <em>Target Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -30,7 +30,7 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 	/**
 	 * The default value of the '{@link #getTargetClass() <em>Target Class</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getTargetClass()
 	 * @generated
 	 * @ordered
@@ -40,16 +40,16 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 	/**
 	 * The cached value of the '{@link #getTargetClass() <em>Target Class</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getTargetClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected String targetClass = EEFSemanticValidationRuleDescriptionImpl.TARGET_CLASS_EDEFAULT;
+	protected String targetClass = TARGET_CLASS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFSemanticValidationRuleDescriptionImpl() {
@@ -58,7 +58,7 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,22 +78,21 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setTargetClass(String newTargetClass) {
 		String oldTargetClass = targetClass;
 		targetClass = newTargetClass;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS, oldTargetClass,
 					targetClass));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,7 +106,7 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -122,14 +121,14 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS:
-			setTargetClass(EEFSemanticValidationRuleDescriptionImpl.TARGET_CLASS_EDEFAULT);
+			setTargetClass(TARGET_CLASS_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -137,29 +136,27 @@ public class EEFSemanticValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS:
-			return EEFSemanticValidationRuleDescriptionImpl.TARGET_CLASS_EDEFAULT == null ? targetClass != null
-			: !EEFSemanticValidationRuleDescriptionImpl.TARGET_CLASS_EDEFAULT.equals(targetClass);
+			return TARGET_CLASS_EDEFAULT == null ? targetClass != null : !TARGET_CLASS_EDEFAULT.equals(targetClass);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (targetClass: "); //$NON-NLS-1$

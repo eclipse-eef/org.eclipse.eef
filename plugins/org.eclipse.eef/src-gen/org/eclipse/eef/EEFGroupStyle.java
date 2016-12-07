@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
@@ -24,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle <em>Toggle Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault <em>Expanded By Default</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFGroupStyle()
  * @model
@@ -45,9 +45,9 @@ public interface EEFGroupStyle extends EObject {
 	String getBackgroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression
-	 * <em>Background Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression <em>Background Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Background Color Expression</em>' attribute.
 	 * @see #getBackgroundColorExpression()
@@ -69,9 +69,9 @@ public interface EEFGroupStyle extends EObject {
 	String getForegroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression
-	 * <em>Foreground Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression <em>Foreground Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Foreground Color Expression</em>' attribute.
 	 * @see #getForegroundColorExpression()
@@ -94,7 +94,7 @@ public interface EEFGroupStyle extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression <em>Font Name Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Font Name Expression</em>' attribute.
 	 * @see #getFontNameExpression()
@@ -117,7 +117,7 @@ public interface EEFGroupStyle extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression <em>Font Size Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Font Size Expression</em>' attribute.
 	 * @see #getFontSizeExpression()
@@ -133,7 +133,7 @@ public interface EEFGroupStyle extends EObject {
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Bar Style</em>' attribute.
 	 * @see org.eclipse.eef.EEF_TITLE_BAR_STYLE
 	 * @see #setBarStyle(EEF_TITLE_BAR_STYLE)
@@ -163,7 +163,7 @@ public interface EEFGroupStyle extends EObject {
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Toggle Style</em>' attribute.
 	 * @see org.eclipse.eef.EEF_TOGGLE_STYLE
 	 * @see #setToggleStyle(EEF_TOGGLE_STYLE)
@@ -176,7 +176,7 @@ public interface EEFGroupStyle extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle <em>Toggle Style</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Toggle Style</em>' attribute.
 	 * @see org.eclipse.eef.EEF_TOGGLE_STYLE
@@ -192,7 +192,7 @@ public interface EEFGroupStyle extends EObject {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Expanded By Default</em>' attribute.
 	 * @see #setExpandedByDefault(boolean)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupStyle_ExpandedByDefault()
@@ -204,7 +204,7 @@ public interface EEFGroupStyle extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault <em>Expanded By Default</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Expanded By Default</em>' attribute.
 	 * @see #isExpandedByDefault()

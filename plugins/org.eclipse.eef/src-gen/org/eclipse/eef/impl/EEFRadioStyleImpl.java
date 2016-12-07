@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
 public class EEFRadioStyleImpl extends EEFWidgetStyleImpl implements EEFRadioStyle {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRadioStyleImpl() {
@@ -32,7 +32,7 @@ public class EEFRadioStyleImpl extends EEFWidgetStyleImpl implements EEFRadioSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

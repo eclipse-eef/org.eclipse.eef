@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getBackgroundColorExpression <em>Background Color Expression
- * </em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -34,7 +34,7 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 	/**
 	 * The default value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -44,12 +44,12 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 	/**
 	 * The cached value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String backgroundColorExpression = EEFHyperlinkStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
+	protected String backgroundColorExpression = BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontNameExpression() <em>Font Name Expression</em>}' attribute. <!--
@@ -69,7 +69,7 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontNameExpression = EEFHyperlinkStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT;
+	protected String fontNameExpression = FONT_NAME_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontSizeExpression() <em>Font Size Expression</em>}' attribute. <!--
@@ -89,7 +89,7 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontSizeExpression = EEFHyperlinkStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT;
+	protected String fontSizeExpression = FONT_SIZE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontStyleExpression() <em>Font Style Expression</em>}' attribute. <!--
@@ -109,11 +109,11 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontStyleExpression = EEFHyperlinkStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT;
+	protected String fontStyleExpression = FONT_STYLE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFHyperlinkStyleImpl() {
@@ -122,7 +122,7 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,7 +132,7 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -142,22 +142,21 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setBackgroundColorExpression(String newBackgroundColorExpression) {
 		String oldBackgroundColorExpression = backgroundColorExpression;
 		backgroundColorExpression = newBackgroundColorExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION,
 					oldBackgroundColorExpression, backgroundColorExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,22 +166,21 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontNameExpression(String newFontNameExpression) {
 		String oldFontNameExpression = fontNameExpression;
 		fontNameExpression = newFontNameExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION, oldFontNameExpression,
 					fontNameExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -192,22 +190,21 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontSizeExpression(String newFontSizeExpression) {
 		String oldFontSizeExpression = fontSizeExpression;
 		fontSizeExpression = newFontSizeExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION, oldFontSizeExpression,
 					fontSizeExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -217,22 +214,21 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontStyleExpression(String newFontStyleExpression) {
 		String oldFontStyleExpression = fontStyleExpression;
 		fontStyleExpression = newFontStyleExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION, oldFontStyleExpression,
 					fontStyleExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -252,7 +248,7 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -276,23 +272,23 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION:
-			setBackgroundColorExpression(EEFHyperlinkStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
+			setBackgroundColorExpression(BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION:
-			setFontNameExpression(EEFHyperlinkStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT);
+			setFontNameExpression(FONT_NAME_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION:
-			setFontSizeExpression(EEFHyperlinkStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT);
+			setFontSizeExpression(FONT_SIZE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION:
-			setFontStyleExpression(EEFHyperlinkStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT);
+			setFontStyleExpression(FONT_STYLE_EXPRESSION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -300,38 +296,34 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION:
-			return EEFHyperlinkStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
-			: !EEFHyperlinkStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
+			return BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
+					: !BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION:
-			return EEFHyperlinkStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null
-			: !EEFHyperlinkStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
+			return FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null : !FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION:
-			return EEFHyperlinkStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null
-			: !EEFHyperlinkStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
+			return FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null : !FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION:
-			return EEFHyperlinkStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT == null ? fontStyleExpression != null
-			: !EEFHyperlinkStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
+			return FONT_STYLE_EXPRESSION_EDEFAULT == null ? fontStyleExpression != null : !FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (backgroundColorExpression: "); //$NON-NLS-1$

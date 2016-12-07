@@ -20,10 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -46,11 +47,11 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 	 * @generated
 	 * @ordered
 	 */
-	protected String preconditionExpression = EEFConditionalStyleImpl.PRECONDITION_EXPRESSION_EDEFAULT;
+	protected String preconditionExpression = PRECONDITION_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFConditionalStyleImpl() {
@@ -59,7 +60,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,7 +70,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,22 +80,21 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setPreconditionExpression(String newPreconditionExpression) {
 		String oldPreconditionExpression = preconditionExpression;
 		preconditionExpression = newPreconditionExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION,
 					oldPreconditionExpression, preconditionExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,14 +123,14 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION:
-			setPreconditionExpression(EEFConditionalStyleImpl.PRECONDITION_EXPRESSION_EDEFAULT);
+			setPreconditionExpression(PRECONDITION_EXPRESSION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -138,29 +138,28 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION:
-			return EEFConditionalStyleImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
-			: !EEFConditionalStyleImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+			return PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
+					: !PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (preconditionExpression: "); //$NON-NLS-1$

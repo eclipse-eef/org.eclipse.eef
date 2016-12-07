@@ -63,8 +63,7 @@ public class EEFSelectDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFSelectDescription_valueExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFSelectDescription_valueExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFSelectDescription_valueExpression_feature", "_UI_EEFSelectDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -77,8 +76,7 @@ public class EEFSelectDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	 */
 	protected void addEditExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFSelectDescription_editExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFSelectDescription_editExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFSelectDescription_editExpression_feature", "_UI_EEFSelectDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -91,15 +89,12 @@ public class EEFSelectDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	 * @generated
 	 */
 	protected void addCandidatesExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFSelectDescription_candidatesExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFSelectDescription_candidatesExpression_feature", "_UI_EEFSelectDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFSelectDescription_candidatesExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFSelectDescription_candidatesExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFSelectDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -109,15 +104,12 @@ public class EEFSelectDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	 * @generated
 	 */
 	protected void addCandidateDisplayExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFSelectDescription_candidateDisplayExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFSelectDescription_candidateDisplayExpression_feature", "_UI_EEFSelectDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFSelectDescription_candidateDisplayExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFSelectDescription_candidateDisplayExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFSelectDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -180,7 +172,7 @@ public class EEFSelectDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	public String getText(Object object) {
 		String label = ((EEFSelectDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFSelectDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFSelectDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFSelectDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

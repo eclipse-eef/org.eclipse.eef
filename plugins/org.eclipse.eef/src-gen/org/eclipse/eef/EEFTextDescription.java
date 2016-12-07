@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit Expression</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.eef.EEFTextDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFTextDescription()
  * @model
@@ -47,7 +47,7 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFTextDescription#getValueExpression <em>Value Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
@@ -71,7 +71,7 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Edit Expression</em>' attribute.
 	 * @see #getEditExpression()
@@ -95,7 +95,7 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFTextDescription#getLineCount <em>Line Count</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Line Count</em>' attribute.
 	 * @see #getLineCount()
@@ -118,7 +118,7 @@ public interface EEFTextDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFTextDescription#getStyle <em>Style</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()

@@ -111,7 +111,7 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	public String getText(Object object) {
 		String label = ((EEFCustomWidgetDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -148,8 +148,8 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS,
 				EefFactory.eINSTANCE.createEEFCustomExpression()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE,
-				EefFactory.eINSTANCE.createEEFCustomWidgetStyle()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFCustomWidgetStyle()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES,
 				EefFactory.eINSTANCE.createEEFCustomWidgetConditionalStyle()));

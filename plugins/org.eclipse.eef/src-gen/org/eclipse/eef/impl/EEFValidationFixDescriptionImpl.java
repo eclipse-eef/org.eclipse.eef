@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl#getFixExpression <em>Fix Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -47,12 +47,12 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = EEFValidationFixDescriptionImpl.NAME_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFixExpression() <em>Fix Expression</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFixExpression()
 	 * @generated
 	 * @ordered
@@ -62,16 +62,16 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * The cached value of the '{@link #getFixExpression() <em>Fix Expression</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFixExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String fixExpression = EEFValidationFixDescriptionImpl.FIX_EXPRESSION_EDEFAULT;
+	protected String fixExpression = FIX_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFValidationFixDescriptionImpl() {
@@ -80,7 +80,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,21 +100,20 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__NAME, oldName, name));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -124,22 +123,21 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFixExpression(String newFixExpression) {
 		String oldFixExpression = fixExpression;
 		fixExpression = newFixExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION, oldFixExpression,
 					fixExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +153,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,17 +171,17 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__NAME:
-			setName(EEFValidationFixDescriptionImpl.NAME_EDEFAULT);
+			setName(NAME_EDEFAULT);
 			return;
 		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION:
-			setFixExpression(EEFValidationFixDescriptionImpl.FIX_EXPRESSION_EDEFAULT);
+			setFixExpression(FIX_EXPRESSION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -191,31 +189,29 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__NAME:
-			return EEFValidationFixDescriptionImpl.NAME_EDEFAULT == null ? name != null : !EEFValidationFixDescriptionImpl.NAME_EDEFAULT.equals(name);
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION:
-			return EEFValidationFixDescriptionImpl.FIX_EXPRESSION_EDEFAULT == null ? fixExpression != null
-			: !EEFValidationFixDescriptionImpl.FIX_EXPRESSION_EDEFAULT.equals(fixExpression);
+			return FIX_EXPRESSION_EDEFAULT == null ? fixExpression != null : !FIX_EXPRESSION_EDEFAULT.equals(fixExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$

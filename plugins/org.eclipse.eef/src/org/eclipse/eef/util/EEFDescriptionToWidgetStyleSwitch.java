@@ -16,6 +16,7 @@ import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFRadioDescription;
+import org.eclipse.eef.EEFSpinnerDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 
 /**
@@ -101,6 +102,16 @@ public class EEFDescriptionToWidgetStyleSwitch extends EefSwitch<EEFWidgetStyle>
 	 */
 	@Override
 	public EEFWidgetStyle caseEEFListDescription(EEFListDescription object) {
+		return object.getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.util.EefSwitch#caseEEFSpinnerDescription(org.eclipse.eef.EEFSpinnerDescription)
+	 */
+	@Override
+	public EEFWidgetStyle caseEEFSpinnerDescription(EEFSpinnerDescription object) {
 		return object.getStyle();
 	}
 }
