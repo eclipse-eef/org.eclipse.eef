@@ -10,6 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.tests.internal;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsNull.notNullValue;
+
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -20,9 +23,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsNull.notNullValue;
 
 import static org.junit.Assert.fail;
 
@@ -124,6 +124,21 @@ public class EEFDataTests {
 	public static final String EEFSELECTCONTROLLERTESTS_VALUE = "/data/controllers/select/EEFSelectControllerTests-Value.xmi"; //$NON-NLS-1$
 
 	/**
+	 * Test model used to compute the label of a select widget.
+	 */
+	public static final String EEFSPINNERCONTROLLERTESTS_LABEL = "/data/controllers/spinner/EEFSpinnerControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the help of a select widget.
+	 */
+	public static final String EEFSPINNERCONTROLLERTESTS_HELP = "/data/controllers/spinner/EEFSpinnerControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the value of a select widget.
+	 */
+	public static final String EEFSPINNERCONTROLLERTESTS_VALUE = "/data/controllers/spinner/EEFSpinnerControllerTests-Value.xmi"; //$NON-NLS-1$
+
+	/**
 	 * The current directory.
 	 */
 	public static final String CURRENTDIR = System.getProperty("user.dir"); //$NON-NLS-1$
@@ -132,10 +147,11 @@ public class EEFDataTests {
 	 * All the test models.
 	 */
 	private static final String[] MODELS = new String[] { EEFTEXTCONTROLLERTESTS_LABEL, EEFTEXTCONTROLLERTESTS_VALUE, EEFTEXTCONTROLLERTESTS_HELP,
-		EEFLABELCONTROLLERTESTS_LABEL, EEFLABELCONTROLLERTESTS_BODY, EEFLABELCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_LABEL,
-		EEFBUTTONCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_BUTTONLABEL, EEFCHECKBOXCONTROLLERTESTS_LABEL, EEFCHECKBOXCONTROLLERTESTS_HELP,
-		EEFCHECKBOXCONTROLLERTESTS_VALUE, EEFRADIOCONTROLLERTESTS_LABEL, EEFRADIOCONTROLLERTESTS_HELP, EEFRADIOCONTROLLERTESTS_VALUE,
-		EEFSELECTCONTROLLERTESTS_HELP, EEFSELECTCONTROLLERTESTS_LABEL, EEFSELECTCONTROLLERTESTS_VALUE, };
+			EEFLABELCONTROLLERTESTS_LABEL, EEFLABELCONTROLLERTESTS_BODY, EEFLABELCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_LABEL,
+			EEFBUTTONCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_BUTTONLABEL, EEFCHECKBOXCONTROLLERTESTS_LABEL, EEFCHECKBOXCONTROLLERTESTS_HELP,
+			EEFCHECKBOXCONTROLLERTESTS_VALUE, EEFRADIOCONTROLLERTESTS_LABEL, EEFRADIOCONTROLLERTESTS_HELP, EEFRADIOCONTROLLERTESTS_VALUE,
+			EEFSELECTCONTROLLERTESTS_HELP, EEFSELECTCONTROLLERTESTS_LABEL, EEFSELECTCONTROLLERTESTS_VALUE, EEFSPINNERCONTROLLERTESTS_HELP,
+			EEFSPINNERCONTROLLERTESTS_LABEL, EEFSPINNERCONTROLLERTESTS_VALUE };
 
 	/**
 	 * Loads the resource with the given URI in the given resource set.

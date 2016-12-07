@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EClass;
 public class EEFButtonStyleImpl extends EEFWidgetStyleImpl implements EEFButtonStyle {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFButtonStyleImpl() {
@@ -32,7 +32,7 @@ public class EEFButtonStyleImpl extends EEFWidgetStyleImpl implements EEFButtonS
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

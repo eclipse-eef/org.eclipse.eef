@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFListDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFListDescription#getDisplayExpression <em>Display Expression</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.eef.EEFListDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFListDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFListDescription()
  * @model
@@ -48,7 +48,7 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getValueExpression <em>Value Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
@@ -69,9 +69,9 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getDisplayExpression
-	 * <em>Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getDisplayExpression <em>Display
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Display Expression</em>' attribute.
 	 * @see #getDisplayExpression()
@@ -93,9 +93,9 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	String getOnClickExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getOnClickExpression
-	 * <em>On Click Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getOnClickExpression <em>On Click
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>On Click Expression</em>' attribute.
 	 * @see #getOnClickExpression()
@@ -111,7 +111,7 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFListDescription_Actions()
 	 * @model containment="true" resolveProxies="true"
@@ -134,7 +134,7 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getStyle <em>Style</em>}' containment reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()

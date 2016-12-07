@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -45,7 +45,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -55,17 +55,17 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String valueExpression = EEFSelectDescriptionImpl.VALUE_EXPRESSION_EDEFAULT;
+	protected String valueExpression = VALUE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -75,12 +75,12 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String editExpression = EEFSelectDescriptionImpl.EDIT_EXPRESSION_EDEFAULT;
+	protected String editExpression = EDIT_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCandidatesExpression() <em>Candidates Expression</em>}' attribute. <!--
@@ -100,12 +100,12 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected String candidatesExpression = EEFSelectDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT;
+	protected String candidatesExpression = CANDIDATES_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -115,17 +115,17 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String candidateDisplayExpression = EEFSelectDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT;
+	protected String candidateDisplayExpression = CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -135,7 +135,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -144,7 +144,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFSelectDescriptionImpl() {
@@ -153,7 +153,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -163,7 +163,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,22 +173,21 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setValueExpression(String newValueExpression) {
 		String oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION, oldValueExpression,
 					valueExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -198,22 +197,21 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setEditExpression(String newEditExpression) {
 		String oldEditExpression = editExpression;
 		editExpression = newEditExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION, oldEditExpression,
 					editExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,22 +221,21 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setCandidatesExpression(String newCandidatesExpression) {
 		String oldCandidatesExpression = candidatesExpression;
 		candidatesExpression = newCandidatesExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION, oldCandidatesExpression,
 					candidatesExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,22 +245,21 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setCandidateDisplayExpression(String newCandidateDisplayExpression) {
 		String oldCandidateDisplayExpression = candidateDisplayExpression;
 		candidateDisplayExpression = newCandidateDisplayExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION,
 					oldCandidateDisplayExpression, candidateDisplayExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -273,17 +269,14 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 			style = (EEFSelectStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, msgs);
+					msgs = newStyle.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, msgs);
 				}
-				if (msgs != null) {
+				if (msgs != null)
 					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_SELECT_DESCRIPTION__STYLE, oldStyle, style));
-				}
 			}
 		}
 		return style;
@@ -291,7 +284,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFSelectStyle basicGetStyle() {
@@ -300,7 +293,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFSelectStyle newStyle, NotificationChain msgs) {
@@ -309,44 +302,37 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_SELECT_DESCRIPTION__STYLE, oldStyle,
 					newStyle);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setStyle(EEFSelectStyle newStyle) {
 		if (newStyle != style) {
 			NotificationChain msgs = null;
-			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, msgs);
-			}
-			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, msgs);
-			}
+			if (style != null)
+				msgs = ((InternalEObject) style).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, msgs);
+			if (newStyle != null)
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_SELECT_DESCRIPTION__STYLE, null, msgs);
 			msgs = basicSetStyle(newStyle, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_SELECT_DESCRIPTION__STYLE, newStyle, newStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -360,7 +346,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -376,7 +362,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -391,9 +377,8 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 		case EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return getCandidateDisplayExpression();
 		case EefPackage.EEF_SELECT_DESCRIPTION__STYLE:
-			if (resolve) {
+			if (resolve)
 				return getStyle();
-			}
 			return basicGetStyle();
 		case EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES:
 			return getConditionalStyles();
@@ -403,7 +388,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -435,23 +420,23 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION:
-			setValueExpression(EEFSelectDescriptionImpl.VALUE_EXPRESSION_EDEFAULT);
+			setValueExpression(VALUE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION:
-			setEditExpression(EEFSelectDescriptionImpl.EDIT_EXPRESSION_EDEFAULT);
+			setEditExpression(EDIT_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION:
-			setCandidatesExpression(EEFSelectDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT);
+			setCandidatesExpression(CANDIDATES_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
-			setCandidateDisplayExpression(EEFSelectDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT);
+			setCandidateDisplayExpression(CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_SELECT_DESCRIPTION__STYLE:
 			setStyle((EEFSelectStyle) null);
@@ -465,24 +450,22 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION:
-			return EEFSelectDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFSelectDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			return VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null : !VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION:
-			return EEFSelectDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-			: !EEFSelectDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null : !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION:
-			return EEFSelectDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT == null ? candidatesExpression != null
-			: !EEFSelectDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
+			return CANDIDATES_EXPRESSION_EDEFAULT == null ? candidatesExpression != null
+					: !CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
 		case EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
-			return EEFSelectDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
-			: !EEFSelectDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
+			return CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
+					: !CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
 		case EefPackage.EEF_SELECT_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES:
@@ -493,14 +476,13 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$

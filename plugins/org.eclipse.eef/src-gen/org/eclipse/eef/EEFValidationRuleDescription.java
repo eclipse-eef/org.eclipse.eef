@@ -17,13 +17,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFValidationRuleDescription#getSeverity <em>Severity</em>}</li>
  * <li>{@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression <em>Message Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFValidationRuleDescription#getAudits <em>Audits</em>}</li>
  * <li>{@link org.eclipse.eef.EEFValidationRuleDescription#getFixes <em>Fixes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFValidationRuleDescription()
  * @model abstract="true"
@@ -47,7 +47,7 @@ public interface EEFValidationRuleDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getSeverity <em>Severity</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Severity</em>' attribute.
 	 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -70,9 +70,9 @@ public interface EEFValidationRuleDescription extends EObject {
 	String getMessageExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression
-	 * <em>Message Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression <em>Message
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Message Expression</em>' attribute.
 	 * @see #getMessageExpression()

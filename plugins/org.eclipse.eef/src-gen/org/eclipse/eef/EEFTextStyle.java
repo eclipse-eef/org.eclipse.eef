@@ -15,6 +15,7 @@ package org.eclipse.eef;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFTextStyle#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextStyle#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
@@ -22,7 +23,6 @@ package org.eclipse.eef;
  * <li>{@link org.eclipse.eef.EEFTextStyle#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextStyle#getFontStyleExpression <em>Font Style Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFTextStyle()
  * @model
@@ -43,9 +43,9 @@ public interface EEFTextStyle extends EEFWidgetStyle {
 	String getBackgroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getBackgroundColorExpression
-	 * <em>Background Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getBackgroundColorExpression <em>Background Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Background Color Expression</em>' attribute.
 	 * @see #getBackgroundColorExpression()
@@ -67,9 +67,9 @@ public interface EEFTextStyle extends EEFWidgetStyle {
 	String getForegroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getForegroundColorExpression
-	 * <em>Foreground Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getForegroundColorExpression <em>Foreground Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Foreground Color Expression</em>' attribute.
 	 * @see #getForegroundColorExpression()
@@ -92,7 +92,7 @@ public interface EEFTextStyle extends EEFWidgetStyle {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getFontNameExpression <em>Font Name Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Font Name Expression</em>' attribute.
 	 * @see #getFontNameExpression()
@@ -115,7 +115,7 @@ public interface EEFTextStyle extends EEFWidgetStyle {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getFontSizeExpression <em>Font Size Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Font Size Expression</em>' attribute.
 	 * @see #getFontSizeExpression()
@@ -136,9 +136,9 @@ public interface EEFTextStyle extends EEFWidgetStyle {
 	String getFontStyleExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getFontStyleExpression <em>Font Style Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFTextStyle#getFontStyleExpression <em>Font Style
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Font Style Expression</em>' attribute.
 	 * @see #getFontStyleExpression()

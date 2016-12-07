@@ -23,8 +23,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBarStyle <em>Bar Style</em>}</li>
@@ -38,7 +40,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The default value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -48,17 +50,17 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String backgroundColorExpression = EEFGroupStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
+	protected String backgroundColorExpression = BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -68,12 +70,12 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String foregroundColorExpression = EEFGroupStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT;
+	protected String foregroundColorExpression = FOREGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontNameExpression() <em>Font Name Expression</em>}' attribute. <!--
@@ -93,7 +95,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontNameExpression = EEFGroupStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT;
+	protected String fontNameExpression = FONT_NAME_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFontSizeExpression() <em>Font Size Expression</em>}' attribute. <!--
@@ -113,12 +115,12 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	 * @generated
 	 * @ordered
 	 */
-	protected String fontSizeExpression = EEFGroupStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT;
+	protected String fontSizeExpression = FONT_SIZE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBarStyle() <em>Bar Style</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getBarStyle()
 	 * @generated
 	 * @ordered
@@ -128,17 +130,17 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getBarStyle() <em>Bar Style</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getBarStyle()
 	 * @generated
 	 * @ordered
 	 */
-	protected EEF_TITLE_BAR_STYLE barStyle = EEFGroupStyleImpl.BAR_STYLE_EDEFAULT;
+	protected EEF_TITLE_BAR_STYLE barStyle = BAR_STYLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getToggleStyle() <em>Toggle Style</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getToggleStyle()
 	 * @generated
 	 * @ordered
@@ -148,12 +150,12 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getToggleStyle() <em>Toggle Style</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getToggleStyle()
 	 * @generated
 	 * @ordered
 	 */
-	protected EEF_TOGGLE_STYLE toggleStyle = EEFGroupStyleImpl.TOGGLE_STYLE_EDEFAULT;
+	protected EEF_TOGGLE_STYLE toggleStyle = TOGGLE_STYLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isExpandedByDefault() <em>Expanded By Default</em>}' attribute. <!--
@@ -173,11 +175,11 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean expandedByDefault = EEFGroupStyleImpl.EXPANDED_BY_DEFAULT_EDEFAULT;
+	protected boolean expandedByDefault = EXPANDED_BY_DEFAULT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGroupStyleImpl() {
@@ -186,7 +188,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -196,7 +198,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,22 +208,21 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setBackgroundColorExpression(String newBackgroundColorExpression) {
 		String oldBackgroundColorExpression = backgroundColorExpression;
 		backgroundColorExpression = newBackgroundColorExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION,
 					oldBackgroundColorExpression, backgroundColorExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -231,22 +232,21 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setForegroundColorExpression(String newForegroundColorExpression) {
 		String oldForegroundColorExpression = foregroundColorExpression;
 		foregroundColorExpression = newForegroundColorExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION,
 					oldForegroundColorExpression, foregroundColorExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -256,22 +256,21 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontNameExpression(String newFontNameExpression) {
 		String oldFontNameExpression = fontNameExpression;
 		fontNameExpression = newFontNameExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION, oldFontNameExpression,
 					fontNameExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,22 +280,21 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setFontSizeExpression(String newFontSizeExpression) {
 		String oldFontSizeExpression = fontSizeExpression;
 		fontSizeExpression = newFontSizeExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION, oldFontSizeExpression,
 					fontSizeExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -306,21 +304,20 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setBarStyle(EEF_TITLE_BAR_STYLE newBarStyle) {
 		EEF_TITLE_BAR_STYLE oldBarStyle = barStyle;
-		barStyle = newBarStyle == null ? EEFGroupStyleImpl.BAR_STYLE_EDEFAULT : newBarStyle;
-		if (eNotificationRequired()) {
+		barStyle = newBarStyle == null ? BAR_STYLE_EDEFAULT : newBarStyle;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_STYLE__BAR_STYLE, oldBarStyle, barStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -330,21 +327,20 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setToggleStyle(EEF_TOGGLE_STYLE newToggleStyle) {
 		EEF_TOGGLE_STYLE oldToggleStyle = toggleStyle;
-		toggleStyle = newToggleStyle == null ? EEFGroupStyleImpl.TOGGLE_STYLE_EDEFAULT : newToggleStyle;
-		if (eNotificationRequired()) {
+		toggleStyle = newToggleStyle == null ? TOGGLE_STYLE_EDEFAULT : newToggleStyle;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_STYLE__TOGGLE_STYLE, oldToggleStyle, toggleStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -354,22 +350,21 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void setExpandedByDefault(boolean newExpandedByDefault) {
 		boolean oldExpandedByDefault = expandedByDefault;
 		expandedByDefault = newExpandedByDefault;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT, oldExpandedByDefault,
 					expandedByDefault));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -395,7 +390,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -428,32 +423,32 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION:
-			setBackgroundColorExpression(EEFGroupStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
+			setBackgroundColorExpression(BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION:
-			setForegroundColorExpression(EEFGroupStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT);
+			setForegroundColorExpression(FOREGROUND_COLOR_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION:
-			setFontNameExpression(EEFGroupStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT);
+			setFontNameExpression(FONT_NAME_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION:
-			setFontSizeExpression(EEFGroupStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT);
+			setFontSizeExpression(FONT_SIZE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_GROUP_STYLE__BAR_STYLE:
-			setBarStyle(EEFGroupStyleImpl.BAR_STYLE_EDEFAULT);
+			setBarStyle(BAR_STYLE_EDEFAULT);
 			return;
 		case EefPackage.EEF_GROUP_STYLE__TOGGLE_STYLE:
-			setToggleStyle(EEFGroupStyleImpl.TOGGLE_STYLE_EDEFAULT);
+			setToggleStyle(TOGGLE_STYLE_EDEFAULT);
 			return;
 		case EefPackage.EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT:
-			setExpandedByDefault(EEFGroupStyleImpl.EXPANDED_BY_DEFAULT_EDEFAULT);
+			setExpandedByDefault(EXPANDED_BY_DEFAULT_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -461,44 +456,41 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION:
-			return EEFGroupStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
-			: !EEFGroupStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
+			return BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
+					: !BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
 		case EefPackage.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION:
-			return EEFGroupStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? foregroundColorExpression != null
-			: !EEFGroupStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
+			return FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? foregroundColorExpression != null
+					: !FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
 		case EefPackage.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION:
-			return EEFGroupStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null
-			: !EEFGroupStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
+			return FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null : !FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
 		case EefPackage.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION:
-			return EEFGroupStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null
-			: !EEFGroupStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
+			return FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null : !FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
 		case EefPackage.EEF_GROUP_STYLE__BAR_STYLE:
-			return barStyle != EEFGroupStyleImpl.BAR_STYLE_EDEFAULT;
+			return barStyle != BAR_STYLE_EDEFAULT;
 		case EefPackage.EEF_GROUP_STYLE__TOGGLE_STYLE:
-			return toggleStyle != EEFGroupStyleImpl.TOGGLE_STYLE_EDEFAULT;
+			return toggleStyle != TOGGLE_STYLE_EDEFAULT;
 		case EefPackage.EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT:
-			return expandedByDefault != EEFGroupStyleImpl.EXPANDED_BY_DEFAULT_EDEFAULT;
+			return expandedByDefault != EXPANDED_BY_DEFAULT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (backgroundColorExpression: "); //$NON-NLS-1$

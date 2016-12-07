@@ -49,7 +49,7 @@ public final class EefEditPlugin extends EMFPlugin {
 	 */
 	@Override
 	public ResourceLocator getPluginResourceLocator() {
-		return EefEditPlugin.plugin;
+		return plugin;
 	}
 
 	/**
@@ -59,7 +59,7 @@ public final class EefEditPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public static Implementation getPlugin() {
-		return EefEditPlugin.plugin;
+		return plugin;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public final class EefEditPlugin extends EMFPlugin {
 
 			// Remember the static instance.
 			//
-			EefEditPlugin.plugin = this;
+			plugin = this;
 		}
 	}
 
