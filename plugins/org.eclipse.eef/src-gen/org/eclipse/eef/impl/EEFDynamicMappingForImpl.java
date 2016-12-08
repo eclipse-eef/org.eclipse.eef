@@ -27,20 +27,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIterator <em>Iterator</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIterableExpression <em>Iterable Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIfs <em>Ifs</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIterator <em>Iterator</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIterableExpression <em>Iterable Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl#getIfs <em>Ifs</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implements EEFDynamicMappingFor {
 	/**
-	 * The default value of the '{@link #getIterator() <em>Iterator</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getIterator() <em>Iterator</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getIterator()
 	 * @generated
 	 * @ordered
@@ -48,14 +48,14 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	protected static final String ITERATOR_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getIterator() <em>Iterator</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getIterator() <em>Iterator</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getIterator()
 	 * @generated
 	 * @ordered
 	 */
-	protected String iterator = EEFDynamicMappingForImpl.ITERATOR_EDEFAULT;
+	protected String iterator = ITERATOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getIterableExpression() <em>Iterable Expression</em>}' attribute. <!--
@@ -75,12 +75,12 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected String iterableExpression = EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT;
+	protected String iterableExpression = ITERABLE_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIfs() <em>Ifs</em>}' containment reference list. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getIfs() <em>Ifs</em>}' containment reference list.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getIfs()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,6 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFDynamicMappingForImpl() {
@@ -98,7 +97,6 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +106,6 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -118,21 +115,18 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setIterator(String newIterator) {
 		String oldIterator = iterator;
 		iterator = newIterator;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR, oldIterator, iterator));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -142,35 +136,32 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setIterableExpression(String newIterableExpression) {
 		String oldIterableExpression = iterableExpression;
 		iterableExpression = newIterableExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION, oldIterableExpression,
 					iterableExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<EEFDynamicMappingIf> getIfs() {
 		if (ifs == null) {
-			ifs = new EObjectContainmentEList.Resolving<EEFDynamicMappingIf>(EEFDynamicMappingIf.class, this, EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS);
+			ifs = new EObjectContainmentEList.Resolving<EEFDynamicMappingIf>(EEFDynamicMappingIf.class, this,
+					EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS);
 		}
 		return ifs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +175,6 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +192,6 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -225,17 +214,16 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR:
-			setIterator(EEFDynamicMappingForImpl.ITERATOR_EDEFAULT);
+			setIterator(ITERATOR_EDEFAULT);
 			return;
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION:
-			setIterableExpression(EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT);
+			setIterableExpression(ITERABLE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS:
 			getIfs().clear();
@@ -246,18 +234,15 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR:
-			return EEFDynamicMappingForImpl.ITERATOR_EDEFAULT == null ? iterator != null : !EEFDynamicMappingForImpl.ITERATOR_EDEFAULT
-			.equals(iterator);
+			return ITERATOR_EDEFAULT == null ? iterator != null : !ITERATOR_EDEFAULT.equals(iterator);
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION:
-			return EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT == null ? iterableExpression != null
-			: !EEFDynamicMappingForImpl.ITERABLE_EXPRESSION_EDEFAULT.equals(iterableExpression);
+			return ITERABLE_EXPRESSION_EDEFAULT == null ? iterableExpression != null : !ITERABLE_EXPRESSION_EDEFAULT.equals(iterableExpression);
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS:
 			return ifs != null && !ifs.isEmpty();
 		}
@@ -266,14 +251,12 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (iterator: "); //$NON-NLS-1$

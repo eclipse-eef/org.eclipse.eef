@@ -59,6 +59,25 @@ public final class EEFExpressionUtils {
 	}
 
 	/**
+	 * Utility class containing the constants related to the Date widget.
+	 *
+	 * @author arichard
+	 */
+	public final class EEFDate {
+		/**
+		 * The name of the variable newValue.
+		 */
+		public static final String NEW_VALUE = "newValue"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFDate() {
+			// prevent instantiation
+		}
+	}
+
+	/**
 	 * Utility class containing the constants related to the Checkbox widget.
 	 *
 	 * @author mbats

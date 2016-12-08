@@ -21,6 +21,7 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFCustomWidgetDescription;
+import org.eclipse.eef.EEFDateDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFHyperlinkDescription;
@@ -107,11 +108,11 @@ public class EEFControlSwitch {
 			eefContainerLifecycleManager.createControl(parent, formContainer);
 			lifecycleManagers.add(eefContainerLifecycleManager);
 		} else if (controlDescription instanceof EEFWidgetDescription) {
-			lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription,
-					variableManager.createChild()));
+			lifecycleManagers.addAll(
+					this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription, variableManager.createChild()));
 		} else if (controlDescription instanceof EEFDynamicMappingFor) {
-			lifecycleManagers.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription,
-					variableManager));
+			lifecycleManagers
+					.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription, variableManager));
 		}
 		return lifecycleManagers;
 	}
@@ -213,6 +214,14 @@ public class EEFControlSwitch {
 				eefHyperlinkLifecycleManager.createControl(parent, formContainer);
 
 				lifecycleManagers.add(eefHyperlinkLifecycleManager);
+			} else if (widgetDescription instanceof EEFDateDescription) {
+				EEFDateDescription eefDateDescription = (EEFDateDescription) widgetDescription;
+
+				EEFDateLifecycleManager eefDateLifecycleManager = new EEFDateLifecycleManager(eefDateDescription, childVariableManager, interpreter,
+						contextAdapter);
+				eefDateLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefDateLifecycleManager);
 			}
 		}
 

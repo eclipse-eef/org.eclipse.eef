@@ -12,7 +12,9 @@ package org.eclipse.eef;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Custom Widget Style</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a style that can be applied on custom widgets. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents a style that can be applied on custom widgets.
+ * <!-- end-model-doc -->
  *
  *
  * @see org.eclipse.eef.EefPackage#getEEFCustomWidgetStyle()

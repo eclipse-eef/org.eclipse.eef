@@ -23,15 +23,15 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFLabelDescription} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFLabelDescription} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFLabelDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -39,8 +39,8 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -55,28 +55,26 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	}
 
 	/**
-	 * This adds a property descriptor for the Value Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Value Expression feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFLabelDescription_valueExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFLabelDescription_valueExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelDescription_valueExpression_feature", "_UI_EEFLabelDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Display Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Display Expression feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addDisplayExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFLabelDescription_displayExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFLabelDescription_displayExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFLabelDescription_displayExpression_feature", "_UI_EEFLabelDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -85,9 +83,9 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,7 +101,6 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -115,8 +112,8 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	}
 
 	/**
-	 * This returns EEFLabelDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFLabelDescription.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -126,7 +123,6 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,15 +131,15 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFLabelDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFLabelDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -172,9 +168,9 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -187,7 +183,7 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 				EefFactory.eINSTANCE.createEEFLabelConditionalStyle()));
 
 		newChildDescriptors
-		.add(createChildParameter(EefPackage.Literals.EEF_LABEL_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFWidgetAction()));
+				.add(createChildParameter(EefPackage.Literals.EEF_LABEL_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFWidgetAction()));
 	}
 
 }
