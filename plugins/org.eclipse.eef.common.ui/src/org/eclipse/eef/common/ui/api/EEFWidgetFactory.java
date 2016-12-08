@@ -23,6 +23,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
@@ -256,6 +257,23 @@ public class EEFWidgetFactory extends FormToolkit {
 		styledText.setBackground(parent.getBackground());
 		styledText.setForeground(parent.getForeground());
 		return styledText;
+	}
+
+	/**
+	 * Creates a date as a part of the form.
+	 *
+	 * @param parent
+	 *            the parent.
+	 * @param style
+	 *            the style.
+	 * @return the date.
+	 */
+	public DateTime createDate(Composite parent, int style) {
+		final DateTime date = new DateTime(parent, style);
+		date.setBackgroundMode(SWT.INHERIT_DEFAULT);
+		date.setBackground(parent.getBackground());
+		date.setForeground(parent.getForeground());
+		return date;
 	}
 
 	/**

@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFControlDescription#getIdentifier <em>Identifier</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFControlDescription#getIdentifier <em>Identifier</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFControlDescription()
  * @model abstract="true"
@@ -27,9 +27,11 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFControlDescription extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> Used to identify a specific control. <!-- end-model-doc -->
-	 *
+	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Used to identify a specific control.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFControlDescription_Identifier()
@@ -39,11 +41,9 @@ public interface EEFControlDescription extends EObject {
 	String getIdentifier();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFControlDescription#getIdentifier <em>Identifier</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFControlDescription#getIdentifier <em>Identifier</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */

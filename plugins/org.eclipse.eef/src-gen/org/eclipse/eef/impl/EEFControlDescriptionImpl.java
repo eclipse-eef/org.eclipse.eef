@@ -20,18 +20,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFControlDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFControlDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Container implements EEFControlDescription {
 	/**
-	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -39,18 +39,17 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 	protected static final String IDENTIFIER_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
 	 */
-	protected String identifier = EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT;
+	protected String identifier = IDENTIFIER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFControlDescriptionImpl() {
@@ -59,7 +58,6 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -69,7 +67,6 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -79,21 +76,18 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setIdentifier(String newIdentifier) {
 		String oldIdentifier = identifier;
 		identifier = newIdentifier;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER, oldIdentifier, identifier));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +101,6 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -122,14 +115,13 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER:
-			setIdentifier(EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT);
+			setIdentifier(IDENTIFIER_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -137,29 +129,25 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER:
-			return EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return IDENTIFIER_EDEFAULT == null ? identifier != null : !IDENTIFIER_EDEFAULT.equals(identifier);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (identifier: "); //$NON-NLS-1$
