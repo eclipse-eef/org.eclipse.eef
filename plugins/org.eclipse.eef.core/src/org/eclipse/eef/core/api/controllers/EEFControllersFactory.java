@@ -12,6 +12,7 @@ package org.eclipse.eef.core.api.controllers;
 
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
+import org.eclipse.eef.EEFDateDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
@@ -23,6 +24,7 @@ import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.internal.controllers.EEFButtonController;
 import org.eclipse.eef.core.internal.controllers.EEFCheckboxController;
+import org.eclipse.eef.core.internal.controllers.EEFDateController;
 import org.eclipse.eef.core.internal.controllers.EEFGroupController;
 import org.eclipse.eef.core.internal.controllers.EEFHyperlinkController;
 import org.eclipse.eef.core.internal.controllers.EEFLabelController;
@@ -214,5 +216,23 @@ public class EEFControllersFactory {
 	public IEEFHyperlinkController createHyperlinkController(EEFHyperlinkDescription description, IVariableManager variableManager,
 			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
 		return new EEFHyperlinkController(description, variableManager, interpreter, contextAdapter);
+	}
+
+	/**
+	 * Creates a new date controller.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param contextAdapter
+	 *            The editing context adapter
+	 * @return A date controller
+	 */
+	public IEEFDateController createDateController(EEFDateDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter contextAdapter) {
+		return new EEFDateController(description, variableManager, interpreter, contextAdapter);
 	}
 }

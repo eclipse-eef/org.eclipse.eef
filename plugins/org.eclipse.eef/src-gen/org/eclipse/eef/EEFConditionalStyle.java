@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFConditionalStyle#getPreconditionExpression <em>Precondition Expression</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFConditionalStyle#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFConditionalStyle()
  * @model abstract="true"
@@ -27,13 +27,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFConditionalStyle extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Precondition Expression</em>' attribute isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Precondition Expression</em>' attribute.
 	 * @see #setPreconditionExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFConditionalStyle_PreconditionExpression()
@@ -43,11 +43,9 @@ public interface EEFConditionalStyle extends EObject {
 	String getPreconditionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFConditionalStyle#getPreconditionExpression
-	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Precondition Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFConditionalStyle#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precondition Expression</em>' attribute.
 	 * @see #getPreconditionExpression()
 	 * @generated
 	 */

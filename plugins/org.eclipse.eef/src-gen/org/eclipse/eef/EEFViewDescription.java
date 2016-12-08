@@ -18,15 +18,15 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFViewDescription#getGroups <em>Groups</em>}</li>
- * <li>{@link org.eclipse.eef.EEFViewDescription#getPages <em>Pages</em>}</li>
- * <li>{@link org.eclipse.eef.EEFViewDescription#getEPackages <em>EPackages</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getGroups <em>Groups</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getPages <em>Pages</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFViewDescription#getEPackages <em>EPackages</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFViewDescription()
  * @model
@@ -34,9 +34,11 @@ import org.eclipse.emf.ecore.EPackage;
  */
 public interface EEFViewDescription extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> Used to identify a specific View instance. <!-- end-model-doc -->
-	 *
+	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Used to identify a specific View instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Identifier()
@@ -48,9 +50,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -69,11 +69,9 @@ public interface EEFViewDescription extends EObject {
 	String getLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
 	 * @generated
 	 */
@@ -93,11 +91,9 @@ public interface EEFViewDescription extends EObject {
 	String getImageExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Image Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Image Expression</em>' attribute.
 	 * @see #getImageExpression()
 	 * @generated
 	 */
@@ -129,14 +125,14 @@ public interface EEFViewDescription extends EObject {
 	EList<EEFPageDescription> getPages();
 
 	/**
-	 * Returns the value of the '<em><b>EPackages</b></em>' reference list. The list contents are of type
-	 * {@link org.eclipse.emf.ecore.EPackage}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>EPackages</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.emf.ecore.EPackage}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>EPackages</em>' reference list isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>EPackages</em>' reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_EPackages()
 	 * @model
