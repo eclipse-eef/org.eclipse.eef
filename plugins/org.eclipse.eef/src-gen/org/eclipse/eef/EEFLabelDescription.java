@@ -14,18 +14,20 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Label Description</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a label in the user interface. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents a label in the user interface.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression <em>Display Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFLabelDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
- * <li>{@link org.eclipse.eef.EEFLabelDescription#getActions <em>Actions</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression <em>Display Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFLabelDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFLabelDescription#getActions <em>Actions</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFLabelDescription()
  * @model
@@ -45,11 +47,9 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	String getValueExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Value Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
 	 * @generated
 	 */
@@ -68,11 +68,9 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression
-	 * <em>Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Display Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression <em>Display Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Display Expression</em>' attribute.
 	 * @see #getDisplayExpression()
 	 * @generated
 	 */
@@ -91,11 +89,9 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	EEFLabelStyle getStyle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -114,14 +110,14 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	EList<EEFLabelConditionalStyle> getConditionalStyles();
 
 	/**
-	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list. The list contents are of type
-	 * {@link org.eclipse.eef.EEFWidgetAction}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.eef.EEFWidgetAction}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Actions</em>' containment reference list isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_Actions()
 	 * @model containment="true" resolveProxies="true"

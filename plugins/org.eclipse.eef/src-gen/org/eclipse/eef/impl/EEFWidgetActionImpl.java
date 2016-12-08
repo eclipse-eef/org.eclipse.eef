@@ -30,9 +30,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements EEFWidgetAction {
 	/**
-	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -40,14 +40,14 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	protected static final String LABEL_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String labelExpression = EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT;
+	protected String labelExpression = LABEL_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getActionExpression() <em>Action Expression</em>}' attribute. <!--
@@ -67,11 +67,10 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected String actionExpression = EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT;
+	protected String actionExpression = ACTION_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFWidgetActionImpl() {
@@ -80,7 +79,6 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +88,6 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -100,21 +97,19 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLabelExpression(String newLabelExpression) {
 		String oldLabelExpression = labelExpression;
 		labelExpression = newLabelExpression;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION, oldLabelExpression, labelExpression));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION, oldLabelExpression,
+					labelExpression));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -124,22 +119,19 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setActionExpression(String newActionExpression) {
 		String oldActionExpression = actionExpression;
 		actionExpression = newActionExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION, oldActionExpression,
 					actionExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +147,6 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -173,17 +164,16 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
-			setLabelExpression(EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT);
+			setLabelExpression(LABEL_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
-			setActionExpression(EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT);
+			setActionExpression(ACTION_EXPRESSION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -191,32 +181,27 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
-			return EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT
-			.equals(labelExpression);
+			return LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
-			return EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT == null ? actionExpression != null
-			: !EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
+			return ACTION_EXPRESSION_EDEFAULT == null ? actionExpression != null : !ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (labelExpression: "); //$NON-NLS-1$

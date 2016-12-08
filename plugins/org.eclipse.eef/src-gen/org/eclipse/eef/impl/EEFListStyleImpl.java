@@ -14,15 +14,12 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF List Style</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class EEFListStyleImpl extends EEFWidgetStyleImpl implements EEFListStyle {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFListStyleImpl() {
@@ -31,7 +28,6 @@ public class EEFListStyleImpl extends EEFWidgetStyleImpl implements EEFListStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

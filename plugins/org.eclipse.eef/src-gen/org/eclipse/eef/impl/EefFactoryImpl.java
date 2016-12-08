@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef.impl;
 
+import org.eclipse.eef.*;
 import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFButtonStyle;
@@ -66,13 +67,12 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static EefFactory init() {
@@ -88,8 +88,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
-	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EefFactoryImpl() {
@@ -98,7 +98,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -138,6 +137,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFRadioDescription();
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION:
 			return createEEFHyperlinkDescription();
+		case EefPackage.EEF_DATE_DESCRIPTION:
+			return createEEFDateDescription();
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR:
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
@@ -166,6 +167,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFCustomWidgetStyle();
 		case EefPackage.EEF_LIST_STYLE:
 			return createEEFListStyle();
+		case EefPackage.EEF_DATE_STYLE:
+			return createEEFDateStyle();
 		case EefPackage.EEF_GROUP_STYLE:
 			return createEEFGroupStyle();
 		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE:
@@ -190,6 +193,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFListConditionalStyle();
 		case EefPackage.EEF_GROUP_CONDITIONAL_STYLE:
 			return createEEFGroupConditionalStyle();
+		case EefPackage.EEF_DATE_CONDITIONAL_STYLE:
+			return createEEFDateConditionalStyle();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -197,7 +202,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -207,6 +211,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(eDataType, initialValue);
 		case EefPackage.EEF_FILL_LAYOUT_ORIENTATION:
 			return createEEF_FILL_LAYOUT_ORIENTATIONFromString(eDataType, initialValue);
+		case EefPackage.EEF_DATE_DISPLAY:
+			return createEEF_DATE_DISPLAYFromString(eDataType, initialValue);
 		case EefPackage.EEF_TOGGLE_STYLE:
 			return createEEF_TOGGLE_STYLEFromString(eDataType, initialValue);
 		case EefPackage.EEF_TITLE_BAR_STYLE:
@@ -218,7 +224,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -228,6 +233,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(eDataType, instanceValue);
 		case EefPackage.EEF_FILL_LAYOUT_ORIENTATION:
 			return convertEEF_FILL_LAYOUT_ORIENTATIONToString(eDataType, instanceValue);
+		case EefPackage.EEF_DATE_DISPLAY:
+			return convertEEF_DATE_DISPLAYToString(eDataType, instanceValue);
 		case EefPackage.EEF_TOGGLE_STYLE:
 			return convertEEF_TOGGLE_STYLEToString(eDataType, instanceValue);
 		case EefPackage.EEF_TITLE_BAR_STYLE:
@@ -239,7 +246,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +256,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +266,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +276,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +286,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +296,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +306,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +316,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +326,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +336,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +346,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +356,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +366,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +376,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +386,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +396,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +406,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -425,8 +415,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEFDateDescription createEEFDateDescription() {
+		EEFDateDescriptionImpl eefDateDescription = new EEFDateDescriptionImpl();
+		return eefDateDescription;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -437,7 +437,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +447,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -459,7 +457,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -470,7 +467,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +477,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +487,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +497,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -514,7 +507,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -525,7 +517,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +527,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -547,7 +537,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -558,7 +547,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -569,7 +557,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -579,8 +566,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEFDateStyle createEEFDateStyle() {
+		EEFDateStyleImpl eefDateStyle = new EEFDateStyleImpl();
+		return eefDateStyle;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -591,7 +588,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -602,7 +598,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -613,7 +608,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -624,7 +618,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -635,7 +628,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -646,7 +638,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -657,7 +648,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -668,7 +658,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -679,7 +668,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -690,7 +678,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -701,7 +688,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -711,21 +697,29 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEFDateConditionalStyle createEEFDateConditionalStyle() {
+		EEFDateConditionalStyleImpl eefDateConditionalStyle = new EEFDateConditionalStyleImpl();
+		return eefDateConditionalStyle;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_VALIDATION_SEVERITY_DESCRIPTION createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(EDataType eDataType, String initialValue) {
 		EEF_VALIDATION_SEVERITY_DESCRIPTION result = EEF_VALIDATION_SEVERITY_DESCRIPTION.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(EDataType eDataType, Object instanceValue) {
@@ -734,20 +728,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_FILL_LAYOUT_ORIENTATION createEEF_FILL_LAYOUT_ORIENTATIONFromString(EDataType eDataType, String initialValue) {
 		EEF_FILL_LAYOUT_ORIENTATION result = EEF_FILL_LAYOUT_ORIENTATION.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_FILL_LAYOUT_ORIENTATIONToString(EDataType eDataType, Object instanceValue) {
@@ -755,21 +746,39 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEF_DATE_DISPLAY createEEF_DATE_DISPLAYFromString(EDataType eDataType, String initialValue) {
+		EEF_DATE_DISPLAY result = EEF_DATE_DISPLAY.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEEF_DATE_DISPLAYToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_TOGGLE_STYLE createEEF_TOGGLE_STYLEFromString(EDataType eDataType, String initialValue) {
 		EEF_TOGGLE_STYLE result = EEF_TOGGLE_STYLE.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_TOGGLE_STYLEToString(EDataType eDataType, Object instanceValue) {
@@ -778,20 +787,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_TITLE_BAR_STYLE createEEF_TITLE_BAR_STYLEFromString(EDataType eDataType, String initialValue) {
 		EEF_TITLE_BAR_STYLE result = EEF_TITLE_BAR_STYLE.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_TITLE_BAR_STYLEToString(EDataType eDataType, Object instanceValue) {
@@ -800,7 +806,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -810,7 +815,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @deprecated
 	 * @generated
 	 */
