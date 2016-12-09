@@ -70,4 +70,14 @@ public interface Icons {
 	 * Fix.
 	 */
 	String FIX = "icons/full/fix.gif"; //$NON-NLS-1$
+
+	/**
+	 * Add.
+	 */
+	String ADD = "icons/full/add.gif"; //$NON-NLS-1$
+
+	/**
+	 * Remove.
+	 */
+	String REMOVE = "icons/full/remove.gif"; //$NON-NLS-1$
 }

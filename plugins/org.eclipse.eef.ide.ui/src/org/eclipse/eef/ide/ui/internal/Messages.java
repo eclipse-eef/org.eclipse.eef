@@ -73,6 +73,17 @@ public final class Messages {
 	@TranslatableMessage
 	public static String AbstractEEFWidgetLifecycleManager_noDescriptionAvailable;
 
+	@TranslatableMessage
+	public static String MultiTextUpButton_tooltipText;
+
+	@TranslatableMessage
+	public static String MultiTextDownButton_tooltipText;
+
+	@TranslatableMessage
+	public static String MultiTextAddButton_tooltipText;
+
+	@TranslatableMessage
+	public static String MultiTextRemoveButton_tooltipText;
 	// CHECKSTYLE:ON
 
 	/**

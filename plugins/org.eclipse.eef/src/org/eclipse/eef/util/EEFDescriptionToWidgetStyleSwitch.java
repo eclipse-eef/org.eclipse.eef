@@ -15,6 +15,7 @@ import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
+import org.eclipse.eef.EEFMultiTextDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 
@@ -91,6 +92,16 @@ public class EEFDescriptionToWidgetStyleSwitch extends EefSwitch<EEFWidgetStyle>
 	 */
 	@Override
 	public EEFWidgetStyle caseEEFTextDescription(org.eclipse.eef.EEFTextDescription object) {
+		return object.getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.util.EefSwitch#caseEEFMultiTextDescription(org.eclipse.eef.EEFMultiTextDescription)
+	 */
+	@Override
+	public EEFWidgetStyle caseEEFMultiTextDescription(EEFMultiTextDescription object) {
 		return object.getStyle();
 	}
 

@@ -123,6 +123,8 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 			this.imageRegistry.put(Icons.WARNING, this.getImageDescriptor(Icons.WARNING));
 			this.imageRegistry.put(Icons.ERROR, this.getImageDescriptor(Icons.ERROR));
 			this.imageRegistry.put(Icons.FIX, this.getImageDescriptor(Icons.FIX));
+			this.imageRegistry.put(Icons.ADD, this.getImageDescriptor(Icons.ADD));
+			this.imageRegistry.put(Icons.REMOVE, this.getImageDescriptor(Icons.REMOVE));
 		}
 
 		/**

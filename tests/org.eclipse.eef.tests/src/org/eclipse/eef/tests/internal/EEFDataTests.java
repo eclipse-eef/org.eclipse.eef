@@ -10,6 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.tests.internal;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsNull.notNullValue;
+
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -20,9 +23,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.junit.Test;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsNull.notNullValue;
 
 import static org.junit.Assert.fail;
 
@@ -47,6 +47,16 @@ public class EEFDataTests {
 	 * Test model used to compute the help of a text widget.
 	 */
 	public static final String EEFTEXTCONTROLLERTESTS_HELP = "/data/controllers/text/EEFTextControllerTests-Help.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to display the label of a multi text widget.
+	 */
+	public static final String EEFMULTITEXTCONTROLLERTESTS_LABEL = "/data/controllers/multitext/EEFMultiTextControllerTests-Label.xmi"; //$NON-NLS-1$
+
+	/**
+	 * Test model used to compute the help of a multi text widget.
+	 */
+	public static final String EEFMULTITEXTCONTROLLERTESTS_HELP = "/data/controllers/multitext/EEFMultiTextControllerTests-Help.xmi"; //$NON-NLS-1$
 
 	/**
 	 * Test model used to compute the help of a label widget.
@@ -132,10 +142,10 @@ public class EEFDataTests {
 	 * All the test models.
 	 */
 	private static final String[] MODELS = new String[] { EEFTEXTCONTROLLERTESTS_LABEL, EEFTEXTCONTROLLERTESTS_VALUE, EEFTEXTCONTROLLERTESTS_HELP,
-		EEFLABELCONTROLLERTESTS_LABEL, EEFLABELCONTROLLERTESTS_BODY, EEFLABELCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_LABEL,
-		EEFBUTTONCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_BUTTONLABEL, EEFCHECKBOXCONTROLLERTESTS_LABEL, EEFCHECKBOXCONTROLLERTESTS_HELP,
-		EEFCHECKBOXCONTROLLERTESTS_VALUE, EEFRADIOCONTROLLERTESTS_LABEL, EEFRADIOCONTROLLERTESTS_HELP, EEFRADIOCONTROLLERTESTS_VALUE,
-		EEFSELECTCONTROLLERTESTS_HELP, EEFSELECTCONTROLLERTESTS_LABEL, EEFSELECTCONTROLLERTESTS_VALUE, };
+			EEFLABELCONTROLLERTESTS_LABEL, EEFLABELCONTROLLERTESTS_BODY, EEFLABELCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_LABEL,
+			EEFBUTTONCONTROLLERTESTS_HELP, EEFBUTTONCONTROLLERTESTS_BUTTONLABEL, EEFCHECKBOXCONTROLLERTESTS_LABEL, EEFCHECKBOXCONTROLLERTESTS_HELP,
+			EEFCHECKBOXCONTROLLERTESTS_VALUE, EEFRADIOCONTROLLERTESTS_LABEL, EEFRADIOCONTROLLERTESTS_HELP, EEFRADIOCONTROLLERTESTS_VALUE,
+			EEFSELECTCONTROLLERTESTS_HELP, EEFSELECTCONTROLLERTESTS_LABEL, EEFSELECTCONTROLLERTESTS_VALUE, };
 
 	/**
 	 * Loads the resource with the given URI in the given resource set.
