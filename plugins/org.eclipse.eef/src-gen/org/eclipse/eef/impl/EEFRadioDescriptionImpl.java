@@ -28,25 +28,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display
- * Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidatesExpression <em>Candidates Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements EEFRadioDescription {
 	/**
-	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -54,19 +53,19 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	protected static final String VALUE_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String valueExpression = EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT;
+	protected String valueExpression = VALUE_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -74,14 +73,14 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	protected static final String EDIT_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String editExpression = EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT;
+	protected String editExpression = EDIT_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCandidatesExpression() <em>Candidates Expression</em>}' attribute. <!--
@@ -101,12 +100,11 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected String candidatesExpression = EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT;
+	protected String candidatesExpression = CANDIDATES_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The default value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -114,19 +112,18 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	protected static final String CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String candidateDisplayExpression = EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT;
+	protected String candidateDisplayExpression = CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -144,19 +141,18 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	protected static final int NUMBER_OF_COLUMNS_EDEFAULT = -1;
 
 	/**
-	 * The cached value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getNumberOfColumns()
 	 * @generated
 	 * @ordered
 	 */
-	protected int numberOfColumns = EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
+	protected int numberOfColumns = NUMBER_OF_COLUMNS_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -165,7 +161,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFRadioDescriptionImpl() {
@@ -174,7 +169,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +178,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -194,22 +187,19 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setValueExpression(String newValueExpression) {
 		String oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION, oldValueExpression,
 					valueExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -219,22 +209,19 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setEditExpression(String newEditExpression) {
 		String oldEditExpression = editExpression;
 		editExpression = newEditExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION, oldEditExpression,
 					editExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -244,22 +231,19 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setCandidatesExpression(String newCandidatesExpression) {
 		String oldCandidatesExpression = candidatesExpression;
 		candidatesExpression = newCandidatesExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION, oldCandidatesExpression,
 					candidatesExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -269,22 +253,19 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setCandidateDisplayExpression(String newCandidateDisplayExpression) {
 		String oldCandidateDisplayExpression = candidateDisplayExpression;
 		candidateDisplayExpression = newCandidateDisplayExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION,
 					oldCandidateDisplayExpression, candidateDisplayExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -294,17 +275,14 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			style = (EEFRadioStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
+					msgs = newStyle.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
 				}
-				if (msgs != null) {
+				if (msgs != null)
 					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_RADIO_DESCRIPTION__STYLE, oldStyle, style));
-				}
 			}
 		}
 		return style;
@@ -312,7 +290,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEFRadioStyle basicGetStyle() {
@@ -321,7 +298,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFRadioStyle newStyle, NotificationChain msgs) {
@@ -330,44 +306,35 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__STYLE, oldStyle,
 					newStyle);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setStyle(EEFRadioStyle newStyle) {
 		if (newStyle != style) {
 			NotificationChain msgs = null;
-			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
-			}
-			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
-			}
+			if (style != null)
+				msgs = ((InternalEObject) style).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
+			if (newStyle != null)
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
 			msgs = basicSetStyle(newStyle, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__STYLE, newStyle, newStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -377,22 +344,19 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setNumberOfColumns(int newNumberOfColumns) {
 		int oldNumberOfColumns = numberOfColumns;
 		numberOfColumns = newNumberOfColumns;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS, oldNumberOfColumns,
 					numberOfColumns));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -406,7 +370,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -422,7 +385,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -437,9 +399,8 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return getCandidateDisplayExpression();
 		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
-			if (resolve) {
+			if (resolve)
 				return getStyle();
-			}
 			return basicGetStyle();
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
 			return getNumberOfColumns();
@@ -451,7 +412,6 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -486,29 +446,28 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION:
-			setValueExpression(EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT);
+			setValueExpression(VALUE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION:
-			setEditExpression(EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT);
+			setEditExpression(EDIT_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION:
-			setCandidatesExpression(EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT);
+			setCandidatesExpression(CANDIDATES_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
-			setCandidateDisplayExpression(EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT);
+			setCandidateDisplayExpression(CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
 			setStyle((EEFRadioStyle) null);
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
-			setNumberOfColumns(EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT);
+			setNumberOfColumns(NUMBER_OF_COLUMNS_EDEFAULT);
 			return;
 		case EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES:
 			getConditionalStyles().clear();
@@ -519,28 +478,25 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION:
-			return EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			return VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null : !VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION:
-			return EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-			: !EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null : !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION:
-			return EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT == null ? candidatesExpression != null
-			: !EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
+			return CANDIDATES_EXPRESSION_EDEFAULT == null ? candidatesExpression != null
+					: !CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
-			return EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
-			: !EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
+			return CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
+					: !CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
-			return numberOfColumns != EEFRadioDescriptionImpl.NUMBER_OF_COLUMNS_EDEFAULT;
+			return numberOfColumns != NUMBER_OF_COLUMNS_EDEFAULT;
 		case EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES:
 			return conditionalStyles != null && !conditionalStyles.isEmpty();
 		}
@@ -549,14 +505,12 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$

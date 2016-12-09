@@ -48,11 +48,9 @@ public interface EEFWidgetStyle extends EObject {
 	String getLabelBackgroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelBackgroundColorExpression
-	 * <em>Label Background Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Background Color Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelBackgroundColorExpression <em>Label Background Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Background Color Expression</em>' attribute.
 	 * @see #getLabelBackgroundColorExpression()
 	 * @generated
 	 */
@@ -72,11 +70,9 @@ public interface EEFWidgetStyle extends EObject {
 	String getLabelForegroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelForegroundColorExpression
-	 * <em>Label Foreground Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Foreground Color Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelForegroundColorExpression <em>Label Foreground Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Foreground Color Expression</em>' attribute.
 	 * @see #getLabelForegroundColorExpression()
 	 * @generated
 	 */
@@ -95,11 +91,9 @@ public interface EEFWidgetStyle extends EObject {
 	String getLabelFontNameExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontNameExpression
-	 * <em>Label Font Name Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Font Name Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontNameExpression <em>Label Font Name Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Font Name Expression</em>' attribute.
 	 * @see #getLabelFontNameExpression()
 	 * @generated
 	 */
@@ -118,11 +112,9 @@ public interface EEFWidgetStyle extends EObject {
 	String getLabelFontSizeExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontSizeExpression
-	 * <em>Label Font Size Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Font Size Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontSizeExpression <em>Label Font Size Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Font Size Expression</em>' attribute.
 	 * @see #getLabelFontSizeExpression()
 	 * @generated
 	 */
@@ -141,11 +133,9 @@ public interface EEFWidgetStyle extends EObject {
 	String getLabelFontStyleExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontStyleExpression
-	 * <em>Label Font Style Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Font Style Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetStyle#getLabelFontStyleExpression <em>Label Font Style Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Font Style Expression</em>' attribute.
 	 * @see #getLabelFontStyleExpression()
 	 * @generated
 	 */

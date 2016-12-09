@@ -22,15 +22,15 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFFillLayoutDescription} object. <!-- begin-user-doc
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFFillLayoutDescription} object.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFFillLayoutDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -38,8 +38,8 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,25 +53,22 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This adds a property descriptor for the Orientation feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Orientation feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addOrientationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFFillLayoutDescription_orientation_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFFillLayoutDescription_orientation_feature", "_UI_EEFFillLayoutDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFFillLayoutDescription_orientation_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFFillLayoutDescription_orientation_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFFillLayoutDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
-	 * This returns EEFFillLayoutDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFFillLayoutDescription.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -81,7 +78,6 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,8 +86,8 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -99,7 +95,7 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 		EEF_FILL_LAYOUT_ORIENTATION labelValue = ((EEFFillLayoutDescription) object).getOrientation();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_EEFFillLayoutDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFFillLayoutDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFFillLayoutDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -122,9 +118,9 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

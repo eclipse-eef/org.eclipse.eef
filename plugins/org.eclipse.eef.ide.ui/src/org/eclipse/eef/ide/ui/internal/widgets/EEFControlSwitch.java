@@ -12,6 +12,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,7 @@ import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
+import org.eclipse.eef.EEFMultiTextDescription;
 import org.eclipse.eef.EEFRadioDescription;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFTextDescription;
@@ -41,6 +43,9 @@ import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.sirius.common.interpreter.api.IEvaluationResult;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.widgets.Composite;
@@ -107,11 +112,11 @@ public class EEFControlSwitch {
 			eefContainerLifecycleManager.createControl(parent, formContainer);
 			lifecycleManagers.add(eefContainerLifecycleManager);
 		} else if (controlDescription instanceof EEFWidgetDescription) {
-			lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription,
-					variableManager.createChild()));
+			lifecycleManagers.addAll(
+					this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription, variableManager.createChild()));
 		} else if (controlDescription instanceof EEFDynamicMappingFor) {
-			lifecycleManagers.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription,
-					variableManager));
+			lifecycleManagers
+					.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription, variableManager));
 		}
 		return lifecycleManagers;
 	}
@@ -157,6 +162,19 @@ public class EEFControlSwitch {
 				eefTextLifecycleManager.createControl(parent, formContainer);
 
 				lifecycleManagers.add(eefTextLifecycleManager);
+			} else if (widgetDescription instanceof EEFMultiTextDescription) {
+				EEFMultiTextDescription eefMultiTextDescription = (EEFMultiTextDescription) widgetDescription;
+
+				EEFMultiTextLifecycleManager eefMultiTextLifecycleManager = null;
+				EObject target = this.getTarget(eefMultiTextDescription, childVariableManager);
+				EAttribute eAttribute = this.getAttribute(eefMultiTextDescription, childVariableManager, target);
+				if (eAttribute != null) {
+					eefMultiTextLifecycleManager = new EEFMultiTextLifecycleManager(eefMultiTextDescription, target, eAttribute, childVariableManager,
+							interpreter, contextAdapter);
+					eefMultiTextLifecycleManager.createControl(parent, formContainer);
+
+					lifecycleManagers.add(eefMultiTextLifecycleManager);
+				}
 			} else if (widgetDescription instanceof EEFLabelDescription) {
 				EEFLabelDescription eefLabelDescription = (EEFLabelDescription) widgetDescription;
 
@@ -263,5 +281,66 @@ public class EEFControlSwitch {
 		}
 
 		return lifecycleManagers;
+	}
+
+	/**
+	 * Returns the target to use as the current object.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @return The target
+	 */
+	private EObject getTarget(EEFMultiTextDescription description, IVariableManager variableManager) {
+		EObject self = null;
+		if (!Util.isBlank(description.getAttributeOwnerExpression())) {
+			IEvaluationResult result = this.interpreter.evaluateExpression(variableManager.getVariables(), description.getAttributeOwnerExpression());
+			if (result.success()) {
+				Collection<EObject> eObjects = result.asEObjects();
+				if (eObjects.size() > 0) {
+					self = eObjects.iterator().next();
+				}
+			}
+		} else {
+			Object selfVariable = variableManager.getVariables().get(EEFExpressionUtils.SELF);
+			if (selfVariable instanceof EObject) {
+				self = (EObject) selfVariable;
+			}
+		}
+
+		return self;
+	}
+
+	/**
+	 * Returns the attribute to use.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param target
+	 *            The container of the attribute
+	 *
+	 * @return The attribute
+	 */
+	private EAttribute getAttribute(EEFMultiTextDescription description, IVariableManager variableManager, EObject target) {
+		if (target != null) {
+			IEvaluationResult evaluationResult = this.interpreter.evaluateExpression(variableManager.getVariables(),
+					description.getAttributeNameExpression());
+			if (evaluationResult.success()) {
+				String attributeName = evaluationResult.asString();
+				if (!Util.isBlank(attributeName)) {
+					EStructuralFeature eStructuralFeature = target.eClass().getEStructuralFeature(attributeName);
+					if (eStructuralFeature instanceof EAttribute) {
+						EAttribute eAttribute = (EAttribute) eStructuralFeature;
+						if (eAttribute.isMany()) {
+							return eAttribute;
+						}
+					}
+				}
+			}
+		}
+		return null;
 	}
 }

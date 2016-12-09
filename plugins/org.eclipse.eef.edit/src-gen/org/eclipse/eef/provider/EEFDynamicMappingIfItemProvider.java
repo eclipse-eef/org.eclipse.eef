@@ -31,16 +31,16 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFDynamicMappingIf} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFDynamicMappingIf} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
-public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFDynamicMappingIfItemProvider(AdapterFactory adapterFactory) {
@@ -48,8 +48,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -69,23 +69,20 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * @generated
 	 */
 	protected void addPredicateExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFDynamicMappingIf_predicateExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingIf_predicateExpression_feature", "_UI_EEFDynamicMappingIf_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFDynamicMappingIf_predicateExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingIf_predicateExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFDynamicMappingIf_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -99,7 +96,6 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,8 +107,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This returns EEFDynamicMappingIf.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFDynamicMappingIf.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -122,7 +118,6 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,15 +126,15 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFDynamicMappingIf) object).getPredicateExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingIf_type") : //$NON-NLS-1$
-			getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -165,46 +160,49 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFTextDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFTextDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFLabelDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFMultiTextDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFButtonDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFLabelDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFCheckboxDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFButtonDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFSelectDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFCheckboxDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFRadioDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFSelectDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFRadioDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFListDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
+
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFListDescription()));
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

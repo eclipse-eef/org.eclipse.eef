@@ -15,6 +15,7 @@ import org.eclipse.eef.EEFCheckboxConditionalStyle;
 import org.eclipse.eef.EEFHyperlinkConditionalStyle;
 import org.eclipse.eef.EEFLabelConditionalStyle;
 import org.eclipse.eef.EEFListConditionalStyle;
+import org.eclipse.eef.EEFMultiTextConditionalStyle;
 import org.eclipse.eef.EEFRadioConditionalStyle;
 import org.eclipse.eef.EEFSelectConditionalStyle;
 import org.eclipse.eef.EEFTextConditionalStyle;
@@ -93,6 +94,16 @@ public class EEFConditionalStyleToWidgetStyleSwitch extends EefSwitch<EEFWidgetS
 	 */
 	@Override
 	public EEFWidgetStyle caseEEFTextConditionalStyle(EEFTextConditionalStyle object) {
+		return object.getStyle();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.util.EefSwitch#caseEEFMultiTextConditionalStyle(org.eclipse.eef.EEFMultiTextConditionalStyle)
+	 */
+	@Override
+	public EEFWidgetStyle caseEEFMultiTextConditionalStyle(EEFMultiTextConditionalStyle object) {
 		return object.getStyle();
 	}
 
