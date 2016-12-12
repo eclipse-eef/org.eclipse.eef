@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c23755_46e770d0",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EditingContextAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-12T09:42:59Z",
+      "side": 1,
+      "message": "or",
+      "range": {
+        "startLine": 69,
+        "startChar": 63,
+        "endLine": 69,
+        "endChar": 65
+      },
+      "revId": "aa73fc865486819d66ead2865e7de9550f204255",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_66e2acc0",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EditingContextAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-12T09:42:59Z",
+      "side": 1,
+      "message": "we should use the same word \"register\" or \"add\" but for each listener",
+      "range": {
+        "startLine": 71,
+        "startChar": 6,
+        "endLine": 71,
+        "endChar": 9
+      },
+      "revId": "aa73fc865486819d66ead2865e7de9550f204255",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_e6a15c7f",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EditingContextAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-12T09:42:59Z",
+      "side": 1,
+      "message": "which kind of listener ?",
+      "range": {
+        "startLine": 74,
+        "startChar": 26,
+        "endLine": 74,
+        "endChar": 34
+      },
+      "revId": "aa73fc865486819d66ead2865e7de9550f204255",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_86e188bb",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EditingContextAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-12T09:42:59Z",
+      "side": 1,
+      "message": "same \"remove\" or \"unregister\"",
+      "range": {
+        "startLine": 79,
+        "startChar": 6,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "aa73fc865486819d66ead2865e7de9550f204255",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
