@@ -70,4 +70,14 @@ public interface Icons {
 	 * Fix.
 	 */
 	String FIX = "icons/full/fix.gif"; //$NON-NLS-1$
+
+	/**
+	 * Permission Denied.
+	 */
+	String PERMISSION_DENIED = "icons/full/permission_denied.gif"; //$NON-NLS-1$
+
+	/**
+	 * Permission Granted to current user exclusively.
+	 */
+	String PERMISSION_GRANTED_TO_CURRENT_USER_EXCLUSIVELY = "icons/full/permission_granted_to_current_user_exclusively.gif"; //$NON-NLS-1$
 }

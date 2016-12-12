@@ -12,6 +12,8 @@ package org.eclipse.eef.ide.ui.api.widgets;
 
 import com.google.common.base.Objects;
 
+import java.util.Collection;
+
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFGroupDescription;
@@ -20,7 +22,10 @@ import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.core.api.LockStatusChangeEvent;
+import org.eclipse.eef.core.api.LockStatusChangeEvent.LockStatus;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
@@ -32,6 +37,7 @@ import org.eclipse.eef.ide.ui.internal.widgets.EEFStyledTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.fieldassist.ControlDecoration;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
@@ -47,6 +53,7 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * Parent of all the lifecycle managers.
@@ -88,6 +95,21 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * The listener on the help.
 	 */
 	private MouseTrackListener mouseTrackListener;
+
+	/**
+	 * The listener used to react to changes in the lock status of a semantic element.
+	 */
+	private IConsumer<Collection<LockStatusChangeEvent>> lockStatusChangedListener;
+
+	/**
+	 * Indicates if the current widget is locked.
+	 */
+	private boolean isLocked;
+
+	/**
+	 * The decorator used to indicate the permission on the validation widget.
+	 */
+	private ControlDecoration controlDecoration;
 
 	/**
 	 * The constructor.
@@ -170,6 +192,13 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		}
 
 		this.createMainControl(composite, formContainer);
+
+		this.controlDecoration = new ControlDecoration(this.getValidationControl(), SWT.TOP | SWT.LEFT);
+		Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+		if (self instanceof EObject) {
+			LockStatus status = this.contextAdapter.geLockStatus((EObject) self);
+			this.handleLockStatus(status);
+		}
 	}
 
 	/**
@@ -289,6 +318,94 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			};
 			this.help.addMouseTrackListener(mouseTrackListener);
 		}
+
+		// CHECKSTYLE:OFF
+		this.lockStatusChangedListener = new IConsumer<Collection<LockStatusChangeEvent>>() {
+			@Override
+			public void apply(final Collection<LockStatusChangeEvent> events) {
+				Display.getDefault().asyncExec(new Runnable() {
+
+					@Override
+					public void run() {
+						for (LockStatusChangeEvent event : events) {
+							if (AbstractEEFWidgetLifecycleManager.this.getWidgetSemanticElement().equals(event.getElement())) {
+								handleLockStatus(event.getStatus());
+							}
+						}
+					}
+				});
+			}
+		};
+		this.contextAdapter.addLockStatusChangedListener(this.lockStatusChangedListener);
+	}
+
+	/**
+	 * Returns the semantic element of the current widget.
+	 *
+	 * @return The semantic element of the current widget
+	 */
+	protected Object getWidgetSemanticElement() {
+		return this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+	}
+
+	/**
+	 * Sets the appearance and behavior of the widget in order to indicate that the semantic element used by the widget
+	 * is currently locked by the current user. By default, it will only display a small green lock next to the
+	 * validation control.
+	 */
+	protected void lockedByMe() {
+		this.isLocked = false;
+
+		this.controlDecoration.hide();
+		this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedByMe);
+		this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_GRANTED_TO_CURRENT_USER_EXCLUSIVELY));
+		this.controlDecoration.show();
+	}
+
+	/**
+	 * Sets the appearance and behavior of the widget in order to indicate that the semantic element used by the widget
+	 * is currently locked by another user. As a result, it will set the user interface in a disabled mode along with a
+	 * red lock next to the widget.
+	 */
+	protected void lockedByOther() {
+		this.isLocked = true;
+		this.setEnabled(false);
+
+		this.controlDecoration.hide();
+		this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedByOther);
+		this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_DENIED));
+		this.controlDecoration.show();
+	}
+
+	/**
+	 * Sets the apprance and behavior of the widget in order to indicate that the semantic element used by the widget is
+	 * currently unlocked. As a result, it will set back the widget to ies default state.
+	 */
+	protected void unlocked() {
+		this.isLocked = false;
+		this.setEnabled(this.isEnabled());
+
+		this.controlDecoration.hide();
+	}
+
+	/**
+	 * Sets the enablement of the widget.
+	 *
+	 * @param isEnabled
+	 *            <code>true</code> when the widget should have its default behavior, <code>false</code> when the widget
+	 *            should be in a read only mode.
+	 */
+	protected abstract void setEnabled(boolean isEnabled);
+
+	/**
+	 * Check if a widget is enabled.
+	 *
+	 * @return True if the widget should be enabled otherwise false.
+	 */
+	protected boolean isEnabled() {
+		Boolean result = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Boolean.class).defaultValue(Boolean.TRUE)
+				.evaluate(getWidgetDescription().getIsEnabledExpression());
+		return result.booleanValue();
 	}
 
 	/**
@@ -327,6 +444,20 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#refresh()
+	 */
+	@Override
+	public void refresh() {
+		super.refresh();
+
+		if (!this.isLocked) {
+			this.setEnabled(this.isEnabled());
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#aboutToBeHidden()
 	 */
 	@Override
@@ -337,6 +468,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		}
 
 		this.getController().removeNewLabelConsumer();
+		this.contextAdapter.removeLockStatusChangedListener(this.lockStatusChangedListener);
 	}
 
 	/**
@@ -370,14 +502,22 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		throw new ClassCastException(Messages.AbstractEEFWidgetLifecycleManager_invalidSelectionType);
 	}
 
-	/**
-	 * Check if a widget is enabled.
-	 *
-	 * @return True if the widget should be enabled otherwise false.
-	 */
-	protected boolean isEnabled() {
-		Boolean result = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Boolean.class).defaultValue(Boolean.TRUE)
-				.evaluate(getWidgetDescription().getIsEnabledExpression());
-		return result.booleanValue();
+	private void handleLockStatus(LockStatus status) {
+		if (status != null) {
+			switch (status) {
+			case LOCKED_BY_ME:
+				AbstractEEFWidgetLifecycleManager.this.lockedByMe();
+				break;
+			case LOCKED_BY_OTHER:
+				AbstractEEFWidgetLifecycleManager.this.lockedByOther();
+				break;
+			case UNLOCKED:
+				AbstractEEFWidgetLifecycleManager.this.unlocked();
+				break;
+			default:
+				AbstractEEFWidgetLifecycleManager.this.unlocked();
+				break;
+			}
+		}
 	}
 }

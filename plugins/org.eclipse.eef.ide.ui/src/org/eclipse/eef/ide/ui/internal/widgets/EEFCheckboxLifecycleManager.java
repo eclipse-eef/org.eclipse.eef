@@ -218,7 +218,6 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	@Override
 	public void refresh() {
 		super.refresh();
-		this.checkbox.setEnabled(isEnabled());
 
 		EEFStyleHelper styleHelper = new EEFStyleHelper(this.interpreter, this.variableManager);
 		EEFWidgetStyle widgetStyle = styleHelper.getWidgetStyle(this.description);
@@ -228,5 +227,15 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 			styleHelper.applyTextStyle(style.getLabelFontNameExpression(), style.getLabelFontSizeExpression(), style.getLabelFontStyleExpression(),
 					this.checkbox.getFont(), style.getLabelBackgroundColorExpression(), style.getLabelForegroundColorExpression(), callback);
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#setEnabled(boolean)
+	 */
+	@Override
+	protected void setEnabled(boolean isEnabled) {
+		this.checkbox.setEnabled(isEnabled);
 	}
 }

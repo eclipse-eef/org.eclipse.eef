@@ -269,41 +269,40 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 				values.add(value);
 			}
 			tableViewer.setInput(values.toArray());
-			if (!this.tableViewer.getTable().isEnabled() && this.isEnabled()) {
-				this.tableViewer.getTable().setEnabled(true);
-			}
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#setEnabled(boolean)
+	 */
+	@Override
+	protected void setEnabled(boolean isEnabled) {
+		if (this.tableViewer != null && this.tableViewer.getTable() != null) {
+			this.tableViewer.getTable().setBackground(this.getBackgroundColor(isEnabled));
+		}
+
+		this.tableViewer.getTable().setEnabled(isEnabled);
+		for (ActionButton actionButton : this.actionButtons) {
+			actionButton.setEnabled(isEnabled);
 		}
 	}
 
 	/**
 	 * Get the background color according to the current valid style.
 	 *
+	 * @param isEnabled
+	 *            <code>true</code> if the widget is enabled, <code>false</code> otherwise
+	 *
 	 * @return The background color to use in the text field.
 	 */
-	private Color getBackgroundColor() {
+	private Color getBackgroundColor(boolean isEnabled) {
 		Color color = defaultBackgroundColor;
-		if (!isEnabled()) {
+		if (!isEnabled) {
 			color = widgetFactory.getColors().getInactiveBackground();
 		}
 		return color;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#refresh()
-	 */
-	@Override
-	public void refresh() {
-		super.refresh();
-
-		if (this.tableViewer != null && this.tableViewer.getTable() != null) {
-			this.tableViewer.getTable().setBackground(getBackgroundColor());
-		}
-
-		for (ActionButton actionButton : this.actionButtons) {
-			actionButton.setEnabled(this.isEnabled());
-		}
 	}
 
 	/**
