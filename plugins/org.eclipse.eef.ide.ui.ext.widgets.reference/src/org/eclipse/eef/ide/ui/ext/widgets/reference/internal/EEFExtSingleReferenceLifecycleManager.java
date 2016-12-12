@@ -10,6 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.ext.widgets.reference.internal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.ext.widgets.reference.internal.EEFExtReferenceController;
@@ -155,9 +158,15 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	@Override
 	protected void browseButtonCallback() {
+		List<EObject> elements = new ArrayList<>();
+		elements.add(this.target);
+		this.contextAdapter.lock(elements);
+
 		IWizard wizard = new EEFExtEObjectSelectionWizard(this.target, this.eReference, this.contextAdapter);
 		WizardDialog wizardDialog = new WizardDialog(this.text.getShell(), wizard);
 		wizardDialog.open();
+
+		this.contextAdapter.unlock(elements);
 	}
 
 	/**
@@ -167,9 +176,15 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	@Override
 	protected void addButtonCallback() {
+		List<EObject> elements = new ArrayList<>();
+		elements.add(this.target);
+		this.contextAdapter.lock(elements);
+
 		IWizard wizard = new EEFExtEObjectCreationWizard(this.target, this.eReference, this.contextAdapter);
 		WizardDialog wizardDialog = new WizardDialog(this.text.getShell(), wizard);
 		wizardDialog.open();
+
+		this.contextAdapter.unlock(elements);
 	}
 
 	/**
@@ -208,9 +223,19 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 			this.image.setImage(null);
 			this.text.setText(Messages.SingleReference_noValue);
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#setEnabled(boolean)
+	 */
+	@Override
+	protected void setEnabled(boolean isEnabled) {
+		super.setEnabled(isEnabled);
 
 		if (this.browseButton != null && !this.browseButton.isDisposed()) {
-			this.browseButton.setEnabled(this.isEnabled());
+			this.browseButton.setEnabled(isEnabled);
 		}
 	}
 

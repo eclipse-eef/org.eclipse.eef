@@ -305,15 +305,14 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#setEnabled(boolean)
 	 */
 	@Override
-	public void refresh() {
-		super.refresh();
-		this.hyperlink.setEnabled(isEnabled());
+	protected void setEnabled(boolean isEnabled) {
+		this.hyperlink.setEnabled(isEnabled);
 
 		for (ActionButton actionButton : this.actionButtons) {
-			actionButton.setEnabled(this.isEnabled());
+			actionButton.setEnabled(isEnabled);
 		}
 	}
 
