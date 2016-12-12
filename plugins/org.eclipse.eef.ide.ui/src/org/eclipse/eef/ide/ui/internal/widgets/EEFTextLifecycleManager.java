@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.runtime.IStatus;
@@ -20,6 +22,7 @@ import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
@@ -30,6 +33,7 @@ import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -217,6 +221,13 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			public void modifyText(ModifyEvent e) {
 				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && !updateInProgress.get()) {
 					EEFTextLifecycleManager.this.isDirty = true;
+
+					List<EObject> elements = new ArrayList<EObject>();
+					Object object = EEFTextLifecycleManager.this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+					if (object instanceof EObject) {
+						elements.add((EObject) object);
+					}
+					EEFTextLifecycleManager.this.contextAdapter.lock(elements);
 				}
 			}
 		};
@@ -297,6 +308,13 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 				this.setStyle();
 			} finally {
 				updateInProgress.set(false);
+
+				List<EObject> elements = new ArrayList<EObject>();
+				Object object = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+				if (object instanceof EObject) {
+					elements.add((EObject) object);
+				}
+				this.contextAdapter.unlock(elements);
 			}
 		}
 	}
@@ -356,23 +374,25 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#setEnabled(boolean)
 	 */
 	@Override
-	public void refresh() {
-		super.refresh();
-		this.text.setEnabled(isEnabled());
-		this.text.setBackground(getBackgroundColor());
+	protected void setEnabled(boolean isEnabled) {
+		this.text.setEnabled(isEnabled);
+		this.text.setBackground(this.getBackgroundColor(isEnabled));
 	}
 
 	/**
 	 * Get the background color according to the current valid style.
 	 *
+	 * @param isEnabled
+	 *            <code>true</code> to indicate that the widget is currently enabled, <code>false</code> otherwise
+	 *
 	 * @return The background color to use in the text field.
 	 */
-	private Color getBackgroundColor() {
+	private Color getBackgroundColor(boolean isEnabled) {
 		Color color = defaultBackgroundColor;
-		if (!isEnabled()) {
+		if (!isEnabled) {
 			color = widgetFactory.getColors().getInactiveBackground();
 		} else {
 			EEFWidgetStyle widgetStyle = new EEFStyleHelper(this.interpreter, this.variableManager).getWidgetStyle(this.description);

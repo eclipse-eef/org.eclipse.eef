@@ -256,12 +256,11 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#setEnabled(boolean)
 	 */
 	@Override
-	public void refresh() {
-		super.refresh();
-		this.radioGroup.setEnabled(isEnabled());
+	protected void setEnabled(boolean isEnabled) {
+		this.radioGroup.setEnabled(isEnabled);
 	}
 
 	/**

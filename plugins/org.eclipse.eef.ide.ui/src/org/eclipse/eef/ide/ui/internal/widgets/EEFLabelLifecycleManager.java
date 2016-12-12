@@ -236,15 +236,14 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#setEnabled(boolean)
 	 */
 	@Override
-	public void refresh() {
-		super.refresh();
-		this.body.setEnabled(isEnabled());
+	protected void setEnabled(boolean isEnabled) {
+		this.body.setEnabled(isEnabled);
 
 		for (ActionButton actionButton : this.actionButtons) {
-			actionButton.setEnabled(this.isEnabled());
+			actionButton.setEnabled(isEnabled);
 		}
 	}
 

@@ -219,6 +219,10 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 			IItemPropertySource propertySource = (IItemPropertySource) adapter;
 			IItemPropertyDescriptor propertyDescriptor = propertySource.getPropertyDescriptor(this.target, this.eReference);
 			if (propertyDescriptor != null) {
+				List<EObject> elements = new ArrayList<>();
+				elements.add(this.target);
+				this.contextAdapter.lock(elements);
+
 				ArrayList<Object> choiceOfValues = new ArrayList<Object>(propertyDescriptor.getChoiceOfValues(this.target));
 				FeatureEditorDialog dialog = new FeatureEditorDialog(this.tableViewer.getTable().getShell(), new AdapterFactoryLabelProvider(
 						this.composedAdapterFactory), this.target, this.eReference, propertyDescriptor.getDisplayName(this.target), choiceOfValues);
@@ -228,6 +232,8 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 				if (result != null) {
 					this.target.eSet(this.eReference, result);
 				}
+
+				this.contextAdapter.unlock(elements);
 			}
 		}
 	}
@@ -239,9 +245,15 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 */
 	@Override
 	protected void addButtonCallback() {
+		List<EObject> elements = new ArrayList<>();
+		elements.add(this.target);
+		this.contextAdapter.lock(elements);
+
 		IWizard wizard = new EEFExtEObjectCreationWizard(this.target, this.eReference, this.contextAdapter);
 		WizardDialog wizardDialog = new WizardDialog(this.tableViewer.getTable().getShell(), wizard);
 		wizardDialog.open();
+
+		this.contextAdapter.unlock(elements);
 	}
 
 	/**
@@ -350,11 +362,22 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 
 		this.tableViewer.setInput(this.target);
 
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#setEnabled(boolean)
+	 */
+	@Override
+	protected void setEnabled(boolean isEnabled) {
+		super.setEnabled(isEnabled);
+
 		if (this.upButton != null && !this.upButton.isDisposed()) {
-			this.upButton.setEnabled(this.isEnabled());
+			this.upButton.setEnabled(isEnabled);
 		}
 		if (this.downButton != null && !this.downButton.isDisposed()) {
-			this.downButton.setEnabled(this.isEnabled());
+			this.downButton.setEnabled(isEnabled);
 		}
 	}
 

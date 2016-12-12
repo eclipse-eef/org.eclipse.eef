@@ -190,11 +190,10 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#refresh()
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#setEnabled(boolean)
 	 */
 	@Override
-	public void refresh() {
-		super.refresh();
-		this.button.setEnabled(isEnabled());
+	protected void setEnabled(boolean isEnabled) {
+		this.button.setEnabled(isEnabled);
 	}
 }
