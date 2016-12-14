@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.eef.properties.ui.legacy;singleton:=true
-Bundle-Version: 1.9.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin$Implementation
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
@@ -10,13 +10,13 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
  org.eclipse.ui;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.ui.views.properties.tabbed;bundle-version="[3.5.0,4.0.0)",
  org.eclipse.eef.properties.ui;bundle-version="[2.0.0,3.0.0)",
- org.eclipse.eef.common.ui;bundle-version="[1.9.0,2.0.0)",
+ org.eclipse.eef.common.ui;bundle-version="[2.0.0,3.0.0)",
  com.google.guava;bundle-version="[11.0.2,16.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Export-Package: org.eclipse.eef.properties.ui.legacy.internal;version="1.9.0";x-internal:=true,
- org.eclipse.eef.properties.ui.legacy.internal.eef2legacy;version="1.9.0";x-internal:=true,
- org.eclipse.eef.properties.ui.legacy.internal.extension;version="1.9.0";x-internal:=true,
- org.eclipse.eef.properties.ui.legacy.internal.extension.impl;version="1.9.0";x-internal:=true,
- org.eclipse.eef.properties.ui.legacy.internal.legacy2eef;version="1.9.0";x-internal:=true
+Export-Package: org.eclipse.eef.properties.ui.legacy.internal;version="2.0.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.legacy.internal.eef2legacy;version="2.0.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.legacy.internal.extension;version="2.0.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.legacy.internal.extension.impl;version="2.0.0";x-internal:=true,
+ org.eclipse.eef.properties.ui.legacy.internal.legacy2eef;version="2.0.0";x-internal:=true
