@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.eef.ide.ui.ext.widgets.reference;singleton:=true
 Bundle-Version: 2.0.0.qualifier
 Bundle-Vendor: %providerName
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.eef;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.eef.common;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.eef.common.ui;bundle-version="[2.0.0,3.0.0)",
