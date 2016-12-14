@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c23755_a88f2a38",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-14T09:38:02Z",
+      "side": 1,
+      "message": "Why do you keep this case as it is the default one ?",
+      "range": {
+        "startLine": 357,
+        "startChar": 3,
+        "endLine": 359,
+        "endChar": 10
+      },
+      "revId": "39dcc85b8d28b3247754d417c8e0a31600679d6d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_e8892233",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-14T09:38:02Z",
+      "side": 1,
+      "message": "appearance",
+      "range": {
+        "startLine": 406,
+        "startChar": 13,
+        "endLine": 406,
+        "endChar": 21
+      },
+      "revId": "39dcc85b8d28b3247754d417c8e0a31600679d6d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_28831a11",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-14T09:38:02Z",
+      "side": 1,
+      "message": "its",
+      "range": {
+        "startLine": 407,
+        "startChar": 68,
+        "endLine": 407,
+        "endChar": 71
+      },
+      "revId": "39dcc85b8d28b3247754d417c8e0a31600679d6d",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
