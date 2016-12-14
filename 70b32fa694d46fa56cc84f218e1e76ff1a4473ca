@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_c8838659",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSpinnerController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_00e00741",
+      "range": {
+        "startLine": 47,
+        "startChar": 39,
+        "endLine": 47,
+        "endChar": 45
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_f19e7b42",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-12-09T08:50:12Z",
       "side": 1,
       "message": "Missing javadoc",
+      "range": {
+        "startLine": 110,
+        "startChar": 1,
+        "endLine": 110,
+        "endChar": 19
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_48569656",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_f19e7b42",
       "range": {
         "startLine": 110,
         "startChar": 1,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_68551247",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_31a9d366",
+      "range": {
+        "startLine": 112,
+        "startChar": 1,
+        "endLine": 112,
+        "endChar": 19
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_51ac8f75",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
         "patchSetId": 3
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_a3566b30",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_51ac8f75",
+      "range": {
+        "startLine": 177,
+        "startChar": 1,
+        "endLine": 177,
+        "endChar": 74
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_f1703b83",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
         "patchSetId": 3
@@ -105,6 +201,30 @@
       "writtenOn": "2016-12-09T08:50:12Z",
       "side": 1,
       "message": "NumberFormatException when display equals empty string \"\"",
+      "range": {
+        "startLine": 272,
+        "startChar": 55,
+        "endLine": 272,
+        "endChar": 62
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_e3606303",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_f1703b83",
       "range": {
         "startLine": 272,
         "startChar": 55,
@@ -186,6 +306,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_c3fd277b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_5183afe0",
+      "range": {
+        "startLine": 345,
+        "startChar": 54,
+        "endLine": 345,
+        "endChar": 55
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_91ad4772",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
         "patchSetId": 3
@@ -209,6 +353,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_0308ff33",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_91ad4772",
+      "range": {
+        "startLine": 355,
+        "startChar": 6,
+        "endLine": 355,
+        "endChar": 10
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_115bf702",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerStyleCallback.java",
         "patchSetId": 3
@@ -220,6 +388,30 @@
       "writtenOn": "2016-12-09T08:50:12Z",
       "side": 1,
       "message": "From the specifier point of view we could set underline and strike through as values but they are not supported, do not show them to the specifier then",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 17
+      },
+      "revId": "70b32fa694d46fa56cc84f218e1e76ff1a4473ca",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_230edb41",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSpinnerStyleCallback.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T15:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_115bf702",
       "range": {
         "startLine": 56,
         "startChar": 2,
