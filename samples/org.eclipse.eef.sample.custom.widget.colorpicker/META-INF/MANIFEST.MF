@@ -2,14 +2,14 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.eef.sample.custom.widget.colorpicker;singleton:=true
-Bundle-Version: 1.9.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.eclipse.eef;version="[1.7.0,2.0.0)",
- org.eclipse.eef.core.api;version="[1.7.0,2.0.0)",
- org.eclipse.eef.core.api.controllers;version="[1.7.0,2.0.0)",
- org.eclipse.eef.core.api.utils;version="[1.7.0,2.0.0)",
- org.eclipse.eef.ide.internal;version="[1.7.0,2.0.0)",
+Import-Package: org.eclipse.eef;version="[2.0.0,3.0.0)",
+ org.eclipse.eef.core.api;version="[2.0.0,3.0.0)",
+ org.eclipse.eef.core.api.controllers;version="[2.0.0,3.0.0)",
+ org.eclipse.eef.core.api.utils;version="[2.0.0,3.0.0)",
+ org.eclipse.eef.ide.internal;version="[2.0.0,3.0.0)",
  org.eclipse.sirius.common.interpreter.api;version="1.0.0"
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)",
  org.eclipse.emf.common;bundle-version="[2.8.0,3.0.0)",
@@ -21,12 +21,12 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)",
  org.eclipse.ui.workbench;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.ui;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.emf.common.ui;bundle-version="[2.7.0,3.0.0)",
- org.eclipse.eef.core;bundle-version="[1.7.0,2.0.0)",
- org.eclipse.eef.common;bundle-version="[1.7.0,2.0.0)",
- org.eclipse.eef.common.ui;bundle-version="[1.7.0,2.0.0)",
- org.eclipse.eef.ide.ui;bundle-version="[1.7.0,2.0.0)",
+ org.eclipse.eef.core;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.eef.common;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.eef.common.ui;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.eef.ide.ui;bundle-version="[2.0.0,3.0.0)",
  com.google.guava;bundle-version="[15.0.0,16.0.0)"
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.eclipse.eef.sample.custom.widget.colorpicker.ColorPickerPlugin$Implementation
-Export-Package: org.eclipse.eef.sample.custom.widget.colorpicker;version="1.6.0"
+Export-Package: org.eclipse.eef.sample.custom.widget.colorpicker;version="2.0.0"
