@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_03f1df89",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_91f8e73e",
+      "range": {
+        "startLine": 71,
+        "startChar": 13,
+        "endLine": 71,
+        "endChar": 19
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_51e72fa1",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
         "patchSetId": 2
@@ -59,6 +83,30 @@
       "writtenOn": "2016-12-09T09:50:36Z",
       "side": 1,
       "message": "invalid name should be zoneOffset\nunuseful inti to 0",
+      "range": {
+        "startLine": 77,
+        "startChar": 13,
+        "endLine": 77,
+        "endChar": 24
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_23e7bbd1",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_51e72fa1",
       "range": {
         "startLine": 77,
         "startChar": 13,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_43e2f7bf",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_71fd0b2e",
+      "range": {
+        "startLine": 82,
+        "startChar": 13,
+        "endLine": 82,
+        "endChar": 23
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_31e4739d",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
         "patchSetId": 2
@@ -105,6 +177,30 @@
       "writtenOn": "2016-12-09T09:50:36Z",
       "side": 1,
       "message": "Javadoc",
+      "range": {
+        "startLine": 124,
+        "startChar": 1,
+        "endLine": 124,
+        "endChar": 31
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_c3a1a77f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_31e4739d",
       "range": {
         "startLine": 124,
         "startChar": 1,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_43ad976e",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_311f131f",
+      "range": {
+        "startLine": 134,
+        "startChar": 3,
+        "endLine": 134,
+        "endChar": 9
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_f114bb03",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
         "patchSetId": 2
@@ -151,6 +271,30 @@
       "writtenOn": "2016-12-09T09:50:36Z",
       "side": 1,
       "message": "Javadoc",
+      "range": {
+        "startLine": 202,
+        "startChar": 9,
+        "endLine": 202,
+        "endChar": 23
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_c388c701",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_f114bb03",
       "range": {
         "startLine": 202,
         "startChar": 9,
@@ -186,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_e37f8357",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_11185734",
+      "range": {
+        "startLine": 212,
+        "startChar": 1,
+        "endLine": 212,
+        "endChar": 35
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_912aa72e",
         "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
         "patchSetId": 2
@@ -197,6 +365,30 @@
       "writtenOn": "2016-12-09T09:50:36Z",
       "side": 1,
       "message": "NPE when newDate is null",
+      "range": {
+        "startLine": 214,
+        "startChar": 2,
+        "endLine": 214,
+        "endChar": 28
+      },
+      "revId": "bf3f3ac97d0a86a691397848e0fdaf945b3ed2a1",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_03839fe1",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFDateLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1013
+      },
+      "writtenOn": "2016-12-14T16:10:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_912aa72e",
       "range": {
         "startLine": 214,
         "startChar": 2,
