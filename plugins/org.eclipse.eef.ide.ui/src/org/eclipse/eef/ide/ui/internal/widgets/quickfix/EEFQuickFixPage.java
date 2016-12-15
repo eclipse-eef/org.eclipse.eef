@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IMessageProvider;
-import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -168,30 +167,27 @@ public class EEFQuickFixPage extends WizardPage {
 	 */
 	public void performFinish(IProgressMonitor monitor) {
 		try {
-			this.getWizard().getContainer().run(false, true, new IRunnableWithProgress() {
-				@Override
-				public void run(IProgressMonitor progressMonitor) throws InvocationTargetException, InterruptedException {
-					progressMonitor.beginTask(Messages.EEFQuickFixWizard_applyQuickFix, 1);
-					EEFQuickFixPage.this.getShell().getDisplay().readAndDispatch();
-					if (progressMonitor.isCanceled()) {
-						return;
-					}
-
-					ISelection selection = EEFQuickFixPage.this.quickFixesList.getSelection();
-					if (selection instanceof IStructuredSelection) {
-						IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-						// Only one quick fix can be selected
-						Object element = structuredSelection.getFirstElement();
-						if (element instanceof EEFValidationFixDescription) {
-							// Run the quick fix using the given eval
-							EEFValidationFixDescription validationFix = (EEFValidationFixDescription) element;
-							EAttribute expressionEAttribute = EefPackage.Literals.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION;
-							EEFQuickFixPage.this.eval.logIfBlank(expressionEAttribute).call(validationFix.getFixExpression());
-						}
-					}
-
-					progressMonitor.worked(1);
+			this.getWizard().getContainer().run(false, true, (progressMonitor) -> {
+				progressMonitor.beginTask(Messages.EEFQuickFixWizard_applyQuickFix, 1);
+				this.getShell().getDisplay().readAndDispatch();
+				if (progressMonitor.isCanceled()) {
+					return;
 				}
+
+				ISelection selection = this.quickFixesList.getSelection();
+				if (selection instanceof IStructuredSelection) {
+					IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+					// Only one quick fix can be selected
+					Object element = structuredSelection.getFirstElement();
+					if (element instanceof EEFValidationFixDescription) {
+						// Run the quick fix using the given eval
+						EEFValidationFixDescription validationFix = (EEFValidationFixDescription) element;
+						EAttribute expressionEAttribute = EefPackage.Literals.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION;
+						this.eval.logIfBlank(expressionEAttribute).call(validationFix.getFixExpression());
+					}
+				}
+
+				progressMonitor.worked(1);
 			});
 		} catch (InvocationTargetException e) {
 			EEFIdeUiPlugin.getPlugin().error(e.getMessage(), e);

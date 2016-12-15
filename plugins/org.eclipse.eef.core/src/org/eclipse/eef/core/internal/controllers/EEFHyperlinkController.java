@@ -110,18 +110,15 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	 */
 	@Override
 	public IStatus onClick(final Object element) {
-		return contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String expression = EEFHyperlinkController.this.description.getOnClickExpression();
-				EAttribute attr = EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION;
+		return contextAdapter.performModelChange(() -> {
+			String expression = this.description.getOnClickExpression();
+			EAttribute attr = EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFHyperlinkController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFHyperlink.SELECTION, element);
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFHyperlink.SELECTION, element);
 
-				EvalFactory.of(EEFHyperlinkController.this.interpreter, variables).logIfBlank(attr).call(expression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(attr).call(expression);
 		});
 	}
 
@@ -162,17 +159,14 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	 */
 	@Override
 	public IStatus action(final EEFWidgetAction action) {
-		return this.contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String expression = action.getActionExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
+		return this.contextAdapter.performModelChange(() -> {
+			String expression = action.getActionExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFHyperlinkController.this.variableManager.getVariables());
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
 
-				EvalFactory.of(EEFHyperlinkController.this.interpreter, variables).logIfBlank(eAttribute).call(expression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(expression);
 		});
 	}
 
