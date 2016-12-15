@@ -16,9 +16,7 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.wizard.WizardPage;
@@ -107,30 +105,26 @@ public class EEFValidationMessagesPage extends WizardPage {
 		this.validationMessagesList.setContentProvider(new EEFValidationMessagesTableContentProvider());
 		this.validationMessagesList.setLabelProvider(new EEFValidationMessagesTableLabelProvider());
 		this.validationMessagesList.setComparator(new EEFValidationMessagesTableComparator());
-		this.validationMessagesList.addSelectionChangedListener(new ISelectionChangedListener() {
-			@Override
-			public void selectionChanged(SelectionChangedEvent event) {
-				// Sets the new selected message
-				ISelection selection = event.getSelection();
-				if (selection instanceof IStructuredSelection) {
-					IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-					Object element = structuredSelection.getFirstElement();
-					if (element instanceof IMessage) {
-						EEFValidationMessagesPage.this.selectedMessage = (IMessage) element;
-					}
+		this.validationMessagesList.addSelectionChangedListener((event) -> {
+			// Sets the new selected message
+			ISelection selection = event.getSelection();
+			if (selection instanceof IStructuredSelection) {
+				IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+				Object element = structuredSelection.getFirstElement();
+				if (element instanceof IMessage) {
+					this.selectedMessage = (IMessage) element;
 				}
-
-				if (EEFValidationMessagesPage.this.selectedMessage.getKey() instanceof EEFValidationRuleDescription) {
-					EEFValidationRuleDescription validationRuleDescription = (EEFValidationRuleDescription) EEFValidationMessagesPage.this.selectedMessage
-							.getKey();
-					if (validationRuleDescription.getFixes().size() == 0) {
-						EEFValidationMessagesPage.this.setMessage(Messages.EEFQuickFixWizard_noQuickFixAvailable, IMessageProvider.ERROR);
-					} else {
-						EEFValidationMessagesPage.this.setMessage(null);
-					}
-				}
-				EEFValidationMessagesPage.this.setPageComplete(true);
 			}
+
+			if (this.selectedMessage.getKey() instanceof EEFValidationRuleDescription) {
+				EEFValidationRuleDescription validationRuleDescription = (EEFValidationRuleDescription) this.selectedMessage.getKey();
+				if (validationRuleDescription.getFixes().size() == 0) {
+					this.setMessage(Messages.EEFQuickFixWizard_noQuickFixAvailable, IMessageProvider.ERROR);
+				} else {
+					this.setMessage(null);
+				}
+			}
+			this.setPageComplete(true);
 		});
 
 		FormData listData = new FormData();

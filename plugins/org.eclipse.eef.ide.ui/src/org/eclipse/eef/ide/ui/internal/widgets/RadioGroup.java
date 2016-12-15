@@ -69,12 +69,7 @@ public class RadioGroup extends Composite {
 			this.setLayout(new GridLayout(numberOfColumns, true));
 		}
 
-		addListener(SWT.Dispose, new Listener() {
-			@Override
-			public void handleEvent(Event event) {
-				handleDispose(event);
-			}
-		});
+		this.addListener(SWT.Dispose, (event) -> this.handleDispose(event));
 	}
 
 	/**
@@ -155,9 +150,7 @@ public class RadioGroup extends Composite {
 	 *            The selection listener
 	 */
 	public void removeSelectionListener(SelectionListener listener) {
-		for (Button button : buttons.values()) {
-			button.removeSelectionListener(listener);
-		}
+		buttons.values().forEach(button -> button.removeSelectionListener(listener));
 	}
 
 	/**
@@ -223,16 +216,14 @@ public class RadioGroup extends Composite {
 	 *            the index of the item to select
 	 */
 	public void select(int index) {
-		buttons.get(Integer.valueOf(index)).setSelection(true);
+		this.buttons.get(Integer.valueOf(index)).setSelection(true);
 	}
 
 	/**
 	 * Deselects all selected items in the receiver's list.
 	 */
 	public void deselectAll() {
-		for (Button button : buttons.values()) {
-			button.setSelection(false);
-		}
+		this.buttons.values().forEach(button -> button.setSelection(false));
 	}
 
 	/**
@@ -242,9 +233,7 @@ public class RadioGroup extends Composite {
 	 */
 	@Override
 	public void dispose() {
-		for (Button button : buttons.values()) {
-			button.dispose();
-		}
+		this.buttons.values().forEach(Button::dispose);
 		super.dispose();
 	}
 
@@ -256,8 +245,6 @@ public class RadioGroup extends Composite {
 	@Override
 	public void setEnabled(boolean enabled) {
 		super.setEnabled(enabled);
-		for (Button button : buttons.values()) {
-			button.setEnabled(enabled);
-		}
+		this.buttons.values().forEach(button -> button.setEnabled(enabled));
 	}
 }

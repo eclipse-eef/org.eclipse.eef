@@ -191,12 +191,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 * Initializes the browse button.
 	 */
 	private void initializeBrowseButton() {
-		final Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				AbstractEEFExtReferenceLifecycleManager.this.browseButtonCallback();
-			}
-		};
+		final Runnable runnable = () -> this.browseButtonCallback();
 
 		this.browseButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
 		this.browseButton.addSelectionListener(this.browseButtonListener);
@@ -212,12 +207,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 * Initializes the add button.
 	 */
 	private void initializeAddButton() {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				AbstractEEFExtReferenceLifecycleManager.this.addButtonCallback();
-			}
-		};
+		Runnable runnable = () -> this.addButtonCallback();
 
 		this.addButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
 		this.addButton.addSelectionListener(this.addButtonListener);
@@ -233,12 +223,8 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 * Initializes the remove button.
 	 */
 	private void initializeRemoveButton() {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				AbstractEEFExtReferenceLifecycleManager.this.removeButtonCallback();
-			}
-		};
+		Runnable runnable = () -> this.removeButtonCallback();
+
 		this.removeButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
 		this.removeButton.addSelectionListener(this.removeButtonListener);
 		if (this.eReference.isContainment()) {
