@@ -12,7 +12,6 @@ package org.eclipse.eef.ide.ui.ext.widgets.reference.internal;
 
 import java.lang.reflect.InvocationTargetException;
 
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.eef.core.api.EditingContextAdapter;
@@ -65,8 +64,8 @@ public class EEFExtEObjectCreationWizard extends Wizard {
 		this.eReference = eReference;
 		this.editingContextAdapter = editingContextAdapter;
 		this.setWindowTitle(Messages.ReferenceCreationWizard_windowTitle);
-		ImageDescriptor imageDescriptor = ExtendedImageRegistry.INSTANCE.getImageDescriptor(EEFExtReferenceUIPlugin.getPlugin().getImage(
-				EEFExtReferenceUIPlugin.Implementation.NEW_WIZBAN_PATH));
+		ImageDescriptor imageDescriptor = ExtendedImageRegistry.INSTANCE
+				.getImageDescriptor(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.NEW_WIZBAN_PATH));
 		this.setDefaultPageImageDescriptor(imageDescriptor);
 		this.setNeedsProgressMonitor(true);
 	}
@@ -93,18 +92,8 @@ public class EEFExtEObjectCreationWizard extends Wizard {
 	public boolean performFinish() {
 		boolean finishedProperly = true;
 
-		IRunnableWithProgress runnableWithProgress = new IRunnableWithProgress() {
-			@Override
-			public void run(final IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
-				Runnable runnable = new Runnable() {
-					@Override
-					public void run() {
-						EEFExtEObjectCreationWizard.this.eObjectCreationPage.performFinish(monitor);
-					}
-				};
-
-				EEFExtEObjectCreationWizard.this.editingContextAdapter.performModelChange(runnable);
-			}
+		IRunnableWithProgress runnableWithProgress = (monitor) -> {
+			this.editingContextAdapter.performModelChange(() -> this.eObjectCreationPage.performFinish(monitor));
 		};
 
 		try {

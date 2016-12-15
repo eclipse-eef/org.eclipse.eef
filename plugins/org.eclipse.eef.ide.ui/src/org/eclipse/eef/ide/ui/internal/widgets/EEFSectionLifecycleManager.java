@@ -101,9 +101,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.container.getForm().addMessageHyperlinkListener(this.hyperlinkListener);
 
-		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
-			lifecycleManager.aboutToBeShown();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeShown);
 	}
 
 	/**
@@ -117,9 +115,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.controller.refresh();
 
-		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
-			lifecycleManager.refresh();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::refresh);
 
 		this.container.getForm().getMessageManager().update();
 	}
@@ -138,9 +134,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 			this.container.getForm().getMessageManager().removeAllMessages();
 		}
 
-		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
-			lifecycleManager.aboutToBeHidden();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeHidden);
 	}
 
 	/**
@@ -170,9 +164,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	 */
 	@Override
 	public void dispose() {
-		for (IEEFLifecycleManager lifecycleManager : this.lifecycleManagers) {
-			lifecycleManager.dispose();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::dispose);
 	}
 
 }

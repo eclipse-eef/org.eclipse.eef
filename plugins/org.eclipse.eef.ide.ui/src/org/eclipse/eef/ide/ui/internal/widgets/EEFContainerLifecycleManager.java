@@ -136,9 +136,7 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	 */
 	@Override
 	public void aboutToBeShown() {
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.aboutToBeShown();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeShown);
 	}
 
 	/**
@@ -148,9 +146,7 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	 */
 	@Override
 	public void refresh() {
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.refresh();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::refresh);
 	}
 
 	/**
@@ -160,9 +156,7 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	 */
 	@Override
 	public void aboutToBeHidden() {
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.aboutToBeHidden();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeHidden);
 	}
 
 	/**
@@ -172,9 +166,7 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	 */
 	@Override
 	public void dispose() {
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.dispose();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::dispose);
 	}
 
 }

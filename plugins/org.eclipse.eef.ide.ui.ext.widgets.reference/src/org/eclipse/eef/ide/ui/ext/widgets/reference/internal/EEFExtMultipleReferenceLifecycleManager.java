@@ -256,13 +256,10 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 */
 	@Override
 	protected void removeButtonCallback() {
-		this.contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				List<Object> objects = selectionToList(tableViewer.getSelection());
-				for (Object object : objects) {
-					EcoreUtil.remove(target, eReference, object);
-				}
+		this.contextAdapter.performModelChange(() -> {
+			List<Object> objects = selectionToList(tableViewer.getSelection());
+			for (Object object : objects) {
+				EcoreUtil.remove(target, eReference, object);
 			}
 		});
 	}
@@ -274,13 +271,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 *            The direction
 	 */
 	private void initializeMoveButton(final Direction direction) {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				EEFExtMultipleReferenceLifecycleManager.this.moveButtonCallback(direction);
-			}
-		};
-		ButtonSelectionListener listener = new ButtonSelectionListener(this.contextAdapter, runnable);
+		ButtonSelectionListener listener = new ButtonSelectionListener(this.contextAdapter, () -> this.moveButtonCallback(direction));
 
 		if (direction == Direction.UP) {
 			this.upButtonListener = listener;

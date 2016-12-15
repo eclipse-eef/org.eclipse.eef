@@ -105,19 +105,16 @@ public class EEFPageImpl implements EEFPage {
 			Boolean preconditionValid = EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class)
 					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
-				IConsumer<Object> consumer = new IConsumer<Object>() {
-					@Override
-					public void apply(Object value) {
-						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester);
-						Iterable<Object> iterable = Util.asIterable(value, Object.class);
-						Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
-						for (Object object : objects) {
-							IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
-							childVariableManager.put(EEFExpressionUtils.SELF, object);
-							EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter);
-							eefGroups.add(eefGroupImpl);
-						}
-					}
+				IConsumer<Object> consumer = (value) -> {
+					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester);
+					Iterable<Object> iterable = Util.asIterable(value, Object.class);
+					Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
+					objects.forEach(object -> {
+						IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
+						childVariableManager.put(EEFExpressionUtils.SELF, object);
+						EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter);
+						this.eefGroups.add(eefGroupImpl);
+					});
 				};
 
 				Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
