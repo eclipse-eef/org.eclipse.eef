@@ -11,7 +11,6 @@
 package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -25,7 +24,6 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFRadioController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
@@ -200,40 +198,34 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		this.radioGroup.addSelectionListener(this.selectionListener);
 
 		// Set radio group value
-		this.controller.onNewValue(new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				if (!radioGroup.isDisposed()) {
-					final ISelection selection;
-					if (value != null) {
-						selection = new StructuredSelection(value);
-					} else {
-						selection = null;
-					}
-					radioGroupViewer.setSelection(selection);
-					referenceSelection = selection;
-					if (!radioGroup.isEnabled()) {
-						radioGroup.setEnabled(true);
-					}
+		this.controller.onNewValue((value) -> {
+			if (!this.radioGroup.isDisposed()) {
+				final ISelection selection;
+				if (value != null) {
+					selection = new StructuredSelection(value);
+				} else {
+					selection = null;
+				}
+				this.radioGroupViewer.setSelection(selection);
+				this.referenceSelection = selection;
+				if (!this.radioGroup.isEnabled()) {
+					this.radioGroup.setEnabled(true);
 				}
 			}
 		});
 
 		// Set radio group items
-		this.controller.onNewCandidates(new IConsumer<List<Object>>() {
-			@Override
-			public void apply(List<Object> candidates) {
-				if (!radioGroup.isDisposed()) {
-					if (candidates != null) {
-						radioGroupViewer.setInput(candidates.toArray());
-					} else {
-						radioGroupViewer.setInput(null);
-					}
-					if (!radioGroup.isEnabled()) {
-						radioGroup.setEnabled(true);
-					}
-					radioGroupViewer.refresh(true);
+		this.controller.onNewCandidates((candidates) -> {
+			if (!this.radioGroup.isDisposed()) {
+				if (candidates != null) {
+					this.radioGroupViewer.setInput(candidates.toArray());
+				} else {
+					this.radioGroupViewer.setInput(null);
 				}
+				if (!this.radioGroup.isEnabled()) {
+					this.radioGroup.setEnabled(true);
+				}
+				this.radioGroupViewer.refresh(true);
 			}
 		});
 	}
@@ -246,7 +238,7 @@ public class EEFRadioLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	@Override
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
-		if (!radioGroup.isDisposed()) {
+		if (!this.radioGroup.isDisposed()) {
 			this.radioGroup.removeSelectionListener(this.selectionListener);
 		}
 		this.controller.removeNewValueConsumer();

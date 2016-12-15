@@ -130,17 +130,14 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	 */
 	@Override
 	public IStatus action(final EEFWidgetAction action) {
-		return this.contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String expression = action.getActionExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
+		return this.contextAdapter.performModelChange(() -> {
+			String expression = action.getActionExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFLabelController.this.variableManager.getVariables());
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
 
-				EvalFactory.of(EEFLabelController.this.interpreter, variables).logIfBlank(eAttribute).call(expression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(expression);
 		});
 	}
 

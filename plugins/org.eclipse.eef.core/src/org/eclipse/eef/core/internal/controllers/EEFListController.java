@@ -109,18 +109,15 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	 */
 	@Override
 	public void onClick(final Object element, final String onClickEventKind) {
-		contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String expression = EEFListController.this.description.getOnClickExpression();
+		contextAdapter.performModelChange(() -> {
+			String expression = this.description.getOnClickExpression();
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFListController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFList.SELECTION, element);
-				variables.put(EEFExpressionUtils.EEFList.ON_CLICK_EVENT_KIND, onClickEventKind);
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFList.SELECTION, element);
+			variables.put(EEFExpressionUtils.EEFList.ON_CLICK_EVENT_KIND, onClickEventKind);
 
-				EvalFactory.of(EEFListController.this.interpreter, variables).call(expression);
-			}
+			EvalFactory.of(this.interpreter, variables).call(expression);
 		});
 	}
 
@@ -142,18 +139,15 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	 */
 	@Override
 	public IStatus action(final EEFWidgetAction action, final List<Object> elements) {
-		return contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String expression = action.getActionExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
+		return contextAdapter.performModelChange(() -> {
+			String expression = action.getActionExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFListController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFList.SELECTION, elements);
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFList.SELECTION, elements);
 
-				EvalFactory.of(EEFListController.this.interpreter, variables).logIfBlank(eAttribute).call(expression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(expression);
 		});
 	}
 }

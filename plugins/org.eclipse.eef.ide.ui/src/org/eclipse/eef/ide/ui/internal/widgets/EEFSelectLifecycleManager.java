@@ -11,7 +11,6 @@
 package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;
@@ -24,7 +23,6 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFSelectController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
@@ -204,44 +202,38 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		this.combo.addSelectionListener(this.selectionListener);
 
 		// Set combo value
-		this.controller.onNewValue(new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				if (!combo.isDisposed() && !(combo.getText() != null && combo.getText().equals(value))) {
-					final ISelection selection;
-					if (value != null) {
-						selection = new StructuredSelection(value);
-					} else {
-						selection = null;
-					}
-					referenceValue = selection;
-					comboViewer.setSelection(referenceValue, true);
-					if (!combo.isEnabled()) {
-						combo.setEnabled(true);
-					}
+		this.controller.onNewValue((value) -> {
+			if (!this.combo.isDisposed() && !(this.combo.getText() != null && this.combo.getText().equals(value))) {
+				final ISelection selection;
+				if (value != null) {
+					selection = new StructuredSelection(value);
+				} else {
+					selection = null;
+				}
+				this.referenceValue = selection;
+				this.comboViewer.setSelection(this.referenceValue, true);
+				if (!this.combo.isEnabled()) {
+					this.combo.setEnabled(true);
 				}
 			}
 		});
 
 		// Set combo items
-		this.controller.onNewCandidates(new IConsumer<List<Object>>() {
-			@Override
-			public void apply(List<Object> value) {
-				if (!combo.isDisposed()) {
-					if (value != null) {
-						Object[] candidates = value.toArray();
-						for (int i = 0; i < candidates.length; i++) {
-							if (candidates[i] == null) {
-								candidates[i] = NO_VALUE;
-							}
+		this.controller.onNewCandidates((value) -> {
+			if (!this.combo.isDisposed()) {
+				if (value != null) {
+					Object[] candidates = value.toArray();
+					for (int i = 0; i < candidates.length; i++) {
+						if (candidates[i] == null) {
+							candidates[i] = NO_VALUE;
 						}
-						comboViewer.setInput(candidates);
-					} else {
-						comboViewer.setInput(null);
 					}
-					if (!combo.isEnabled()) {
-						combo.setEnabled(true);
-					}
+					this.comboViewer.setInput(candidates);
+				} else {
+					this.comboViewer.setInput(null);
+				}
+				if (!this.combo.isEnabled()) {
+					this.combo.setEnabled(true);
 				}
 			}
 		});
