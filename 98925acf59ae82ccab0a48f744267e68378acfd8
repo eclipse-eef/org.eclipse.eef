@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a7c23755_47420013",
+        "filename": "plugins/org.eclipse.eef.ext.widgets.reference/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-12-15T09:11:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_83c5ef32",
+      "range": {
+        "startLine": 14,
+        "startChar": 54,
+        "endLine": 14,
+        "endChar": 74
+      },
+      "revId": "98925acf59ae82ccab0a48f744267e68378acfd8",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7c23755_a3f3cb94",
         "filename": "plugins/org.eclipse.eef.ext.widgets.reference/META-INF/MANIFEST.MF",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-12-15T08:16:07Z",
       "side": 1,
       "message": "To remove",
+      "range": {
+        "startLine": 15,
+        "startChar": 48,
+        "endLine": 15,
+        "endChar": 68
+      },
+      "revId": "98925acf59ae82ccab0a48f744267e68378acfd8",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_87c33803",
+        "filename": "plugins/org.eclipse.eef.ext.widgets.reference/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2016-12-15T09:11:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c23755_a3f3cb94",
       "range": {
         "startLine": 15,
         "startChar": 48,
