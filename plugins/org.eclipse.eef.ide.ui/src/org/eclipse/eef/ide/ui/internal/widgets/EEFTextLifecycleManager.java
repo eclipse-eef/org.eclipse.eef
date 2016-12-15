@@ -25,7 +25,6 @@ import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
@@ -42,7 +41,6 @@ import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
-import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
@@ -216,19 +214,16 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.modifyListener = new ModifyListener() {
-			@Override
-			public void modifyText(ModifyEvent e) {
-				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && !updateInProgress.get()) {
-					EEFTextLifecycleManager.this.isDirty = true;
+		this.modifyListener = (event) -> {
+			if (!this.container.isRenderingInProgress() && !updateInProgress.get()) {
+				this.isDirty = true;
 
-					List<EObject> elements = new ArrayList<EObject>();
-					Object object = EEFTextLifecycleManager.this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
-					if (object instanceof EObject) {
-						elements.add((EObject) object);
-					}
-					EEFTextLifecycleManager.this.contextAdapter.lock(elements);
+				List<EObject> elements = new ArrayList<EObject>();
+				Object object = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+				if (object instanceof EObject) {
+					elements.add((EObject) object);
 				}
+				this.contextAdapter.lock(elements);
 			}
 		};
 		this.text.addModifyListener(this.modifyListener);
@@ -265,22 +260,19 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			this.text.addKeyListener(this.keyListener);
 		}
 
-		this.controller.onNewValue(new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				if (!text.isDisposed()) {
-					String display = ""; //$NON-NLS-1$
-					if (value != null) {
-						display = Util.firstNonNull(value.toString(), display);
-					}
-					if (!(text.getText() != null && text.getText().equals(display))) {
-						text.setText(display);
-						referenceValue = text.getText();
-					}
-					EEFTextLifecycleManager.this.setStyle();
-					if (!text.isEnabled()) {
-						text.setEnabled(true);
-					}
+		this.controller.onNewValue((value) -> {
+			if (!text.isDisposed()) {
+				String display = ""; //$NON-NLS-1$
+				if (value != null) {
+					display = Util.firstNonNull(value.toString(), display);
+				}
+				if (!(text.getText() != null && text.getText().equals(display))) {
+					text.setText(display);
+					referenceValue = text.getText();
+				}
+				this.setStyle();
+				if (!text.isEnabled()) {
+					text.setEnabled(true);
 				}
 			}
 		});

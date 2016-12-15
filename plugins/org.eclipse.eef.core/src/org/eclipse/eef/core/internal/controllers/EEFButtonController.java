@@ -87,13 +87,10 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 
 	@Override
 	public IStatus pushed() {
-		return contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String pushExpression = EEFButtonController.this.description.getPushExpression();
-				EAttribute attr = EefPackage.Literals.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION;
-				EEFButtonController.this.newEval().logIfBlank(attr).call(pushExpression);
-			}
+		return contextAdapter.performModelChange(() -> {
+			String pushExpression = this.description.getPushExpression();
+			EAttribute attr = EefPackage.Literals.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION;
+			this.newEval().logIfBlank(attr).call(pushExpression);
 		});
 	}
 }
