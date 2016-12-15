@@ -76,18 +76,15 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 
 	@Override
 	public IStatus updateValue(final Object text) {
-		return contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String editExpression = EEFRadioController.this.description.getEditExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION;
+		return contextAdapter.performModelChange(() -> {
+			String editExpression = this.description.getEditExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFRadioController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-				EvalFactory.of(EEFRadioController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 		});
 	}
 
@@ -102,16 +99,13 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 		String candidatesExpression = this.description.getCandidatesExpression();
 		EAttribute candidatesExpressionEAttribute = EefPackage.Literals.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION;
 
-		this.newEval().logIfBlank(candidatesExpressionEAttribute).call(candidatesExpression, new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				if (value instanceof Iterable<?>) {
-					List<Object> candidates = new ArrayList<Object>();
-					for (Object iterator : (Iterable<?>) value) {
-						candidates.add(iterator);
-					}
-					EEFRadioController.this.newCandidatesConsumer.apply(candidates);
-				}
+		this.newEval().logIfBlank(candidatesExpressionEAttribute).call(candidatesExpression, (value) -> {
+			if (value instanceof Iterable<?>) {
+				List<Object> candidates = new ArrayList<Object>();
+
+				((Iterable<?>) value).forEach(object -> candidates.add(object));
+
+				this.newCandidatesConsumer.apply(candidates);
 			}
 		});
 

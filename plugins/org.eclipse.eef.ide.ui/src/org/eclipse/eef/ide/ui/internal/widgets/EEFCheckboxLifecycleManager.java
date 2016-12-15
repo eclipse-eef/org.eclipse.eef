@@ -21,7 +21,6 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFCheckboxController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
@@ -154,14 +153,13 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
-		this.getController().onNewLabel(new IConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				if (!checkbox.isDisposed() && !(checkbox.getText() != null && checkbox.getText().equals(value))) {
-					checkbox.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
-				}
+
+		this.getController().onNewLabel((value) -> {
+			if (!this.checkbox.isDisposed() && !(this.checkbox.getText() != null && this.checkbox.getText().equals(value))) {
+				this.checkbox.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 			}
 		});
+
 		// UI edited by user => update model if possible, revert UI change otherwise
 		this.selectionListener = new SelectionListener() {
 			@Override
@@ -183,14 +181,11 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 		this.checkbox.addSelectionListener(this.selectionListener);
 
 		// Model changed => update UI
-		this.controller.onNewValue(new IConsumer<Boolean>() {
-			@Override
-			public void apply(Boolean value) {
-				if (!checkbox.isDisposed()) {
-					if (value != null && checkbox.getSelection() != value.booleanValue()) {
-						checkbox.setSelection(value.booleanValue());
-						referenceValue = value.booleanValue();
-					}
+		this.controller.onNewValue((value) -> {
+			if (!checkbox.isDisposed()) {
+				if (value != null && checkbox.getSelection() != value.booleanValue()) {
+					checkbox.setSelection(value.booleanValue());
+					referenceValue = value.booleanValue();
 				}
 			}
 		});

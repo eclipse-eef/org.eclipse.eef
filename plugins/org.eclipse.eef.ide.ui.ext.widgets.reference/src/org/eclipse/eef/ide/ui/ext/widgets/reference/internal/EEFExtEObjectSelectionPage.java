@@ -26,7 +26,6 @@ import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.wizard.WizardPage;
@@ -131,8 +130,8 @@ public class EEFExtEObjectSelectionPage extends WizardPage {
 		label.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 2, 1));
 
 		this.eObjectTreeViewer = new TreeViewer(new Tree(parent, SWT.SINGLE | SWT.FULL_SELECTION | SWT.BORDER));
-		this.eObjectTreeViewer.setLabelProvider(new DelegatingStyledCellLabelProvider(new AdapterFactoryLabelProvider.StyledLabelProvider(
-				this.composedAdapterFactory, this.eObjectTreeViewer)));
+		this.eObjectTreeViewer.setLabelProvider(new DelegatingStyledCellLabelProvider(
+				new AdapterFactoryLabelProvider.StyledLabelProvider(this.composedAdapterFactory, this.eObjectTreeViewer)));
 		this.eObjectTreeViewer.setContentProvider(new AdapterFactoryContentProvider(this.composedAdapterFactory));
 		this.eObjectTreeViewer.setAutoExpandLevel(2);
 
@@ -142,12 +141,7 @@ public class EEFExtEObjectSelectionPage extends WizardPage {
 		List<ViewerFilter> viewFilters = EEFExtReferenceUIPlugin.getPlugin().getViewFilters(ContextKind.EOBJECT_SELECTION);
 		this.eObjectTreeViewer.setFilters(viewFilters.toArray(new ViewerFilter[viewFilters.size()]));
 
-		this.eObjectTreeViewerListener = new ISelectionChangedListener() {
-			@Override
-			public void selectionChanged(SelectionChangedEvent event) {
-				EEFExtEObjectSelectionPage.this.determinePageCompletion();
-			}
-		};
+		this.eObjectTreeViewerListener = (event) -> this.determinePageCompletion();
 		this.eObjectTreeViewer.addSelectionChangedListener(this.eObjectTreeViewerListener);
 	}
 

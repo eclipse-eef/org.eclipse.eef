@@ -104,25 +104,22 @@ public class EEFViewImpl implements EEFView {
 			Boolean preconditionValid = EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class)
 					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
-				IConsumer<Object> consumer = new IConsumer<Object>() {
-					@Override
-					public void apply(Object value) {
-						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester);
-						Iterable<Object> iterable = Util.asIterable(value, Object.class);
-						Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
+				IConsumer<Object> consumer = (value) -> {
+					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester);
+					Iterable<Object> iterable = Util.asIterable(value, Object.class);
+					Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
 
-						boolean isUnique = true;
-						Iterator<Object> iterator = objects.iterator();
-						while (iterator.hasNext()) {
-							Object object = iterator.next();
+					boolean isUnique = true;
+					Iterator<Object> iterator = objects.iterator();
+					while (iterator.hasNext()) {
+						Object object = iterator.next();
 
-							if (isUnique && iterator.hasNext()) {
-								isUnique = false;
-							}
-							EEFPageImpl ePage = createPage(eefPageDescription, object, isUnique);
-							ePage.initialize();
-							EEFViewImpl.this.eefPages.add(ePage);
+						if (isUnique && iterator.hasNext()) {
+							isUnique = false;
 						}
+						EEFPageImpl ePage = createPage(eefPageDescription, object, isUnique);
+						ePage.initialize();
+						this.eefPages.add(ePage);
 					}
 				};
 
@@ -189,14 +186,9 @@ public class EEFViewImpl implements EEFView {
 			// All your update process for EEFPages need to be updated. It's not simple in any way or shape, I know.
 
 			for (final EEFPage eefPage : this.eefPages) {
-				IConsumer<Object> pageConsumer = new IConsumer<Object>() {
-					@Override
-					public void apply(Object value) {
-						for (Object pageSemanticCandidate : Util.asIterable(value, Object.class)) {
-							eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
-						}
-					}
-				};
+				IConsumer<Object> pageConsumer = (value) -> Util.asIterable(value, Object.class).forEach(pageSemanticCandidate -> {
+					eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
+				});
 
 				// If the semantic candidate expression is blank, we will use the variable self of the view
 				Object viewSelf = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
@@ -205,16 +197,11 @@ public class EEFViewImpl implements EEFView {
 
 				List<EEFGroup> groups = eefPage.getGroups();
 				for (final EEFGroup eefGroup : groups) {
-					IConsumer<Object> groupConsumer = new IConsumer<Object>() {
-						@Override
-						public void apply(Object value) {
-							// FIXME We need only one semantic candidate, so we just take the last one available as self
-							// as we did for the pages just before
-							for (Object groupSemanticCandidate : Util.asIterable(value, Object.class)) {
-								eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, groupSemanticCandidate);
-							}
-						}
-					};
+					// FIXME We need only one semantic candidate, so we just take the last one available as self
+					// as we did for the pages just before
+					IConsumer<Object> groupConsumer = (value) -> Util.asIterable(value, Object.class).forEach(groupSemanticCandidate -> {
+						eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, groupSemanticCandidate);
+					});
 
 					// If the semantic candidate expression is blank, we will use the variable self of the page
 					Object pageSelf = eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF);
