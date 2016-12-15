@@ -19,7 +19,6 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
@@ -157,12 +156,9 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		};
 		this.button.addSelectionListener(this.selectionListener);
 
-		this.controller.onNewButtonLabel(new IConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				if (!button.isDisposed() && !(button.getText() != null && button.getText().equals(value))) {
-					button.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
-				}
+		this.controller.onNewButtonLabel((value) -> {
+			if (!button.isDisposed() && !(button.getText() != null && button.getText().equals(value))) {
+				button.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 			}
 		});
 	}

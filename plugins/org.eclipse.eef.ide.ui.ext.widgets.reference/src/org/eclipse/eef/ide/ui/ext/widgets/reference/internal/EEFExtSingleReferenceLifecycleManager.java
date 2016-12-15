@@ -105,17 +105,17 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 		if (!this.eReference.isContainment()) {
 			buttonsComposite.setLayout(new GridLayout(3, true));
 
-			Image browseImage = ExtendedImageRegistry.INSTANCE.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(
-					EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH));
+			Image browseImage = ExtendedImageRegistry.INSTANCE
+					.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH));
 			this.browseButton = this.createButton(buttonsComposite, browseImage);
 		} else {
 			buttonsComposite.setLayout(new GridLayout(2, true));
 		}
 
-		Image addImage = ExtendedImageRegistry.INSTANCE.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(
-				EEFExtReferenceUIPlugin.Implementation.ADD_ICON_PATH));
-		Image removeImage = ExtendedImageRegistry.INSTANCE.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(
-				EEFExtReferenceUIPlugin.Implementation.REMOVE_ICON_PATH));
+		Image addImage = ExtendedImageRegistry.INSTANCE
+				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.ADD_ICON_PATH));
+		Image removeImage = ExtendedImageRegistry.INSTANCE
+				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.REMOVE_ICON_PATH));
 		this.addButton = this.createButton(buttonsComposite, addImage);
 		this.removeButton = this.createButton(buttonsComposite, removeImage);
 
@@ -202,12 +202,7 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	@Override
 	protected void removeButtonCallback() {
-		this.contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				target.eUnset(eReference);
-			}
-		});
+		this.contextAdapter.performModelChange(() -> target.eUnset(eReference));
 	}
 
 	/**
