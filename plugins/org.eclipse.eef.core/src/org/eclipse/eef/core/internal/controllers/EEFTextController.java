@@ -69,18 +69,15 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 
 	@Override
 	public IStatus updateValue(final String text) {
-		return this.contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String editExpression = EEFTextController.this.description.getEditExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
+		return this.contextAdapter.performModelChange(() -> {
+			String editExpression = this.description.getEditExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFTextController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-				EvalFactory.of(EEFTextController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 		});
 	}
 
