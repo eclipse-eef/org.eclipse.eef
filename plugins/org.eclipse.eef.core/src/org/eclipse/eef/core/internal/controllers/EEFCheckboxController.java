@@ -69,18 +69,15 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 
 	@Override
 	public IStatus updateValue(final boolean checkbox) {
-		return contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String editExpression = EEFCheckboxController.this.description.getEditExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION;
+		return contextAdapter.performModelChange(() -> {
+			String editExpression = this.description.getEditExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFCheckboxController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFCheckbox.NEW_VALUE, Boolean.valueOf(checkbox));
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFCheckbox.NEW_VALUE, Boolean.valueOf(checkbox));
 
-				EvalFactory.of(EEFCheckboxController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 		});
 	}
 

@@ -25,7 +25,6 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
@@ -153,12 +152,8 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		this.section.setText(""); //$NON-NLS-1$
 
 		String labelExpression = this.description.getLabelExpression();
-		EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(String.class).call(labelExpression, new IConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				EEFGroupLifecycleManager.this.section.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
-			}
-		});
+		EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(String.class).call(labelExpression,
+				(value) -> this.section.setText(Objects.firstNonNull(value, ""))); //$NON-NLS-1$
 
 		this.section.setLayout(new GridLayout(1, false));
 		GridData sectionLayoutData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
@@ -293,16 +288,9 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.controller.onNewLabel(new IConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				EEFGroupLifecycleManager.this.section.setText(value);
-			}
-		});
+		this.controller.onNewLabel((value) -> this.section.setText(value));
 
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.aboutToBeShown();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeShown);
 	}
 
 	/**
@@ -314,9 +302,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	public void refresh() {
 		super.refresh();
 
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.refresh();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::refresh);
 	}
 
 	/**
@@ -330,9 +316,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.controller.removeNewLabelConsumer();
 
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.aboutToBeHidden();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeHidden);
 	}
 
 	/**
@@ -342,9 +326,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	 */
 	@Override
 	public void dispose() {
-		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
-			lifecycleManager.dispose();
-		}
+		this.lifecycleManagers.forEach(IEEFLifecycleManager::dispose);
 	}
 
 }

@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import com.google.common.collect.Iterators;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,18 +78,15 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 
 	@Override
 	public IStatus updateValue(final Object text) {
-		return contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String editExpression = EEFSelectController.this.description.getEditExpression();
-				EAttribute eAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION;
+		return contextAdapter.performModelChange(() -> {
+			String editExpression = this.description.getEditExpression();
+			EAttribute eAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION;
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(EEFSelectController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, text);
 
-				EvalFactory.of(EEFSelectController.this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
-			}
+			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(editExpression);
 		});
 	}
 
@@ -103,16 +102,13 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 		String candidatesExpression = this.description.getCandidatesExpression();
 		EAttribute candidatesExpressionEAttribute = EefPackage.Literals.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION;
 
-		this.newEval().logIfBlank(candidatesExpressionEAttribute).call(candidatesExpression, new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				if (value instanceof Iterable<?>) {
-					List<Object> candidates = new ArrayList<Object>();
-					for (Object iterator : (Iterable<?>) value) {
-						candidates.add(iterator);
-					}
-					EEFSelectController.this.newCandidatesConsumer.apply(candidates);
-				}
+		this.newEval().logIfBlank(candidatesExpressionEAttribute).call(candidatesExpression, (value) -> {
+			if (value instanceof Iterable<?>) {
+				List<Object> candidates = new ArrayList<Object>();
+
+				Iterators.addAll(candidates, ((Iterable<?>) value).iterator());
+
+				this.newCandidatesConsumer.apply(candidates);
 			}
 		});
 

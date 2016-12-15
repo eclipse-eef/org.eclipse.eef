@@ -191,14 +191,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 * Initializes the browse button.
 	 */
 	private void initializeBrowseButton() {
-		final Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				AbstractEEFExtReferenceLifecycleManager.this.browseButtonCallback();
-			}
-		};
-
-		this.browseButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
+		this.browseButtonListener = new ButtonSelectionListener(this.contextAdapter, () -> this.browseButtonCallback());
 		this.browseButton.addSelectionListener(this.browseButtonListener);
 		this.browseButton.setToolTipText(Messages.ReferenceBrowseButton_tooltipText);
 	}
@@ -212,14 +205,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 * Initializes the add button.
 	 */
 	private void initializeAddButton() {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				AbstractEEFExtReferenceLifecycleManager.this.addButtonCallback();
-			}
-		};
-
-		this.addButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
+		this.addButtonListener = new ButtonSelectionListener(this.contextAdapter, () -> this.addButtonCallback());
 		this.addButton.addSelectionListener(this.addButtonListener);
 		this.addButton.setToolTipText(Messages.ReferenceAddButton_tooltipText);
 	}
@@ -233,13 +219,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 * Initializes the remove button.
 	 */
 	private void initializeRemoveButton() {
-		Runnable runnable = new Runnable() {
-			@Override
-			public void run() {
-				AbstractEEFExtReferenceLifecycleManager.this.removeButtonCallback();
-			}
-		};
-		this.removeButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
+		this.removeButtonListener = new ButtonSelectionListener(this.contextAdapter, () -> this.removeButtonCallback());
 		this.removeButton.addSelectionListener(this.removeButtonListener);
 		if (this.eReference.isContainment()) {
 			this.removeButton.setToolTipText(Messages.ReferenceRemoveButton_containmentTooltipText);

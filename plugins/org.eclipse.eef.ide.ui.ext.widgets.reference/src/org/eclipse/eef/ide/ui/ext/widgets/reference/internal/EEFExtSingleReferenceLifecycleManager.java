@@ -179,12 +179,7 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	@Override
 	protected void removeButtonCallback() {
-		this.contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				target.eUnset(eReference);
-			}
-		});
+		this.contextAdapter.performModelChange(() -> target.eUnset(eReference));
 	}
 
 	/**
