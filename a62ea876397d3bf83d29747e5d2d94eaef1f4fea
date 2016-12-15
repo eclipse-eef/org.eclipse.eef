@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c23755_a3e90b7a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/META-INF/MANIFEST.MF",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-15T08:16:07Z",
+      "side": 0,
+      "message": "I think that we should keep this :)",
+      "range": {
+        "startLine": 27,
+        "startChar": 49,
+        "endLine": 27,
+        "endChar": 66
+      },
+      "revId": "a62ea876397d3bf83d29747e5d2d94eaef1f4fea",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
