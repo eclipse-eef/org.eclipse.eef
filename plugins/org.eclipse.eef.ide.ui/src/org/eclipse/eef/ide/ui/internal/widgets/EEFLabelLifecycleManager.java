@@ -25,7 +25,6 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
@@ -187,15 +186,12 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.controller.onNewValue(new IConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				if (!body.isDisposed()) {
-					if (!(body.getText() != null && body.getText().equals(value))) {
-						body.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
-					}
-					EEFLabelLifecycleManager.this.setStyle();
+		this.controller.onNewValue((value) -> {
+			if (!body.isDisposed()) {
+				if (!(body.getText() != null && body.getText().equals(value))) {
+					body.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
 				}
+				this.setStyle();
 			}
 		});
 
@@ -243,11 +239,8 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		if (!this.body.isDisposed()) {
 			this.body.setEnabled(isEnabled);
 		}
-		for (ActionButton actionButton : this.actionButtons) {
-			if (!actionButton.getButton().isDisposed()) {
-				actionButton.setEnabled(isEnabled);
-			}
-		}
+		this.actionButtons.stream().filter(actionButton -> !actionButton.getButton().isDisposed())
+				.forEach(actionButton -> actionButton.setEnabled(isEnabled));
 	}
 
 	/**
@@ -258,9 +251,8 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	@Override
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
-		for (ActionButton actionButton : this.actionButtons) {
-			actionButton.removeSelectionListener();
-		}
+
+		this.actionButtons.forEach(ActionButton::removeSelectionListener);
 
 		this.controller.removeNewValueConsumer();
 	}

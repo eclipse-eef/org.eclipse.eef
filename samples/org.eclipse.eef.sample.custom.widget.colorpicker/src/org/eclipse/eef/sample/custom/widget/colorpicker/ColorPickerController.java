@@ -83,24 +83,21 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 		super.refresh();
 
 		String valueExpression = getCustomExpression(VALUE_EXPRESSION_ID);
-		this.newEval().logIfInvalidType(String.class).call(valueExpression, new IConsumer<String>() {
-			@Override
-			public void apply(String value) {
-				int red = DEFAULT_COLOR_CODE;
-				int green = DEFAULT_COLOR_CODE;
-				int blue = DEFAULT_COLOR_CODE;
-				if (value != null) {
-					String[] rgb = value.split(SEPARATOR);
-					if (rgb.length == 3) {
-						try {
-							red = Integer.parseInt(rgb[0]);
-							green = Integer.parseInt(rgb[1]);
-							blue = Integer.parseInt(rgb[2]);
-							Color color = ColorHelper.getColor(red, green, blue);
-							ColorPickerController.this.newValueConsumer.apply(color);
-						} catch (NumberFormatException e) {
-							// TODO Log warning about unexpected result format from the expression.
-						}
+		this.newEval().logIfInvalidType(String.class).call(valueExpression, (value) -> {
+			int red = DEFAULT_COLOR_CODE;
+			int green = DEFAULT_COLOR_CODE;
+			int blue = DEFAULT_COLOR_CODE;
+			if (value != null) {
+				String[] rgb = value.split(SEPARATOR);
+				if (rgb.length == 3) {
+					try {
+						red = Integer.parseInt(rgb[0]);
+						green = Integer.parseInt(rgb[1]);
+						blue = Integer.parseInt(rgb[2]);
+						Color color = ColorHelper.getColor(red, green, blue);
+						ColorPickerController.this.newValueConsumer.apply(color);
+					} catch (NumberFormatException e) {
+						// TODO Log warning about unexpected result format from the expression.
 					}
 				}
 			}
@@ -124,17 +121,14 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 
 	@Override
 	public void updateValue(final RGB color) {
-		contextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);
+		contextAdapter.performModelChange(() -> {
+			String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);
 
-				Map<String, Object> variables = new HashMap<String, Object>();
-				variables.putAll(ColorPickerController.this.variableManager.getVariables());
-				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, color.red + SEPARATOR + color.green + SEPARATOR + color.blue);
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, color.red + SEPARATOR + color.green + SEPARATOR + color.blue);
 
-				EvalFactory.of(ColorPickerController.this.interpreter, variables).call(editExpression);
-			}
+			EvalFactory.of(this.interpreter, variables).call(editExpression);
 		});
 	}
 

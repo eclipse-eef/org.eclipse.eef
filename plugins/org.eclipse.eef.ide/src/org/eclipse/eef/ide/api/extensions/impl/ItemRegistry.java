@@ -30,8 +30,7 @@ import org.eclipse.eef.ide.api.extensions.IItemRegistry;
 public class ItemRegistry<T> implements IItemRegistry<T> {
 
 	/**
-	 * The map of the identifier of the description to the
-	 * {@link IItemDescriptor}.
+	 * The map of the identifier of the description to the {@link IItemDescriptor}.
 	 */
 	private Map<String, IItemDescriptor<T>> id2descriptors = new HashMap<String, IItemDescriptor<T>>();
 
@@ -44,9 +43,7 @@ public class ItemRegistry<T> implements IItemRegistry<T> {
 	public List<IItemDescriptor<T>> getItemDescriptors() {
 		List<IItemDescriptor<T>> descriptors = new ArrayList<IItemDescriptor<T>>();
 		Collection<IItemDescriptor<T>> values = this.id2descriptors.values();
-		for (IItemDescriptor<T> iItemDescriptor : values) {
-			descriptors.add(iItemDescriptor);
-		}
+		descriptors.addAll(values);
 		return descriptors;
 	}
 

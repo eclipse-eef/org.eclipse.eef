@@ -75,12 +75,6 @@ public class EEFSectionDescriptor extends AbstractEEFSectionDescriptor {
 	 */
 	@Override
 	public IFilter getFilter() {
-		return new IFilter() {
-
-			@Override
-			public boolean select(Object toTest) {
-				return true;
-			}
-		};
+		return (object) -> true;
 	}
 }
