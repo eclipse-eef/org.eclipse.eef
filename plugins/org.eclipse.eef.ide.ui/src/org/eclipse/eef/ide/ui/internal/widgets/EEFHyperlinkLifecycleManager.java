@@ -23,7 +23,6 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFHyperlinkController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
@@ -204,19 +203,16 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		this.hyperlinkListener = new EEFHyperlinkListener(this, this.hyperlink, this.container, this.controller);
 		hyperlink.addMouseListener(hyperlinkListener);
 
-		this.controller.onNewValue(new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				if (!hyperlink.isDisposed()) {
-					if (!(hyperlink.getText() != null && hyperlink.getText().equals(value))) {
-						String text = controller.computeDisplayValue(value);
-						hyperlink.setText(text);
-						hyperlink.setData(value);
-					}
-					EEFHyperlinkLifecycleManager.this.setStyle();
-					if (!hyperlink.isEnabled()) {
-						hyperlink.setEnabled(true);
-					}
+		this.controller.onNewValue((value) -> {
+			if (!hyperlink.isDisposed()) {
+				if (!(hyperlink.getText() != null && hyperlink.getText().equals(value))) {
+					String text = controller.computeDisplayValue(value);
+					hyperlink.setText(text);
+					hyperlink.setData(value);
+				}
+				this.setStyle();
+				if (!hyperlink.isEnabled()) {
+					hyperlink.setEnabled(true);
 				}
 			}
 		});
@@ -295,9 +291,7 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 			this.hyperlink.removeMouseListener(this.hyperlinkListener);
 		}
 
-		for (ActionButton actionButton : this.actionButtons) {
-			actionButton.removeSelectionListener();
-		}
+		this.actionButtons.forEach(ActionButton::removeSelectionListener);
 
 		this.controller.removeNewValueConsumer();
 	}
@@ -312,11 +306,8 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 		if (!this.hyperlink.isDisposed()) {
 			this.hyperlink.setEnabled(isEnabled);
 		}
-		for (ActionButton actionButton : this.actionButtons) {
-			if (!actionButton.getButton().isDisposed()) {
-				actionButton.setEnabled(isEnabled);
-			}
-		}
+		this.actionButtons.stream().filter(actionButton -> !actionButton.getButton().isDisposed())
+				.forEach(actionButton -> actionButton.setEnabled(isEnabled));
 	}
 
 	/**

@@ -21,7 +21,6 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFListController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
@@ -219,14 +218,11 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.tableSelectionListener = new EEFListSelectionListener(this.controller);
 		this.tableViewer.getTable().addSelectionListener(tableSelectionListener);
 
-		this.controller.onNewValue(new IConsumer<Object>() {
-			@Override
-			public void apply(Object value) {
-				if (value == null) {
-					return;
-				}
-				EEFListLifecycleManager.this.setListValue(value);
+		this.controller.onNewValue((value) -> {
+			if (value == null) {
+				return;
 			}
+			this.setListValue(value);
 		});
 
 		for (final ActionButton actionButton : actionButtons) {
@@ -283,17 +279,12 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 */
 	@Override
 	protected void setEnabled(boolean isEnabled) {
-		if (!this.tableViewer.getTable().isDisposed()) {
-			if (this.tableViewer != null && this.tableViewer.getTable() != null) {
-				this.tableViewer.getTable().setBackground(this.getBackgroundColor(isEnabled));
-			}
+		if (this.tableViewer != null && this.tableViewer.getTable() != null && !this.tableViewer.getTable().isDisposed()) {
+			this.tableViewer.getTable().setBackground(this.getBackgroundColor(isEnabled));
 			this.tableViewer.getTable().setEnabled(isEnabled);
 		}
-		for (ActionButton actionButton : this.actionButtons) {
-			if (!actionButton.getButton().isDisposed()) {
-				actionButton.setEnabled(isEnabled);
-			}
-		}
+		this.actionButtons.stream().filter(actionButton -> !actionButton.getButton().isDisposed())
+				.forEach(actionButton -> actionButton.setEnabled(isEnabled));
 	}
 
 	/**
@@ -321,9 +312,7 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
 
-		for (ActionButton actionButton : this.actionButtons) {
-			actionButton.removeSelectionListener();
-		}
+		this.actionButtons.forEach(ActionButton::removeSelectionListener);
 
 		if (this.tableViewer != null && this.tableViewer.getTable() != null && !this.tableViewer.getTable().isDisposed()) {
 			this.tableViewer.getTable().removeSelectionListener(this.tableSelectionListener);
