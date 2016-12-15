@@ -15,7 +15,6 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -23,7 +22,6 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.ColorDialog;
 import org.eclipse.swt.widgets.Composite;
@@ -131,14 +129,11 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
 		};
 		this.colorPicker.addMouseListener(mouseListener);
 
-		this.controller.onNewValue(new IConsumer<Color>() {
-			@Override
-			public void apply(Color value) {
-				if (!colorPicker.isDisposed() && !(colorPicker.getBackground() != null && colorPicker.getBackground().equals(value))) {
-					colorPicker.setImage(colorPicker.getColorImage(value));
-					if (!colorPicker.isEnabled()) {
-						colorPicker.setEnabled(true);
-					}
+		this.controller.onNewValue((value) -> {
+			if (!colorPicker.isDisposed() && !(colorPicker.getBackground() != null && colorPicker.getBackground().equals(value))) {
+				colorPicker.setImage(colorPicker.getColorImage(value));
+				if (!colorPicker.isEnabled()) {
+					colorPicker.setEnabled(true);
 				}
 			}
 		});

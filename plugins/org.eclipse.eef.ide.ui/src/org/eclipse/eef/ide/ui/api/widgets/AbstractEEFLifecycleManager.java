@@ -10,10 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.api.widgets;
 
-import java.util.List;
-
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFController;
 import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
 import org.eclipse.eef.core.api.controllers.IValidationRuleResult;
@@ -51,26 +48,23 @@ public abstract class AbstractEEFLifecycleManager implements IEEFLifecycleManage
 	 */
 	@Override
 	public void aboutToBeShown() {
-		this.getController().onValidation(new IConsumer<List<IValidationRuleResult>>() {
-			@Override
-			public void apply(List<IValidationRuleResult> validationRuleResults) {
-				IMessageManager messageManager = container.getForm().getMessageManager();
+		this.getController().onValidation((validationRuleResults) -> {
+			IMessageManager messageManager = container.getForm().getMessageManager();
 
-				for (IValidationRuleResult validationRuleResult : validationRuleResults) {
-					if (validationRuleResult instanceof IInvalidValidationRuleResult) {
-						IInvalidValidationRuleResult result = (IInvalidValidationRuleResult) validationRuleResult;
-						if (getValidationControl() != null) {
-							messageManager.addMessage(result.getValidationRule(), result.getMessage(), result.getData(), result.getSeverity(),
-									getValidationControl());
-						} else {
-							messageManager.addMessage(result.getValidationRule(), result.getMessage(), result.getData(), result.getSeverity());
-						}
+			for (IValidationRuleResult validationRuleResult : validationRuleResults) {
+				if (validationRuleResult instanceof IInvalidValidationRuleResult) {
+					IInvalidValidationRuleResult result = (IInvalidValidationRuleResult) validationRuleResult;
+					if (getValidationControl() != null) {
+						messageManager.addMessage(result.getValidationRule(), result.getMessage(), result.getData(), result.getSeverity(),
+								getValidationControl());
 					} else {
-						if (getValidationControl() != null) {
-							messageManager.removeMessage(validationRuleResult.getValidationRule(), getValidationControl());
-						} else {
-							messageManager.removeMessage(validationRuleResult.getValidationRule());
-						}
+						messageManager.addMessage(result.getValidationRule(), result.getMessage(), result.getData(), result.getSeverity());
+					}
+				} else {
+					if (getValidationControl() != null) {
+						messageManager.removeMessage(validationRuleResult.getValidationRule(), getValidationControl());
+					} else {
+						messageManager.removeMessage(validationRuleResult.getValidationRule());
 					}
 				}
 			}
