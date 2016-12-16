@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2016 Obeo.&#xA;All rights reserved. This program and the accompanying materials &#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.htm&#xA;Contributors: Obeo - initial API and implementation"
+    modelDirectory="/org.eclipse.eef.ext.widgets.nebula/src-gen" editDirectory="/org.eclipse.eef.ext.widgets.nebula.edit/src-gen"
+    editorDirectory="/org.eclipse.eef.ext.widgets.nebula.editor/src-gen" modelPluginID="org.eclipse.eef.ext.widgets.nebula"
+    modelName="Eef-ext-widgets-nebula" editPluginClass="org.eclipse.eef.ext.widgets.nebula.eefextwidgetsnebula.provider.EefextwidgetsnebulaEditPlugin"
+    editorPluginClass="org.eclipse.eef.ext.widgets.nebula.eefextwidgetsnebula.presentation.EefextwidgetsnebulaEditorPlugin"
+    nonNLSMarkers="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" testsDirectory="/org.eclipse.eef.ext.widgets.nebula.tests/src-gen"
+    testSuiteClass="org.eclipse.eef.ext.widgets.nebula.eefextwidgetsnebula.tests.EefextwidgetsnebulaAllTests"
+    importerID="org.eclipse.emf.importer.ecore" containmentProxies="true" complianceLevel="7.0"
+    copyrightFields="false" runtimeVersion="2.10" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.eef/model/eef.genmodel#//eef"
+    interfaceNamePattern="" importOrganizing="true" cleanup="true">
+  <foreignModel>eef-ext-widgets-nebula.ecore</foreignModel>
+  <genPackages prefix="EefExtWidgetsNebula" basePackage="org.eclipse.eef.ext.widgets.nebula"
+      disposableProviderFactory="true" ecorePackage="eef-ext-widgets-nebula.ecore#/">
+    <genClasses ecoreClass="eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextDescription/valueExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextDescription/editExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextDescription/style"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextDescription/conditionalStyles"/>
+    </genClasses>
+    <genClasses ecoreClass="eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextWidgetStyle"/>
+    <genClasses ecoreClass="eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextConditionalStyle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef-ext-widgets-nebula.ecore#//EEFExtNebulaRichTextConditionalStyle/style"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

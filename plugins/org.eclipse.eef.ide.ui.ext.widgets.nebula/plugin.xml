@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider">
+      <descriptor
+            class="org.eclipse.eef.ide.ui.ext.widgets.nebula.internal.EEFExtNebulaRichTextLifecycleManagerProvider"
+            description="%eefExtNebulaRichTextLifecycleManagerProvider.Description"
+            id="org.eclipse.eef.ide.ui.ext.widgets.nebula.EEFExtNebulaRichTextLifecycleManagerProvider"
+            label="%eefExtNebulaRichTextLifecycleManagerProvider.Name">
+      </descriptor>
+   </extension>
+
+</plugin>
