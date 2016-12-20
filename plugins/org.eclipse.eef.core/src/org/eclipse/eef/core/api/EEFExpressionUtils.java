@@ -59,6 +59,25 @@ public final class EEFExpressionUtils {
 	}
 
 	/**
+	 * Utility class containing the constants related to the image viewer widgets.
+	 *
+	 * @author arichard
+	 */
+	public final class EEFImageViewer {
+		/**
+		 * The name of the variable newPath.
+		 */
+		public static final String NEW_PATH = "newPath"; //$NON-NLS-1$
+
+		/**
+		 * The constructor.
+		 */
+		private EEFImageViewer() {
+			// prevent instantiation
+		}
+	}
+
+	/**
 	 * Utility class containing the constants related to the Checkbox widget.
 	 *
 	 * @author mbats

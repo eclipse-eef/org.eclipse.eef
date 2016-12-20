@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef.impl;
 
+import org.eclipse.eef.*;
 import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFButtonStyle;
@@ -66,13 +67,12 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static EefFactory init() {
@@ -88,8 +88,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
-	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EefFactoryImpl() {
@@ -98,7 +98,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -138,6 +137,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFRadioDescription();
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION:
 			return createEEFHyperlinkDescription();
+		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION:
+			return createEEFImageViewerDescription();
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR:
 			return createEEFDynamicMappingFor();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF:
@@ -162,6 +163,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFRadioStyle();
 		case EefPackage.EEF_HYPERLINK_STYLE:
 			return createEEFHyperlinkStyle();
+		case EefPackage.EEF_IMAGE_VIEWER_STYLE:
+			return createEEFImageViewerStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_STYLE:
 			return createEEFCustomWidgetStyle();
 		case EefPackage.EEF_LIST_STYLE:
@@ -182,6 +185,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFRadioConditionalStyle();
 		case EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE:
 			return createEEFHyperlinkConditionalStyle();
+		case EefPackage.EEF_IMAGE_VIEWER_CONDITIONAL_STYLE:
+			return createEEFImageViewerConditionalStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE:
 			return createEEFCustomWidgetConditionalStyle();
 		case EefPackage.EEF_WIDGET_ACTION:
@@ -197,7 +202,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -218,7 +222,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -239,7 +242,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +252,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -261,7 +262,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -272,7 +272,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +282,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -294,7 +292,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -305,7 +302,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -316,7 +312,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +322,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -338,7 +332,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -349,7 +342,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -360,7 +352,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -371,7 +362,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -382,7 +372,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -393,7 +382,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -404,7 +392,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -415,7 +402,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -425,8 +411,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEFImageViewerDescription createEEFImageViewerDescription() {
+		EEFImageViewerDescriptionImpl eefImageViewerDescription = new EEFImageViewerDescriptionImpl();
+		return eefImageViewerDescription;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -437,7 +433,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -448,7 +443,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -459,7 +453,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -470,7 +463,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -481,7 +473,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -492,7 +483,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -503,7 +493,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -514,7 +503,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -525,7 +513,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -536,7 +523,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -547,7 +533,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -557,8 +542,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEFImageViewerStyle createEEFImageViewerStyle() {
+		EEFImageViewerStyleImpl eefImageViewerStyle = new EEFImageViewerStyleImpl();
+		return eefImageViewerStyle;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -569,7 +564,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -580,7 +574,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -591,7 +584,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -602,7 +594,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -613,7 +604,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -624,7 +614,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -635,7 +624,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -646,7 +634,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -657,7 +644,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -667,8 +653,18 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEFImageViewerConditionalStyle createEEFImageViewerConditionalStyle() {
+		EEFImageViewerConditionalStyleImpl eefImageViewerConditionalStyle = new EEFImageViewerConditionalStyleImpl();
+		return eefImageViewerConditionalStyle;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -679,7 +675,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -690,7 +685,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -701,7 +695,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -712,20 +705,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_VALIDATION_SEVERITY_DESCRIPTION createEEF_VALIDATION_SEVERITY_DESCRIPTIONFromString(EDataType eDataType, String initialValue) {
 		EEF_VALIDATION_SEVERITY_DESCRIPTION result = EEF_VALIDATION_SEVERITY_DESCRIPTION.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_VALIDATION_SEVERITY_DESCRIPTIONToString(EDataType eDataType, Object instanceValue) {
@@ -734,20 +724,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_FILL_LAYOUT_ORIENTATION createEEF_FILL_LAYOUT_ORIENTATIONFromString(EDataType eDataType, String initialValue) {
 		EEF_FILL_LAYOUT_ORIENTATION result = EEF_FILL_LAYOUT_ORIENTATION.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_FILL_LAYOUT_ORIENTATIONToString(EDataType eDataType, Object instanceValue) {
@@ -756,20 +743,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_TOGGLE_STYLE createEEF_TOGGLE_STYLEFromString(EDataType eDataType, String initialValue) {
 		EEF_TOGGLE_STYLE result = EEF_TOGGLE_STYLE.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_TOGGLE_STYLEToString(EDataType eDataType, Object instanceValue) {
@@ -778,20 +762,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEF_TITLE_BAR_STYLE createEEF_TITLE_BAR_STYLEFromString(EDataType eDataType, String initialValue) {
 		EEF_TITLE_BAR_STYLE result = EEF_TITLE_BAR_STYLE.get(initialValue);
-		if (result == null) {
+		if (result == null)
 			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public String convertEEF_TITLE_BAR_STYLEToString(EDataType eDataType, Object instanceValue) {
@@ -800,7 +781,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -810,7 +790,6 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @deprecated
 	 * @generated
 	 */

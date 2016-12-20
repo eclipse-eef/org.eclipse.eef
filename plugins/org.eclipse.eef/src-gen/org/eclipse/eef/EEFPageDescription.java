@@ -17,16 +17,16 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getGroups <em>Groups</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFPageDescription#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFPageDescription#getGroups <em>Groups</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFPageDescription()
  * @model
@@ -34,9 +34,11 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFPageDescription extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> Used to identify a specific Page instance. <!-- end-model-doc -->
-	 *
+	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Used to identify a specific Page instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_Identifier()
@@ -48,9 +50,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -69,20 +69,20 @@ public interface EEFPageDescription extends EObject {
 	String getLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
 	 * @generated
 	 */
 	void setLabelExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> The class of the EObject used as "self" in the page <!-- end-model-doc -->
-	 *
+	 * Returns the value of the '<em><b>Domain Class</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The class of the EObject used as "self" in the page
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Domain Class</em>' attribute.
 	 * @see #setDomainClass(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_DomainClass()
@@ -92,11 +92,9 @@ public interface EEFPageDescription extends EObject {
 	String getDomainClass();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Domain Class</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Domain Class</em>' attribute.
 	 * @see #getDomainClass()
 	 * @generated
 	 */
@@ -117,11 +115,9 @@ public interface EEFPageDescription extends EObject {
 	String getSemanticCandidateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression
-	 * <em>Semantic Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Semantic Candidate Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #getSemanticCandidateExpression()
 	 * @generated
 	 */
@@ -140,11 +136,9 @@ public interface EEFPageDescription extends EObject {
 	String getPreconditionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression
-	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Precondition Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precondition Expression</em>' attribute.
 	 * @see #getPreconditionExpression()
 	 * @generated
 	 */
