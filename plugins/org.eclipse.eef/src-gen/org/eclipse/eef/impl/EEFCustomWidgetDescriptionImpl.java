@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl#getCustomExpressions <em>Custom Expressions</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl#getCustomExpressions <em>Custom Expressions</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -42,7 +42,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	/**
 	 * The cached value of the '{@link #getCustomExpressions() <em>Custom Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getCustomExpressions()
 	 * @generated
 	 * @ordered
@@ -50,9 +49,9 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	protected EList<EEFCustomExpression> customExpressions;
 
 	/**
-	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -62,7 +61,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -71,7 +69,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFCustomWidgetDescriptionImpl() {
@@ -80,7 +77,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -90,7 +86,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -104,7 +99,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -114,18 +108,15 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 			style = (EEFCustomWidgetStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null,
+						null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null,
-							msgs);
+					msgs = newStyle.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null, msgs);
 				}
-				if (msgs != null) {
+				if (msgs != null)
 					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, oldStyle, style));
-				}
 			}
 		}
 		return style;
@@ -133,7 +124,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEFCustomWidgetStyle basicGetStyle() {
@@ -142,7 +132,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFCustomWidgetStyle newStyle, NotificationChain msgs) {
@@ -151,44 +140,37 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, oldStyle,
 					newStyle);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setStyle(EEFCustomWidgetStyle newStyle) {
 		if (newStyle != style) {
 			NotificationChain msgs = null;
-			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null, msgs);
-			}
-			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null, msgs);
-			}
+			if (style != null)
+				msgs = ((InternalEObject) style).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null,
+						msgs);
+			if (newStyle != null)
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, null,
+						msgs);
 			msgs = basicSetStyle(newStyle, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, newStyle, newStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +184,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +201,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -229,9 +209,8 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 		case EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS:
 			return getCustomExpressions();
 		case EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE:
-			if (resolve) {
+			if (resolve)
 				return getStyle();
-			}
 			return basicGetStyle();
 		case EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES:
 			return getConditionalStyles();
@@ -241,7 +220,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -265,7 +243,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -286,7 +263,6 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

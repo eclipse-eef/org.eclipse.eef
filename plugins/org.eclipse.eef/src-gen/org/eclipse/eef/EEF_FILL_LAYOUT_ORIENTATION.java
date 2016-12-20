@@ -17,15 +17,14 @@ import org.eclipse.emf.common.util.Enumerator;
 /**
  * <!-- begin-user-doc --> A representation of the literals of the enumeration '
  * <em><b>EEF FILL LAYOUT ORIENTATION</b></em>', and utility methods for working with them. <!-- end-user-doc -->
- *
  * @see org.eclipse.eef.EefPackage#getEEF_FILL_LAYOUT_ORIENTATION()
  * @model
  * @generated
  */
 public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
-	 * The '<em><b>VERTICAL</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>VERTICAL</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #VERTICAL_VALUE
 	 * @generated
 	 * @ordered
@@ -33,8 +32,8 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	VERTICAL(0, "VERTICAL", "VERTICAL"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>HORIZONTAL</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>HORIZONTAL</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #HORIZONTAL_VALUE
 	 * @generated
 	 * @ordered
@@ -42,13 +41,13 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	HORIZONTAL(1, "HORIZONTAL", "HORIZONTAL"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>VERTICAL</b></em>' literal value. <!-- begin-user-doc -->
+	 * The '<em><b>VERTICAL</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>VERTICAL</b></em>' literal object isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #VERTICAL
 	 * @model
 	 * @generated
@@ -57,13 +56,13 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	public static final int VERTICAL_VALUE = 0;
 
 	/**
-	 * The '<em><b>HORIZONTAL</b></em>' literal value. <!-- begin-user-doc -->
+	 * The '<em><b>HORIZONTAL</b></em>' literal value.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>HORIZONTAL</b></em>' literal object isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #HORIZONTAL
 	 * @model
 	 * @generated
@@ -72,21 +71,20 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	public static final int HORIZONTAL_VALUE = 1;
 
 	/**
-	 * An array of all the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' enumerators. <!-- begin-user-doc --> <!--
+	 * An array of all the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' enumerators.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static final EEF_FILL_LAYOUT_ORIENTATION[] VALUES_ARRAY = new EEF_FILL_LAYOUT_ORIENTATION[] { VERTICAL, HORIZONTAL, };
 
 	/**
-	 * A public read-only list of all the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' enumerators. <!-- begin-user-doc
+	 * A public read-only list of all the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' enumerators.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	public static final List<EEF_FILL_LAYOUT_ORIENTATION> VALUES = Collections.unmodifiableList(Arrays
-			.asList(EEF_FILL_LAYOUT_ORIENTATION.VALUES_ARRAY));
+	public static final List<EEF_FILL_LAYOUT_ORIENTATION> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' literal with the specified literal value. <!--
@@ -95,7 +93,8 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	 * @generated
 	 */
 	public static EEF_FILL_LAYOUT_ORIENTATION get(String literal) {
-		for (EEF_FILL_LAYOUT_ORIENTATION result : EEF_FILL_LAYOUT_ORIENTATION.VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			EEF_FILL_LAYOUT_ORIENTATION result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -104,13 +103,16 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' literal with the specified name. <!-- begin-user-doc
+	 * Returns the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EEF_FILL_LAYOUT_ORIENTATION getByName(String name) {
-		for (EEF_FILL_LAYOUT_ORIENTATION result : EEF_FILL_LAYOUT_ORIENTATION.VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			EEF_FILL_LAYOUT_ORIENTATION result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -136,28 +138,25 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
-	 * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EEF_FILL_LAYOUT_ORIENTATION(int value, String name, String literal) {
@@ -168,7 +167,6 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -178,7 +176,6 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -188,7 +185,6 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -197,9 +193,9 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	}
 
 	/**
-	 * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!--
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

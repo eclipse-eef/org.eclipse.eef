@@ -27,8 +27,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  */
 public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidationRuleDescriptionItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFPropertyValidationRuleDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -36,8 +36,8 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -51,23 +51,21 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 	}
 
 	/**
-	 * This adds a property descriptor for the Targets feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Targets feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addTargetsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFPropertyValidationRuleDescription_targets_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFPropertyValidationRuleDescription_targets_feature", "_UI_EEFPropertyValidationRuleDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFPropertyValidationRuleDescription_targets_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFPropertyValidationRuleDescription_targets_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFPropertyValidationRuleDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns EEFPropertyValidationRuleDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFPropertyValidationRuleDescription.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -77,7 +75,6 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -86,8 +83,8 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -95,7 +92,7 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 		EEF_VALIDATION_SEVERITY_DESCRIPTION labelValue = ((EEFPropertyValidationRuleDescription) object).getSeverity();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_EEFPropertyValidationRuleDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFPropertyValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFPropertyValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -112,9 +109,9 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

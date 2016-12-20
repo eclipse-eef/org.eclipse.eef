@@ -14,6 +14,7 @@ import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFCheckboxDescription;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFHyperlinkDescription;
+import org.eclipse.eef.EEFImageViewerDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFPageDescription;
@@ -25,6 +26,7 @@ import org.eclipse.eef.core.internal.controllers.EEFButtonController;
 import org.eclipse.eef.core.internal.controllers.EEFCheckboxController;
 import org.eclipse.eef.core.internal.controllers.EEFGroupController;
 import org.eclipse.eef.core.internal.controllers.EEFHyperlinkController;
+import org.eclipse.eef.core.internal.controllers.EEFImageViewerController;
 import org.eclipse.eef.core.internal.controllers.EEFLabelController;
 import org.eclipse.eef.core.internal.controllers.EEFListController;
 import org.eclipse.eef.core.internal.controllers.EEFRadioController;
@@ -214,5 +216,23 @@ public class EEFControllersFactory {
 	public IEEFHyperlinkController createHyperlinkController(EEFHyperlinkDescription description, IVariableManager variableManager,
 			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
 		return new EEFHyperlinkController(description, variableManager, interpreter, contextAdapter);
+	}
+
+	/**
+	 * Creates a new image viewer controller.
+	 *
+	 * @param description
+	 *            The description
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param contextAdapter
+	 *            The editing context adapter
+	 * @return An image viewer controller
+	 */
+	public IEEFImageViewerController createImageViewerController(EEFImageViewerDescription description, IVariableManager variableManager,
+			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
+		return new EEFImageViewerController(description, variableManager, interpreter, contextAdapter);
 	}
 }

@@ -14,19 +14,21 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Hyperlink Description</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents an hyperlink field in the user interface. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents an hyperlink field in the user interface.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getValueExpression <em>Value Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression <em>Display Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression <em>On Click Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
- * <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getActions <em>Actions</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getValueExpression <em>Value Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression <em>Display Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression <em>On Click Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFHyperlinkDescription#getActions <em>Actions</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription()
  * @model
@@ -46,11 +48,9 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	String getValueExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getValueExpression
-	 * <em>Value Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Value Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getValueExpression <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
 	 * @generated
 	 */
@@ -69,11 +69,9 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression
-	 * <em>Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Display Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression <em>Display Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Display Expression</em>' attribute.
 	 * @see #getDisplayExpression()
 	 * @generated
 	 */
@@ -93,11 +91,9 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	String getOnClickExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression
-	 * <em>On Click Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>On Click Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression <em>On Click Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Click Expression</em>' attribute.
 	 * @see #getOnClickExpression()
 	 * @generated
 	 */
@@ -116,11 +112,9 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	EEFHyperlinkStyle getStyle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getStyle <em>Style</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -139,14 +133,14 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	EList<EEFHyperlinkConditionalStyle> getConditionalStyles();
 
 	/**
-	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list. The list contents are of type
-	 * {@link org.eclipse.eef.EEFWidgetAction}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.eef.EEFWidgetAction}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Actions</em>' containment reference list isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription_Actions()
 	 * @model containment="true" resolveProxies="true"

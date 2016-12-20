@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFRuleAuditDescription#getAuditExpression <em>Audit Expression</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFRuleAuditDescription#getAuditExpression <em>Audit Expression</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFRuleAuditDescription()
  * @model
@@ -40,11 +40,9 @@ public interface EEFRuleAuditDescription extends EObject {
 	String getAuditExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRuleAuditDescription#getAuditExpression
-	 * <em>Audit Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Audit Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRuleAuditDescription#getAuditExpression <em>Audit Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Audit Expression</em>' attribute.
 	 * @see #getAuditExpression()
 	 * @generated
 	 */
