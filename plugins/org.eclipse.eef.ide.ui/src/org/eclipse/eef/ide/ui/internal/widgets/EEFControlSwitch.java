@@ -24,6 +24,7 @@ import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
 import org.eclipse.eef.EEFHyperlinkDescription;
+import org.eclipse.eef.EEFImageViewerDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EEFRadioDescription;
@@ -107,11 +108,11 @@ public class EEFControlSwitch {
 			eefContainerLifecycleManager.createControl(parent, formContainer);
 			lifecycleManagers.add(eefContainerLifecycleManager);
 		} else if (controlDescription instanceof EEFWidgetDescription) {
-			lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription,
-					variableManager.createChild()));
+			lifecycleManagers.addAll(
+					this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription, variableManager.createChild()));
 		} else if (controlDescription instanceof EEFDynamicMappingFor) {
-			lifecycleManagers.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription,
-					variableManager));
+			lifecycleManagers
+					.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription, variableManager));
 		}
 		return lifecycleManagers;
 	}
@@ -209,6 +210,14 @@ public class EEFControlSwitch {
 				EEFHyperlinkDescription eefHyperlinkDescription = (EEFHyperlinkDescription) widgetDescription;
 
 				EEFHyperlinkLifecycleManager eefHyperlinkLifecycleManager = new EEFHyperlinkLifecycleManager(eefHyperlinkDescription,
+						childVariableManager, interpreter, contextAdapter);
+				eefHyperlinkLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefHyperlinkLifecycleManager);
+			} else if (widgetDescription instanceof EEFImageViewerDescription) {
+				EEFImageViewerDescription eefImageViewerDescription = (EEFImageViewerDescription) widgetDescription;
+
+				EEFImageViewerLifecycleManager eefHyperlinkLifecycleManager = new EEFImageViewerLifecycleManager(eefImageViewerDescription,
 						childVariableManager, interpreter, contextAdapter);
 				eefHyperlinkLifecycleManager.createControl(parent, formContainer);
 

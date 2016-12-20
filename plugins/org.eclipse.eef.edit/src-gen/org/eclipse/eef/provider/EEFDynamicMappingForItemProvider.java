@@ -23,15 +23,15 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFDynamicMappingFor} object. <!-- begin-user-doc -->
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFDynamicMappingFor} object.
+ * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
  * @generated
  */
 public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFDynamicMappingForItemProvider(AdapterFactory adapterFactory) {
@@ -39,8 +39,8 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -55,8 +55,8 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	}
 
 	/**
-	 * This adds a property descriptor for the Iterator feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Iterator feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addIteratorPropertyDescriptor(Object object) {
@@ -73,23 +73,20 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	 * @generated
 	 */
 	protected void addIterableExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFDynamicMappingFor_iterableExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingFor_iterableExpression_feature", "_UI_EEFDynamicMappingFor_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFDynamicMappingFor_iterableExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingFor_iterableExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFDynamicMappingFor_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,7 +100,6 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -115,8 +111,8 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	}
 
 	/**
-	 * This returns EEFDynamicMappingFor.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFDynamicMappingFor.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -126,7 +122,6 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,15 +130,15 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFDynamicMappingFor) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingFor_type") : //$NON-NLS-1$
-			getString("_UI_EEFDynamicMappingFor_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFDynamicMappingFor_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -170,17 +165,17 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__IFS,
-				EefFactory.eINSTANCE.createEEFDynamicMappingIf()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_FOR__IFS, EefFactory.eINSTANCE.createEEFDynamicMappingIf()));
 	}
 
 }

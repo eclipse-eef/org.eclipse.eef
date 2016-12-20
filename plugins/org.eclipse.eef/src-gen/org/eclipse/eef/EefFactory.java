@@ -13,29 +13,28 @@ import org.eclipse.emf.ecore.EFactory;
 /**
  * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a create method for each non-abstract class of
  * the model. <!-- end-user-doc -->
- *
  * @see org.eclipse.eef.EefPackage
  * @generated
  */
 public interface EefFactory extends EFactory {
 	/**
-	 * The singleton instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	EefFactory eINSTANCE = org.eclipse.eef.impl.EefFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>EEF View Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF View Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF View Description</em>'.
 	 * @generated
 	 */
 	EEFViewDescription createEEFViewDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Page Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Page Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Page Description</em>'.
 	 * @generated
 	 */
@@ -51,43 +50,43 @@ public interface EefFactory extends EFactory {
 	EEFRuleAuditDescription createEEFRuleAuditDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Validation Fix Description</em>'. <!-- begin-user-doc --> <!--
+	 * Returns a new object of class '<em>EEF Validation Fix Description</em>'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @return a new object of class '<em>EEF Validation Fix Description</em>'.
 	 * @generated
 	 */
 	EEFValidationFixDescription createEEFValidationFixDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> <!--
+	 * Returns a new object of class '<em>EEF Property Validation Rule Description</em>'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @return a new object of class '<em>EEF Property Validation Rule Description</em>'.
 	 * @generated
 	 */
 	EEFPropertyValidationRuleDescription createEEFPropertyValidationRuleDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> <!--
+	 * Returns a new object of class '<em>EEF Semantic Validation Rule Description</em>'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @return a new object of class '<em>EEF Semantic Validation Rule Description</em>'.
 	 * @generated
 	 */
 	EEFSemanticValidationRuleDescription createEEFSemanticValidationRuleDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Group Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Group Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Group Description</em>'.
 	 * @generated
 	 */
 	EEFGroupDescription createEEFGroupDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Container Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Container Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Container Description</em>'.
 	 * @generated
 	 */
@@ -112,72 +111,81 @@ public interface EefFactory extends EFactory {
 	EEFGridLayoutDescription createEEFGridLayoutDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Text Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Text Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Text Description</em>'.
 	 * @generated
 	 */
 	EEFTextDescription createEEFTextDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Label Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Label Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Label Description</em>'.
 	 * @generated
 	 */
 	EEFLabelDescription createEEFLabelDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Button Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Button Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Button Description</em>'.
 	 * @generated
 	 */
 	EEFButtonDescription createEEFButtonDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Checkbox Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Checkbox Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Checkbox Description</em>'.
 	 * @generated
 	 */
 	EEFCheckboxDescription createEEFCheckboxDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Select Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Select Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Select Description</em>'.
 	 * @generated
 	 */
 	EEFSelectDescription createEEFSelectDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Radio Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Radio Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Radio Description</em>'.
 	 * @generated
 	 */
 	EEFRadioDescription createEEFRadioDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Hyperlink Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Hyperlink Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Hyperlink Description</em>'.
 	 * @generated
 	 */
 	EEFHyperlinkDescription createEEFHyperlinkDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Dynamic Mapping For</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Image Viewer Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EEF Image Viewer Description</em>'.
+	 * @generated
+	 */
+	EEFImageViewerDescription createEEFImageViewerDescription();
+
+	/**
+	 * Returns a new object of class '<em>EEF Dynamic Mapping For</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Dynamic Mapping For</em>'.
 	 * @generated
 	 */
 	EEFDynamicMappingFor createEEFDynamicMappingFor();
 
 	/**
-	 * Returns a new object of class '<em>EEF Dynamic Mapping If</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Dynamic Mapping If</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Dynamic Mapping If</em>'.
 	 * @generated
 	 */
@@ -193,96 +201,105 @@ public interface EefFactory extends EFactory {
 	EEFCustomWidgetDescription createEEFCustomWidgetDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Custom Expression</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Custom Expression</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Custom Expression</em>'.
 	 * @generated
 	 */
 	EEFCustomExpression createEEFCustomExpression();
 
 	/**
-	 * Returns a new object of class '<em>EEF List Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF List Description</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF List Description</em>'.
 	 * @generated
 	 */
 	EEFListDescription createEEFListDescription();
 
 	/**
-	 * Returns a new object of class '<em>EEF Text Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Text Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Text Style</em>'.
 	 * @generated
 	 */
 	EEFTextStyle createEEFTextStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Label Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Label Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Label Style</em>'.
 	 * @generated
 	 */
 	EEFLabelStyle createEEFLabelStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Button Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Button Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Button Style</em>'.
 	 * @generated
 	 */
 	EEFButtonStyle createEEFButtonStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Checkbox Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Checkbox Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Checkbox Style</em>'.
 	 * @generated
 	 */
 	EEFCheckboxStyle createEEFCheckboxStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Select Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Select Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Select Style</em>'.
 	 * @generated
 	 */
 	EEFSelectStyle createEEFSelectStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Radio Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Radio Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Radio Style</em>'.
 	 * @generated
 	 */
 	EEFRadioStyle createEEFRadioStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Hyperlink Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Hyperlink Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Hyperlink Style</em>'.
 	 * @generated
 	 */
 	EEFHyperlinkStyle createEEFHyperlinkStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Custom Widget Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Image Viewer Style</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EEF Image Viewer Style</em>'.
+	 * @generated
+	 */
+	EEFImageViewerStyle createEEFImageViewerStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Custom Widget Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Custom Widget Style</em>'.
 	 * @generated
 	 */
 	EEFCustomWidgetStyle createEEFCustomWidgetStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF List Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF List Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF List Style</em>'.
 	 * @generated
 	 */
 	EEFListStyle createEEFListStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Group Style</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Group Style</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Group Style</em>'.
 	 * @generated
 	 */
@@ -316,9 +333,9 @@ public interface EefFactory extends EFactory {
 	EEFLabelConditionalStyle createEEFLabelConditionalStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Checkbox Conditional Style</em>'. <!-- begin-user-doc --> <!--
+	 * Returns a new object of class '<em>EEF Checkbox Conditional Style</em>'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @return a new object of class '<em>EEF Checkbox Conditional Style</em>'.
 	 * @generated
 	 */
@@ -343,26 +360,35 @@ public interface EefFactory extends EFactory {
 	EEFRadioConditionalStyle createEEFRadioConditionalStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Hyperlink Conditional Style</em>'. <!-- begin-user-doc --> <!--
+	 * Returns a new object of class '<em>EEF Hyperlink Conditional Style</em>'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @return a new object of class '<em>EEF Hyperlink Conditional Style</em>'.
 	 * @generated
 	 */
 	EEFHyperlinkConditionalStyle createEEFHyperlinkConditionalStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Custom Widget Conditional Style</em>'. <!-- begin-user-doc --> <!--
+	 * Returns a new object of class '<em>EEF Image Viewer Conditional Style</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EEF Image Viewer Conditional Style</em>'.
+	 * @generated
+	 */
+	EEFImageViewerConditionalStyle createEEFImageViewerConditionalStyle();
+
+	/**
+	 * Returns a new object of class '<em>EEF Custom Widget Conditional Style</em>'.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @return a new object of class '<em>EEF Custom Widget Conditional Style</em>'.
 	 * @generated
 	 */
 	EEFCustomWidgetConditionalStyle createEEFCustomWidgetConditionalStyle();
 
 	/**
-	 * Returns a new object of class '<em>EEF Widget Action</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns a new object of class '<em>EEF Widget Action</em>'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>EEF Widget Action</em>'.
 	 * @generated
 	 */
@@ -387,8 +413,8 @@ public interface EefFactory extends EFactory {
 	EEFGroupConditionalStyle createEEFGroupConditionalStyle();
 
 	/**
-	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
