@@ -153,6 +153,7 @@
     <genClasses ecoreClass="eef.ecore#//EEFImageViewerDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFImageViewerDescription/pathExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFImageViewerDescription/editExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFImageViewerDescription/withPicker"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFImageViewerDescription/style"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eef.ecore#//EEFImageViewerDescription/conditionalStyles"/>
     </genClasses>

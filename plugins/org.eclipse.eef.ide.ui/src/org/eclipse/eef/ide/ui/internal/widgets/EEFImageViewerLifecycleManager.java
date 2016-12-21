@@ -12,6 +12,9 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.io.File;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -22,7 +25,9 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.eef.EEFImageViewerDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.api.utils.Util;
+import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFImageViewerController;
@@ -30,15 +35,22 @@ import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.eef.ide.ui.internal.Icons;
 import org.eclipse.eef.ide.ui.internal.Messages;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.SWTException;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
+import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.GC;
@@ -48,14 +60,18 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
  * This class will be used in order to manager the lifecycle of an image viewer.
@@ -145,6 +161,47 @@ public class EEFImageViewerLifecycleManager extends AbstractEEFWidgetLifecycleMa
 	private Point origin;
 
 	/**
+	 * The widget factory.
+	 */
+	private EEFWidgetFactory widgetFactory;
+
+	/**
+	 * The text field associated to the image picker.
+	 */
+	private StyledText text;
+
+	/**
+	 * The button to launch the image picker.
+	 */
+	private Button pickButton;
+
+	/**
+	 * The listener on the text field.
+	 */
+	private FocusListener focusListener;
+
+	/**
+	 * The listener used to indicate that the text field is dirty.
+	 */
+	private ModifyListener modifyListener;
+
+	/**
+	 * Used to make the SelectionListener reentrant, to avoid infinite loops when we need to revert the UI state on
+	 * error (as reverting the UI re-triggers the SelectionListener).
+	 */
+	private AtomicBoolean updateInProgress = new AtomicBoolean(false);
+
+	/**
+	 * Indicates that the text field is dirty.
+	 */
+	private boolean isDirty;
+
+	/**
+	 * The listener used to indicate that the pick button has been selected.
+	 */
+	private SelectionAdapter pickButtonSelectionListener;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -170,7 +227,32 @@ public class EEFImageViewerLifecycleManager extends AbstractEEFWidgetLifecycleMa
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
-		this.imageCanvas = new Canvas(parent, SWT.NO_REDRAW_RESIZE | SWT.H_SCROLL | SWT.V_SCROLL);
+		Composite compositeContainer = parent;
+		this.widgetFactory = formContainer.getWidgetFactory();
+		boolean withPicker = this.description.isWithPicker();
+
+		if (withPicker) {
+			Composite widgetComposite = this.widgetFactory.createFlatFormComposite(parent);
+			GridLayout widgetGridLayout = new GridLayout(2, false);
+			widgetComposite.setLayout(widgetGridLayout);
+			compositeContainer = widgetComposite;
+
+			GridData filePickerCompositeGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+			filePickerCompositeGridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+			widgetComposite.setLayoutData(filePickerCompositeGridData);
+
+			this.text = this.widgetFactory.createStyledText(widgetComposite, SWT.SINGLE);
+			GridData textGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+			this.text.setLayoutData(textGridData);
+			this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+
+			this.pickButton = this.widgetFactory.createButton(widgetComposite, "", SWT.PUSH); //$NON-NLS-1$
+			this.pickButton.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.SEARCH));
+			GridData pickButtonGridData = new GridData(SWT.FILL, SWT.CENTER, false, false);
+			this.pickButton.setLayoutData(pickButtonGridData);
+		}
+
+		this.imageCanvas = new Canvas(compositeContainer, SWT.NO_REDRAW_RESIZE | SWT.H_SCROLL | SWT.V_SCROLL);
 		String pathExpressionEvaluation = EvalFactory.of(this.interpreter, this.variableManager.getVariables()).logIfInvalidType(String.class)
 				.evaluate(this.description.getPathExpression());
 		int height = 0;
@@ -265,6 +347,65 @@ public class EEFImageViewerLifecycleManager extends AbstractEEFWidgetLifecycleMa
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
+		if (this.description.isWithPicker()) {
+
+			this.modifyListener = (e) -> {
+				if (!this.container.isRenderingInProgress() && !updateInProgress.get()) {
+					this.isDirty = true;
+
+					List<EObject> elements = new ArrayList<EObject>();
+					Object object = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+					if (object instanceof EObject) {
+						elements.add((EObject) object);
+					}
+					this.contextAdapter.lock(elements);
+				}
+			};
+			this.text.addModifyListener(this.modifyListener);
+
+			this.focusListener = new FocusListener() {
+				@Override
+				public void focusLost(FocusEvent e) {
+					if (!EEFImageViewerLifecycleManager.this.container.isRenderingInProgress() && EEFImageViewerLifecycleManager.this.isDirty) {
+						EEFImageViewerLifecycleManager.this.updatePath(false);
+					}
+				}
+
+				@Override
+				public void focusGained(FocusEvent e) {
+					// do nothing
+				}
+			};
+			this.text.addFocusListener(this.focusListener);
+
+			this.pickButtonSelectionListener = new SelectionAdapter() {
+				/**
+				 * {@inheritDoc}
+				 *
+				 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
+				 */
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					if (!EEFImageViewerLifecycleManager.this.container.isRenderingInProgress()) {
+						FileDialog filePicker = new FileDialog(new Shell(Display.getCurrent()));
+						filePicker.setFilterPath(EEFImageViewerLifecycleManager.this.imagePath);
+						try {
+							String newPath = filePicker.open();
+							if (newPath != null) {
+								EEFImageViewerLifecycleManager.this.isDirty = true;
+								EEFImageViewerLifecycleManager.this.imagePath = newPath;
+								EEFImageViewerLifecycleManager.this.text.setText(newPath);
+								EEFImageViewerLifecycleManager.this.updatePath(false);
+							}
+						} catch (SWTException ex) {
+							EEFIdeUiPlugin.INSTANCE.log(ex);
+						}
+					}
+				}
+			};
+			this.pickButton.addSelectionListener(this.pickButtonSelectionListener);
+		}
+
 		this.origin = new Point(0, 0);
 
 		this.hBar = this.imageCanvas.getHorizontalBar();
@@ -293,6 +434,11 @@ public class EEFImageViewerLifecycleManager extends AbstractEEFWidgetLifecycleMa
 				this.imagePath = toAbsolutePath(path);
 				if (this.imagePath != null) {
 					try {
+						if (this.description.isWithPicker() && !this.text.isDisposed()
+								&& !(this.text.getText() != null && this.text.getText().equals(path))) {
+							this.text.setText(this.imagePath);
+						}
+
 						this.imageData = new ImageData(this.imagePath);
 						this.image = new Image(this.imageCanvas.getDisplay(), this.imageData);
 						this.imageCanvas.redraw();
@@ -341,6 +487,21 @@ public class EEFImageViewerLifecycleManager extends AbstractEEFWidgetLifecycleMa
 			this.imageCanvas.dispose();
 		}
 		this.image.dispose();
+
+		if (this.description.isWithPicker()) {
+			if (this.isDirty) {
+				this.updatePath(true);
+			}
+			if (!this.pickButton.isDisposed()) {
+				this.pickButton.removeSelectionListener(this.pickButtonSelectionListener);
+			}
+			if (!this.text.isDisposed()) {
+				this.text.removeModifyListener(this.modifyListener);
+			}
+			if (!text.isDisposed()) {
+				this.text.removeFocusListener(this.focusListener);
+			}
+		}
 		super.aboutToBeHidden();
 	}
 
@@ -352,6 +513,38 @@ public class EEFImageViewerLifecycleManager extends AbstractEEFWidgetLifecycleMa
 	@Override
 	protected void setEnabled(boolean isEnabled) {
 		this.imageCanvas.setEnabled(isEnabled);
+	}
+
+	/**
+	 * Updates the path.
+	 *
+	 * @param force
+	 *            if <code>true</code>, update even if we are in the render phase.
+	 */
+	private void updatePath(boolean force) {
+		boolean shouldUpdateWhileRendering = !EEFImageViewerLifecycleManager.this.container.isRenderingInProgress() || force;
+		if (!this.text.isDisposed() && this.isDirty && shouldUpdateWhileRendering && this.updateInProgress.compareAndSet(false, true)) {
+			try {
+				IStatus result = this.controller.updatePath(this.text.getText());
+				if (result != null && result.getSeverity() == IStatus.ERROR) {
+					EEFIdeUiPlugin.INSTANCE.log(result);
+					this.text.setText(this.imagePath);
+				} else {
+					this.imagePath = this.text.getText();
+					refresh();
+				}
+				this.isDirty = false;
+			} finally {
+				this.updateInProgress.set(false);
+
+				List<EObject> elements = new ArrayList<EObject>();
+				Object object = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+				if (object instanceof EObject) {
+					elements.add((EObject) object);
+				}
+				this.contextAdapter.unlock(elements);
+			}
+		}
 	}
 
 	/**

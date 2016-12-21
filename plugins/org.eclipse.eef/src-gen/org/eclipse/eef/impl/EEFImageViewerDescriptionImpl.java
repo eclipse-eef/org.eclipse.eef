@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link org.eclipse.eef.impl.EEFImageViewerDescriptionImpl#getPathExpression <em>Path Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFImageViewerDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFImageViewerDescriptionImpl#isWithPicker <em>With Picker</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFImageViewerDescriptionImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFImageViewerDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -84,6 +85,26 @@ public class EEFImageViewerDescriptionImpl extends EEFWidgetDescriptionImpl impl
 	 * @ordered
 	 */
 	protected String editExpression = EDIT_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isWithPicker() <em>With Picker</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isWithPicker()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean WITH_PICKER_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isWithPicker() <em>With Picker</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isWithPicker()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean withPicker = WITH_PICKER_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference.
@@ -170,6 +191,29 @@ public class EEFImageViewerDescriptionImpl extends EEFWidgetDescriptionImpl impl
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION, oldEditExpression,
 					editExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isWithPicker() {
+		return withPicker;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWithPicker(boolean newWithPicker) {
+		boolean oldWithPicker = withPicker;
+		withPicker = newWithPicker;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER, oldWithPicker, withPicker));
 	}
 
 	/**
@@ -290,6 +334,8 @@ public class EEFImageViewerDescriptionImpl extends EEFWidgetDescriptionImpl impl
 			return getPathExpression();
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION:
 			return getEditExpression();
+		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER:
+			return isWithPicker();
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__STYLE:
 			if (resolve)
 				return getStyle();
@@ -314,6 +360,9 @@ public class EEFImageViewerDescriptionImpl extends EEFWidgetDescriptionImpl impl
 			return;
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION:
 			setEditExpression((String) newValue);
+			return;
+		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER:
+			setWithPicker((Boolean) newValue);
 			return;
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__STYLE:
 			setStyle((EEFImageViewerStyle) newValue);
@@ -340,6 +389,9 @@ public class EEFImageViewerDescriptionImpl extends EEFWidgetDescriptionImpl impl
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION:
 			setEditExpression(EDIT_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER:
+			setWithPicker(WITH_PICKER_EDEFAULT);
+			return;
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__STYLE:
 			setStyle((EEFImageViewerStyle) null);
 			return;
@@ -362,6 +414,8 @@ public class EEFImageViewerDescriptionImpl extends EEFWidgetDescriptionImpl impl
 			return PATH_EXPRESSION_EDEFAULT == null ? pathExpression != null : !PATH_EXPRESSION_EDEFAULT.equals(pathExpression);
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION:
 			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null : !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER:
+			return withPicker != WITH_PICKER_EDEFAULT;
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__CONDITIONAL_STYLES:
@@ -385,6 +439,8 @@ public class EEFImageViewerDescriptionImpl extends EEFWidgetDescriptionImpl impl
 		result.append(pathExpression);
 		result.append(", editExpression: "); //$NON-NLS-1$
 		result.append(editExpression);
+		result.append(", withPicker: "); //$NON-NLS-1$
+		result.append(withPicker);
 		result.append(')');
 		return result.toString();
 	}

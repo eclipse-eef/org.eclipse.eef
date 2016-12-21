@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.eclipse.eef.EEFImageViewerDescription#getPathExpression <em>Path Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFImageViewerDescription#getEditExpression <em>Edit Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFImageViewerDescription#isWithPicker <em>With Picker</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFImageViewerDescription#getStyle <em>Style</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFImageViewerDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -83,6 +84,32 @@ public interface EEFImageViewerDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setEditExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>With Picker</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If set to true, add a picker to the image viewer widget. Default value is false.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>With Picker</em>' attribute.
+	 * @see #setWithPicker(boolean)
+	 * @see org.eclipse.eef.EefPackage#getEEFImageViewerDescription_WithPicker()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isWithPicker();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFImageViewerDescription#isWithPicker <em>With Picker</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>With Picker</em>' attribute.
+	 * @see #isWithPicker()
+	 * @generated
+	 */
+	void setWithPicker(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference.

@@ -55,6 +55,7 @@ public class EEFImageViewerDescriptionItemProvider extends EEFWidgetDescriptionI
 
 			addPathExpressionPropertyDescriptor(object);
 			addEditExpressionPropertyDescriptor(object);
+			addWithPickerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,21 @@ public class EEFImageViewerDescriptionItemProvider extends EEFWidgetDescriptionI
 						"_UI_EEFImageViewerDescription_type"), //$NON-NLS-1$
 				EefPackage.Literals.EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the With Picker feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWithPickerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFImageViewerDescription_withPicker_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFImageViewerDescription_withPicker_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFImageViewerDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
@@ -168,6 +184,7 @@ public class EEFImageViewerDescriptionItemProvider extends EEFWidgetDescriptionI
 		switch (notification.getFeatureID(EEFImageViewerDescription.class)) {
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__PATH_EXPRESSION:
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION:
+		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_IMAGE_VIEWER_DESCRIPTION__STYLE:
