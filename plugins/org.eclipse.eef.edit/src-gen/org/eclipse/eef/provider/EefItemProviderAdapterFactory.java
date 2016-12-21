@@ -41,30 +41,31 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  *
  * @generated
  */
-public class EefItemProviderAdapterFactory extends EefAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable,
-IChildCreationExtender {
+public class EefItemProviderAdapterFactory extends EefAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
-	 * This keeps track of the root adapter factory that delegates to this adapter factory. <!-- begin-user-doc --> <!--
+	 * This keeps track of the root adapter factory that delegates to this adapter factory.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
 
 	/**
-	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!-- begin-user-doc --> <!--
+	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
-	 * This helps manage the child creation extenders. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This helps manage the child creation extenders.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(EefEditPlugin.INSTANCE, EefPackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(EefEditPlugin.INSTANCE,
+			EefPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}. <!--
@@ -75,8 +76,8 @@ IChildCreationExtender {
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
 	/**
-	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EefItemProviderAdapterFactory() {
@@ -96,9 +97,9 @@ IChildCreationExtender {
 	protected EEFViewDescriptionItemProvider eefViewDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFViewDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFViewDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,9 +120,9 @@ IChildCreationExtender {
 	protected EEFPageDescriptionItemProvider eefPageDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFPageDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFPageDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -142,9 +143,9 @@ IChildCreationExtender {
 	protected EEFRuleAuditDescriptionItemProvider eefRuleAuditDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFRuleAuditDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFRuleAuditDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,15 +160,14 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFValidationFixDescription} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EEFValidationFixDescriptionItemProvider eefValidationFixDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFValidationFixDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFValidationFixDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -180,17 +180,16 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFPropertyValidationRuleDescription} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected EEFPropertyValidationRuleDescriptionItemProvider eefPropertyValidationRuleDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}. <!-- begin-user-doc
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFPropertyValidationRuleDescription}.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,17 +202,16 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSemanticValidationRuleDescription} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected EEFSemanticValidationRuleDescriptionItemProvider eefSemanticValidationRuleDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}. <!-- begin-user-doc
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -234,9 +232,9 @@ IChildCreationExtender {
 	protected EEFGroupDescriptionItemProvider eefGroupDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -257,9 +255,9 @@ IChildCreationExtender {
 	protected EEFContainerDescriptionItemProvider eefContainerDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFContainerDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFContainerDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -280,9 +278,9 @@ IChildCreationExtender {
 	protected EEFFillLayoutDescriptionItemProvider eefFillLayoutDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFFillLayoutDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFFillLayoutDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -303,9 +301,9 @@ IChildCreationExtender {
 	protected EEFGridLayoutDescriptionItemProvider eefGridLayoutDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFGridLayoutDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGridLayoutDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -326,9 +324,9 @@ IChildCreationExtender {
 	protected EEFTextDescriptionItemProvider eefTextDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -349,9 +347,9 @@ IChildCreationExtender {
 	protected EEFLabelDescriptionItemProvider eefLabelDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFLabelDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFLabelDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -372,9 +370,9 @@ IChildCreationExtender {
 	protected EEFButtonDescriptionItemProvider eefButtonDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -395,9 +393,9 @@ IChildCreationExtender {
 	protected EEFCheckboxDescriptionItemProvider eefCheckboxDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -418,9 +416,9 @@ IChildCreationExtender {
 	protected EEFSelectDescriptionItemProvider eefSelectDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -441,9 +439,9 @@ IChildCreationExtender {
 	protected EEFRadioDescriptionItemProvider eefRadioDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -464,9 +462,9 @@ IChildCreationExtender {
 	protected EEFHyperlinkDescriptionItemProvider eefHyperlinkDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -479,6 +477,29 @@ IChildCreationExtender {
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFFilePickerDescription} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EEFFilePickerDescriptionItemProvider eefFilePickerDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFFilePickerDescription}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFFilePickerDescriptionAdapter() {
+		if (eefFilePickerDescriptionItemProvider == null) {
+			eefFilePickerDescriptionItemProvider = new EEFFilePickerDescriptionItemProvider(this);
+		}
+
+		return eefFilePickerDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFDynamicMappingFor} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -487,9 +508,9 @@ IChildCreationExtender {
 	protected EEFDynamicMappingForItemProvider eefDynamicMappingForItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingFor}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingFor}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -510,9 +531,9 @@ IChildCreationExtender {
 	protected EEFDynamicMappingIfItemProvider eefDynamicMappingIfItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingIf}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFDynamicMappingIf}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -527,15 +548,14 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetDescription} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EEFCustomWidgetDescriptionItemProvider eefCustomWidgetDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -556,9 +576,9 @@ IChildCreationExtender {
 	protected EEFCustomExpressionItemProvider eefCustomExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomExpression}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomExpression}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -579,9 +599,9 @@ IChildCreationExtender {
 	protected EEFListDescriptionItemProvider eefListDescriptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFListDescription}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFListDescription}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -602,8 +622,8 @@ IChildCreationExtender {
 	protected EEFTextStyleItemProvider eefTextStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextStyle}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextStyle}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -739,9 +759,9 @@ IChildCreationExtender {
 	protected EEFHyperlinkStyleItemProvider eefHyperlinkStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -754,6 +774,29 @@ IChildCreationExtender {
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFFilePickerStyle} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EEFFilePickerStyleItemProvider eefFilePickerStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFFilePickerStyle}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFFilePickerStyleAdapter() {
+		if (eefFilePickerStyleItemProvider == null) {
+			eefFilePickerStyleItemProvider = new EEFFilePickerStyleItemProvider(this);
+		}
+
+		return eefFilePickerStyleItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetStyle} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -762,9 +805,9 @@ IChildCreationExtender {
 	protected EEFCustomWidgetStyleItemProvider eefCustomWidgetStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -785,8 +828,8 @@ IChildCreationExtender {
 	protected EEFListStyleItemProvider eefListStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFListStyle}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFListStyle}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -830,9 +873,9 @@ IChildCreationExtender {
 	protected EEFTextConditionalStyleItemProvider eefTextConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFTextConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -847,15 +890,14 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFButtonConditionalStyle} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EEFButtonConditionalStyleItemProvider eefButtonConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFButtonConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -876,9 +918,9 @@ IChildCreationExtender {
 	protected EEFLabelConditionalStyleItemProvider eefLabelConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFLabelConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFLabelConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -893,15 +935,14 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCheckboxConditionalStyle} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxConditionalStyleItemProvider eefCheckboxConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCheckboxConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -916,15 +957,14 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFSelectConditionalStyle} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EEFSelectConditionalStyleItemProvider eefSelectConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFSelectConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -945,9 +985,9 @@ IChildCreationExtender {
 	protected EEFRadioConditionalStyleItemProvider eefRadioConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFRadioConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -962,15 +1002,14 @@ IChildCreationExtender {
 	/**
 	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFHyperlinkConditionalStyle} instances.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected EEFHyperlinkConditionalStyleItemProvider eefHyperlinkConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFHyperlinkConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -983,17 +1022,39 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}
-	 * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFFilePickerConditionalStyle} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EEFFilePickerConditionalStyleItemProvider eefFilePickerConditionalStyleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFFilePickerConditionalStyle}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEEFFilePickerConditionalStyleAdapter() {
+		if (eefFilePickerConditionalStyleItemProvider == null) {
+			eefFilePickerConditionalStyleItemProvider = new EEFFilePickerConditionalStyleItemProvider(this);
+		}
+
+		return eefFilePickerConditionalStyleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle} instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected EEFCustomWidgetConditionalStyleItemProvider eefCustomWidgetConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}. <!-- begin-user-doc -->
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle}.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1037,9 +1098,9 @@ IChildCreationExtender {
 	protected EEFListConditionalStyleItemProvider eefListConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFListConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFListConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1060,9 +1121,9 @@ IChildCreationExtender {
 	protected EEFGroupConditionalStyleItemProvider eefGroupConditionalStyleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupConditionalStyle}. <!-- begin-user-doc --> <!--
+	 * This creates an adapter for a {@link org.eclipse.eef.EEFGroupConditionalStyle}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1075,8 +1136,8 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This returns the root adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the root adapter factory that contains this factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -1085,8 +1146,8 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This sets the composed adapter factory that contains this factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -1096,7 +1157,6 @@ IChildCreationExtender {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1105,9 +1165,9 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This implementation substitutes the factory itself as the key for the adapter. <!-- begin-user-doc --> <!--
+	 * This implementation substitutes the factory itself as the key for the adapter.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1117,7 +1177,6 @@ IChildCreationExtender {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1134,7 +1193,6 @@ IChildCreationExtender {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public List<IChildCreationExtender> getChildCreationExtenders() {
@@ -1143,7 +1201,6 @@ IChildCreationExtender {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1153,7 +1210,6 @@ IChildCreationExtender {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1162,8 +1218,8 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a listener.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -1172,8 +1228,8 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This removes a listener.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -1182,9 +1238,9 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!--
+	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -1197,141 +1253,104 @@ IChildCreationExtender {
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This disposes all of the item providers created by this factory. 
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void dispose() {
-		if (eefViewDescriptionItemProvider != null) {
+		if (eefViewDescriptionItemProvider != null)
 			eefViewDescriptionItemProvider.dispose();
-		}
-		if (eefPageDescriptionItemProvider != null) {
+		if (eefPageDescriptionItemProvider != null)
 			eefPageDescriptionItemProvider.dispose();
-		}
-		if (eefRuleAuditDescriptionItemProvider != null) {
+		if (eefRuleAuditDescriptionItemProvider != null)
 			eefRuleAuditDescriptionItemProvider.dispose();
-		}
-		if (eefValidationFixDescriptionItemProvider != null) {
+		if (eefValidationFixDescriptionItemProvider != null)
 			eefValidationFixDescriptionItemProvider.dispose();
-		}
-		if (eefPropertyValidationRuleDescriptionItemProvider != null) {
+		if (eefPropertyValidationRuleDescriptionItemProvider != null)
 			eefPropertyValidationRuleDescriptionItemProvider.dispose();
-		}
-		if (eefSemanticValidationRuleDescriptionItemProvider != null) {
+		if (eefSemanticValidationRuleDescriptionItemProvider != null)
 			eefSemanticValidationRuleDescriptionItemProvider.dispose();
-		}
-		if (eefGroupDescriptionItemProvider != null) {
+		if (eefGroupDescriptionItemProvider != null)
 			eefGroupDescriptionItemProvider.dispose();
-		}
-		if (eefContainerDescriptionItemProvider != null) {
+		if (eefContainerDescriptionItemProvider != null)
 			eefContainerDescriptionItemProvider.dispose();
-		}
-		if (eefFillLayoutDescriptionItemProvider != null) {
+		if (eefFillLayoutDescriptionItemProvider != null)
 			eefFillLayoutDescriptionItemProvider.dispose();
-		}
-		if (eefGridLayoutDescriptionItemProvider != null) {
+		if (eefGridLayoutDescriptionItemProvider != null)
 			eefGridLayoutDescriptionItemProvider.dispose();
-		}
-		if (eefTextDescriptionItemProvider != null) {
+		if (eefTextDescriptionItemProvider != null)
 			eefTextDescriptionItemProvider.dispose();
-		}
-		if (eefLabelDescriptionItemProvider != null) {
+		if (eefLabelDescriptionItemProvider != null)
 			eefLabelDescriptionItemProvider.dispose();
-		}
-		if (eefButtonDescriptionItemProvider != null) {
+		if (eefButtonDescriptionItemProvider != null)
 			eefButtonDescriptionItemProvider.dispose();
-		}
-		if (eefCheckboxDescriptionItemProvider != null) {
+		if (eefCheckboxDescriptionItemProvider != null)
 			eefCheckboxDescriptionItemProvider.dispose();
-		}
-		if (eefSelectDescriptionItemProvider != null) {
+		if (eefSelectDescriptionItemProvider != null)
 			eefSelectDescriptionItemProvider.dispose();
-		}
-		if (eefRadioDescriptionItemProvider != null) {
+		if (eefRadioDescriptionItemProvider != null)
 			eefRadioDescriptionItemProvider.dispose();
-		}
-		if (eefHyperlinkDescriptionItemProvider != null) {
+		if (eefHyperlinkDescriptionItemProvider != null)
 			eefHyperlinkDescriptionItemProvider.dispose();
-		}
-		if (eefDynamicMappingForItemProvider != null) {
+		if (eefFilePickerDescriptionItemProvider != null)
+			eefFilePickerDescriptionItemProvider.dispose();
+		if (eefDynamicMappingForItemProvider != null)
 			eefDynamicMappingForItemProvider.dispose();
-		}
-		if (eefDynamicMappingIfItemProvider != null) {
+		if (eefDynamicMappingIfItemProvider != null)
 			eefDynamicMappingIfItemProvider.dispose();
-		}
-		if (eefCustomWidgetDescriptionItemProvider != null) {
+		if (eefCustomWidgetDescriptionItemProvider != null)
 			eefCustomWidgetDescriptionItemProvider.dispose();
-		}
-		if (eefCustomExpressionItemProvider != null) {
+		if (eefCustomExpressionItemProvider != null)
 			eefCustomExpressionItemProvider.dispose();
-		}
-		if (eefListDescriptionItemProvider != null) {
+		if (eefListDescriptionItemProvider != null)
 			eefListDescriptionItemProvider.dispose();
-		}
-		if (eefTextStyleItemProvider != null) {
+		if (eefTextStyleItemProvider != null)
 			eefTextStyleItemProvider.dispose();
-		}
-		if (eefLabelStyleItemProvider != null) {
+		if (eefLabelStyleItemProvider != null)
 			eefLabelStyleItemProvider.dispose();
-		}
-		if (eefButtonStyleItemProvider != null) {
+		if (eefButtonStyleItemProvider != null)
 			eefButtonStyleItemProvider.dispose();
-		}
-		if (eefCheckboxStyleItemProvider != null) {
+		if (eefCheckboxStyleItemProvider != null)
 			eefCheckboxStyleItemProvider.dispose();
-		}
-		if (eefSelectStyleItemProvider != null) {
+		if (eefSelectStyleItemProvider != null)
 			eefSelectStyleItemProvider.dispose();
-		}
-		if (eefRadioStyleItemProvider != null) {
+		if (eefRadioStyleItemProvider != null)
 			eefRadioStyleItemProvider.dispose();
-		}
-		if (eefHyperlinkStyleItemProvider != null) {
+		if (eefHyperlinkStyleItemProvider != null)
 			eefHyperlinkStyleItemProvider.dispose();
-		}
-		if (eefCustomWidgetStyleItemProvider != null) {
+		if (eefFilePickerStyleItemProvider != null)
+			eefFilePickerStyleItemProvider.dispose();
+		if (eefCustomWidgetStyleItemProvider != null)
 			eefCustomWidgetStyleItemProvider.dispose();
-		}
-		if (eefListStyleItemProvider != null) {
+		if (eefListStyleItemProvider != null)
 			eefListStyleItemProvider.dispose();
-		}
-		if (eefGroupStyleItemProvider != null) {
+		if (eefGroupStyleItemProvider != null)
 			eefGroupStyleItemProvider.dispose();
-		}
-		if (eefTextConditionalStyleItemProvider != null) {
+		if (eefTextConditionalStyleItemProvider != null)
 			eefTextConditionalStyleItemProvider.dispose();
-		}
-		if (eefButtonConditionalStyleItemProvider != null) {
+		if (eefButtonConditionalStyleItemProvider != null)
 			eefButtonConditionalStyleItemProvider.dispose();
-		}
-		if (eefLabelConditionalStyleItemProvider != null) {
+		if (eefLabelConditionalStyleItemProvider != null)
 			eefLabelConditionalStyleItemProvider.dispose();
-		}
-		if (eefCheckboxConditionalStyleItemProvider != null) {
+		if (eefCheckboxConditionalStyleItemProvider != null)
 			eefCheckboxConditionalStyleItemProvider.dispose();
-		}
-		if (eefSelectConditionalStyleItemProvider != null) {
+		if (eefSelectConditionalStyleItemProvider != null)
 			eefSelectConditionalStyleItemProvider.dispose();
-		}
-		if (eefRadioConditionalStyleItemProvider != null) {
+		if (eefRadioConditionalStyleItemProvider != null)
 			eefRadioConditionalStyleItemProvider.dispose();
-		}
-		if (eefHyperlinkConditionalStyleItemProvider != null) {
+		if (eefHyperlinkConditionalStyleItemProvider != null)
 			eefHyperlinkConditionalStyleItemProvider.dispose();
-		}
-		if (eefCustomWidgetConditionalStyleItemProvider != null) {
+		if (eefFilePickerConditionalStyleItemProvider != null)
+			eefFilePickerConditionalStyleItemProvider.dispose();
+		if (eefCustomWidgetConditionalStyleItemProvider != null)
 			eefCustomWidgetConditionalStyleItemProvider.dispose();
-		}
-		if (eefWidgetActionItemProvider != null) {
+		if (eefWidgetActionItemProvider != null)
 			eefWidgetActionItemProvider.dispose();
-		}
-		if (eefListConditionalStyleItemProvider != null) {
+		if (eefListConditionalStyleItemProvider != null)
 			eefListConditionalStyleItemProvider.dispose();
-		}
-		if (eefGroupConditionalStyleItemProvider != null) {
+		if (eefGroupConditionalStyleItemProvider != null)
 			eefGroupConditionalStyleItemProvider.dispose();
-		}
 	}
 
 }

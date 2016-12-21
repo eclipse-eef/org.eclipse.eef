@@ -23,6 +23,7 @@ import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
+import org.eclipse.eef.EEFFilePickerDescription;
 import org.eclipse.eef.EEFHyperlinkDescription;
 import org.eclipse.eef.EEFLabelDescription;
 import org.eclipse.eef.EEFListDescription;
@@ -107,11 +108,11 @@ public class EEFControlSwitch {
 			eefContainerLifecycleManager.createControl(parent, formContainer);
 			lifecycleManagers.add(eefContainerLifecycleManager);
 		} else if (controlDescription instanceof EEFWidgetDescription) {
-			lifecycleManagers.addAll(this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription,
-					variableManager.createChild()));
+			lifecycleManagers.addAll(
+					this.createWidgetControl(parent, formContainer, (EEFWidgetDescription) controlDescription, variableManager.createChild()));
 		} else if (controlDescription instanceof EEFDynamicMappingFor) {
-			lifecycleManagers.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription,
-					variableManager));
+			lifecycleManagers
+					.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription, variableManager));
 		}
 		return lifecycleManagers;
 	}
@@ -213,6 +214,14 @@ public class EEFControlSwitch {
 				eefHyperlinkLifecycleManager.createControl(parent, formContainer);
 
 				lifecycleManagers.add(eefHyperlinkLifecycleManager);
+			} else if (widgetDescription instanceof EEFFilePickerDescription) {
+				EEFFilePickerDescription eefFilePickerDescription = (EEFFilePickerDescription) widgetDescription;
+
+				EEFFilePickerLifecycleManager eefFilePickerLifecycleManager = new EEFFilePickerLifecycleManager(eefFilePickerDescription,
+						childVariableManager, interpreter, contextAdapter);
+				eefFilePickerLifecycleManager.createControl(parent, formContainer);
+
+				lifecycleManagers.add(eefFilePickerLifecycleManager);
 			}
 		}
 

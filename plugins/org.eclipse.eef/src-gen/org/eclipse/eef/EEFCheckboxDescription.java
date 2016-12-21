@@ -14,17 +14,19 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Checkbox Description</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a checkbox used to edit a boolean property. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents a checkbox used to edit a boolean property.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression <em>Value Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getEditExpression <em>Edit Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFCheckboxDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression <em>Value Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFCheckboxDescription#getEditExpression <em>Edit Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFCheckboxDescription#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFCheckboxDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFCheckboxDescription()
  * @model
@@ -44,11 +46,9 @@ public interface EEFCheckboxDescription extends EEFWidgetDescription {
 	String getValueExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression
-	 * <em>Value Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Value Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getValueExpression <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
 	 * @generated
 	 */
@@ -68,11 +68,9 @@ public interface EEFCheckboxDescription extends EEFWidgetDescription {
 	String getEditExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getEditExpression <em>Edit Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Edit Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getEditExpression <em>Edit Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Edit Expression</em>' attribute.
 	 * @see #getEditExpression()
 	 * @generated
 	 */
@@ -91,11 +89,9 @@ public interface EEFCheckboxDescription extends EEFWidgetDescription {
 	EEFCheckboxStyle getStyle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getStyle <em>Style</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxDescription#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */

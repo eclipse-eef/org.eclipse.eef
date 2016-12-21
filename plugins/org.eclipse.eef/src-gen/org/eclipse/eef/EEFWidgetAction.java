@@ -40,11 +40,9 @@ public interface EEFWidgetAction extends EObject {
 	String getLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getLabelExpression <em>Label Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getLabelExpression <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
 	 * @generated
 	 */
@@ -63,11 +61,9 @@ public interface EEFWidgetAction extends EObject {
 	String getActionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getActionExpression <em>Action Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Action Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getActionExpression <em>Action Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action Expression</em>' attribute.
 	 * @see #getActionExpression()
 	 * @generated
 	 */
