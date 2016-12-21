@@ -25,18 +25,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <em><b>EEF Property Validation Rule Description</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl#getTargets <em>Targets</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl#getTargets <em>Targets</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleDescriptionImpl implements EEFPropertyValidationRuleDescription {
 	/**
-	 * The cached value of the '{@link #getTargets() <em>Targets</em>}' reference list. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getTargets() <em>Targets</em>}' reference list.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getTargets()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFPropertyValidationRuleDescriptionImpl() {
@@ -54,7 +53,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -64,7 +62,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +75,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -93,7 +89,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +102,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +115,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -138,7 +131,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +145,6 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

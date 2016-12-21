@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingIfImpl#getPredicateExpression <em>Predicate Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFDynamicMappingIfImpl#getWidget <em>Widget</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFDynamicMappingIfImpl#getPredicateExpression <em>Predicate Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFDynamicMappingIfImpl#getWidget <em>Widget</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -50,12 +50,12 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 * @ordered
 	 */
-	protected String predicateExpression = EEFDynamicMappingIfImpl.PREDICATE_EXPRESSION_EDEFAULT;
+	protected String predicateExpression = PREDICATE_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getWidget() <em>Widget</em>}' containment reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getWidget() <em>Widget</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getWidget()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,6 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFDynamicMappingIfImpl() {
@@ -73,7 +72,6 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +81,6 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -93,22 +90,19 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setPredicateExpression(String newPredicateExpression) {
 		String oldPredicateExpression = predicateExpression;
 		predicateExpression = newPredicateExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION, oldPredicateExpression,
 					predicateExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -118,18 +112,15 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 			widget = (EEFWidgetDescription) eResolveProxy(oldWidget);
 			if (widget != oldWidget) {
 				InternalEObject newWidget = (InternalEObject) widget;
-				NotificationChain msgs = oldWidget.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null, null);
+				NotificationChain msgs = oldWidget.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null,
+						null);
 				if (newWidget.eInternalContainer() == null) {
-					msgs = newWidget
-							.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null, msgs);
+					msgs = newWidget.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null, msgs);
 				}
-				if (msgs != null) {
+				if (msgs != null)
 					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, oldWidget, widget));
-				}
 			}
 		}
 		return widget;
@@ -137,7 +128,6 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEFWidgetDescription basicGetWidget() {
@@ -146,7 +136,6 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetWidget(EEFWidgetDescription newWidget, NotificationChain msgs) {
@@ -155,44 +144,37 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, oldWidget,
 					newWidget);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setWidget(EEFWidgetDescription newWidget) {
 		if (newWidget != widget) {
 			NotificationChain msgs = null;
-			if (widget != null) {
-				msgs = ((InternalEObject) widget).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null, msgs);
-			}
-			if (newWidget != null) {
-				msgs = ((InternalEObject) newWidget).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null, msgs);
-			}
+			if (widget != null)
+				msgs = ((InternalEObject) widget).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null,
+						msgs);
+			if (newWidget != null)
+				msgs = ((InternalEObject) newWidget).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, null,
+						msgs);
 			msgs = basicSetWidget(newWidget, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET, newWidget, newWidget));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -206,7 +188,6 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -215,9 +196,8 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION:
 			return getPredicateExpression();
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET:
-			if (resolve) {
+			if (resolve)
 				return getWidget();
-			}
 			return basicGetWidget();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -225,7 +205,6 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -243,14 +222,13 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION:
-			setPredicateExpression(EEFDynamicMappingIfImpl.PREDICATE_EXPRESSION_EDEFAULT);
+			setPredicateExpression(PREDICATE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET:
 			setWidget((EEFWidgetDescription) null);
@@ -261,15 +239,13 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION:
-			return EEFDynamicMappingIfImpl.PREDICATE_EXPRESSION_EDEFAULT == null ? predicateExpression != null
-			: !EEFDynamicMappingIfImpl.PREDICATE_EXPRESSION_EDEFAULT.equals(predicateExpression);
+			return PREDICATE_EXPRESSION_EDEFAULT == null ? predicateExpression != null : !PREDICATE_EXPRESSION_EDEFAULT.equals(predicateExpression);
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET:
 			return widget != null;
 		}
@@ -278,14 +254,12 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (predicateExpression: "); //$NON-NLS-1$

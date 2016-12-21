@@ -16,11 +16,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFContainerDescription()
  * @model
@@ -52,11 +52,9 @@ public interface EEFContainerDescription extends EEFControlDescription {
 	EEFLayoutDescription getLayout();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Layout</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Layout</em>' containment reference.
 	 * @see #getLayout()
 	 * @generated
 	 */

@@ -21,15 +21,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFContainerDescription} object. <!-- begin-user-doc
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFContainerDescription} object.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFContainerDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -37,8 +37,8 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,9 +53,9 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,7 +70,6 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,8 +81,8 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	}
 
 	/**
-	 * This returns EEFContainerDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFContainerDescription.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -93,7 +92,6 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,15 +100,15 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFContainerDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFContainerDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFContainerDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFContainerDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -134,53 +132,56 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFContainerDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFContainerDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFTextDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFTextDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFLabelDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFLabelDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFButtonDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFButtonDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFCheckboxDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFCheckboxDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFSelectDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFSelectDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFRadioDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFRadioDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFFilePickerDescription()));
+
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
 				EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFListDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFListDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT,
-				EefFactory.eINSTANCE.createEEFFillLayoutDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT, EefFactory.eINSTANCE.createEEFFillLayoutDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT,
-				EefFactory.eINSTANCE.createEEFGridLayoutDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT, EefFactory.eINSTANCE.createEEFGridLayoutDescription()));
 	}
 
 }

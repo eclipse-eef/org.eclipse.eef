@@ -16,11 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFValidationFixDescription#getName <em>Name</em>}</li>
- * <li>{@link org.eclipse.eef.EEFValidationFixDescription#getFixExpression <em>Fix Expression</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFValidationFixDescription#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFValidationFixDescription#getFixExpression <em>Fix Expression</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFValidationFixDescription()
  * @model
@@ -64,11 +64,9 @@ public interface EEFValidationFixDescription extends EObject {
 	String getFixExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationFixDescription#getFixExpression
-	 * <em>Fix Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Fix Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationFixDescription#getFixExpression <em>Fix Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Fix Expression</em>' attribute.
 	 * @see #getFixExpression()
 	 * @generated
 	 */
