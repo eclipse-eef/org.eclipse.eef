@@ -1412,8 +1412,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEEFImageViewerDescription_WithPicker() {
+		return (EAttribute) eefImageViewerDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getEEFImageViewerDescription_Style() {
-		return (EReference) eefImageViewerDescriptionEClass.getEStructuralFeatures().get(2);
+		return (EReference) eefImageViewerDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1423,7 +1433,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 */
 	@Override
 	public EReference getEEFImageViewerDescription_ConditionalStyles() {
-		return (EReference) eefImageViewerDescriptionEClass.getEStructuralFeatures().get(3);
+		return (EReference) eefImageViewerDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2390,6 +2400,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefImageViewerDescriptionEClass = createEClass(EEF_IMAGE_VIEWER_DESCRIPTION);
 		createEAttribute(eefImageViewerDescriptionEClass, EEF_IMAGE_VIEWER_DESCRIPTION__PATH_EXPRESSION);
 		createEAttribute(eefImageViewerDescriptionEClass, EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION);
+		createEAttribute(eefImageViewerDescriptionEClass, EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER);
 		createEReference(eefImageViewerDescriptionEClass, EEF_IMAGE_VIEWER_DESCRIPTION__STYLE);
 		createEReference(eefImageViewerDescriptionEClass, EEF_IMAGE_VIEWER_DESCRIPTION__CONDITIONAL_STYLES);
 
@@ -2840,6 +2851,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				EEFImageViewerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEAttribute(getEEFImageViewerDescription_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFImageViewerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFImageViewerDescription_WithPicker(), theEcorePackage.getEBoolean(), "withPicker", "false", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
 				EEFImageViewerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getEEFImageViewerDescription_Style(), this.getEEFImageViewerStyle(), null, "style", null, 0, 1, //$NON-NLS-1$

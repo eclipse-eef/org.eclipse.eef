@@ -536,6 +536,12 @@
         <details key="documentation" value="Defines the behavior executed when the end-user updates the value of the image viewer."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="withPicker" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If set to true, add a picker to the image viewer widget. Default value is false."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EEFImageViewerStyle"
         containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

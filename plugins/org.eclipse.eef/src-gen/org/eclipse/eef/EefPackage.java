@@ -1585,13 +1585,22 @@ public interface EefPackage extends EPackage {
 	int EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>With Picker</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_IMAGE_VIEWER_DESCRIPTION__STYLE = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+	int EEF_IMAGE_VIEWER_DESCRIPTION__STYLE = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list.
@@ -1600,7 +1609,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_IMAGE_VIEWER_DESCRIPTION__CONDITIONAL_STYLES = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_IMAGE_VIEWER_DESCRIPTION__CONDITIONAL_STYLES = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>EEF Image Viewer Description</em>' class.
@@ -1609,7 +1618,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_IMAGE_VIEWER_DESCRIPTION_FEATURE_COUNT = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+	int EEF_IMAGE_VIEWER_DESCRIPTION_FEATURE_COUNT = EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl <em>EEF Dynamic Mapping For</em>}' class.
@@ -4385,6 +4394,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFImageViewerDescription_EditExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFImageViewerDescription#isWithPicker <em>With Picker</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>With Picker</em>'.
+	 * @see org.eclipse.eef.EEFImageViewerDescription#isWithPicker()
+	 * @see #getEEFImageViewerDescription()
+	 * @generated
+	 */
+	EAttribute getEEFImageViewerDescription_WithPicker();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFImageViewerDescription#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6160,6 +6180,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_IMAGE_VIEWER_DESCRIPTION__EDIT_EXPRESSION = eINSTANCE.getEEFImageViewerDescription_EditExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>With Picker</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EEF_IMAGE_VIEWER_DESCRIPTION__WITH_PICKER = eINSTANCE.getEEFImageViewerDescription_WithPicker();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature.
