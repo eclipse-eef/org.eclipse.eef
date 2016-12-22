@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c23755_b013f689",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/EEFExpressionUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-22T14:31:46Z",
+      "side": 1,
+      "message": "I would name it NEW_VALUE",
+      "range": {
+        "startLine": 70,
+        "startChar": 29,
+        "endLine": 70,
+        "endChar": 37
+      },
+      "revId": "4008936f352223d1f14c92304ed44b7d7ecdbfaa",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_70eb1eec",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFFilePickerLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-22T14:31:46Z",
+      "side": 1,
+      "message": "I expect that the file picker dialog opens with the current value selected but this is not the case when I tried. You should call also the setFileName method for this. It should be great also to be able to filter the extensions thanks to an expression in the odesign.",
+      "range": {
+        "startLine": 245,
+        "startChar": 5,
+        "endLine": 247,
+        "endChar": 41
+      },
+      "revId": "4008936f352223d1f14c92304ed44b7d7ecdbfaa",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_90cd1aad",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-22T14:31:46Z",
+      "side": 1,
+      "message": "I would name it valueExpression to be consistent with the other widgets.",
+      "range": {
+        "startLine": 529,
+        "startChar": 59,
+        "endLine": 529,
+        "endChar": 73
+      },
+      "revId": "4008936f352223d1f14c92304ed44b7d7ecdbfaa",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
