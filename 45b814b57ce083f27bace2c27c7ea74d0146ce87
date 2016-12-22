@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c23755_b029368b",
+        "filename": "plugins/org.eclipse.eef/model/eef.ecore",
+        "patchSetId": 1
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2016-12-22T15:14:17Z",
+      "side": 1,
+      "message": "I would made 2 different descriptions as I think that these widgets will evolve in th future and it would be easier to get two different elements.",
+      "range": {
+        "startLine": 539,
+        "startChar": 0,
+        "endLine": 544,
+        "endChar": 26
+      },
+      "revId": "45b814b57ce083f27bace2c27c7ea74d0146ce87",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
