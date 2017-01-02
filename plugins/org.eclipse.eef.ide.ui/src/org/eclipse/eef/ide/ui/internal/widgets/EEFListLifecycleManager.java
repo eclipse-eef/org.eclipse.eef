@@ -155,7 +155,10 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		gridData.horizontalAlignment = SWT.FILL;
 		scrolledComposite.setLayoutData(gridData);
 
-		Table table = widgetFactory.createTable(scrolledComposite, SWT.READ_ONLY | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.MULTI);
+		// CHECKSTYLE:OFF
+		int tableStyle = SWT.READ_ONLY | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.MULTI | SWT.VIRTUAL;
+		// CHECKSTYLE:ON
+		Table table = widgetFactory.createTable(scrolledComposite, tableStyle);
 		this.tableViewer = new TableViewer(table);
 
 		GridData tableGridData = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
