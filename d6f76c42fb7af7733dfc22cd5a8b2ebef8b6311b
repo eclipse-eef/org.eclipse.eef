@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7c23755_1ddaf3df",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFSelectController.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2017-01-06T10:19:18Z",
+      "side": 1,
+      "message": "Iterators.addAll(candidates, (Iterable\u003c?\u003e) value) will check if \"value\" is actually a proper Collection and call the ArrayList#addAll(Collection) method, which may be more efficient in that case.",
+      "range": {
+        "startLine": 107,
+        "startChar": 4,
+        "endLine": 107,
+        "endChar": 68
+      },
+      "revId": "d6f76c42fb7af7733dfc22cd5a8b2ebef8b6311b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_5def0b7c",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/AbstractEEFExtReferenceLifecycleManager.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2017-01-06T10:19:18Z",
+      "side": 1,
+      "message": "Not sure we need the intermediate variables now.",
+      "range": {
+        "startLine": 194,
+        "startChar": 2,
+        "endLine": 194,
+        "endChar": 62
+      },
+      "revId": "d6f76c42fb7af7733dfc22cd5a8b2ebef8b6311b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_3d15effd",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSectionLifecycleManager.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2017-01-06T10:19:18Z",
+      "side": 1,
+      "message": "Could this be simply IEEFLifecycleManager::aboutToBeShown ?",
+      "range": {
+        "startLine": 104,
+        "startChar": 33,
+        "endLine": 104,
+        "endChar": 88
+      },
+      "revId": "d6f76c42fb7af7733dfc22cd5a8b2ebef8b6311b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7c23755_7d1be730",
+        "filename": "plugins/org.eclipse.eef.ide/src/org/eclipse/eef/ide/api/extensions/impl/ItemRegistry.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2017-01-06T10:19:18Z",
+      "side": 1,
+      "message": "descriptors.addAll(values)?",
+      "range": {
+        "startLine": 46,
+        "startChar": 2,
+        "endLine": 46,
+        "endChar": 50
+      },
+      "revId": "d6f76c42fb7af7733dfc22cd5a8b2ebef8b6311b",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
