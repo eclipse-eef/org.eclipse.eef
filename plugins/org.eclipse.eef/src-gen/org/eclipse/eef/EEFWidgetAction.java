@@ -40,15 +40,38 @@ public interface EEFWidgetAction extends EObject {
 	String getLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getLabelExpression <em>Label Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getLabelExpression <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
 	 * @generated
 	 */
 	void setLabelExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Image Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The image of the action visible by the end-users.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Image Expression</em>' attribute.
+	 * @see #setImageExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFWidgetAction_ImageExpression()
+	 * @model
+	 * @generated
+	 */
+	String getImageExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getImageExpression <em>Image Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Image Expression</em>' attribute.
+	 * @see #getImageExpression()
+	 * @generated
+	 */
+	void setImageExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Action Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
@@ -63,11 +86,9 @@ public interface EEFWidgetAction extends EObject {
 	String getActionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getActionExpression <em>Action Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Action Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getActionExpression <em>Action Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action Expression</em>' attribute.
 	 * @see #getActionExpression()
 	 * @generated
 	 */

@@ -35,9 +35,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container implements EEFWidgetStyle {
 	/**
-	 * The default value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The default value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLabelBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -45,19 +44,17 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	protected static final String LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLabelBackgroundColorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String labelBackgroundColorExpression = EEFWidgetStyleImpl.LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
+	protected String labelBackgroundColorExpression = LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The default value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLabelForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -65,19 +62,17 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	protected static final String LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLabelForegroundColorExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String labelForegroundColorExpression = EEFWidgetStyleImpl.LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT;
+	protected String labelForegroundColorExpression = LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLabelFontNameExpression() <em>Label Font Name Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelFontNameExpression()
 	 * @generated
 	 * @ordered
@@ -87,17 +82,15 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelFontNameExpression() <em>Label Font Name Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelFontNameExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String labelFontNameExpression = EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT;
+	protected String labelFontNameExpression = LABEL_FONT_NAME_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLabelFontSizeExpression() <em>Label Font Size Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelFontSizeExpression()
 	 * @generated
 	 * @ordered
@@ -107,17 +100,15 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelFontSizeExpression() <em>Label Font Size Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelFontSizeExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String labelFontSizeExpression = EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT;
+	protected String labelFontSizeExpression = LABEL_FONT_SIZE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLabelFontStyleExpression() <em>Label Font Style Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelFontStyleExpression()
 	 * @generated
 	 * @ordered
@@ -127,16 +118,14 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelFontStyleExpression() <em>Label Font Style Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelFontStyleExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String labelFontStyleExpression = EEFWidgetStyleImpl.LABEL_FONT_STYLE_EXPRESSION_EDEFAULT;
+	protected String labelFontStyleExpression = LABEL_FONT_STYLE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFWidgetStyleImpl() {
@@ -145,7 +134,6 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -155,7 +143,6 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -165,22 +152,19 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLabelBackgroundColorExpression(String newLabelBackgroundColorExpression) {
 		String oldLabelBackgroundColorExpression = labelBackgroundColorExpression;
 		labelBackgroundColorExpression = newLabelBackgroundColorExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION,
 					oldLabelBackgroundColorExpression, labelBackgroundColorExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -190,22 +174,19 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLabelForegroundColorExpression(String newLabelForegroundColorExpression) {
 		String oldLabelForegroundColorExpression = labelForegroundColorExpression;
 		labelForegroundColorExpression = newLabelForegroundColorExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION,
 					oldLabelForegroundColorExpression, labelForegroundColorExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -215,22 +196,19 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLabelFontNameExpression(String newLabelFontNameExpression) {
 		String oldLabelFontNameExpression = labelFontNameExpression;
 		labelFontNameExpression = newLabelFontNameExpression;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION,
-					oldLabelFontNameExpression, labelFontNameExpression));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION, oldLabelFontNameExpression,
+					labelFontNameExpression));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -240,22 +218,19 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLabelFontSizeExpression(String newLabelFontSizeExpression) {
 		String oldLabelFontSizeExpression = labelFontSizeExpression;
 		labelFontSizeExpression = newLabelFontSizeExpression;
-		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION,
-					oldLabelFontSizeExpression, labelFontSizeExpression));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION, oldLabelFontSizeExpression,
+					labelFontSizeExpression));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -265,22 +240,19 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLabelFontStyleExpression(String newLabelFontStyleExpression) {
 		String oldLabelFontStyleExpression = labelFontStyleExpression;
 		labelFontStyleExpression = newLabelFontStyleExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION,
 					oldLabelFontStyleExpression, labelFontStyleExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -302,7 +274,6 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -329,26 +300,25 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION:
-			setLabelBackgroundColorExpression(EEFWidgetStyleImpl.LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
+			setLabelBackgroundColorExpression(LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION:
-			setLabelForegroundColorExpression(EEFWidgetStyleImpl.LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT);
+			setLabelForegroundColorExpression(LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION:
-			setLabelFontNameExpression(EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT);
+			setLabelFontNameExpression(LABEL_FONT_NAME_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION:
-			setLabelFontSizeExpression(EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT);
+			setLabelFontSizeExpression(LABEL_FONT_SIZE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION:
-			setLabelFontStyleExpression(EEFWidgetStyleImpl.LABEL_FONT_STYLE_EXPRESSION_EDEFAULT);
+			setLabelFontStyleExpression(LABEL_FONT_STYLE_EXPRESSION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -356,41 +326,38 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION:
-			return EEFWidgetStyleImpl.LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? labelBackgroundColorExpression != null
-					: !EEFWidgetStyleImpl.LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(labelBackgroundColorExpression);
+			return LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? labelBackgroundColorExpression != null
+					: !LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(labelBackgroundColorExpression);
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION:
-			return EEFWidgetStyleImpl.LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? labelForegroundColorExpression != null
-					: !EEFWidgetStyleImpl.LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(labelForegroundColorExpression);
+			return LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? labelForegroundColorExpression != null
+					: !LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(labelForegroundColorExpression);
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION:
-			return EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT == null ? labelFontNameExpression != null
-			: !EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT.equals(labelFontNameExpression);
+			return LABEL_FONT_NAME_EXPRESSION_EDEFAULT == null ? labelFontNameExpression != null
+					: !LABEL_FONT_NAME_EXPRESSION_EDEFAULT.equals(labelFontNameExpression);
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION:
-			return EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT == null ? labelFontSizeExpression != null
-			: !EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT.equals(labelFontSizeExpression);
+			return LABEL_FONT_SIZE_EXPRESSION_EDEFAULT == null ? labelFontSizeExpression != null
+					: !LABEL_FONT_SIZE_EXPRESSION_EDEFAULT.equals(labelFontSizeExpression);
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION:
-			return EEFWidgetStyleImpl.LABEL_FONT_STYLE_EXPRESSION_EDEFAULT == null ? labelFontStyleExpression != null
-			: !EEFWidgetStyleImpl.LABEL_FONT_STYLE_EXPRESSION_EDEFAULT.equals(labelFontStyleExpression);
+			return LABEL_FONT_STYLE_EXPRESSION_EDEFAULT == null ? labelFontStyleExpression != null
+					: !LABEL_FONT_STYLE_EXPRESSION_EDEFAULT.equals(labelFontStyleExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (labelBackgroundColorExpression: "); //$NON-NLS-1$

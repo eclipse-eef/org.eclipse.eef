@@ -16,10 +16,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFPropertyValidationRuleDescription()
  * @model
