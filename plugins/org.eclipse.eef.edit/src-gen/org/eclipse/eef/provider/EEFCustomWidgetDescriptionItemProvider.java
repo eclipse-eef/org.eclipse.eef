@@ -28,8 +28,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  */
 public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFCustomWidgetDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -37,8 +37,8 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,9 +53,9 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,6 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,8 +82,8 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	}
 
 	/**
-	 * This returns EEFCustomWidgetDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFCustomWidgetDescription.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -94,7 +93,6 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,15 +101,15 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFCustomWidgetDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -136,9 +134,9 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -148,8 +146,8 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS,
 				EefFactory.eINSTANCE.createEEFCustomExpression()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE,
-				EefFactory.eINSTANCE.createEEFCustomWidgetStyle()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFCustomWidgetStyle()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES,
 				EefFactory.eINSTANCE.createEEFCustomWidgetConditionalStyle()));

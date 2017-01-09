@@ -28,13 +28,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getButtonLabelExpression <em>Button Label Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getPushExpression <em>Push Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getButtonLabelExpression <em>Button Label Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getButtonImageExpression <em>Button Image Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getPushExpression <em>Push Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -57,12 +58,32 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected String buttonLabelExpression = EEFButtonDescriptionImpl.BUTTON_LABEL_EXPRESSION_EDEFAULT;
+	protected String buttonLabelExpression = BUTTON_LABEL_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPushExpression() <em>Push Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getButtonImageExpression() <em>Button Image Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getButtonImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BUTTON_IMAGE_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getButtonImageExpression() <em>Button Image Expression</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getButtonImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String buttonImageExpression = BUTTON_IMAGE_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPushExpression() <em>Push Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getPushExpression()
 	 * @generated
 	 * @ordered
@@ -70,19 +91,19 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	protected static final String PUSH_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPushExpression() <em>Push Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getPushExpression() <em>Push Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getPushExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String pushExpression = EEFButtonDescriptionImpl.PUSH_EXPRESSION_EDEFAULT;
+	protected String pushExpression = PUSH_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -92,7 +113,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -101,7 +121,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFButtonDescriptionImpl() {
@@ -110,7 +129,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +138,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -130,22 +147,43 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setButtonLabelExpression(String newButtonLabelExpression) {
 		String oldButtonLabelExpression = buttonLabelExpression;
 		buttonLabelExpression = newButtonLabelExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION,
 					oldButtonLabelExpression, buttonLabelExpression));
-		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getButtonImageExpression() {
+		return buttonImageExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setButtonImageExpression(String newButtonImageExpression) {
+		String oldButtonImageExpression = buttonImageExpression;
+		buttonImageExpression = newButtonImageExpression;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_IMAGE_EXPRESSION,
+					oldButtonImageExpression, buttonImageExpression));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -155,22 +193,19 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setPushExpression(String newPushExpression) {
 		String oldPushExpression = pushExpression;
 		pushExpression = newPushExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION, oldPushExpression,
 					pushExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -180,17 +215,14 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 			style = (EEFButtonStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, msgs);
+					msgs = newStyle.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, msgs);
 				}
-				if (msgs != null) {
+				if (msgs != null)
 					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, oldStyle, style));
-				}
 			}
 		}
 		return style;
@@ -198,7 +230,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEFButtonStyle basicGetStyle() {
@@ -207,7 +238,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFButtonStyle newStyle, NotificationChain msgs) {
@@ -216,44 +246,35 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, oldStyle,
 					newStyle);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setStyle(EEFButtonStyle newStyle) {
 		if (newStyle != style) {
 			NotificationChain msgs = null;
-			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, msgs);
-			}
-			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, msgs);
-			}
+			if (style != null)
+				msgs = ((InternalEObject) style).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, msgs);
+			if (newStyle != null)
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, null, msgs);
 			msgs = basicSetStyle(newStyle, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_BUTTON_DESCRIPTION__STYLE, newStyle, newStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -267,7 +288,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +303,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -291,12 +310,13 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 		switch (featureID) {
 		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION:
 			return getButtonLabelExpression();
+		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_IMAGE_EXPRESSION:
+			return getButtonImageExpression();
 		case EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION:
 			return getPushExpression();
 		case EefPackage.EEF_BUTTON_DESCRIPTION__STYLE:
-			if (resolve) {
+			if (resolve)
 				return getStyle();
-			}
 			return basicGetStyle();
 		case EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES:
 			return getConditionalStyles();
@@ -306,7 +326,6 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -315,6 +334,9 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 		switch (featureID) {
 		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION:
 			setButtonLabelExpression((String) newValue);
+			return;
+		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_IMAGE_EXPRESSION:
+			setButtonImageExpression((String) newValue);
 			return;
 		case EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION:
 			setPushExpression((String) newValue);
@@ -332,17 +354,19 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION:
-			setButtonLabelExpression(EEFButtonDescriptionImpl.BUTTON_LABEL_EXPRESSION_EDEFAULT);
+			setButtonLabelExpression(BUTTON_LABEL_EXPRESSION_EDEFAULT);
+			return;
+		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_IMAGE_EXPRESSION:
+			setButtonImageExpression(BUTTON_IMAGE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION:
-			setPushExpression(EEFButtonDescriptionImpl.PUSH_EXPRESSION_EDEFAULT);
+			setPushExpression(PUSH_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_BUTTON_DESCRIPTION__STYLE:
 			setStyle((EEFButtonStyle) null);
@@ -356,18 +380,19 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION:
-			return EEFButtonDescriptionImpl.BUTTON_LABEL_EXPRESSION_EDEFAULT == null ? buttonLabelExpression != null
-			: !EEFButtonDescriptionImpl.BUTTON_LABEL_EXPRESSION_EDEFAULT.equals(buttonLabelExpression);
+			return BUTTON_LABEL_EXPRESSION_EDEFAULT == null ? buttonLabelExpression != null
+					: !BUTTON_LABEL_EXPRESSION_EDEFAULT.equals(buttonLabelExpression);
+		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_IMAGE_EXPRESSION:
+			return BUTTON_IMAGE_EXPRESSION_EDEFAULT == null ? buttonImageExpression != null
+					: !BUTTON_IMAGE_EXPRESSION_EDEFAULT.equals(buttonImageExpression);
 		case EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION:
-			return EEFButtonDescriptionImpl.PUSH_EXPRESSION_EDEFAULT == null ? pushExpression != null
-			: !EEFButtonDescriptionImpl.PUSH_EXPRESSION_EDEFAULT.equals(pushExpression);
+			return PUSH_EXPRESSION_EDEFAULT == null ? pushExpression != null : !PUSH_EXPRESSION_EDEFAULT.equals(pushExpression);
 		case EefPackage.EEF_BUTTON_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES:
@@ -378,18 +403,18 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (buttonLabelExpression: "); //$NON-NLS-1$
 		result.append(buttonLabelExpression);
+		result.append(", buttonImageExpression: "); //$NON-NLS-1$
+		result.append(buttonImageExpression);
 		result.append(", pushExpression: "); //$NON-NLS-1$
 		result.append(pushExpression);
 		result.append(')');

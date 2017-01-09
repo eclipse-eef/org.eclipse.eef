@@ -24,16 +24,20 @@ import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.SWTException;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * This class will be used in order to manager the lifecycle of a button.
@@ -165,6 +169,27 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 				}
 			}
 		});
+
+		this.controller.onNewButtonImage(new IConsumer<Object>() {
+			@Override
+			public void apply(Object value) {
+				if (!button.isDisposed()) {
+					try {
+						Image image = null;
+						if (value instanceof String) {
+							image = new Image(Display.getCurrent(), (String) value);
+						} else {
+							image = ExtendedImageRegistry.INSTANCE.getImage(value);
+						}
+						if (image != null) {
+							button.setImage(image);
+						}
+					} catch (IllegalArgumentException | SWTException e) {
+						EEFIdeUiPlugin.getPlugin().error(e.getMessage(), e);
+					}
+				}
+			}
+		});
 	}
 
 	/**
@@ -185,6 +210,7 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 			this.button.removeSelectionListener(this.selectionListener);
 		}
 		this.controller.removeNewButtonLabelConsumer();
+		this.controller.removeNewButtonImageConsumer();
 	}
 
 	/**

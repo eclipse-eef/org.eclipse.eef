@@ -17,15 +17,15 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFCheckboxStyle} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFCheckboxStyle} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
 public class EEFCheckboxStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFCheckboxStyleItemProvider(AdapterFactory adapterFactory) {
@@ -33,8 +33,8 @@ public class EEFCheckboxStyleItemProvider extends EEFWidgetStyleItemProvider {
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -47,8 +47,8 @@ public class EEFCheckboxStyleItemProvider extends EEFWidgetStyleItemProvider {
 	}
 
 	/**
-	 * This returns EEFCheckboxStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFCheckboxStyle.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -58,7 +58,6 @@ public class EEFCheckboxStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -67,15 +66,15 @@ public class EEFCheckboxStyleItemProvider extends EEFWidgetStyleItemProvider {
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFCheckboxStyle) object).getLabelFontNameExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFCheckboxStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFCheckboxStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFCheckboxStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -92,9 +91,9 @@ public class EEFCheckboxStyleItemProvider extends EEFWidgetStyleItemProvider {
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

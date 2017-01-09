@@ -14,17 +14,19 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Widget Description</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Graphical element. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Graphical element.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression <em>Is Enabled Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression <em>Is Enabled Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFWidgetDescription()
  * @model abstract="true"
@@ -44,11 +46,9 @@ public interface EEFWidgetDescription extends EEFControlDescription {
 	String getLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
 	 * @generated
 	 */
@@ -67,11 +67,9 @@ public interface EEFWidgetDescription extends EEFControlDescription {
 	String getHelpExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Help Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Help Expression</em>' attribute.
 	 * @see #getHelpExpression()
 	 * @generated
 	 */
@@ -91,11 +89,9 @@ public interface EEFWidgetDescription extends EEFControlDescription {
 	String getIsEnabledExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression
-	 * <em>Is Enabled Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Enabled Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression <em>Is Enabled Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Enabled Expression</em>' attribute.
 	 * @see #getIsEnabledExpression()
 	 * @generated
 	 */

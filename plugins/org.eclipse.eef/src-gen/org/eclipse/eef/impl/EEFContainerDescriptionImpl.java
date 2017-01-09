@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getLayout <em>Layout</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl#getLayout <em>Layout</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -48,9 +48,9 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 	protected EList<EEFControlDescription> controls;
 
 	/**
-	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFContainerDescriptionImpl() {
@@ -68,7 +67,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +76,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -92,7 +89,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -102,18 +98,15 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 			layout = (EEFLayoutDescription) eResolveProxy(oldLayout);
 			if (layout != oldLayout) {
 				InternalEObject newLayout = (InternalEObject) layout;
-				NotificationChain msgs = oldLayout.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null, null);
+				NotificationChain msgs = oldLayout.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null,
+						null);
 				if (newLayout.eInternalContainer() == null) {
-					msgs = newLayout.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null,
-							msgs);
+					msgs = newLayout.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null, msgs);
 				}
-				if (msgs != null) {
+				if (msgs != null)
 					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, oldLayout, layout));
-				}
 			}
 		}
 		return layout;
@@ -121,7 +114,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEFLayoutDescription basicGetLayout() {
@@ -130,7 +122,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLayout(EEFLayoutDescription newLayout, NotificationChain msgs) {
@@ -139,44 +130,37 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, oldLayout,
 					newLayout);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLayout(EEFLayoutDescription newLayout) {
 		if (newLayout != layout) {
 			NotificationChain msgs = null;
-			if (layout != null) {
-				msgs = ((InternalEObject) layout).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null, msgs);
-			}
-			if (newLayout != null) {
-				msgs = ((InternalEObject) newLayout).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null, msgs);
-			}
+			if (layout != null)
+				msgs = ((InternalEObject) layout).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null,
+						msgs);
+			if (newLayout != null)
+				msgs = ((InternalEObject) newLayout).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, null,
+						msgs);
 			msgs = basicSetLayout(newLayout, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT, newLayout, newLayout));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +176,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -201,9 +184,8 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS:
 			return getControls();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT:
-			if (resolve) {
+			if (resolve)
 				return getLayout();
-			}
 			return basicGetLayout();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -211,7 +193,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -231,7 +212,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +229,6 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
