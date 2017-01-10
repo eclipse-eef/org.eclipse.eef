@@ -17,20 +17,20 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getIdentifier <em>Identifier</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
- * </li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getIdentifier <em>Identifier</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupDescription#getActions <em>Actions</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFGroupDescription()
  * @model
@@ -38,9 +38,11 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EEFGroupDescription extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> Used to identify a specific Group in a Page. <!-- end-model-doc -->
-	 *
+	 * Returns the value of the '<em><b>Identifier</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Used to identify a specific Group in a Page.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Identifier()
@@ -52,9 +54,7 @@ public interface EEFGroupDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Identifier</em>' attribute.
+	 * @param value the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
 	 * @generated
 	 */
@@ -74,20 +74,20 @@ public interface EEFGroupDescription extends EObject {
 	String getLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getLabelExpression <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
 	 * @generated
 	 */
 	void setLabelExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * <!-- begin-model-doc --> The class of the EObject used as "self" in the page <!-- end-model-doc -->
-	 *
+	 * Returns the value of the '<em><b>Domain Class</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The class of the EObject used as "self" in the page
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Domain Class</em>' attribute.
 	 * @see #setDomainClass(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_DomainClass()
@@ -97,11 +97,9 @@ public interface EEFGroupDescription extends EObject {
 	String getDomainClass();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Domain Class</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain Class</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Domain Class</em>' attribute.
 	 * @see #getDomainClass()
 	 * @generated
 	 */
@@ -121,11 +119,9 @@ public interface EEFGroupDescription extends EObject {
 	String getSemanticCandidateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression
-	 * <em>Semantic Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Semantic Candidate Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #getSemanticCandidateExpression()
 	 * @generated
 	 */
@@ -144,11 +140,9 @@ public interface EEFGroupDescription extends EObject {
 	String getPreconditionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression
-	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Precondition Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getPreconditionExpression <em>Precondition Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Precondition Expression</em>' attribute.
 	 * @see #getPreconditionExpression()
 	 * @generated
 	 */
@@ -205,11 +199,9 @@ public interface EEFGroupDescription extends EObject {
 	EEFGroupStyle getStyle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getStyle <em>Style</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupDescription#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -226,5 +218,20 @@ public interface EEFGroupDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFGroupConditionalStyle> getConditionalStyles();
+
+	/**
+	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.eef.EEFToolbarAction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the toolbar's actions of this group.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Actions</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFGroupDescription_Actions()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFToolbarAction> getActions();
 
 } // EEFGroupDescription

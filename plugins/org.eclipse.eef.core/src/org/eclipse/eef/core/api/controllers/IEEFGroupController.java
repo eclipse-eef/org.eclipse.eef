@@ -15,7 +15,7 @@ package org.eclipse.eef.core.api.controllers;
  *
  * @author sbegaudeau
  */
-public interface IEEFGroupController extends IEEFController {
+public interface IEEFGroupController extends IEEFController, IEEFToolbarActionController {
 	/**
 	 * Register a consumer which will be called with the new value of the label when it will change.
 	 *
@@ -28,4 +28,5 @@ public interface IEEFGroupController extends IEEFController {
 	 * Remove the consumer of the new value of the label.
 	 */
 	void removeNewLabelConsumer();
+
 }

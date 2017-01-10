@@ -10,10 +10,18 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFPageDescription;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
+import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -31,6 +39,11 @@ public class EEFSectionController extends AbstractEEFController implements IEEFS
 	private EEFPageDescription description;
 
 	/**
+	 * The editing context adapter.
+	 */
+	private EditingContextAdapter contextAdapter;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param variableManager
@@ -39,10 +52,14 @@ public class EEFSectionController extends AbstractEEFController implements IEEFS
 	 *            The interpreter
 	 * @param description
 	 *            The description of the page
+	 * @param contextAdapter
+	 *            The editing context adapter
 	 */
-	public EEFSectionController(IVariableManager variableManager, IInterpreter interpreter, EEFPageDescription description) {
+	public EEFSectionController(IVariableManager variableManager, IInterpreter interpreter, EEFPageDescription description,
+			EditingContextAdapter contextAdapter) {
 		super(variableManager, interpreter);
 		this.description = description;
+		this.contextAdapter = contextAdapter;
 	}
 
 	/**
@@ -63,5 +80,26 @@ public class EEFSectionController extends AbstractEEFController implements IEEFS
 	@Override
 	protected EReference getValidationRulesReference() {
 		return EefPackage.Literals.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFToolbarActionController#action(org.eclipse.eef.EEFToolbarAction)
+	 */
+	@Override
+	public IStatus action(EEFToolbarAction action) {
+		return this.contextAdapter.performModelChange(new Runnable() {
+			@Override
+			public void run() {
+				String actionExpression = action.getActionExpression();
+				EAttribute eAttribute = EefPackage.Literals.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION;
+
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(EEFSectionController.this.variableManager.getVariables());
+				EvalFactory.of(EEFSectionController.this.interpreter, EEFSectionController.this.variableManager).logIfBlank(eAttribute)
+						.call(actionExpression);
+			}
+		});
 	}
 }

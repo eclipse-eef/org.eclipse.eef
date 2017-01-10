@@ -13,12 +13,14 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import com.google.common.base.Objects;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFGroupStyle;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EEF_TITLE_BAR_STYLE;
 import org.eclipse.eef.EEF_TOGGLE_STYLE;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -33,15 +35,19 @@ import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
+import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.forms.widgets.Section;
 
 /**
@@ -209,7 +215,11 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.section.setClient(group);
 
-		this.controller = new EEFControllersFactory().createGroupController(this.description, this.variableManager, this.interpreter);
+		this.controller = new EEFControllersFactory().createGroupController(this.description, this.variableManager, this.interpreter,
+				this.contextAdapter);
+
+		createSectionToolBar(this.section);
+		populateSectionToolbar(this.section, this.description.getActions());
 
 		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.contextAdapter);
 		List<EEFControlDescription> controls = this.description.getControls();
@@ -344,6 +354,67 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	public void dispose() {
 		for (IEEFLifecycleManager lifecycleManager : lifecycleManagers) {
 			lifecycleManager.dispose();
+		}
+	}
+
+	/**
+	 * Creates a tool bar for the given section.
+	 *
+	 * @param groupSection
+	 *            The section for which we need a tool bar.
+	 * @return The created tool bar.
+	 */
+	protected final ToolBarManager createSectionToolBar(Section groupSection) {
+		final ToolBarManager toolBarManager = new ToolBarManager(SWT.FLAT | SWT.HORIZONTAL);
+		final ToolBar toolBar = toolBarManager.createControl(groupSection);
+
+		groupSection.setTextClient(toolBar);
+		toolBar.setData(toolBarManager);
+		toolBar.addDisposeListener(new DisposeListener() {
+			@Override
+			public void widgetDisposed(DisposeEvent e) {
+				toolBar.setData(null);
+			}
+		});
+		return toolBarManager;
+	}
+
+	/**
+	 * Returns the toolbar of the given section if any.
+	 *
+	 * @param groupSection
+	 *            The section of which we need the toolbar.
+	 * @return The toolbar of the given section if any.
+	 */
+	protected final ToolBarManager getSectionToolBar(Section groupSection) {
+		Control textClient = groupSection.getTextClient();
+		if (textClient instanceof ToolBar) {
+			ToolBar toolBar = (ToolBar) textClient;
+			Object data = toolBar.getData();
+			if (data instanceof ToolBarManager) {
+				return (ToolBarManager) data;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Populates the toolbar.
+	 *
+	 * @param groupSection
+	 *            the section.
+	 * @param actions
+	 *            the list of actions of the toolbar.
+	 */
+	protected void populateSectionToolbar(Section groupSection, Collection<EEFToolbarAction> actions) {
+		ToolBarManager toolBarManager = getSectionToolBar(groupSection);
+		if (toolBarManager != null) {
+			toolBarManager.removeAll();
+			for (EEFToolbarAction eefToolbarAction : actions) {
+				ToolbarAction toolbarAction = new ToolbarAction(eefToolbarAction, this.controller, this.interpreter, this.variableManager);
+				toolBarManager.add(toolbarAction);
+			}
+			toolBarManager.update(true);
 		}
 	}
 

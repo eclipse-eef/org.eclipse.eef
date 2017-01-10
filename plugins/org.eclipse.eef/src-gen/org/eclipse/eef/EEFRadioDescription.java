@@ -14,20 +14,22 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Radio Description</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a radio group in the user interface. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents a radio group in the user interface.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getValueExpression <em>Value Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getEditExpression <em>Edit Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getNumberOfColumns <em>Number Of Columns</em>}</li>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFRadioDescription#getValueExpression <em>Value Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFRadioDescription#getEditExpression <em>Edit Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression <em>Candidates Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFRadioDescription#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFRadioDescription#getNumberOfColumns <em>Number Of Columns</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFRadioDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFRadioDescription()
  * @model
@@ -47,11 +49,9 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	String getValueExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getValueExpression <em>Value Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Value Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getValueExpression <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
 	 * @generated
 	 */
@@ -71,11 +71,9 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	String getEditExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getEditExpression <em>Edit Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Edit Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getEditExpression <em>Edit Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Edit Expression</em>' attribute.
 	 * @see #getEditExpression()
 	 * @generated
 	 */
@@ -94,11 +92,9 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	String getCandidatesExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression
-	 * <em>Candidates Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Candidates Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression <em>Candidates Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Candidates Expression</em>' attribute.
 	 * @see #getCandidatesExpression()
 	 * @generated
 	 */
@@ -117,11 +113,9 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	String getCandidateDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression
-	 * <em>Candidate Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Candidate Display Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Candidate Display Expression</em>' attribute.
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 */
@@ -140,11 +134,9 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	EEFRadioStyle getStyle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getStyle <em>Style</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
@@ -164,11 +156,9 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	int getNumberOfColumns();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getNumberOfColumns <em>Number Of Columns</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Number Of Columns</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getNumberOfColumns <em>Number Of Columns</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Number Of Columns</em>' attribute.
 	 * @see #getNumberOfColumns()
 	 * @generated
 	 */

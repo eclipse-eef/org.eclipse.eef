@@ -15,6 +15,6 @@ package org.eclipse.eef.core.api.controllers;
  *
  * @author sbegaudeau
  */
-public interface IEEFSectionController extends IEEFController {
+public interface IEEFSectionController extends IEEFController, IEEFToolbarActionController {
 	// do nothing for now
 }

@@ -11,8 +11,10 @@
 package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
@@ -23,8 +25,13 @@ import org.eclipse.eef.core.api.controllers.IEEFSectionController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.quickfix.EEFMessageHyperlinkListener;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.forms.events.IHyperlinkListener;
 
 /**
@@ -77,7 +84,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 		this.hyperlinkListener = new EEFMessageHyperlinkListener(formContainer.getShell());
 
 		this.controller = new EEFControllersFactory().createSectionController(this.eefPage.getDescription(), this.eefPage.getVariableManager(),
-				this.eefPage.getInterpreter());
+				this.eefPage.getInterpreter(), this.eefPage.getView().getContextAdapter());
 
 		List<EEFGroup> eefGroups = this.eefPage.getGroups();
 		for (EEFGroup eefGroup : eefGroups) {
@@ -88,6 +95,8 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 			this.lifecycleManagers.add(groupLifecycleManager);
 		}
+
+		populatePageToolbar(formContainer, this.eefPage.getDescription().getActions());
 	}
 
 	/**
@@ -175,4 +184,29 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 		}
 	}
 
+	/**
+	 * Populates the toolbar.
+	 *
+	 * @param formContainer
+	 *            The form container.
+	 * @param actions
+	 *            the list of actions of the toolbar.
+	 */
+	protected void populatePageToolbar(IEEFFormContainer formContainer, Collection<EEFToolbarAction> actions) {
+		IToolBarManager toolBarManager = formContainer.getForm().getToolBarManager();
+		if (toolBarManager instanceof ToolBarManager) {
+			// For an unknown reason, the existing toolbar of the formContainer doesn't have a transparent background.
+			ToolBar toolBar = ((ToolBarManager) toolBarManager).getControl();
+			toolBar.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_TRANSPARENT));
+		}
+		if (toolBarManager != null) {
+			toolBarManager.removeAll();
+			for (EEFToolbarAction eefToolbarAction : actions) {
+				ToolbarAction toolbarAction = new ToolbarAction(eefToolbarAction, this.controller, this.eefPage.getInterpreter(),
+						this.eefPage.getVariableManager());
+				toolBarManager.add(toolbarAction);
+			}
+			toolBarManager.update(true);
+		}
+	}
 }

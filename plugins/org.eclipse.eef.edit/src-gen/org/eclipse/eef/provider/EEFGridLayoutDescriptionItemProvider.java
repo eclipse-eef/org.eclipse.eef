@@ -21,15 +21,15 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFGridLayoutDescription} object. <!-- begin-user-doc
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFGridLayoutDescription} object.
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
  * @generated
  */
 public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFGridLayoutDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -37,8 +37,8 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,43 +53,37 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This adds a property descriptor for the Number Of Columns feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Number Of Columns feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addNumberOfColumnsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGridLayoutDescription_numberOfColumns_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_numberOfColumns_feature", "_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGridLayoutDescription_numberOfColumns_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_numberOfColumns_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Make Columns With Equal Width feature. <!-- begin-user-doc --> <!--
+	 * This adds a property descriptor for the Make Columns With Equal Width feature.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addMakeColumnsWithEqualWidthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature", "_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns EEFGridLayoutDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFGridLayoutDescription.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -99,7 +93,6 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,8 +101,8 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -139,9 +132,9 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

@@ -11,7 +11,9 @@ package org.eclipse.eef;
 /**
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Radio Style</b></em>'. <!-- end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a style that can be applied on radio widgets. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents a style that can be applied on radio widgets.
+ * <!-- end-model-doc -->
  *
  *
  * @see org.eclipse.eef.EefPackage#getEEFRadioStyle()
