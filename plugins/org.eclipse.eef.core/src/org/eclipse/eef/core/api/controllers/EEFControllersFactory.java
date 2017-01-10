@@ -50,10 +50,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param contextAdapter
+	 *            The editing context adapter
 	 * @return The group controller
 	 */
-	public IEEFGroupController createGroupController(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter) {
-		return new EEFGroupController(description, variableManager, interpreter);
+	public IEEFGroupController createGroupController(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter contextAdapter) {
+		return new EEFGroupController(description, variableManager, interpreter, contextAdapter);
 	}
 
 	/**

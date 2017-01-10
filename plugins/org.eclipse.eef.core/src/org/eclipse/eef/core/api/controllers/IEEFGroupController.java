@@ -10,6 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.eef.EEFToolbarAction;
+
 /**
  * The EEFGroupController is responsible of supporting the refresh of the label of the group.
  *
@@ -28,4 +31,13 @@ public interface IEEFGroupController extends IEEFController {
 	 * Remove the consumer of the new value of the label.
 	 */
 	void removeNewLabelConsumer();
+
+	/**
+	 * Invoked when the user clicks on an action button.
+	 *
+	 * @param action
+	 *            Toolbar action
+	 * @return the status of the action execution
+	 */
+	IStatus action(EEFToolbarAction action);
 }

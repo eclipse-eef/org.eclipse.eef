@@ -25,8 +25,8 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
-	 * The '<em><b>INFO</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>INFO</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #INFO_VALUE
 	 * @generated
 	 * @ordered
@@ -34,8 +34,8 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	INFO(1, "INFO", "INFO"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>WARNING</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>WARNING</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #WARNING_VALUE
 	 * @generated
 	 * @ordered
@@ -43,8 +43,8 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	WARNING(2, "WARNING", "WARNING"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>ERROR</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>ERROR</b></em>' literal object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #ERROR_VALUE
 	 * @generated
 	 * @ordered
@@ -85,9 +85,9 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	public static final int ERROR_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' enumerators. <!-- begin-user-doc -->
+	 * An array of all the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static final EEF_VALIDATION_SEVERITY_DESCRIPTION[] VALUES_ARRAY = new EEF_VALIDATION_SEVERITY_DESCRIPTION[] { INFO, WARNING, ERROR, };
@@ -98,8 +98,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	 *
 	 * @generated
 	 */
-	public static final List<EEF_VALIDATION_SEVERITY_DESCRIPTION> VALUES = Collections.unmodifiableList(Arrays
-			.asList(EEF_VALIDATION_SEVERITY_DESCRIPTION.VALUES_ARRAY));
+	public static final List<EEF_VALIDATION_SEVERITY_DESCRIPTION> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' literal with the specified literal value. <!--
@@ -108,7 +107,8 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	 * @generated
 	 */
 	public static EEF_VALIDATION_SEVERITY_DESCRIPTION get(String literal) {
-		for (EEF_VALIDATION_SEVERITY_DESCRIPTION result : EEF_VALIDATION_SEVERITY_DESCRIPTION.VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			EEF_VALIDATION_SEVERITY_DESCRIPTION result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -123,7 +123,8 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	 * @generated
 	 */
 	public static EEF_VALIDATION_SEVERITY_DESCRIPTION getByName(String name) {
-		for (EEF_VALIDATION_SEVERITY_DESCRIPTION result : EEF_VALIDATION_SEVERITY_DESCRIPTION.VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			EEF_VALIDATION_SEVERITY_DESCRIPTION result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -151,28 +152,25 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
-	 * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EEF_VALIDATION_SEVERITY_DESCRIPTION(int value, String name, String literal) {
@@ -183,7 +181,6 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +190,6 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +199,6 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -212,9 +207,9 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	}
 
 	/**
-	 * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!--
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

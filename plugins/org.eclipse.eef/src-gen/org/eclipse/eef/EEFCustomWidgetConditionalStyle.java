@@ -12,14 +12,16 @@ package org.eclipse.eef;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Custom Widget Conditional Style</b></em>'.
  * <!-- end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a conditional style that can be applied on custom widgets. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents a conditional style that can be applied on custom widgets.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle <em>Style</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle <em>Style</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFCustomWidgetConditionalStyle()
  * @model
@@ -27,13 +29,13 @@ package org.eclipse.eef;
  */
 public interface EEFCustomWidgetConditionalStyle extends EEFConditionalStyle {
 	/**
-	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Style</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' containment reference isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFCustomWidgetStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFCustomWidgetConditionalStyle_Style()
@@ -43,11 +45,9 @@ public interface EEFCustomWidgetConditionalStyle extends EEFConditionalStyle {
 	EEFCustomWidgetStyle getStyle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle <em>Style</em>}'
-	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */

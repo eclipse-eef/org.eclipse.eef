@@ -15,16 +15,16 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression <em>Font Name Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression <em>Font Size Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupStyle#getBarStyle <em>Bar Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle <em>Toggle Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault <em>Expanded By Default</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression <em>Font Name Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression <em>Font Size Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupStyle#getBarStyle <em>Bar Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle <em>Toggle Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault <em>Expanded By Default</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFGroupStyle()
  * @model
@@ -45,11 +45,9 @@ public interface EEFGroupStyle extends EObject {
 	String getBackgroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression
-	 * <em>Background Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Background Color Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getBackgroundColorExpression <em>Background Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Background Color Expression</em>' attribute.
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 */
@@ -69,11 +67,9 @@ public interface EEFGroupStyle extends EObject {
 	String getForegroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression
-	 * <em>Foreground Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Foreground Color Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getForegroundColorExpression <em>Foreground Color Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Foreground Color Expression</em>' attribute.
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 */
@@ -92,11 +88,9 @@ public interface EEFGroupStyle extends EObject {
 	String getFontNameExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression <em>Font Name Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Font Name Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression <em>Font Name Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Font Name Expression</em>' attribute.
 	 * @see #getFontNameExpression()
 	 * @generated
 	 */
@@ -115,25 +109,23 @@ public interface EEFGroupStyle extends EObject {
 	String getFontSizeExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression <em>Font Size Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Font Size Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression <em>Font Size Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Font Size Expression</em>' attribute.
 	 * @see #getFontSizeExpression()
 	 * @generated
 	 */
 	void setFontSizeExpression(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Bar Style</b></em>' attribute. The literals are from the enumeration
-	 * {@link org.eclipse.eef.EEF_TITLE_BAR_STYLE}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Bar Style</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.eef.EEF_TITLE_BAR_STYLE}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bar Style</em>' attribute isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Bar Style</em>' attribute.
 	 * @see org.eclipse.eef.EEF_TITLE_BAR_STYLE
 	 * @see #setBarStyle(EEF_TITLE_BAR_STYLE)
@@ -156,14 +148,14 @@ public interface EEFGroupStyle extends EObject {
 	void setBarStyle(EEF_TITLE_BAR_STYLE value);
 
 	/**
-	 * Returns the value of the '<em><b>Toggle Style</b></em>' attribute. The literals are from the enumeration
-	 * {@link org.eclipse.eef.EEF_TOGGLE_STYLE}. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Toggle Style</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.eclipse.eef.EEF_TOGGLE_STYLE}.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Toggle Style</em>' attribute isn't clear, there really should be more of a description
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Toggle Style</em>' attribute.
 	 * @see org.eclipse.eef.EEF_TOGGLE_STYLE
 	 * @see #setToggleStyle(EEF_TOGGLE_STYLE)
@@ -176,9 +168,7 @@ public interface EEFGroupStyle extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle <em>Toggle Style</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Toggle Style</em>' attribute.
+	 * @param value the new value of the '<em>Toggle Style</em>' attribute.
 	 * @see org.eclipse.eef.EEF_TOGGLE_STYLE
 	 * @see #getToggleStyle()
 	 * @generated
@@ -186,13 +176,13 @@ public interface EEFGroupStyle extends EObject {
 	void setToggleStyle(EEF_TOGGLE_STYLE value);
 
 	/**
-	 * Returns the value of the '<em><b>Expanded By Default</b></em>' attribute. <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Expanded By Default</b></em>' attribute.
+	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Expanded By Default</em>' attribute isn't clear, there really should be more of a
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Expanded By Default</em>' attribute.
 	 * @see #setExpandedByDefault(boolean)
 	 * @see org.eclipse.eef.EefPackage#getEEFGroupStyle_ExpandedByDefault()
@@ -202,11 +192,9 @@ public interface EEFGroupStyle extends EObject {
 	boolean isExpandedByDefault();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault <em>Expanded By Default</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Expanded By Default</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault <em>Expanded By Default</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Expanded By Default</em>' attribute.
 	 * @see #isExpandedByDefault()
 	 * @generated
 	 */

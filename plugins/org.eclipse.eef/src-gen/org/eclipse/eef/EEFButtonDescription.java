@@ -14,17 +14,19 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>EEF Button Description</b></em>'. <!--
  * end-user-doc -->
  *
- * <!-- begin-model-doc --> Represents a button in the user interface. <!-- end-model-doc -->
+ * <!-- begin-model-doc -->
+ * Represents a button in the user interface.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.EEFButtonDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFButtonDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFButtonDescription()
  * @model
@@ -45,11 +47,9 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	String getButtonLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression
-	 * <em>Button Label Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Button Label Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Button Label Expression</em>' attribute.
 	 * @see #getButtonLabelExpression()
 	 * @generated
 	 */
@@ -69,11 +69,9 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	String getPushExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Push Expression</em>' attribute.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Push Expression</em>' attribute.
 	 * @see #getPushExpression()
 	 * @generated
 	 */
@@ -92,11 +90,9 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	EEFButtonStyle getStyle();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}' containment
-	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Style</em>' containment reference.
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
 	 * @generated
 	 */
