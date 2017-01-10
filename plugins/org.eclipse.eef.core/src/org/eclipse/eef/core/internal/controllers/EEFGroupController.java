@@ -10,11 +10,19 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFGroupDescription;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFController;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
+import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -33,6 +41,11 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	private EEFGroupDescription description;
 
 	/**
+	 * The editing context adapter.
+	 */
+	private EditingContextAdapter contextAdapter;
+
+	/**
 	 * The label consumer.
 	 */
 	private IConsumer<String> newLabelConsumer;
@@ -46,10 +59,14 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param contextAdapter
+	 *            The editing context adapter
 	 */
-	public EEFGroupController(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter) {
+	public EEFGroupController(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter contextAdapter) {
 		super(variableManager, interpreter);
 		this.description = description;
+		this.contextAdapter = contextAdapter;
 	}
 
 	/**
@@ -103,5 +120,26 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 
 		String labelExpression = this.description.getLabelExpression();
 		this.newEval().logIfInvalidType(String.class).call(labelExpression, this.newLabelConsumer);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#action(org.eclipse.eef.EEFToolbarAction)
+	 */
+	@Override
+	public IStatus action(EEFToolbarAction action) {
+		return this.contextAdapter.performModelChange(new Runnable() {
+			@Override
+			public void run() {
+				String actionExpression = action.getActionExpression();
+				EAttribute eAttribute = EefPackage.Literals.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION;
+
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(EEFGroupController.this.variableManager.getVariables());
+				EvalFactory.of(EEFGroupController.this.interpreter, EEFGroupController.this.variableManager).logIfBlank(eAttribute)
+						.call(actionExpression);
+			}
+		});
 	}
 }

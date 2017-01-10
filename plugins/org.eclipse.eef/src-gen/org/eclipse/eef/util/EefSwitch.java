@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef.util;
 
+import org.eclipse.eef.*;
 import org.eclipse.eef.EEFButtonConditionalStyle;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFButtonStyle;
@@ -67,45 +68,43 @@ import org.eclipse.emf.ecore.util.Switch;
  * {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
  * returned, which is the result of the switch. <!-- end-user-doc -->
- *
  * @see org.eclipse.eef.EefPackage
  * @generated
  */
 public class EefSwitch<T> extends Switch<T> {
 	/**
-	 * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached model package
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected static EefPackage modelPackage;
 
 	/**
-	 * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Creates an instance of the switch.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EefSwitch() {
-		if (EefSwitch.modelPackage == null) {
-			EefSwitch.modelPackage = EefPackage.eINSTANCE;
+		if (modelPackage == null) {
+			modelPackage = EefPackage.eINSTANCE;
 		}
 	}
 
 	/**
-	 * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @parameter ePackage the package in question.
+	 * Checks whether this is a switch for the given package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
 	@Override
 	protected boolean isSwitchFor(EPackage ePackage) {
-		return ePackage == EefSwitch.modelPackage;
+		return ePackage == modelPackage;
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
-	 * result. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -115,525 +114,439 @@ public class EefSwitch<T> extends Switch<T> {
 		case EefPackage.EEF_VIEW_DESCRIPTION: {
 			EEFViewDescription eefViewDescription = (EEFViewDescription) theEObject;
 			T result = caseEEFViewDescription(eefViewDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_PAGE_DESCRIPTION: {
 			EEFPageDescription eefPageDescription = (EEFPageDescription) theEObject;
 			T result = caseEEFPageDescription(eefPageDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_VALIDATION_RULE_DESCRIPTION: {
 			EEFValidationRuleDescription eefValidationRuleDescription = (EEFValidationRuleDescription) theEObject;
 			T result = caseEEFValidationRuleDescription(eefValidationRuleDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_RULE_AUDIT_DESCRIPTION: {
 			EEFRuleAuditDescription eefRuleAuditDescription = (EEFRuleAuditDescription) theEObject;
 			T result = caseEEFRuleAuditDescription(eefRuleAuditDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION: {
 			EEFValidationFixDescription eefValidationFixDescription = (EEFValidationFixDescription) theEObject;
 			T result = caseEEFValidationFixDescription(eefValidationFixDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION: {
 			EEFPropertyValidationRuleDescription eefPropertyValidationRuleDescription = (EEFPropertyValidationRuleDescription) theEObject;
 			T result = caseEEFPropertyValidationRuleDescription(eefPropertyValidationRuleDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFValidationRuleDescription(eefPropertyValidationRuleDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION: {
 			EEFSemanticValidationRuleDescription eefSemanticValidationRuleDescription = (EEFSemanticValidationRuleDescription) theEObject;
 			T result = caseEEFSemanticValidationRuleDescription(eefSemanticValidationRuleDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFValidationRuleDescription(eefSemanticValidationRuleDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_GROUP_DESCRIPTION: {
 			EEFGroupDescription eefGroupDescription = (EEFGroupDescription) theEObject;
 			T result = caseEEFGroupDescription(eefGroupDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
+			return result;
+		}
+		case EefPackage.EEF_TOOLBAR_ACTION: {
+			EEFToolbarAction eefToolbarAction = (EEFToolbarAction) theEObject;
+			T result = caseEEFToolbarAction(eefToolbarAction);
+			if (result == null)
+				result = defaultCase(theEObject);
 			return result;
 		}
 		case EefPackage.EEF_CONTROL_DESCRIPTION: {
 			EEFControlDescription eefControlDescription = (EEFControlDescription) theEObject;
 			T result = caseEEFControlDescription(eefControlDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CONTAINER_DESCRIPTION: {
 			EEFContainerDescription eefContainerDescription = (EEFContainerDescription) theEObject;
 			T result = caseEEFContainerDescription(eefContainerDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefContainerDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_LAYOUT_DESCRIPTION: {
 			EEFLayoutDescription eefLayoutDescription = (EEFLayoutDescription) theEObject;
 			T result = caseEEFLayoutDescription(eefLayoutDescription);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_FILL_LAYOUT_DESCRIPTION: {
 			EEFFillLayoutDescription eefFillLayoutDescription = (EEFFillLayoutDescription) theEObject;
 			T result = caseEEFFillLayoutDescription(eefFillLayoutDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFLayoutDescription(eefFillLayoutDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_GRID_LAYOUT_DESCRIPTION: {
 			EEFGridLayoutDescription eefGridLayoutDescription = (EEFGridLayoutDescription) theEObject;
 			T result = caseEEFGridLayoutDescription(eefGridLayoutDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFLayoutDescription(eefGridLayoutDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_WIDGET_DESCRIPTION: {
 			EEFWidgetDescription eefWidgetDescription = (EEFWidgetDescription) theEObject;
 			T result = caseEEFWidgetDescription(eefWidgetDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefWidgetDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_TEXT_DESCRIPTION: {
 			EEFTextDescription eefTextDescription = (EEFTextDescription) theEObject;
 			T result = caseEEFTextDescription(eefTextDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefTextDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefTextDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_LABEL_DESCRIPTION: {
 			EEFLabelDescription eefLabelDescription = (EEFLabelDescription) theEObject;
 			T result = caseEEFLabelDescription(eefLabelDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefLabelDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefLabelDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_BUTTON_DESCRIPTION: {
 			EEFButtonDescription eefButtonDescription = (EEFButtonDescription) theEObject;
 			T result = caseEEFButtonDescription(eefButtonDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefButtonDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefButtonDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION: {
 			EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) theEObject;
 			T result = caseEEFCheckboxDescription(eefCheckboxDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefCheckboxDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefCheckboxDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_SELECT_DESCRIPTION: {
 			EEFSelectDescription eefSelectDescription = (EEFSelectDescription) theEObject;
 			T result = caseEEFSelectDescription(eefSelectDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefSelectDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefSelectDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_RADIO_DESCRIPTION: {
 			EEFRadioDescription eefRadioDescription = (EEFRadioDescription) theEObject;
 			T result = caseEEFRadioDescription(eefRadioDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefRadioDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefRadioDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION: {
 			EEFHyperlinkDescription eefHyperlinkDescription = (EEFHyperlinkDescription) theEObject;
 			T result = caseEEFHyperlinkDescription(eefHyperlinkDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefHyperlinkDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefHyperlinkDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_DYNAMIC_MAPPING_FOR: {
 			EEFDynamicMappingFor eefDynamicMappingFor = (EEFDynamicMappingFor) theEObject;
 			T result = caseEEFDynamicMappingFor(eefDynamicMappingFor);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefDynamicMappingFor);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_DYNAMIC_MAPPING_IF: {
 			EEFDynamicMappingIf eefDynamicMappingIf = (EEFDynamicMappingIf) theEObject;
 			T result = caseEEFDynamicMappingIf(eefDynamicMappingIf);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION: {
 			EEFCustomWidgetDescription eefCustomWidgetDescription = (EEFCustomWidgetDescription) theEObject;
 			T result = caseEEFCustomWidgetDescription(eefCustomWidgetDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefCustomWidgetDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefCustomWidgetDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CUSTOM_EXPRESSION: {
 			EEFCustomExpression eefCustomExpression = (EEFCustomExpression) theEObject;
 			T result = caseEEFCustomExpression(eefCustomExpression);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_LIST_DESCRIPTION: {
 			EEFListDescription eefListDescription = (EEFListDescription) theEObject;
 			T result = caseEEFListDescription(eefListDescription);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetDescription(eefListDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = caseEEFControlDescription(eefListDescription);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_WIDGET_STYLE: {
 			EEFWidgetStyle eefWidgetStyle = (EEFWidgetStyle) theEObject;
 			T result = caseEEFWidgetStyle(eefWidgetStyle);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_TEXT_STYLE: {
 			EEFTextStyle eefTextStyle = (EEFTextStyle) theEObject;
 			T result = caseEEFTextStyle(eefTextStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefTextStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_LABEL_STYLE: {
 			EEFLabelStyle eefLabelStyle = (EEFLabelStyle) theEObject;
 			T result = caseEEFLabelStyle(eefLabelStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefLabelStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_BUTTON_STYLE: {
 			EEFButtonStyle eefButtonStyle = (EEFButtonStyle) theEObject;
 			T result = caseEEFButtonStyle(eefButtonStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefButtonStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CHECKBOX_STYLE: {
 			EEFCheckboxStyle eefCheckboxStyle = (EEFCheckboxStyle) theEObject;
 			T result = caseEEFCheckboxStyle(eefCheckboxStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefCheckboxStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_SELECT_STYLE: {
 			EEFSelectStyle eefSelectStyle = (EEFSelectStyle) theEObject;
 			T result = caseEEFSelectStyle(eefSelectStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefSelectStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_RADIO_STYLE: {
 			EEFRadioStyle eefRadioStyle = (EEFRadioStyle) theEObject;
 			T result = caseEEFRadioStyle(eefRadioStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefRadioStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_HYPERLINK_STYLE: {
 			EEFHyperlinkStyle eefHyperlinkStyle = (EEFHyperlinkStyle) theEObject;
 			T result = caseEEFHyperlinkStyle(eefHyperlinkStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefHyperlinkStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CUSTOM_WIDGET_STYLE: {
 			EEFCustomWidgetStyle eefCustomWidgetStyle = (EEFCustomWidgetStyle) theEObject;
 			T result = caseEEFCustomWidgetStyle(eefCustomWidgetStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefCustomWidgetStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_LIST_STYLE: {
 			EEFListStyle eefListStyle = (EEFListStyle) theEObject;
 			T result = caseEEFListStyle(eefListStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFWidgetStyle(eefListStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_GROUP_STYLE: {
 			EEFGroupStyle eefGroupStyle = (EEFGroupStyle) theEObject;
 			T result = caseEEFGroupStyle(eefGroupStyle);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CONDITIONAL_STYLE: {
 			EEFConditionalStyle eefConditionalStyle = (EEFConditionalStyle) theEObject;
 			T result = caseEEFConditionalStyle(eefConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_TEXT_CONDITIONAL_STYLE: {
 			EEFTextConditionalStyle eefTextConditionalStyle = (EEFTextConditionalStyle) theEObject;
 			T result = caseEEFTextConditionalStyle(eefTextConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefTextConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_BUTTON_CONDITIONAL_STYLE: {
 			EEFButtonConditionalStyle eefButtonConditionalStyle = (EEFButtonConditionalStyle) theEObject;
 			T result = caseEEFButtonConditionalStyle(eefButtonConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefButtonConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_LABEL_CONDITIONAL_STYLE: {
 			EEFLabelConditionalStyle eefLabelConditionalStyle = (EEFLabelConditionalStyle) theEObject;
 			T result = caseEEFLabelConditionalStyle(eefLabelConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefLabelConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE: {
 			EEFCheckboxConditionalStyle eefCheckboxConditionalStyle = (EEFCheckboxConditionalStyle) theEObject;
 			T result = caseEEFCheckboxConditionalStyle(eefCheckboxConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefCheckboxConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_SELECT_CONDITIONAL_STYLE: {
 			EEFSelectConditionalStyle eefSelectConditionalStyle = (EEFSelectConditionalStyle) theEObject;
 			T result = caseEEFSelectConditionalStyle(eefSelectConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefSelectConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_RADIO_CONDITIONAL_STYLE: {
 			EEFRadioConditionalStyle eefRadioConditionalStyle = (EEFRadioConditionalStyle) theEObject;
 			T result = caseEEFRadioConditionalStyle(eefRadioConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefRadioConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE: {
 			EEFHyperlinkConditionalStyle eefHyperlinkConditionalStyle = (EEFHyperlinkConditionalStyle) theEObject;
 			T result = caseEEFHyperlinkConditionalStyle(eefHyperlinkConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefHyperlinkConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE: {
 			EEFCustomWidgetConditionalStyle eefCustomWidgetConditionalStyle = (EEFCustomWidgetConditionalStyle) theEObject;
 			T result = caseEEFCustomWidgetConditionalStyle(eefCustomWidgetConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefCustomWidgetConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_WIDGET_ACTION: {
 			EEFWidgetAction eefWidgetAction = (EEFWidgetAction) theEObject;
 			T result = caseEEFWidgetAction(eefWidgetAction);
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_LIST_CONDITIONAL_STYLE: {
 			EEFListConditionalStyle eefListConditionalStyle = (EEFListConditionalStyle) theEObject;
 			T result = caseEEFListConditionalStyle(eefListConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefListConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		case EefPackage.EEF_GROUP_CONDITIONAL_STYLE: {
 			EEFGroupConditionalStyle eefGroupConditionalStyle = (EEFGroupConditionalStyle) theEObject;
 			T result = caseEEFGroupConditionalStyle(eefGroupConditionalStyle);
-			if (result == null) {
+			if (result == null)
 				result = caseEEFConditionalStyle(eefGroupConditionalStyle);
-			}
-			if (result == null) {
+			if (result == null)
 				result = defaultCase(theEObject);
-			}
 			return result;
 		}
 		default:
@@ -717,14 +630,11 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Property Validation Rule Description</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Property Validation Rule Description</em>'.
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Property Validation Rule Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -733,14 +643,11 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule Description</em>'.
+	 * <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Semantic Validation Rule Description</em>'.
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -760,6 +667,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFGroupDescription(EEFGroupDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Toolbar Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Toolbar Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFToolbarAction(EEFToolbarAction object) {
 		return null;
 	}
 
@@ -1322,9 +1244,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
+	 * @param object the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -1379,12 +1299,11 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This
+	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+	 * <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch, but this is the last case
 	 * anyway. <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
+	 * @param object the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
