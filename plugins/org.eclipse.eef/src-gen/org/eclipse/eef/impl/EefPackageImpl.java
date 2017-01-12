@@ -881,6 +881,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFToolbarAction_SubActions() {
+		return (EReference) eefToolbarActionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -2284,6 +2294,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefToolbarActionEClass, EEF_TOOLBAR_ACTION__TOOLTIP_EXPRESSION);
 		createEAttribute(eefToolbarActionEClass, EEF_TOOLBAR_ACTION__IMAGE_EXPRESSION);
 		createEAttribute(eefToolbarActionEClass, EEF_TOOLBAR_ACTION__ACTION_EXPRESSION);
+		createEReference(eefToolbarActionEClass, EEF_TOOLBAR_ACTION__SUB_ACTIONS);
 
 		eefControlDescriptionEClass = createEClass(EEF_CONTROL_DESCRIPTION);
 		createEAttribute(eefControlDescriptionEClass, EEF_CONTROL_DESCRIPTION__IDENTIFIER);
@@ -2654,6 +2665,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEEFToolbarAction_ActionExpression(), ecorePackage.getEString(), "actionExpression", null, 0, 1, EEFToolbarAction.class, //$NON-NLS-1$
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFToolbarAction_SubActions(), this.getEEFToolbarAction(), null, "subActions", null, 0, -1, EEFToolbarAction.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eefControlDescriptionEClass, EEFControlDescription.class, "EEFControlDescription", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);

@@ -35,6 +35,7 @@ import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -411,7 +412,11 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		if (toolBarManager != null) {
 			toolBarManager.removeAll();
 			for (EEFToolbarAction eefToolbarAction : actions) {
-				ToolbarAction toolbarAction = new ToolbarAction(eefToolbarAction, this.controller, this.interpreter, this.variableManager);
+				int style = IAction.AS_PUSH_BUTTON;
+				if (!eefToolbarAction.getSubActions().isEmpty()) {
+					style = IAction.AS_DROP_DOWN_MENU;
+				}
+				ToolbarAction toolbarAction = new ToolbarAction(eefToolbarAction, style, this.controller, this.interpreter, this.variableManager);
 				toolBarManager.add(toolbarAction);
 			}
 			toolBarManager.update(true);

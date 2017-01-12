@@ -602,13 +602,22 @@ public interface EefPackage extends EPackage {
 	int EEF_TOOLBAR_ACTION__ACTION_EXPRESSION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Sub Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_TOOLBAR_ACTION__SUB_ACTIONS = 3;
+
+	/**
 	 * The number of structural features of the '<em>EEF Toolbar Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_TOOLBAR_ACTION_FEATURE_COUNT = 3;
+	int EEF_TOOLBAR_ACTION_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl <em>EEF Control Description</em>}' class.
@@ -3676,6 +3685,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFToolbarAction_ActionExpression();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFToolbarAction#getSubActions <em>Sub Actions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sub Actions</em>'.
+	 * @see org.eclipse.eef.EEFToolbarAction#getSubActions()
+	 * @see #getEEFToolbarAction()
+	 * @generated
+	 */
+	EReference getEEFToolbarAction_SubActions();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.eef.EEFControlDescription <em>EEF Control Description</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>EEF Control Description</em>'.
@@ -5534,6 +5554,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_TOOLBAR_ACTION__ACTION_EXPRESSION = eINSTANCE.getEEFToolbarAction_ActionExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Sub Actions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EEF_TOOLBAR_ACTION__SUB_ACTIONS = eINSTANCE.getEEFToolbarAction_SubActions();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl <em>EEF Control Description</em>}' class.

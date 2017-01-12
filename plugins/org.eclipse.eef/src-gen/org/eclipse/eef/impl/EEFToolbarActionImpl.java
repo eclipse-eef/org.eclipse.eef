@@ -8,15 +8,21 @@
  */
 package org.eclipse.eef.impl;
 
+import java.util.Collection;
 import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EefPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +35,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link org.eclipse.eef.impl.EEFToolbarActionImpl#getTooltipExpression <em>Tooltip Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFToolbarActionImpl#getImageExpression <em>Image Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.impl.EEFToolbarActionImpl#getActionExpression <em>Action Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFToolbarActionImpl#getSubActions <em>Sub Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +100,16 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String actionExpression = ACTION_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSubActions() <em>Sub Actions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFToolbarAction> subActions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,6 +208,34 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public EList<EEFToolbarAction> getSubActions() {
+		if (subActions == null) {
+			subActions = new EObjectContainmentEList.Resolving<EEFToolbarAction>(EEFToolbarAction.class, this,
+					EefPackage.EEF_TOOLBAR_ACTION__SUB_ACTIONS);
+		}
+		return subActions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case EefPackage.EEF_TOOLBAR_ACTION__SUB_ACTIONS:
+			return ((InternalEList<?>) getSubActions()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case EefPackage.EEF_TOOLBAR_ACTION__TOOLTIP_EXPRESSION:
@@ -199,6 +244,8 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 			return getImageExpression();
 		case EefPackage.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION:
 			return getActionExpression();
+		case EefPackage.EEF_TOOLBAR_ACTION__SUB_ACTIONS:
+			return getSubActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,6 +255,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -219,6 +267,10 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 			return;
 		case EefPackage.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION:
 			setActionExpression((String) newValue);
+			return;
+		case EefPackage.EEF_TOOLBAR_ACTION__SUB_ACTIONS:
+			getSubActions().clear();
+			getSubActions().addAll((Collection<? extends EEFToolbarAction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -241,6 +293,9 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 		case EefPackage.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION:
 			setActionExpression(ACTION_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_TOOLBAR_ACTION__SUB_ACTIONS:
+			getSubActions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -259,6 +314,8 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 			return IMAGE_EXPRESSION_EDEFAULT == null ? imageExpression != null : !IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
 		case EefPackage.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION:
 			return ACTION_EXPRESSION_EDEFAULT == null ? actionExpression != null : !ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
+		case EefPackage.EEF_TOOLBAR_ACTION__SUB_ACTIONS:
+			return subActions != null && !subActions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
