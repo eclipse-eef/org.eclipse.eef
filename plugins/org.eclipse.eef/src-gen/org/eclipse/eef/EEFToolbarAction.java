@@ -8,6 +8,7 @@
  */
 package org.eclipse.eef;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.eef.EEFToolbarAction#getTooltipExpression <em>Tooltip Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFToolbarAction#getImageExpression <em>Image Expression</em>}</li>
  *   <li>{@link org.eclipse.eef.EEFToolbarAction#getActionExpression <em>Action Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.EEFToolbarAction#getSubActions <em>Sub Actions</em>}</li>
  * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFToolbarAction()
@@ -103,5 +105,21 @@ public interface EEFToolbarAction extends EObject {
 	 * @generated
 	 */
 	void setActionExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Sub Actions</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eclipse.eef.EEFToolbarAction}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sub Actions</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sub Actions</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFToolbarAction_SubActions()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFToolbarAction> getSubActions();
 
 } // EEFToolbarAction

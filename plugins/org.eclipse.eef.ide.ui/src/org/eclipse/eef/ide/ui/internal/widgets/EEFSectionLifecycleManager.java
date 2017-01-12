@@ -25,6 +25,7 @@ import org.eclipse.eef.core.api.controllers.IEEFSectionController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.quickfix.EEFMessageHyperlinkListener;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.swt.SWT;
@@ -202,7 +203,11 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 		if (toolBarManager != null) {
 			toolBarManager.removeAll();
 			for (EEFToolbarAction eefToolbarAction : actions) {
-				ToolbarAction toolbarAction = new ToolbarAction(eefToolbarAction, this.controller, this.eefPage.getInterpreter(),
+				int style = IAction.AS_PUSH_BUTTON;
+				if (!eefToolbarAction.getSubActions().isEmpty()) {
+					style = IAction.AS_DROP_DOWN_MENU;
+				}
+				ToolbarAction toolbarAction = new ToolbarAction(eefToolbarAction, style, this.controller, this.eefPage.getInterpreter(),
 						this.eefPage.getVariableManager());
 				toolBarManager.add(toolbarAction);
 			}

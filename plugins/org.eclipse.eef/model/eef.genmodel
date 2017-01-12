@@ -83,6 +83,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFToolbarAction/tooltipExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFToolbarAction/imageExpression"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFToolbarAction/actionExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eef.ecore#//EEFToolbarAction/subActions"/>
     </genClasses>
     <genClasses image="false" ecoreClass="eef.ecore#//EEFControlDescription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eef.ecore#//EEFControlDescription/identifier"/>

@@ -63,6 +63,7 @@ public class EEFToolbarActionItemProvider extends ItemProviderAdapter
 			addTooltipExpressionPropertyDescriptor(object);
 			addImageExpressionPropertyDescriptor(object);
 			addActionExpressionPropertyDescriptor(object);
+			addSubActionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -107,6 +108,19 @@ public class EEFToolbarActionItemProvider extends ItemProviderAdapter
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFToolbarAction_actionExpression_feature", "_UI_EEFToolbarAction_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Sub Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSubActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFToolbarAction_subActions_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFToolbarAction_subActions_feature", "_UI_EEFToolbarAction_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_TOOLBAR_ACTION__SUB_ACTIONS, true, false, true, null, null, null));
 	}
 
 	/**
