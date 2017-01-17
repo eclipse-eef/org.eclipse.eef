@@ -27,22 +27,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getHelpExpression <em>Help Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getIsEnabledExpression <em>Is Enabled Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
- * </em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getHelpExpression <em>Help Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getIsEnabledExpression <em>Is Enabled Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl implements EEFWidgetDescription {
 	/**
-	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -50,19 +49,19 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 	protected static final String LABEL_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String labelExpression = EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT;
+	protected String labelExpression = LABEL_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getHelpExpression() <em>Help Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getHelpExpression() <em>Help Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getHelpExpression()
 	 * @generated
 	 * @ordered
@@ -70,14 +69,14 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 	protected static final String HELP_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getHelpExpression() <em>Help Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getHelpExpression() <em>Help Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getHelpExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String helpExpression = EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT;
+	protected String helpExpression = HELP_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getIsEnabledExpression() <em>Is Enabled Expression</em>}' attribute. <!--
@@ -97,12 +96,11 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 	 * @generated
 	 * @ordered
 	 */
-	protected String isEnabledExpression = EEFWidgetDescriptionImpl.IS_ENABLED_EXPRESSION_EDEFAULT;
+	protected String isEnabledExpression = IS_ENABLED_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPropertyValidationRules() <em>Property Validation Rules</em>}' reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The cached value of the '{@link #getPropertyValidationRules() <em>Property Validation Rules</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPropertyValidationRules()
 	 * @generated
 	 * @ordered
@@ -111,7 +109,6 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFWidgetDescriptionImpl() {
@@ -120,7 +117,6 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -130,7 +126,6 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -140,22 +135,19 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setLabelExpression(String newLabelExpression) {
 		String oldLabelExpression = labelExpression;
 		labelExpression = newLabelExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION, oldLabelExpression,
 					labelExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -165,22 +157,19 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setHelpExpression(String newHelpExpression) {
 		String oldHelpExpression = helpExpression;
 		helpExpression = newHelpExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION, oldHelpExpression,
 					helpExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -190,22 +179,19 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setIsEnabledExpression(String newIsEnabledExpression) {
 		String oldIsEnabledExpression = isEnabledExpression;
 		isEnabledExpression = newIsEnabledExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION, oldIsEnabledExpression,
 					isEnabledExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +206,6 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -235,7 +220,6 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -249,7 +233,6 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +252,6 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -295,20 +277,19 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
-			setLabelExpression(EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT);
+			setLabelExpression(LABEL_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
-			setHelpExpression(EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT);
+			setHelpExpression(HELP_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION:
-			setIsEnabledExpression(EEFWidgetDescriptionImpl.IS_ENABLED_EXPRESSION_EDEFAULT);
+			setIsEnabledExpression(IS_ENABLED_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			getPropertyValidationRules().clear();
@@ -319,21 +300,17 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION:
-			return EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-			: !EEFWidgetDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+			return LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION:
-			return EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT == null ? helpExpression != null
-			: !EEFWidgetDescriptionImpl.HELP_EXPRESSION_EDEFAULT.equals(helpExpression);
+			return HELP_EXPRESSION_EDEFAULT == null ? helpExpression != null : !HELP_EXPRESSION_EDEFAULT.equals(helpExpression);
 		case EefPackage.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION:
-			return EEFWidgetDescriptionImpl.IS_ENABLED_EXPRESSION_EDEFAULT == null ? isEnabledExpression != null
-			: !EEFWidgetDescriptionImpl.IS_ENABLED_EXPRESSION_EDEFAULT.equals(isEnabledExpression);
+			return IS_ENABLED_EXPRESSION_EDEFAULT == null ? isEnabledExpression != null : !IS_ENABLED_EXPRESSION_EDEFAULT.equals(isEnabledExpression);
 		case EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 			return propertyValidationRules != null && !propertyValidationRules.isEmpty();
 		}
@@ -342,14 +319,12 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (labelExpression: "); //$NON-NLS-1$

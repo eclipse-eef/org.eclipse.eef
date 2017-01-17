@@ -39,6 +39,50 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  */
 public class EEFViewImpl implements EEFView {
 	/**
+	 * {@link IConsumer} implementation for {@link EEFPageDescription}.
+	 *
+	 * @author arichard
+	 *
+	 */
+	private final class PageConsumer implements IConsumer<Object> {
+		/**
+		 * The eefPageDescription.
+		 */
+		private final EEFPageDescription eefPageDescription;
+
+		/**
+		 * Constructor.
+		 *
+		 * @param eefPageDescription
+		 *            the {@link EEFPageDescription}.
+		 */
+		private PageConsumer(EEFPageDescription eefPageDescription) {
+			this.eefPageDescription = eefPageDescription;
+		}
+
+		@Override
+		public void apply(Object value) {
+			DomainClassPredicate domainClassPredicate = new DomainClassPredicate(this.eefPageDescription.getDomainClass(),
+					EEFViewImpl.this.domainClassTester);
+			Iterable<Object> iterable = Util.asIterable(value, Object.class);
+			Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
+
+			boolean isUnique = true;
+			Iterator<Object> iterator = objects.iterator();
+			while (iterator.hasNext()) {
+				Object object = iterator.next();
+
+				if (isUnique && iterator.hasNext()) {
+					isUnique = false;
+				}
+				EEFPageImpl ePage = createPage(this.eefPageDescription, object, isUnique);
+				ePage.initialize();
+				EEFViewImpl.this.eefPages.add(ePage);
+			}
+		}
+	}
+
+	/**
 	 * The variable manager.
 	 */
 	private IVariableManager variableManager;
@@ -104,35 +148,37 @@ public class EEFViewImpl implements EEFView {
 			Boolean preconditionValid = EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class)
 					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
-				IConsumer<Object> consumer = new IConsumer<Object>() {
-					@Override
-					public void apply(Object value) {
-						DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester);
-						Iterable<Object> iterable = Util.asIterable(value, Object.class);
-						Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
+				IConsumer<Object> consumer = new PageConsumer(eefPageDescription);
+				handleSemanticCandidateExpression(eefPageDescription, consumer);
 
-						boolean isUnique = true;
-						Iterator<Object> iterator = objects.iterator();
-						while (iterator.hasNext()) {
-							Object object = iterator.next();
-
-							if (isUnique && iterator.hasNext()) {
-								isUnique = false;
-							}
-							EEFPageImpl ePage = createPage(eefPageDescription, object, isUnique);
-							ePage.initialize();
-							EEFViewImpl.this.eefPages.add(ePage);
-						}
+				// Handle SubPages
+				for (final EEFPageDescription eefSubPageDescription : eefPageDescription.getSubPages()) {
+					preconditionExpression = eefSubPageDescription.getPreconditionExpression();
+					preconditionValid = EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class)
+							.evaluate(preconditionExpression);
+					if (preconditionValid == null || preconditionValid.booleanValue()) {
+						consumer = new PageConsumer(eefSubPageDescription);
+						handleSemanticCandidateExpression(eefSubPageDescription, consumer);
 					}
-				};
-
-				// If we do not have a semantic candidate expression, we will reuse self by default if it exists
-				Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
-				String pageSemanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
-				EvalFactory.of(this.interpreter, this.variableManager).defaultValue(self).call(pageSemanticCandidateExpression, consumer);
+				}
 			}
 
 		}
+	}
+
+	/**
+	 * Handle semantic candidate expression for the given {@link EEFPageDescription}.
+	 *
+	 * @param eefPageDescription
+	 *            the given {@link EEFPageDescription}.
+	 * @param consumer
+	 *            the associated {@link IConsumer}.
+	 */
+	private void handleSemanticCandidateExpression(final EEFPageDescription eefPageDescription, IConsumer<Object> consumer) {
+		// If we do not have a semantic candidate expression, we will reuse self by default if it exists
+		Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+		String pageSemanticCandidateExpression = eefPageDescription.getSemanticCandidateExpression();
+		EvalFactory.of(this.interpreter, this.variableManager).defaultValue(self).call(pageSemanticCandidateExpression, consumer);
 	}
 
 	/**

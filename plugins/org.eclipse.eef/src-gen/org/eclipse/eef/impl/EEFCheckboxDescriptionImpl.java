@@ -28,21 +28,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getStyle <em>Style</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getStyle <em>Style</em>}</li>
+ *   <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl implements EEFCheckboxDescription {
 	/**
-	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -50,19 +50,19 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	protected static final String VALUE_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String valueExpression = EEFCheckboxDescriptionImpl.VALUE_EXPRESSION_EDEFAULT;
+	protected String valueExpression = VALUE_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -70,19 +70,19 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	protected static final String EDIT_EXPRESSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected String editExpression = EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT;
+	protected String editExpression = EDIT_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -101,7 +100,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EEFCheckboxDescriptionImpl() {
@@ -110,7 +108,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +117,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -130,22 +126,19 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setValueExpression(String newValueExpression) {
 		String oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION, oldValueExpression,
 					valueExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -155,22 +148,19 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setEditExpression(String newEditExpression) {
 		String oldEditExpression = editExpression;
 		editExpression = newEditExpression;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION, oldEditExpression,
 					editExpression));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -180,18 +170,15 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 			style = (EEFCheckboxStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null,
+						null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle
-							.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
+					msgs = newStyle.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
 				}
-				if (msgs != null) {
+				if (msgs != null)
 					msgs.dispatch();
-				}
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, oldStyle, style));
-				}
 			}
 		}
 		return style;
@@ -199,7 +186,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public EEFCheckboxStyle basicGetStyle() {
@@ -208,7 +194,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFCheckboxStyle newStyle, NotificationChain msgs) {
@@ -217,44 +202,37 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, oldStyle,
 					newStyle);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setStyle(EEFCheckboxStyle newStyle) {
 		if (newStyle != style) {
 			NotificationChain msgs = null;
-			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
-			}
-			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
-			}
+			if (style != null)
+				msgs = ((InternalEObject) style).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null,
+						msgs);
+			if (newStyle != null)
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null,
+						msgs);
 			msgs = basicSetStyle(newStyle, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, newStyle, newStyle));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -268,7 +246,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -284,7 +261,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -295,9 +271,8 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION:
 			return getEditExpression();
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
-			if (resolve) {
+			if (resolve)
 				return getStyle();
-			}
 			return basicGetStyle();
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:
 			return getConditionalStyles();
@@ -307,7 +282,6 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -333,17 +307,16 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION:
-			setValueExpression(EEFCheckboxDescriptionImpl.VALUE_EXPRESSION_EDEFAULT);
+			setValueExpression(VALUE_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION:
-			setEditExpression(EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT);
+			setEditExpression(EDIT_EXPRESSION_EDEFAULT);
 			return;
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
 			setStyle((EEFCheckboxStyle) null);
@@ -357,18 +330,15 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION:
-			return EEFCheckboxDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFCheckboxDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			return VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null : !VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION:
-			return EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-			: !EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null : !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:
@@ -379,14 +349,12 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$

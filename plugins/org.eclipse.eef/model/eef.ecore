@@ -72,6 +72,12 @@
         <details key="documentation" value="The validation rules used to validate the semantic element of the page."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPages" upperBound="-1"
+        eType="#//EEFPageDescription" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Pages which are visible under a Page."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EEFValidationRuleDescription" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" lowerBound="1"

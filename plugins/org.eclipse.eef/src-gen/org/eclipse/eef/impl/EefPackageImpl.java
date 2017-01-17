@@ -69,377 +69,323 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefViewDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefPageDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefValidationRuleDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefRuleAuditDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefValidationFixDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefPropertyValidationRuleDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefSemanticValidationRuleDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefGroupDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefControlDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefContainerDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefLayoutDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefFillLayoutDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefGridLayoutDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefWidgetDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefTextDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefLabelDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefButtonDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefCheckboxDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefSelectDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefRadioDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefHyperlinkDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefDynamicMappingForEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefDynamicMappingIfEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefCustomWidgetDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefCustomExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefListDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefWidgetStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefTextStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefLabelStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefButtonStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefCheckboxStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefSelectStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefRadioStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefHyperlinkStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefCustomWidgetStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefListStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefGroupStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefTextConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefButtonConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefLabelConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefCheckboxConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefSelectConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefRadioConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefHyperlinkConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefCustomWidgetConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefWidgetActionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefListConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EClass eefGroupConditionalStyleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum eeF_FILL_LAYOUT_ORIENTATIONEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum eeF_TOGGLE_STYLEEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private EEnum eeF_TITLE_BAR_STYLEEEnum = null;
@@ -458,39 +404,36 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EefPackageImpl() {
-		super(EefPackage.eNS_URI, EefFactory.eINSTANCE);
+		super(eNS_URI, EefFactory.eINSTANCE);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
-	 * <p>
-	 * This method is used to initialize {@link EefPackage#eINSTANCE} when that field is accessed. Clients should not
-	 * invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc -->
+	 * 
+	 * <p>This method is used to initialize {@link EefPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static EefPackage init() {
-		if (EefPackageImpl.isInited) {
+		if (isInited)
 			return (EefPackage) EPackage.Registry.INSTANCE.getEPackage(EefPackage.eNS_URI);
-		}
 
 		// Obtain or create and register package
-		EefPackageImpl theEefPackage = (EefPackageImpl) (EPackage.Registry.INSTANCE.get(EefPackage.eNS_URI) instanceof EefPackageImpl ? EPackage.Registry.INSTANCE
-				.get(EefPackage.eNS_URI) : new EefPackageImpl());
+		EefPackageImpl theEefPackage = (EefPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EefPackageImpl
+				? EPackage.Registry.INSTANCE.get(eNS_URI) : new EefPackageImpl());
 
-		EefPackageImpl.isInited = true;
+		isInited = true;
 
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
@@ -511,7 +454,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -521,7 +463,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -531,7 +472,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -541,7 +481,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -551,7 +490,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -561,7 +499,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -571,7 +508,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -581,7 +517,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -591,7 +526,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -601,7 +535,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -611,7 +544,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -621,7 +553,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -631,7 +562,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -641,7 +571,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -651,7 +580,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -660,8 +588,17 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFPageDescription_SubPages() {
+		return (EReference) eefPageDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -671,7 +608,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -681,7 +617,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -691,7 +626,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -701,7 +635,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -711,7 +644,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -721,7 +653,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -731,7 +662,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -741,7 +671,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -751,7 +680,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -761,7 +689,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -771,7 +698,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -781,7 +707,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -791,7 +716,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -801,7 +725,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -811,7 +734,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -821,7 +743,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -831,7 +752,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -841,7 +761,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -851,7 +770,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -861,7 +779,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -871,7 +788,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -881,7 +797,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -891,7 +806,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -901,7 +815,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -911,7 +824,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -921,7 +833,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -931,7 +842,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -941,7 +851,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -951,7 +860,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -961,7 +869,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -971,7 +878,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -981,7 +887,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -991,7 +896,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1001,7 +905,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1011,7 +914,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1021,7 +923,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1031,7 +932,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1041,7 +941,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1051,7 +950,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1061,7 +959,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1071,7 +968,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1081,7 +977,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1091,7 +986,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1101,7 +995,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1111,7 +1004,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1121,7 +1013,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1131,7 +1022,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1141,7 +1031,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1151,7 +1040,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1161,7 +1049,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1171,7 +1058,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1181,7 +1067,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1191,7 +1076,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1201,7 +1085,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1211,7 +1094,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1221,7 +1103,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1231,7 +1112,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1241,7 +1121,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1251,7 +1130,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1261,7 +1139,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1271,7 +1148,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1281,7 +1157,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1291,7 +1166,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1301,7 +1175,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1311,7 +1184,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1321,7 +1193,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1331,7 +1202,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1341,7 +1211,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1351,7 +1220,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1361,7 +1229,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1371,7 +1238,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1381,7 +1247,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1391,7 +1256,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1401,7 +1265,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1411,7 +1274,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1421,7 +1283,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1431,7 +1292,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1441,7 +1301,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1451,7 +1310,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1461,7 +1319,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1471,7 +1328,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1481,7 +1337,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1491,7 +1346,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1501,7 +1355,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1511,7 +1364,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1521,7 +1373,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1531,7 +1382,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1541,7 +1391,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1551,7 +1400,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1561,7 +1409,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1571,7 +1418,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1581,7 +1427,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1591,7 +1436,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1601,7 +1445,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1611,7 +1454,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1621,7 +1463,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1631,7 +1472,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1641,7 +1481,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1651,7 +1490,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1661,7 +1499,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1671,7 +1508,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1681,7 +1517,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1691,7 +1526,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1701,7 +1535,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1711,7 +1544,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1721,7 +1553,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1731,7 +1562,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1741,7 +1571,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1751,7 +1580,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1761,7 +1589,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1771,7 +1598,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1781,7 +1607,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1791,7 +1616,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1801,7 +1625,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1811,7 +1634,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1821,7 +1643,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1831,7 +1652,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1841,7 +1661,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1851,7 +1670,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1861,7 +1679,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1871,7 +1688,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1881,7 +1697,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1891,7 +1706,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1901,7 +1715,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1911,7 +1724,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1921,7 +1733,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1931,7 +1742,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1941,7 +1751,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1951,7 +1760,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1961,7 +1769,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1971,7 +1778,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1981,7 +1787,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -1991,7 +1796,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2001,7 +1805,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2011,7 +1814,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2021,7 +1823,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2031,7 +1832,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2041,7 +1841,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2051,7 +1850,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2061,7 +1859,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2071,7 +1868,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2081,7 +1877,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2091,7 +1886,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2101,7 +1895,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2111,7 +1904,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2121,7 +1913,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2131,7 +1922,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2141,7 +1931,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2151,7 +1940,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2161,7 +1949,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2171,7 +1958,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2181,7 +1967,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2191,7 +1976,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2201,7 +1985,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2211,7 +1994,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2221,7 +2003,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2231,7 +2012,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2241,7 +2021,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2251,7 +2030,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2261,7 +2039,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2271,7 +2048,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2281,7 +2057,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2291,7 +2066,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2301,7 +2075,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2311,7 +2084,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2321,7 +2093,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2331,7 +2102,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2341,7 +2111,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2351,7 +2120,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2361,7 +2129,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2371,7 +2138,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2381,7 +2147,6 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -2391,286 +2156,283 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but
-	 * its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) {
+		if (isCreated)
 			return;
-		}
 		isCreated = true;
 
 		// Create classes and their features
-		eefViewDescriptionEClass = createEClass(EefPackage.EEF_VIEW_DESCRIPTION);
-		createEAttribute(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER);
-		createEAttribute(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION);
-		createEAttribute(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION);
-		createEReference(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__GROUPS);
-		createEReference(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
-		createEReference(eefViewDescriptionEClass, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
+		eefViewDescriptionEClass = createEClass(EEF_VIEW_DESCRIPTION);
+		createEAttribute(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION);
+		createEAttribute(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION);
+		createEReference(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__GROUPS);
+		createEReference(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__PAGES);
+		createEReference(eefViewDescriptionEClass, EEF_VIEW_DESCRIPTION__EPACKAGES);
 
-		eefPageDescriptionEClass = createEClass(EefPackage.EEF_PAGE_DESCRIPTION);
-		createEAttribute(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER);
-		createEAttribute(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION);
-		createEAttribute(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__DOMAIN_CLASS);
-		createEAttribute(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
-		createEAttribute(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION);
-		createEReference(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
-		createEReference(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+		eefPageDescriptionEClass = createEClass(EEF_PAGE_DESCRIPTION);
+		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION);
+		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__DOMAIN_CLASS);
+		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
+		createEAttribute(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION);
+		createEReference(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__GROUPS);
+		createEReference(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+		createEReference(eefPageDescriptionEClass, EEF_PAGE_DESCRIPTION__SUB_PAGES);
 
-		eefValidationRuleDescriptionEClass = createEClass(EefPackage.EEF_VALIDATION_RULE_DESCRIPTION);
-		createEAttribute(eefValidationRuleDescriptionEClass, EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__SEVERITY);
-		createEAttribute(eefValidationRuleDescriptionEClass, EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION);
-		createEReference(eefValidationRuleDescriptionEClass, EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS);
-		createEReference(eefValidationRuleDescriptionEClass, EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__FIXES);
+		eefValidationRuleDescriptionEClass = createEClass(EEF_VALIDATION_RULE_DESCRIPTION);
+		createEAttribute(eefValidationRuleDescriptionEClass, EEF_VALIDATION_RULE_DESCRIPTION__SEVERITY);
+		createEAttribute(eefValidationRuleDescriptionEClass, EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION);
+		createEReference(eefValidationRuleDescriptionEClass, EEF_VALIDATION_RULE_DESCRIPTION__AUDITS);
+		createEReference(eefValidationRuleDescriptionEClass, EEF_VALIDATION_RULE_DESCRIPTION__FIXES);
 
-		eefRuleAuditDescriptionEClass = createEClass(EefPackage.EEF_RULE_AUDIT_DESCRIPTION);
-		createEAttribute(eefRuleAuditDescriptionEClass, EefPackage.EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION);
+		eefRuleAuditDescriptionEClass = createEClass(EEF_RULE_AUDIT_DESCRIPTION);
+		createEAttribute(eefRuleAuditDescriptionEClass, EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION);
 
-		eefValidationFixDescriptionEClass = createEClass(EefPackage.EEF_VALIDATION_FIX_DESCRIPTION);
-		createEAttribute(eefValidationFixDescriptionEClass, EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__NAME);
-		createEAttribute(eefValidationFixDescriptionEClass, EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION);
+		eefValidationFixDescriptionEClass = createEClass(EEF_VALIDATION_FIX_DESCRIPTION);
+		createEAttribute(eefValidationFixDescriptionEClass, EEF_VALIDATION_FIX_DESCRIPTION__NAME);
+		createEAttribute(eefValidationFixDescriptionEClass, EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION);
 
-		eefPropertyValidationRuleDescriptionEClass = createEClass(EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION);
-		createEReference(eefPropertyValidationRuleDescriptionEClass, EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS);
+		eefPropertyValidationRuleDescriptionEClass = createEClass(EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION);
+		createEReference(eefPropertyValidationRuleDescriptionEClass, EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS);
 
-		eefSemanticValidationRuleDescriptionEClass = createEClass(EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION);
-		createEAttribute(eefSemanticValidationRuleDescriptionEClass, EefPackage.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS);
+		eefSemanticValidationRuleDescriptionEClass = createEClass(EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION);
+		createEAttribute(eefSemanticValidationRuleDescriptionEClass, EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS);
 
-		eefGroupDescriptionEClass = createEClass(EefPackage.EEF_GROUP_DESCRIPTION);
-		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER);
-		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION);
-		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS);
-		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
-		createEAttribute(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION);
-		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
-		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
-		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
-		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__STYLE);
-		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
+		eefGroupDescriptionEClass = createEClass(EEF_GROUP_DESCRIPTION);
+		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__IDENTIFIER);
+		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION);
+		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__DOMAIN_CLASS);
+		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION);
+		createEAttribute(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION);
+		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__CONTROLS);
+		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
+		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__STYLE);
+		createEReference(eefGroupDescriptionEClass, EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefControlDescriptionEClass = createEClass(EefPackage.EEF_CONTROL_DESCRIPTION);
-		createEAttribute(eefControlDescriptionEClass, EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER);
+		eefControlDescriptionEClass = createEClass(EEF_CONTROL_DESCRIPTION);
+		createEAttribute(eefControlDescriptionEClass, EEF_CONTROL_DESCRIPTION__IDENTIFIER);
 
-		eefContainerDescriptionEClass = createEClass(EefPackage.EEF_CONTAINER_DESCRIPTION);
-		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS);
-		createEReference(eefContainerDescriptionEClass, EefPackage.EEF_CONTAINER_DESCRIPTION__LAYOUT);
+		eefContainerDescriptionEClass = createEClass(EEF_CONTAINER_DESCRIPTION);
+		createEReference(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__CONTROLS);
+		createEReference(eefContainerDescriptionEClass, EEF_CONTAINER_DESCRIPTION__LAYOUT);
 
-		eefLayoutDescriptionEClass = createEClass(EefPackage.EEF_LAYOUT_DESCRIPTION);
+		eefLayoutDescriptionEClass = createEClass(EEF_LAYOUT_DESCRIPTION);
 
-		eefFillLayoutDescriptionEClass = createEClass(EefPackage.EEF_FILL_LAYOUT_DESCRIPTION);
-		createEAttribute(eefFillLayoutDescriptionEClass, EefPackage.EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION);
+		eefFillLayoutDescriptionEClass = createEClass(EEF_FILL_LAYOUT_DESCRIPTION);
+		createEAttribute(eefFillLayoutDescriptionEClass, EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION);
 
-		eefGridLayoutDescriptionEClass = createEClass(EefPackage.EEF_GRID_LAYOUT_DESCRIPTION);
-		createEAttribute(eefGridLayoutDescriptionEClass, EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS);
-		createEAttribute(eefGridLayoutDescriptionEClass, EefPackage.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH);
+		eefGridLayoutDescriptionEClass = createEClass(EEF_GRID_LAYOUT_DESCRIPTION);
+		createEAttribute(eefGridLayoutDescriptionEClass, EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS);
+		createEAttribute(eefGridLayoutDescriptionEClass, EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH);
 
-		eefWidgetDescriptionEClass = createEClass(EefPackage.EEF_WIDGET_DESCRIPTION);
-		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
-		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION);
-		createEAttribute(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION);
-		createEReference(eefWidgetDescriptionEClass, EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES);
+		eefWidgetDescriptionEClass = createEClass(EEF_WIDGET_DESCRIPTION);
+		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__LABEL_EXPRESSION);
+		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__HELP_EXPRESSION);
+		createEAttribute(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__IS_ENABLED_EXPRESSION);
+		createEReference(eefWidgetDescriptionEClass, EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 
-		eefTextDescriptionEClass = createEClass(EefPackage.EEF_TEXT_DESCRIPTION);
-		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION);
-		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION);
-		createEAttribute(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__LINE_COUNT);
-		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__STYLE);
-		createEReference(eefTextDescriptionEClass, EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
+		eefTextDescriptionEClass = createEClass(EEF_TEXT_DESCRIPTION);
+		createEAttribute(eefTextDescriptionEClass, EEF_TEXT_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefTextDescriptionEClass, EEF_TEXT_DESCRIPTION__EDIT_EXPRESSION);
+		createEAttribute(eefTextDescriptionEClass, EEF_TEXT_DESCRIPTION__LINE_COUNT);
+		createEReference(eefTextDescriptionEClass, EEF_TEXT_DESCRIPTION__STYLE);
+		createEReference(eefTextDescriptionEClass, EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefLabelDescriptionEClass = createEClass(EefPackage.EEF_LABEL_DESCRIPTION);
-		createEAttribute(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION);
-		createEAttribute(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION);
-		createEReference(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__STYLE);
-		createEReference(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
-		createEReference(eefLabelDescriptionEClass, EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS);
+		eefLabelDescriptionEClass = createEClass(EEF_LABEL_DESCRIPTION);
+		createEAttribute(eefLabelDescriptionEClass, EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefLabelDescriptionEClass, EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION);
+		createEReference(eefLabelDescriptionEClass, EEF_LABEL_DESCRIPTION__STYLE);
+		createEReference(eefLabelDescriptionEClass, EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
+		createEReference(eefLabelDescriptionEClass, EEF_LABEL_DESCRIPTION__ACTIONS);
 
-		eefButtonDescriptionEClass = createEClass(EefPackage.EEF_BUTTON_DESCRIPTION);
-		createEAttribute(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION);
-		createEAttribute(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION);
-		createEReference(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__STYLE);
-		createEReference(eefButtonDescriptionEClass, EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES);
+		eefButtonDescriptionEClass = createEClass(EEF_BUTTON_DESCRIPTION);
+		createEAttribute(eefButtonDescriptionEClass, EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION);
+		createEAttribute(eefButtonDescriptionEClass, EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION);
+		createEReference(eefButtonDescriptionEClass, EEF_BUTTON_DESCRIPTION__STYLE);
+		createEReference(eefButtonDescriptionEClass, EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefCheckboxDescriptionEClass = createEClass(EefPackage.EEF_CHECKBOX_DESCRIPTION);
-		createEAttribute(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION);
-		createEAttribute(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION);
-		createEReference(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE);
-		createEReference(eefCheckboxDescriptionEClass, EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES);
+		eefCheckboxDescriptionEClass = createEClass(EEF_CHECKBOX_DESCRIPTION);
+		createEAttribute(eefCheckboxDescriptionEClass, EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefCheckboxDescriptionEClass, EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION);
+		createEReference(eefCheckboxDescriptionEClass, EEF_CHECKBOX_DESCRIPTION__STYLE);
+		createEReference(eefCheckboxDescriptionEClass, EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefSelectDescriptionEClass = createEClass(EefPackage.EEF_SELECT_DESCRIPTION);
-		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION);
-		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION);
-		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION);
-		createEAttribute(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
-		createEReference(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__STYLE);
-		createEReference(eefSelectDescriptionEClass, EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES);
+		eefSelectDescriptionEClass = createEClass(EEF_SELECT_DESCRIPTION);
+		createEAttribute(eefSelectDescriptionEClass, EEF_SELECT_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefSelectDescriptionEClass, EEF_SELECT_DESCRIPTION__EDIT_EXPRESSION);
+		createEAttribute(eefSelectDescriptionEClass, EEF_SELECT_DESCRIPTION__CANDIDATES_EXPRESSION);
+		createEAttribute(eefSelectDescriptionEClass, EEF_SELECT_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
+		createEReference(eefSelectDescriptionEClass, EEF_SELECT_DESCRIPTION__STYLE);
+		createEReference(eefSelectDescriptionEClass, EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefRadioDescriptionEClass = createEClass(EefPackage.EEF_RADIO_DESCRIPTION);
-		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION);
-		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION);
-		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION);
-		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
-		createEReference(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__STYLE);
-		createEAttribute(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS);
-		createEReference(eefRadioDescriptionEClass, EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES);
+		eefRadioDescriptionEClass = createEClass(EEF_RADIO_DESCRIPTION);
+		createEAttribute(eefRadioDescriptionEClass, EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefRadioDescriptionEClass, EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION);
+		createEAttribute(eefRadioDescriptionEClass, EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION);
+		createEAttribute(eefRadioDescriptionEClass, EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION);
+		createEReference(eefRadioDescriptionEClass, EEF_RADIO_DESCRIPTION__STYLE);
+		createEAttribute(eefRadioDescriptionEClass, EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS);
+		createEReference(eefRadioDescriptionEClass, EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefHyperlinkDescriptionEClass = createEClass(EefPackage.EEF_HYPERLINK_DESCRIPTION);
-		createEAttribute(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION);
-		createEAttribute(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION);
-		createEAttribute(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION);
-		createEReference(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE);
-		createEReference(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES);
-		createEReference(eefHyperlinkDescriptionEClass, EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
+		eefHyperlinkDescriptionEClass = createEClass(EEF_HYPERLINK_DESCRIPTION);
+		createEAttribute(eefHyperlinkDescriptionEClass, EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefHyperlinkDescriptionEClass, EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION);
+		createEAttribute(eefHyperlinkDescriptionEClass, EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION);
+		createEReference(eefHyperlinkDescriptionEClass, EEF_HYPERLINK_DESCRIPTION__STYLE);
+		createEReference(eefHyperlinkDescriptionEClass, EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES);
+		createEReference(eefHyperlinkDescriptionEClass, EEF_HYPERLINK_DESCRIPTION__ACTIONS);
 
-		eefDynamicMappingForEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_FOR);
-		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERATOR);
-		createEAttribute(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION);
-		createEReference(eefDynamicMappingForEClass, EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS);
+		eefDynamicMappingForEClass = createEClass(EEF_DYNAMIC_MAPPING_FOR);
+		createEAttribute(eefDynamicMappingForEClass, EEF_DYNAMIC_MAPPING_FOR__ITERATOR);
+		createEAttribute(eefDynamicMappingForEClass, EEF_DYNAMIC_MAPPING_FOR__ITERABLE_EXPRESSION);
+		createEReference(eefDynamicMappingForEClass, EEF_DYNAMIC_MAPPING_FOR__IFS);
 
-		eefDynamicMappingIfEClass = createEClass(EefPackage.EEF_DYNAMIC_MAPPING_IF);
-		createEAttribute(eefDynamicMappingIfEClass, EefPackage.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION);
-		createEReference(eefDynamicMappingIfEClass, EefPackage.EEF_DYNAMIC_MAPPING_IF__WIDGET);
+		eefDynamicMappingIfEClass = createEClass(EEF_DYNAMIC_MAPPING_IF);
+		createEAttribute(eefDynamicMappingIfEClass, EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION);
+		createEReference(eefDynamicMappingIfEClass, EEF_DYNAMIC_MAPPING_IF__WIDGET);
 
-		eefCustomWidgetDescriptionEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION);
-		createEReference(eefCustomWidgetDescriptionEClass, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS);
-		createEReference(eefCustomWidgetDescriptionEClass, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE);
-		createEReference(eefCustomWidgetDescriptionEClass, EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES);
+		eefCustomWidgetDescriptionEClass = createEClass(EEF_CUSTOM_WIDGET_DESCRIPTION);
+		createEReference(eefCustomWidgetDescriptionEClass, EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS);
+		createEReference(eefCustomWidgetDescriptionEClass, EEF_CUSTOM_WIDGET_DESCRIPTION__STYLE);
+		createEReference(eefCustomWidgetDescriptionEClass, EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefCustomExpressionEClass = createEClass(EefPackage.EEF_CUSTOM_EXPRESSION);
-		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__IDENTIFIER);
-		createEAttribute(eefCustomExpressionEClass, EefPackage.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION);
+		eefCustomExpressionEClass = createEClass(EEF_CUSTOM_EXPRESSION);
+		createEAttribute(eefCustomExpressionEClass, EEF_CUSTOM_EXPRESSION__IDENTIFIER);
+		createEAttribute(eefCustomExpressionEClass, EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION);
 
-		eefListDescriptionEClass = createEClass(EefPackage.EEF_LIST_DESCRIPTION);
-		createEAttribute(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__VALUE_EXPRESSION);
-		createEAttribute(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION);
-		createEAttribute(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION);
-		createEReference(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__ACTIONS);
-		createEReference(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__STYLE);
-		createEReference(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__CONDITIONAL_STYLES);
+		eefListDescriptionEClass = createEClass(EEF_LIST_DESCRIPTION);
+		createEAttribute(eefListDescriptionEClass, EEF_LIST_DESCRIPTION__VALUE_EXPRESSION);
+		createEAttribute(eefListDescriptionEClass, EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION);
+		createEAttribute(eefListDescriptionEClass, EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION);
+		createEReference(eefListDescriptionEClass, EEF_LIST_DESCRIPTION__ACTIONS);
+		createEReference(eefListDescriptionEClass, EEF_LIST_DESCRIPTION__STYLE);
+		createEReference(eefListDescriptionEClass, EEF_LIST_DESCRIPTION__CONDITIONAL_STYLES);
 
-		eefWidgetStyleEClass = createEClass(EefPackage.EEF_WIDGET_STYLE);
-		createEAttribute(eefWidgetStyleEClass, EefPackage.EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefWidgetStyleEClass, EefPackage.EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefWidgetStyleEClass, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION);
-		createEAttribute(eefWidgetStyleEClass, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION);
-		createEAttribute(eefWidgetStyleEClass, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION);
+		eefWidgetStyleEClass = createEClass(EEF_WIDGET_STYLE);
+		createEAttribute(eefWidgetStyleEClass, EEF_WIDGET_STYLE__LABEL_BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefWidgetStyleEClass, EEF_WIDGET_STYLE__LABEL_FOREGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefWidgetStyleEClass, EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION);
+		createEAttribute(eefWidgetStyleEClass, EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION);
+		createEAttribute(eefWidgetStyleEClass, EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION);
 
-		eefTextStyleEClass = createEClass(EefPackage.EEF_TEXT_STYLE);
-		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION);
-		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION);
-		createEAttribute(eefTextStyleEClass, EefPackage.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION);
+		eefTextStyleEClass = createEClass(EEF_TEXT_STYLE);
+		createEAttribute(eefTextStyleEClass, EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EEF_TEXT_STYLE__FONT_NAME_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION);
+		createEAttribute(eefTextStyleEClass, EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION);
 
-		eefLabelStyleEClass = createEClass(EefPackage.EEF_LABEL_STYLE);
-		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__BACKGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__FOREGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__FONT_NAME_EXPRESSION);
-		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__FONT_SIZE_EXPRESSION);
-		createEAttribute(eefLabelStyleEClass, EefPackage.EEF_LABEL_STYLE__FONT_STYLE_EXPRESSION);
+		eefLabelStyleEClass = createEClass(EEF_LABEL_STYLE);
+		createEAttribute(eefLabelStyleEClass, EEF_LABEL_STYLE__BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefLabelStyleEClass, EEF_LABEL_STYLE__FOREGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefLabelStyleEClass, EEF_LABEL_STYLE__FONT_NAME_EXPRESSION);
+		createEAttribute(eefLabelStyleEClass, EEF_LABEL_STYLE__FONT_SIZE_EXPRESSION);
+		createEAttribute(eefLabelStyleEClass, EEF_LABEL_STYLE__FONT_STYLE_EXPRESSION);
 
-		eefButtonStyleEClass = createEClass(EefPackage.EEF_BUTTON_STYLE);
+		eefButtonStyleEClass = createEClass(EEF_BUTTON_STYLE);
 
-		eefCheckboxStyleEClass = createEClass(EefPackage.EEF_CHECKBOX_STYLE);
+		eefCheckboxStyleEClass = createEClass(EEF_CHECKBOX_STYLE);
 
-		eefSelectStyleEClass = createEClass(EefPackage.EEF_SELECT_STYLE);
+		eefSelectStyleEClass = createEClass(EEF_SELECT_STYLE);
 
-		eefRadioStyleEClass = createEClass(EefPackage.EEF_RADIO_STYLE);
+		eefRadioStyleEClass = createEClass(EEF_RADIO_STYLE);
 
-		eefHyperlinkStyleEClass = createEClass(EefPackage.EEF_HYPERLINK_STYLE);
-		createEAttribute(eefHyperlinkStyleEClass, EefPackage.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefHyperlinkStyleEClass, EefPackage.EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION);
-		createEAttribute(eefHyperlinkStyleEClass, EefPackage.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION);
-		createEAttribute(eefHyperlinkStyleEClass, EefPackage.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION);
+		eefHyperlinkStyleEClass = createEClass(EEF_HYPERLINK_STYLE);
+		createEAttribute(eefHyperlinkStyleEClass, EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefHyperlinkStyleEClass, EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION);
+		createEAttribute(eefHyperlinkStyleEClass, EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION);
+		createEAttribute(eefHyperlinkStyleEClass, EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION);
 
-		eefCustomWidgetStyleEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_STYLE);
+		eefCustomWidgetStyleEClass = createEClass(EEF_CUSTOM_WIDGET_STYLE);
 
-		eefListStyleEClass = createEClass(EefPackage.EEF_LIST_STYLE);
+		eefListStyleEClass = createEClass(EEF_LIST_STYLE);
 
-		eefGroupStyleEClass = createEClass(EefPackage.EEF_GROUP_STYLE);
-		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION);
-		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION);
-		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION);
-		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__BAR_STYLE);
-		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__TOGGLE_STYLE);
-		createEAttribute(eefGroupStyleEClass, EefPackage.EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT);
+		eefGroupStyleEClass = createEClass(EEF_GROUP_STYLE);
+		createEAttribute(eefGroupStyleEClass, EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EEF_GROUP_STYLE__FONT_NAME_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION);
+		createEAttribute(eefGroupStyleEClass, EEF_GROUP_STYLE__BAR_STYLE);
+		createEAttribute(eefGroupStyleEClass, EEF_GROUP_STYLE__TOGGLE_STYLE);
+		createEAttribute(eefGroupStyleEClass, EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT);
 
-		eefConditionalStyleEClass = createEClass(EefPackage.EEF_CONDITIONAL_STYLE);
-		createEAttribute(eefConditionalStyleEClass, EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION);
+		eefConditionalStyleEClass = createEClass(EEF_CONDITIONAL_STYLE);
+		createEAttribute(eefConditionalStyleEClass, EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION);
 
-		eefTextConditionalStyleEClass = createEClass(EefPackage.EEF_TEXT_CONDITIONAL_STYLE);
-		createEReference(eefTextConditionalStyleEClass, EefPackage.EEF_TEXT_CONDITIONAL_STYLE__STYLE);
+		eefTextConditionalStyleEClass = createEClass(EEF_TEXT_CONDITIONAL_STYLE);
+		createEReference(eefTextConditionalStyleEClass, EEF_TEXT_CONDITIONAL_STYLE__STYLE);
 
-		eefButtonConditionalStyleEClass = createEClass(EefPackage.EEF_BUTTON_CONDITIONAL_STYLE);
-		createEReference(eefButtonConditionalStyleEClass, EefPackage.EEF_BUTTON_CONDITIONAL_STYLE__STYLE);
+		eefButtonConditionalStyleEClass = createEClass(EEF_BUTTON_CONDITIONAL_STYLE);
+		createEReference(eefButtonConditionalStyleEClass, EEF_BUTTON_CONDITIONAL_STYLE__STYLE);
 
-		eefLabelConditionalStyleEClass = createEClass(EefPackage.EEF_LABEL_CONDITIONAL_STYLE);
-		createEReference(eefLabelConditionalStyleEClass, EefPackage.EEF_LABEL_CONDITIONAL_STYLE__STYLE);
+		eefLabelConditionalStyleEClass = createEClass(EEF_LABEL_CONDITIONAL_STYLE);
+		createEReference(eefLabelConditionalStyleEClass, EEF_LABEL_CONDITIONAL_STYLE__STYLE);
 
-		eefCheckboxConditionalStyleEClass = createEClass(EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE);
-		createEReference(eefCheckboxConditionalStyleEClass, EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE);
+		eefCheckboxConditionalStyleEClass = createEClass(EEF_CHECKBOX_CONDITIONAL_STYLE);
+		createEReference(eefCheckboxConditionalStyleEClass, EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE);
 
-		eefSelectConditionalStyleEClass = createEClass(EefPackage.EEF_SELECT_CONDITIONAL_STYLE);
-		createEReference(eefSelectConditionalStyleEClass, EefPackage.EEF_SELECT_CONDITIONAL_STYLE__STYLE);
+		eefSelectConditionalStyleEClass = createEClass(EEF_SELECT_CONDITIONAL_STYLE);
+		createEReference(eefSelectConditionalStyleEClass, EEF_SELECT_CONDITIONAL_STYLE__STYLE);
 
-		eefRadioConditionalStyleEClass = createEClass(EefPackage.EEF_RADIO_CONDITIONAL_STYLE);
-		createEReference(eefRadioConditionalStyleEClass, EefPackage.EEF_RADIO_CONDITIONAL_STYLE__STYLE);
+		eefRadioConditionalStyleEClass = createEClass(EEF_RADIO_CONDITIONAL_STYLE);
+		createEReference(eefRadioConditionalStyleEClass, EEF_RADIO_CONDITIONAL_STYLE__STYLE);
 
-		eefHyperlinkConditionalStyleEClass = createEClass(EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE);
-		createEReference(eefHyperlinkConditionalStyleEClass, EefPackage.EEF_HYPERLINK_CONDITIONAL_STYLE__STYLE);
+		eefHyperlinkConditionalStyleEClass = createEClass(EEF_HYPERLINK_CONDITIONAL_STYLE);
+		createEReference(eefHyperlinkConditionalStyleEClass, EEF_HYPERLINK_CONDITIONAL_STYLE__STYLE);
 
-		eefCustomWidgetConditionalStyleEClass = createEClass(EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE);
-		createEReference(eefCustomWidgetConditionalStyleEClass, EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE);
+		eefCustomWidgetConditionalStyleEClass = createEClass(EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE);
+		createEReference(eefCustomWidgetConditionalStyleEClass, EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE);
 
-		eefWidgetActionEClass = createEClass(EefPackage.EEF_WIDGET_ACTION);
-		createEAttribute(eefWidgetActionEClass, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION);
-		createEAttribute(eefWidgetActionEClass, EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION);
+		eefWidgetActionEClass = createEClass(EEF_WIDGET_ACTION);
+		createEAttribute(eefWidgetActionEClass, EEF_WIDGET_ACTION__LABEL_EXPRESSION);
+		createEAttribute(eefWidgetActionEClass, EEF_WIDGET_ACTION__ACTION_EXPRESSION);
 
-		eefListConditionalStyleEClass = createEClass(EefPackage.EEF_LIST_CONDITIONAL_STYLE);
-		createEReference(eefListConditionalStyleEClass, EefPackage.EEF_LIST_CONDITIONAL_STYLE__STYLE);
+		eefListConditionalStyleEClass = createEClass(EEF_LIST_CONDITIONAL_STYLE);
+		createEReference(eefListConditionalStyleEClass, EEF_LIST_CONDITIONAL_STYLE__STYLE);
 
-		eefGroupConditionalStyleEClass = createEClass(EefPackage.EEF_GROUP_CONDITIONAL_STYLE);
-		createEReference(eefGroupConditionalStyleEClass, EefPackage.EEF_GROUP_CONDITIONAL_STYLE__STYLE);
+		eefGroupConditionalStyleEClass = createEClass(EEF_GROUP_CONDITIONAL_STYLE);
+		createEReference(eefGroupConditionalStyleEClass, EEF_GROUP_CONDITIONAL_STYLE__STYLE);
 
 		// Create enums
-		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EefPackage.EEF_VALIDATION_SEVERITY_DESCRIPTION);
-		eeF_FILL_LAYOUT_ORIENTATIONEEnum = createEEnum(EefPackage.EEF_FILL_LAYOUT_ORIENTATION);
-		eeF_TOGGLE_STYLEEEnum = createEEnum(EefPackage.EEF_TOGGLE_STYLE);
-		eeF_TITLE_BAR_STYLEEEnum = createEEnum(EefPackage.EEF_TITLE_BAR_STYLE);
+		eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum = createEEnum(EEF_VALIDATION_SEVERITY_DESCRIPTION);
+		eeF_FILL_LAYOUT_ORIENTATIONEEnum = createEEnum(EEF_FILL_LAYOUT_ORIENTATION);
+		eeF_TOGGLE_STYLEEEnum = createEEnum(EEF_TOGGLE_STYLE);
+		eeF_TITLE_BAR_STYLEEEnum = createEEnum(EEF_TITLE_BAR_STYLE);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any
-	 * invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) {
+		if (isInitialized)
 			return;
-		}
 		isInitialized = true;
 
 		// Initialize package
-		setName(EefPackage.eNAME);
-		setNsPrefix(EefPackage.eNS_PREFIX);
-		setNsURI(EefPackage.eNS_URI);
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
 		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
@@ -2717,742 +2479,445 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		eefGroupConditionalStyleEClass.getESuperTypes().add(this.getEEFConditionalStyle());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(eefViewDescriptionEClass, EEFViewDescription.class,
-				"EEFViewDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFViewDescription_Identifier(),
-				ecorePackage.getEString(),
-				"identifier", null, 0, 1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFViewDescription_LabelExpression(),
-				theEcorePackage.getEString(),
-				"labelExpression", null, 0, 1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFViewDescription_ImageExpression(),
-				theEcorePackage.getEString(),
-				"imageExpression", null, 0, 1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFViewDescription_Groups(),
-				this.getEEFGroupDescription(),
-				null,
-				"groups", null, 0, -1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFViewDescription_Pages(),
-				this.getEEFPageDescription(),
-				null,
-				"pages", null, 1, -1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFViewDescription_EPackages(),
-				ecorePackage.getEPackage(),
-				null,
-				"ePackages", null, 0, -1, EEFViewDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefViewDescriptionEClass, EEFViewDescription.class, "EEFViewDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFViewDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, EEFViewDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFViewDescription_LabelExpression(), theEcorePackage.getEString(), "labelExpression", null, 0, 1, EEFViewDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFViewDescription_ImageExpression(), theEcorePackage.getEString(), "imageExpression", null, 0, 1, EEFViewDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFViewDescription_Groups(), this.getEEFGroupDescription(), null, "groups", null, 0, -1, EEFViewDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFViewDescription_Pages(), this.getEEFPageDescription(), null, "pages", null, 1, -1, EEFViewDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFViewDescription_EPackages(), ecorePackage.getEPackage(), null, "ePackages", null, 0, -1, EEFViewDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefPageDescriptionEClass, EEFPageDescription.class,
-				"EEFPageDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFPageDescription_Identifier(),
-				ecorePackage.getEString(),
-				"identifier", null, 0, 1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFPageDescription_LabelExpression(),
-				ecorePackage.getEString(),
-				"labelExpression", null, 0, 1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFPageDescription_DomainClass(),
-				ecorePackage.getEString(),
-				"domainClass", null, 0, 1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFPageDescription_SemanticCandidateExpression(),
-				ecorePackage.getEString(),
-				"semanticCandidateExpression", "", 0, 1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-		initEAttribute(
-				getEEFPageDescription_PreconditionExpression(),
-				theEcorePackage.getEString(),
-				"preconditionExpression", null, 0, 1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFPageDescription_Groups(),
-				this.getEEFGroupDescription(),
-				null,
-				"groups", null, 0, -1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFPageDescription_SemanticValidationRules(),
-				this.getEEFSemanticValidationRuleDescription(),
-				null,
-				"semanticValidationRules", null, 0, -1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefPageDescriptionEClass, EEFPageDescription.class, "EEFPageDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFPageDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, EEFPageDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFPageDescription_LabelExpression(), ecorePackage.getEString(), "labelExpression", null, 0, 1, EEFPageDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFPageDescription_DomainClass(), ecorePackage.getEString(), "domainClass", null, 0, 1, EEFPageDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFPageDescription_SemanticCandidateExpression(), ecorePackage.getEString(), "semanticCandidateExpression", "", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
+				EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFPageDescription_PreconditionExpression(), theEcorePackage.getEString(), "preconditionExpression", null, 0, 1, //$NON-NLS-1$
+				EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFPageDescription_Groups(), this.getEEFGroupDescription(), null, "groups", null, 0, -1, EEFPageDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFPageDescription_SemanticValidationRules(), this.getEEFSemanticValidationRuleDescription(), null,
+				"semanticValidationRules", null, 0, -1, EEFPageDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, //$NON-NLS-1$
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFPageDescription_SubPages(), this.getEEFPageDescription(), null, "subPages", null, 0, -1, EEFPageDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefValidationRuleDescriptionEClass, EEFValidationRuleDescription.class,
-				"EEFValidationRuleDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFValidationRuleDescription_Severity(),
-				this.getEEF_VALIDATION_SEVERITY_DESCRIPTION(),
-				"severity", null, 1, 1, EEFValidationRuleDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFValidationRuleDescription_MessageExpression(),
-				theEcorePackage.getEString(),
-				"messageExpression", null, 0, 1, EEFValidationRuleDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFValidationRuleDescription_Audits(),
-				this.getEEFRuleAuditDescription(),
-				null,
-				"audits", null, 0, -1, EEFValidationRuleDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFValidationRuleDescription_Fixes(),
-				this.getEEFValidationFixDescription(),
-				null,
-				"fixes", null, 0, -1, EEFValidationRuleDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefValidationRuleDescriptionEClass, EEFValidationRuleDescription.class, "EEFValidationRuleDescription", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFValidationRuleDescription_Severity(), this.getEEF_VALIDATION_SEVERITY_DESCRIPTION(), "severity", null, 1, 1, //$NON-NLS-1$
+				EEFValidationRuleDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFValidationRuleDescription_MessageExpression(), theEcorePackage.getEString(), "messageExpression", null, 0, 1, //$NON-NLS-1$
+				EEFValidationRuleDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getEEFValidationRuleDescription_Audits(), this.getEEFRuleAuditDescription(), null, "audits", null, 0, -1, //$NON-NLS-1$
+				EEFValidationRuleDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFValidationRuleDescription_Fixes(), this.getEEFValidationFixDescription(), null, "fixes", null, 0, -1, //$NON-NLS-1$
+				EEFValidationRuleDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefRuleAuditDescriptionEClass, EEFRuleAuditDescription.class,
-				"EEFRuleAuditDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFRuleAuditDescription_AuditExpression(),
-				theEcorePackage.getEString(),
-				"auditExpression", null, 1, 1, EEFRuleAuditDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefRuleAuditDescriptionEClass, EEFRuleAuditDescription.class, "EEFRuleAuditDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFRuleAuditDescription_AuditExpression(), theEcorePackage.getEString(), "auditExpression", null, 1, 1, //$NON-NLS-1$
+				EEFRuleAuditDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(eefValidationFixDescriptionEClass, EEFValidationFixDescription.class,
-				"EEFValidationFixDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFValidationFixDescription_Name(),
-				theEcorePackage.getEString(),
-				"name", null, 1, 1, EEFValidationFixDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFValidationFixDescription_FixExpression(),
-				theEcorePackage.getEString(),
-				"fixExpression", null, 1, 1, EEFValidationFixDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefValidationFixDescriptionEClass, EEFValidationFixDescription.class, "EEFValidationFixDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFValidationFixDescription_Name(), theEcorePackage.getEString(), "name", null, 1, 1, EEFValidationFixDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFValidationFixDescription_FixExpression(), theEcorePackage.getEString(), "fixExpression", null, 1, 1, //$NON-NLS-1$
+				EEFValidationFixDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(
-				eefPropertyValidationRuleDescriptionEClass,
-				EEFPropertyValidationRuleDescription.class,
-				"EEFPropertyValidationRuleDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFPropertyValidationRuleDescription_Targets(),
-				this.getEEFWidgetDescription(),
-				this.getEEFWidgetDescription_PropertyValidationRules(),
-				"targets", null, 0, -1, EEFPropertyValidationRuleDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefPropertyValidationRuleDescriptionEClass, EEFPropertyValidationRuleDescription.class, "EEFPropertyValidationRuleDescription", //$NON-NLS-1$
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFPropertyValidationRuleDescription_Targets(), this.getEEFWidgetDescription(),
+				this.getEEFWidgetDescription_PropertyValidationRules(), "targets", null, 0, -1, EEFPropertyValidationRuleDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(
-				eefSemanticValidationRuleDescriptionEClass,
-				EEFSemanticValidationRuleDescription.class,
-				"EEFSemanticValidationRuleDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFSemanticValidationRuleDescription_TargetClass(),
-				theEcorePackage.getEString(),
-				"targetClass", null, 1, 1, EEFSemanticValidationRuleDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefSemanticValidationRuleDescriptionEClass, EEFSemanticValidationRuleDescription.class, "EEFSemanticValidationRuleDescription", //$NON-NLS-1$
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFSemanticValidationRuleDescription_TargetClass(), theEcorePackage.getEString(), "targetClass", null, 1, 1, //$NON-NLS-1$
+				EEFSemanticValidationRuleDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefGroupDescriptionEClass, EEFGroupDescription.class,
-				"EEFGroupDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupDescription_Identifier(),
-				ecorePackage.getEString(),
-				"identifier", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupDescription_LabelExpression(),
-				ecorePackage.getEString(),
-				"labelExpression", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupDescription_DomainClass(),
-				ecorePackage.getEString(),
-				"domainClass", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupDescription_SemanticCandidateExpression(),
-				ecorePackage.getEString(),
-				"semanticCandidateExpression", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupDescription_PreconditionExpression(),
-				theEcorePackage.getEString(),
-				"preconditionExpression", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFGroupDescription_Controls(),
-				this.getEEFControlDescription(),
-				null,
-				"controls", null, 1, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFGroupDescription_SemanticValidationRules(),
-				this.getEEFSemanticValidationRuleDescription(),
-				null,
-				"semanticValidationRules", null, 0, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFGroupDescription_PropertyValidationRules(),
-				this.getEEFPropertyValidationRuleDescription(),
-				null,
-				"propertyValidationRules", null, 0, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFGroupDescription_Style(),
-				this.getEEFGroupStyle(),
-				null,
-				"style", null, 0, 1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFGroupDescription_ConditionalStyles(),
-				this.getEEFGroupConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefGroupDescriptionEClass, EEFGroupDescription.class, "EEFGroupDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFGroupDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, EEFGroupDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_LabelExpression(), ecorePackage.getEString(), "labelExpression", null, 0, 1, EEFGroupDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_DomainClass(), ecorePackage.getEString(), "domainClass", null, 0, 1, EEFGroupDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_SemanticCandidateExpression(), ecorePackage.getEString(), "semanticCandidateExpression", null, 0, 1, //$NON-NLS-1$
+				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupDescription_PreconditionExpression(), theEcorePackage.getEString(), "preconditionExpression", null, 0, 1, //$NON-NLS-1$
+				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFGroupDescription_Controls(), this.getEEFControlDescription(), null, "controls", null, 1, -1, EEFGroupDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFGroupDescription_SemanticValidationRules(), this.getEEFSemanticValidationRuleDescription(), null,
+				"semanticValidationRules", null, 0, -1, EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, //$NON-NLS-1$
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFGroupDescription_PropertyValidationRules(), this.getEEFPropertyValidationRuleDescription(), null,
+				"propertyValidationRules", null, 0, -1, EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, //$NON-NLS-1$
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFGroupDescription_Style(), this.getEEFGroupStyle(), null, "style", null, 0, 1, EEFGroupDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFGroupDescription_ConditionalStyles(), this.getEEFGroupConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFGroupDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefControlDescriptionEClass, EEFControlDescription.class,
-				"EEFControlDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFControlDescription_Identifier(),
-				ecorePackage.getEString(),
-				"identifier", null, 0, 1, EEFControlDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefControlDescriptionEClass, EEFControlDescription.class, "EEFControlDescription", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFControlDescription_Identifier(), ecorePackage.getEString(), "identifier", null, 0, 1, EEFControlDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefContainerDescriptionEClass, EEFContainerDescription.class,
-				"EEFContainerDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFContainerDescription_Controls(),
-				this.getEEFControlDescription(),
-				null,
-				"controls", null, 1, -1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFContainerDescription_Layout(),
-				this.getEEFLayoutDescription(),
-				null,
-				"layout", null, 0, 1, EEFContainerDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefContainerDescriptionEClass, EEFContainerDescription.class, "EEFContainerDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFContainerDescription_Controls(), this.getEEFControlDescription(), null, "controls", null, 1, -1, //$NON-NLS-1$
+				EEFContainerDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFContainerDescription_Layout(), this.getEEFLayoutDescription(), null, "layout", null, 0, 1, EEFContainerDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefLayoutDescriptionEClass, EEFLayoutDescription.class,
-				"EEFLayoutDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefLayoutDescriptionEClass, EEFLayoutDescription.class, "EEFLayoutDescription", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(eefFillLayoutDescriptionEClass, EEFFillLayoutDescription.class,
-				"EEFFillLayoutDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFFillLayoutDescription_Orientation(),
-				this.getEEF_FILL_LAYOUT_ORIENTATION(),
-				"orientation", "VERTICAL", 0, 1, EEFFillLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEClass(eefFillLayoutDescriptionEClass, EEFFillLayoutDescription.class, "EEFFillLayoutDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFFillLayoutDescription_Orientation(), this.getEEF_FILL_LAYOUT_ORIENTATION(), "orientation", "VERTICAL", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
+				EEFFillLayoutDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(eefGridLayoutDescriptionEClass, EEFGridLayoutDescription.class,
-				"EEFGridLayoutDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGridLayoutDescription_NumberOfColumns(),
-				theEcorePackage.getEInt(),
-				"numberOfColumns", "1", 0, 1, EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-		initEAttribute(
-				getEEFGridLayoutDescription_MakeColumnsWithEqualWidth(),
-				theEcorePackage.getEBoolean(),
-				"makeColumnsWithEqualWidth", "1", 0, 1, EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEClass(eefGridLayoutDescriptionEClass, EEFGridLayoutDescription.class, "EEFGridLayoutDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFGridLayoutDescription_NumberOfColumns(), theEcorePackage.getEInt(), "numberOfColumns", "1", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
+				EEFGridLayoutDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFGridLayoutDescription_MakeColumnsWithEqualWidth(), theEcorePackage.getEBoolean(), "makeColumnsWithEqualWidth", "1", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
+				EEFGridLayoutDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(eefWidgetDescriptionEClass, EEFWidgetDescription.class,
-				"EEFWidgetDescription", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetDescription_LabelExpression(),
-				ecorePackage.getEString(),
-				"labelExpression", null, 0, 1, EEFWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetDescription_HelpExpression(),
-				ecorePackage.getEString(),
-				"helpExpression", null, 0, 1, EEFWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetDescription_IsEnabledExpression(),
-				ecorePackage.getEString(),
-				"isEnabledExpression", null, 0, 1, EEFWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFWidgetDescription_PropertyValidationRules(),
-				this.getEEFPropertyValidationRuleDescription(),
-				this.getEEFPropertyValidationRuleDescription_Targets(),
-				"propertyValidationRules", null, 0, -1, EEFWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefWidgetDescriptionEClass, EEFWidgetDescription.class, "EEFWidgetDescription", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFWidgetDescription_LabelExpression(), ecorePackage.getEString(), "labelExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetDescription_HelpExpression(), ecorePackage.getEString(), "helpExpression", null, 0, 1, EEFWidgetDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetDescription_IsEnabledExpression(), ecorePackage.getEString(), "isEnabledExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFWidgetDescription_PropertyValidationRules(), this.getEEFPropertyValidationRuleDescription(),
+				this.getEEFPropertyValidationRuleDescription_Targets(), "propertyValidationRules", null, 0, -1, EEFWidgetDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefTextDescriptionEClass, EEFTextDescription.class,
-				"EEFTextDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextDescription_ValueExpression(),
-				theEcorePackage.getEString(),
-				"valueExpression", null, 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextDescription_EditExpression(),
-				theEcorePackage.getEString(),
-				"editExpression", null, 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextDescription_LineCount(),
-				ecorePackage.getEInt(),
-				"lineCount", "1", 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-		initEReference(
-				getEEFTextDescription_Style(),
-				this.getEEFTextStyle(),
-				null,
-				"style", null, 0, 1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFTextDescription_ConditionalStyles(),
-				this.getEEFTextConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFTextDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefTextDescriptionEClass, EEFTextDescription.class, "EEFTextDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFTextDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 0, 1, EEFTextDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextDescription_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1, EEFTextDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextDescription_LineCount(), ecorePackage.getEInt(), "lineCount", "1", 0, 1, EEFTextDescription.class, !IS_TRANSIENT, //$NON-NLS-1$//$NON-NLS-2$
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFTextDescription_Style(), this.getEEFTextStyle(), null, "style", null, 0, 1, EEFTextDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFTextDescription_ConditionalStyles(), this.getEEFTextConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFTextDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefLabelDescriptionEClass, EEFLabelDescription.class,
-				"EEFLabelDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFLabelDescription_ValueExpression(),
-				ecorePackage.getEString(),
-				"valueExpression", null, 0, 1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFLabelDescription_DisplayExpression(),
-				ecorePackage.getEString(),
-				"displayExpression", null, 0, 1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFLabelDescription_Style(),
-				this.getEEFLabelStyle(),
-				null,
-				"style", null, 0, 1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFLabelDescription_ConditionalStyles(),
-				this.getEEFLabelConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFLabelDescription_Actions(),
-				this.getEEFWidgetAction(),
-				null,
-				"actions", null, 0, -1, EEFLabelDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefLabelDescriptionEClass, EEFLabelDescription.class, "EEFLabelDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFLabelDescription_ValueExpression(), ecorePackage.getEString(), "valueExpression", null, 0, 1, EEFLabelDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLabelDescription_DisplayExpression(), ecorePackage.getEString(), "displayExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLabelDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFLabelDescription_Style(), this.getEEFLabelStyle(), null, "style", null, 0, 1, EEFLabelDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFLabelDescription_ConditionalStyles(), this.getEEFLabelConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFLabelDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFLabelDescription_Actions(), this.getEEFWidgetAction(), null, "actions", null, 0, -1, EEFLabelDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefButtonDescriptionEClass, EEFButtonDescription.class,
-				"EEFButtonDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFButtonDescription_ButtonLabelExpression(),
-				theEcorePackage.getEString(),
-				"buttonLabelExpression", null, 0, 1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFButtonDescription_PushExpression(),
-				theEcorePackage.getEString(),
-				"pushExpression", null, 0, 1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFButtonDescription_Style(),
-				this.getEEFButtonStyle(),
-				null,
-				"style", null, 0, 1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFButtonDescription_ConditionalStyles(),
-				this.getEEFButtonConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFButtonDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefButtonDescriptionEClass, EEFButtonDescription.class, "EEFButtonDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFButtonDescription_ButtonLabelExpression(), theEcorePackage.getEString(), "buttonLabelExpression", null, 0, 1, //$NON-NLS-1$
+				EEFButtonDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFButtonDescription_PushExpression(), theEcorePackage.getEString(), "pushExpression", null, 0, 1, //$NON-NLS-1$
+				EEFButtonDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFButtonDescription_Style(), this.getEEFButtonStyle(), null, "style", null, 0, 1, EEFButtonDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFButtonDescription_ConditionalStyles(), this.getEEFButtonConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFButtonDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefCheckboxDescriptionEClass, EEFCheckboxDescription.class,
-				"EEFCheckboxDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFCheckboxDescription_ValueExpression(),
-				theEcorePackage.getEString(),
-				"valueExpression", null, 0, 1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFCheckboxDescription_EditExpression(),
-				theEcorePackage.getEString(),
-				"editExpression", null, 0, 1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFCheckboxDescription_Style(),
-				this.getEEFCheckboxStyle(),
-				null,
-				"style", null, 0, 1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFCheckboxDescription_ConditionalStyles(),
-				this.getEEFCheckboxConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFCheckboxDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefCheckboxDescriptionEClass, EEFCheckboxDescription.class, "EEFCheckboxDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFCheckboxDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFCheckboxDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFCheckboxDescription_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFCheckboxDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFCheckboxDescription_Style(), this.getEEFCheckboxStyle(), null, "style", null, 0, 1, EEFCheckboxDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFCheckboxDescription_ConditionalStyles(), this.getEEFCheckboxConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFCheckboxDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefSelectDescriptionEClass, EEFSelectDescription.class,
-				"EEFSelectDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFSelectDescription_ValueExpression(),
-				theEcorePackage.getEString(),
-				"valueExpression", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFSelectDescription_EditExpression(),
-				theEcorePackage.getEString(),
-				"editExpression", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFSelectDescription_CandidatesExpression(),
-				theEcorePackage.getEString(),
-				"candidatesExpression", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFSelectDescription_CandidateDisplayExpression(),
-				theEcorePackage.getEString(),
-				"candidateDisplayExpression", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFSelectDescription_Style(),
-				this.getEEFSelectStyle(),
-				null,
-				"style", null, 0, 1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFSelectDescription_ConditionalStyles(),
-				this.getEEFSelectConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFSelectDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefSelectDescriptionEClass, EEFSelectDescription.class, "EEFSelectDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFSelectDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFSelectDescription_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFSelectDescription_CandidatesExpression(), theEcorePackage.getEString(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFSelectDescription_CandidateDisplayExpression(), theEcorePackage.getEString(), "candidateDisplayExpression", null, 0, 1, //$NON-NLS-1$
+				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFSelectDescription_Style(), this.getEEFSelectStyle(), null, "style", null, 0, 1, EEFSelectDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFSelectDescription_ConditionalStyles(), this.getEEFSelectConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFSelectDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefRadioDescriptionEClass, EEFRadioDescription.class,
-				"EEFRadioDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFRadioDescription_ValueExpression(),
-				theEcorePackage.getEString(),
-				"valueExpression", null, 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFRadioDescription_EditExpression(),
-				theEcorePackage.getEString(),
-				"editExpression", null, 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFRadioDescription_CandidatesExpression(),
-				theEcorePackage.getEString(),
-				"candidatesExpression", null, 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFRadioDescription_CandidateDisplayExpression(),
-				theEcorePackage.getEString(),
-				"candidateDisplayExpression", null, 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFRadioDescription_Style(),
-				this.getEEFRadioStyle(),
-				null,
-				"style", null, 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFRadioDescription_NumberOfColumns(),
-				theEcorePackage.getEInt(),
-				"numberOfColumns", "-1", 0, 1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-		initEReference(
-				getEEFRadioDescription_ConditionalStyles(),
-				this.getEEFRadioConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFRadioDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefRadioDescriptionEClass, EEFRadioDescription.class, "EEFRadioDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFRadioDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFRadioDescription_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1, EEFRadioDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFRadioDescription_CandidatesExpression(), theEcorePackage.getEString(), "candidatesExpression", null, 0, 1, //$NON-NLS-1$
+				EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFRadioDescription_CandidateDisplayExpression(), theEcorePackage.getEString(), "candidateDisplayExpression", null, 0, 1, //$NON-NLS-1$
+				EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFRadioDescription_Style(), this.getEEFRadioStyle(), null, "style", null, 0, 1, EEFRadioDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFRadioDescription_NumberOfColumns(), theEcorePackage.getEInt(), "numberOfColumns", "-1", 0, 1, EEFRadioDescription.class, //$NON-NLS-1$//$NON-NLS-2$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFRadioDescription_ConditionalStyles(), this.getEEFRadioConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFRadioDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefHyperlinkDescriptionEClass, EEFHyperlinkDescription.class,
-				"EEFHyperlinkDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFHyperlinkDescription_ValueExpression(),
-				theEcorePackage.getEString(),
-				"valueExpression", null, 0, 1, EEFHyperlinkDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFHyperlinkDescription_DisplayExpression(),
-				ecorePackage.getEString(),
-				"displayExpression", null, 0, 1, EEFHyperlinkDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFHyperlinkDescription_OnClickExpression(),
-				theEcorePackage.getEString(),
-				"onClickExpression", null, 0, 1, EEFHyperlinkDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFHyperlinkDescription_Style(),
-				this.getEEFHyperlinkStyle(),
-				null,
-				"style", null, 0, 1, EEFHyperlinkDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFHyperlinkDescription_ConditionalStyles(),
-				this.getEEFHyperlinkConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFHyperlinkDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFHyperlinkDescription_Actions(),
-				this.getEEFWidgetAction(),
-				null,
-				"actions", null, 0, -1, EEFHyperlinkDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefHyperlinkDescriptionEClass, EEFHyperlinkDescription.class, "EEFHyperlinkDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFHyperlinkDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFHyperlinkDescription_DisplayExpression(), ecorePackage.getEString(), "displayExpression", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFHyperlinkDescription_OnClickExpression(), theEcorePackage.getEString(), "onClickExpression", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getEEFHyperlinkDescription_Style(), this.getEEFHyperlinkStyle(), null, "style", null, 0, 1, EEFHyperlinkDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFHyperlinkDescription_ConditionalStyles(), this.getEEFHyperlinkConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFHyperlinkDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFHyperlinkDescription_Actions(), this.getEEFWidgetAction(), null, "actions", null, 0, -1, EEFHyperlinkDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefDynamicMappingForEClass, EEFDynamicMappingFor.class,
-				"EEFDynamicMappingFor", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFDynamicMappingFor_Iterator(),
-				theEcorePackage.getEString(),
-				"iterator", null, 1, 1, EEFDynamicMappingFor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFDynamicMappingFor_IterableExpression(),
-				theEcorePackage.getEString(),
-				"iterableExpression", null, 1, 1, EEFDynamicMappingFor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFDynamicMappingFor_Ifs(),
-				this.getEEFDynamicMappingIf(),
-				null,
-				"ifs", null, 1, -1, EEFDynamicMappingFor.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefDynamicMappingForEClass, EEFDynamicMappingFor.class, "EEFDynamicMappingFor", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFDynamicMappingFor_Iterator(), theEcorePackage.getEString(), "iterator", null, 1, 1, EEFDynamicMappingFor.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFDynamicMappingFor_IterableExpression(), theEcorePackage.getEString(), "iterableExpression", null, 1, 1, //$NON-NLS-1$
+				EEFDynamicMappingFor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFDynamicMappingFor_Ifs(), this.getEEFDynamicMappingIf(), null, "ifs", null, 1, -1, EEFDynamicMappingFor.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefDynamicMappingIfEClass, EEFDynamicMappingIf.class,
-				"EEFDynamicMappingIf", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFDynamicMappingIf_PredicateExpression(),
-				theEcorePackage.getEString(),
-				"predicateExpression", null, 1, 1, EEFDynamicMappingIf.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFDynamicMappingIf_Widget(),
-				this.getEEFWidgetDescription(),
-				null,
-				"widget", null, 1, 1, EEFDynamicMappingIf.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefDynamicMappingIfEClass, EEFDynamicMappingIf.class, "EEFDynamicMappingIf", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFDynamicMappingIf_PredicateExpression(), theEcorePackage.getEString(), "predicateExpression", null, 1, 1, //$NON-NLS-1$
+				EEFDynamicMappingIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFDynamicMappingIf_Widget(), this.getEEFWidgetDescription(), null, "widget", null, 1, 1, EEFDynamicMappingIf.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefCustomWidgetDescriptionEClass, EEFCustomWidgetDescription.class,
-				"EEFCustomWidgetDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFCustomWidgetDescription_CustomExpressions(),
-				this.getEEFCustomExpression(),
-				null,
-				"customExpressions", null, 0, -1, EEFCustomWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFCustomWidgetDescription_Style(),
-				this.getEEFCustomWidgetStyle(),
-				null,
-				"style", null, 0, 1, EEFCustomWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFCustomWidgetDescription_ConditionalStyles(),
-				this.getEEFCustomWidgetConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFCustomWidgetDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefCustomWidgetDescriptionEClass, EEFCustomWidgetDescription.class, "EEFCustomWidgetDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFCustomWidgetDescription_CustomExpressions(), this.getEEFCustomExpression(), null, "customExpressions", null, 0, -1, //$NON-NLS-1$
+				EEFCustomWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFCustomWidgetDescription_Style(), this.getEEFCustomWidgetStyle(), null, "style", null, 0, 1, //$NON-NLS-1$
+				EEFCustomWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFCustomWidgetDescription_ConditionalStyles(), this.getEEFCustomWidgetConditionalStyle(), null, "conditionalStyles", null, //$NON-NLS-1$
+				0, -1, EEFCustomWidgetDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefCustomExpressionEClass, EEFCustomExpression.class,
-				"EEFCustomExpression", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFCustomExpression_Identifier(),
-				ecorePackage.getEString(),
-				"identifier", null, 1, 1, EEFCustomExpression.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFCustomExpression_CustomExpression(),
-				ecorePackage.getEString(),
-				"customExpression", null, 0, 1, EEFCustomExpression.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefCustomExpressionEClass, EEFCustomExpression.class, "EEFCustomExpression", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFCustomExpression_Identifier(), ecorePackage.getEString(), "identifier", null, 1, 1, EEFCustomExpression.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFCustomExpression_CustomExpression(), ecorePackage.getEString(), "customExpression", null, 0, 1, //$NON-NLS-1$
+				EEFCustomExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefListDescriptionEClass, EEFListDescription.class,
-				"EEFListDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFListDescription_ValueExpression(),
-				theEcorePackage.getEString(),
-				"valueExpression", null, 0, 1, EEFListDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFListDescription_DisplayExpression(),
-				theEcorePackage.getEString(),
-				"displayExpression", null, 0, 1, EEFListDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFListDescription_OnClickExpression(),
-				theEcorePackage.getEString(),
-				"onClickExpression", null, 0, 1, EEFListDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFListDescription_Actions(),
-				this.getEEFWidgetAction(),
-				null,
-				"actions", null, 0, -1, EEFListDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFListDescription_Style(),
-				this.getEEFListStyle(),
-				null,
-				"style", null, 0, 1, EEFListDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFListDescription_ConditionalStyles(),
-				this.getEEFListConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFListDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefListDescriptionEClass, EEFListDescription.class, "EEFListDescription", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFListDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 0, 1, EEFListDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFListDescription_DisplayExpression(), theEcorePackage.getEString(), "displayExpression", null, 0, 1, //$NON-NLS-1$
+				EEFListDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFListDescription_OnClickExpression(), theEcorePackage.getEString(), "onClickExpression", null, 0, 1, //$NON-NLS-1$
+				EEFListDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFListDescription_Actions(), this.getEEFWidgetAction(), null, "actions", null, 0, -1, EEFListDescription.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFListDescription_Style(), this.getEEFListStyle(), null, "style", null, 0, 1, EEFListDescription.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEEFListDescription_ConditionalStyles(), this.getEEFListConditionalStyle(), null, "conditionalStyles", null, 0, -1, //$NON-NLS-1$
+				EEFListDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefWidgetStyleEClass, EEFWidgetStyle.class,
-				"EEFWidgetStyle", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetStyle_LabelBackgroundColorExpression(),
-				ecorePackage.getEString(),
-				"labelBackgroundColorExpression", null, 0, 1, EEFWidgetStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetStyle_LabelForegroundColorExpression(),
-				ecorePackage.getEString(),
-				"labelForegroundColorExpression", null, 0, 1, EEFWidgetStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetStyle_LabelFontNameExpression(),
-				ecorePackage.getEString(),
-				"labelFontNameExpression", null, 0, 1, EEFWidgetStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetStyle_LabelFontSizeExpression(),
-				ecorePackage.getEString(),
-				"labelFontSizeExpression", null, 0, 1, EEFWidgetStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetStyle_LabelFontStyleExpression(),
-				ecorePackage.getEString(),
-				"labelFontStyleExpression", null, 0, 1, EEFWidgetStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefWidgetStyleEClass, EEFWidgetStyle.class, "EEFWidgetStyle", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFWidgetStyle_LabelBackgroundColorExpression(), ecorePackage.getEString(), "labelBackgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetStyle_LabelForegroundColorExpression(), ecorePackage.getEString(), "labelForegroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetStyle_LabelFontNameExpression(), ecorePackage.getEString(), "labelFontNameExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetStyle_LabelFontSizeExpression(), ecorePackage.getEString(), "labelFontSizeExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetStyle_LabelFontStyleExpression(), ecorePackage.getEString(), "labelFontStyleExpression", null, 0, 1, //$NON-NLS-1$
+				EEFWidgetStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefTextStyleEClass, EEFTextStyle.class,
-				"EEFTextStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextStyle_BackgroundColorExpression(),
-				ecorePackage.getEString(),
-				"backgroundColorExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextStyle_ForegroundColorExpression(),
-				ecorePackage.getEString(),
-				"foregroundColorExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextStyle_FontNameExpression(),
-				ecorePackage.getEString(),
-				"fontNameExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextStyle_FontSizeExpression(),
-				ecorePackage.getEString(),
-				"fontSizeExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFTextStyle_FontStyleExpression(),
-				ecorePackage.getEString(),
-				"fontStyleExpression", null, 0, 1, EEFTextStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefTextStyleEClass, EEFTextStyle.class, "EEFTextStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFTextStyle_BackgroundColorExpression(), ecorePackage.getEString(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTextStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextStyle_ForegroundColorExpression(), ecorePackage.getEString(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFTextStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextStyle_FontNameExpression(), ecorePackage.getEString(), "fontNameExpression", null, 0, 1, EEFTextStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextStyle_FontSizeExpression(), ecorePackage.getEString(), "fontSizeExpression", null, 0, 1, EEFTextStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFTextStyle_FontStyleExpression(), ecorePackage.getEString(), "fontStyleExpression", null, 0, 1, EEFTextStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefLabelStyleEClass, EEFLabelStyle.class,
-				"EEFLabelStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFLabelStyle_BackgroundColorExpression(),
-				ecorePackage.getEString(),
-				"backgroundColorExpression", null, 0, 1, EEFLabelStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFLabelStyle_ForegroundColorExpression(),
-				ecorePackage.getEString(),
-				"foregroundColorExpression", null, 0, 1, EEFLabelStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFLabelStyle_FontNameExpression(),
-				ecorePackage.getEString(),
-				"fontNameExpression", null, 0, 1, EEFLabelStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFLabelStyle_FontSizeExpression(),
-				ecorePackage.getEString(),
-				"fontSizeExpression", null, 0, 1, EEFLabelStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFLabelStyle_FontStyleExpression(),
-				ecorePackage.getEString(),
-				"fontStyleExpression", null, 0, 1, EEFLabelStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefLabelStyleEClass, EEFLabelStyle.class, "EEFLabelStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFLabelStyle_BackgroundColorExpression(), ecorePackage.getEString(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLabelStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLabelStyle_ForegroundColorExpression(), ecorePackage.getEString(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFLabelStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLabelStyle_FontNameExpression(), ecorePackage.getEString(), "fontNameExpression", null, 0, 1, EEFLabelStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLabelStyle_FontSizeExpression(), ecorePackage.getEString(), "fontSizeExpression", null, 0, 1, EEFLabelStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFLabelStyle_FontStyleExpression(), ecorePackage.getEString(), "fontStyleExpression", null, 0, 1, EEFLabelStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefButtonStyleEClass, EEFButtonStyle.class,
-				"EEFButtonStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefButtonStyleEClass, EEFButtonStyle.class, "EEFButtonStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(eefCheckboxStyleEClass, EEFCheckboxStyle.class,
-				"EEFCheckboxStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefCheckboxStyleEClass, EEFCheckboxStyle.class, "EEFCheckboxStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(eefSelectStyleEClass, EEFSelectStyle.class,
-				"EEFSelectStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefSelectStyleEClass, EEFSelectStyle.class, "EEFSelectStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(eefRadioStyleEClass, EEFRadioStyle.class,
-				"EEFRadioStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefRadioStyleEClass, EEFRadioStyle.class, "EEFRadioStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(eefHyperlinkStyleEClass, EEFHyperlinkStyle.class,
-				"EEFHyperlinkStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFHyperlinkStyle_BackgroundColorExpression(),
-				ecorePackage.getEString(),
-				"backgroundColorExpression", null, 0, 1, EEFHyperlinkStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFHyperlinkStyle_FontNameExpression(),
-				ecorePackage.getEString(),
-				"fontNameExpression", null, 0, 1, EEFHyperlinkStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFHyperlinkStyle_FontSizeExpression(),
-				ecorePackage.getEString(),
-				"fontSizeExpression", null, 0, 1, EEFHyperlinkStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFHyperlinkStyle_FontStyleExpression(),
-				ecorePackage.getEString(),
-				"fontStyleExpression", null, 0, 1, EEFHyperlinkStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefHyperlinkStyleEClass, EEFHyperlinkStyle.class, "EEFHyperlinkStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFHyperlinkStyle_BackgroundColorExpression(), ecorePackage.getEString(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFHyperlinkStyle_FontNameExpression(), ecorePackage.getEString(), "fontNameExpression", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFHyperlinkStyle_FontSizeExpression(), ecorePackage.getEString(), "fontSizeExpression", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFHyperlinkStyle_FontStyleExpression(), ecorePackage.getEString(), "fontStyleExpression", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefCustomWidgetStyleEClass, EEFCustomWidgetStyle.class,
-				"EEFCustomWidgetStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefCustomWidgetStyleEClass, EEFCustomWidgetStyle.class, "EEFCustomWidgetStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(eefListStyleEClass, EEFListStyle.class,
-				"EEFListStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefListStyleEClass, EEFListStyle.class, "EEFListStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(eefGroupStyleEClass, EEFGroupStyle.class,
-				"EEFGroupStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupStyle_BackgroundColorExpression(),
-				ecorePackage.getEString(),
-				"backgroundColorExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupStyle_ForegroundColorExpression(),
-				ecorePackage.getEString(),
-				"foregroundColorExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupStyle_FontNameExpression(),
-				ecorePackage.getEString(),
-				"fontNameExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupStyle_FontSizeExpression(),
-				ecorePackage.getEString(),
-				"fontSizeExpression", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupStyle_BarStyle(),
-				this.getEEF_TITLE_BAR_STYLE(),
-				"barStyle", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupStyle_ToggleStyle(),
-				this.getEEF_TOGGLE_STYLE(),
-				"toggleStyle", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFGroupStyle_ExpandedByDefault(),
-				ecorePackage.getEBoolean(),
-				"expandedByDefault", null, 0, 1, EEFGroupStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefGroupStyleEClass, EEFGroupStyle.class, "EEFGroupStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFGroupStyle_BackgroundColorExpression(), ecorePackage.getEString(), "backgroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFGroupStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupStyle_ForegroundColorExpression(), ecorePackage.getEString(), "foregroundColorExpression", null, 0, 1, //$NON-NLS-1$
+				EEFGroupStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupStyle_FontNameExpression(), ecorePackage.getEString(), "fontNameExpression", null, 0, 1, EEFGroupStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupStyle_FontSizeExpression(), ecorePackage.getEString(), "fontSizeExpression", null, 0, 1, EEFGroupStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupStyle_BarStyle(), this.getEEF_TITLE_BAR_STYLE(), "barStyle", null, 0, 1, EEFGroupStyle.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupStyle_ToggleStyle(), this.getEEF_TOGGLE_STYLE(), "toggleStyle", null, 0, 1, EEFGroupStyle.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFGroupStyle_ExpandedByDefault(), ecorePackage.getEBoolean(), "expandedByDefault", null, 0, 1, EEFGroupStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefConditionalStyleEClass, EEFConditionalStyle.class,
-				"EEFConditionalStyle", EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFConditionalStyle_PreconditionExpression(),
-				ecorePackage.getEString(),
-				"preconditionExpression", null, 0, 1, EEFConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefConditionalStyleEClass, EEFConditionalStyle.class, "EEFConditionalStyle", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFConditionalStyle_PreconditionExpression(), ecorePackage.getEString(), "preconditionExpression", null, 0, 1, //$NON-NLS-1$
+				EEFConditionalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefTextConditionalStyleEClass, EEFTextConditionalStyle.class,
-				"EEFTextConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFTextConditionalStyle_Style(),
-				this.getEEFTextStyle(),
-				null,
-				"style", null, 0, 1, EEFTextConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefTextConditionalStyleEClass, EEFTextConditionalStyle.class, "EEFTextConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFTextConditionalStyle_Style(), this.getEEFTextStyle(), null, "style", null, 0, 1, EEFTextConditionalStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefButtonConditionalStyleEClass, EEFButtonConditionalStyle.class,
-				"EEFButtonConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFButtonConditionalStyle_Style(),
-				this.getEEFButtonStyle(),
-				null,
-				"style", null, 0, 1, EEFButtonConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefButtonConditionalStyleEClass, EEFButtonConditionalStyle.class, "EEFButtonConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFButtonConditionalStyle_Style(), this.getEEFButtonStyle(), null, "style", null, 0, 1, EEFButtonConditionalStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefLabelConditionalStyleEClass, EEFLabelConditionalStyle.class,
-				"EEFLabelConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFLabelConditionalStyle_Style(),
-				this.getEEFLabelStyle(),
-				null,
-				"style", null, 0, 1, EEFLabelConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefLabelConditionalStyleEClass, EEFLabelConditionalStyle.class, "EEFLabelConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFLabelConditionalStyle_Style(), this.getEEFLabelStyle(), null, "style", null, 0, 1, EEFLabelConditionalStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefCheckboxConditionalStyleEClass, EEFCheckboxConditionalStyle.class,
-				"EEFCheckboxConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFCheckboxConditionalStyle_Style(),
-				this.getEEFCheckboxStyle(),
-				null,
-				"style", null, 0, 1, EEFCheckboxConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefCheckboxConditionalStyleEClass, EEFCheckboxConditionalStyle.class, "EEFCheckboxConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFCheckboxConditionalStyle_Style(), this.getEEFCheckboxStyle(), null, "style", null, 0, 1, //$NON-NLS-1$
+				EEFCheckboxConditionalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefSelectConditionalStyleEClass, EEFSelectConditionalStyle.class,
-				"EEFSelectConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFSelectConditionalStyle_Style(),
-				this.getEEFSelectStyle(),
-				null,
-				"style", null, 0, 1, EEFSelectConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefSelectConditionalStyleEClass, EEFSelectConditionalStyle.class, "EEFSelectConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFSelectConditionalStyle_Style(), this.getEEFSelectStyle(), null, "style", null, 0, 1, EEFSelectConditionalStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefRadioConditionalStyleEClass, EEFRadioConditionalStyle.class,
-				"EEFRadioConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFRadioConditionalStyle_Style(),
-				this.getEEFRadioStyle(),
-				null,
-				"style", null, 0, 1, EEFRadioConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefRadioConditionalStyleEClass, EEFRadioConditionalStyle.class, "EEFRadioConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFRadioConditionalStyle_Style(), this.getEEFRadioStyle(), null, "style", null, 0, 1, EEFRadioConditionalStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefHyperlinkConditionalStyleEClass, EEFHyperlinkConditionalStyle.class,
-				"EEFHyperlinkConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFHyperlinkConditionalStyle_Style(),
-				this.getEEFHyperlinkStyle(),
-				null,
-				"style", null, 0, 1, EEFHyperlinkConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefHyperlinkConditionalStyleEClass, EEFHyperlinkConditionalStyle.class, "EEFHyperlinkConditionalStyle", !IS_ABSTRACT, //$NON-NLS-1$
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFHyperlinkConditionalStyle_Style(), this.getEEFHyperlinkStyle(), null, "style", null, 0, 1, //$NON-NLS-1$
+				EEFHyperlinkConditionalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefCustomWidgetConditionalStyleEClass, EEFCustomWidgetConditionalStyle.class,
-				"EEFCustomWidgetConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFCustomWidgetConditionalStyle_Style(),
-				this.getEEFCustomWidgetStyle(),
-				null,
-				"style", null, 0, 1, EEFCustomWidgetConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefCustomWidgetConditionalStyleEClass, EEFCustomWidgetConditionalStyle.class, "EEFCustomWidgetConditionalStyle", !IS_ABSTRACT, //$NON-NLS-1$
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFCustomWidgetConditionalStyle_Style(), this.getEEFCustomWidgetStyle(), null, "style", null, 0, 1, //$NON-NLS-1$
+				EEFCustomWidgetConditionalStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefWidgetActionEClass, EEFWidgetAction.class,
-				"EEFWidgetAction", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetAction_LabelExpression(),
-				ecorePackage.getEString(),
-				"labelExpression", null, 0, 1, EEFWidgetAction.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFWidgetAction_ActionExpression(),
-				ecorePackage.getEString(),
-				"actionExpression", null, 0, 1, EEFWidgetAction.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefWidgetActionEClass, EEFWidgetAction.class, "EEFWidgetAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(getEEFWidgetAction_LabelExpression(), ecorePackage.getEString(), "labelExpression", null, 0, 1, EEFWidgetAction.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFWidgetAction_ActionExpression(), ecorePackage.getEString(), "actionExpression", null, 0, 1, EEFWidgetAction.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefListConditionalStyleEClass, EEFListConditionalStyle.class,
-				"EEFListConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFListConditionalStyle_Style(),
-				this.getEEFListStyle(),
-				null,
-				"style", null, 0, 1, EEFListConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefListConditionalStyleEClass, EEFListConditionalStyle.class, "EEFListConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFListConditionalStyle_Style(), this.getEEFListStyle(), null, "style", null, 0, 1, EEFListConditionalStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(eefGroupConditionalStyleEClass, EEFGroupConditionalStyle.class,
-				"EEFGroupConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFGroupConditionalStyle_Style(),
-				this.getEEFGroupStyle(),
-				null,
-				"style", null, 0, 1, EEFGroupConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefGroupConditionalStyleEClass, EEFGroupConditionalStyle.class, "EEFGroupConditionalStyle", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFGroupConditionalStyle_Style(), this.getEEFGroupStyle(), null, "style", null, 0, 1, EEFGroupConditionalStyle.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(eeF_VALIDATION_SEVERITY_DESCRIPTIONEEnum, org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION.class,
@@ -3476,7 +2941,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		addEEnumLiteral(eeF_TITLE_BAR_STYLEEEnum, org.eclipse.eef.EEF_TITLE_BAR_STYLE.NO_TITLE);
 
 		// Create resource
-		createResource(EefPackage.eNS_URI);
+		createResource(eNS_URI);
 	}
 
 } // EefPackageImpl

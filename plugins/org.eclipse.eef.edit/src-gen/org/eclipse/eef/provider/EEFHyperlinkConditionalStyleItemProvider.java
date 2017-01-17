@@ -28,8 +28,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  */
 public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyleItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFHyperlinkConditionalStyleItemProvider(AdapterFactory adapterFactory) {
@@ -37,8 +37,8 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,9 +53,9 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,6 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,8 +80,8 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 	}
 
 	/**
-	 * This returns EEFHyperlinkConditionalStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFHyperlinkConditionalStyle.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -92,7 +91,6 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,15 +99,15 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFHyperlinkConditionalStyle) object).getPreconditionExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFHyperlinkConditionalStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFHyperlinkConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFHyperlinkConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -132,17 +130,17 @@ public class EEFHyperlinkConditionalStyleItemProvider extends EEFConditionalStyl
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_HYPERLINK_CONDITIONAL_STYLE__STYLE,
-				EefFactory.eINSTANCE.createEEFHyperlinkStyle()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_HYPERLINK_CONDITIONAL_STYLE__STYLE, EefFactory.eINSTANCE.createEEFHyperlinkStyle()));
 	}
 
 }

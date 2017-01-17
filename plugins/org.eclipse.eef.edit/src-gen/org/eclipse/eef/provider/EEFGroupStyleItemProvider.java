@@ -29,16 +29,16 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFGroupStyle} object. <!-- begin-user-doc --> <!--
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFGroupStyle} object.
+ * <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
  * @generated
  */
-public class EEFGroupStyleItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFGroupStyleItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEFGroupStyleItemProvider(AdapterFactory adapterFactory) {
@@ -46,8 +46,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -67,30 +67,28 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This adds a property descriptor for the Background Color Expression feature. <!-- begin-user-doc --> <!--
+	 * This adds a property descriptor for the Background Color Expression feature.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addBackgroundColorExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGroupStyle_backgroundColorExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFGroupStyle_backgroundColorExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupStyle_backgroundColorExpression_feature", "_UI_EEFGroupStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Foreground Color Expression feature. <!-- begin-user-doc --> <!--
+	 * This adds a property descriptor for the Foreground Color Expression feature.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected void addForegroundColorExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGroupStyle_foregroundColorExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFGroupStyle_foregroundColorExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupStyle_foregroundColorExpression_feature", "_UI_EEFGroupStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
@@ -103,13 +101,11 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * @generated
 	 */
 	protected void addFontNameExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGroupStyle_fontNameExpression_feature"), //$NON-NLS-1$
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGroupStyle_fontNameExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupStyle_fontNameExpression_feature", "_UI_EEFGroupStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				EefPackage.Literals.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
@@ -119,18 +115,16 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * @generated
 	 */
 	protected void addFontSizeExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGroupStyle_fontSizeExpression_feature"), //$NON-NLS-1$
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGroupStyle_fontSizeExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupStyle_fontSizeExpression_feature", "_UI_EEFGroupStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				EefPackage.Literals.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Bar Style feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Bar Style feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addBarStylePropertyDescriptor(Object object) {
@@ -141,8 +135,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This adds a property descriptor for the Toggle Style feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds a property descriptor for the Toggle Style feature.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void addToggleStylePropertyDescriptor(Object object) {
@@ -159,18 +153,16 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * @generated
 	 */
 	protected void addExpandedByDefaultPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGroupStyle_expandedByDefault_feature"), //$NON-NLS-1$
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGroupStyle_expandedByDefault_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFGroupStyle_expandedByDefault_feature", "_UI_EEFGroupStyle_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				null, null));
+				EefPackage.Literals.EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
-	 * This returns EEFGroupStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns EEFGroupStyle.gif.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -180,7 +172,6 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -189,15 +180,15 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFGroupStyle) object).getFontNameExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFGroupStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFGroupStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFGroupStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -226,9 +217,9 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
-	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -237,8 +228,8 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
