@@ -31,6 +31,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Hyperlink;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.internal.forms.widgets.FormUtil;
 
 /**
  * A FormToolkit customized for use by tabbed property sheet page and others.
@@ -141,6 +142,7 @@ public class EEFWidgetFactory extends FormToolkit {
 	 */
 	public ScrolledComposite createScrolledComposite(Composite parent, int style) {
 		ScrolledComposite scrolledComposite = new ScrolledComposite(parent, style);
+		FormUtil.setFocusScrollingEnabled(scrolledComposite, false);
 		return scrolledComposite;
 	}
 
