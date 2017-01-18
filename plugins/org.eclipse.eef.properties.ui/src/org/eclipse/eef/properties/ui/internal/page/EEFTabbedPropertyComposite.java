@@ -96,7 +96,7 @@ public class EEFTabbedPropertyComposite extends Composite {
 		this.leftComposite = this.widgetFactory.createComposite(this.mainComposite, SWT.NO_FOCUS);
 		this.leftComposite.setLayout(new FormLayout());
 
-		this.scrolledComposite = new ScrolledComposite(this.mainComposite, SWT.H_SCROLL | SWT.V_SCROLL | SWT.NO_FOCUS);
+		this.scrolledComposite = this.widgetFactory.createScrolledComposite(this.mainComposite, SWT.H_SCROLL | SWT.V_SCROLL | SWT.NO_FOCUS);
 		FormData formData = new FormData();
 		formData.left = new FormAttachment(this.leftComposite, 0);
 		formData.right = new FormAttachment(100, 0);
