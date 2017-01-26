@@ -381,10 +381,12 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * validation control.
 	 */
 	protected void lockedByMe() {
-		this.controlDecoration.hide();
-		this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedByMe);
-		this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_GRANTED_TO_CURRENT_USER_EXCLUSIVELY));
-		this.controlDecoration.show();
+		if (this.controlDecoration.getControl() != null) {
+			this.controlDecoration.hide();
+			this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedByMe);
+			this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_GRANTED_TO_CURRENT_USER_EXCLUSIVELY));
+			this.controlDecoration.show();
+		}
 	}
 
 	/**
@@ -394,11 +396,12 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 */
 	protected void lockedByOther() {
 		this.setEnabled(false);
-
-		this.controlDecoration.hide();
-		this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedByOther);
-		this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_DENIED));
-		this.controlDecoration.show();
+		if (this.controlDecoration.getControl() != null) {
+			this.controlDecoration.hide();
+			this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedByOther);
+			this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_DENIED));
+			this.controlDecoration.show();
+		}
 	}
 
 	/**
