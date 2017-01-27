@@ -79,6 +79,9 @@ public final class Messages {
 	@TranslatableMessage
 	public static String AbstractEEFWidgetLifecycleManager_lockedByMe;
 
+	@TranslatableMessage
+	public static String AbstractEEFWidgetLifecycleManager_lockedNoWrite;
+
 	// CHECKSTYLE:ON
 
 	/**
