@@ -80,4 +80,9 @@ public interface Icons {
 	 * Permission Granted to current user exclusively.
 	 */
 	String PERMISSION_GRANTED_TO_CURRENT_USER_EXCLUSIVELY = "icons/full/permission_granted_to_current_user_exclusively.gif"; //$NON-NLS-1$
+
+	/**
+	 * Permission No Write.
+	 */
+	String PERMISSION_NO_WRITE = "icons/full/permission_no_write.gif"; //$NON-NLS-1$
 }

@@ -126,6 +126,7 @@ public class EEFIdeUiPlugin extends EMFPlugin {
 			this.imageRegistry.put(Icons.PERMISSION_DENIED, this.getImageDescriptor(Icons.PERMISSION_DENIED));
 			this.imageRegistry.put(Icons.PERMISSION_GRANTED_TO_CURRENT_USER_EXCLUSIVELY,
 					this.getImageDescriptor(Icons.PERMISSION_GRANTED_TO_CURRENT_USER_EXCLUSIVELY));
+			this.imageRegistry.put(Icons.PERMISSION_NO_WRITE, this.getImageDescriptor(Icons.PERMISSION_NO_WRITE));
 		}
 
 		/**

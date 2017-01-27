@@ -356,6 +356,9 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			case LOCKED_BY_OTHER:
 				AbstractEEFWidgetLifecycleManager.this.lockedByOther();
 				break;
+			case LOCKED_PERMISSION:
+				AbstractEEFWidgetLifecycleManager.this.lockedNoWrite();
+				break;
 			case UNLOCKED:
 				AbstractEEFWidgetLifecycleManager.this.unlocked();
 				break;
@@ -401,6 +404,22 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			this.controlDecoration.hide();
 			this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedByOther);
 			this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_DENIED));
+			this.controlDecoration.show();
+		}
+	}
+
+	/**
+	 * Sets the appearance and behavior of the widget in order to indicate that the semantic element used by the widget
+	 * cannot be modified by the user. As a result, it will set the user interface in a disable mode with a grey lock
+	 * next to the widget.
+	 */
+	protected void lockedNoWrite() {
+		this.setEnabled(false);
+
+		if (this.controlDecoration.getControl() != null) {
+			this.controlDecoration.hide();
+			this.controlDecoration.setDescriptionText(Messages.AbstractEEFWidgetLifecycleManager_lockedNoWrite);
+			this.controlDecoration.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.PERMISSION_NO_WRITE));
 			this.controlDecoration.show();
 		}
 	}

@@ -35,6 +35,10 @@ public class LockStatusChangeEvent {
 		 */
 		LOCKED_BY_OTHER,
 		/**
+		 * Status to indicate that a EObject is locked because of a permission issue.
+		 */
+		LOCKED_PERMISSION,
+		/**
 		 * Status to indicate that a EObject is not locked.
 		 */
 		UNLOCKED
