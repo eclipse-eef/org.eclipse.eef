@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author mbats
  */
-final class EEFListTableLabelProvider extends StyledCellLabelProvider {
+public class EEFListTableLabelProvider extends StyledCellLabelProvider {
 
 	/**
 	 * The description.

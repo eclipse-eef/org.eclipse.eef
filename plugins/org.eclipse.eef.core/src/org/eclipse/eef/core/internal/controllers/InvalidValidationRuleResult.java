@@ -11,7 +11,10 @@
 package org.eclipse.eef.core.internal.controllers;
 
 import org.eclipse.eef.EEFValidationRuleDescription;
+import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult;
+import org.eclipse.eef.core.api.controllers.InvalidValidationRuleResultData;
+import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
 
 /**
  * An invalid validation rule result.
@@ -26,9 +29,14 @@ public class InvalidValidationRuleResult extends ValidationRuleResult implements
 	private String message;
 
 	/**
-	 * The data.
+	 * The evaluation environment.
 	 */
-	private Object data;
+	private Eval<Object> eval;
+
+	/**
+	 * The editing context adapter.
+	 */
+	private EditingContextAdapter editingContextAdapter;
 
 	/**
 	 * The severity.
@@ -37,20 +45,24 @@ public class InvalidValidationRuleResult extends ValidationRuleResult implements
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param validationRule
 	 *            The validation rule
 	 * @param message
 	 *            The message
-	 * @param data
-	 *            The data
+	 * @param eval
+	 *            The evaluation environment
+	 * @param editingContextAdapter
+	 *            The editing context adapter
 	 * @param severity
 	 *            The severity
 	 */
-	public InvalidValidationRuleResult(EEFValidationRuleDescription validationRule, String message, Object data, int severity) {
+	public InvalidValidationRuleResult(EEFValidationRuleDescription validationRule, String message, Eval<Object> eval,
+			EditingContextAdapter editingContextAdapter, int severity) {
 		super(validationRule);
 		this.message = message;
-		this.data = data;
+		this.eval = eval;
+		this.editingContextAdapter = editingContextAdapter;
 		this.severity = severity;
 	}
 
@@ -70,8 +82,8 @@ public class InvalidValidationRuleResult extends ValidationRuleResult implements
 	 * @see org.eclipse.eef.core.api.controllers.IInvalidValidationRuleResult#getData()
 	 */
 	@Override
-	public Object getData() {
-		return this.data;
+	public InvalidValidationRuleResultData getData() {
+		return new InvalidValidationRuleResultData(this.eval, this.editingContextAdapter);
 	}
 
 	/**

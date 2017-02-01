@@ -79,7 +79,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * The editing context adapter.
 	 */
-	protected EditingContextAdapter contextAdapter;
+	protected EditingContextAdapter editingContextAdapter;
 
 	/**
 	 * The label.
@@ -113,13 +113,14 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
-	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter contextAdapter) {
+	public AbstractEEFWidgetLifecycleManager(IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter editingContextAdapter) {
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
-		this.contextAdapter = contextAdapter;
+		this.editingContextAdapter = editingContextAdapter;
 	}
 
 	/**
@@ -198,7 +199,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	private void checkLockStatus() {
 		Object self = this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
 		if (self instanceof EObject) {
-			LockStatus status = this.contextAdapter.getLockStatus((EObject) self);
+			LockStatus status = this.editingContextAdapter.getLockStatus((EObject) self);
 			this.handleLockStatus(status);
 		}
 	}
@@ -337,7 +338,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 				});
 			}
 		};
-		this.contextAdapter.addLockStatusChangedListener(this.lockStatusChangedListener);
+		this.editingContextAdapter.addLockStatusChangedListener(this.lockStatusChangedListener);
 	}
 
 	/**
@@ -514,7 +515,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		}
 
 		this.getController().removeNewLabelConsumer();
-		this.contextAdapter.removeLockStatusChangedListener(this.lockStatusChangedListener);
+		this.editingContextAdapter.removeLockStatusChangedListener(this.lockStatusChangedListener);
 	}
 
 	/**

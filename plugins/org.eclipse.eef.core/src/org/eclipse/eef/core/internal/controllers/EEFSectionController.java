@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFController;
 import org.eclipse.eef.core.api.controllers.IEEFSectionController;
 import org.eclipse.emf.ecore.EObject;
@@ -39,9 +40,12 @@ public class EEFSectionController extends AbstractEEFController implements IEEFS
 	 *            The interpreter
 	 * @param description
 	 *            The description of the page
+	 * @param editingContextAdapter
+	 *            The editing context adapter
 	 */
-	public EEFSectionController(IVariableManager variableManager, IInterpreter interpreter, EEFPageDescription description) {
-		super(variableManager, interpreter);
+	public EEFSectionController(IVariableManager variableManager, IInterpreter interpreter, EEFPageDescription description,
+			EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
 	}
 

@@ -77,7 +77,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 		this.hyperlinkListener = new EEFMessageHyperlinkListener(formContainer.getShell());
 
 		this.controller = new EEFControllersFactory().createSectionController(this.eefPage.getDescription(), this.eefPage.getVariableManager(),
-				this.eefPage.getInterpreter());
+				this.eefPage.getInterpreter(), this.eefPage.getView().getContextAdapter());
 
 		List<EEFGroup> eefGroups = this.eefPage.getGroups();
 		for (EEFGroup eefGroup : eefGroups) {

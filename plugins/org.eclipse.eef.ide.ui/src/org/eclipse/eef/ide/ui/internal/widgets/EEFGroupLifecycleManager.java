@@ -64,7 +64,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	/**
 	 * The editing context adapter.
 	 */
-	private EditingContextAdapter contextAdapter;
+	private EditingContextAdapter editingContextAdapter;
 
 	/**
 	 * The description of the container.
@@ -95,15 +95,15 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public EEFGroupLifecycleManager(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
+			EditingContextAdapter editingContextAdapter) {
 		this.description = description;
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
-		this.contextAdapter = contextAdapter;
+		this.editingContextAdapter = editingContextAdapter;
 	}
 
 	/**
@@ -209,9 +209,10 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 		this.section.setClient(group);
 
-		this.controller = new EEFControllersFactory().createGroupController(this.description, this.variableManager, this.interpreter);
+		this.controller = new EEFControllersFactory().createGroupController(this.description, this.variableManager, this.interpreter,
+				this.editingContextAdapter);
 
-		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.contextAdapter);
+		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.editingContextAdapter);
 		List<EEFControlDescription> controls = this.description.getControls();
 		for (EEFControlDescription eefControlDescription : controls) {
 			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(group, formContainer, eefControlDescription, this.variableManager));

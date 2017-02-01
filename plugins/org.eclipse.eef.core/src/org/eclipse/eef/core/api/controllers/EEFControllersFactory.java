@@ -50,10 +50,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param editingContextAdapter
+	 *            The editing context adapter
 	 * @return The group controller
 	 */
-	public IEEFGroupController createGroupController(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter) {
-		return new EEFGroupController(description, variableManager, interpreter);
+	public IEEFGroupController createGroupController(EEFGroupDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFGroupController(description, variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**
@@ -65,13 +68,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @return A text controller
 	 */
 	public IEEFTextController createTextController(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		return new EEFTextController(description, variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFTextController(description, variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**
@@ -83,13 +86,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The context adapter
 	 * @return A label controller
 	 */
 	public IEEFLabelController createLabelController(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		return new EEFLabelController(description, variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFLabelController(description, variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**
@@ -101,13 +104,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @return A button controller
 	 */
 	public IEEFButtonController createButtonController(EEFButtonDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		return new EEFButtonController(description, variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFButtonController(description, variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**
@@ -119,13 +122,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @return A label controller
 	 */
 	public IEEFSelectController createSelectController(EEFSelectDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		return new EEFSelectController(description, variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFSelectController(description, variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**
@@ -137,13 +140,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @return A checkbox controller
 	 */
 	public IEEFCheckboxController createCheckboxController(EEFCheckboxDescription description, IVariableManager variableManager,
-			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
-		return new EEFCheckboxController(description, variableManager, interpreter, contextAdapter);
+			IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		return new EEFCheckboxController(description, variableManager, interpreter, editingContextAdapter);
 
 	}
 
@@ -156,13 +159,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @return A radio controller
 	 */
 	public IEEFRadioController createRadioController(EEFRadioDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		return new EEFRadioController(description, variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFRadioController(description, variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**
@@ -174,10 +177,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param editingContextAdapter
+	 *            The editing context adapter
 	 * @return The section controller.
 	 */
-	public IEEFSectionController createSectionController(EEFPageDescription description, IVariableManager variableManager, IInterpreter interpreter) {
-		return new EEFSectionController(variableManager, interpreter, description);
+	public IEEFSectionController createSectionController(EEFPageDescription description, IVariableManager variableManager, IInterpreter interpreter,
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFSectionController(variableManager, interpreter, description, editingContextAdapter);
 	}
 
 	/**
@@ -189,13 +195,13 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @return The list controller.
 	 */
 	public IEEFListController createListController(EEFListDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		return new EEFListController(variableManager, interpreter, description, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		return new EEFListController(variableManager, interpreter, description, editingContextAdapter);
 	}
 
 	/**
@@ -207,12 +213,12 @@ public class EEFControllersFactory {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @return A hyperlink controller
 	 */
 	public IEEFHyperlinkController createHyperlinkController(EEFHyperlinkDescription description, IVariableManager variableManager,
-			IInterpreter interpreter, EditingContextAdapter contextAdapter) {
-		return new EEFHyperlinkController(description, variableManager, interpreter, contextAdapter);
+			IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		return new EEFHyperlinkController(description, variableManager, interpreter, editingContextAdapter);
 	}
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,11 +39,6 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	private EEFTextDescription description;
 
 	/**
-	 * The editing context adapter.
-	 */
-	private EditingContextAdapter contextAdapter;
-
-	/**
 	 * The consumer of a new value of the text.
 	 */
 	private IConsumer<Object> newValueConsumer;
@@ -57,19 +52,18 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public EEFTextController(EEFTextDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter);
+			EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
-		this.contextAdapter = contextAdapter;
 	}
 
 	@Override
 	public IStatus updateValue(final String text) {
-		return this.contextAdapter.performModelChange(new Runnable() {
+		return this.editingContextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String editExpression = EEFTextController.this.description.getEditExpression();

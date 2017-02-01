@@ -41,12 +41,12 @@ public interface IEEFLifecycleManagerProvider {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 *
 	 * @return An {@link IEEFLifecycleManager}
 	 */
 	IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter);
+			EditingContextAdapter editingContextAdapter);
 
 }

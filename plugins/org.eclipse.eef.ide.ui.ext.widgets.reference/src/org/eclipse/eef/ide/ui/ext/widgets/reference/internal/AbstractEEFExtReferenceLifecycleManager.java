@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -119,12 +119,12 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The context adapter
 	 */
 	public AbstractEEFExtReferenceLifecycleManager(EEFExtReferenceDescription description, EObject target, EReference eReference,
-			IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter, contextAdapter);
+			IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
 		this.target = target;
 		this.eReference = eReference;
@@ -198,7 +198,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 			}
 		};
 
-		this.browseButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
+		this.browseButtonListener = new ButtonSelectionListener(this.editingContextAdapter, runnable);
 		this.browseButton.addSelectionListener(this.browseButtonListener);
 		this.browseButton.setToolTipText(Messages.ReferenceBrowseButton_tooltipText);
 	}
@@ -219,7 +219,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 			}
 		};
 
-		this.addButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
+		this.addButtonListener = new ButtonSelectionListener(this.editingContextAdapter, runnable);
 		this.addButton.addSelectionListener(this.addButtonListener);
 		this.addButton.setToolTipText(Messages.ReferenceAddButton_tooltipText);
 	}
@@ -239,7 +239,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 				AbstractEEFExtReferenceLifecycleManager.this.removeButtonCallback();
 			}
 		};
-		this.removeButtonListener = new ButtonSelectionListener(this.contextAdapter, runnable);
+		this.removeButtonListener = new ButtonSelectionListener(this.editingContextAdapter, runnable);
 		this.removeButton.addSelectionListener(this.removeButtonListener);
 		if (this.eReference.isContainment()) {
 			this.removeButton.setToolTipText(Messages.ReferenceRemoveButton_containmentTooltipText);
@@ -358,7 +358,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 		/**
 		 * The context adapter.
 		 */
-		private EditingContextAdapter contextAdapter;
+		private EditingContextAdapter editingContextAdapter;
 
 		/**
 		 * The behavior to execute when the button is clicked.
@@ -368,13 +368,13 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 		/**
 		 * The constructor.
 		 *
-		 * @param contextAdapter
+		 * @param editingContextAdapter
 		 *            The {@link EditingContextAdapter}
 		 * @param runnable
 		 *            The behavior to execute when the button is clicked
 		 */
-		public ButtonSelectionListener(EditingContextAdapter contextAdapter, Runnable runnable) {
-			this.contextAdapter = contextAdapter;
+		public ButtonSelectionListener(EditingContextAdapter editingContextAdapter, Runnable runnable) {
+			this.editingContextAdapter = editingContextAdapter;
 			this.runnable = runnable;
 		}
 
@@ -385,7 +385,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 		 */
 		@Override
 		public void widgetSelected(SelectionEvent event) {
-			this.contextAdapter.performModelChange(this.runnable);
+			this.editingContextAdapter.performModelChange(this.runnable);
 		}
 
 		/**
@@ -395,7 +395,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 		 */
 		@Override
 		public void widgetDefaultSelected(SelectionEvent event) {
-			this.contextAdapter.performModelChange(this.runnable);
+			this.editingContextAdapter.performModelChange(this.runnable);
 		}
 	}
 

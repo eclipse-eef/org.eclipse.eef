@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,12 +65,12 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public ColorPickerController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		super(description, variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		super(description, variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 
 	@Override
 	public void updateValue(final RGB color) {
-		contextAdapter.performModelChange(new Runnable() {
+		this.editingContextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);

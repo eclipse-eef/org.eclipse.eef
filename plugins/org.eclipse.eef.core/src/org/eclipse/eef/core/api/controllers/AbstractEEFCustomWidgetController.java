@@ -34,11 +34,6 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	protected EEFCustomWidgetDescription description;
 
 	/**
-	 * The editing context adapter.
-	 */
-	protected EditingContextAdapter contextAdapter;
-
-	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -52,9 +47,8 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	 */
 	public AbstractEEFCustomWidgetController(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
 			EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter);
+		super(variableManager, interpreter, contextAdapter);
 		this.description = description;
-		this.contextAdapter = contextAdapter;
 	}
 
 	/**
@@ -95,7 +89,7 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	 *            Identifier of the custom expression to execute
 	 */
 	protected void executeCommandExpression(final String customExpressionId) {
-		contextAdapter.performModelChange(new Runnable() {
+		this.editingContextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String pushExpression = getCustomExpression(customExpressionId);

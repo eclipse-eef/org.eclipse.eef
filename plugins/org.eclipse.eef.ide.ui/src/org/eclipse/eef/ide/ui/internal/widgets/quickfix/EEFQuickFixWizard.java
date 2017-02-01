@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.eef.EEFValidationRuleDescription;
-import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
+import org.eclipse.eef.core.api.controllers.InvalidValidationRuleResultData;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Icons;
 import org.eclipse.eef.ide.ui.internal.Messages;
@@ -76,11 +76,11 @@ public class EEFQuickFixWizard extends Wizard {
 		if (this.messages.length == 1) {
 			// We have only one validation rule violated, let's show only the fix available
 			IMessage message = this.messages[0];
-			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof Eval) {
+			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof InvalidValidationRuleResultData) {
 				EEFValidationRuleDescription validationRule = (EEFValidationRuleDescription) message.getKey();
-				Eval<?> eval = (Eval<?>) message.getData();
+				InvalidValidationRuleResultData data = (InvalidValidationRuleResultData) message.getData();
 
-				this.quickFixPage = new EEFQuickFixPage(message, validationRule, eval);
+				this.quickFixPage = new EEFQuickFixPage(message, validationRule, data);
 				this.addPage(this.quickFixPage);
 			}
 		} else {
@@ -103,12 +103,12 @@ public class EEFQuickFixWizard extends Wizard {
 			IMessage message = validationRulesPage.getSelectedMessage();
 
 			// The second page will show the quick fixes of the message of the first page
-			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof Eval) {
+			if (message.getKey() instanceof EEFValidationRuleDescription && message.getData() instanceof InvalidValidationRuleResultData) {
 				EEFValidationRuleDescription validationRule = (EEFValidationRuleDescription) message.getKey();
 
 				if (validationRule.getFixes().size() > 0) {
-					Eval<?> eval = (Eval<?>) message.getData();
-					this.quickFixPage = new EEFQuickFixPage(message, validationRule, eval);
+					InvalidValidationRuleResultData data = (InvalidValidationRuleResultData) message.getData();
+					this.quickFixPage = new EEFQuickFixPage(message, validationRule, data);
 					this.quickFixPage.setWizard(this);
 					return this.quickFixPage;
 				}

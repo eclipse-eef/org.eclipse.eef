@@ -105,12 +105,12 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public EEFListLifecycleManager(EEFListDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
 	}
 
@@ -139,7 +139,7 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		widgetFactory.paintBordersFor(parent);
 
 		this.controller = new EEFControllersFactory().createListController(this.description, this.variableManager, this.interpreter,
-				this.contextAdapter);
+				this.editingContextAdapter);
 	}
 
 	/**

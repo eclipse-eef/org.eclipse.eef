@@ -12,6 +12,7 @@ package org.eclipse.eef.core.api.controllers;
 
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -41,9 +42,11 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
+	 * @param editingContextAdapter
+	 *            The editing context adapter
 	 */
-	public AbstractEEFWidgetController(IVariableManager variableManager, IInterpreter interpreter) {
-		super(variableManager, interpreter);
+	public AbstractEEFWidgetController(IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 	}
 
 	/**

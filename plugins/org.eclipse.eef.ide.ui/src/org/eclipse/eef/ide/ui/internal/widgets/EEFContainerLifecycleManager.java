@@ -71,15 +71,15 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public EEFContainerLifecycleManager(EEFContainerDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
+			EditingContextAdapter editingContextAdapter) {
 		this.description = description;
 		this.variableManager = variableManager;
 		this.interpreter = interpreter;
-		this.contextAdapter = contextAdapter;
+		this.contextAdapter = editingContextAdapter;
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,11 +41,6 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	private EEFListDescription description;
 
 	/**
-	 * The editing context adapter.
-	 */
-	private EditingContextAdapter contextAdapter;
-
-	/**
 	 * The consumer of a new value of the list.
 	 */
 	private IConsumer<Object> newValueConsumer;
@@ -59,14 +54,13 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public EEFListController(IVariableManager variableManager, IInterpreter interpreter, EEFListDescription description,
-			EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter);
+			EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
-		this.contextAdapter = contextAdapter;
 	}
 
 	/**
@@ -109,7 +103,7 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	 */
 	@Override
 	public void onClick(final Object element, final String onClickEventKind) {
-		contextAdapter.performModelChange(new Runnable() {
+		this.editingContextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String expression = EEFListController.this.description.getOnClickExpression();
@@ -142,7 +136,7 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	 */
 	@Override
 	public IStatus action(final EEFWidgetAction action, final List<Object> elements) {
-		return contextAdapter.performModelChange(new Runnable() {
+		return this.editingContextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String expression = action.getActionExpression();

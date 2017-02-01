@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
+import org.eclipse.eef.core.api.controllers.InvalidValidationRuleResultData;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
@@ -58,9 +58,9 @@ public class EEFQuickFixPage extends WizardPage {
 	private EEFValidationRuleDescription validationRule;
 
 	/**
-	 * The evaluation utility class.
+	 * The invalid validation result data.
 	 */
-	private Eval<?> eval;
+	private InvalidValidationRuleResultData data;
 
 	/**
 	 * The selected {@link IMessage}.
@@ -74,15 +74,15 @@ public class EEFQuickFixPage extends WizardPage {
 	 *            The message
 	 * @param validationRule
 	 *            The validation rule
-	 * @param eval
-	 *            The evaluation utility class
+	 * @param data
+	 *            The invalid validation result data
 	 */
-	public EEFQuickFixPage(IMessage message, EEFValidationRuleDescription validationRule, Eval<?> eval) {
+	public EEFQuickFixPage(IMessage message, EEFValidationRuleDescription validationRule, InvalidValidationRuleResultData data) {
 		super(message.getMessage());
 		this.setTitle(Messages.EEFQuickFixPage_title);
 		this.setDescription(MessageFormat.format(Messages.EEFQuickFixPage_description, message.getMessage()));
 		this.validationRule = validationRule;
-		this.eval = eval;
+		this.data = data;
 		this.selectedMessage = message;
 	}
 
@@ -177,18 +177,7 @@ public class EEFQuickFixPage extends WizardPage {
 						return;
 					}
 
-					ISelection selection = EEFQuickFixPage.this.quickFixesList.getSelection();
-					if (selection instanceof IStructuredSelection) {
-						IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-						// Only one quick fix can be selected
-						Object element = structuredSelection.getFirstElement();
-						if (element instanceof EEFValidationFixDescription) {
-							// Run the quick fix using the given eval
-							EEFValidationFixDescription validationFix = (EEFValidationFixDescription) element;
-							EAttribute expressionEAttribute = EefPackage.Literals.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION;
-							EEFQuickFixPage.this.eval.logIfBlank(expressionEAttribute).call(validationFix.getFixExpression());
-						}
-					}
+					EEFQuickFixPage.this.executeQuickFix();
 
 					progressMonitor.worked(1);
 				}
@@ -197,6 +186,29 @@ public class EEFQuickFixPage extends WizardPage {
 			EEFIdeUiPlugin.getPlugin().error(e.getMessage(), e);
 		} catch (InterruptedException e) {
 			EEFIdeUiPlugin.getPlugin().error(e.getMessage(), e);
+		}
+	}
+
+	/**
+	 * Executes the selected quick fix.
+	 */
+	private void executeQuickFix() {
+		ISelection selection = this.quickFixesList.getSelection();
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+			// Only one quick fix can be selected
+			Object element = structuredSelection.getFirstElement();
+			if (element instanceof EEFValidationFixDescription) {
+				// Run the quick fix using the given eval
+				final EEFValidationFixDescription validationFix = (EEFValidationFixDescription) element;
+				final EAttribute expressionEAttribute = EefPackage.Literals.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION;
+				this.data.getEditingContextAdapter().performModelChange(new Runnable() {
+					@Override
+					public void run() {
+						EEFQuickFixPage.this.data.getEval().logIfBlank(expressionEAttribute).call(validationFix.getFixExpression());
+					}
+				});
+			}
 		}
 	}
 }

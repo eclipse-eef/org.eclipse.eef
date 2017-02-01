@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,11 +34,6 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	private EEFButtonDescription description;
 
 	/**
-	 * The editing context adapter.
-	 */
-	private EditingContextAdapter contextAdapter;
-
-	/**
 	 * The consumer of a new value of the button's label.
 	 */
 	private IConsumer<String> newButtonLabelConsumer;
@@ -52,14 +47,13 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public EEFButtonController(EEFButtonDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter);
+			EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
-		this.contextAdapter = contextAdapter;
 	}
 
 	@Override
@@ -87,7 +81,7 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 
 	@Override
 	public IStatus pushed() {
-		return contextAdapter.performModelChange(new Runnable() {
+		return this.editingContextAdapter.performModelChange(new Runnable() {
 			@Override
 			public void run() {
 				String pushExpression = EEFButtonController.this.description.getPushExpression();

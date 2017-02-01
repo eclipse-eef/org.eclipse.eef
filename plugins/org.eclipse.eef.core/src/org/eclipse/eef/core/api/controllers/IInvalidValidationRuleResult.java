@@ -44,7 +44,7 @@ public interface IInvalidValidationRuleResult extends IValidationRuleResult {
 	 *
 	 * @return The data related to this invalid result
 	 */
-	Object getData();
+	InvalidValidationRuleResultData getData();
 
 	/**
 	 * Returns the severity.

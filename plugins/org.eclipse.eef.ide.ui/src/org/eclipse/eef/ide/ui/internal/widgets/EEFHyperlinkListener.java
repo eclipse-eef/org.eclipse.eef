@@ -97,7 +97,7 @@ public class EEFHyperlinkListener implements MouseListener {
 					}
 				}
 			}
-		} catch (IllegalArgumentException exception) {
+		} catch (@SuppressWarnings("unused") IllegalArgumentException exception) {
 			// do not log, the user tried to click outside of the hyperlink
 		}
 	}

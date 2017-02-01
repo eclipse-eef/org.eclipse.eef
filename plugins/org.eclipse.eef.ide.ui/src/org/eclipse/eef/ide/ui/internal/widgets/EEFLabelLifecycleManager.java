@@ -91,12 +91,12 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
 	public EEFLabelLifecycleManager(EEFLabelDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
 	}
 
@@ -125,7 +125,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		this.createWidgetActionButtons(labelComposite);
 
 		this.controller = new EEFControllersFactory().createLabelController(this.description, this.variableManager, this.interpreter,
-				this.contextAdapter);
+				this.editingContextAdapter);
 	}
 
 	/**

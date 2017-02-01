@@ -66,13 +66,13 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	 *            The variable manager
 	 * @param interpreter
 	 *            The interpreter
-	 * @param contextAdapter
+	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 * @param singleReferenceViewerProvider
 	 */
 	public ColorPickerLifecycleManager(EEFCustomWidgetDescription description, IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter contextAdapter) {
-		super(variableManager, interpreter, contextAdapter);
+			EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
 	}
 
@@ -84,7 +84,7 @@ public class ColorPickerLifecycleManager extends AbstractEEFWidgetLifecycleManag
 		this.colorPicker = new ColorPicker(parent);
 		widgetFactory.paintBordersFor(parent);
 
-		this.controller = new ColorPickerController(this.description, this.variableManager, this.interpreter, this.contextAdapter);
+		this.controller = new ColorPickerController(this.description, this.variableManager, this.interpreter, this.editingContextAdapter);
 	}
 
 	/**
