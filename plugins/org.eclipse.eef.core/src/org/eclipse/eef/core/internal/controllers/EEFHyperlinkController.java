@@ -10,10 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
-import com.google.common.base.Objects;
-
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFHyperlinkDescription;
@@ -94,7 +93,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 			variables.put(EEFExpressionUtils.EEFReference.VALUE, value);
 			text = EvalFactory.of(this.interpreter, variables).logIfInvalidType(String.class).evaluate(displayExpression);
 		}
-		return Objects.firstNonNull(text, ""); //$NON-NLS-1$
+		return Optional.ofNullable(text).orElse(""); //$NON-NLS-1$
 	}
 
 	/**

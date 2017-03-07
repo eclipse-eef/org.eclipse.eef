@@ -16,7 +16,7 @@ import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -42,7 +42,7 @@ public class ActionButton {
 	/**
 	 * The button listener.
 	 */
-	private SelectionAdapter selectionListener;
+	private SelectionListener selectionListener;
 
 	/**
 	 * The widget action.
@@ -96,7 +96,7 @@ public class ActionButton {
 	 * @param listener
 	 *            Selection listener
 	 */
-	public void addSelectionListener(SelectionAdapter listener) {
+	public void addSelectionListener(SelectionListener listener) {
 		if (!button.isDisposed()) {
 			this.selectionListener = listener;
 			button.addSelectionListener(selectionListener);

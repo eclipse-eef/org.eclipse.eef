@@ -10,9 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.api.widgets;
 
-import com.google.common.base.Objects;
-
 import java.util.Collection;
+import java.util.Optional;
 
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
@@ -282,14 +281,14 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		this.getController().onNewLabel((value) -> {
 			if (!label.isDisposed() && !(label.getText() != null && label.getText().equals(value))) {
-				label.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+				label.setText(Optional.ofNullable(value).orElse("")); //$NON-NLS-1$
 			}
 			AbstractEEFWidgetLifecycleManager.this.setLabelFontStyle();
 		});
 
 		this.getController().onNewHelp((value) -> {
 			if (help != null && !help.isDisposed() && !(help.getText() != null && help.getText().equals(value))) {
-				help.setToolTipText(Objects.firstNonNull(value, Messages.AbstractEEFWidgetLifecycleManager_noDescriptionAvailable));
+				help.setToolTipText(Optional.ofNullable(value).orElse(Messages.AbstractEEFWidgetLifecycleManager_noDescriptionAvailable));
 			}
 		});
 

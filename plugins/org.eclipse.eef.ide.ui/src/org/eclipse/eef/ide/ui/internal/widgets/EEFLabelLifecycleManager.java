@@ -10,10 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import com.google.common.base.Objects;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFLabelDescription;
@@ -35,8 +34,7 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -189,26 +187,23 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 		this.controller.onNewValue((value) -> {
 			if (!body.isDisposed()) {
 				if (!(body.getText() != null && body.getText().equals(value))) {
-					body.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+					body.setText(Optional.ofNullable(value).orElse("")); //$NON-NLS-1$
 				}
 				this.setStyle();
 			}
 		});
 
 		for (final ActionButton actionButton : actionButtons) {
-			SelectionAdapter selectionListener = new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					if (!EEFLabelLifecycleManager.this.container.isRenderingInProgress()) {
-						IStatus result = controller.action(actionButton.getAction());
-						if (result != null && result.getSeverity() == IStatus.ERROR) {
-							EEFIdeUiPlugin.INSTANCE.log(result);
-						} else {
-							refresh();
-						}
+			SelectionListener selectionListener = SelectionListener.widgetSelectedAdapter((event) -> {
+				if (!this.container.isRenderingInProgress()) {
+					IStatus result = controller.action(actionButton.getAction());
+					if (result != null && result.getSeverity() == IStatus.ERROR) {
+						EEFIdeUiPlugin.INSTANCE.log(result);
+					} else {
+						refresh();
 					}
 				}
-			};
+			});
 
 			actionButton.addSelectionListener(selectionListener);
 		}

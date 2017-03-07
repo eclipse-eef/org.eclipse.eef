@@ -33,9 +33,7 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
-import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
-import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.graphics.Color;
@@ -217,35 +215,19 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		};
 		this.text.addModifyListener(this.modifyListener);
 
-		this.focusListener = new FocusListener() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && EEFTextLifecycleManager.this.isDirty) {
-					EEFTextLifecycleManager.this.updateValue(false);
-				}
+		this.focusListener = FocusListener.focusLostAdapter((event) -> {
+			if (!this.container.isRenderingInProgress() && this.isDirty) {
+				this.updateValue(false);
 			}
-
-			@Override
-			public void focusGained(FocusEvent e) {
-				// do nothing
-			}
-		};
+		});
 		this.text.addFocusListener(this.focusListener);
 
 		if (this.description.getLineCount() <= 1) {
-			this.keyListener = new KeyListener() {
-				@Override
-				public void keyReleased(KeyEvent e) {
-					if (e.character == '\r' || e.character == '\n') {
-						EEFTextLifecycleManager.this.updateValue(false);
-					}
+			this.keyListener = KeyListener.keyReleasedAdapter((event) -> {
+				if (event.character == '\r' || event.character == '\n') {
+					this.updateValue(false);
 				}
-
-				@Override
-				public void keyPressed(KeyEvent e) {
-					// do nothing
-				}
-			};
+			});
 			this.text.addKeyListener(this.keyListener);
 		}
 

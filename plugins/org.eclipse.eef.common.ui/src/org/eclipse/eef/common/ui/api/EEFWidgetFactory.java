@@ -40,6 +40,7 @@ import org.eclipse.ui.internal.forms.widgets.FormUtil;
  * @author Stephane Begaudeau
  * @since 1.6.0
  */
+@SuppressWarnings("restriction")
 public class EEFWidgetFactory extends FormToolkit {
 	/**
 	 * The constructor.

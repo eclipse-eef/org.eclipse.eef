@@ -137,7 +137,7 @@ public class DescriptorRegistryEventListener<T> extends AbstractRegistryEventLis
 		} catch (CoreException e) {
 			String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_cannotInstantiateExtension,
 					configurationElement.getAttribute(IMPL_CLASS_DESCRIPTOR_ATTR));
-			EEFIdePlugin.getPlugin().error(message);
+			EEFIdePlugin.getPlugin().error(message, e);
 
 			return false;
 		}

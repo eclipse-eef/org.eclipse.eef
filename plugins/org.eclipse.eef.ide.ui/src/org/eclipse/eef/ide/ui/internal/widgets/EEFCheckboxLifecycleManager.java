@@ -10,7 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import com.google.common.base.Objects;
+import java.util.Optional;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFCheckboxDescription;
@@ -30,7 +30,6 @@ import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
@@ -156,28 +155,20 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 
 		this.getController().onNewLabel((value) -> {
 			if (!this.checkbox.isDisposed() && !(this.checkbox.getText() != null && this.checkbox.getText().equals(value))) {
-				this.checkbox.setText(Objects.firstNonNull(value, "")); //$NON-NLS-1$
+				this.checkbox.setText(Optional.ofNullable(value).orElse("")); //$NON-NLS-1$
 			}
 		});
 
 		// UI edited by user => update model if possible, revert UI change otherwise
-		this.selectionListener = new SelectionListener() {
-			@Override
-			public void widgetSelected(SelectionEvent event) {
-				IStatus result = controller.updateValue(checkbox.getSelection());
-				if (result != null && result.getSeverity() == IStatus.ERROR) {
-					EEFIdeUiPlugin.INSTANCE.log(result);
-					checkbox.setSelection(referenceValue);
-				} else {
-					refresh();
-				}
+		this.selectionListener = SelectionListener.widgetSelectedAdapter((event) -> {
+			IStatus result = controller.updateValue(checkbox.getSelection());
+			if (result != null && result.getSeverity() == IStatus.ERROR) {
+				EEFIdeUiPlugin.INSTANCE.log(result);
+				checkbox.setSelection(referenceValue);
+			} else {
+				refresh();
 			}
-
-			@Override
-			public void widgetDefaultSelected(SelectionEvent e) {
-				// Nothing to do
-			}
-		};
+		});
 		this.checkbox.addSelectionListener(this.selectionListener);
 
 		// Model changed => update UI

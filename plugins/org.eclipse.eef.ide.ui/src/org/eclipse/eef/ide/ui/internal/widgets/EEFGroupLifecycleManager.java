@@ -10,10 +10,9 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
-import com.google.common.base.Objects;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFGroupConditionalStyle;
@@ -153,7 +152,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 
 		String labelExpression = this.description.getLabelExpression();
 		EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(String.class).call(labelExpression,
-				(value) -> this.section.setText(Objects.firstNonNull(value, ""))); //$NON-NLS-1$
+				(value) -> this.section.setText(Optional.ofNullable(value).orElse(""))); //$NON-NLS-1$
 
 		this.section.setLayout(new GridLayout(1, false));
 		GridData sectionLayoutData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
@@ -289,7 +288,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.controller.onNewLabel((value) -> this.section.setText(value));
+		this.controller.onNewLabel((value) -> Optional.ofNullable(value).ifPresent(this.section::setText));
 
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeShown);
 	}
