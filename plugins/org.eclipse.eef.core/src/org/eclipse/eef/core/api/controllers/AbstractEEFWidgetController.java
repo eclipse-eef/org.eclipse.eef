@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFWidgetDescription;
@@ -128,7 +129,9 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 		super.refresh();
 
 		String labelExpression = this.getDescription().getLabelExpression();
-		this.newEval().logIfInvalidType(String.class).call(labelExpression, this.newLabelConsumer);
+		Optional.ofNullable(this.newLabelConsumer).ifPresent(consumer -> {
+			this.newEval().logIfInvalidType(String.class).call(labelExpression, consumer);
+		});
 	}
 
 	/**
@@ -139,7 +142,9 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	@Override
 	public void computeHelp() {
 		String helpExpression = this.getDescription().getHelpExpression();
-		this.newEval().logIfInvalidType(String.class).call(helpExpression, this.newHelpConsumer);
+		Optional.ofNullable(this.newHelpConsumer).ifPresent(consumer -> {
+			this.newEval().logIfInvalidType(String.class).call(helpExpression, consumer);
+		});
 	}
 
 }

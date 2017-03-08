@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -40,7 +41,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	/**
 	 * The description.
 	 */
-	private EEFSelectDescription description;
+	private final EEFSelectDescription description;
 
 	/**
 	 * The consumer of a new value of the combo.
@@ -102,12 +103,16 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 
 				Iterators.addAll(candidates, ((Iterable<?>) value).iterator());
 
-				this.newCandidatesConsumer.accept(candidates);
+				Optional.ofNullable(this.newCandidatesConsumer).ifPresent(consumer -> {
+					consumer.accept(candidates);
+				});
 			}
 		});
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().call(valueExpression, this.newValueConsumer);
+		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+			this.newEval().call(valueExpression, consumer);
+		});
 	}
 
 	/**

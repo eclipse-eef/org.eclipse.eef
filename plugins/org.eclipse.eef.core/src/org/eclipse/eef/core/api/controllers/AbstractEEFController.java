@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -42,17 +43,17 @@ public abstract class AbstractEEFController implements IEEFController {
 	/**
 	 * The interpreter.
 	 */
-	protected IInterpreter interpreter;
+	protected final IInterpreter interpreter;
 
 	/**
 	 * The variable manager.
 	 */
-	protected IVariableManager variableManager;
+	protected final IVariableManager variableManager;
 
 	/**
 	 * The editing context adapter.
 	 */
-	protected EditingContextAdapter editingContextAdapter;
+	protected final EditingContextAdapter editingContextAdapter;
 
 	/**
 	 * The consumer of the validation messages.
@@ -113,9 +114,7 @@ public abstract class AbstractEEFController implements IEEFController {
 	public void refresh() {
 		List<IValidationRuleResult> validationRuleResults = this.getValidationRuleResults(this.getValidationRulesContainer(),
 				this.getValidationRulesReference());
-		if (this.validationConsumer != null) {
-			this.validationConsumer.accept(validationRuleResults);
-		}
+		Optional.ofNullable(this.validationConsumer).ifPresent(consumer -> consumer.accept(validationRuleResults));
 	}
 
 	/**

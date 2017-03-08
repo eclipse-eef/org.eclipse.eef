@@ -39,7 +39,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	/**
 	 * The description.
 	 */
-	private EEFHyperlinkDescription description;
+	private final EEFHyperlinkDescription description;
 
 	/**
 	 * The consumer of a new value of the text.
@@ -74,8 +74,9 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		Object valueExpressionResult = this.newEval().evaluate(valueExpression);
-		this.newValueConsumer.accept(valueExpressionResult);
+		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+			this.newEval().call(valueExpression, consumer);
+		});
 	}
 
 	/**

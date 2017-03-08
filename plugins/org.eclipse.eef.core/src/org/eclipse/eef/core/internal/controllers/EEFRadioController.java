@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -38,7 +39,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	/**
 	 * The description.
 	 */
-	private EEFRadioDescription description;
+	private final EEFRadioDescription description;
 
 	/**
 	 * The consumer of a new value of the combo.
@@ -99,12 +100,16 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 
 				((Iterable<?>) value).forEach(object -> candidates.add(object));
 
-				this.newCandidatesConsumer.accept(candidates);
+				Optional.ofNullable(this.newCandidatesConsumer).ifPresent(consumer -> {
+					consumer.accept(candidates);
+				});
 			}
 		});
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().call(valueExpression, EEFRadioController.this.newValueConsumer);
+		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+			this.newEval().call(valueExpression, consumer);
+		});
 	}
 
 	/**

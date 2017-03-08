@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFGroupDescription;
@@ -32,10 +33,10 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * The description.
 	 */
-	private EEFGroupDescription description;
+	private final EEFGroupDescription description;
 
 	/**
-	 * The label consumer.
+	 * The new label consumer.
 	 */
 	private Consumer<String> newLabelConsumer;
 
@@ -107,6 +108,8 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 		super.refresh();
 
 		String labelExpression = this.description.getLabelExpression();
-		this.newEval().logIfInvalidType(String.class).call(labelExpression, this.newLabelConsumer);
+		Optional.ofNullable(this.newLabelConsumer).ifPresent(consumer -> {
+			this.newEval().logIfInvalidType(String.class).call(labelExpression, consumer);
+		});
 	}
 }

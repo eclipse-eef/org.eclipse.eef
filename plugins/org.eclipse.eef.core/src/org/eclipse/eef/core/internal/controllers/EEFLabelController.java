@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -38,7 +39,7 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	/**
 	 * The description.
 	 */
-	private EEFLabelDescription description;
+	private final EEFLabelDescription description;
 
 	/**
 	 * The consumer of the new body.
@@ -77,14 +78,16 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 		Object valueExpressionResult = this.newEval().evaluate(valueExpression);
 
 		String displayExpression = this.description.getDisplayExpression();
-		if (!Util.isBlank(displayExpression)) {
-			Map<String, Object> variables = new HashMap<String, Object>();
-			variables.putAll(this.variableManager.getVariables());
-			variables.put(EEFExpressionUtils.EEFReference.VALUE, valueExpressionResult);
-			EvalFactory.of(this.interpreter, variables).logIfInvalidType(String.class).call(displayExpression, this.newValueConsumer);
-		} else if (valueExpressionResult != null) {
-			this.newValueConsumer.accept(valueExpressionResult.toString());
-		}
+		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+			if (!Util.isBlank(displayExpression)) {
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFReference.VALUE, valueExpressionResult);
+				EvalFactory.of(this.interpreter, variables).logIfInvalidType(String.class).call(displayExpression, consumer);
+			} else if (valueExpressionResult != null) {
+				newValueConsumer.accept(valueExpressionResult.toString());
+			}
+		});
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,14 +10,12 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
-import java.text.MessageFormat;
+import java.util.Optional;
 
 import org.eclipse.eef.EEFCustomExpression;
 import org.eclipse.eef.EEFCustomWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EditingContextAdapter;
-import org.eclipse.eef.core.internal.EEFCorePlugin;
-import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -31,7 +29,7 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	/**
 	 * The description.
 	 */
-	protected EEFCustomWidgetDescription description;
+	protected final EEFCustomWidgetDescription description;
 
 	/**
 	 * The constructor.
@@ -57,29 +55,23 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
-	protected abstract EEFCustomWidgetDescription getDescription();
+	protected EEFCustomWidgetDescription getDescription() {
+		return this.description;
+	}
 
 	/**
-	 * Get the custom expression.
+	 * Get the custom expression with the given id.
 	 *
 	 * @param customExpressionId
 	 *            Identifier of the custom expression
-	 * @return The custom expression
+	 * @return An optional with the custom expression or an empty optional if none could be found
 	 */
-	protected String getCustomExpression(String customExpressionId) {
-		EEFCustomWidgetDescription customDescription = getDescription();
-		if (customDescription != null) {
-			for (EEFCustomExpression eefCustomExpression : customDescription.getCustomExpressions()) {
-				if (eefCustomExpression != null && customExpressionId != null && customExpressionId.equals(eefCustomExpression.getIdentifier())) {
-					return eefCustomExpression.getCustomExpression();
-				}
-			}
-		}
+	protected Optional<String> getCustomExpression(String customExpressionId) {
+		Optional<String> optionalCustomExpression = this.getDescription().getCustomExpressions().stream().filter(eefCustomExpression -> {
+			return customExpressionId != null && customExpressionId.equals(eefCustomExpression.getIdentifier());
+		}).map(EEFCustomExpression::getCustomExpression).findFirst();
 
-		String message = MessageFormat.format(Messages.AbstractEEFWidgetController_NoCustomExpressionFoundForID, customExpressionId);
-		EEFCorePlugin.getPlugin().error(message);
-
-		return null;
+		return optionalCustomExpression;
 	}
 
 	/**
@@ -89,13 +81,11 @@ public abstract class AbstractEEFCustomWidgetController extends AbstractEEFWidge
 	 *            Identifier of the custom expression to execute
 	 */
 	protected void executeCommandExpression(final String customExpressionId) {
-		this.editingContextAdapter.performModelChange(new Runnable() {
-			@Override
-			public void run() {
-				String pushExpression = getCustomExpression(customExpressionId);
+		this.editingContextAdapter.performModelChange(() -> {
+			this.getCustomExpression(customExpressionId).ifPresent(expression -> {
 				EAttribute attr = EefPackage.Literals.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION;
-				AbstractEEFCustomWidgetController.this.newEval().logIfBlank(attr).call(pushExpression);
-			}
+				AbstractEEFCustomWidgetController.this.newEval().logIfBlank(attr).call(expression);
+			});
 		});
 	}
 

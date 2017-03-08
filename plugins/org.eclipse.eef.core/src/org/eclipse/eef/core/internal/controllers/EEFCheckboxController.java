@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -36,7 +37,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	/**
 	 * The description.
 	 */
-	private EEFCheckboxDescription description;
+	private final EEFCheckboxDescription description;
 
 	/**
 	 * The consumer of a new value of the checkbox.
@@ -85,7 +86,9 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().logIfInvalidType(Boolean.class).call(valueExpression, this.newValueConsumer);
+		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+			this.newEval().logIfInvalidType(Boolean.class).call(valueExpression, consumer);
+		});
 	}
 
 	/**

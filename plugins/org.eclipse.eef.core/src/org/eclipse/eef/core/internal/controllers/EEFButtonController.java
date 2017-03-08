@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -32,7 +33,7 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	/**
 	 * The description.
 	 */
-	private EEFButtonDescription description;
+	private final EEFButtonDescription description;
 
 	/**
 	 * The consumer of a new value of the button's label.
@@ -77,7 +78,9 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 		super.refresh();
 
 		String buttonLabelExpression = this.description.getButtonLabelExpression();
-		this.newEval().logIfInvalidType(String.class).defaultValue("...").call(buttonLabelExpression, this.newButtonLabelConsumer); //$NON-NLS-1$
+		Optional.ofNullable(this.newButtonLabelConsumer).ifPresent(consumer -> {
+			this.newEval().logIfInvalidType(String.class).defaultValue("...").call(buttonLabelExpression, consumer); //$NON-NLS-1$
+		});
 	}
 
 	@Override

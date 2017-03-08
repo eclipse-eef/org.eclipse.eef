@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -36,7 +37,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	/**
 	 * The description.
 	 */
-	private EEFTextDescription description;
+	private final EEFTextDescription description;
 
 	/**
 	 * The consumer of a new value of the text.
@@ -85,7 +86,9 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().call(valueExpression, this.newValueConsumer);
+		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+			this.newEval().call(valueExpression, consumer);
+		});
 	}
 
 	/**

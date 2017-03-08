@@ -12,6 +12,7 @@ package org.eclipse.eef.sample.custom.widget.colorpicker;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFCustomWidgetDescription;
@@ -82,26 +83,40 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 	public void refresh() {
 		super.refresh();
 
-		String valueExpression = getCustomExpression(VALUE_EXPRESSION_ID);
-		this.newEval().logIfInvalidType(String.class).call(valueExpression, (value) -> {
-			int red = DEFAULT_COLOR_CODE;
-			int green = DEFAULT_COLOR_CODE;
-			int blue = DEFAULT_COLOR_CODE;
-			if (value != null) {
-				String[] rgb = value.split(SEPARATOR);
-				if (rgb.length == 3) {
-					try {
-						red = Integer.parseInt(rgb[0]);
-						green = Integer.parseInt(rgb[1]);
-						blue = Integer.parseInt(rgb[2]);
-						Color color = ColorHelper.getColor(red, green, blue);
-						ColorPickerController.this.newValueConsumer.accept(color);
-					} catch (NumberFormatException e) {
-						// TODO Log warning about unexpected result format from the expression.
-					}
+		Optional<String> optionalValueExpression = this.getCustomExpression(VALUE_EXPRESSION_ID);
+		optionalValueExpression.ifPresent(valueExpression -> {
+			this.newEval().logIfInvalidType(String.class).call(valueExpression, (value) -> {
+				this.computeNewColorValue(value);
+			});
+		});
+	}
+
+	/**
+	 * Computes the new value of the color.
+	 *
+	 * @param value
+	 *            The string representation of the new color
+	 */
+	private void computeNewColorValue(String value) {
+		int red = DEFAULT_COLOR_CODE;
+		int green = DEFAULT_COLOR_CODE;
+		int blue = DEFAULT_COLOR_CODE;
+		if (value != null) {
+			String[] rgb = value.split(SEPARATOR);
+			if (rgb.length == 3) {
+				try {
+					red = Integer.parseInt(rgb[0]);
+					green = Integer.parseInt(rgb[1]);
+					blue = Integer.parseInt(rgb[2]);
+					Color color = ColorHelper.getColor(red, green, blue);
+					Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+						consumer.accept(color);
+					});
+				} catch (@SuppressWarnings("unused") NumberFormatException e) {
+					// TODO Log warning about unexpected result format from the expression.
 				}
 			}
-		});
+		}
 	}
 
 	@Override
@@ -122,13 +137,13 @@ public class ColorPickerController extends AbstractEEFCustomWidgetController imp
 	@Override
 	public void updateValue(final RGB color) {
 		this.editingContextAdapter.performModelChange(() -> {
-			String editExpression = getCustomExpression(EDIT_EXPRESSION_ID);
+			this.getCustomExpression(EDIT_EXPRESSION_ID).ifPresent(editExpression -> {
+				Map<String, Object> variables = new HashMap<String, Object>();
+				variables.putAll(this.variableManager.getVariables());
+				variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, color.red + SEPARATOR + color.green + SEPARATOR + color.blue);
 
-			Map<String, Object> variables = new HashMap<String, Object>();
-			variables.putAll(this.variableManager.getVariables());
-			variables.put(EEFExpressionUtils.EEFText.NEW_VALUE, color.red + SEPARATOR + color.green + SEPARATOR + color.blue);
-
-			EvalFactory.of(this.interpreter, variables).call(editExpression);
+				EvalFactory.of(this.interpreter, variables).call(editExpression);
+			});
 		});
 	}
 
