@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFGroupDescription;
@@ -32,12 +33,12 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * The description.
 	 */
-	private EEFGroupDescription description;
+	private final EEFGroupDescription description;
 
 	/**
-	 * The label consumer.
+	 * An optional containing the new label consumer.
 	 */
-	private Consumer<String> newLabelConsumer;
+	private Optional<Consumer<String>> optionalNewLabelConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -64,7 +65,7 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	 */
 	@Override
 	public void onNewLabel(Consumer<String> consumer) {
-		this.newLabelConsumer = consumer;
+		this.optionalNewLabelConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -74,7 +75,7 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	 */
 	@Override
 	public void removeNewLabelConsumer() {
-		this.newLabelConsumer = null;
+		this.optionalNewLabelConsumer = Optional.empty();
 	}
 
 	/**
@@ -107,6 +108,8 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 		super.refresh();
 
 		String labelExpression = this.description.getLabelExpression();
-		this.newEval().logIfInvalidType(String.class).call(labelExpression, this.newLabelConsumer);
+		this.optionalNewLabelConsumer.ifPresent(newLabelConsumer -> {
+			this.newEval().logIfInvalidType(String.class).call(labelExpression, newLabelConsumer);
+		});
 	}
 }

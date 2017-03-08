@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -38,17 +39,17 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	/**
 	 * The description.
 	 */
-	private EEFRadioDescription description;
+	private final EEFRadioDescription description;
 
 	/**
-	 * The consumer of a new value of the combo.
+	 * An optional containing the consumer of a new value of the combo.
 	 */
-	private Consumer<Object> newValueConsumer;
+	private Optional<Consumer<Object>> optionalNewValueConsumer = Optional.empty();
 
 	/**
-	 * The consumer of a new candidates of the combo.
+	 * An optional containing the consumer of a new candidates of the combo.
 	 */
-	private Consumer<List<Object>> newCandidatesConsumer;
+	private Optional<Consumer<List<Object>>> optionalNewCandidatesConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -99,12 +100,16 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 
 				((Iterable<?>) value).forEach(object -> candidates.add(object));
 
-				this.newCandidatesConsumer.accept(candidates);
+				this.optionalNewCandidatesConsumer.ifPresent(newCandidatesConsumer -> {
+					newCandidatesConsumer.accept(candidates);
+				});
 			}
 		});
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().call(valueExpression, EEFRadioController.this.newValueConsumer);
+		this.optionalNewValueConsumer.ifPresent(newValueConsumer -> {
+			this.newEval().call(valueExpression, newValueConsumer);
+		});
 	}
 
 	/**
@@ -114,7 +119,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	 */
 	@Override
 	public void onNewValue(Consumer<Object> consumer) {
-		this.newValueConsumer = consumer;
+		this.optionalNewValueConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -124,7 +129,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	 */
 	@Override
 	public void onNewCandidates(Consumer<List<Object>> consumer) {
-		this.newCandidatesConsumer = consumer;
+		this.optionalNewCandidatesConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -134,7 +139,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	 */
 	@Override
 	public void removeNewValueConsumer() {
-		this.newValueConsumer = null;
+		this.optionalNewValueConsumer = Optional.empty();
 	}
 
 	/**
@@ -144,7 +149,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	 */
 	@Override
 	public void removeNewCandidatesConsumer() {
-		this.newCandidatesConsumer = null;
+		this.optionalNewCandidatesConsumer = Optional.empty();
 	}
 
 	/**

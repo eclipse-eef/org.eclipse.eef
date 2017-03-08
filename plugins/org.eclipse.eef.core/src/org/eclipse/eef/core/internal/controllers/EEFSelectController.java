@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -40,17 +41,17 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	/**
 	 * The description.
 	 */
-	private EEFSelectDescription description;
+	private final EEFSelectDescription description;
 
 	/**
-	 * The consumer of a new value of the combo.
+	 * An optional containing the consumer of a new value of the combo.
 	 */
-	private Consumer<Object> newValueConsumer;
+	private Optional<Consumer<Object>> optionalNewValueConsumer = Optional.empty();
 
 	/**
-	 * The consumer of a new candidates of the combo.
+	 * An optional containing the consumer of a new candidates of the combo.
 	 */
-	private Consumer<List<Object>> newCandidatesConsumer;
+	private Optional<Consumer<List<Object>>> optionalNewCandidatesConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -102,12 +103,16 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 
 				Iterators.addAll(candidates, ((Iterable<?>) value).iterator());
 
-				this.newCandidatesConsumer.accept(candidates);
+				this.optionalNewCandidatesConsumer.ifPresent(newCandidatesConsumer -> {
+					newCandidatesConsumer.accept(candidates);
+				});
 			}
 		});
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().call(valueExpression, this.newValueConsumer);
+		this.optionalNewValueConsumer.ifPresent(newValueConsumer -> {
+			this.newEval().call(valueExpression, newValueConsumer);
+		});
 	}
 
 	/**
@@ -117,7 +122,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	 */
 	@Override
 	public void onNewValue(Consumer<Object> consumer) {
-		this.newValueConsumer = consumer;
+		this.optionalNewValueConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -127,7 +132,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	 */
 	@Override
 	public void onNewCandidates(Consumer<List<Object>> consumer) {
-		this.newCandidatesConsumer = consumer;
+		this.optionalNewCandidatesConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -137,7 +142,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	 */
 	@Override
 	public void removeNewValueConsumer() {
-		this.newValueConsumer = null;
+		this.optionalNewValueConsumer = Optional.empty();
 	}
 
 	/**
@@ -147,7 +152,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 	 */
 	@Override
 	public void removeNewCandidatesConsumer() {
-		this.newCandidatesConsumer = null;
+		this.optionalNewCandidatesConsumer = Optional.empty();
 	}
 
 	/**

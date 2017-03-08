@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -32,12 +33,12 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	/**
 	 * The description.
 	 */
-	private EEFButtonDescription description;
+	private final EEFButtonDescription description;
 
 	/**
-	 * The consumer of a new value of the button's label.
+	 * An optional containing the consumer of a new value of the button's label.
 	 */
-	private Consumer<String> newButtonLabelConsumer;
+	private Optional<Consumer<String>> optionalNewButtonLabelConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -59,12 +60,12 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 
 	@Override
 	public void onNewButtonLabel(Consumer<String> consumer) {
-		this.newButtonLabelConsumer = consumer;
+		this.optionalNewButtonLabelConsumer = Optional.of(consumer);
 	}
 
 	@Override
 	public void removeNewButtonLabelConsumer() {
-		this.newButtonLabelConsumer = null;
+		this.optionalNewButtonLabelConsumer = Optional.empty();
 	}
 
 	@Override
@@ -77,7 +78,9 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 		super.refresh();
 
 		String buttonLabelExpression = this.description.getButtonLabelExpression();
-		this.newEval().logIfInvalidType(String.class).defaultValue("...").call(buttonLabelExpression, this.newButtonLabelConsumer); //$NON-NLS-1$
+		this.optionalNewButtonLabelConsumer.ifPresent(newButtonLabelConsumer -> {
+			this.newEval().logIfInvalidType(String.class).defaultValue("...").call(buttonLabelExpression, newButtonLabelConsumer); //$NON-NLS-1$
+		});
 	}
 
 	@Override

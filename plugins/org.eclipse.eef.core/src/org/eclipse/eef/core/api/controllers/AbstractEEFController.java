@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -42,22 +43,22 @@ public abstract class AbstractEEFController implements IEEFController {
 	/**
 	 * The interpreter.
 	 */
-	protected IInterpreter interpreter;
+	protected final IInterpreter interpreter;
 
 	/**
 	 * The variable manager.
 	 */
-	protected IVariableManager variableManager;
+	protected final IVariableManager variableManager;
 
 	/**
 	 * The editing context adapter.
 	 */
-	protected EditingContextAdapter editingContextAdapter;
+	protected final EditingContextAdapter editingContextAdapter;
 
 	/**
-	 * The consumer of the validation messages.
+	 * An optional containing the consumer of the validation messages.
 	 */
-	private Consumer<List<IValidationRuleResult>> validationConsumer;
+	private Optional<Consumer<List<IValidationRuleResult>>> optionalValidationConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -91,7 +92,7 @@ public abstract class AbstractEEFController implements IEEFController {
 	 */
 	@Override
 	public void onValidation(Consumer<List<IValidationRuleResult>> consumer) {
-		this.validationConsumer = consumer;
+		this.optionalValidationConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -101,7 +102,7 @@ public abstract class AbstractEEFController implements IEEFController {
 	 */
 	@Override
 	public void removeValidationConsumer() {
-		this.validationConsumer = null;
+		this.optionalValidationConsumer = Optional.empty();
 	}
 
 	/**
@@ -113,9 +114,7 @@ public abstract class AbstractEEFController implements IEEFController {
 	public void refresh() {
 		List<IValidationRuleResult> validationRuleResults = this.getValidationRuleResults(this.getValidationRulesContainer(),
 				this.getValidationRulesReference());
-		if (this.validationConsumer != null) {
-			this.validationConsumer.accept(validationRuleResults);
-		}
+		this.optionalValidationConsumer.ifPresent(validationConsumer -> validationConsumer.accept(validationRuleResults));
 	}
 
 	/**
