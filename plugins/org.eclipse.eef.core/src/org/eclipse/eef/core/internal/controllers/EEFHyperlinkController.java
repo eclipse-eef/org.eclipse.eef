@@ -39,12 +39,12 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	/**
 	 * The description.
 	 */
-	private EEFHyperlinkDescription description;
+	private final EEFHyperlinkDescription description;
 
 	/**
-	 * The consumer of a new value of the text.
+	 * An optional containing the consumer of a new value of the text.
 	 */
-	private Consumer<Object> newValueConsumer;
+	private Optional<Consumer<Object>> optionalNewValueConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -74,8 +74,9 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		Object valueExpressionResult = this.newEval().evaluate(valueExpression);
-		this.newValueConsumer.accept(valueExpressionResult);
+		this.optionalNewValueConsumer.ifPresent(newValueConsumer -> {
+			this.newEval().call(valueExpression, newValueConsumer);
+		});
 	}
 
 	/**
@@ -122,7 +123,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	 */
 	@Override
 	public void onNewValue(Consumer<Object> consumer) {
-		this.newValueConsumer = consumer;
+		this.optionalNewValueConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -132,7 +133,7 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	 */
 	@Override
 	public void removeNewValueConsumer() {
-		this.newValueConsumer = null;
+		this.optionalNewValueConsumer = Optional.empty();
 	}
 
 	/**

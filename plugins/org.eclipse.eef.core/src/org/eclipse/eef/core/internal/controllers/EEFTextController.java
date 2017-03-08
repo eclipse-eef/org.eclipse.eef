@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -36,12 +37,12 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	/**
 	 * The description.
 	 */
-	private EEFTextDescription description;
+	private final EEFTextDescription description;
 
 	/**
-	 * The consumer of a new value of the text.
+	 * An optional containing the consumer of a new value of the text.
 	 */
-	private Consumer<Object> newValueConsumer;
+	private Optional<Consumer<Object>> optionalNewValueConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -85,7 +86,9 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().call(valueExpression, this.newValueConsumer);
+		this.optionalNewValueConsumer.ifPresent(newValueConsumer -> {
+			this.newEval().call(valueExpression, newValueConsumer);
+		});
 	}
 
 	/**
@@ -95,7 +98,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	 */
 	@Override
 	public void onNewValue(Consumer<Object> consumer) {
-		this.newValueConsumer = consumer;
+		this.optionalNewValueConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -105,7 +108,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	 */
 	@Override
 	public void removeNewValueConsumer() {
-		this.newValueConsumer = null;
+		this.optionalNewValueConsumer = Optional.empty();
 	}
 
 	/**

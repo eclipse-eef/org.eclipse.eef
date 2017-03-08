@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,17 +49,17 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	/**
 	 * The description.
 	 */
-	protected EEFExtReferenceDescription description;
+	protected final EEFExtReferenceDescription description;
 
 	/**
 	 * The target.
 	 */
-	protected EObject target;
+	protected final EObject target;
 
 	/**
 	 * The EReference.
 	 */
-	protected EReference eReference;
+	protected final EReference eReference;
 
 	/**
 	 * The controller.

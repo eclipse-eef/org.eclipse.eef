@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFWidgetDescription;
@@ -28,14 +29,14 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 public abstract class AbstractEEFWidgetController extends AbstractEEFController implements IEEFWidgetController {
 
 	/**
-	 * The consumer of a new value of the label.
+	 * An optional containing the consumer of a new value of the label.
 	 */
-	protected Consumer<String> newLabelConsumer;
+	protected Optional<Consumer<String>> optionalNewLabelConsumer = Optional.empty();
 
 	/**
-	 * The consumer of the new value of the help.
+	 * An optional containing the consumer of the new value of the help.
 	 */
-	protected Consumer<String> newHelpConsumer;
+	protected Optional<Consumer<String>> optionalNewHelpConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -85,7 +86,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	 */
 	@Override
 	public void onNewLabel(Consumer<String> consumer) {
-		this.newLabelConsumer = consumer;
+		this.optionalNewLabelConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -95,7 +96,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	 */
 	@Override
 	public void removeNewLabelConsumer() {
-		this.newLabelConsumer = null;
+		this.optionalNewLabelConsumer = Optional.empty();
 	}
 
 	/**
@@ -105,7 +106,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	 */
 	@Override
 	public void onNewHelp(Consumer<String> consumer) {
-		this.newHelpConsumer = consumer;
+		this.optionalNewHelpConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -115,7 +116,7 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	 */
 	@Override
 	public void removeNewHelpConsumer() {
-		this.newHelpConsumer = null;
+		this.optionalNewHelpConsumer = Optional.empty();
 	}
 
 	/**
@@ -128,7 +129,9 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 		super.refresh();
 
 		String labelExpression = this.getDescription().getLabelExpression();
-		this.newEval().logIfInvalidType(String.class).call(labelExpression, this.newLabelConsumer);
+		this.optionalNewLabelConsumer.ifPresent(newLabelConsumer -> {
+			this.newEval().logIfInvalidType(String.class).call(labelExpression, newLabelConsumer);
+		});
 	}
 
 	/**
@@ -139,7 +142,9 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	@Override
 	public void computeHelp() {
 		String helpExpression = this.getDescription().getHelpExpression();
-		this.newEval().logIfInvalidType(String.class).call(helpExpression, this.newHelpConsumer);
+		this.optionalNewHelpConsumer.ifPresent(newHelpConsumer -> {
+			this.newEval().logIfInvalidType(String.class).call(helpExpression, newHelpConsumer);
+		});
 	}
 
 }

@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -36,12 +37,12 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	/**
 	 * The description.
 	 */
-	private EEFCheckboxDescription description;
+	private final EEFCheckboxDescription description;
 
 	/**
-	 * The consumer of a new value of the checkbox.
+	 * An optional containing the consumer of a new value of the checkbox.
 	 */
-	private Consumer<Boolean> newValueConsumer;
+	private Optional<Consumer<Boolean>> optionalNewValueConsumer = Optional.empty();
 
 	/**
 	 * The constructor.
@@ -85,7 +86,9 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 		super.refresh();
 
 		String valueExpression = this.description.getValueExpression();
-		this.newEval().logIfInvalidType(Boolean.class).call(valueExpression, this.newValueConsumer);
+		this.optionalNewValueConsumer.ifPresent(newValueConsumer -> {
+			this.newEval().logIfInvalidType(Boolean.class).call(valueExpression, newValueConsumer);
+		});
 	}
 
 	/**
@@ -95,7 +98,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	 */
 	@Override
 	public void onNewValue(Consumer<Boolean> consumer) {
-		this.newValueConsumer = consumer;
+		this.optionalNewValueConsumer = Optional.of(consumer);
 	}
 
 	/**
@@ -105,7 +108,7 @@ public class EEFCheckboxController extends AbstractEEFWidgetController implement
 	 */
 	@Override
 	public void removeNewValueConsumer() {
-		this.newValueConsumer = null;
+		this.optionalNewValueConsumer = Optional.empty();
 	}
 
 	/**
