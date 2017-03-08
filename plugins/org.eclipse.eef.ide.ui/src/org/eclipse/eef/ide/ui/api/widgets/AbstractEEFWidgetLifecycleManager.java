@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@ package org.eclipse.eef.ide.ui.api.widgets;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EEFDynamicMappingIf;
@@ -25,7 +26,6 @@ import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.LockStatusChangeEvent;
 import org.eclipse.eef.core.api.LockStatusChangeEvent.LockStatus;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
@@ -98,7 +98,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * The listener used to react to changes in the lock status of a semantic element.
 	 */
-	private IConsumer<Collection<LockStatusChangeEvent>> lockStatusChangedListener;
+	private Consumer<Collection<LockStatusChangeEvent>> lockStatusChangedListener;
 
 	/**
 	 * The decorator used to indicate the permission on the validation widget.
@@ -317,7 +317,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		this.lockStatusChangedListener = (events) -> {
 			Display.getDefault().asyncExec(() -> {
 				events.stream().filter(event -> this.getWidgetSemanticElement().equals(event.getElement()))
-					.forEach(event -> this.handleLockStatus(event.getStatus()));
+						.forEach(event -> this.handleLockStatus(event.getStatus()));
 			});
 		};
 		this.editingContextAdapter.addLockStatusChangedListener(this.lockStatusChangedListener);

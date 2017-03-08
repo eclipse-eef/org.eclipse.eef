@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,6 +11,7 @@
 package org.eclipse.eef.core.api.controllers;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * Common interface of all the controllers.
@@ -24,7 +25,7 @@ public interface IEEFController {
 	 * @param consumer
 	 *            The consumer of the validation status
 	 */
-	void onValidation(IConsumer<List<IValidationRuleResult>> consumer);
+	void onValidation(Consumer<List<IValidationRuleResult>> consumer);
 
 	/**
 	 * Removes the consumer of the validation.

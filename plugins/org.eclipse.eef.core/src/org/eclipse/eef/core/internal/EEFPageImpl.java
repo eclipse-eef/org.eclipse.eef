@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ import com.google.common.collect.Iterables;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFPageDescription;
@@ -23,7 +24,6 @@ import org.eclipse.eef.core.api.EEFGroup;
 import org.eclipse.eef.core.api.EEFPage;
 import org.eclipse.eef.core.api.EEFView;
 import org.eclipse.eef.core.api.IEEFDomainClassTester;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -105,7 +105,7 @@ public class EEFPageImpl implements EEFPage {
 			Boolean preconditionValid = EvalFactory.of(this.interpreter, this.variableManager).logIfInvalidType(Boolean.class)
 					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
-				IConsumer<Object> consumer = (value) -> {
+				Consumer<Object> consumer = (value) -> {
 					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester);
 					Iterable<Object> iterable = Util.asIterable(value, Object.class);
 					Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);

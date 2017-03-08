@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,8 @@
  *    Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
+
+import java.util.function.Consumer;
 
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
@@ -28,12 +30,12 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * The consumer of a new value of the label.
 	 */
-	protected IConsumer<String> newLabelConsumer;
+	protected Consumer<String> newLabelConsumer;
 
 	/**
 	 * The consumer of the new value of the help.
 	 */
-	protected IConsumer<String> newHelpConsumer;
+	protected Consumer<String> newHelpConsumer;
 
 	/**
 	 * The constructor.
@@ -79,10 +81,10 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#onNewLabel(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#onNewLabel(java.util.function.Consumer)
 	 */
 	@Override
-	public void onNewLabel(IConsumer<String> consumer) {
+	public void onNewLabel(Consumer<String> consumer) {
 		this.newLabelConsumer = consumer;
 	}
 
@@ -99,10 +101,10 @@ public abstract class AbstractEEFWidgetController extends AbstractEEFController 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#onNewHelp(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFWidgetController#onNewHelp(java.util.function.Consumer)
 	 */
 	@Override
-	public void onNewHelp(IConsumer<String> consumer) {
+	public void onNewHelp(Consumer<String> consumer) {
 		this.newHelpConsumer = consumer;
 	}
 

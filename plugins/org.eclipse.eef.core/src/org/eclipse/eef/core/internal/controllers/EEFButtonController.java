@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,13 +10,14 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.function.Consumer;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -36,7 +37,7 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	/**
 	 * The consumer of a new value of the button's label.
 	 */
-	private IConsumer<String> newButtonLabelConsumer;
+	private Consumer<String> newButtonLabelConsumer;
 
 	/**
 	 * The constructor.
@@ -57,7 +58,7 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	}
 
 	@Override
-	public void onNewButtonLabel(IConsumer<String> consumer) {
+	public void onNewButtonLabel(Consumer<String> consumer) {
 		this.newButtonLabelConsumer = consumer;
 	}
 

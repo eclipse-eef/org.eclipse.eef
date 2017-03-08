@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFRuleAuditDescription;
@@ -56,7 +57,7 @@ public abstract class AbstractEEFController implements IEEFController {
 	/**
 	 * The consumer of the validation messages.
 	 */
-	private IConsumer<List<IValidationRuleResult>> validationConsumer;
+	private Consumer<List<IValidationRuleResult>> validationConsumer;
 
 	/**
 	 * The constructor.
@@ -86,10 +87,10 @@ public abstract class AbstractEEFController implements IEEFController {
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFController#onValidation(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFController#onValidation(java.util.function.Consumer)
 	 */
 	@Override
-	public void onValidation(IConsumer<List<IValidationRuleResult>> consumer) {
+	public void onValidation(Consumer<List<IValidationRuleResult>> consumer) {
 		this.validationConsumer = consumer;
 	}
 
@@ -113,7 +114,7 @@ public abstract class AbstractEEFController implements IEEFController {
 		List<IValidationRuleResult> validationRuleResults = this.getValidationRuleResults(this.getValidationRulesContainer(),
 				this.getValidationRulesReference());
 		if (this.validationConsumer != null) {
-			this.validationConsumer.apply(validationRuleResults);
+			this.validationConsumer.accept(validationRuleResults);
 		}
 	}
 

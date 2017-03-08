@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,8 @@
  *    Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
+
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 
@@ -25,7 +27,7 @@ public interface IEEFButtonController extends IEEFWidgetController {
 	 * @param consumer
 	 *            The consumer of the new value of the button's label
 	 */
-	void onNewButtonLabel(IConsumer<String> consumer);
+	void onNewButtonLabel(Consumer<String> consumer);
 
 	/**
 	 * Remove the consumer of the new value of the button's label.
@@ -34,7 +36,7 @@ public interface IEEFButtonController extends IEEFWidgetController {
 
 	/**
 	 * Invoked when the user pushes the button.
-	 * 
+	 *
 	 * @return the status of the pushed execution.
 	 */
 	IStatus pushed();

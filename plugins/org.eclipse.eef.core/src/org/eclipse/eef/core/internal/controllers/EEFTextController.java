@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFTextDescription;
@@ -20,7 +21,6 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EAttribute;
@@ -41,7 +41,7 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	/**
 	 * The consumer of a new value of the text.
 	 */
-	private IConsumer<Object> newValueConsumer;
+	private Consumer<Object> newValueConsumer;
 
 	/**
 	 * The constructor.
@@ -91,10 +91,10 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#onNewValue(java.util.function.Consumer)
 	 */
 	@Override
-	public void onNewValue(IConsumer<Object> consumer) {
+	public void onNewValue(Consumer<Object> consumer) {
 		this.newValueConsumer = consumer;
 	}
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,9 +13,9 @@ package org.eclipse.eef.core.api.utils;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.eclipse.eef.common.api.utils.Util;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.internal.EEFCorePlugin;
 import org.eclipse.eef.core.internal.Messages;
 import org.eclipse.emf.ecore.EAttribute;
@@ -189,14 +189,14 @@ public final class EvalFactory {
 		 * @param consumer
 		 *            The consumer
 		 */
-		public void call(String expression, IConsumer<TYPE> consumer) {
+		public void call(String expression, Consumer<TYPE> consumer) {
 			if (Util.isBlank(expression)) {
 				if (this.eAttribute != null && EEFCorePlugin.getPlugin() != null) {
 					EEFCorePlugin.getPlugin().blank(this.eAttribute);
 				}
 
 				if (this.defaultValue != null && consumer != null) {
-					consumer.apply(this.defaultValue);
+					consumer.accept(this.defaultValue);
 				}
 				return;
 			}
@@ -213,7 +213,7 @@ public final class EvalFactory {
 								this.type.getName(), value);
 						EEFCorePlugin.getPlugin().error(message);
 					}
-					consumer.apply(returnValue);
+					consumer.accept(returnValue);
 				}
 			} else if (EEFCorePlugin.getPlugin() != null) {
 				EEFCorePlugin.getPlugin().diagnostic(expression, evaluationResult.getDiagnostic());

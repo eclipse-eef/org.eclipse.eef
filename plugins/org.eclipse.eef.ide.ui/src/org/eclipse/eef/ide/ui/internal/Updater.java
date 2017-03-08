@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,9 +11,9 @@
 package org.eclipse.eef.ide.ui.internal;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.ide.ui.api.EEFTab;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.common.notify.Notification;
  *
  * @author pcdavid
  */
-public class Updater implements IConsumer<List<Notification>> {
+public class Updater implements Consumer<List<Notification>> {
 
 	/**
 	 * The top-level page the section is part of.
@@ -64,7 +64,7 @@ public class Updater implements IConsumer<List<Notification>> {
 	}
 
 	@Override
-	public void apply(List<Notification> value) {
+	public void accept(List<Notification> value) {
 		formContainer.refreshPage();
 	}
 }

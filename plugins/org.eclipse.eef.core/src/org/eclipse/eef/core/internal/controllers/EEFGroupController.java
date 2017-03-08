@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,11 +10,12 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
+import java.util.function.Consumer;
+
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFController;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFGroupController;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -36,7 +37,7 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * The label consumer.
 	 */
-	private IConsumer<String> newLabelConsumer;
+	private Consumer<String> newLabelConsumer;
 
 	/**
 	 * The constructor.
@@ -59,10 +60,10 @@ public class EEFGroupController extends AbstractEEFController implements IEEFGro
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#onNewLabel(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFGroupController#onNewLabel(java.util.function.Consumer)
 	 */
 	@Override
-	public void onNewLabel(IConsumer<String> consumer) {
+	public void onNewLabel(Consumer<String> consumer) {
 		this.newLabelConsumer = consumer;
 	}
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFRadioDescription;
@@ -22,7 +23,6 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFRadioController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EAttribute;
@@ -43,12 +43,12 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	/**
 	 * The consumer of a new value of the combo.
 	 */
-	private IConsumer<Object> newValueConsumer;
+	private Consumer<Object> newValueConsumer;
 
 	/**
 	 * The consumer of a new candidates of the combo.
 	 */
-	private IConsumer<List<Object>> newCandidatesConsumer;
+	private Consumer<List<Object>> newCandidatesConsumer;
 
 	/**
 	 * The constructor.
@@ -99,7 +99,7 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 
 				((Iterable<?>) value).forEach(object -> candidates.add(object));
 
-				this.newCandidatesConsumer.apply(candidates);
+				this.newCandidatesConsumer.accept(candidates);
 			}
 		});
 
@@ -110,20 +110,20 @@ public class EEFRadioController extends AbstractEEFWidgetController implements I
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewValue(java.util.function.Consumer)
 	 */
 	@Override
-	public void onNewValue(IConsumer<Object> consumer) {
+	public void onNewValue(Consumer<Object> consumer) {
 		this.newValueConsumer = consumer;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
+	 * @see org.eclipse.eef.core.api.controllers.EEFTextController#onNewValue(java.util.function.Consumer)
 	 */
 	@Override
-	public void onNewCandidates(IConsumer<List<Object>> consumer) {
+	public void onNewCandidates(Consumer<List<Object>> consumer) {
 		this.newCandidatesConsumer = consumer;
 	}
 

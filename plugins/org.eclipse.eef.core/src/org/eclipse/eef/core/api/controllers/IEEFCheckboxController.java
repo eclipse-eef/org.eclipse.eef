@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,8 @@
  *    Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
+
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 
@@ -35,7 +37,7 @@ public interface IEEFCheckboxController extends IEEFWidgetController {
 	 * @param consumer
 	 *            The consumer of the new value of the checkbox
 	 */
-	void onNewValue(IConsumer<Boolean> consumer);
+	void onNewValue(Consumer<Boolean> consumer);
 
 	/**
 	 * Remove the consumer of the new value of the checkbox.

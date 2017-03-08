@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@ package org.eclipse.eef.core.internal.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFLabelDescription;
@@ -22,7 +23,6 @@ import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
-import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFLabelController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EAttribute;
@@ -43,7 +43,7 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	/**
 	 * The consumer of the new body.
 	 */
-	private IConsumer<String> newValueConsumer;
+	private Consumer<String> newValueConsumer;
 
 	/**
 	 * The constructor.
@@ -83,7 +83,7 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 			variables.put(EEFExpressionUtils.EEFReference.VALUE, valueExpressionResult);
 			EvalFactory.of(this.interpreter, variables).logIfInvalidType(String.class).call(displayExpression, this.newValueConsumer);
 		} else if (valueExpressionResult != null) {
-			this.newValueConsumer.apply(valueExpressionResult.toString());
+			this.newValueConsumer.accept(valueExpressionResult.toString());
 		}
 	}
 
@@ -103,7 +103,7 @@ public class EEFLabelController extends AbstractEEFWidgetController implements I
 	 * @see org.eclipse.eef.core.api.controllers.IEEFLabelController#onNewValue(org.eclipse.eef.core.api.controllers.IConsumer)
 	 */
 	@Override
-	public void onNewValue(IConsumer<String> consumer) {
+	public void onNewValue(Consumer<String> consumer) {
 		this.newValueConsumer = consumer;
 	}
 
