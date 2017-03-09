@@ -104,7 +104,6 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 *            Property categories
 	 * @return Sorted list of tabs according to the afterTab attribute
 	 */
-	@SuppressWarnings("cast")
 	private List<IEEFTabDescriptor> sortTabDescriptorsByAfterTab(List<IEEFTabDescriptor> tabs, List<String> propertyCategories) {
 		if (tabs.size() == 0 || propertyCategories == null) {
 			return tabs;
