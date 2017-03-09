@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -136,10 +136,9 @@ public class EEFDescriptorRegistryEventListener<T> extends AbstractRegistryEvent
 				EEFTabbedPropertyViewPlugin.getPlugin().error(message);
 			}
 		} catch (CoreException e) {
-			// String message =
-			// MessageFormat.format(Messages.DescriptorRegistryEventListener_cannotInstantiateExtension,
-			// configurationElement.getAttribute(IMPL_CLASS_DESCRIPTOR_ATTR));
-			// EEFTabbedPropertyViewPlugin.getInstance().logError(message);
+			String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_cannotInstantiateExtension,
+					configurationElement.getAttribute(IMPL_CLASS_DESCRIPTOR_ATTR));
+			EEFTabbedPropertyViewPlugin.getPlugin().error(message, e);
 
 			return false;
 		}
