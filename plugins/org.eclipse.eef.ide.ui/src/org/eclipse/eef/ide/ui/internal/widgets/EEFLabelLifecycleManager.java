@@ -194,7 +194,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 			}
 		});
 
-		for (final ActionButton actionButton : actionButtons) {
+		this.actionButtons.forEach(actionButton -> {
 			SelectionListener selectionListener = SWTUtils.widgetSelectedAdapter((event) -> {
 				if (!this.container.isRenderingInProgress()) {
 					IStatus result = controller.action(actionButton.getAction());
@@ -207,7 +207,7 @@ public class EEFLabelLifecycleManager extends AbstractEEFWidgetLifecycleManager 
 			});
 
 			actionButton.addSelectionListener(selectionListener);
-		}
+		});
 	}
 
 	/**

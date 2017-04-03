@@ -21,6 +21,7 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.common.ui.api.SWTUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFHyperlinkController;
@@ -35,8 +36,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.MouseListener;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -217,23 +217,20 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 			}
 		});
 
-		for (final ActionButton actionButton : actionButtons) {
-			SelectionAdapter selectionListener = new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					if (!EEFHyperlinkLifecycleManager.this.container.isRenderingInProgress()) {
-						IStatus result = controller.action(actionButton.getAction());
-						if (result != null && result.getSeverity() == IStatus.ERROR) {
-							EEFIdeUiPlugin.INSTANCE.log(result);
-						} else {
-							refresh();
-						}
+		this.actionButtons.forEach(actionButton -> {
+			SelectionListener selectionListener = SWTUtils.widgetSelectedAdapter((event) -> {
+				if (!this.container.isRenderingInProgress()) {
+					IStatus result = controller.action(actionButton.getAction());
+					if (result != null && result.getSeverity() == IStatus.ERROR) {
+						EEFIdeUiPlugin.INSTANCE.log(result);
+					} else {
+						refresh();
 					}
 				}
-			};
+			});
 
 			actionButton.addSelectionListener(selectionListener);
-		}
+		});
 	}
 
 	/**
