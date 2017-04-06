@@ -32,6 +32,7 @@ import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.WizardDialog;
@@ -224,15 +225,28 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 			IItemPropertyDescriptor propertyDescriptor = propertySource.getPropertyDescriptor(this.target, this.eReference);
 			if (propertyDescriptor != null) {
 				ArrayList<Object> choiceOfValues = new ArrayList<Object>(propertyDescriptor.getChoiceOfValues(this.target));
-				FeatureEditorDialog dialog = new FeatureEditorDialog(this.tableViewer.getTable().getShell(),
-						new AdapterFactoryLabelProvider(this.composedAdapterFactory), this.target, this.eReference,
-						propertyDescriptor.getDisplayName(this.target), choiceOfValues);
+
+				final AdapterFactoryLabelProvider adapterFactoryLabelProvider = new AdapterFactoryLabelProvider(this.composedAdapterFactory);
+				LabelProvider labelProvider = new LabelProvider() {
+					@Override
+					public String getText(Object object) {
+						return adapterFactoryLabelProvider.getText(object);
+					}
+
+					@Override
+					public Image getImage(Object object) {
+						return ExtendedImageRegistry.getInstance().getImage(adapterFactoryLabelProvider.getImage(object));
+					}
+				};
+				FeatureEditorDialog dialog = new FeatureEditorDialog(this.tableViewer.getTable().getShell(), labelProvider, this.target,
+						this.eReference, propertyDescriptor.getDisplayName(this.target), choiceOfValues);
 				dialog.open();
 
 				EList<?> result = dialog.getResult();
 				if (result != null) {
 					this.target.eSet(this.eReference, result);
 				}
+
 			}
 		}
 	}
