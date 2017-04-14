@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal.controllers;
 
-import com.google.common.collect.Iterators;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -101,7 +99,7 @@ public class EEFSelectController extends AbstractEEFWidgetController implements 
 			if (value instanceof Iterable<?>) {
 				List<Object> candidates = new ArrayList<Object>();
 
-				Iterators.addAll(candidates, ((Iterable<?>) value).iterator());
+				((Iterable<?>) value).forEach(candidates::add);
 
 				Optional.ofNullable(this.newCandidatesConsumer).ifPresent(consumer -> {
 					consumer.accept(candidates);

@@ -10,12 +10,14 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemRegistry;
@@ -32,7 +34,7 @@ public class LegacyPropertyContributorRegistry implements IItemRegistry {
 	/**
 	 * The map of the identifier of the description to the {@link IItemDescriptor}.
 	 */
-	private Multimap<String, IItemDescriptor> id2descriptors = ArrayListMultimap.create();
+	private Map<String, List<IItemDescriptor>> id2descriptors = new HashMap<>();
 
 	/**
 	 * Get property categories.
@@ -40,14 +42,16 @@ public class LegacyPropertyContributorRegistry implements IItemRegistry {
 	 * @return List of categories
 	 */
 	public List<String> getPropertyCategories() {
-		List<String> legacyPropertyCategories = new ArrayList<String>();
-		Collection<IItemDescriptor> values = this.id2descriptors.values();
-		for (IItemDescriptor itemDescriptor : values) {
-			if (itemDescriptor instanceof LegacyPropertyContributorItemDescriptor) {
-				legacyPropertyCategories.addAll(((LegacyPropertyContributorItemDescriptor) itemDescriptor).getCategories());
-			}
-		}
-		return legacyPropertyCategories;
+		// @formatter:off
+		return this.id2descriptors.values().stream()
+					.filter(Objects::nonNull)
+					.flatMap(List::stream)
+					.filter(LegacyPropertyContributorItemDescriptor.class::isInstance)
+					.map(LegacyPropertyContributorItemDescriptor.class::cast)
+					.map(LegacyPropertyContributorItemDescriptor::getCategories)
+					.flatMap(List::stream)
+					.collect(Collectors.toList());
+		// @formatter:on
 	}
 
 	/**
@@ -58,18 +62,20 @@ public class LegacyPropertyContributorRegistry implements IItemRegistry {
 	 * @return Type mapper
 	 */
 	public ITypeMapper getTypeMapper(String contributorId) {
-		Collection<IItemDescriptor> values = this.id2descriptors.values();
-		for (IItemDescriptor itemDescriptor : values) {
-			if (itemDescriptor instanceof LegacyPropertyContributorItemDescriptor) {
-				if (contributorId != null && contributorId.equals(itemDescriptor.getId())) {
-					ITypeMapper legacyPropertyTypeMapper = ((LegacyPropertyContributorItemDescriptor) itemDescriptor).getTypeMapper();
-					if (legacyPropertyTypeMapper != null) {
-						return legacyPropertyTypeMapper;
-					}
-				}
-			}
-		}
-		return null;
+		// @formatter:off
+		Collection<IItemDescriptor> values = this.id2descriptors.values().stream()
+				.filter(Objects::nonNull)
+				.flatMap(List::stream)
+				.collect(Collectors.toList());
+
+		return values.stream().filter(LegacyPropertyContributorItemDescriptor.class::isInstance)
+				.map(LegacyPropertyContributorItemDescriptor.class::cast)
+				.filter(itemDescriptor -> contributorId != null && contributorId.equals(itemDescriptor.getId()))
+				.map(LegacyPropertyContributorItemDescriptor::getTypeMapper)
+				.filter(Objects::nonNull)
+				.findFirst()
+				.orElse(null);
+		// @formatter:on
 	}
 
 	/**
@@ -80,20 +86,20 @@ public class LegacyPropertyContributorRegistry implements IItemRegistry {
 	 * @return Section descriptor provider
 	 */
 	public ISectionDescriptorProvider getSectionDescriptorProvider(String contributorId) {
+		// @formatter:off
+		Collection<IItemDescriptor> values = this.id2descriptors.values().stream()
+				.filter(Objects::nonNull)
+				.flatMap(List::stream)
+				.collect(Collectors.toList());
 
-		Collection<IItemDescriptor> values = this.id2descriptors.values();
-		for (IItemDescriptor itemDescriptor : values) {
-			if (itemDescriptor instanceof LegacyPropertyContributorItemDescriptor) {
-				if (contributorId != null && contributorId.equals(itemDescriptor.getId())) {
-					ISectionDescriptorProvider legacyPropertySectionDescriptorProvider = ((LegacyPropertyContributorItemDescriptor) itemDescriptor)
-							.getSectionDescriptorProvider();
-					if (legacyPropertySectionDescriptorProvider != null) {
-						return legacyPropertySectionDescriptorProvider;
-					}
-				}
-			}
-		}
-		return null;
+		return values.stream().filter(LegacyPropertyContributorItemDescriptor.class::isInstance)
+					.map(LegacyPropertyContributorItemDescriptor.class::cast)
+					.filter(itemDescriptor -> contributorId != null && contributorId.equals(itemDescriptor.getId()))
+					.map(LegacyPropertyContributorItemDescriptor::getSectionDescriptorProvider)
+					.filter(Objects::nonNull)
+					.findFirst()
+					.orElse(null);
+		// @formatter:on
 	}
 
 	/**
@@ -103,11 +109,11 @@ public class LegacyPropertyContributorRegistry implements IItemRegistry {
 	 */
 	@Override
 	public IItemDescriptor add(IItemDescriptor itemDescriptor) {
-		boolean result = this.id2descriptors.put(itemDescriptor.getId(), itemDescriptor);
-		if (result) {
-			return itemDescriptor;
-		}
-		return null;
+		List<IItemDescriptor> descriptors = this.id2descriptors.getOrDefault(itemDescriptor.getId(), new ArrayList<>());
+		descriptors.add(itemDescriptor);
+		this.id2descriptors.put(itemDescriptor.getId(), descriptors);
+
+		return itemDescriptor;
 	}
 
 	/**
@@ -127,6 +133,6 @@ public class LegacyPropertyContributorRegistry implements IItemRegistry {
 	 */
 	@Override
 	public boolean remove(String id) {
-		return !this.id2descriptors.removeAll(id).isEmpty();
+		return Optional.ofNullable(this.id2descriptors.remove(id)).isPresent();
 	}
 }

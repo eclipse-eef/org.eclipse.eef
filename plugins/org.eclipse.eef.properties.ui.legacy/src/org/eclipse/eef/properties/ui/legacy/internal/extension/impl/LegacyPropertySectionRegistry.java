@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,14 +10,14 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.eef.properties.ui.api.IEEFSectionDescriptor;
 import org.eclipse.eef.properties.ui.api.IEEFTypeMapper;
@@ -39,7 +39,7 @@ public class LegacyPropertySectionRegistry implements IItemRegistry {
 	/**
 	 * The map of the identifier of the description to the {@link LegacyPropertySectionItemDescriptor}.
 	 */
-	private Multimap<String, IItemDescriptor> id2descriptors = ArrayListMultimap.create();
+	private Map<String, List<IItemDescriptor>> id2descriptors = new HashMap<>();
 
 	/**
 	 * Get the property sections.
@@ -76,7 +76,12 @@ public class LegacyPropertySectionRegistry implements IItemRegistry {
 
 		// Else read the section from the configuration
 		if (values.isEmpty()) {
-			values = this.id2descriptors.values();
+			// @formatter:off
+			values = this.id2descriptors.values().stream()
+						.filter(Objects::nonNull)
+						.flatMap(List::stream)
+						.collect(Collectors.toList());
+			// @formatter:on
 		}
 
 		for (IItemDescriptor itemDescriptor : values) {
@@ -99,8 +104,14 @@ public class LegacyPropertySectionRegistry implements IItemRegistry {
 	 */
 	@Override
 	public IItemDescriptor add(IItemDescriptor descriptor) {
-		this.id2descriptors.put(descriptor.getId(), descriptor);
-		return descriptor;
+		List<IItemDescriptor> descriptors = this.id2descriptors.getOrDefault(descriptor.getId(), new ArrayList<>());
+		boolean result = descriptors.add(descriptor);
+		this.id2descriptors.put(descriptor.getId(), descriptors);
+
+		if (result) {
+			return descriptor;
+		}
+		return null;
 	}
 
 	/**
@@ -110,7 +121,8 @@ public class LegacyPropertySectionRegistry implements IItemRegistry {
 	 */
 	@Override
 	public boolean remove(String id) {
-		return !this.id2descriptors.removeAll(id).isEmpty();
+		List<IItemDescriptor> descriptors = Optional.ofNullable(this.id2descriptors.remove(id)).orElseGet(ArrayList::new);
+		return !descriptors.isEmpty();
 	}
 
 	/**

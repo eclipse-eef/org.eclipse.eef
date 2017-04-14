@@ -24,8 +24,7 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)",
  org.eclipse.eef.core;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.eef.common;bundle-version="[2.0.0,3.0.0)",
  org.eclipse.eef.common.ui;bundle-version="[2.0.0,3.0.0)",
- org.eclipse.eef.ide.ui;bundle-version="[2.0.0,3.0.0)",
- com.google.guava;bundle-version="[15.0.0,16.0.0)"
+ org.eclipse.eef.ide.ui;bundle-version="[2.0.0,3.0.0)"
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.eclipse.eef.sample.custom.widget.colorpicker.ColorPickerPlugin$Implementation

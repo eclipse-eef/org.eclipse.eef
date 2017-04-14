@@ -10,9 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal;
 
-import com.google.common.collect.Iterables;
-
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -106,13 +105,12 @@ public class EEFPageImpl implements EEFPage {
 					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
 				Consumer<Object> consumer = (value) -> {
-					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester);
-					Iterable<Object> iterable = Util.asIterable(value, Object.class);
-					Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
-					objects.forEach(object -> {
-						IVariableManager childVariableManager = EEFPageImpl.this.getVariableManager().createChild();
+					Collection<Object> objectCollection = Util.asCollection(value, Object.class);
+					objectCollection.stream().filter(new DomainClassPredicate(eefGroupDescription.getDomainClass(), domainClassTester))
+							.forEach(object -> {
+						IVariableManager childVariableManager = this.getVariableManager().createChild();
 						childVariableManager.put(EEFExpressionUtils.SELF, object);
-						EEFGroupImpl eefGroupImpl = new EEFGroupImpl(EEFPageImpl.this, eefGroupDescription, childVariableManager, interpreter);
+						EEFGroupImpl eefGroupImpl = new EEFGroupImpl(this, eefGroupDescription, childVariableManager, interpreter);
 						this.eefGroups.add(eefGroupImpl);
 					});
 				};

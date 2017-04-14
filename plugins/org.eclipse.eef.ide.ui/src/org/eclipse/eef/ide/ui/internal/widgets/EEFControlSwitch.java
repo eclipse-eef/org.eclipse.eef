@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -244,7 +244,7 @@ public class EEFControlSwitch {
 
 		Object iterableExpressionResult = EvalFactory.of(this.interpreter, variableManager).logIfBlank(iterableEAttribute)
 				.evaluate(iterableExpression);
-		for (Object object : Util.asIterable(iterableExpressionResult, Object.class)) {
+		for (Object object : Util.asCollection(iterableExpressionResult, Object.class)) {
 			Map<String, Object> switchExpressionVariables = new HashMap<String, Object>();
 			switchExpressionVariables.put(EEFExpressionUtils.SELF, variableManager.getVariables().get(EEFExpressionUtils.SELF));
 			switchExpressionVariables.put(EEFExpressionUtils.INPUT, variableManager.getVariables().get(EEFExpressionUtils.INPUT));

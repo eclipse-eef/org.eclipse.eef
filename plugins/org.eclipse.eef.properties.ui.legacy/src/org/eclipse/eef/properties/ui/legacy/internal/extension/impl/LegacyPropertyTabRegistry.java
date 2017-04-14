@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,15 +10,17 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
 import org.eclipse.eef.properties.ui.legacy.internal.EEFPropertiesUiLegacyPlugin;
@@ -40,7 +42,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	/**
 	 * The map of the identifier of the description to the {@link LegacyPropertyTabItemDescriptor}.
 	 */
-	private Multimap<String, IItemDescriptor> id2descriptors = ArrayListMultimap.create();
+	private Map<String, List<IItemDescriptor>> id2descriptors = new HashMap<>();
 
 	/**
 	 * Get the property tabs.
@@ -217,7 +219,12 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 */
 	private List<IEEFTabDescriptor> readTabDescriptors(String contributorId) {
 		List<IEEFTabDescriptor> eefTabDescriptors = new ArrayList<IEEFTabDescriptor>();
-		Collection<IItemDescriptor> values = this.id2descriptors.values();
+		// @formatter:off
+		Collection<IItemDescriptor> values = this.id2descriptors.values().stream()
+					.filter(Objects::nonNull)
+					.flatMap(List::stream)
+					.collect(Collectors.toList());
+		// @formatter:on
 		for (IItemDescriptor itemDescriptor : values) {
 			if (itemDescriptor instanceof LegacyPropertyTabItemDescriptor) {
 				LegacyPropertyTabItemDescriptor eefTabDescriptor = (LegacyPropertyTabItemDescriptor) itemDescriptor;
@@ -237,7 +244,10 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 */
 	@Override
 	public IItemDescriptor add(IItemDescriptor descriptor) {
-		boolean result = this.id2descriptors.put(descriptor.getId(), descriptor);
+		List<IItemDescriptor> descriptors = this.id2descriptors.getOrDefault(descriptor.getId(), new ArrayList<>());
+		boolean result = descriptors.add(descriptor);
+		this.id2descriptors.put(descriptor.getId(), descriptors);
+
 		if (result) {
 			return descriptor;
 		}
@@ -251,7 +261,8 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 */
 	@Override
 	public boolean remove(String id) {
-		return !this.id2descriptors.removeAll(id).isEmpty();
+		List<IItemDescriptor> descriptors = Optional.ofNullable(this.id2descriptors.remove(id)).orElseGet(ArrayList::new);
+		return !descriptors.isEmpty();
 	}
 
 	/**
@@ -268,10 +279,13 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 * Disposes this registry.
 	 */
 	public void dispose() {
-		for (IItemDescriptor desc : id2descriptors.values()) {
-			if (desc instanceof LegacyPropertyTabItemDescriptor) {
-				((LegacyPropertyTabItemDescriptor) desc).dispose();
-			}
-		}
+		// @formatter:off
+		this.id2descriptors.values().stream()
+			.filter(Objects::nonNull)
+			.flatMap(List::stream)
+			.filter(LegacyPropertyTabItemDescriptor.class::isInstance)
+			.map(LegacyPropertyTabItemDescriptor.class::cast)
+			.forEach(LegacyPropertyTabItemDescriptor::dispose);
+		// @formatter:on
 	}
 }

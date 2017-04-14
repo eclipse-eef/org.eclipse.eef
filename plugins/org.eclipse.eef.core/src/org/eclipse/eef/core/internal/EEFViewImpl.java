@@ -10,12 +10,12 @@
  *******************************************************************************/
 package org.eclipse.eef.core.internal;
 
-import com.google.common.collect.Iterables;
-
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFViewDescription;
@@ -105,9 +105,9 @@ public class EEFViewImpl implements EEFView {
 					.evaluate(preconditionExpression);
 			if (preconditionValid == null || preconditionValid.booleanValue()) {
 				Consumer<Object> consumer = (value) -> {
-					DomainClassPredicate domainClassPredicate = new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester);
-					Iterable<Object> iterable = Util.asIterable(value, Object.class);
-					Iterable<Object> objects = Iterables.filter(iterable, domainClassPredicate);
+					Collection<Object> objectCollection = Util.asCollection(value, Object.class);
+					List<Object> objects = objectCollection.stream()
+							.filter(new DomainClassPredicate(eefPageDescription.getDomainClass(), domainClassTester)).collect(Collectors.toList());
 
 					boolean isUnique = true;
 					Iterator<Object> iterator = objects.iterator();
@@ -117,7 +117,7 @@ public class EEFViewImpl implements EEFView {
 						if (isUnique && iterator.hasNext()) {
 							isUnique = false;
 						}
-						EEFPageImpl ePage = createPage(eefPageDescription, object, isUnique);
+						EEFPageImpl ePage = this.createPage(eefPageDescription, object, isUnique);
 						ePage.initialize();
 						this.eefPages.add(ePage);
 					}
@@ -186,7 +186,7 @@ public class EEFViewImpl implements EEFView {
 			// All your update process for EEFPages need to be updated. It's not simple in any way or shape, I know.
 
 			for (final EEFPage eefPage : this.eefPages) {
-				Consumer<Object> pageConsumer = (value) -> Util.asIterable(value, Object.class).forEach(pageSemanticCandidate -> {
+				Consumer<Object> pageConsumer = (value) -> Util.asCollection(value, Object.class).forEach(pageSemanticCandidate -> {
 					eefPage.getVariableManager().put(EEFExpressionUtils.SELF, pageSemanticCandidate);
 				});
 
@@ -199,7 +199,7 @@ public class EEFViewImpl implements EEFView {
 				for (final EEFGroup eefGroup : groups) {
 					// FIXME We need only one semantic candidate, so we just take the last one available as self
 					// as we did for the pages just before
-					Consumer<Object> groupConsumer = (value) -> Util.asIterable(value, Object.class).forEach(groupSemanticCandidate -> {
+					Consumer<Object> groupConsumer = (value) -> Util.asCollection(value, Object.class).forEach(groupSemanticCandidate -> {
 						eefGroup.getVariableManager().put(EEFExpressionUtils.SELF, groupSemanticCandidate);
 					});
 

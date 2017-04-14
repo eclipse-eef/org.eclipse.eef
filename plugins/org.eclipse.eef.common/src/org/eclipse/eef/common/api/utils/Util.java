@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,12 +10,10 @@
  *******************************************************************************/
 package org.eclipse.eef.common.api.utils;
 
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Shared utility methods.
@@ -58,7 +56,7 @@ public final class Util {
 	}
 
 	/**
-	 * Returns the given object as an iterable and filer it with the given type. If the object is a single object, the
+	 * Returns the given object as a collection and filer it with the given type. If the object is a single object, the
 	 * we will return a collection containing said object, it the object is already a collection, we will return a new
 	 * collection with all its elements.
 	 *
@@ -68,17 +66,26 @@ public final class Util {
 	 *            The class of the result wanted
 	 * @param <T>
 	 *            The type of the result wanted
-	 * @return An iterable
+	 * @return A collection
 	 */
-	public static <T> Iterable<T> asIterable(Object rawValue, Class<T> clazz) {
-		final Iterable<T> result;
+	public static <T> Collection<T> asCollection(Object rawValue, Class<T> clazz) {
+		final Collection<T> result;
 		if (rawValue instanceof Collection<?>) {
-			result = Lists.newArrayList(Iterables.filter((Collection<?>) rawValue, clazz));
+			// @formatter:off
+			result = ((Collection<?>) rawValue).stream()
+						.filter(clazz::isInstance)
+						.map(clazz::cast)
+						.collect(Collectors.toList());
+			// @formatter:on
 		} else if (clazz.isInstance(rawValue)) {
 			result = Collections.singleton(clazz.cast(rawValue));
 		} else if (rawValue != null && rawValue.getClass().isArray()) {
-			List<Object> list = Lists.newArrayList((Object[]) rawValue);
-			result = Lists.newArrayList(Iterables.filter(list, clazz));
+			// @formatter:off
+			result = Arrays.stream((Object[]) rawValue)
+						.filter(clazz::isInstance)
+						.map(clazz::cast)
+						.collect(Collectors.toList());
+			// @formatter:on
 		} else {
 			result = Collections.emptySet();
 		}
