@@ -93,7 +93,8 @@ public class EefSwitch<T> extends Switch<T> {
 	/**
 	 * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @parameter ePackage the package in question.
+	 * @param ePackage
+	 *            the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -717,14 +718,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
 	 *
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Property Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -733,14 +734,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
 	 *
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Semantic Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */

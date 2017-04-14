@@ -18,14 +18,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Text Style</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -360,19 +362,19 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 		switch (featureID) {
 		case EefPackage.EEF_TEXT_STYLE__BACKGROUND_COLOR_EXPRESSION:
 			return EEFTextStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
-			: !EEFTextStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
+					: !EEFTextStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
 		case EefPackage.EEF_TEXT_STYLE__FOREGROUND_COLOR_EXPRESSION:
 			return EEFTextStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? foregroundColorExpression != null
-			: !EEFTextStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
+					: !EEFTextStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
 		case EefPackage.EEF_TEXT_STYLE__FONT_NAME_EXPRESSION:
 			return EEFTextStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null
-			: !EEFTextStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
+					: !EEFTextStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
 		case EefPackage.EEF_TEXT_STYLE__FONT_SIZE_EXPRESSION:
 			return EEFTextStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null
-			: !EEFTextStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
+					: !EEFTextStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
 		case EefPackage.EEF_TEXT_STYLE__FONT_STYLE_EXPRESSION:
 			return EEFTextStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT == null ? fontStyleExpression != null
-			: !EEFTextStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
+					: !EEFTextStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
 		}
 		return super.eIsSet(featureID);
 	}

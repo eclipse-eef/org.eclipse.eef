@@ -30,18 +30,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getGroups <em>Groups</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation
+ * Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#isIndented <em>Indented</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -165,6 +167,26 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<EEFSemanticValidationRuleDescription> semanticValidationRules;
+
+	/**
+	 * The default value of the '{@link #isIndented() <em>Indented</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @see #isIndented()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean INDENTED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIndented() <em>Indented</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
+	 * @see #isIndented()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean indented = EEFPageDescriptionImpl.INDENTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -303,8 +325,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		String oldPreconditionExpression = preconditionExpression;
 		preconditionExpression = newPreconditionExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION,
-					oldPreconditionExpression, preconditionExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression,
+					preconditionExpression));
 		}
 	}
 
@@ -316,7 +338,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
-			groups = new EObjectResolvingEList<EEFGroupDescription>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
+			groups = new EObjectResolvingEList<>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
 		}
 		return groups;
 	}
@@ -329,10 +351,34 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
 		if (semanticValidationRules == null) {
-			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
-					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+			semanticValidationRules = new EObjectContainmentEList.Resolving<>(EEFSemanticValidationRuleDescription.class, this,
+					EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		}
 		return semanticValidationRules;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public boolean isIndented() {
+		return indented;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setIndented(boolean newIndented) {
+		boolean oldIndented = indented;
+		indented = newIndented;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__INDENTED, oldIndented, indented));
+		}
 	}
 
 	/**
@@ -371,6 +417,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return getGroups();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return getSemanticValidationRules();
+		case EefPackage.EEF_PAGE_DESCRIPTION__INDENTED:
+			return isIndented();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -407,6 +455,9 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			getSemanticValidationRules().clear();
 			getSemanticValidationRules().addAll((Collection<? extends EEFSemanticValidationRuleDescription>) newValue);
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__INDENTED:
+			setIndented((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -440,6 +491,9 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			getSemanticValidationRules().clear();
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__INDENTED:
+			setIndented(EEFPageDescriptionImpl.INDENTED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -453,24 +507,26 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER:
-			return EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-			: !EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+					: !EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__DOMAIN_CLASS:
-			return EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null : !EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT
-			.equals(domainClass);
+			return EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null
+					: !EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT.equals(domainClass);
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
-			: !EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+					: !EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
 			return EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
-			: !EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+					: !EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return semanticValidationRules != null && !semanticValidationRules.isEmpty();
+		case EefPackage.EEF_PAGE_DESCRIPTION__INDENTED:
+			return indented != EEFPageDescriptionImpl.INDENTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -497,6 +553,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		result.append(semanticCandidateExpression);
 		result.append(", preconditionExpression: "); //$NON-NLS-1$
 		result.append(preconditionExpression);
+		result.append(", indented: "); //$NON-NLS-1$
+		result.append(indented);
 		result.append(')');
 		return result.toString();
 	}

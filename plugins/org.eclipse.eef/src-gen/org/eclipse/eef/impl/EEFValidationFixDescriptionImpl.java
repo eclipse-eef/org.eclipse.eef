@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl#getName <em>Name</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl#getFixExpression <em>Fix Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -201,7 +201,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 			return EEFValidationFixDescriptionImpl.NAME_EDEFAULT == null ? name != null : !EEFValidationFixDescriptionImpl.NAME_EDEFAULT.equals(name);
 		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION:
 			return EEFValidationFixDescriptionImpl.FIX_EXPRESSION_EDEFAULT == null ? fixExpression != null
-			: !EEFValidationFixDescriptionImpl.FIX_EXPRESSION_EDEFAULT.equals(fixExpression);
+					: !EEFValidationFixDescriptionImpl.FIX_EXPRESSION_EDEFAULT.equals(fixExpression);
 		}
 		return super.eIsSet(featureID);
 	}

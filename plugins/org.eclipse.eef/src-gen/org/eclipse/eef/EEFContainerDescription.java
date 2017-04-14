@@ -16,11 +16,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}</li>
  * <li>{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFContainerDescription()
  * @model

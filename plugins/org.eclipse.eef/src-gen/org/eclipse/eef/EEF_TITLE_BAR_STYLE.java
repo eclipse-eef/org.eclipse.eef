@@ -115,6 +115,9 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	 * Returns the '<em><b>EEF TITLE BAR STYLE</b></em>' literal with the specified literal value. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 *
+	 * @param literal
+	 *            the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EEF_TITLE_BAR_STYLE get(String literal) {
@@ -130,6 +133,9 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	 * Returns the '<em><b>EEF TITLE BAR STYLE</b></em>' literal with the specified name. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
+	 * @param name
+	 *            the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EEF_TITLE_BAR_STYLE getByName(String name) {
@@ -145,6 +151,9 @@ public enum EEF_TITLE_BAR_STYLE implements Enumerator {
 	 * Returns the '<em><b>EEF TITLE BAR STYLE</b></em>' literal with the specified integer value. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 *
+	 * @param value
+	 *            the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static EEF_TITLE_BAR_STYLE get(int value) {

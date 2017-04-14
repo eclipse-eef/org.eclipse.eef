@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression <em>Display Expression</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * <li>{@link org.eclipse.eef.EEFLabelDescription#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFLabelDescription()
  * @model
@@ -68,8 +68,8 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression
-	 * <em>Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression <em>Display
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Display Expression</em>' attribute.

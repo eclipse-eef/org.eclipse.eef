@@ -36,8 +36,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * 
  * @generated
  */
-public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -69,15 +69,12 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 * @generated
 	 */
 	protected void addPredicateExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFDynamicMappingIf_predicateExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingIf_predicateExpression_feature", "_UI_EEFDynamicMappingIf_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFDynamicMappingIf_predicateExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFDynamicMappingIf_predicateExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFDynamicMappingIf_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__PREDICATE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -139,7 +136,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public String getText(Object object) {
 		String label = ((EEFDynamicMappingIf) object).getPredicateExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingIf_type") : //$NON-NLS-1$
-			getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -174,32 +171,32 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFTextDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFTextDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFLabelDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFLabelDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFButtonDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFButtonDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFCheckboxDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFCheckboxDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFSelectDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFSelectDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFRadioDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFRadioDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET,
-				EefFactory.eINSTANCE.createEEFListDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_DYNAMIC_MAPPING_IF__WIDGET, EefFactory.eINSTANCE.createEEFListDescription()));
 	}
 
 	/**

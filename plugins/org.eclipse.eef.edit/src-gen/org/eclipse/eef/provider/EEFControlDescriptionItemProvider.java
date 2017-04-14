@@ -34,8 +34,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * 
  * @generated
  */
-public class EEFControlDescriptionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFControlDescriptionItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -91,7 +91,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public String getText(Object object) {
 		String label = ((EEFControlDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFControlDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFControlDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFControlDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

@@ -379,10 +379,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFViewDescription
-	 * <em>EEF View Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFViewDescription <em>EEF View
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFViewDescription
@@ -393,10 +392,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFPageDescription
-	 * <em>EEF Page Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFPageDescription <em>EEF Page
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFPageDescription
@@ -407,10 +405,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFValidationRuleDescription
-	 * <em>EEF Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFValidationRuleDescription <em>EEF
+	 * Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFValidationRuleDescription
@@ -421,10 +419,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRuleAuditDescription
-	 * <em>EEF Rule Audit Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRuleAuditDescription <em>EEF Rule Audit
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFRuleAuditDescription
@@ -435,10 +432,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFValidationFixDescription
-	 * <em>EEF Validation Fix Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFValidationFixDescription <em>EEF
+	 * Validation Fix Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFValidationFixDescription
@@ -449,10 +446,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription
-	 * <em>EEF Property Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns
-	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
-	 * anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription <em>EEF
+	 * Property Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFPropertyValidationRuleDescription
@@ -463,10 +460,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription
-	 * <em>EEF Semantic Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns
-	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
-	 * anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription <em>EEF
+	 * Semantic Validation Rule Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFSemanticValidationRuleDescription
@@ -477,10 +474,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGroupDescription
-	 * <em>EEF Group Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGroupDescription <em>EEF Group
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFGroupDescription
@@ -491,10 +487,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFControlDescription
-	 * <em>EEF Control Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFControlDescription <em>EEF Control
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFControlDescription
@@ -505,10 +500,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFContainerDescription
-	 * <em>EEF Container Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFContainerDescription <em>EEF Container
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFContainerDescription
@@ -519,10 +513,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLayoutDescription
-	 * <em>EEF Layout Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLayoutDescription <em>EEF Layout
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFLayoutDescription
@@ -533,10 +526,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFFillLayoutDescription
-	 * <em>EEF Fill Layout Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFFillLayoutDescription <em>EEF Fill Layout
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFFillLayoutDescription
@@ -547,10 +539,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGridLayoutDescription
-	 * <em>EEF Grid Layout Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGridLayoutDescription <em>EEF Grid Layout
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFGridLayoutDescription
@@ -561,10 +552,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetDescription
-	 * <em>EEF Widget Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetDescription <em>EEF Widget
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFWidgetDescription
@@ -575,10 +565,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFTextDescription
-	 * <em>EEF Text Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFTextDescription <em>EEF Text
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFTextDescription
@@ -589,10 +578,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLabelDescription
-	 * <em>EEF Label Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLabelDescription <em>EEF Label
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFLabelDescription
@@ -603,10 +591,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFButtonDescription
-	 * <em>EEF Button Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFButtonDescription <em>EEF Button
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFButtonDescription
@@ -617,10 +604,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxDescription
-	 * <em>EEF Checkbox Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxDescription <em>EEF Checkbox
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCheckboxDescription
@@ -631,10 +617,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSelectDescription
-	 * <em>EEF Select Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSelectDescription <em>EEF Select
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFSelectDescription
@@ -645,10 +630,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRadioDescription
-	 * <em>EEF Radio Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRadioDescription <em>EEF Radio
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFRadioDescription
@@ -659,10 +643,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFHyperlinkDescription
-	 * <em>EEF Hyperlink Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFHyperlinkDescription <em>EEF Hyperlink
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFHyperlinkDescription
@@ -673,10 +656,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFDynamicMappingFor
-	 * <em>EEF Dynamic Mapping For</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFDynamicMappingFor <em>EEF Dynamic Mapping
+	 * For</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFDynamicMappingFor
@@ -687,10 +669,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFDynamicMappingIf
-	 * <em>EEF Dynamic Mapping If</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFDynamicMappingIf <em>EEF Dynamic Mapping
+	 * If</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFDynamicMappingIf
@@ -701,10 +682,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetDescription
-	 * <em>EEF Custom Widget Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetDescription <em>EEF Custom
+	 * Widget Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCustomWidgetDescription
@@ -715,10 +696,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomExpression
-	 * <em>EEF Custom Expression</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomExpression <em>EEF Custom
+	 * Expression</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCustomExpression
@@ -729,10 +709,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFListDescription
-	 * <em>EEF List Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFListDescription <em>EEF List
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFListDescription
@@ -795,10 +774,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxStyle
-	 * <em>EEF Checkbox Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxStyle <em>EEF Checkbox
+	 * Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCheckboxStyle
@@ -835,10 +813,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFHyperlinkStyle
-	 * <em>EEF Hyperlink Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFHyperlinkStyle <em>EEF Hyperlink
+	 * Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFHyperlinkStyle
@@ -849,10 +826,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetStyle
-	 * <em>EEF Custom Widget Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetStyle <em>EEF Custom Widget
+	 * Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCustomWidgetStyle
@@ -889,10 +865,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFConditionalStyle
-	 * <em>EEF Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFConditionalStyle <em>EEF Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFConditionalStyle
@@ -903,10 +878,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFTextConditionalStyle
-	 * <em>EEF Text Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFTextConditionalStyle <em>EEF Text
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFTextConditionalStyle
@@ -917,10 +892,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFButtonConditionalStyle
-	 * <em>EEF Button Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFButtonConditionalStyle <em>EEF Button
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFButtonConditionalStyle
@@ -931,10 +906,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLabelConditionalStyle
-	 * <em>EEF Label Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFLabelConditionalStyle <em>EEF Label
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFLabelConditionalStyle
@@ -945,10 +920,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxConditionalStyle
-	 * <em>EEF Checkbox Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCheckboxConditionalStyle <em>EEF Checkbox
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCheckboxConditionalStyle
@@ -959,10 +934,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSelectConditionalStyle
-	 * <em>EEF Select Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFSelectConditionalStyle <em>EEF Select
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFSelectConditionalStyle
@@ -973,10 +948,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRadioConditionalStyle
-	 * <em>EEF Radio Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFRadioConditionalStyle <em>EEF Radio
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFRadioConditionalStyle
@@ -987,10 +962,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFHyperlinkConditionalStyle
-	 * <em>EEF Hyperlink Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFHyperlinkConditionalStyle <em>EEF
+	 * Hyperlink Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFHyperlinkConditionalStyle
@@ -1001,10 +976,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle
-	 * <em>EEF Custom Widget Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null
-	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
-	 * anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle <em>EEF
+	 * Custom Widget Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFCustomWidgetConditionalStyle
@@ -1015,9 +990,9 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetAction <em>EEF Widget Action</em>}
-	 * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore cases; it's
-	 * useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetAction <em>EEF Widget
+	 * Action</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFWidgetAction
@@ -1028,10 +1003,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFListConditionalStyle
-	 * <em>EEF List Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFListConditionalStyle <em>EEF List
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFListConditionalStyle
@@ -1042,10 +1017,10 @@ public class EefAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGroupConditionalStyle
-	 * <em>EEF Group Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFGroupConditionalStyle <em>EEF Group
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc
+	 * -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFGroupConditionalStyle

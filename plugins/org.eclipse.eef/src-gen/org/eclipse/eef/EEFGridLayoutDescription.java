@@ -14,12 +14,12 @@ package org.eclipse.eef;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFGridLayoutDescription#getNumberOfColumns <em>Number Of Columns</em>}</li>
- * <li>{@link org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth <em>Make Columns With Equal Width
- * </em>}</li>
+ * <li>{@link org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth <em>Make Columns With Equal
+ * Width</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFGridLayoutDescription()
  * @model
@@ -40,8 +40,8 @@ public interface EEFGridLayoutDescription extends EEFLayoutDescription {
 	int getNumberOfColumns();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGridLayoutDescription#getNumberOfColumns
-	 * <em>Number Of Columns</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGridLayoutDescription#getNumberOfColumns <em>Number Of
+	 * Columns</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Number Of Columns</em>' attribute.
@@ -64,8 +64,8 @@ public interface EEFGridLayoutDescription extends EEFLayoutDescription {
 	boolean isMakeColumnsWithEqualWidth();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth
-	 * <em>Make Columns With Equal Width</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth <em>Make
+	 * Columns With Equal Width</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Make Columns With Equal Width</em>' attribute.

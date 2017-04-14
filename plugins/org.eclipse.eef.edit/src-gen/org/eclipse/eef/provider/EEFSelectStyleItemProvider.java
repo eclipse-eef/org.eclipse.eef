@@ -75,7 +75,7 @@ public class EEFSelectStyleItemProvider extends EEFWidgetStyleItemProvider {
 	public String getText(Object object) {
 		String label = ((EEFSelectStyle) object).getLabelFontNameExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFSelectStyle_type") : //$NON-NLS-1$
-			getString("_UI_EEFSelectStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFSelectStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

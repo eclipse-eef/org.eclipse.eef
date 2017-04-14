@@ -64,8 +64,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFRadioDescription_valueExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFRadioDescription_valueExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_valueExpression_feature", "_UI_EEFRadioDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -78,8 +77,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 */
 	protected void addEditExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFRadioDescription_editExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFRadioDescription_editExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_editExpression_feature", "_UI_EEFRadioDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -92,15 +90,12 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 * @generated
 	 */
 	protected void addCandidatesExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFRadioDescription_candidatesExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_candidatesExpression_feature", "_UI_EEFRadioDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFRadioDescription_candidatesExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_candidatesExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFRadioDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -110,15 +105,12 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 * @generated
 	 */
 	protected void addCandidateDisplayExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFRadioDescription_candidateDisplayExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_candidateDisplayExpression_feature", "_UI_EEFRadioDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFRadioDescription_candidateDisplayExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_candidateDisplayExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFRadioDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -128,8 +120,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	 */
 	protected void addNumberOfColumnsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFRadioDescription_numberOfColumns_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFRadioDescription_numberOfColumns_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFRadioDescription_numberOfColumns_feature", "_UI_EEFRadioDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
 				null));
@@ -195,7 +186,7 @@ public class EEFRadioDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	public String getText(Object object) {
 		String label = ((EEFRadioDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFRadioDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFRadioDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFRadioDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

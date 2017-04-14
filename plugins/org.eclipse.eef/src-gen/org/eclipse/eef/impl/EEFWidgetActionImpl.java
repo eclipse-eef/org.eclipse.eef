@@ -108,7 +108,8 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 		String oldLabelExpression = labelExpression;
 		labelExpression = newLabelExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION, oldLabelExpression, labelExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION, oldLabelExpression,
+					labelExpression));
 		}
 	}
 
@@ -198,11 +199,11 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
-			return EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT
-			.equals(labelExpression);
+			return EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
+					: !EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
 			return EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT == null ? actionExpression != null
-			: !EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
+					: !EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
 		}
 		return super.eIsSet(featureID);
 	}

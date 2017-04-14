@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getDisplayExpression <em>Display Expression</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -192,8 +192,8 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			style = (EEFLabelStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_LABEL_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LABEL_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
 					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LABEL_DESCRIPTION__STYLE, null, msgs);
 				}
@@ -247,12 +247,12 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_LABEL_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LABEL_DESCRIPTION__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_LABEL_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LABEL_DESCRIPTION__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -271,7 +271,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	@Override
 	public EList<EEFLabelConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFLabelConditionalStyle>(EEFLabelConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFLabelConditionalStyle.class, this,
 					EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -285,7 +285,7 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	@Override
 	public EList<EEFWidgetAction> getActions() {
 		if (actions == null) {
-			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this, EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS);
+			actions = new EObjectContainmentEList.Resolving<>(EEFWidgetAction.class, this, EefPackage.EEF_LABEL_DESCRIPTION__ACTIONS);
 		}
 		return actions;
 	}
@@ -400,10 +400,10 @@ public class EEFLabelDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		switch (featureID) {
 		case EefPackage.EEF_LABEL_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+					: !EEFLabelDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_LABEL_DESCRIPTION__DISPLAY_EXPRESSION:
 			return EEFLabelDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT == null ? displayExpression != null
-			: !EEFLabelDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
+					: !EEFLabelDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
 		case EefPackage.EEF_LABEL_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_LABEL_DESCRIPTION__CONDITIONAL_STYLES:
