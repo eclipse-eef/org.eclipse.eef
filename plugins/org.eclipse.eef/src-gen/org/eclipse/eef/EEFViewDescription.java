@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>{@link org.eclipse.eef.EEFViewDescription#getPages <em>Pages</em>}</li>
  * <li>{@link org.eclipse.eef.EEFViewDescription#getEPackages <em>EPackages</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFViewDescription()
  * @model

@@ -36,8 +36,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * 
  * @generated
  */
-public class EEFViewDescriptionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFViewDescriptionItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -84,8 +84,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 */
 	protected void addLabelExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFViewDescription_labelExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFViewDescription_labelExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFViewDescription_labelExpression_feature", "_UI_EEFViewDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -98,8 +97,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	 */
 	protected void addImageExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFViewDescription_imageExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFViewDescription_imageExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFViewDescription_imageExpression_feature", "_UI_EEFViewDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -177,7 +175,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public String getText(Object object) {
 		String label = ((EEFViewDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFViewDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFViewDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFViewDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -215,11 +213,11 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_VIEW_DESCRIPTION__GROUPS,
-				EefFactory.eINSTANCE.createEEFGroupDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_VIEW_DESCRIPTION__GROUPS, EefFactory.eINSTANCE.createEEFGroupDescription()));
 
 		newChildDescriptors
-		.add(createChildParameter(EefPackage.Literals.EEF_VIEW_DESCRIPTION__PAGES, EefFactory.eINSTANCE.createEEFPageDescription()));
+				.add(createChildParameter(EefPackage.Literals.EEF_VIEW_DESCRIPTION__PAGES, EefFactory.eINSTANCE.createEEFPageDescription()));
 	}
 
 	/**

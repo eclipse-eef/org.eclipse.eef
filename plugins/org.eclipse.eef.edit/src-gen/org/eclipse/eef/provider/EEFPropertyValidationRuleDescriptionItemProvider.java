@@ -56,13 +56,11 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 	 * @generated
 	 */
 	protected void addTargetsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFPropertyValidationRuleDescription_targets_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFPropertyValidationRuleDescription_targets_feature", "_UI_EEFPropertyValidationRuleDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFPropertyValidationRuleDescription_targets_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFPropertyValidationRuleDescription_targets_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFPropertyValidationRuleDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS, true, false, true, null, null, null));
 	}
 
 	/**
@@ -95,7 +93,7 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 		EEF_VALIDATION_SEVERITY_DESCRIPTION labelValue = ((EEFPropertyValidationRuleDescription) object).getSeverity();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_EEFPropertyValidationRuleDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFPropertyValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFPropertyValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

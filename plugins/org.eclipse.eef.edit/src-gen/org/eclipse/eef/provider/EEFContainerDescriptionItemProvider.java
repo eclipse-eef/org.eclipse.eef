@@ -110,7 +110,7 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	public String getText(Object object) {
 		String label = ((EEFContainerDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFContainerDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFContainerDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFContainerDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -143,44 +143,44 @@ public class EEFContainerDescriptionItemProvider extends EEFControlDescriptionIt
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFContainerDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFContainerDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFTextDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFTextDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFLabelDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFLabelDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFButtonDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFButtonDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFCheckboxDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFCheckboxDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFSelectDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFSelectDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFRadioDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFRadioDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFHyperlinkDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFDynamicMappingFor()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
 				EefFactory.eINSTANCE.createEEFCustomWidgetDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS,
-				EefFactory.eINSTANCE.createEEFListDescription()));
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__CONTROLS, EefFactory.eINSTANCE.createEEFListDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT,
-				EefFactory.eINSTANCE.createEEFFillLayoutDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT, EefFactory.eINSTANCE.createEEFFillLayoutDescription()));
 
-		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT,
-				EefFactory.eINSTANCE.createEEFGridLayoutDescription()));
+		newChildDescriptors.add(
+				createChildParameter(EefPackage.Literals.EEF_CONTAINER_DESCRIPTION__LAYOUT, EefFactory.eINSTANCE.createEEFGridLayoutDescription()));
 	}
 
 }

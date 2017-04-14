@@ -13,6 +13,7 @@ package org.eclipse.eef.ide.ui.properties.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
@@ -121,4 +122,17 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 		return "EEF"; //$NON-NLS-1$
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.properties.ui.api.AbstractEEFTabDescriptor#isIndented()
+	 */
+	@Override
+	public boolean isIndented() {
+		if (this.eefPage != null) {
+			EEFPageDescription description = this.eefPage.getDescription();
+			return description.isIndented();
+		}
+		return super.isIndented();
+	}
 }

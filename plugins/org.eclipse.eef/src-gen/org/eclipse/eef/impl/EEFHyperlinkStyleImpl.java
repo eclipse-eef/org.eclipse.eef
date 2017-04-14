@@ -19,14 +19,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getBackgroundColorExpression <em>Background Color Expression
- * </em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -308,16 +308,16 @@ public class EEFHyperlinkStyleImpl extends EEFWidgetStyleImpl implements EEFHype
 		switch (featureID) {
 		case EefPackage.EEF_HYPERLINK_STYLE__BACKGROUND_COLOR_EXPRESSION:
 			return EEFHyperlinkStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
-			: !EEFHyperlinkStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
+					: !EEFHyperlinkStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_NAME_EXPRESSION:
 			return EEFHyperlinkStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null
-			: !EEFHyperlinkStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
+					: !EEFHyperlinkStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_SIZE_EXPRESSION:
 			return EEFHyperlinkStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null
-			: !EEFHyperlinkStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
+					: !EEFHyperlinkStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
 		case EefPackage.EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION:
 			return EEFHyperlinkStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT == null ? fontStyleExpression != null
-			: !EEFHyperlinkStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
+					: !EEFHyperlinkStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
 		}
 		return super.eIsSet(featureID);
 	}

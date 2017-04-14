@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl#getAuditExpression <em>Audit Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -146,7 +146,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 		switch (featureID) {
 		case EefPackage.EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION:
 			return EEFRuleAuditDescriptionImpl.AUDIT_EXPRESSION_EDEFAULT == null ? auditExpression != null
-			: !EEFRuleAuditDescriptionImpl.AUDIT_EXPRESSION_EDEFAULT.equals(auditExpression);
+					: !EEFRuleAuditDescriptionImpl.AUDIT_EXPRESSION_EDEFAULT.equals(auditExpression);
 		}
 		return super.eIsSet(featureID);
 	}

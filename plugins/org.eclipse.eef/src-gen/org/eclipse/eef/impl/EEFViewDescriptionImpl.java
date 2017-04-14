@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getPages <em>Pages</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getEPackages <em>EPackages</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -235,8 +235,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
-			groups = new EObjectContainmentEList.Resolving<EEFGroupDescription>(EEFGroupDescription.class, this,
-					EefPackage.EEF_VIEW_DESCRIPTION__GROUPS);
+			groups = new EObjectContainmentEList.Resolving<>(EEFGroupDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__GROUPS);
 		}
 		return groups;
 	}
@@ -249,7 +248,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFPageDescription> getPages() {
 		if (pages == null) {
-			pages = new EObjectContainmentEList.Resolving<EEFPageDescription>(EEFPageDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
+			pages = new EObjectContainmentEList.Resolving<>(EEFPageDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
 		}
 		return pages;
 	}
@@ -262,7 +261,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EPackage> getEPackages() {
 		if (ePackages == null) {
-			ePackages = new EObjectResolvingEList<EPackage>(EPackage.class, this, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
+			ePackages = new EObjectResolvingEList<>(EPackage.class, this, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
 		}
 		return ePackages;
 	}
@@ -380,14 +379,14 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER:
-			return EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-			: !EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+					: !EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION:
 			return EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT == null ? imageExpression != null
-			: !EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
+					: !EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_VIEW_DESCRIPTION__PAGES:

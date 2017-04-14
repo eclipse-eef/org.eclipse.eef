@@ -9,15 +9,15 @@
 package org.eclipse.eef;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '
- * <em><b>EEF Semantic Validation Rule Description</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object ' <em><b>EEF Semantic Validation Rule
+ * Description</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFSemanticValidationRuleDescription#getTargetClass <em>Target Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFSemanticValidationRuleDescription()
  * @model
@@ -37,8 +37,8 @@ public interface EEFSemanticValidationRuleDescription extends EEFValidationRuleD
 	String getTargetClass();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription#getTargetClass
-	 * <em>Target Class</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription#getTargetClass <em>Target
+	 * Class</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Target Class</em>' attribute.

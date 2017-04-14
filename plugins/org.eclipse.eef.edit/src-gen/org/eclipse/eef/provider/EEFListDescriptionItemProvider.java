@@ -62,8 +62,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFListDescription_valueExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFListDescription_valueExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFListDescription_valueExpression_feature", "_UI_EEFListDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LIST_DESCRIPTION__VALUE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -76,8 +75,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 	 */
 	protected void addDisplayExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFListDescription_displayExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFListDescription_displayExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFListDescription_displayExpression_feature", "_UI_EEFListDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -91,8 +89,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 	 */
 	protected void addOnClickExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFListDescription_onClickExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFListDescription_onClickExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFListDescription_onClickExpression_feature", "_UI_EEFListDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -159,7 +156,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 	public String getText(Object object) {
 		String label = ((EEFListDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFListDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFListDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFListDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -199,7 +196,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-		.add(createChildParameter(EefPackage.Literals.EEF_LIST_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFWidgetAction()));
+				.add(createChildParameter(EefPackage.Literals.EEF_LIST_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFWidgetAction()));
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_LIST_DESCRIPTION__STYLE, EefFactory.eINSTANCE.createEEFListStyle()));
 

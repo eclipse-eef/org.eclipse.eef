@@ -32,22 +32,23 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules
- * </em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
- * </em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation
+ * Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation
+ * Rules</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -352,8 +353,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFControlDescription> getControls() {
 		if (controls == null) {
-			controls = new EObjectContainmentEList.Resolving<EEFControlDescription>(EEFControlDescription.class, this,
-					EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
+			controls = new EObjectContainmentEList.Resolving<>(EEFControlDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
 		}
 		return controls;
 	}
@@ -366,8 +366,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
 		if (semanticValidationRules == null) {
-			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
-					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+			semanticValidationRules = new EObjectContainmentEList.Resolving<>(EEFSemanticValidationRuleDescription.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		}
 		return semanticValidationRules;
 	}
@@ -380,8 +380,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules() {
 		if (propertyValidationRules == null) {
-			propertyValidationRules = new EObjectContainmentEList.Resolving<EEFPropertyValidationRuleDescription>(
-					EEFPropertyValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
+			propertyValidationRules = new EObjectContainmentEList.Resolving<>(EEFPropertyValidationRuleDescription.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		}
 		return propertyValidationRules;
 	}
@@ -398,8 +398,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			style = (EEFGroupStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
 					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
 				}
@@ -453,12 +453,12 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -477,7 +477,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public EList<EEFGroupConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFGroupConditionalStyle>(EEFGroupConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFGroupConditionalStyle.class, this,
 					EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -638,20 +638,20 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
-			return EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-			: !EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+					: !EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
-			return EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null : !EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT
-			.equals(domainClass);
+			return EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null
+					: !EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT.equals(domainClass);
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
-			: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+					: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 			return EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
-			: !EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+					: !EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
 			return controls != null && !controls.isEmpty();
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:

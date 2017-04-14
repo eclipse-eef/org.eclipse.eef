@@ -199,17 +199,25 @@ public interface EefPackage extends EPackage {
 	int EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES = 6;
 
 	/**
+	 * The feature id for the '<em><b>Indented</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_PAGE_DESCRIPTION__INDENTED = 7;
+
+	/**
 	 * The number of structural features of the '<em>EEF Page Description</em>' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 7;
+	int EEF_PAGE_DESCRIPTION_FEATURE_COUNT = 8;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
-	 * <em>EEF Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl <em>EEF Validation Rule
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationRuleDescription()
@@ -262,8 +270,8 @@ public interface EefPackage extends EPackage {
 	int EEF_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT = 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
-	 * <em>EEF Rule Audit Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl <em>EEF Rule Audit
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRuleAuditDescription()
@@ -290,8 +298,8 @@ public interface EefPackage extends EPackage {
 	int EEF_RULE_AUDIT_DESCRIPTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
-	 * <em>EEF Validation Fix Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl <em>EEF Validation Fix
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationFixDescription()
@@ -325,8 +333,8 @@ public interface EefPackage extends EPackage {
 	int EEF_VALIDATION_FIX_DESCRIPTION_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
-	 * <em>EEF Property Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl <em>EEF Property
+	 * Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFPropertyValidationRuleDescription()
@@ -387,8 +395,8 @@ public interface EefPackage extends EPackage {
 	int EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_VALIDATION_RULE_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
-	 * <em>EEF Semantic Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl <em>EEF Semantic
+	 * Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSemanticValidationRuleDescription()
@@ -556,8 +564,8 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_DESCRIPTION_FEATURE_COUNT = 10;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl
-	 * <em>EEF Control Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl <em>EEF Control
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFControlDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFControlDescription()
@@ -583,8 +591,8 @@ public interface EefPackage extends EPackage {
 	int EEF_CONTROL_DESCRIPTION_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
-	 * <em>EEF Container Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl <em>EEF Container
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFContainerDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFContainerDescription()
@@ -628,8 +636,8 @@ public interface EefPackage extends EPackage {
 	int EEF_CONTAINER_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_CONTROL_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLayoutDescriptionImpl <em>EEF Layout Description</em>}
-	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLayoutDescriptionImpl <em>EEF Layout
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFLayoutDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLayoutDescription()
@@ -647,8 +655,8 @@ public interface EefPackage extends EPackage {
 	int EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
-	 * <em>EEF Fill Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl <em>EEF Fill Layout
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFFillLayoutDescription()
@@ -674,8 +682,8 @@ public interface EefPackage extends EPackage {
 	int EEF_FILL_LAYOUT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
-	 * <em>EEF Grid Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl <em>EEF Grid Layout
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGridLayoutDescription()
@@ -711,8 +719,8 @@ public interface EefPackage extends EPackage {
 	int EEF_GRID_LAYOUT_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_LAYOUT_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl <em>EEF Widget Description</em>}
-	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl <em>EEF Widget
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFWidgetDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetDescription()
@@ -985,8 +993,8 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl <em>EEF Button Description</em>}
-	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl <em>EEF Button
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFButtonDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonDescription()
@@ -1082,8 +1090,8 @@ public interface EefPackage extends EPackage {
 	int EEF_BUTTON_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl
-	 * <em>EEF Checkbox Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl <em>EEF Checkbox
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFCheckboxDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxDescription()
@@ -1179,8 +1187,8 @@ public interface EefPackage extends EPackage {
 	int EEF_CHECKBOX_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl <em>EEF Select Description</em>}
-	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl <em>EEF Select
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFSelectDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectDescription()
@@ -1418,8 +1426,8 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 7;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl
-	 * <em>EEF Hyperlink Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl <em>EEF Hyperlink
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFHyperlinkDescription()
@@ -1534,8 +1542,8 @@ public interface EefPackage extends EPackage {
 	int EEF_HYPERLINK_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
-	 * <em>EEF Dynamic Mapping For</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl <em>EEF Dynamic Mapping
+	 * For</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFDynamicMappingForImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingFor()
@@ -1624,8 +1632,8 @@ public interface EefPackage extends EPackage {
 	int EEF_DYNAMIC_MAPPING_IF_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
-	 * <em>EEF Custom Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl <em>EEF Custom Widget
+	 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetDescription()
@@ -2503,8 +2511,8 @@ public interface EefPackage extends EPackage {
 	int EEF_HYPERLINK_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
-	 * <em>EEF Custom Widget Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetStyleImpl <em>EEF Custom Widget
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetStyle()
@@ -2739,8 +2747,8 @@ public interface EefPackage extends EPackage {
 	int EEF_CONDITIONAL_STYLE_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFTextConditionalStyleImpl
-	 * <em>EEF Text Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFTextConditionalStyleImpl <em>EEF Text Conditional
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFTextConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
@@ -2776,8 +2784,8 @@ public interface EefPackage extends EPackage {
 	int EEF_TEXT_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
-	 * <em>EEF Button Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFButtonConditionalStyleImpl <em>EEF Button Conditional
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonConditionalStyle()
@@ -2813,8 +2821,8 @@ public interface EefPackage extends EPackage {
 	int EEF_BUTTON_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
-	 * <em>EEF Label Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFLabelConditionalStyleImpl <em>EEF Label Conditional
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
@@ -2850,8 +2858,8 @@ public interface EefPackage extends EPackage {
 	int EEF_LABEL_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
-	 * <em>EEF Checkbox Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl <em>EEF Checkbox
+	 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
@@ -2887,8 +2895,8 @@ public interface EefPackage extends EPackage {
 	int EEF_CHECKBOX_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
-	 * <em>EEF Select Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFSelectConditionalStyleImpl <em>EEF Select Conditional
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
@@ -2924,8 +2932,8 @@ public interface EefPackage extends EPackage {
 	int EEF_SELECT_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
-	 * <em>EEF Radio Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFRadioConditionalStyleImpl <em>EEF Radio Conditional
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
@@ -2961,8 +2969,8 @@ public interface EefPackage extends EPackage {
 	int EEF_RADIO_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFHyperlinkConditionalStyleImpl
-	 * <em>EEF Hyperlink Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFHyperlinkConditionalStyleImpl <em>EEF Hyperlink
+	 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFHyperlinkConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFHyperlinkConditionalStyle()
@@ -2998,8 +3006,8 @@ public interface EefPackage extends EPackage {
 	int EEF_HYPERLINK_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
-	 * <em>EEF Custom Widget Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl <em>EEF Custom Widget
+	 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetConditionalStyle()
@@ -3072,8 +3080,8 @@ public interface EefPackage extends EPackage {
 	int EEF_WIDGET_ACTION_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFListConditionalStyleImpl
-	 * <em>EEF List Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFListConditionalStyleImpl <em>EEF List Conditional
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFListConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFListConditionalStyle()
@@ -3109,8 +3117,8 @@ public interface EefPackage extends EPackage {
 	int EEF_LIST_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
-	 * <em>EEF Group Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFGroupConditionalStyleImpl <em>EEF Group Conditional
+	 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupConditionalStyle()
@@ -3146,8 +3154,8 @@ public interface EefPackage extends EPackage {
 	int EEF_GROUP_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
-	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION <em>EEF VALIDATION
+	 * SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
@@ -3156,8 +3164,8 @@ public interface EefPackage extends EPackage {
 	int EEF_VALIDATION_SEVERITY_DESCRIPTION = 49;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
-	 * <em>EEF FILL LAYOUT ORIENTATION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION <em>EEF FILL LAYOUT
+	 * ORIENTATION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
 	 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_FILL_LAYOUT_ORIENTATION()
@@ -3207,8 +3215,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFViewDescription_Identifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression
-	 * <em>Label Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Label Expression</em>'.
 	 * @see org.eclipse.eef.EEFViewDescription#getLabelExpression()
@@ -3218,8 +3226,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFViewDescription_LabelExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFViewDescription#getImageExpression
-	 * <em>Image Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Image Expression</em>'.
 	 * @see org.eclipse.eef.EEFViewDescription#getImageExpression()
@@ -3283,8 +3291,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFPageDescription_Identifier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getLabelExpression
-	 * <em>Label Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Label Expression</em>'.
 	 * @see org.eclipse.eef.EEFPageDescription#getLabelExpression()
@@ -3294,8 +3302,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFPageDescription_LabelExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getDomainClass
-	 * <em>Domain Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain
+	 * Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Domain Class</em>'.
 	 * @see org.eclipse.eef.EEFPageDescription#getDomainClass()
@@ -3305,9 +3313,9 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFPageDescription_DomainClass();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Semantic Candidate Expression</em>'.
 	 * @see org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression()
@@ -3351,8 +3359,19 @@ public interface EefPackage extends EPackage {
 	EReference getEEFPageDescription_SemanticValidationRules();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFValidationRuleDescription
-	 * <em>EEF Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFPageDescription#isIndented
+	 * <em>Indented</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Indented</em>'.
+	 * @see org.eclipse.eef.EEFPageDescription#isIndented()
+	 * @see #getEEFPageDescription()
+	 * @generated
+	 */
+	EAttribute getEEFPageDescription_Indented();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFValidationRuleDescription <em>EEF Validation Rule
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Validation Rule Description</em>'.
 	 * @see org.eclipse.eef.EEFValidationRuleDescription
@@ -3384,8 +3403,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFValidationRuleDescription_MessageExpression();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFValidationRuleDescription#getAudits <em>Audits</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.EEFValidationRuleDescription#getAudits <em>Audits</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Audits</em>'.
@@ -3396,8 +3415,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFValidationRuleDescription_Audits();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFValidationRuleDescription#getFixes <em>Fixes</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.EEFValidationRuleDescription#getFixes <em>Fixes</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Fixes</em>'.
@@ -3408,8 +3427,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFValidationRuleDescription_Fixes();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRuleAuditDescription
-	 * <em>EEF Rule Audit Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRuleAuditDescription <em>EEF Rule Audit
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Rule Audit Description</em>'.
 	 * @see org.eclipse.eef.EEFRuleAuditDescription
@@ -3429,8 +3448,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFRuleAuditDescription_AuditExpression();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFValidationFixDescription
-	 * <em>EEF Validation Fix Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFValidationFixDescription <em>EEF Validation Fix
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Validation Fix Description</em>'.
 	 * @see org.eclipse.eef.EEFValidationFixDescription
@@ -3461,8 +3480,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFValidationFixDescription_FixExpression();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription
-	 * <em>EEF Property Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription <em>EEF Property
+	 * Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Property Validation Rule Description</em>'.
 	 * @see org.eclipse.eef.EEFPropertyValidationRuleDescription
@@ -3471,8 +3490,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFPropertyValidationRuleDescription();
 
 	/**
-	 * Returns the meta object for the reference list '
-	 * {@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}'. <!-- begin-user-doc
+	 * Returns the meta object for the reference list
+	 * '{@link org.eclipse.eef.EEFPropertyValidationRuleDescription#getTargets <em>Targets</em>}'. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the reference list '<em>Targets</em>'.
@@ -3483,8 +3502,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFPropertyValidationRuleDescription_Targets();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription
-	 * <em>EEF Semantic Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSemanticValidationRuleDescription <em>EEF Semantic
+	 * Validation Rule Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Semantic Validation Rule Description</em>'.
 	 * @see org.eclipse.eef.EEFSemanticValidationRuleDescription
@@ -3537,8 +3556,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupDescription_LabelExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupDescription#getDomainClass
-	 * <em>Domain Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupDescription#getDomainClass <em>Domain
+	 * Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Domain Class</em>'.
 	 * @see org.eclipse.eef.EEFGroupDescription#getDomainClass()
@@ -3548,9 +3567,9 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupDescription_DomainClass();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression <em>Semantic Candidate
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Semantic Candidate Expression</em>'.
 	 * @see org.eclipse.eef.EEFGroupDescription#getSemanticCandidateExpression()
@@ -3571,8 +3590,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupDescription_PreconditionExpression();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.EEFGroupDescription#getControls <em>Controls</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Controls</em>'.
@@ -3630,8 +3649,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFGroupDescription_ConditionalStyles();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFControlDescription <em>EEF Control Description</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFControlDescription <em>EEF Control
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Control Description</em>'.
 	 * @see org.eclipse.eef.EEFControlDescription
@@ -3651,8 +3670,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFControlDescription_Identifier();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFContainerDescription
-	 * <em>EEF Container Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFContainerDescription <em>EEF Container
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Container Description</em>'.
 	 * @see org.eclipse.eef.EEFContainerDescription
@@ -3661,8 +3680,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFContainerDescription();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.EEFContainerDescription#getControls <em>Controls</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Controls</em>'.
@@ -3694,8 +3713,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFLayoutDescription();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFFillLayoutDescription
-	 * <em>EEF Fill Layout Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFFillLayoutDescription <em>EEF Fill Layout
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Fill Layout Description</em>'.
 	 * @see org.eclipse.eef.EEFFillLayoutDescription
@@ -3715,8 +3734,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFFillLayoutDescription_Orientation();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGridLayoutDescription
-	 * <em>EEF Grid Layout Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGridLayoutDescription <em>EEF Grid Layout
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Grid Layout Description</em>'.
 	 * @see org.eclipse.eef.EEFGridLayoutDescription
@@ -3736,9 +3755,9 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGridLayoutDescription_NumberOfColumns();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth
-	 * <em>Make Columns With Equal Width</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth <em>Make Columns With Equal
+	 * Width</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Make Columns With Equal Width</em>'.
 	 * @see org.eclipse.eef.EEFGridLayoutDescription#isMakeColumnsWithEqualWidth()
@@ -3769,8 +3788,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFWidgetDescription_LabelExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression
-	 * <em>Help Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Help Expression</em>'.
 	 * @see org.eclipse.eef.EEFWidgetDescription#getHelpExpression()
@@ -3813,8 +3832,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFTextDescription();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextDescription#getValueExpression
-	 * <em>Value Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextDescription#getValueExpression <em>Value
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Value Expression</em>'.
 	 * @see org.eclipse.eef.EEFTextDescription#getValueExpression()
@@ -3824,8 +3843,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFTextDescription_ValueExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextDescription#getEditExpression
-	 * <em>Edit Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Edit Expression</em>'.
 	 * @see org.eclipse.eef.EEFTextDescription#getEditExpression()
@@ -3835,8 +3854,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFTextDescription_EditExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextDescription#getLineCount
-	 * <em>Line Count</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextDescription#getLineCount <em>Line
+	 * Count</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Line Count</em>'.
 	 * @see org.eclipse.eef.EEFTextDescription#getLineCount()
@@ -3857,9 +3876,9 @@ public interface EefPackage extends EPackage {
 	EReference getEEFTextDescription_Style();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFTextDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.EEFTextDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
 	 * @see org.eclipse.eef.EEFTextDescription#getConditionalStyles()
@@ -3924,9 +3943,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFLabelDescription_ConditionalStyles();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFLabelDescription#getActions <em>Actions</em>}'. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFLabelDescription#getActions
+	 * <em>Actions</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Actions</em>'.
 	 * @see org.eclipse.eef.EEFLabelDescription#getActions()
@@ -3957,8 +3975,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFButtonDescription_ButtonLabelExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFButtonDescription#getPushExpression
-	 * <em>Push Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Push Expression</em>'.
 	 * @see org.eclipse.eef.EEFButtonDescription#getPushExpression()
@@ -3991,8 +4009,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFButtonDescription_ConditionalStyles();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCheckboxDescription
-	 * <em>EEF Checkbox Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCheckboxDescription <em>EEF Checkbox
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Checkbox Description</em>'.
 	 * @see org.eclipse.eef.EEFCheckboxDescription
@@ -4067,8 +4085,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFSelectDescription_ValueExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFSelectDescription#getEditExpression
-	 * <em>Edit Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFSelectDescription#getEditExpression <em>Edit
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Edit Expression</em>'.
 	 * @see org.eclipse.eef.EEFSelectDescription#getEditExpression()
@@ -4089,9 +4107,9 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFSelectDescription_CandidatesExpression();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Candidate Display Expression</em>'.
 	 * @see org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression()
@@ -4145,8 +4163,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFRadioDescription_ValueExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFRadioDescription#getEditExpression
-	 * <em>Edit Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFRadioDescription#getEditExpression <em>Edit
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Edit Expression</em>'.
 	 * @see org.eclipse.eef.EEFRadioDescription#getEditExpression()
@@ -4167,9 +4185,9 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFRadioDescription_CandidatesExpression();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Candidate Display Expression</em>'.
 	 * @see org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression()
@@ -4213,8 +4231,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFRadioDescription_ConditionalStyles();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFHyperlinkDescription
-	 * <em>EEF Hyperlink Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFHyperlinkDescription <em>EEF Hyperlink
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Hyperlink Description</em>'.
 	 * @see org.eclipse.eef.EEFHyperlinkDescription
@@ -4279,8 +4297,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFHyperlinkDescription_ConditionalStyles();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFHyperlinkDescription#getActions <em>Actions</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.EEFHyperlinkDescription#getActions <em>Actions</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Actions</em>'.
@@ -4291,8 +4309,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFHyperlinkDescription_Actions();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFDynamicMappingFor <em>EEF Dynamic Mapping For</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFDynamicMappingFor <em>EEF Dynamic Mapping
+	 * For</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Dynamic Mapping For</em>'.
 	 * @see org.eclipse.eef.EEFDynamicMappingFor
@@ -4366,8 +4384,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFDynamicMappingIf_Widget();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetDescription
-	 * <em>EEF Custom Widget Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetDescription <em>EEF Custom Widget
+	 * Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Custom Widget Description</em>'.
 	 * @see org.eclipse.eef.EEFCustomWidgetDescription
@@ -4388,9 +4406,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFCustomWidgetDescription_CustomExpressions();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.eef.EEFCustomWidgetDescription#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * Returns the meta object for the containment reference '{@link org.eclipse.eef.EEFCustomWidgetDescription#getStyle
+	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference '<em>Style</em>'.
 	 * @see org.eclipse.eef.EEFCustomWidgetDescription#getStyle()
@@ -4454,8 +4471,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFListDescription();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFListDescription#getValueExpression
-	 * <em>Value Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFListDescription#getValueExpression <em>Value
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Value Expression</em>'.
 	 * @see org.eclipse.eef.EEFListDescription#getValueExpression()
@@ -4476,8 +4493,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFListDescription_DisplayExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFListDescription#getOnClickExpression
-	 * <em>On Click Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFListDescription#getOnClickExpression <em>On
+	 * Click Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>On Click Expression</em>'.
 	 * @see org.eclipse.eef.EEFListDescription#getOnClickExpression()
@@ -4509,9 +4526,9 @@ public interface EefPackage extends EPackage {
 	EReference getEEFListDescription_Style();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.EEFListDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.EEFListDescription#getConditionalStyles <em>Conditional Styles</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
 	 * @see org.eclipse.eef.EEFListDescription#getConditionalStyles()
@@ -4531,9 +4548,9 @@ public interface EefPackage extends EPackage {
 	EClass getEEFWidgetStyle();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFWidgetStyle#getLabelBackgroundColorExpression
-	 * <em>Label Background Color Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.EEFWidgetStyle#getLabelBackgroundColorExpression <em>Label Background Color
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Label Background Color Expression</em>'.
 	 * @see org.eclipse.eef.EEFWidgetStyle#getLabelBackgroundColorExpression()
@@ -4543,9 +4560,9 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFWidgetStyle_LabelBackgroundColorExpression();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.EEFWidgetStyle#getLabelForegroundColorExpression
-	 * <em>Label Foreground Color Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.EEFWidgetStyle#getLabelForegroundColorExpression <em>Label Foreground Color
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Label Foreground Color Expression</em>'.
 	 * @see org.eclipse.eef.EEFWidgetStyle#getLabelForegroundColorExpression()
@@ -4620,8 +4637,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFTextStyle_ForegroundColorExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontNameExpression
-	 * <em>Font Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontNameExpression <em>Font
+	 * Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Name Expression</em>'.
 	 * @see org.eclipse.eef.EEFTextStyle#getFontNameExpression()
@@ -4631,8 +4648,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFTextStyle_FontNameExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontSizeExpression
-	 * <em>Font Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontSizeExpression <em>Font
+	 * Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Size Expression</em>'.
 	 * @see org.eclipse.eef.EEFTextStyle#getFontSizeExpression()
@@ -4642,8 +4659,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFTextStyle_FontSizeExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontStyleExpression
-	 * <em>Font Style Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFTextStyle#getFontStyleExpression <em>Font
+	 * Style Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Style Expression</em>'.
 	 * @see org.eclipse.eef.EEFTextStyle#getFontStyleExpression()
@@ -4685,8 +4702,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFLabelStyle_ForegroundColorExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFLabelStyle#getFontNameExpression
-	 * <em>Font Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFLabelStyle#getFontNameExpression <em>Font
+	 * Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Name Expression</em>'.
 	 * @see org.eclipse.eef.EEFLabelStyle#getFontNameExpression()
@@ -4696,8 +4713,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFLabelStyle_FontNameExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFLabelStyle#getFontSizeExpression
-	 * <em>Font Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFLabelStyle#getFontSizeExpression <em>Font
+	 * Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Size Expression</em>'.
 	 * @see org.eclipse.eef.EEFLabelStyle#getFontSizeExpression()
@@ -4707,8 +4724,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFLabelStyle_FontSizeExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFLabelStyle#getFontStyleExpression
-	 * <em>Font Style Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFLabelStyle#getFontStyleExpression <em>Font
+	 * Style Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Style Expression</em>'.
 	 * @see org.eclipse.eef.EEFLabelStyle#getFontStyleExpression()
@@ -4812,8 +4829,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFHyperlinkStyle_FontStyleExpression();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetStyle <em>EEF Custom Widget Style</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetStyle <em>EEF Custom Widget
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Custom Widget Style</em>'.
 	 * @see org.eclipse.eef.EEFCustomWidgetStyle
@@ -4864,8 +4881,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupStyle_ForegroundColorExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression
-	 * <em>Font Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getFontNameExpression <em>Font
+	 * Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Name Expression</em>'.
 	 * @see org.eclipse.eef.EEFGroupStyle#getFontNameExpression()
@@ -4875,8 +4892,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupStyle_FontNameExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression
-	 * <em>Font Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getFontSizeExpression <em>Font
+	 * Size Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Font Size Expression</em>'.
 	 * @see org.eclipse.eef.EEFGroupStyle#getFontSizeExpression()
@@ -4897,8 +4914,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupStyle_BarStyle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle
-	 * <em>Toggle Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#getToggleStyle <em>Toggle
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Toggle Style</em>'.
 	 * @see org.eclipse.eef.EEFGroupStyle#getToggleStyle()
@@ -4908,8 +4925,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFGroupStyle_ToggleStyle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault
-	 * <em>Expanded By Default</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFGroupStyle#isExpandedByDefault <em>Expanded
+	 * By Default</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Expanded By Default</em>'.
 	 * @see org.eclipse.eef.EEFGroupStyle#isExpandedByDefault()
@@ -4940,8 +4957,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFConditionalStyle_PreconditionExpression();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFTextConditionalStyle
-	 * <em>EEF Text Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFTextConditionalStyle <em>EEF Text Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Text Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFTextConditionalStyle
@@ -4961,8 +4978,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFTextConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFButtonConditionalStyle
-	 * <em>EEF Button Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFButtonConditionalStyle <em>EEF Button Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Button Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFButtonConditionalStyle
@@ -4982,8 +4999,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFButtonConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFLabelConditionalStyle
-	 * <em>EEF Label Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFLabelConditionalStyle <em>EEF Label Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Label Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFLabelConditionalStyle
@@ -5003,8 +5020,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFLabelConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCheckboxConditionalStyle
-	 * <em>EEF Checkbox Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCheckboxConditionalStyle <em>EEF Checkbox
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Checkbox Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFCheckboxConditionalStyle
@@ -5013,8 +5030,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFCheckboxConditionalStyle();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.eef.EEFCheckboxConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference
+	 * '{@link org.eclipse.eef.EEFCheckboxConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference '<em>Style</em>'.
@@ -5025,8 +5042,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFCheckboxConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSelectConditionalStyle
-	 * <em>EEF Select Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFSelectConditionalStyle <em>EEF Select Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Select Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFSelectConditionalStyle
@@ -5046,8 +5063,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFSelectConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRadioConditionalStyle
-	 * <em>EEF Radio Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFRadioConditionalStyle <em>EEF Radio Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Radio Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFRadioConditionalStyle
@@ -5067,8 +5084,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFRadioConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFHyperlinkConditionalStyle
-	 * <em>EEF Hyperlink Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFHyperlinkConditionalStyle <em>EEF Hyperlink
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Hyperlink Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFHyperlinkConditionalStyle
@@ -5077,8 +5094,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFHyperlinkConditionalStyle();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.eef.EEFHyperlinkConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference
+	 * '{@link org.eclipse.eef.EEFHyperlinkConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference '<em>Style</em>'.
@@ -5089,8 +5106,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFHyperlinkConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle
-	 * <em>EEF Custom Widget Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle <em>EEF Custom Widget
+	 * Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Custom Widget Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFCustomWidgetConditionalStyle
@@ -5099,8 +5116,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFCustomWidgetConditionalStyle();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
+	 * Returns the meta object for the containment reference
+	 * '{@link org.eclipse.eef.EEFCustomWidgetConditionalStyle#getStyle <em>Style</em>}'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference '<em>Style</em>'.
@@ -5121,8 +5138,8 @@ public interface EefPackage extends EPackage {
 	EClass getEEFWidgetAction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetAction#getLabelExpression
-	 * <em>Label Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetAction#getLabelExpression <em>Label
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Label Expression</em>'.
 	 * @see org.eclipse.eef.EEFWidgetAction#getLabelExpression()
@@ -5132,8 +5149,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFWidgetAction_LabelExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetAction#getActionExpression
-	 * <em>Action Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFWidgetAction#getActionExpression <em>Action
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Action Expression</em>'.
 	 * @see org.eclipse.eef.EEFWidgetAction#getActionExpression()
@@ -5143,8 +5160,8 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFWidgetAction_ActionExpression();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFListConditionalStyle
-	 * <em>EEF List Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFListConditionalStyle <em>EEF List Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF List Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFListConditionalStyle
@@ -5164,8 +5181,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFListConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGroupConditionalStyle
-	 * <em>EEF Group Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.eclipse.eef.EEFGroupConditionalStyle <em>EEF Group Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Group Conditional Style</em>'.
 	 * @see org.eclipse.eef.EEFGroupConditionalStyle
@@ -5185,8 +5202,8 @@ public interface EefPackage extends EPackage {
 	EReference getEEFGroupConditionalStyle_Style();
 
 	/**
-	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
-	 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION <em>EEF VALIDATION
+	 * SEVERITY DESCRIPTION</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for enum '<em>EEF VALIDATION SEVERITY DESCRIPTION</em>'.
 	 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -5195,8 +5212,8 @@ public interface EefPackage extends EPackage {
 	EEnum getEEF_VALIDATION_SEVERITY_DESCRIPTION();
 
 	/**
-	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
-	 * <em>EEF FILL LAYOUT ORIENTATION</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for enum '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION <em>EEF FILL LAYOUT
+	 * ORIENTATION</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for enum '<em>EEF FILL LAYOUT ORIENTATION</em>'.
 	 * @see org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
@@ -5246,8 +5263,8 @@ public interface EefPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFViewDescriptionImpl
-		 * <em>EEF View Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFViewDescriptionImpl <em>EEF View
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFViewDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFViewDescription()
@@ -5304,8 +5321,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_VIEW_DESCRIPTION__EPACKAGES = EefPackage.eINSTANCE.getEEFViewDescription_EPackages();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFPageDescriptionImpl
-		 * <em>EEF Page Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFPageDescriptionImpl <em>EEF Page
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFPageDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFPageDescription()
@@ -5370,8 +5387,16 @@ public interface EefPackage extends EPackage {
 		EReference EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFPageDescription_SemanticValidationRules();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
-		 * <em>EEF Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Indented</b></em>' attribute feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_PAGE_DESCRIPTION__INDENTED = EefPackage.eINSTANCE.getEEFPageDescription_Indented();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl <em>EEF
+		 * Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationRuleDescription()
@@ -5412,8 +5437,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_VALIDATION_RULE_DESCRIPTION__FIXES = EefPackage.eINSTANCE.getEEFValidationRuleDescription_Fixes();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
-		 * <em>EEF Rule Audit Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl <em>EEF Rule Audit
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFRuleAuditDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRuleAuditDescription()
@@ -5430,8 +5455,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION = EefPackage.eINSTANCE.getEEFRuleAuditDescription_AuditExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
-		 * <em>EEF Validation Fix Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFValidationFixDescriptionImpl <em>EEF
+		 * Validation Fix Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFValidationFixDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFValidationFixDescription()
@@ -5456,8 +5481,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION = EefPackage.eINSTANCE.getEEFValidationFixDescription_FixExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
-		 * <em>EEF Property Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl <em>EEF
+		 * Property Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFPropertyValidationRuleDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFPropertyValidationRuleDescription()
@@ -5474,8 +5499,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS = EefPackage.eINSTANCE.getEEFPropertyValidationRuleDescription_Targets();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
-		 * <em>EEF Semantic Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl <em>EEF
+		 * Semantic Validation Rule Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFSemanticValidationRuleDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSemanticValidationRuleDescription()
@@ -5493,8 +5518,8 @@ public interface EefPackage extends EPackage {
 				.getEEFSemanticValidationRuleDescription_TargetClass();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl
-		 * <em>EEF Group Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl <em>EEF Group
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFGroupDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupDescription()
@@ -5583,8 +5608,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFGroupDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl
-		 * <em>EEF Control Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFControlDescriptionImpl <em>EEF Control
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFControlDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFControlDescription()
@@ -5601,8 +5626,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_CONTROL_DESCRIPTION__IDENTIFIER = EefPackage.eINSTANCE.getEEFControlDescription_Identifier();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl
-		 * <em>EEF Container Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFContainerDescriptionImpl <em>EEF Container
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFContainerDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFContainerDescription()
@@ -5627,8 +5652,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_CONTAINER_DESCRIPTION__LAYOUT = EefPackage.eINSTANCE.getEEFContainerDescription_Layout();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLayoutDescriptionImpl
-		 * <em>EEF Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLayoutDescriptionImpl <em>EEF Layout
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFLayoutDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLayoutDescription()
@@ -5637,8 +5662,8 @@ public interface EefPackage extends EPackage {
 		EClass EEF_LAYOUT_DESCRIPTION = EefPackage.eINSTANCE.getEEFLayoutDescription();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
-		 * <em>EEF Fill Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl <em>EEF Fill Layout
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFFillLayoutDescription()
@@ -5655,8 +5680,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_FILL_LAYOUT_DESCRIPTION__ORIENTATION = EefPackage.eINSTANCE.getEEFFillLayoutDescription_Orientation();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
-		 * <em>EEF Grid Layout Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl <em>EEF Grid Layout
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGridLayoutDescription()
@@ -5682,8 +5707,8 @@ public interface EefPackage extends EPackage {
 				.getEEFGridLayoutDescription_MakeColumnsWithEqualWidth();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl
-		 * <em>EEF Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl <em>EEF Widget
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFWidgetDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFWidgetDescription()
@@ -5724,8 +5749,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES = EefPackage.eINSTANCE.getEEFWidgetDescription_PropertyValidationRules();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextDescriptionImpl
-		 * <em>EEF Text Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextDescriptionImpl <em>EEF Text
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFTextDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextDescription()
@@ -5774,8 +5799,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFTextDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl
-		 * <em>EEF Label Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLabelDescriptionImpl <em>EEF Label
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFLabelDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelDescription()
@@ -5824,8 +5849,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_LABEL_DESCRIPTION__ACTIONS = EefPackage.eINSTANCE.getEEFLabelDescription_Actions();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl
-		 * <em>EEF Button Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl <em>EEF Button
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFButtonDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonDescription()
@@ -5866,8 +5891,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFButtonDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl
-		 * <em>EEF Checkbox Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl <em>EEF Checkbox
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFCheckboxDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxDescription()
@@ -5908,8 +5933,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFCheckboxDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl
-		 * <em>EEF Select Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl <em>EEF Select
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFSelectDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectDescription()
@@ -5966,8 +5991,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFSelectDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl
-		 * <em>EEF Radio Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl <em>EEF Radio
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFRadioDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioDescription()
@@ -6032,8 +6057,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFRadioDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl
-		 * <em>EEF Hyperlink Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl <em>EEF Hyperlink
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFHyperlinkDescription()
@@ -6090,8 +6115,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_HYPERLINK_DESCRIPTION__ACTIONS = EefPackage.eINSTANCE.getEEFHyperlinkDescription_Actions();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl
-		 * <em>EEF Dynamic Mapping For</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingForImpl <em>EEF Dynamic Mapping
+		 * For</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFDynamicMappingForImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingFor()
@@ -6124,8 +6149,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_DYNAMIC_MAPPING_FOR__IFS = EefPackage.eINSTANCE.getEEFDynamicMappingFor_Ifs();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingIfImpl
-		 * <em>EEF Dynamic Mapping If</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFDynamicMappingIfImpl <em>EEF Dynamic Mapping
+		 * If</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFDynamicMappingIfImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFDynamicMappingIf()
@@ -6150,8 +6175,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_DYNAMIC_MAPPING_IF__WIDGET = EefPackage.eINSTANCE.getEEFDynamicMappingIf_Widget();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
-		 * <em>EEF Custom Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl <em>EEF Custom
+		 * Widget Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFCustomWidgetDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetDescription()
@@ -6184,8 +6209,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.eINSTANCE.getEEFCustomWidgetDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl
-		 * <em>EEF Custom Expression</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomExpressionImpl <em>EEF Custom
+		 * Expression</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFCustomExpressionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomExpression()
@@ -6210,8 +6235,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION = EefPackage.eINSTANCE.getEEFCustomExpression_CustomExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFListDescriptionImpl
-		 * <em>EEF List Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFListDescriptionImpl <em>EEF List
+		 * Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFListDescriptionImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFListDescription()
@@ -6428,8 +6453,8 @@ public interface EefPackage extends EPackage {
 		EClass EEF_BUTTON_STYLE = EefPackage.eINSTANCE.getEEFButtonStyle();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxStyleImpl
-		 * <em>EEF Checkbox Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxStyleImpl <em>EEF Checkbox
+		 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFCheckboxStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxStyle()
@@ -6458,8 +6483,8 @@ public interface EefPackage extends EPackage {
 		EClass EEF_RADIO_STYLE = EefPackage.eINSTANCE.getEEFRadioStyle();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl
-		 * <em>EEF Hyperlink Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl <em>EEF Hyperlink
+		 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFHyperlinkStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFHyperlinkStyle()
@@ -6500,8 +6525,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_HYPERLINK_STYLE__FONT_STYLE_EXPRESSION = EefPackage.eINSTANCE.getEEFHyperlinkStyle_FontStyleExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
-		 * <em>EEF Custom Widget Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetStyleImpl <em>EEF Custom Widget
+		 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFCustomWidgetStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetStyle()
@@ -6586,8 +6611,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_GROUP_STYLE__EXPANDED_BY_DEFAULT = EefPackage.eINSTANCE.getEEFGroupStyle_ExpandedByDefault();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFConditionalStyleImpl
-		 * <em>EEF Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFConditionalStyleImpl <em>EEF Conditional
+		 * Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFConditionalStyle()
@@ -6604,8 +6629,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION = EefPackage.eINSTANCE.getEEFConditionalStyle_PreconditionExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextConditionalStyleImpl
-		 * <em>EEF Text Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFTextConditionalStyleImpl <em>EEF Text
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFTextConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFTextConditionalStyle()
@@ -6622,8 +6647,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_TEXT_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFTextConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
-		 * <em>EEF Button Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFButtonConditionalStyleImpl <em>EEF Button
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFButtonConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFButtonConditionalStyle()
@@ -6640,8 +6665,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_BUTTON_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFButtonConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
-		 * <em>EEF Label Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFLabelConditionalStyleImpl <em>EEF Label
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFLabelConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFLabelConditionalStyle()
@@ -6658,8 +6683,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_LABEL_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFLabelConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
-		 * <em>EEF Checkbox Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl <em>EEF Checkbox
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCheckboxConditionalStyle()
@@ -6676,8 +6701,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFCheckboxConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
-		 * <em>EEF Select Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFSelectConditionalStyleImpl <em>EEF Select
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFSelectConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFSelectConditionalStyle()
@@ -6694,8 +6719,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_SELECT_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFSelectConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
-		 * <em>EEF Radio Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFRadioConditionalStyleImpl <em>EEF Radio
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFRadioConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFRadioConditionalStyle()
@@ -6712,8 +6737,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_RADIO_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFRadioConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFHyperlinkConditionalStyleImpl
-		 * <em>EEF Hyperlink Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFHyperlinkConditionalStyleImpl <em>EEF
+		 * Hyperlink Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFHyperlinkConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFHyperlinkConditionalStyle()
@@ -6730,8 +6755,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_HYPERLINK_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFHyperlinkConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
-		 * <em>EEF Custom Widget Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl <em>EEF
+		 * Custom Widget Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFCustomWidgetConditionalStyle()
@@ -6774,8 +6799,8 @@ public interface EefPackage extends EPackage {
 		EAttribute EEF_WIDGET_ACTION__ACTION_EXPRESSION = EefPackage.eINSTANCE.getEEFWidgetAction_ActionExpression();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFListConditionalStyleImpl
-		 * <em>EEF List Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFListConditionalStyleImpl <em>EEF List
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFListConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFListConditionalStyle()
@@ -6792,8 +6817,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_LIST_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFListConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
-		 * <em>EEF Group Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.impl.EEFGroupConditionalStyleImpl <em>EEF Group
+		 * Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.impl.EEFGroupConditionalStyleImpl
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEFGroupConditionalStyle()
@@ -6810,8 +6835,8 @@ public interface EefPackage extends EPackage {
 		EReference EEF_GROUP_CONDITIONAL_STYLE__STYLE = EefPackage.eINSTANCE.getEEFGroupConditionalStyle_Style();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
-		 * <em>EEF VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION <em>EEF
+		 * VALIDATION SEVERITY DESCRIPTION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
@@ -6820,8 +6845,8 @@ public interface EefPackage extends EPackage {
 		EEnum EEF_VALIDATION_SEVERITY_DESCRIPTION = EefPackage.eINSTANCE.getEEF_VALIDATION_SEVERITY_DESCRIPTION();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
-		 * <em>EEF FILL LAYOUT ORIENTATION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '{@link org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION <em>EEF FILL LAYOUT
+		 * ORIENTATION</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION
 		 * @see org.eclipse.eef.impl.EefPackageImpl#getEEF_FILL_LAYOUT_ORIENTATION()

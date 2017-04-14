@@ -17,16 +17,18 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getGroups <em>Groups</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFPageDescription#isIndented <em>Indented</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFPageDescription()
  * @model
@@ -117,8 +119,8 @@ public interface EEFPageDescription extends EObject {
 	String getSemanticCandidateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression
-	 * <em>Semantic Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic
+	 * Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Semantic Candidate Expression</em>' attribute.
@@ -140,8 +142,8 @@ public interface EEFPageDescription extends EObject {
 	String getPreconditionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression
-	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Precondition Expression</em>' attribute.
@@ -177,5 +179,33 @@ public interface EEFPageDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules();
+
+	/**
+	 * Returns the value of the '<em><b>Indented</b></em>' attribute. The default value is <code>"false"</code>. <!--
+	 * begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Indented</em>' attribute isn't clear, there really should be more of a description
+	 * here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Indented</em>' attribute.
+	 * @see #setIndented(boolean)
+	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_Indented()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isIndented();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#isIndented <em>Indented</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Indented</em>' attribute.
+	 * @see #isIndented()
+	 * @generated
+	 */
+	void setIndented(boolean value);
 
 } // EEFPageDescription

@@ -58,15 +58,12 @@ public class EEFSemanticValidationRuleDescriptionItemProvider extends EEFValidat
 	 * @generated
 	 */
 	protected void addTargetClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFSemanticValidationRuleDescription_targetClass_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFSemanticValidationRuleDescription_targetClass_feature", "_UI_EEFSemanticValidationRuleDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFSemanticValidationRuleDescription_targetClass_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFSemanticValidationRuleDescription_targetClass_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFSemanticValidationRuleDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_SEMANTIC_VALIDATION_RULE_DESCRIPTION__TARGET_CLASS, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -99,7 +96,7 @@ public class EEFSemanticValidationRuleDescriptionItemProvider extends EEFValidat
 		EEF_VALIDATION_SEVERITY_DESCRIPTION labelValue = ((EEFSemanticValidationRuleDescription) object).getSeverity();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ? getString("_UI_EEFSemanticValidationRuleDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFSemanticValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFSemanticValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

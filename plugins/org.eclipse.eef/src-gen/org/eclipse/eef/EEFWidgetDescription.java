@@ -18,13 +18,13 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getHelpExpression <em>Help Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression <em>Is Enabled Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFWidgetDescription#getPropertyValidationRules <em>Property Validation Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFWidgetDescription()
  * @model abstract="true"
@@ -91,8 +91,8 @@ public interface EEFWidgetDescription extends EEFControlDescription {
 	String getIsEnabledExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression
-	 * <em>Is Enabled Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetDescription#getIsEnabledExpression <em>Is Enabled
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Is Enabled Expression</em>' attribute.

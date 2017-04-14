@@ -28,13 +28,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -180,11 +180,11 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 			style = (EEFCheckboxStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle
-							.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
+					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null,
+							msgs);
 				}
 				if (msgs != null) {
 					msgs.dispatch();
@@ -236,12 +236,12 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -260,7 +260,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	@Override
 	public EList<EEFCheckboxConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFCheckboxConditionalStyle>(EEFCheckboxConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFCheckboxConditionalStyle.class, this,
 					EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -365,10 +365,10 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 		switch (featureID) {
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFCheckboxDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFCheckboxDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+					: !EEFCheckboxDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__EDIT_EXPRESSION:
 			return EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-			: !EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+					: !EEFCheckboxDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES:

@@ -19,12 +19,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#isMakeColumnsWithEqualWidth <em>Make Columns With Equal
  * Width</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -57,7 +57,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT = false;
+	protected static final boolean MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #isMakeColumnsWithEqualWidth() <em>Make Columns With Equal Width</em>}'

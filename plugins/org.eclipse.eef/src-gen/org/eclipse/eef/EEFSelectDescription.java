@@ -19,15 +19,16 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFSelectDescription()
  * @model
@@ -94,8 +95,8 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	String getCandidatesExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression
-	 * <em>Candidates Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression <em>Candidates
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Candidates Expression</em>' attribute.
@@ -117,8 +118,8 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	String getCandidateDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression
-	 * <em>Candidate Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate
+	 * Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Candidate Display Expression</em>' attribute.
