@@ -16,9 +16,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFButtonDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
 import org.eclipse.eef.core.api.controllers.IEEFButtonController;
+import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -38,6 +40,11 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	 * The consumer of a new value of the button's label.
 	 */
 	private Consumer<String> newButtonLabelConsumer;
+
+	/**
+	 * The consumer of a new value of the button's image.
+	 */
+	private Consumer<Object> newButtonImageConsumer;
 
 	/**
 	 * The constructor.
@@ -68,6 +75,16 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	}
 
 	@Override
+	public void onNewButtonImage(Consumer<Object> consumer) {
+		this.newButtonImageConsumer = consumer;
+	}
+
+	@Override
+	public void removeNewButtonImageConsumer() {
+		this.newButtonImageConsumer = null;
+	}
+
+	@Override
 	protected EEFWidgetDescription getDescription() {
 		return this.description;
 	}
@@ -75,9 +92,20 @@ public class EEFButtonController extends AbstractEEFWidgetController implements 
 	@Override
 	public void refresh() {
 		super.refresh();
+		String buttonImageExpression = this.description.getButtonImageExpression();
+		this.newEval().logIfInvalidType(Object.class).call(buttonImageExpression, this.newButtonImageConsumer);
 
+		// If the button has an image, do not put label default value
+		boolean labelDefaultValue = true;
+		if (!Util.isBlank(buttonImageExpression)) {
+			labelDefaultValue = false;
+		}
 		String buttonLabelExpression = this.description.getButtonLabelExpression();
-		this.newEval().logIfInvalidType(String.class).defaultValue("...").call(buttonLabelExpression, this.newButtonLabelConsumer); //$NON-NLS-1$
+		Eval<String> evaluation = this.newEval().logIfInvalidType(String.class);
+		if (labelDefaultValue) {
+			evaluation = evaluation.defaultValue("..."); //$NON-NLS-1$
+		}
+		evaluation.call(buttonLabelExpression, this.newButtonLabelConsumer);
 	}
 
 	@Override

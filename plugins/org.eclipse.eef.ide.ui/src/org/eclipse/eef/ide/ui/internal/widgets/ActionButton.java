@@ -10,9 +10,15 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import com.google.common.base.Strings;
+
+import java.util.Optional;
+
 import org.eclipse.eef.EEFWidgetAction;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.eef.core.api.utils.EvalFactory.Eval;
+import org.eclipse.eef.ide.ui.internal.EEFImageUtils;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -75,9 +81,30 @@ public class ActionButton {
 
 		this.button.setLayoutData(gridData);
 
-		String expression = action.getLabelExpression();
-		String buttonLabel = EvalFactory.of(interpreter, variableManager).logIfInvalidType(String.class).defaultValue("...").evaluate(expression); //$NON-NLS-1$
-		button.setText(buttonLabel);
+		String imageExpression = action.getImageExpression();
+		Object buttonImage = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Object.class).evaluate(imageExpression);
+
+		//@formatter:off
+		Optional.ofNullable(buttonImage)
+		.filter(String.class::isInstance)
+		.map(String.class::cast)
+		.flatMap(imgPath -> EEFImageUtils.getImage(imgPath))
+		.ifPresent(button::setImage);
+		//@formatter:on
+
+		// If the button has an image, do not put label default value
+		boolean labelDefaultValue = true;
+		if (!Strings.isNullOrEmpty(imageExpression)) {
+			labelDefaultValue = false;
+		}
+
+		String labelExpression = action.getLabelExpression();
+		Eval<String> eval = EvalFactory.of(interpreter, variableManager).logIfInvalidType(String.class);
+		if (labelDefaultValue) {
+			eval = eval.defaultValue("..."); //$NON-NLS-1$
+		}
+		String buttonLabel = eval.evaluate(labelExpression);
+		button.setText(Optional.ofNullable(buttonLabel).orElse("")); //$NON-NLS-1$
 	}
 
 	/**

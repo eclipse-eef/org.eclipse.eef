@@ -34,8 +34,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * 
  * @generated
  */
-public class EEFWidgetActionItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class EEFWidgetActionItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -56,6 +56,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 			super.getPropertyDescriptors(object);
 
 			addLabelExpressionPropertyDescriptor(object);
+			addImageExpressionPropertyDescriptor(object);
 			addActionExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -74,18 +75,28 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	}
 
 	/**
+	 * This adds a property descriptor for the Image Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addImageExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFWidgetAction_imageExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFWidgetAction_imageExpression_feature", "_UI_EEFWidgetAction_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_WIDGET_ACTION__IMAGE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Action Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	protected void addActionExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFWidgetAction_actionExpression_feature"), //$NON-NLS-1$
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFWidgetAction_actionExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFWidgetAction_actionExpression_feature", "_UI_EEFWidgetAction_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				EefPackage.Literals.EEF_WIDGET_ACTION__ACTION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
@@ -117,7 +128,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	public String getText(Object object) {
 		String label = ((EEFWidgetAction) object).getLabelExpression();
 		return label == null || label.length() == 0 ? getString("_UI_EEFWidgetAction_type") : //$NON-NLS-1$
-			getString("_UI_EEFWidgetAction_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFWidgetAction_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -133,6 +144,7 @@ ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 
 		switch (notification.getFeatureID(EEFWidgetAction.class)) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
+		case EefPackage.EEF_WIDGET_ACTION__IMAGE_EXPRESSION:
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

@@ -49,6 +49,7 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 			super.getPropertyDescriptors(object);
 
 			addButtonLabelExpressionPropertyDescriptor(object);
+			addButtonImageExpressionPropertyDescriptor(object);
 			addPushExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -61,15 +62,27 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	 * @generated
 	 */
 	protected void addButtonLabelExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFButtonDescription_buttonLabelExpression_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFButtonDescription_buttonLabelExpression_feature", "_UI_EEFButtonDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFButtonDescription_buttonLabelExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFButtonDescription_buttonLabelExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFButtonDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Button Image Expression feature. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addButtonImageExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFButtonDescription_buttonImageExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFButtonDescription_buttonImageExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFButtonDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_BUTTON_DESCRIPTION__BUTTON_IMAGE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -79,8 +92,7 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	 */
 	protected void addPushExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFButtonDescription_pushExpression_feature"), //$NON-NLS-1$
+				getResourceLocator(), getString("_UI_EEFButtonDescription_pushExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFButtonDescription_pushExpression_feature", "_UI_EEFButtonDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
@@ -146,7 +158,7 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	public String getText(Object object) {
 		String label = ((EEFButtonDescription) object).getIdentifier();
 		return label == null || label.length() == 0 ? getString("_UI_EEFButtonDescription_type") : //$NON-NLS-1$
-			getString("_UI_EEFButtonDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_EEFButtonDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -162,6 +174,7 @@ public class EEFButtonDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 
 		switch (notification.getFeatureID(EEFButtonDescription.class)) {
 		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_LABEL_EXPRESSION:
+		case EefPackage.EEF_BUTTON_DESCRIPTION__BUTTON_IMAGE_EXPRESSION:
 		case EefPackage.EEF_BUTTON_DESCRIPTION__PUSH_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

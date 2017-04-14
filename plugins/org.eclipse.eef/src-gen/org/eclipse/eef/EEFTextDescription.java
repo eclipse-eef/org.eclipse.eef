@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getEditExpression <em>Edit Expression</em>}</li>
@@ -25,7 +26,6 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.eef.EEFTextDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFTextDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFTextDescription()
  * @model

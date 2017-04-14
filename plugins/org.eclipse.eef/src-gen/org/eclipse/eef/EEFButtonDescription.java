@@ -18,13 +18,14 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFButtonDescription#getButtonImageExpression <em>Button Image Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getPushExpression <em>Push Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFButtonDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFButtonDescription()
  * @model
@@ -45,8 +46,8 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	String getButtonLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression
-	 * <em>Button Label Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Button Label Expression</em>' attribute.
@@ -54,6 +55,30 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setButtonLabelExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Button Image Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc --> <!-- begin-model-doc --> Image of the button visible in the user interface. <!-- end-model-doc
+	 * -->
+	 *
+	 * @return the value of the '<em>Button Image Expression</em>' attribute.
+	 * @see #setButtonImageExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFButtonDescription_ButtonImageExpression()
+	 * @model
+	 * @generated
+	 */
+	String getButtonImageExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonImageExpression <em>Button Image
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Button Image Expression</em>' attribute.
+	 * @see #getButtonImageExpression()
+	 * @generated
+	 */
+	void setButtonImageExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Push Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc

@@ -15,9 +15,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc --> A representation of the literals of the enumeration '
- * <em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>', and utility methods for working with them. <!-- end-user-doc
- * -->
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration ' <em><b>EEF VALIDATION SEVERITY
+ * DESCRIPTION</b></em>', and utility methods for working with them. <!-- end-user-doc -->
  *
  * @see org.eclipse.eef.EefPackage#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
  * @model
@@ -98,8 +97,8 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	 *
 	 * @generated
 	 */
-	public static final List<EEF_VALIDATION_SEVERITY_DESCRIPTION> VALUES = Collections.unmodifiableList(Arrays
-			.asList(EEF_VALIDATION_SEVERITY_DESCRIPTION.VALUES_ARRAY));
+	public static final List<EEF_VALIDATION_SEVERITY_DESCRIPTION> VALUES = Collections
+			.unmodifiableList(Arrays.asList(EEF_VALIDATION_SEVERITY_DESCRIPTION.VALUES_ARRAY));
 
 	/**
 	 * Returns the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' literal with the specified literal value. <!--

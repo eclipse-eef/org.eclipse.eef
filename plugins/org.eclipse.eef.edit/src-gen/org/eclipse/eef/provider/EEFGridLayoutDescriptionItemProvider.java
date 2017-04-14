@@ -58,15 +58,12 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	 * @generated
 	 */
 	protected void addNumberOfColumnsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGridLayoutDescription_numberOfColumns_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_numberOfColumns_feature", "_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGridLayoutDescription_numberOfColumns_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_numberOfColumns_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__NUMBER_OF_COLUMNS, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
@@ -76,15 +73,12 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	 * @generated
 	 */
 	protected void addMakeColumnsWithEqualWidthPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-		.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature"), //$NON-NLS-1$
-				getString(
-						"_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature", "_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFGridLayoutDescription_makeColumnsWithEqualWidth_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_EEFGridLayoutDescription_type"), //$NON-NLS-1$
+				EefPackage.Literals.EEF_GRID_LAYOUT_DESCRIPTION__MAKE_COLUMNS_WITH_EQUAL_WIDTH, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**

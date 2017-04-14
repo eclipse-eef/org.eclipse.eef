@@ -50,6 +50,26 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	protected String labelExpression = EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IMAGE_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String imageExpression = EEFWidgetActionImpl.IMAGE_EXPRESSION_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getActionExpression() <em>Action Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -108,7 +128,33 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 		String oldLabelExpression = labelExpression;
 		labelExpression = newLabelExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION, oldLabelExpression, labelExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION, oldLabelExpression,
+					labelExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getImageExpression() {
+		return imageExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setImageExpression(String newImageExpression) {
+		String oldImageExpression = imageExpression;
+		imageExpression = newImageExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_ACTION__IMAGE_EXPRESSION, oldImageExpression,
+					imageExpression));
 		}
 	}
 
@@ -147,6 +193,8 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
 			return getLabelExpression();
+		case EefPackage.EEF_WIDGET_ACTION__IMAGE_EXPRESSION:
+			return getImageExpression();
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
 			return getActionExpression();
 		}
@@ -163,6 +211,9 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
 			setLabelExpression((String) newValue);
+			return;
+		case EefPackage.EEF_WIDGET_ACTION__IMAGE_EXPRESSION:
+			setImageExpression((String) newValue);
 			return;
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
 			setActionExpression((String) newValue);
@@ -182,6 +233,9 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
 			setLabelExpression(EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_WIDGET_ACTION__IMAGE_EXPRESSION:
+			setImageExpression(EEFWidgetActionImpl.IMAGE_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
 			setActionExpression(EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT);
 			return;
@@ -198,11 +252,14 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_WIDGET_ACTION__LABEL_EXPRESSION:
-			return EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null : !EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT
-			.equals(labelExpression);
+			return EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
+					: !EEFWidgetActionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+		case EefPackage.EEF_WIDGET_ACTION__IMAGE_EXPRESSION:
+			return EEFWidgetActionImpl.IMAGE_EXPRESSION_EDEFAULT == null ? imageExpression != null
+					: !EEFWidgetActionImpl.IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
 		case EefPackage.EEF_WIDGET_ACTION__ACTION_EXPRESSION:
 			return EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT == null ? actionExpression != null
-			: !EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
+					: !EEFWidgetActionImpl.ACTION_EXPRESSION_EDEFAULT.equals(actionExpression);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -221,6 +278,8 @@ public class EEFWidgetActionImpl extends MinimalEObjectImpl.Container implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (labelExpression: "); //$NON-NLS-1$
 		result.append(labelExpression);
+		result.append(", imageExpression: "); //$NON-NLS-1$
+		result.append(imageExpression);
 		result.append(", actionExpression: "); //$NON-NLS-1$
 		result.append(actionExpression);
 		result.append(')');

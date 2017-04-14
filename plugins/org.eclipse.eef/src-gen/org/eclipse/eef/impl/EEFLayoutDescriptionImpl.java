@@ -16,8 +16,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 /**
  * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Layout Description</b></em>'. <!--
  * end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

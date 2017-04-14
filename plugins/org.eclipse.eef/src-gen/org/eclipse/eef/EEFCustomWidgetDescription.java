@@ -18,12 +18,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFCustomWidgetDescription#getCustomExpressions <em>Custom Expressions</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCustomWidgetDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFCustomWidgetDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFCustomWidgetDescription()
  * @model

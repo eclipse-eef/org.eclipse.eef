@@ -35,6 +35,19 @@ public interface IEEFButtonController extends IEEFWidgetController {
 	void removeNewButtonLabelConsumer();
 
 	/**
+	 * Register a consumer which will be called with the new value of the button's image when it will change.
+	 *
+	 * @param consumer
+	 *            The consumer of the new value of the button's image
+	 */
+	void onNewButtonImage(Consumer<Object> consumer);
+
+	/**
+	 * Remove the consumer of the new value of the button's image.
+	 */
+	void removeNewButtonImageConsumer();
+
+	/**
 	 * Invoked when the user pushes the button.
 	 *
 	 * @return the status of the pushed execution.

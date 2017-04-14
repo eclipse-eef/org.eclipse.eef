@@ -51,6 +51,29 @@ public interface EEFWidgetAction extends EObject {
 	void setLabelExpression(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Image Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> The image of the action visible by the end-users. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Image Expression</em>' attribute.
+	 * @see #setImageExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFWidgetAction_ImageExpression()
+	 * @model
+	 * @generated
+	 */
+	String getImageExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFWidgetAction#getImageExpression <em>Image Expression</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Image Expression</em>' attribute.
+	 * @see #getImageExpression()
+	 * @generated
+	 */
+	void setImageExpression(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Action Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> The behavior of the action. <!-- end-model-doc -->
 	 *

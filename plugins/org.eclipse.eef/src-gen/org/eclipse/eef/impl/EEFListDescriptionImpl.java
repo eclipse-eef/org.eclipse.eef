@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getDisplayExpression <em>Display Expression</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -234,7 +234,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	@Override
 	public EList<EEFWidgetAction> getActions() {
 		if (actions == null) {
-			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this, EefPackage.EEF_LIST_DESCRIPTION__ACTIONS);
+			actions = new EObjectContainmentEList.Resolving<>(EEFWidgetAction.class, this, EefPackage.EEF_LIST_DESCRIPTION__ACTIONS);
 		}
 		return actions;
 	}
@@ -251,8 +251,8 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			style = (EEFListStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_LIST_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LIST_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
 					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LIST_DESCRIPTION__STYLE, null, msgs);
 				}
@@ -285,7 +285,8 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		EEFListStyle oldStyle = style;
 		style = newStyle;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_LIST_DESCRIPTION__STYLE, oldStyle, newStyle);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_LIST_DESCRIPTION__STYLE, oldStyle,
+					newStyle);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -305,12 +306,12 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this,
-						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LIST_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LIST_DESCRIPTION__STYLE,
+						null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
-						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LIST_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_LIST_DESCRIPTION__STYLE,
+						null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -329,7 +330,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	@Override
 	public EList<EEFListConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFListConditionalStyle>(EEFListConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFListConditionalStyle.class, this,
 					EefPackage.EEF_LIST_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -453,13 +454,13 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		switch (featureID) {
 		case EefPackage.EEF_LIST_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFListDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFListDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+					: !EEFListDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION:
 			return EEFListDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT == null ? displayExpression != null
-			: !EEFListDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
+					: !EEFListDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
 		case EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION:
 			return EEFListDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT == null ? onClickExpression != null
-			: !EEFListDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT.equals(onClickExpression);
+					: !EEFListDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT.equals(onClickExpression);
 		case EefPackage.EEF_LIST_DESCRIPTION__ACTIONS:
 			return actions != null && !actions.isEmpty();
 		case EefPackage.EEF_LIST_DESCRIPTION__STYLE:

@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFControlDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -144,8 +144,8 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER:
-			return EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		}
 		return super.eIsSet(featureID);
 	}

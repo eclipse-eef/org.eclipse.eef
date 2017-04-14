@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getDisplayExpression <em>Display Expression</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkDescriptionImpl#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -238,8 +238,8 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 			style = (EEFHyperlinkStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
 					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE, null,
 							msgs);
@@ -294,12 +294,12 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -318,7 +318,7 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 	@Override
 	public EList<EEFHyperlinkConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFHyperlinkConditionalStyle>(EEFHyperlinkConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFHyperlinkConditionalStyle.class, this,
 					EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -332,8 +332,7 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 	@Override
 	public EList<EEFWidgetAction> getActions() {
 		if (actions == null) {
-			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this,
-					EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
+			actions = new EObjectContainmentEList.Resolving<>(EEFWidgetAction.class, this, EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
 		}
 		return actions;
 	}
@@ -456,13 +455,13 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 		switch (featureID) {
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFHyperlinkDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFHyperlinkDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+					: !EEFHyperlinkDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__DISPLAY_EXPRESSION:
 			return EEFHyperlinkDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT == null ? displayExpression != null
-			: !EEFHyperlinkDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
+					: !EEFHyperlinkDescriptionImpl.DISPLAY_EXPRESSION_EDEFAULT.equals(displayExpression);
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION:
 			return EEFHyperlinkDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT == null ? onClickExpression != null
-			: !EEFHyperlinkDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT.equals(onClickExpression);
+					: !EEFHyperlinkDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT.equals(onClickExpression);
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES:

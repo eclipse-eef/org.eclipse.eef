@@ -11,6 +11,7 @@
 package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.util.Optional;
+import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFButtonDescription;
@@ -23,6 +24,7 @@ import org.eclipse.eef.core.api.controllers.IEEFButtonController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.eef.ide.ui.internal.EEFImageUtils;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -161,6 +163,21 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 				button.setText(Optional.ofNullable(value).orElse("")); //$NON-NLS-1$
 			}
 		});
+
+		this.controller.onNewButtonImage(new Consumer<Object>() {
+			@Override
+			public void accept(Object value) {
+				if (!button.isDisposed()) {
+					//@formatter:off
+					Optional.ofNullable(value)
+					.filter(String.class::isInstance)
+					.map(String.class::cast)
+					.flatMap(imgPath -> EEFImageUtils.getImage(imgPath))
+					.ifPresent(button::setImage);
+					//@formatter:on
+				}
+			}
+		});
 	}
 
 	/**
@@ -181,6 +198,7 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 			this.button.removeSelectionListener(this.selectionListener);
 		}
 		this.controller.removeNewButtonLabelConsumer();
+		this.controller.removeNewButtonImageConsumer();
 	}
 
 	/**

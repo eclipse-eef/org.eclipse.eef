@@ -38,6 +38,9 @@ public final class Messages {
 	public static String EEFIdeUiPlugin_lifecycleManagerInvalid;
 
 	@TranslatableMessage
+	public static String EEFIdeUiPlugin_fileNotFound;
+
+	@TranslatableMessage
 	public static String EEFColor_invalidColorCode;
 
 	@TranslatableMessage
