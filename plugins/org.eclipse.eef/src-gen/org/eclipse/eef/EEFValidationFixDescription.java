@@ -64,8 +64,8 @@ public interface EEFValidationFixDescription extends EObject {
 	String getFixExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationFixDescription#getFixExpression
-	 * <em>Fix Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationFixDescription#getFixExpression <em>Fix
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Fix Expression</em>' attribute.

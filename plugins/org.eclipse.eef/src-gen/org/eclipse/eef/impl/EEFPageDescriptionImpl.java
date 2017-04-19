@@ -13,6 +13,7 @@ import java.util.Collection;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -35,13 +36,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression
- * <em>Semantic Candidate Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getGroups <em>Groups</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation
+ * Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getActions <em>Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -166,6 +168,16 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected EList<EEFSemanticValidationRuleDescription> semanticValidationRules;
+
+	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFToolbarAction> actions;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -317,7 +329,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
-			groups = new EObjectResolvingEList<EEFGroupDescription>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
+			groups = new EObjectResolvingEList<>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
 		}
 		return groups;
 	}
@@ -330,10 +342,23 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	@Override
 	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
 		if (semanticValidationRules == null) {
-			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
-					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+			semanticValidationRules = new EObjectContainmentEList.Resolving<>(EEFSemanticValidationRuleDescription.class, this,
+					EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		}
 		return semanticValidationRules;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EList<EEFToolbarAction> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentEList.Resolving<>(EEFToolbarAction.class, this, EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS);
+		}
+		return actions;
 	}
 
 	/**
@@ -346,6 +371,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return ((InternalEList<?>) getSemanticValidationRules()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -372,6 +399,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return getGroups();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return getSemanticValidationRules();
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -408,6 +437,10 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			getSemanticValidationRules().clear();
 			getSemanticValidationRules().addAll((Collection<? extends EEFSemanticValidationRuleDescription>) newValue);
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			getActions().addAll((Collection<? extends EEFToolbarAction>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -441,6 +474,9 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			getSemanticValidationRules().clear();
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -472,6 +508,8 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return semanticValidationRules != null && !semanticValidationRules.isEmpty();
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			return actions != null && !actions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

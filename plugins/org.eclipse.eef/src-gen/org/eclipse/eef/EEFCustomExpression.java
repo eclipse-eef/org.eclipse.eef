@@ -63,8 +63,8 @@ public interface EEFCustomExpression extends EObject {
 	String getCustomExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Custom Expression</em>' attribute.

@@ -318,7 +318,7 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 	@Override
 	public EList<EEFHyperlinkConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFHyperlinkConditionalStyle>(EEFHyperlinkConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFHyperlinkConditionalStyle.class, this,
 					EefPackage.EEF_HYPERLINK_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -332,8 +332,7 @@ public class EEFHyperlinkDescriptionImpl extends EEFWidgetDescriptionImpl implem
 	@Override
 	public EList<EEFWidgetAction> getActions() {
 		if (actions == null) {
-			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this,
-					EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
+			actions = new EObjectContainmentEList.Resolving<>(EEFWidgetAction.class, this, EefPackage.EEF_HYPERLINK_DESCRIPTION__ACTIONS);
 		}
 		return actions;
 	}

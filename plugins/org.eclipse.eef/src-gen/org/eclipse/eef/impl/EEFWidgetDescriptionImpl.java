@@ -32,8 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getHelpExpression <em>Help Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getIsEnabledExpression <em>Is Enabled Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getPropertyValidationRules
- * <em>Property Validation Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetDescriptionImpl#getPropertyValidationRules <em>Property Validation
+ * Rules</em>}</li>
  * </ul>
  *
  * @generated
@@ -211,9 +211,8 @@ public abstract class EEFWidgetDescriptionImpl extends EEFControlDescriptionImpl
 	@Override
 	public EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules() {
 		if (propertyValidationRules == null) {
-			propertyValidationRules = new EObjectWithInverseResolvingEList.ManyInverse<EEFPropertyValidationRuleDescription>(
-					EEFPropertyValidationRuleDescription.class, this, EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES,
-					EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS);
+			propertyValidationRules = new EObjectWithInverseResolvingEList.ManyInverse<>(EEFPropertyValidationRuleDescription.class, this,
+					EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES, EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS);
 		}
 		return propertyValidationRules;
 	}

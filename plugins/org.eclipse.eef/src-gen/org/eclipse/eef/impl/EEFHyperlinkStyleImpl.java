@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getBackgroundColorExpression
- * <em>Background Color Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFHyperlinkStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>

@@ -22,11 +22,12 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFPageDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getGroups <em>Groups</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFPageDescription#getActions <em>Actions</em>}</li>
  * </ul>
  *
  * @see org.eclipse.eef.EefPackage#getEEFPageDescription()
@@ -118,8 +119,8 @@ public interface EEFPageDescription extends EObject {
 	String getSemanticCandidateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression
-	 * <em>Semantic Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic
+	 * Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Semantic Candidate Expression</em>' attribute.
@@ -141,8 +142,8 @@ public interface EEFPageDescription extends EObject {
 	String getPreconditionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression
-	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Precondition Expression</em>' attribute.
@@ -178,5 +179,17 @@ public interface EEFPageDescription extends EObject {
 	 * @generated
 	 */
 	EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules();
+
+	/**
+	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list. The list contents are of type
+	 * {@link org.eclipse.eef.EEFToolbarAction}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * Defines the toolbar's actions of this page. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Actions</em>' containment reference list.
+	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_Actions()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EEFToolbarAction> getActions();
 
 } // EEFPageDescription

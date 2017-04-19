@@ -51,6 +51,7 @@ import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
@@ -128,6 +129,13 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	private EClass eefGroupDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	private EClass eefToolbarActionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -665,6 +673,16 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getEEFPageDescription_Actions() {
+		return (EReference) eefPageDescriptionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EClass getEEFValidationRuleDescription() {
 		return eefValidationRuleDescriptionEClass;
 	}
@@ -907,6 +925,56 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	@Override
 	public EReference getEEFGroupDescription_ConditionalStyles() {
 		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFGroupDescription_Actions() {
+		return (EReference) eefGroupDescriptionEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EClass getEEFToolbarAction() {
+		return eefToolbarActionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFToolbarAction_TooltipExpression() {
+		return (EAttribute) eefToolbarActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFToolbarAction_ImageExpression() {
+		return (EAttribute) eefToolbarActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEEFToolbarAction_ActionExpression() {
+		return (EAttribute) eefToolbarActionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2435,6 +2503,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION);
 		createEReference(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
 		createEReference(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+		createEReference(eefPageDescriptionEClass, EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS);
 
 		eefValidationRuleDescriptionEClass = createEClass(EefPackage.EEF_VALIDATION_RULE_DESCRIPTION);
 		createEAttribute(eefValidationRuleDescriptionEClass, EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__SEVERITY);
@@ -2466,6 +2535,12 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__STYLE);
 		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
+		createEReference(eefGroupDescriptionEClass, EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS);
+
+		eefToolbarActionEClass = createEClass(EefPackage.EEF_TOOLBAR_ACTION);
+		createEAttribute(eefToolbarActionEClass, EefPackage.EEF_TOOLBAR_ACTION__TOOLTIP_EXPRESSION);
+		createEAttribute(eefToolbarActionEClass, EefPackage.EEF_TOOLBAR_ACTION__IMAGE_EXPRESSION);
+		createEAttribute(eefToolbarActionEClass, EefPackage.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION);
 
 		eefControlDescriptionEClass = createEClass(EefPackage.EEF_CONTROL_DESCRIPTION);
 		createEAttribute(eefControlDescriptionEClass, EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER);
@@ -2777,6 +2852,10 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				"semanticValidationRules", null, 0, -1, EEFPageDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, //$NON-NLS-1$
 				EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE,
 				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEReference(getEEFPageDescription_Actions(), this.getEEFToolbarAction(), null, "actions", null, 0, -1, EEFPageDescription.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE,
+				EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+				EPackageImpl.IS_ORDERED);
 
 		initEClass(eefValidationRuleDescriptionEClass, EEFValidationRuleDescription.class, "EEFValidationRuleDescription", EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
 				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
@@ -2861,6 +2940,22 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 				EEFGroupDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
 				!EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEReference(getEEFGroupDescription_Actions(), this.getEEFToolbarAction(), null, "actions", null, 0, -1, EEFGroupDescription.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE,
+				EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
+				EPackageImpl.IS_ORDERED);
+
+		initEClass(eefToolbarActionEClass, EEFToolbarAction.class, "EEFToolbarAction", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, //$NON-NLS-1$
+				EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFToolbarAction_TooltipExpression(), ecorePackage.getEString(), "tooltipExpression", null, 0, 1, EEFToolbarAction.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFToolbarAction_ImageExpression(), ecorePackage.getEString(), "imageExpression", null, 0, 1, EEFToolbarAction.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFToolbarAction_ActionExpression(), ecorePackage.getEString(), "actionExpression", null, 0, 1, EEFToolbarAction.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 
 		initEClass(eefControlDescriptionEClass, EEFControlDescription.class, "EEFControlDescription", EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
 				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);

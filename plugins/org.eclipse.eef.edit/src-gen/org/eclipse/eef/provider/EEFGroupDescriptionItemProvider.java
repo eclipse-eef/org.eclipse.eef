@@ -150,6 +150,7 @@ public class EEFGroupDescriptionItemProvider extends ItemProviderAdapter
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__STYLE);
 			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
+			childrenFeatures.add(EefPackage.Literals.EEF_GROUP_DESCRIPTION__ACTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -195,8 +196,8 @@ public class EEFGroupDescriptionItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFGroupDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFGroupDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFGroupDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFGroupDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFGroupDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -223,6 +224,7 @@ public class EEFGroupDescriptionItemProvider extends ItemProviderAdapter
 		case EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES:
 		case EefPackage.EEF_GROUP_DESCRIPTION__STYLE:
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
+		case EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -282,6 +284,9 @@ public class EEFGroupDescriptionItemProvider extends ItemProviderAdapter
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES,
 				EefFactory.eINSTANCE.createEEFGroupConditionalStyle()));
+
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_GROUP_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFToolbarAction()));
 	}
 
 	/**

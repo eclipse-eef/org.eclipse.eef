@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.ui.forms.events.IHyperlinkListener;
  *
  * @author sbegaudeau
  */
-public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
+public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager implements IEEFToolbarLifecycleManager {
 
 	/**
 	 * The page.
@@ -88,6 +88,9 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 
 			this.lifecycleManagers.add(groupLifecycleManager);
 		}
+
+		populateToolBar(formContainer.getForm().getToolBarManager(), this.eefPage.getDescription().getActions(), this.controller,
+				this.eefPage.getView().getContextAdapter(), this.eefPage.getInterpreter(), this.eefPage.getVariableManager());
 	}
 
 	/**
@@ -166,5 +169,4 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager {
 	public void dispose() {
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::dispose);
 	}
-
 }

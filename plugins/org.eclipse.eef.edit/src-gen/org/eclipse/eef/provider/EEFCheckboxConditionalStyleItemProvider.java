@@ -108,8 +108,8 @@ public class EEFCheckboxConditionalStyleItemProvider extends EEFConditionalStyle
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFCheckboxConditionalStyle) object).getPreconditionExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFCheckboxConditionalStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFCheckboxConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFCheckboxConditionalStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFCheckboxConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

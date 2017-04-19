@@ -110,8 +110,8 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFCustomWidgetDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
