@@ -13,6 +13,7 @@ import java.util.Collection;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFPageDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,18 +31,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getGroups <em>Groups</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getSemanticValidationRules <em>Semantic Validation
+ * Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFPageDescriptionImpl#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -49,7 +52,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -59,7 +62,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -69,7 +72,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -79,7 +82,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -89,7 +92,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The default value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDomainClass()
 	 * @generated
 	 * @ordered
@@ -99,7 +102,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getDomainClass()
 	 * @generated
 	 * @ordered
@@ -109,7 +112,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The default value of the '{@link #getSemanticCandidateExpression() <em>Semantic Candidate Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSemanticCandidateExpression()
 	 * @generated
 	 * @ordered
@@ -119,7 +122,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getSemanticCandidateExpression() <em>Semantic Candidate Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSemanticCandidateExpression()
 	 * @generated
 	 * @ordered
@@ -149,7 +152,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getGroups()
 	 * @generated
 	 * @ordered
@@ -159,7 +162,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getSemanticValidationRules() <em>Semantic Validation Rules</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSemanticValidationRules()
 	 * @generated
 	 * @ordered
@@ -167,8 +170,18 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	protected EList<EEFSemanticValidationRuleDescription> semanticValidationRules;
 
 	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFToolbarAction> actions;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFPageDescriptionImpl() {
@@ -177,7 +190,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -187,7 +200,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -197,7 +210,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,7 +224,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -221,7 +234,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,7 +249,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,7 +259,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -260,7 +273,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -270,7 +283,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -285,7 +298,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -295,7 +308,7 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -303,33 +316,33 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		String oldPreconditionExpression = preconditionExpression;
 		preconditionExpression = newPreconditionExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION,
-					oldPreconditionExpression, preconditionExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION, oldPreconditionExpression,
+					preconditionExpression));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
-			groups = new EObjectResolvingEList<EEFGroupDescription>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
+			groups = new EObjectResolvingEList<>(EEFGroupDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__GROUPS);
 		}
 		return groups;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
 		if (semanticValidationRules == null) {
-			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
+			semanticValidationRules = new EObjectContainmentEList.Resolving<>(
 					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		}
 		return semanticValidationRules;
@@ -337,7 +350,20 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EList<EEFToolbarAction> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentEList.Resolving<>(EEFToolbarAction.class, this, EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS);
+		}
+		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -345,13 +371,15 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return ((InternalEList<?>) getSemanticValidationRules()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -371,13 +399,15 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			return getGroups();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return getSemanticValidationRules();
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -407,13 +437,17 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 			getSemanticValidationRules().clear();
 			getSemanticValidationRules().addAll((Collection<? extends EEFSemanticValidationRuleDescription>) newValue);
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			getActions().addAll((Collection<? extends EEFToolbarAction>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -440,44 +474,49 @@ public class EEFPageDescriptionImpl extends MinimalEObjectImpl.Container impleme
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			getSemanticValidationRules().clear();
 			return;
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_PAGE_DESCRIPTION__IDENTIFIER:
-			return EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFPageDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		case EefPackage.EEF_PAGE_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-			: !EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+					: !EEFPageDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__DOMAIN_CLASS:
-			return EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null : !EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT
-			.equals(domainClass);
+			return EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null
+					: !EEFPageDescriptionImpl.DOMAIN_CLASS_EDEFAULT.equals(domainClass);
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
-			: !EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+					: !EEFPageDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__PRECONDITION_EXPRESSION:
 			return EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
-			: !EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+					: !EEFPageDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		case EefPackage.EEF_PAGE_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
 			return semanticValidationRules != null && !semanticValidationRules.isEmpty();
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
+			return actions != null && !actions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

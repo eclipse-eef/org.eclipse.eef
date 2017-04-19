@@ -30,13 +30,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getSeverity <em>Severity</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getMessageExpression <em>Message Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getMessageExpression <em>Message
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getAudits <em>Audits</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getFixes <em>Fixes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -44,7 +45,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -54,7 +55,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -84,7 +85,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The cached value of the '{@link #getAudits() <em>Audits</em>}' containment reference list. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAudits()
 	 * @generated
 	 * @ordered
@@ -94,7 +95,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The cached value of the '{@link #getFixes() <em>Fixes</em>}' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFixes()
 	 * @generated
 	 * @ordered
@@ -103,7 +104,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFValidationRuleDescriptionImpl() {
@@ -112,7 +113,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -122,7 +123,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,7 +133,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,7 +147,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -156,7 +157,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,13 +172,13 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFRuleAuditDescription> getAudits() {
 		if (audits == null) {
-			audits = new EObjectContainmentEList.Resolving<EEFRuleAuditDescription>(EEFRuleAuditDescription.class, this,
+			audits = new EObjectContainmentEList.Resolving<>(EEFRuleAuditDescription.class, this,
 					EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS);
 		}
 		return audits;
@@ -185,13 +186,13 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFValidationFixDescription> getFixes() {
 		if (fixes == null) {
-			fixes = new EObjectContainmentEList.Resolving<EEFValidationFixDescription>(EEFValidationFixDescription.class, this,
+			fixes = new EObjectContainmentEList.Resolving<>(EEFValidationFixDescription.class, this,
 					EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__FIXES);
 		}
 		return fixes;
@@ -199,7 +200,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -215,7 +216,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -235,7 +236,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -262,7 +263,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -286,7 +287,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -296,7 +297,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 			return severity != EEFValidationRuleDescriptionImpl.SEVERITY_EDEFAULT;
 		case EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION:
 			return EEFValidationRuleDescriptionImpl.MESSAGE_EXPRESSION_EDEFAULT == null ? messageExpression != null
-			: !EEFValidationRuleDescriptionImpl.MESSAGE_EXPRESSION_EDEFAULT.equals(messageExpression);
+					: !EEFValidationRuleDescriptionImpl.MESSAGE_EXPRESSION_EDEFAULT.equals(messageExpression);
 		case EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS:
 			return audits != null && !audits.isEmpty();
 		case EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__FIXES:
@@ -307,7 +308,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -51,6 +51,7 @@ import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFValidationRuleDescription;
 import org.eclipse.eef.EEFViewDescription;
@@ -67,21 +68,21 @@ import org.eclipse.emf.ecore.util.Switch;
  * {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
  * returned, which is the result of the switch. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.eef.EefPackage
  * @generated
  */
 public class EefSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected static EefPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EefSwitch() {
@@ -92,8 +93,9 @@ public class EefSwitch<T> extends Switch<T> {
 
 	/**
 	 * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @parameter ePackage the package in question.
+	 * 
+	 * @param ePackage
+	 *            the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -105,7 +107,7 @@ public class EefSwitch<T> extends Switch<T> {
 	/**
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
 	 * result. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -177,6 +179,14 @@ public class EefSwitch<T> extends Switch<T> {
 		case EefPackage.EEF_GROUP_DESCRIPTION: {
 			EEFGroupDescription eefGroupDescription = (EEFGroupDescription) theEObject;
 			T result = caseEEFGroupDescription(eefGroupDescription);
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case EefPackage.EEF_TOOLBAR_ACTION: {
+			EEFToolbarAction eefToolbarAction = (EEFToolbarAction) theEObject;
+			T result = caseEEFToolbarAction(eefToolbarAction);
 			if (result == null) {
 				result = defaultCase(theEObject);
 			}
@@ -717,14 +727,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Property Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -733,14 +743,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Semantic Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -760,6 +770,21 @@ public class EefSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEEFGroupDescription(EEFGroupDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Toolbar Action</em>'. <!--
+	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Toolbar Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEEFToolbarAction(EEFToolbarAction object) {
 		return null;
 	}
 
@@ -1322,7 +1347,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
@@ -1382,7 +1407,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch, but this is the last case
 	 * anyway. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

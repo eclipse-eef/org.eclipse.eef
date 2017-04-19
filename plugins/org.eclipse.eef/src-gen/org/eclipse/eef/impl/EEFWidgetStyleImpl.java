@@ -25,9 +25,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelForegroundColorExpression <em>Label Foreground Color
  * Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontNameExpression <em>Label Font Name Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontSizeExpression <em>Label Font Size Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontStyleExpression <em>Label Font Style Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontNameExpression <em>Label Font Name
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontSizeExpression <em>Label Font Size
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontStyleExpression <em>Label Font Style
+ * Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,9 +38,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container implements EEFWidgetStyle {
 	/**
-	 * The default value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The default value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getLabelBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -47,7 +50,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -55,9 +58,9 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	protected String labelBackgroundColorExpression = EEFWidgetStyleImpl.LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The default value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getLabelForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -67,7 +70,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -77,7 +80,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The default value of the '{@link #getLabelFontNameExpression() <em>Label Font Name Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelFontNameExpression()
 	 * @generated
 	 * @ordered
@@ -87,7 +90,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelFontNameExpression() <em>Label Font Name Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelFontNameExpression()
 	 * @generated
 	 * @ordered
@@ -97,7 +100,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The default value of the '{@link #getLabelFontSizeExpression() <em>Label Font Size Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelFontSizeExpression()
 	 * @generated
 	 * @ordered
@@ -107,7 +110,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelFontSizeExpression() <em>Label Font Size Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelFontSizeExpression()
 	 * @generated
 	 * @ordered
@@ -117,7 +120,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The default value of the '{@link #getLabelFontStyleExpression() <em>Label Font Style Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelFontStyleExpression()
 	 * @generated
 	 * @ordered
@@ -127,7 +130,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getLabelFontStyleExpression() <em>Label Font Style Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelFontStyleExpression()
 	 * @generated
 	 * @ordered
@@ -136,7 +139,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFWidgetStyleImpl() {
@@ -145,7 +148,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +158,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,7 +168,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -180,7 +183,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -190,7 +193,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -205,7 +208,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -215,7 +218,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,14 +226,14 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 		String oldLabelFontNameExpression = labelFontNameExpression;
 		labelFontNameExpression = newLabelFontNameExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION,
-					oldLabelFontNameExpression, labelFontNameExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION, oldLabelFontNameExpression,
+					labelFontNameExpression));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -240,7 +243,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,14 +251,14 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 		String oldLabelFontSizeExpression = labelFontSizeExpression;
 		labelFontSizeExpression = newLabelFontSizeExpression;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION,
-					oldLabelFontSizeExpression, labelFontSizeExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION, oldLabelFontSizeExpression,
+					labelFontSizeExpression));
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -265,7 +268,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -280,7 +283,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -302,7 +305,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -329,7 +332,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -356,7 +359,7 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -370,20 +373,20 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 					: !EEFWidgetStyleImpl.LABEL_FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(labelForegroundColorExpression);
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_NAME_EXPRESSION:
 			return EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT == null ? labelFontNameExpression != null
-			: !EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT.equals(labelFontNameExpression);
+					: !EEFWidgetStyleImpl.LABEL_FONT_NAME_EXPRESSION_EDEFAULT.equals(labelFontNameExpression);
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_SIZE_EXPRESSION:
 			return EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT == null ? labelFontSizeExpression != null
-			: !EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT.equals(labelFontSizeExpression);
+					: !EEFWidgetStyleImpl.LABEL_FONT_SIZE_EXPRESSION_EDEFAULT.equals(labelFontSizeExpression);
 		case EefPackage.EEF_WIDGET_STYLE__LABEL_FONT_STYLE_EXPRESSION:
 			return EEFWidgetStyleImpl.LABEL_FONT_STYLE_EXPRESSION_EDEFAULT == null ? labelFontStyleExpression != null
-			: !EEFWidgetStyleImpl.LABEL_FONT_STYLE_EXPRESSION_EDEFAULT.equals(labelFontStyleExpression);
+					: !EEFWidgetStyleImpl.LABEL_FONT_STYLE_EXPRESSION_EDEFAULT.equals(labelFontStyleExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

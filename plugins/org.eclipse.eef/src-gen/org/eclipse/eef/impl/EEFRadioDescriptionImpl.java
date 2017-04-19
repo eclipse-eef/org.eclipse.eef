@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -46,7 +46,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -106,7 +106,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The default value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -116,7 +116,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The cached value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -126,7 +126,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -146,7 +146,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The cached value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getNumberOfColumns()
 	 * @generated
 	 * @ordered
@@ -156,7 +156,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -165,7 +165,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRadioDescriptionImpl() {
@@ -174,7 +174,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -194,7 +194,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -219,7 +219,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -234,7 +234,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -244,7 +244,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -259,7 +259,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -284,7 +284,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -294,8 +294,8 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 			style = (EEFRadioStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
 					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
 				}
@@ -312,7 +312,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFRadioStyle basicGetStyle() {
@@ -321,7 +321,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFRadioStyle newStyle, NotificationChain msgs) {
@@ -341,7 +341,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -349,12 +349,12 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_RADIO_DESCRIPTION__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -367,7 +367,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -377,7 +377,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -392,13 +392,13 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFRadioConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFRadioConditionalStyle>(EEFRadioConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFRadioConditionalStyle.class, this,
 					EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -406,7 +406,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -422,7 +422,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -451,7 +451,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -486,7 +486,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -519,7 +519,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -527,16 +527,16 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 		switch (featureID) {
 		case EefPackage.EEF_RADIO_DESCRIPTION__VALUE_EXPRESSION:
 			return EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-			: !EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+					: !EEFRadioDescriptionImpl.VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__EDIT_EXPRESSION:
 			return EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-			: !EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+					: !EEFRadioDescriptionImpl.EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATES_EXPRESSION:
 			return EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT == null ? candidatesExpression != null
-			: !EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
+					: !EEFRadioDescriptionImpl.CANDIDATES_EXPRESSION_EDEFAULT.equals(candidatesExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__CANDIDATE_DISPLAY_EXPRESSION:
 			return EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT == null ? candidateDisplayExpression != null
-			: !EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
+					: !EEFRadioDescriptionImpl.CANDIDATE_DISPLAY_EXPRESSION_EDEFAULT.equals(candidateDisplayExpression);
 		case EefPackage.EEF_RADIO_DESCRIPTION__STYLE:
 			return style != null;
 		case EefPackage.EEF_RADIO_DESCRIPTION__NUMBER_OF_COLUMNS:
@@ -549,7 +549,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

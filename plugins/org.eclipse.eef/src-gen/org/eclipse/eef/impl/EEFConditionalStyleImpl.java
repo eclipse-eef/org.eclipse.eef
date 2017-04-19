@@ -20,10 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
+ * </ul>
  *
  * @generated
  */
@@ -50,7 +51,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFConditionalStyleImpl() {
@@ -59,7 +60,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,7 +70,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,7 +80,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,7 +95,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,7 +109,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,7 +124,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -138,7 +139,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,14 +147,14 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 		switch (featureID) {
 		case EefPackage.EEF_CONDITIONAL_STYLE__PRECONDITION_EXPRESSION:
 			return EEFConditionalStyleImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
-			: !EEFConditionalStyleImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+					: !EEFConditionalStyleImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

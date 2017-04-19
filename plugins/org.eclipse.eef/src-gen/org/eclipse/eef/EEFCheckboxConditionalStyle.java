@@ -17,10 +17,10 @@ package org.eclipse.eef;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFCheckboxConditionalStyle#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFCheckboxConditionalStyle()
  * @model
@@ -34,7 +34,7 @@ public interface EEFCheckboxConditionalStyle extends EEFConditionalStyle {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFCheckboxStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFCheckboxConditionalStyle_Style()
@@ -46,7 +46,7 @@ public interface EEFCheckboxConditionalStyle extends EEFConditionalStyle {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFCheckboxConditionalStyle#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()

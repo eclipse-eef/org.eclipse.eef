@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFFillLayoutDescriptionImpl#getOrientation <em>Orientation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -31,7 +31,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	/**
 	 * The default value of the '{@link #getOrientation() <em>Orientation</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getOrientation()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	/**
 	 * The cached value of the '{@link #getOrientation() <em>Orientation</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getOrientation()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFFillLayoutDescriptionImpl() {
@@ -59,7 +59,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,7 +151,7 @@ public class EEFFillLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

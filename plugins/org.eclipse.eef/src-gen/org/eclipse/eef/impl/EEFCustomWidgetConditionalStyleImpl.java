@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFCustomWidgetConditionalStyleImpl#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -33,7 +33,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCustomWidgetConditionalStyleImpl() {
@@ -51,7 +51,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,7 +61,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,8 +71,8 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 			style = (EEFCustomWidgetStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
 					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE,
 							null, msgs);
@@ -81,7 +81,8 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 					msgs.dispatch();
 				}
 				if (eNotificationRequired()) {
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, oldStyle, style));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, oldStyle,
+							style));
 				}
 			}
 		}
@@ -90,7 +91,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFCustomWidgetStyle basicGetStyle() {
@@ -99,7 +100,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFCustomWidgetStyle newStyle, NotificationChain msgs) {
@@ -119,7 +120,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -127,12 +128,12 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CUSTOM_WIDGET_CONDITIONAL_STYLE__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -145,7 +146,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,7 +160,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,7 +177,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,7 +192,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +207,7 @@ public class EEFCustomWidgetConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

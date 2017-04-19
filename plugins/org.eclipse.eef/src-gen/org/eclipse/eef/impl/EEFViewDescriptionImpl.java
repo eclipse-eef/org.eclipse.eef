@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getPages <em>Pages</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFViewDescriptionImpl#getEPackages <em>EPackages</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -47,7 +47,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -77,7 +77,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -87,7 +87,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The default value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getImageExpression()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getImageExpression()
 	 * @generated
 	 * @ordered
@@ -107,7 +107,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getGroups()
 	 * @generated
 	 * @ordered
@@ -117,7 +117,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getPages() <em>Pages</em>}' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPages()
 	 * @generated
 	 * @ordered
@@ -127,7 +127,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * The cached value of the '{@link #getEPackages() <em>EPackages</em>}' reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getEPackages()
 	 * @generated
 	 * @ordered
@@ -136,7 +136,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFViewDescriptionImpl() {
@@ -145,7 +145,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -189,7 +189,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -204,7 +204,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -229,13 +229,13 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFGroupDescription> getGroups() {
 		if (groups == null) {
-			groups = new EObjectContainmentEList.Resolving<EEFGroupDescription>(EEFGroupDescription.class, this,
+			groups = new EObjectContainmentEList.Resolving<>(EEFGroupDescription.class, this,
 					EefPackage.EEF_VIEW_DESCRIPTION__GROUPS);
 		}
 		return groups;
@@ -243,33 +243,33 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFPageDescription> getPages() {
 		if (pages == null) {
-			pages = new EObjectContainmentEList.Resolving<EEFPageDescription>(EEFPageDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
+			pages = new EObjectContainmentEList.Resolving<>(EEFPageDescription.class, this, EefPackage.EEF_VIEW_DESCRIPTION__PAGES);
 		}
 		return pages;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EPackage> getEPackages() {
 		if (ePackages == null) {
-			ePackages = new EObjectResolvingEList<EPackage>(EPackage.class, this, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
+			ePackages = new EObjectResolvingEList<>(EPackage.class, this, EefPackage.EEF_VIEW_DESCRIPTION__EPACKAGES);
 		}
 		return ePackages;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -285,7 +285,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -309,7 +309,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -343,7 +343,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -373,21 +373,21 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_VIEW_DESCRIPTION__IDENTIFIER:
-			return EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFViewDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		case EefPackage.EEF_VIEW_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-			: !EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+					: !EEFViewDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_VIEW_DESCRIPTION__IMAGE_EXPRESSION:
 			return EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT == null ? imageExpression != null
-			: !EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
+					: !EEFViewDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
 		case EefPackage.EEF_VIEW_DESCRIPTION__GROUPS:
 			return groups != null && !groups.isEmpty();
 		case EefPackage.EEF_VIEW_DESCRIPTION__PAGES:
@@ -400,7 +400,7 @@ public class EEFViewDescriptionImpl extends MinimalEObjectImpl.Container impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

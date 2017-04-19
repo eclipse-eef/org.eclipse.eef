@@ -16,6 +16,7 @@ import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFGroupStyle;
 import org.eclipse.eef.EEFPropertyValidationRuleDescription;
 import org.eclipse.eef.EEFSemanticValidationRuleDescription;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -32,22 +33,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getDomainClass <em>Domain Class</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticCandidateExpression <em>Semantic Candidate
  * Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getControls <em>Controls</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation Rules
- * </em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation Rules
- * </em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getSemanticValidationRules <em>Semantic Validation
+ * Rules</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getPropertyValidationRules <em>Property Validation
+ * Rules</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupDescriptionImpl#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -55,7 +58,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -65,7 +68,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -75,7 +78,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The default value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -85,7 +88,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getLabelExpression() <em>Label Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLabelExpression()
 	 * @generated
 	 * @ordered
@@ -95,7 +98,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The default value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDomainClass()
 	 * @generated
 	 * @ordered
@@ -105,7 +108,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getDomainClass() <em>Domain Class</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getDomainClass()
 	 * @generated
 	 * @ordered
@@ -115,7 +118,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The default value of the '{@link #getSemanticCandidateExpression() <em>Semantic Candidate Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSemanticCandidateExpression()
 	 * @generated
 	 * @ordered
@@ -125,7 +128,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getSemanticCandidateExpression() <em>Semantic Candidate Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSemanticCandidateExpression()
 	 * @generated
 	 * @ordered
@@ -165,7 +168,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getSemanticValidationRules() <em>Semantic Validation Rules</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getSemanticValidationRules()
 	 * @generated
 	 * @ordered
@@ -175,7 +178,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getPropertyValidationRules() <em>Property Validation Rules</em>}' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPropertyValidationRules()
 	 * @generated
 	 * @ordered
@@ -185,7 +188,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -195,7 +198,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -203,8 +206,18 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 	protected EList<EEFGroupConditionalStyle> conditionalStyles;
 
 	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EEFToolbarAction> actions;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGroupDescriptionImpl() {
@@ -213,7 +226,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,7 +236,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -233,7 +246,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -247,7 +260,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -257,7 +270,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -272,7 +285,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -282,7 +295,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -296,7 +309,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -306,7 +319,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -321,7 +334,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -331,7 +344,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -346,13 +359,13 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFControlDescription> getControls() {
 		if (controls == null) {
-			controls = new EObjectContainmentEList.Resolving<EEFControlDescription>(EEFControlDescription.class, this,
+			controls = new EObjectContainmentEList.Resolving<>(EEFControlDescription.class, this,
 					EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS);
 		}
 		return controls;
@@ -360,13 +373,13 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFSemanticValidationRuleDescription> getSemanticValidationRules() {
 		if (semanticValidationRules == null) {
-			semanticValidationRules = new EObjectContainmentEList.Resolving<EEFSemanticValidationRuleDescription>(
+			semanticValidationRules = new EObjectContainmentEList.Resolving<>(
 					EEFSemanticValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
 		}
 		return semanticValidationRules;
@@ -374,13 +387,13 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFPropertyValidationRuleDescription> getPropertyValidationRules() {
 		if (propertyValidationRules == null) {
-			propertyValidationRules = new EObjectContainmentEList.Resolving<EEFPropertyValidationRuleDescription>(
+			propertyValidationRules = new EObjectContainmentEList.Resolving<>(
 					EEFPropertyValidationRuleDescription.class, this, EefPackage.EEF_GROUP_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		}
 		return propertyValidationRules;
@@ -388,7 +401,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -398,8 +411,8 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			style = (EEFGroupStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
 					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
 				}
@@ -416,7 +429,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFGroupStyle basicGetStyle() {
@@ -425,7 +438,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFGroupStyle newStyle, NotificationChain msgs) {
@@ -445,7 +458,7 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -453,12 +466,12 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_GROUP_DESCRIPTION__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -471,13 +484,13 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFGroupConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFGroupConditionalStyle>(EEFGroupConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFGroupConditionalStyle.class, this,
 					EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -485,7 +498,21 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EList<EEFToolbarAction> getActions() {
+		if (actions == null) {
+			actions = new EObjectContainmentEList.Resolving<>(EEFToolbarAction.class, this,
+					EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS);
+		}
+		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -501,13 +528,15 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return basicSetStyle(null, msgs);
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
 			return ((InternalEList<?>) getConditionalStyles()).basicRemove(otherEnd, msgs);
+		case EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS:
+			return ((InternalEList<?>) getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -536,13 +565,15 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return basicGetStyle();
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
 			return getConditionalStyles();
+		case EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS:
+			return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -583,13 +614,17 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			getConditionalStyles().clear();
 			getConditionalStyles().addAll((Collection<? extends EEFGroupConditionalStyle>) newValue);
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			getActions().addAll((Collection<? extends EEFToolbarAction>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -625,33 +660,36 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
 			getConditionalStyles().clear();
 			return;
+		case EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS:
+			getActions().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_DESCRIPTION__IDENTIFIER:
-			return EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFGroupDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		case EefPackage.EEF_GROUP_DESCRIPTION__LABEL_EXPRESSION:
 			return EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT == null ? labelExpression != null
-			: !EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
+					: !EEFGroupDescriptionImpl.LABEL_EXPRESSION_EDEFAULT.equals(labelExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__DOMAIN_CLASS:
-			return EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null : !EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT
-			.equals(domainClass);
+			return EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT == null ? domainClass != null
+					: !EEFGroupDescriptionImpl.DOMAIN_CLASS_EDEFAULT.equals(domainClass);
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_CANDIDATE_EXPRESSION:
 			return EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT == null ? semanticCandidateExpression != null
-			: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
+					: !EEFGroupDescriptionImpl.SEMANTIC_CANDIDATE_EXPRESSION_EDEFAULT.equals(semanticCandidateExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__PRECONDITION_EXPRESSION:
 			return EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT == null ? preconditionExpression != null
-			: !EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
+					: !EEFGroupDescriptionImpl.PRECONDITION_EXPRESSION_EDEFAULT.equals(preconditionExpression);
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONTROLS:
 			return controls != null && !controls.isEmpty();
 		case EefPackage.EEF_GROUP_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
@@ -662,13 +700,15 @@ public class EEFGroupDescriptionImpl extends MinimalEObjectImpl.Container implem
 			return style != null;
 		case EefPackage.EEF_GROUP_DESCRIPTION__CONDITIONAL_STYLES:
 			return conditionalStyles != null && !conditionalStyles.isEmpty();
+		case EefPackage.EEF_GROUP_DESCRIPTION__ACTIONS:
+			return actions != null && !actions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

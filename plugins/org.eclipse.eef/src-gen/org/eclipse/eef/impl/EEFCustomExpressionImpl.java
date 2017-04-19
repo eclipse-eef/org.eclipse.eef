@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFCustomExpressionImpl#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFCustomExpressionImpl#getCustomExpression <em>Custom Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -32,7 +32,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCustomExpressionImpl() {
@@ -80,7 +80,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +90,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,7 +100,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,7 +173,7 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,25 +191,25 @@ public class EEFCustomExpressionImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CUSTOM_EXPRESSION__IDENTIFIER:
-			return EEFCustomExpressionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFCustomExpressionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFCustomExpressionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFCustomExpressionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		case EefPackage.EEF_CUSTOM_EXPRESSION__CUSTOM_EXPRESSION:
 			return EEFCustomExpressionImpl.CUSTOM_EXPRESSION_EDEFAULT == null ? customExpression != null
-			: !EEFCustomExpressionImpl.CUSTOM_EXPRESSION_EDEFAULT.equals(customExpression);
+					: !EEFCustomExpressionImpl.CUSTOM_EXPRESSION_EDEFAULT.equals(customExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

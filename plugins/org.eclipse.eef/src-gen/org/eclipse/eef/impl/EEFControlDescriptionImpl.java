@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFControlDescriptionImpl#getIdentifier <em>Identifier</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -31,7 +31,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 	/**
 	 * The cached value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIdentifier()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFControlDescriptionImpl() {
@@ -59,7 +59,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,7 +69,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,7 +79,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,7 +107,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -122,7 +122,7 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,22 +137,22 @@ public abstract class EEFControlDescriptionImpl extends MinimalEObjectImpl.Conta
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case EefPackage.EEF_CONTROL_DESCRIPTION__IDENTIFIER:
-			return EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null : !EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT
-			.equals(identifier);
+			return EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT == null ? identifier != null
+					: !EEFControlDescriptionImpl.IDENTIFIER_EDEFAULT.equals(identifier);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

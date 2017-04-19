@@ -20,8 +20,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFLabelStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFLabelStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFLabelStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFLabelStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFLabelStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>
@@ -34,7 +36,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 	/**
 	 * The default value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -44,7 +46,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 	/**
 	 * The cached value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -54,7 +56,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 	/**
 	 * The default value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -64,7 +66,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 	/**
 	 * The cached value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -133,7 +135,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFLabelStyleImpl() {
@@ -142,7 +144,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,7 +154,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -162,7 +164,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,7 +179,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -187,7 +189,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,7 +204,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -212,7 +214,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -227,7 +229,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -237,7 +239,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -252,7 +254,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -262,7 +264,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -277,7 +279,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -299,7 +301,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -326,7 +328,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -353,7 +355,7 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -361,26 +363,26 @@ public class EEFLabelStyleImpl extends EEFWidgetStyleImpl implements EEFLabelSty
 		switch (featureID) {
 		case EefPackage.EEF_LABEL_STYLE__BACKGROUND_COLOR_EXPRESSION:
 			return EEFLabelStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
-			: !EEFLabelStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
+					: !EEFLabelStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
 		case EefPackage.EEF_LABEL_STYLE__FOREGROUND_COLOR_EXPRESSION:
 			return EEFLabelStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? foregroundColorExpression != null
-			: !EEFLabelStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
+					: !EEFLabelStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
 		case EefPackage.EEF_LABEL_STYLE__FONT_NAME_EXPRESSION:
 			return EEFLabelStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null
-			: !EEFLabelStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
+					: !EEFLabelStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
 		case EefPackage.EEF_LABEL_STYLE__FONT_SIZE_EXPRESSION:
 			return EEFLabelStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null
-			: !EEFLabelStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
+					: !EEFLabelStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
 		case EefPackage.EEF_LABEL_STYLE__FONT_STYLE_EXPRESSION:
 			return EEFLabelStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT == null ? fontStyleExpression != null
-			: !EEFLabelStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
+					: !EEFLabelStyleImpl.FONT_STYLE_EXPRESSION_EDEFAULT.equals(fontStyleExpression);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -23,8 +23,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBarStyle <em>Bar Style</em>}</li>
@@ -38,7 +40,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The default value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -48,7 +50,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -58,7 +60,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The default value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -68,7 +70,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -118,7 +120,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The default value of the '{@link #getBarStyle() <em>Bar Style</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getBarStyle()
 	 * @generated
 	 * @ordered
@@ -128,7 +130,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getBarStyle() <em>Bar Style</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getBarStyle()
 	 * @generated
 	 * @ordered
@@ -138,7 +140,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The default value of the '{@link #getToggleStyle() <em>Toggle Style</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getToggleStyle()
 	 * @generated
 	 * @ordered
@@ -148,7 +150,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 	/**
 	 * The cached value of the '{@link #getToggleStyle() <em>Toggle Style</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getToggleStyle()
 	 * @generated
 	 * @ordered
@@ -177,7 +179,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGroupStyleImpl() {
@@ -186,7 +188,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -196,7 +198,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +208,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -221,7 +223,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -231,7 +233,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,7 +248,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -256,7 +258,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -271,7 +273,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -281,7 +283,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -296,7 +298,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -306,7 +308,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -320,7 +322,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -330,7 +332,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -344,7 +346,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -354,7 +356,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -369,7 +371,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -395,7 +397,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -428,7 +430,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -461,7 +463,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -469,16 +471,16 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 		switch (featureID) {
 		case EefPackage.EEF_GROUP_STYLE__BACKGROUND_COLOR_EXPRESSION:
 			return EEFGroupStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT == null ? backgroundColorExpression != null
-			: !EEFGroupStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
+					: !EEFGroupStyleImpl.BACKGROUND_COLOR_EXPRESSION_EDEFAULT.equals(backgroundColorExpression);
 		case EefPackage.EEF_GROUP_STYLE__FOREGROUND_COLOR_EXPRESSION:
 			return EEFGroupStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT == null ? foregroundColorExpression != null
-			: !EEFGroupStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
+					: !EEFGroupStyleImpl.FOREGROUND_COLOR_EXPRESSION_EDEFAULT.equals(foregroundColorExpression);
 		case EefPackage.EEF_GROUP_STYLE__FONT_NAME_EXPRESSION:
 			return EEFGroupStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT == null ? fontNameExpression != null
-			: !EEFGroupStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
+					: !EEFGroupStyleImpl.FONT_NAME_EXPRESSION_EDEFAULT.equals(fontNameExpression);
 		case EefPackage.EEF_GROUP_STYLE__FONT_SIZE_EXPRESSION:
 			return EEFGroupStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT == null ? fontSizeExpression != null
-			: !EEFGroupStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
+					: !EEFGroupStyleImpl.FONT_SIZE_EXPRESSION_EDEFAULT.equals(fontSizeExpression);
 		case EefPackage.EEF_GROUP_STYLE__BAR_STYLE:
 			return barStyle != EEFGroupStyleImpl.BAR_STYLE_EDEFAULT;
 		case EefPackage.EEF_GROUP_STYLE__TOGGLE_STYLE:
@@ -491,7 +493,7 @@ public class EEFGroupStyleImpl extends MinimalEObjectImpl.Container implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

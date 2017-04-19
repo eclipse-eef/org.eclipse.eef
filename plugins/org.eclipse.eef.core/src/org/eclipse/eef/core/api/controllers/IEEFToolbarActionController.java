@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2017 Obeo.
+ * Copyright (c) 2016 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,11 +10,23 @@
  *******************************************************************************/
 package org.eclipse.eef.core.api.controllers;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.eef.EEFToolbarAction;
+
 /**
- * The controller of the section.
+ * The EEFToolbarActionController is responsible of supporting the execution of the action.
  *
- * @author sbegaudeau
+ * @author arichard
+ *
  */
-public interface IEEFSectionController extends IEEFController, IEEFToolbarActionController {
-	// do nothing for now
+public interface IEEFToolbarActionController {
+
+	/**
+	 * Invoked when the user clicks on an action button.
+	 *
+	 * @param action
+	 *            Toolbar action
+	 * @return the status of the action execution
+	 */
+	IStatus action(EEFToolbarAction action);
 }

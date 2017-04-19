@@ -22,10 +22,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFCheckboxConditionalStyleImpl#getStyle <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -33,7 +33,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -42,7 +42,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxConditionalStyleImpl() {
@@ -51,7 +51,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,7 +61,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,11 +71,11 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 			style = (EEFCheckboxStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE,
-							null, msgs);
+					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, null,
+							msgs);
 				}
 				if (msgs != null) {
 					msgs.dispatch();
@@ -90,7 +90,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFCheckboxStyle basicGetStyle() {
@@ -99,15 +99,15 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFCheckboxStyle newStyle, NotificationChain msgs) {
 		EEFCheckboxStyle oldStyle = style;
 		style = newStyle;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE,
-					oldStyle, newStyle);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, oldStyle,
+					newStyle);
 			if (msgs == null) {
 				msgs = notification;
 			} else {
@@ -119,7 +119,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -127,12 +127,12 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefPackage.EEF_CHECKBOX_CONDITIONAL_STYLE__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -145,7 +145,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,7 +176,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,7 +191,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +206,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
