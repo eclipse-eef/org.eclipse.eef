@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87bd33cc_872b71b8",
+        "filename": "plugins/org.eclipse.eef.common/src/org/eclipse/eef/common/api/utils/Util.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2017-04-19T08:30:25Z",
+      "side": 1,
+      "message": "Typo: \"filter\"",
+      "range": {
+        "startLine": 59,
+        "startChar": 49,
+        "endLine": 59,
+        "endChar": 54
+      },
+      "revId": "0f911baaff3f882583e7f44c9c3c6dbe194169cd",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
