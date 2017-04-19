@@ -48,6 +48,7 @@ import org.eclipse.eef.EEFSemanticValidationRuleDescription;
 import org.eclipse.eef.EEFTextConditionalStyle;
 import org.eclipse.eef.EEFTextDescription;
 import org.eclipse.eef.EEFTextStyle;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EEFValidationFixDescription;
 import org.eclipse.eef.EEFViewDescription;
 import org.eclipse.eef.EEFWidgetAction;
@@ -118,6 +119,8 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 			return createEEFSemanticValidationRuleDescription();
 		case EefPackage.EEF_GROUP_DESCRIPTION:
 			return createEEFGroupDescription();
+		case EefPackage.EEF_TOOLBAR_ACTION:
+			return createEEFToolbarAction();
 		case EefPackage.EEF_CONTAINER_DESCRIPTION:
 			return createEEFContainerDescription();
 		case EefPackage.EEF_FILL_LAYOUT_DESCRIPTION:
@@ -312,6 +315,17 @@ public class EefFactoryImpl extends EFactoryImpl implements EefFactory {
 	public EEFGroupDescription createEEFGroupDescription() {
 		EEFGroupDescriptionImpl eefGroupDescription = new EEFGroupDescriptionImpl();
 		return eefGroupDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EEFToolbarAction createEEFToolbarAction() {
+		EEFToolbarActionImpl eefToolbarAction = new EEFToolbarActionImpl();
+		return eefToolbarAction;
 	}
 
 	/**

@@ -33,8 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getCandidateDisplayExpression
- * <em>Candidate Display Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -352,7 +352,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	@Override
 	public EList<EEFSelectConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFSelectConditionalStyle>(EEFSelectConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFSelectConditionalStyle.class, this,
 					EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;

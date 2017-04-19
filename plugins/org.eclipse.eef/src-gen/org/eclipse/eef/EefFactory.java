@@ -86,6 +86,14 @@ public interface EefFactory extends EFactory {
 	EEFGroupDescription createEEFGroupDescription();
 
 	/**
+	 * Returns a new object of class '<em>EEF Toolbar Action</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return a new object of class '<em>EEF Toolbar Action</em>'.
+	 * @generated
+	 */
+	EEFToolbarAction createEEFToolbarAction();
+
+	/**
 	 * Returns a new object of class '<em>EEF Container Description</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return a new object of class '<em>EEF Container Description</em>'.

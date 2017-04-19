@@ -20,26 +20,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelBackgroundColorExpression <em>Label Background Color
  * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelForegroundColorExpression <em>Label Foreground Color
  * Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontNameExpression <em>Label Font Name Expression</em>}
- * </li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontSizeExpression <em>Label Font Size Expression</em>}
- * </li>
- * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontStyleExpression <em>Label Font Style Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontNameExpression <em>Label Font Name
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontSizeExpression <em>Label Font Size
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFWidgetStyleImpl#getLabelFontStyleExpression <em>Label Font Style
+ * Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container implements EEFWidgetStyle {
 	/**
-	 * The default value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getLabelBackgroundColorExpression() <em>Label Background Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see #getLabelBackgroundColorExpression()
 	 * @generated
@@ -58,8 +58,8 @@ public abstract class EEFWidgetStyleImpl extends MinimalEObjectImpl.Container im
 	protected String labelBackgroundColorExpression = EEFWidgetStyleImpl.LABEL_BACKGROUND_COLOR_EXPRESSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getLabelForegroundColorExpression() <em>Label Foreground Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see #getLabelForegroundColorExpression()
 	 * @generated

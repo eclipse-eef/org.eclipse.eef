@@ -85,4 +85,9 @@ public interface Icons {
 	 * Permission No Write.
 	 */
 	String PERMISSION_NO_WRITE = "icons/full/permission_no_write.gif"; //$NON-NLS-1$
+
+	/**
+	 * Placeholder.
+	 */
+	String PLACEHOLDER = "icons/full/placeholder.gif"; //$NON-NLS-1$
 }

@@ -102,8 +102,8 @@ public class EEFRuleAuditDescriptionItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFRuleAuditDescription) object).getAuditExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFRuleAuditDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFRuleAuditDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFRuleAuditDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFRuleAuditDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

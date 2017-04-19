@@ -11,7 +11,7 @@ package org.eclipse.eef.provider;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.eef.EEFValidationFixDescription;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
@@ -29,19 +29,19 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.eef.EEFValidationFixDescription} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
- *
+ * This is the item provider adapter for a {@link org.eclipse.eef.EEFToolbarAction} object. <!-- begin-user-doc --> <!--
+ * end-user-doc -->
+ * 
  * @generated
  */
-public class EEFValidationFixDescriptionItemProvider extends ItemProviderAdapter
+public class EEFToolbarActionItemProvider extends ItemProviderAdapter
 		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public EEFValidationFixDescriptionItemProvider(AdapterFactory adapterFactory) {
+	public EEFToolbarActionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,48 +55,60 @@ public class EEFValidationFixDescriptionItemProvider extends ItemProviderAdapter
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addFixExpressionPropertyDescriptor(object);
+			addTooltipExpressionPropertyDescriptor(object);
+			addImageExpressionPropertyDescriptor(object);
+			addActionExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Tooltip Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addTooltipExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_EEFValidationFixDescription_name_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFValidationFixDescription_name_feature", //$NON-NLS-1$//$NON-NLS-2$
-						"_UI_EEFValidationFixDescription_type"), //$NON-NLS-1$
-				EefPackage.Literals.EEF_VALIDATION_FIX_DESCRIPTION__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				getResourceLocator(), getString("_UI_EEFToolbarAction_tooltipExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFToolbarAction_tooltipExpression_feature", "_UI_EEFToolbarAction_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_TOOLBAR_ACTION__TOOLTIP_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Fix Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Image Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addFixExpressionPropertyDescriptor(Object object) {
+	protected void addImageExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-				getResourceLocator(), getString("_UI_EEFValidationFixDescription_fixExpression_feature"), //$NON-NLS-1$
-				getString("_UI_PropertyDescriptor_description", "_UI_EEFValidationFixDescription_fixExpression_feature", //$NON-NLS-1$//$NON-NLS-2$
-						"_UI_EEFValidationFixDescription_type"), //$NON-NLS-1$
-				EefPackage.Literals.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				null, null));
+				getResourceLocator(), getString("_UI_EEFToolbarAction_imageExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFToolbarAction_imageExpression_feature", "_UI_EEFToolbarAction_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_TOOLBAR_ACTION__IMAGE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
 	}
 
 	/**
-	 * This returns EEFValidationFixDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Action Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addActionExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFToolbarAction_actionExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFToolbarAction_actionExpression_feature", "_UI_EEFToolbarAction_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
+	}
+
+	/**
+	 * This returns EEFToolbarAction.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFValidationFixDescription")); //$NON-NLS-1$
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/EEFToolbarAction")); //$NON-NLS-1$
 	}
 
 	/**
@@ -116,9 +128,9 @@ public class EEFValidationFixDescriptionItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EEFValidationFixDescription) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_EEFValidationFixDescription_type") : //$NON-NLS-1$
-				getString("_UI_EEFValidationFixDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((EEFToolbarAction) object).getTooltipExpression();
+		return label == null || label.length() == 0 ? getString("_UI_EEFToolbarAction_type") : //$NON-NLS-1$
+				getString("_UI_EEFToolbarAction_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -132,9 +144,10 @@ public class EEFValidationFixDescriptionItemProvider extends ItemProviderAdapter
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EEFValidationFixDescription.class)) {
-		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__NAME:
-		case EefPackage.EEF_VALIDATION_FIX_DESCRIPTION__FIX_EXPRESSION:
+		switch (notification.getFeatureID(EEFToolbarAction.class)) {
+		case EefPackage.EEF_TOOLBAR_ACTION__TOOLTIP_EXPRESSION:
+		case EefPackage.EEF_TOOLBAR_ACTION__IMAGE_EXPRESSION:
+		case EefPackage.EEF_TOOLBAR_ACTION__ACTION_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

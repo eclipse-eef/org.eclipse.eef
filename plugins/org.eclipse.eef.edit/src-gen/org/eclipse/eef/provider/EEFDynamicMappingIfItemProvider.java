@@ -135,8 +135,8 @@ public class EEFDynamicMappingIfItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFDynamicMappingIf) object).getPredicateExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingIf_type") //$NON-NLS-1$
-				: getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingIf_type") : //$NON-NLS-1$
+				getString("_UI_EEFDynamicMappingIf_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

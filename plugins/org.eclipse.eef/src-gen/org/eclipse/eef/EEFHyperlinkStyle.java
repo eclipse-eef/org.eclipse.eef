@@ -16,14 +16,13 @@ package org.eclipse.eef;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.EEFHyperlinkStyle#getBackgroundColorExpression <em>Background Color Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFHyperlinkStyle#getForegroundColorExpression <em>Foreground Color Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFHyperlinkStyle#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFHyperlinkStyle#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFHyperlinkStyle#getFontStyleExpression <em>Font Style Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.eef.EefPackage#getEEFHyperlinkStyle()
  * @model
@@ -44,8 +43,8 @@ public interface EEFHyperlinkStyle extends EEFWidgetStyle {
 	String getBackgroundColorExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getBackgroundColorExpression
-	 * <em>Background Color Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getBackgroundColorExpression <em>Background Color
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Background Color Expression</em>' attribute.
@@ -67,8 +66,8 @@ public interface EEFHyperlinkStyle extends EEFWidgetStyle {
 	String getFontNameExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getFontNameExpression
-	 * <em>Font Name Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getFontNameExpression <em>Font Name
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Font Name Expression</em>' attribute.
@@ -90,8 +89,8 @@ public interface EEFHyperlinkStyle extends EEFWidgetStyle {
 	String getFontSizeExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getFontSizeExpression
-	 * <em>Font Size Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getFontSizeExpression <em>Font Size
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Font Size Expression</em>' attribute.
@@ -113,8 +112,8 @@ public interface EEFHyperlinkStyle extends EEFWidgetStyle {
 	String getFontStyleExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getFontStyleExpression
-	 * <em>Font Style Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkStyle#getFontStyleExpression <em>Font Style
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Font Style Expression</em>' attribute.

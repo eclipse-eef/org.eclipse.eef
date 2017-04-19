@@ -30,8 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getButtonLabelExpression <em>Button Label Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getButtonLabelExpression <em>Button Label
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getPushExpression <em>Push Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
@@ -260,7 +260,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	@Override
 	public EList<EEFButtonConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFButtonConditionalStyle>(EEFButtonConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFButtonConditionalStyle.class, this,
 					EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;

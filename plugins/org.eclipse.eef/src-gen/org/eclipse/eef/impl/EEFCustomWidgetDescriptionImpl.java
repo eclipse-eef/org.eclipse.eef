@@ -96,7 +96,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	@Override
 	public EList<EEFCustomExpression> getCustomExpressions() {
 		if (customExpressions == null) {
-			customExpressions = new EObjectContainmentEList.Resolving<EEFCustomExpression>(EEFCustomExpression.class, this,
+			customExpressions = new EObjectContainmentEList.Resolving<>(EEFCustomExpression.class, this,
 					EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS);
 		}
 		return customExpressions;
@@ -194,7 +194,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	@Override
 	public EList<EEFCustomWidgetConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFCustomWidgetConditionalStyle>(EEFCustomWidgetConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFCustomWidgetConditionalStyle.class, this,
 					EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;

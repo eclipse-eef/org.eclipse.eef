@@ -69,8 +69,8 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getDisplayExpression <em>Display Expression</em>
-	 * }' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getDisplayExpression <em>Display
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Display Expression</em>' attribute.
@@ -93,8 +93,8 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	String getOnClickExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getOnClickExpression
-	 * <em>On Click Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getOnClickExpression <em>On Click
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>On Click Expression</em>' attribute.

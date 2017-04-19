@@ -153,8 +153,8 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFLabelStyle) object).getLabelFontNameExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFLabelStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFLabelStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFLabelStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFLabelStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

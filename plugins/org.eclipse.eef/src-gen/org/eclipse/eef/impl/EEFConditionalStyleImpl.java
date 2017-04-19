@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * </ul>
  *
  * @generated

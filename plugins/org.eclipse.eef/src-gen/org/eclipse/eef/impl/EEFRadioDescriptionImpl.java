@@ -33,8 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidateDisplayExpression
- * <em>Candidate Display Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFRadioDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
@@ -398,7 +398,7 @@ public class EEFRadioDescriptionImpl extends EEFWidgetDescriptionImpl implements
 	@Override
 	public EList<EEFRadioConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFRadioConditionalStyle>(EEFRadioConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFRadioConditionalStyle.class, this,
 					EefPackage.EEF_RADIO_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;

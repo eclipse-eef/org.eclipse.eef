@@ -20,10 +20,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}
- * </li>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>

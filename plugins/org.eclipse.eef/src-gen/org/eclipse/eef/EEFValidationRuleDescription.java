@@ -70,8 +70,8 @@ public interface EEFValidationRuleDescription extends EObject {
 	String getMessageExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression
-	 * <em>Message Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression <em>Message
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Message Expression</em>' attribute.
