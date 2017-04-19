@@ -23,8 +23,8 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate Display
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getNumberOfColumns <em>Number Of Columns</em>}</li>
  * <li>{@link org.eclipse.eef.EEFRadioDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
@@ -95,8 +95,8 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	String getCandidatesExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression
-	 * <em>Candidates Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidatesExpression <em>Candidates
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Candidates Expression</em>' attribute.
@@ -118,8 +118,8 @@ public interface EEFRadioDescription extends EEFWidgetDescription {
 	String getCandidateDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression
-	 * <em>Candidate Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFRadioDescription#getCandidateDisplayExpression <em>Candidate
+	 * Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Candidate Display Expression</em>' attribute.

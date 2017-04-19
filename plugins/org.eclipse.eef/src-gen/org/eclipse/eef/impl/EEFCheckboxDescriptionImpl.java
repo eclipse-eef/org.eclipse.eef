@@ -260,7 +260,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	@Override
 	public EList<EEFCheckboxConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFCheckboxConditionalStyle>(EEFCheckboxConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFCheckboxConditionalStyle.class, this,
 					EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;

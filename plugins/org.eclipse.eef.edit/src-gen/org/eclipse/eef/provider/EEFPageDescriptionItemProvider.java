@@ -159,6 +159,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EefPackage.Literals.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES);
+			childrenFeatures.add(EefPackage.Literals.EEF_PAGE_DESCRIPTION__ACTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -204,8 +205,8 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFPageDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFPageDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFPageDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFPageDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFPageDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -228,6 +229,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES:
+		case EefPackage.EEF_PAGE_DESCRIPTION__ACTIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -246,6 +248,9 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 		newChildDescriptors.add(createChildParameter(EefPackage.Literals.EEF_PAGE_DESCRIPTION__SEMANTIC_VALIDATION_RULES,
 				EefFactory.eINSTANCE.createEEFSemanticValidationRuleDescription()));
+
+		newChildDescriptors
+				.add(createChildParameter(EefPackage.Literals.EEF_PAGE_DESCRIPTION__ACTIONS, EefFactory.eINSTANCE.createEEFToolbarAction()));
 	}
 
 	/**

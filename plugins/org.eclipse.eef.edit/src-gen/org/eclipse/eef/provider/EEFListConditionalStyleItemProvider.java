@@ -108,8 +108,8 @@ public class EEFListConditionalStyleItemProvider extends EEFConditionalStyleItem
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFListConditionalStyle) object).getPreconditionExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFListConditionalStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFListConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFListConditionalStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFListConditionalStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

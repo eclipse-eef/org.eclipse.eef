@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFGroupConditionalStyle;
 import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFGroupStyle;
+import org.eclipse.eef.EEFToolbarAction;
 import org.eclipse.eef.EEF_TITLE_BAR_STYLE;
 import org.eclipse.eef.EEF_TOGGLE_STYLE;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -31,6 +32,8 @@ import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -40,6 +43,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.forms.widgets.Section;
 
 /**
@@ -47,7 +51,7 @@ import org.eclipse.ui.forms.widgets.Section;
  *
  * @author sbegaudeau
  */
-public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
+public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implements IEEFToolbarLifecycleManager {
 
 	/**
 	 * The variable manager.
@@ -206,6 +210,8 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		this.controller = new EEFControllersFactory().createGroupController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
 
+		createSectionToolBar(this.section, this.description.getActions());
+
 		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.editingContextAdapter);
 		List<EEFControlDescription> controls = this.description.getControls();
 		for (EEFControlDescription eefControlDescription : controls) {
@@ -329,4 +335,25 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::dispose);
 	}
 
+	/**
+	 * Creates a tool bar for the given section.
+	 *
+	 * @param groupSection
+	 *            The section for which we need a tool bar.
+	 * @param actions
+	 *            The toolbar actions
+	 * @return The created tool bar.
+	 */
+	private ToolBarManager createSectionToolBar(Section groupSection, EList<EEFToolbarAction> actions) {
+		ToolBarManager toolBarManager = new ToolBarManager(SWT.FLAT | SWT.HORIZONTAL);
+		ToolBar toolBar = toolBarManager.createControl(groupSection);
+
+		groupSection.setTextClient(toolBar);
+		toolBar.setData(toolBarManager);
+		toolBar.addDisposeListener(e -> toolBar.setData(null));
+
+		populateToolBar(toolBarManager, actions, this.controller, this.interpreter, this.variableManager);
+
+		return toolBarManager;
+	}
 }

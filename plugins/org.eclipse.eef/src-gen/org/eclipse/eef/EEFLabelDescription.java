@@ -68,8 +68,8 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression
-	 * <em>Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression <em>Display
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Display Expression</em>' attribute.

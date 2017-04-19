@@ -208,8 +208,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	@Override
 	public EList<EEFDynamicMappingIf> getIfs() {
 		if (ifs == null) {
-			ifs = new EObjectContainmentEList.Resolving<EEFDynamicMappingIf>(EEFDynamicMappingIf.class, this,
-					EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS);
+			ifs = new EObjectContainmentEList.Resolving<>(EEFDynamicMappingIf.class, this, EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS);
 		}
 		return ifs;
 	}

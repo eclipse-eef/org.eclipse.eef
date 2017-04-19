@@ -45,8 +45,8 @@ public interface EEFButtonDescription extends EEFWidgetDescription {
 	String getButtonLabelExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression
-	 * <em>Button Label Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Sets the value of the '{@link org.eclipse.eef.EEFButtonDescription#getButtonLabelExpression <em>Button Label
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value
 	 *            the new value of the '<em>Button Label Expression</em>' attribute.

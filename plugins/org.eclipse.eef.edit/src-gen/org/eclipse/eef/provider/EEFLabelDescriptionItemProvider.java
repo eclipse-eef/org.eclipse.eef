@@ -140,8 +140,8 @@ public class EEFLabelDescriptionItemProvider extends EEFWidgetDescriptionItemPro
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFLabelDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFLabelDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFLabelDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFLabelDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

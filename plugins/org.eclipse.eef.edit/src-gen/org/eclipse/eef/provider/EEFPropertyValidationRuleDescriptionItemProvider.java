@@ -92,8 +92,8 @@ public class EEFPropertyValidationRuleDescriptionItemProvider extends EEFValidat
 	public String getText(Object object) {
 		EEF_VALIDATION_SEVERITY_DESCRIPTION labelValue = ((EEFPropertyValidationRuleDescription) object).getSeverity();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_EEFPropertyValidationRuleDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFPropertyValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFPropertyValidationRuleDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFPropertyValidationRuleDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

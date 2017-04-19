@@ -22,17 +22,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}
- * </li>
- * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getBarStyle <em>Bar Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#getToggleStyle <em>Toggle Style</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGroupStyleImpl#isExpandedByDefault <em>Expanded By Default</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

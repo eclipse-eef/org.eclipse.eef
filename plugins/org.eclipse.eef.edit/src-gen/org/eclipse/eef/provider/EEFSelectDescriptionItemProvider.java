@@ -171,8 +171,8 @@ public class EEFSelectDescriptionItemProvider extends EEFWidgetDescriptionItemPr
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFSelectDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFSelectDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFSelectDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFSelectDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFSelectDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
