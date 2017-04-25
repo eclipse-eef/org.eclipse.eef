@@ -1,0 +1,77 @@
+/*******************************************************************************
+ * Copyright (c) 2017 Obeo.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Obeo - initial API and implementation
+ *******************************************************************************/
+package org.eclipse.eef.core.api.controllers;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.core.api.utils.EvalFactory;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+
+/**
+ * This class is used to provide utilities to on click controller.
+ *
+ * @author mbats
+ */
+public abstract class AbstractEEFOnClickController extends AbstractEEFWidgetController implements IEEFOnClickController {
+
+	/**
+	 * The constructor.
+	 *
+	 * @param variableManager
+	 *            The variable manager
+	 * @param interpreter
+	 *            The interpreter
+	 * @param editingContextAdapter
+	 *            The editing context adapter
+	 */
+	public AbstractEEFOnClickController(IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		super(variableManager, interpreter, editingContextAdapter);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFOnClickController#onClick(java.lang.Object, java.lang.String)
+	 */
+	@Override
+	public void onClick(Object element, String onClickEventKind) {
+		this.editingContextAdapter.performModelChange(() -> {
+			String expression = this.getOnClickExpression();
+
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFList.SELECTION, element);
+			variables.put(EEFExpressionUtils.EEFList.ON_CLICK_EVENT_KIND, onClickEventKind);
+
+			EvalFactory.of(this.interpreter, variables).call(expression);
+		});
+	}
+
+	/**
+	 * Returns the on click expression.
+	 *
+	 * @return The on click expression
+	 */
+	protected abstract String getOnClickExpression();
+
+	/**
+	 * Returns the widget description.
+	 *
+	 * @return The widget description
+	 */
+	@Override
+	protected abstract EEFWidgetDescription getDescription();
+}

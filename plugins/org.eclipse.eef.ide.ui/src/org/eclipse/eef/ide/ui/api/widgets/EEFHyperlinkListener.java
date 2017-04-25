@@ -8,17 +8,17 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.widgets;
+package org.eclipse.eef.ide.ui.api.widgets;
 
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
-import org.eclipse.eef.core.api.controllers.IEEFHyperlinkController;
-import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.controllers.IEEFOnClickController;
 import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.widgets.Control;
 
 /**
  * The listener of the hyperlink widget.
@@ -30,12 +30,12 @@ public class EEFHyperlinkListener implements MouseListener {
 	/**
 	 * The life cycle manager.
 	 */
-	private EEFHyperlinkLifecycleManager lifecycleManager;
+	private AbstractEEFWidgetLifecycleManager lifecycleManager;
 
 	/**
 	 * The hyperlink.
 	 */
-	private StyledText hyperlink;
+	private Control hyperlink;
 
 	/**
 	 * The Form container.
@@ -45,7 +45,7 @@ public class EEFHyperlinkListener implements MouseListener {
 	/**
 	 * The controller.
 	 */
-	private IEEFHyperlinkController controller;
+	private IEEFOnClickController controller;
 
 	/**
 	 * The constructor.
@@ -59,8 +59,8 @@ public class EEFHyperlinkListener implements MouseListener {
 	 * @param controller
 	 *            The controller
 	 */
-	public EEFHyperlinkListener(EEFHyperlinkLifecycleManager lifecycleManager, StyledText hyperlink, IEEFFormContainer container,
-			IEEFHyperlinkController controller) {
+	public EEFHyperlinkListener(AbstractEEFWidgetLifecycleManager lifecycleManager, Control hyperlink, IEEFFormContainer container,
+			IEEFOnClickController controller) {
 		this.lifecycleManager = lifecycleManager;
 		this.hyperlink = hyperlink;
 		this.container = container;
@@ -84,21 +84,24 @@ public class EEFHyperlinkListener implements MouseListener {
 	 */
 	@Override
 	public void mouseDown(MouseEvent e) {
-		try {
-			int offset = hyperlink.getOffsetAtLocation(new Point(e.x, e.y));
-			StyleRange stylerange = hyperlink.getStyleRangeAtOffset(offset);
-			if (stylerange != null) {
-				if (!container.isRenderingInProgress()) {
-					IStatus result = controller.onClick(hyperlink.getData());
-					if (result != null && result.getSeverity() == IStatus.ERROR) {
-						EEFIdeUiPlugin.INSTANCE.log(result);
-					} else {
+
+		if (!container.isRenderingInProgress()) {
+			if (hyperlink instanceof StyledText) {
+				try {
+					int offset = ((StyledText) hyperlink).getOffsetAtLocation(new Point(e.x, e.y));
+					StyleRange stylerange = ((StyledText) hyperlink).getStyleRangeAtOffset(offset);
+					if (stylerange != null) {
+						controller.onClick(hyperlink.getData(), EEFExpressionUtils.EEFList.SINGLE_CLICK);
 						lifecycleManager.refresh();
+
 					}
+				} catch (@SuppressWarnings("unused") IllegalArgumentException exception) {
+					// do not log, the user tried to click outside of the hyperlink
 				}
+			} else {
+				controller.onClick(hyperlink.getData(), EEFExpressionUtils.EEFList.SINGLE_CLICK);
+				lifecycleManager.refresh();
 			}
-		} catch (@SuppressWarnings("unused") IllegalArgumentException exception) {
-			// do not log, the user tried to click outside of the hyperlink
 		}
 	}
 

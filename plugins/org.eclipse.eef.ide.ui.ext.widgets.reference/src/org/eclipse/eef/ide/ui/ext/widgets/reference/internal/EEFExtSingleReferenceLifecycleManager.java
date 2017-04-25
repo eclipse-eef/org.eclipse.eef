@@ -10,10 +10,14 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.ext.widgets.reference.internal;
 
+import java.util.Optional;
+
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.ext.widgets.reference.internal.EEFExtReferenceController;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
+import org.eclipse.eef.ide.ui.api.widgets.EEFHyperlinkListener;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -26,12 +30,14 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.forms.widgets.Hyperlink;
 
 /**
  * This lifecycle manager is used to handle the EEF Extension reference widget for mono-valued EReferences.
@@ -48,7 +54,12 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	/**
 	 * The label showing the current value.
 	 */
-	private Label text;
+	private Hyperlink text;
+
+	/**
+	 * The listener on the hyperlink.
+	 */
+	private MouseListener hyperlinkListener;
 
 	/**
 	 * The constructor.
@@ -129,13 +140,14 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	private void createLabel(Composite parent) {
 		this.image = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
-		this.text = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
+		this.text = this.widgetFactory.createHyperlink(parent, "", SWT.NONE); //$NON-NLS-1$
 
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = SWT.FILL;
 
 		this.text.setLayoutData(gridData);
+
 	}
 
 	/**
@@ -197,7 +209,13 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 			if (adapter instanceof IItemLabelProvider) {
 				IItemLabelProvider labelProvider = (IItemLabelProvider) adapter;
 				this.text.setText(labelProvider.getText(value));
+				this.text.setUnderlined(false);
 				this.image.setImage(ExtendedImageRegistry.INSTANCE.getImage(labelProvider.getImage(value)));
+
+				String onClickExpression = Optional.ofNullable(this.description.getOnClickExpression()).orElse(""); //$NON-NLS-1$
+				if (!onClickExpression.isEmpty()) {
+					this.text.setUnderlined(true);
+				}
 			}
 		} else if (value == null) {
 			this.image.setImage(null);
@@ -229,4 +247,43 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 		return this.image;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#aboutToBeShown()
+	 */
+	@Override
+	public void aboutToBeShown() {
+		super.aboutToBeShown();
+
+		String onClickExpression = Optional.ofNullable(this.description.getOnClickExpression()).orElse(""); //$NON-NLS-1$
+		if (!onClickExpression.isEmpty()) {
+			this.hyperlinkListener = new EEFHyperlinkListener(this, this.text, this.container, this.controller);
+			text.addMouseListener(hyperlinkListener);
+		}
+	}
+
+	/**
+	 * Get the on click expression if exists.
+	 *
+	 * @return An optional of the on click expression
+	 */
+	Optional<String> getOnClickExpression() {
+		return Optional.ofNullable(this.description).map(EEFExtReferenceDescription::getOnClickExpression)
+				.filter(expression -> !Util.isBlank(expression));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#aboutToBeHidden()
+	 */
+	@Override
+	public void aboutToBeHidden() {
+		super.aboutToBeHidden();
+
+		if (this.text != null && !this.text.isDisposed() && this.hyperlinkListener != null) {
+			this.text.removeMouseListener(this.hyperlinkListener);
+		}
+	}
 }

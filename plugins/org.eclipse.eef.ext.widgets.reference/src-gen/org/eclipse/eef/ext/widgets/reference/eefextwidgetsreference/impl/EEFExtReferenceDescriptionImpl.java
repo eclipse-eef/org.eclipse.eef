@@ -29,20 +29,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>
- * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getReferenceNameExpression
+ * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getReferenceNameExpression
  * <em>Reference Name Expression</em>}</li>
- * <li>
- * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getReferenceOwnerExpression
+ * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getReferenceOwnerExpression
  * <em>Reference Owner Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getOnClickExpression
+ * <em>On Click Expression</em>}</li>
  * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getStyle
  * <em>Style</em>}</li>
- * <li>
- * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getConditionalStyles
+ * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl#getConditionalStyles
  * <em>Conditional Styles</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -86,6 +85,26 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	 * @ordered
 	 */
 	protected String referenceOwnerExpression = EEFExtReferenceDescriptionImpl.REFERENCE_OWNER_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOnClickExpression() <em>On Click Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getOnClickExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ON_CLICK_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOnClickExpression() <em>On Click Expression</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @see #getOnClickExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String onClickExpression = EEFExtReferenceDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
@@ -184,17 +203,42 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	 * @generated
 	 */
 	@Override
+	public String getOnClickExpression() {
+		return onClickExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setOnClickExpression(String newOnClickExpression) {
+		String oldOnClickExpression = onClickExpression;
+		onClickExpression = newOnClickExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION,
+					oldOnClickExpression, onClickExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EEFExtReferenceWidgetStyle getStyle() {
 		if (style != null && style.eIsProxy()) {
 			InternalEObject oldStyle = (InternalEObject) style;
 			style = (EEFExtReferenceWidgetStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-							- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, msgs);
+					msgs = newStyle.eInverseAdd(this,
+							InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, msgs);
 				}
 				if (msgs != null) {
 					msgs.dispatch();
@@ -247,12 +291,12 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE, null, msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {
@@ -272,7 +316,7 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	@Override
 	public EList<EEFExtReferenceConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFExtReferenceConditionalStyle>(EEFExtReferenceConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFExtReferenceConditionalStyle.class, this,
 					EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -306,6 +350,8 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 			return getReferenceNameExpression();
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_OWNER_EXPRESSION:
 			return getReferenceOwnerExpression();
+		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION:
+			return getOnClickExpression();
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE:
 			if (resolve) {
 				return getStyle();
@@ -332,6 +378,9 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_OWNER_EXPRESSION:
 			setReferenceOwnerExpression((String) newValue);
 			return;
+		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION:
+			setOnClickExpression((String) newValue);
+			return;
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE:
 			setStyle((EEFExtReferenceWidgetStyle) newValue);
 			return;
@@ -357,6 +406,9 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_OWNER_EXPRESSION:
 			setReferenceOwnerExpression(EEFExtReferenceDescriptionImpl.REFERENCE_OWNER_EXPRESSION_EDEFAULT);
 			return;
+		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION:
+			setOnClickExpression(EEFExtReferenceDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT);
+			return;
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE:
 			setStyle((EEFExtReferenceWidgetStyle) null);
 			return;
@@ -377,10 +429,13 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 		switch (featureID) {
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_NAME_EXPRESSION:
 			return EEFExtReferenceDescriptionImpl.REFERENCE_NAME_EXPRESSION_EDEFAULT == null ? referenceNameExpression != null
-			: !EEFExtReferenceDescriptionImpl.REFERENCE_NAME_EXPRESSION_EDEFAULT.equals(referenceNameExpression);
+					: !EEFExtReferenceDescriptionImpl.REFERENCE_NAME_EXPRESSION_EDEFAULT.equals(referenceNameExpression);
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_OWNER_EXPRESSION:
 			return EEFExtReferenceDescriptionImpl.REFERENCE_OWNER_EXPRESSION_EDEFAULT == null ? referenceOwnerExpression != null
-			: !EEFExtReferenceDescriptionImpl.REFERENCE_OWNER_EXPRESSION_EDEFAULT.equals(referenceOwnerExpression);
+					: !EEFExtReferenceDescriptionImpl.REFERENCE_OWNER_EXPRESSION_EDEFAULT.equals(referenceOwnerExpression);
+		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION:
+			return EEFExtReferenceDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT == null ? onClickExpression != null
+					: !EEFExtReferenceDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT.equals(onClickExpression);
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE:
 			return style != null;
 		case EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES:
@@ -405,6 +460,8 @@ public class EEFExtReferenceDescriptionImpl extends EEFWidgetDescriptionImpl imp
 		result.append(referenceNameExpression);
 		result.append(", referenceOwnerExpression: "); //$NON-NLS-1$
 		result.append(referenceOwnerExpression);
+		result.append(", onClickExpression: "); //$NON-NLS-1$
+		result.append(onClickExpression);
 		result.append(')');
 		return result.toString();
 	}

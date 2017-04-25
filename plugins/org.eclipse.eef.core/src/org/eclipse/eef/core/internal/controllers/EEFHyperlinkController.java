@@ -23,7 +23,7 @@ import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
-import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
+import org.eclipse.eef.core.api.controllers.AbstractEEFOnClickController;
 import org.eclipse.eef.core.api.controllers.IEEFHyperlinkController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EAttribute;
@@ -35,7 +35,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author mbats
  */
-public class EEFHyperlinkController extends AbstractEEFWidgetController implements IEEFHyperlinkController {
+public class EEFHyperlinkController extends AbstractEEFOnClickController implements IEEFHyperlinkController {
 	/**
 	 * The description.
 	 */
@@ -100,25 +100,6 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFHyperlinkController#onClick(java.lang.Object)
-	 */
-	@Override
-	public IStatus onClick(final Object element) {
-		return this.editingContextAdapter.performModelChange(() -> {
-			String expression = this.description.getOnClickExpression();
-			EAttribute attr = EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION;
-
-			Map<String, Object> variables = new HashMap<String, Object>();
-			variables.putAll(this.variableManager.getVariables());
-			variables.put(EEFExpressionUtils.EEFHyperlink.SELECTION, element);
-
-			EvalFactory.of(this.interpreter, variables).logIfBlank(attr).call(expression);
-		});
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
 	 * @see org.eclipse.eef.core.api.controllers.IEEFTextController#onNewValue(java.util.function.Consumer)
 	 */
 	@Override
@@ -149,6 +130,16 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFOnClickController#getOnClickExpression()
+	 */
+	@Override
+	protected String getOnClickExpression() {
+		return this.description.getOnClickExpression();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.core.api.controllers.IEEFHyperlinkController#action(EEFWidgetAction)
 	 */
 	@Override
@@ -163,5 +154,4 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(expression);
 		});
 	}
-
 }

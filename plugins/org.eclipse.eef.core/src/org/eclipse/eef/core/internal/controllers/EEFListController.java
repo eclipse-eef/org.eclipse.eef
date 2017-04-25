@@ -23,7 +23,7 @@ import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
-import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
+import org.eclipse.eef.core.api.controllers.AbstractEEFOnClickController;
 import org.eclipse.eef.core.api.controllers.IEEFListController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.emf.ecore.EAttribute;
@@ -35,7 +35,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author sbegaudeau
  */
-public class EEFListController extends AbstractEEFWidgetController implements IEEFListController {
+public class EEFListController extends AbstractEEFOnClickController implements IEEFListController {
 	/**
 	 * The description.
 	 */
@@ -102,25 +102,6 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFListController#onClick(java.lang.Object, java.lang.String)
-	 */
-	@Override
-	public void onClick(final Object element, final String onClickEventKind) {
-		this.editingContextAdapter.performModelChange(() -> {
-			String expression = this.description.getOnClickExpression();
-
-			Map<String, Object> variables = new HashMap<String, Object>();
-			variables.putAll(this.variableManager.getVariables());
-			variables.put(EEFExpressionUtils.EEFList.SELECTION, element);
-			variables.put(EEFExpressionUtils.EEFList.ON_CLICK_EVENT_KIND, onClickEventKind);
-
-			EvalFactory.of(this.interpreter, variables).call(expression);
-		});
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
 	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController#getDescription()
 	 */
 	@Override
@@ -146,5 +127,15 @@ public class EEFListController extends AbstractEEFWidgetController implements IE
 
 			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(expression);
 		});
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFOnClickController#getOnClickExpression()
+	 */
+	@Override
+	protected String getOnClickExpression() {
+		return this.description.getOnClickExpression();
 	}
 }

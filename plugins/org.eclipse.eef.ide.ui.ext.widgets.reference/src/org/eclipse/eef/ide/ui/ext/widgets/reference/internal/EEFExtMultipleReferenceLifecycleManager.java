@@ -17,6 +17,7 @@ import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.ext.widgets.reference.internal.EEFExtReferenceController;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
+import org.eclipse.eef.ide.ui.api.widgets.EEFTableSelectionListener;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -40,6 +41,7 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -84,6 +86,11 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 * The listener for the down button.
 	 */
 	private ButtonSelectionListener downButtonListener;
+
+	/**
+	 * The listener used to run the onClick expression when the user will click on the table.
+	 */
+	private SelectionListener tableSelectionListener;
 
 	/**
 	 * The constructor.
@@ -208,6 +215,8 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
+		this.tableSelectionListener = new EEFTableSelectionListener(this.controller);
+		this.tableViewer.getTable().addSelectionListener(tableSelectionListener);
 		this.initializeMoveButton(Direction.UP);
 		this.initializeMoveButton(Direction.DOWN);
 	}
@@ -387,6 +396,10 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	@Override
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
+
+		if (this.tableViewer != null && this.tableViewer.getTable() != null && !this.tableViewer.getTable().isDisposed()) {
+			this.tableViewer.getTable().removeSelectionListener(this.tableSelectionListener);
+		}
 
 		this.removeListener(this.upButton, this.upButtonListener);
 		this.removeListener(this.downButton, this.downButtonListener);

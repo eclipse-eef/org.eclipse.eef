@@ -59,9 +59,9 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 			.init();
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl
-	 * <em>EEF Ext Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl <em>EEF
+	 * Ext Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EefExtWidgetsReferencePackageImpl#getEEFExtReferenceDescription()
@@ -131,13 +131,22 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	int EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_OWNER_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>On Click Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_EXT_REFERENCE_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
+	int EEF_EXT_REFERENCE_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -146,7 +155,7 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_EXT_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_EXT_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>EEF Ext Reference Description</em>' class. <!-- begin-user-doc -->
@@ -155,12 +164,12 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_EXT_REFERENCE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+	int EEF_EXT_REFERENCE_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceWidgetStyleImpl
-	 * <em>EEF Ext Reference Widget Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceWidgetStyleImpl <em>EEF
+	 * Ext Reference Widget Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceWidgetStyleImpl
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EefExtWidgetsReferencePackageImpl#getEEFExtReferenceWidgetStyle()
@@ -223,8 +232,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	int EEF_EXT_REFERENCE_WIDGET_STYLE_FEATURE_COUNT = EefPackage.EEF_WIDGET_STYLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl
+	 * The meta object id for the
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl
 	 * <em>EEF Ext Reference Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl
@@ -261,9 +270,9 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	int EEF_EXT_REFERENCE_CONDITIONAL_STYLE_FEATURE_COUNT = EefPackage.EEF_CONDITIONAL_STYLE_FEATURE_COUNT + 1;
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription
-	 * <em>EEF Ext Reference Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription <em>EEF Ext
+	 * Reference Description</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Ext Reference Description</em>'.
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription
@@ -272,8 +281,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	EClass getEEFExtReferenceDescription();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getReferenceNameExpression
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getReferenceNameExpression
 	 * <em>Reference Name Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Reference Name Expression</em>'.
@@ -284,8 +293,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	EAttribute getEEFExtReferenceDescription_ReferenceNameExpression();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getReferenceOwnerExpression
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getReferenceOwnerExpression
 	 * <em>Reference Owner Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the attribute '<em>Reference Owner Expression</em>'.
@@ -296,8 +305,20 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	EAttribute getEEFExtReferenceDescription_ReferenceOwnerExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getStyle
+	 * Returns the meta object for the attribute
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getOnClickExpression
+	 * <em>On Click Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>On Click Expression</em>'.
+	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getOnClickExpression()
+	 * @see #getEEFExtReferenceDescription()
+	 * @generated
+	 */
+	EAttribute getEEFExtReferenceDescription_OnClickExpression();
+
+	/**
+	 * Returns the meta object for the containment reference
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getStyle
 	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference '<em>Style</em>'.
@@ -308,8 +329,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	EReference getEEFExtReferenceDescription_Style();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getConditionalStyles
+	 * Returns the meta object for the containment reference list
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getConditionalStyles
 	 * <em>Conditional Styles</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference list '<em>Conditional Styles</em>'.
@@ -320,9 +341,9 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	EReference getEEFExtReferenceDescription_ConditionalStyles();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle
-	 * <em>EEF Ext Reference Widget Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle <em>EEF Ext
+	 * Reference Widget Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Ext Reference Widget Style</em>'.
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle
@@ -331,9 +352,9 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	EClass getEEFExtReferenceWidgetStyle();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle
-	 * <em>EEF Ext Reference Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle <em>EEF Ext
+	 * Reference Conditional Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for class '<em>EEF Ext Reference Conditional Style</em>'.
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle
@@ -342,8 +363,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	EClass getEEFExtReferenceConditionalStyle();
 
 	/**
-	 * Returns the meta object for the containment reference '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle#getStyle
+	 * Returns the meta object for the containment reference
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle#getStyle
 	 * <em>Style</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @return the meta object for the containment reference '<em>Style</em>'.
@@ -375,8 +396,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl
+		 * The meta object literal for the
+		 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl
 		 * <em>EEF Ext Reference Description</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceDescriptionImpl
@@ -404,6 +425,15 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 				.getEEFExtReferenceDescription_ReferenceOwnerExpression();
 
 		/**
+		 * The meta object literal for the '<em><b>On Click Expression</b></em>' attribute feature. <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION = EefExtWidgetsReferencePackage.eINSTANCE
+				.getEEFExtReferenceDescription_OnClickExpression();
+
+		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' containment reference feature. <!-- begin-user-doc
 		 * --> <!-- end-user-doc -->
 		 *
@@ -421,8 +451,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 				.getEEFExtReferenceDescription_ConditionalStyles();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceWidgetStyleImpl
+		 * The meta object literal for the
+		 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceWidgetStyleImpl
 		 * <em>EEF Ext Reference Widget Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceWidgetStyleImpl
@@ -432,8 +462,8 @@ public interface EefExtWidgetsReferencePackage extends EPackage {
 		EClass EEF_EXT_REFERENCE_WIDGET_STYLE = EefExtWidgetsReferencePackage.eINSTANCE.getEEFExtReferenceWidgetStyle();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl
+		 * The meta object literal for the
+		 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl
 		 * <em>EEF Ext Reference Conditional Style</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 *
 		 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl

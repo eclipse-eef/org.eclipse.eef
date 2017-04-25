@@ -91,8 +91,8 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 		// Obtain or create and register package
 		EefExtWidgetsReferencePackageImpl theEefExtWidgetsReferencePackage = (EefExtWidgetsReferencePackageImpl) (EPackage.Registry.INSTANCE
-				.get(EefExtWidgetsReferencePackage.eNS_URI) instanceof EefExtWidgetsReferencePackageImpl ? EPackage.Registry.INSTANCE
-						.get(EefExtWidgetsReferencePackage.eNS_URI) : new EefExtWidgetsReferencePackageImpl());
+				.get(EefExtWidgetsReferencePackage.eNS_URI) instanceof EefExtWidgetsReferencePackageImpl
+						? EPackage.Registry.INSTANCE.get(EefExtWidgetsReferencePackage.eNS_URI) : new EefExtWidgetsReferencePackageImpl());
 
 		EefExtWidgetsReferencePackageImpl.isInited = true;
 
@@ -149,8 +149,18 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEEFExtReferenceDescription_OnClickExpression() {
+		return (EAttribute) eefExtReferenceDescriptionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
 	public EReference getEEFExtReferenceDescription_Style() {
-		return (EReference) eefExtReferenceDescriptionEClass.getEStructuralFeatures().get(2);
+		return (EReference) eefExtReferenceDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -160,7 +170,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 	 */
 	@Override
 	public EReference getEEFExtReferenceDescription_ConditionalStyles() {
-		return (EReference) eefExtReferenceDescriptionEClass.getEStructuralFeatures().get(3);
+		return (EReference) eefExtReferenceDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -226,6 +236,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 		eefExtReferenceDescriptionEClass = createEClass(EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION);
 		createEAttribute(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_NAME_EXPRESSION);
 		createEAttribute(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__REFERENCE_OWNER_EXPRESSION);
+		createEAttribute(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__ON_CLICK_EXPRESSION);
 		createEReference(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__STYLE);
 		createEReference(eefExtReferenceDescriptionEClass, EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_DESCRIPTION__CONDITIONAL_STYLES);
 
@@ -273,37 +284,35 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 		eefExtReferenceConditionalStyleEClass.getESuperTypes().add(theEefPackage.getEEFConditionalStyle());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(eefExtReferenceDescriptionEClass, EEFExtReferenceDescription.class,
-				"EEFExtReferenceDescription", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(
-				getEEFExtReferenceDescription_ReferenceNameExpression(),
-				theEcorePackage.getEString(),
-				"referenceNameExpression", null, 1, 1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getEEFExtReferenceDescription_ReferenceOwnerExpression(),
-				theEcorePackage.getEString(),
-				"referenceOwnerExpression", null, 0, 1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFExtReferenceDescription_Style(),
-				this.getEEFExtReferenceWidgetStyle(),
-				null,
-				"style", null, 0, 1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getEEFExtReferenceDescription_ConditionalStyles(),
-				this.getEEFExtReferenceConditionalStyle(),
-				null,
-				"conditionalStyles", null, 0, -1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefExtReferenceDescriptionEClass, EEFExtReferenceDescription.class, "EEFExtReferenceDescription", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
+				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFExtReferenceDescription_ReferenceNameExpression(), theEcorePackage.getEString(), "referenceNameExpression", null, 1, 1, //$NON-NLS-1$
+				EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFExtReferenceDescription_ReferenceOwnerExpression(), theEcorePackage.getEString(), "referenceOwnerExpression", null, 0, 1, //$NON-NLS-1$
+				EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFExtReferenceDescription_OnClickExpression(), ecorePackage.getEString(), "onClickExpression", null, 0, 1, //$NON-NLS-1$
+				EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEReference(getEEFExtReferenceDescription_Style(), this.getEEFExtReferenceWidgetStyle(), null, "style", null, 0, 1, //$NON-NLS-1$
+				EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
+				!EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEReference(getEEFExtReferenceDescription_ConditionalStyles(), this.getEEFExtReferenceConditionalStyle(), null, "conditionalStyles", null, //$NON-NLS-1$
+				0, -1, EEFExtReferenceDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
+				!EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 
-		initEClass(eefExtReferenceWidgetStyleEClass, EEFExtReferenceWidgetStyle.class,
-				"EEFExtReferenceWidgetStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(eefExtReferenceWidgetStyleEClass, EEFExtReferenceWidgetStyle.class, "EEFExtReferenceWidgetStyle", !EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
+				!EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(eefExtReferenceConditionalStyleEClass, EEFExtReferenceConditionalStyle.class,
-				"EEFExtReferenceConditionalStyle", !EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getEEFExtReferenceConditionalStyle_Style(),
-				this.getEEFExtReferenceWidgetStyle(),
-				null,
-				"style", null, 0, 1, EEFExtReferenceConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED); //$NON-NLS-1$
+		initEClass(eefExtReferenceConditionalStyleEClass, EEFExtReferenceConditionalStyle.class, "EEFExtReferenceConditionalStyle", //$NON-NLS-1$
+				!EPackageImpl.IS_ABSTRACT, !EPackageImpl.IS_INTERFACE, EPackageImpl.IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEEFExtReferenceConditionalStyle_Style(), this.getEEFExtReferenceWidgetStyle(), null, "style", null, 0, 1, //$NON-NLS-1$
+				EEFExtReferenceConditionalStyle.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+				EPackageImpl.IS_COMPOSITE, EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE,
+				!EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 
 		// Create resource
 		createResource(EefExtWidgetsReferencePackage.eNS_URI);

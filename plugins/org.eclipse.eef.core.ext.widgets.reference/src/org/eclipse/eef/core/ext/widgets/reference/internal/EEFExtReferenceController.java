@@ -12,7 +12,7 @@ package org.eclipse.eef.core.ext.widgets.reference.internal;
 
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
-import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
+import org.eclipse.eef.core.api.controllers.AbstractEEFOnClickController;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -22,7 +22,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author sbegaudeau
  */
-public class EEFExtReferenceController extends AbstractEEFWidgetController {
+public class EEFExtReferenceController extends AbstractEEFOnClickController {
 
 	/**
 	 * The description.
@@ -55,6 +55,16 @@ public class EEFExtReferenceController extends AbstractEEFWidgetController {
 	@Override
 	protected EEFWidgetDescription getDescription() {
 		return this.description;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.AbstractEEFOnClickController#getOnClickExpression()
+	 */
+	@Override
+	protected String getOnClickExpression() {
+		return this.description.getOnClickExpression();
 	}
 
 }
