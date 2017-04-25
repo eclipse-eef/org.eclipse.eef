@@ -21,7 +21,7 @@ import org.eclipse.eef.EEFWidgetAction;
  *
  * @author mbats
  */
-public interface IEEFListController extends IEEFWidgetController {
+public interface IEEFListController extends IEEFOnClickController {
 	/**
 	 * Register a consumer which will be called with the new value of the text when it will change.
 	 *
@@ -34,16 +34,6 @@ public interface IEEFListController extends IEEFWidgetController {
 	 * Remove the consumer of the new value of the text.
 	 */
 	void removeNewValueConsumer();
-
-	/**
-	 * Invoked when the user clicks on an object.
-	 *
-	 * @param element
-	 *            Semantic element
-	 * @param onClickEventKind
-	 *            The kind of event (single click or double click)
-	 */
-	void onClick(Object element, String onClickEventKind);
 
 	/**
 	 * Invoked when the user clicks on an action button.

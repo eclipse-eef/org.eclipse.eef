@@ -8,13 +8,13 @@
  * Contributors:
  *    Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.eef.ide.ui.internal.widgets;
+package org.eclipse.eef.ide.ui.api.widgets;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.eef.core.api.EEFExpressionUtils;
-import org.eclipse.eef.core.api.controllers.IEEFListController;
+import org.eclipse.eef.core.api.controllers.IEEFOnClickController;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.widgets.Table;
@@ -25,12 +25,12 @@ import org.eclipse.swt.widgets.TableItem;
  *
  * @author sbegaudeau
  */
-public class EEFListSelectionListener implements SelectionListener {
+public class EEFTableSelectionListener implements SelectionListener {
 
 	/**
 	 * The controller.
 	 */
-	private IEEFListController controller;
+	private IEEFOnClickController controller;
 
 	/**
 	 * The constructor.
@@ -38,7 +38,7 @@ public class EEFListSelectionListener implements SelectionListener {
 	 * @param controller
 	 *            The controller
 	 */
-	public EEFListSelectionListener(IEEFListController controller) {
+	public EEFTableSelectionListener(IEEFOnClickController controller) {
 		this.controller = controller;
 	}
 

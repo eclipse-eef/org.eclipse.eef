@@ -18,11 +18,11 @@ import org.eclipse.eef.EEFConditionalStyle;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle#getStyle <em>
- * Style</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle#getStyle
+ * <em>Style</em>}</li>
+ * </ul>
  *
  * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferencePackage#getEEFExtReferenceConditionalStyle()
  * @model
@@ -42,8 +42,8 @@ public interface EEFExtReferenceConditionalStyle extends EEFConditionalStyle {
 	EEFExtReferenceWidgetStyle getStyle();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle#getStyle
+	 * Sets the value of the
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle#getStyle
 	 * <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @param value

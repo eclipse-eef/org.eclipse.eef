@@ -25,6 +25,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFListController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.EEFTableSelectionListener;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
@@ -214,7 +215,7 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
-		this.tableSelectionListener = new EEFListSelectionListener(this.controller);
+		this.tableSelectionListener = new EEFTableSelectionListener(this.controller);
 		this.tableViewer.getTable().addSelectionListener(tableSelectionListener);
 
 		this.controller.onNewValue((value) -> {

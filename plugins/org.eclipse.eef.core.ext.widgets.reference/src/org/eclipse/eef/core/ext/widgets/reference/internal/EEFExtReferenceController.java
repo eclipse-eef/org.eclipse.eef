@@ -10,9 +10,15 @@
  *******************************************************************************/
 package org.eclipse.eef.core.ext.widgets.reference.internal;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.eef.EEFWidgetDescription;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController;
+import org.eclipse.eef.core.api.controllers.IEEFOnClickController;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -22,7 +28,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
  *
  * @author sbegaudeau
  */
-public class EEFExtReferenceController extends AbstractEEFWidgetController {
+public class EEFExtReferenceController extends AbstractEEFWidgetController implements IEEFOnClickController {
 
 	/**
 	 * The description.
@@ -55,6 +61,25 @@ public class EEFExtReferenceController extends AbstractEEFWidgetController {
 	@Override
 	protected EEFWidgetDescription getDescription() {
 		return this.description;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.core.api.controllers.IEEFOnClickController#onClick(java.lang.Object, java.lang.String)
+	 */
+	@Override
+	public void onClick(Object element, String onClickEventKind) {
+		this.editingContextAdapter.performModelChange(() -> {
+			String expression = this.description.getOnClickExpression();
+
+			Map<String, Object> variables = new HashMap<String, Object>();
+			variables.putAll(this.variableManager.getVariables());
+			variables.put(EEFExpressionUtils.EEFList.SELECTION, element);
+			variables.put(EEFExpressionUtils.EEFList.ON_CLICK_EVENT_KIND, onClickEventKind);
+
+			EvalFactory.of(this.interpreter, variables).call(expression);
+		});
 	}
 
 }

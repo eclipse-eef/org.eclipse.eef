@@ -10,10 +10,19 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.ext.widgets.reference.internal;
 
+import java.util.Optional;
+
+import org.eclipse.eef.EEFHyperlinkStyle;
+import org.eclipse.eef.EEFWidgetStyle;
+import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.ext.widgets.reference.internal.EEFExtReferenceController;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
+import org.eclipse.eef.ide.ui.api.widgets.EEFHyperlinkListener;
+import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
+import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
+import org.eclipse.eef.ide.ui.internal.widgets.EEFStyledTextStyleCallback;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -26,6 +35,9 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyleRange;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -48,7 +60,12 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	/**
 	 * The label showing the current value.
 	 */
-	private Label text;
+	private StyledText text;
+
+	/**
+	 * The listener on the hyperlink.
+	 */
+	private MouseListener hyperlinkListener;
 
 	/**
 	 * The constructor.
@@ -129,13 +146,15 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	private void createLabel(Composite parent) {
 		this.image = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
-		this.text = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
+		this.text = this.widgetFactory.createStyledText(parent, SWT.READ_ONLY);
 
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = SWT.FILL;
 
 		this.text.setLayoutData(gridData);
+		this.text.setEditable(false);
+
 	}
 
 	/**
@@ -198,11 +217,46 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 				IItemLabelProvider labelProvider = (IItemLabelProvider) adapter;
 				this.text.setText(labelProvider.getText(value));
 				this.image.setImage(ExtendedImageRegistry.INSTANCE.getImage(labelProvider.getImage(value)));
+				getOnClickExpression().ifPresent(expression -> {
+					this.setStyle();
+				});
 			}
 		} else if (value == null) {
 			this.image.setImage(null);
 			this.text.setText(Messages.SingleReference_noValue);
 		}
+	}
+
+	/**
+	 * Set the style.
+	 */
+	private void setStyle() {
+		EEFStyleHelper styleHelper = new EEFStyleHelper(this.interpreter, this.variableManager);
+		EEFWidgetStyle widgetStyle = styleHelper.getWidgetStyle(this.description);
+		if (widgetStyle instanceof EEFHyperlinkStyle) {
+			EEFHyperlinkStyle style = (EEFHyperlinkStyle) widgetStyle;
+
+			IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.text);
+			styleHelper.applyTextStyle(style.getFontNameExpression(), style.getFontSizeExpression(), style.getFontStyleExpression(),
+					this.text.getFont(), style.getBackgroundColorExpression(), null, callback);
+		}
+
+		// Sets the default hyperlink style properties
+		StyleRange[] styleRanges = text.getStyleRanges();
+		StyleRange styleRange;
+		if (styleRanges.length > 0) {
+			styleRange = styleRanges[0];
+		} else {
+			styleRange = new StyleRange();
+		}
+
+		if (styleRange != null) {
+			styleRange.start = 0;
+			styleRange.length = text.getText().length();
+			styleRange.underline = true;
+			styleRange.underlineStyle = SWT.UNDERLINE_LINK;
+		}
+		text.setStyleRange(styleRange);
 	}
 
 	/**
@@ -229,4 +283,42 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 		return this.image;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#aboutToBeShown()
+	 */
+	@Override
+	public void aboutToBeShown() {
+		super.aboutToBeShown();
+
+		getOnClickExpression().ifPresent(expression -> {
+			this.hyperlinkListener = new EEFHyperlinkListener(this, this.text, this.container, this.controller);
+			text.addMouseListener(hyperlinkListener);
+		});
+	}
+
+	/**
+	 * Get the on click expression if exists.
+	 *
+	 * @return An optional of the on click expression
+	 */
+	Optional<String> getOnClickExpression() {
+		return Optional.ofNullable(this.description).map(EEFExtReferenceDescription::getOnClickExpression)
+				.filter(expression -> !Util.isBlank(expression));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#aboutToBeHidden()
+	 */
+	@Override
+	public void aboutToBeHidden() {
+		super.aboutToBeHidden();
+
+		if (this.text != null && !this.text.isDisposed() && this.hyperlinkListener != null) {
+			this.text.removeMouseListener(this.hyperlinkListener);
+		}
+	}
 }

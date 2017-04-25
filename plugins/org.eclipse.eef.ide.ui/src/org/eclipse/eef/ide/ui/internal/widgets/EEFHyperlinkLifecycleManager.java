@@ -27,6 +27,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFHyperlinkController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.EEFHyperlinkListener;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;

@@ -23,12 +23,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
- * <li>
- * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl#getStyle
+ * <li>{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EEFExtReferenceConditionalStyleImpl#getStyle
  * <em>Style</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -74,11 +73,13 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 			style = (EEFExtReferenceWidgetStyle) eResolveProxy(oldStyle);
 			if (style != oldStyle) {
 				InternalEObject newStyle = (InternalEObject) style;
-				NotificationChain msgs = oldStyle.eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null, null);
+				NotificationChain msgs = oldStyle.eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null,
+						null);
 				if (newStyle.eInternalContainer() == null) {
-					msgs = newStyle.eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-							- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null, msgs);
+					msgs = newStyle.eInverseAdd(this,
+							InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null,
+							msgs);
 				}
 				if (msgs != null) {
 					msgs.dispatch();
@@ -131,12 +132,14 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 		if (newStyle != style) {
 			NotificationChain msgs = null;
 			if (style != null) {
-				msgs = ((InternalEObject) style).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null, msgs);
+				msgs = ((InternalEObject) style).eInverseRemove(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null,
+						msgs);
 			}
 			if (newStyle != null) {
-				msgs = ((InternalEObject) newStyle).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE
-						- EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null, msgs);
+				msgs = ((InternalEObject) newStyle).eInverseAdd(this,
+						InternalEObject.EOPPOSITE_FEATURE_BASE - EefExtWidgetsReferencePackage.EEF_EXT_REFERENCE_CONDITIONAL_STYLE__STYLE, null,
+						msgs);
 			}
 			msgs = basicSetStyle(newStyle, msgs);
 			if (msgs != null) {

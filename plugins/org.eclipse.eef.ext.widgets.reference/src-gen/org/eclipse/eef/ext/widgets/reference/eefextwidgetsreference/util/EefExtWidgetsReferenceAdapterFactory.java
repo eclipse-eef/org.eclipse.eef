@@ -127,11 +127,11 @@ public class EefExtWidgetsReferenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription
-	 * <em>EEF Ext Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription <em>EEF Ext
+	 * Reference Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription
@@ -142,11 +142,11 @@ public class EefExtWidgetsReferenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle
-	 * <em>EEF Ext Reference Widget Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle <em>EEF Ext
+	 * Reference Widget Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceWidgetStyle
@@ -157,11 +157,11 @@ public class EefExtWidgetsReferenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '
-	 * {@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle
-	 * <em>EEF Ext Reference Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null
-	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
-	 * anyway. <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle <em>EEF Ext
+	 * Reference Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceConditionalStyle
@@ -172,10 +172,9 @@ public class EefExtWidgetsReferenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFControlDescription
-	 * <em>EEF Control Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFControlDescription <em>EEF Control
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFControlDescription
@@ -186,10 +185,9 @@ public class EefExtWidgetsReferenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetDescription
-	 * <em>EEF Widget Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFWidgetDescription <em>EEF Widget
+	 * Description</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFWidgetDescription
@@ -213,10 +211,9 @@ public class EefExtWidgetsReferenceAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFConditionalStyle
-	 * <em>EEF Conditional Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can
-	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-	 * end-user-doc -->
+	 * Creates a new adapter for an object of class '{@link org.eclipse.eef.EEFConditionalStyle <em>EEF Conditional
+	 * Style</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
 	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.eef.EEFConditionalStyle

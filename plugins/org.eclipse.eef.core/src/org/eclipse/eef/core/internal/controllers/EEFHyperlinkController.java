@@ -100,11 +100,11 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.core.api.controllers.IEEFHyperlinkController#onClick(java.lang.Object)
+	 * @see org.eclipse.eef.core.api.controllers.IEEFOnClickController#onClick(java.lang.Object, java.lang.String)
 	 */
 	@Override
-	public IStatus onClick(final Object element) {
-		return this.editingContextAdapter.performModelChange(() -> {
+	public void onClick(Object element, String onClickEventKind) {
+		this.editingContextAdapter.performModelChange(() -> {
 			String expression = this.description.getOnClickExpression();
 			EAttribute attr = EefPackage.Literals.EEF_HYPERLINK_DESCRIPTION__ON_CLICK_EXPRESSION;
 
@@ -163,5 +163,4 @@ public class EEFHyperlinkController extends AbstractEEFWidgetController implemen
 			EvalFactory.of(this.interpreter, variables).logIfBlank(eAttribute).call(expression);
 		});
 	}
-
 }

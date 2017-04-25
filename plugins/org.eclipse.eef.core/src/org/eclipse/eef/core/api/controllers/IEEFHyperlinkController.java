@@ -21,17 +21,7 @@ import org.eclipse.eef.EEFWidgetAction;
  *
  * @author mbats
  */
-public interface IEEFHyperlinkController extends IEEFWidgetController {
-
-	/**
-	 * Invoked when the user clicks on an hyperlink.
-	 *
-	 * @param element
-	 *            Semantic element
-	 * @return the status of the onclick execution.
-	 */
-	IStatus onClick(Object element);
-
+public interface IEEFHyperlinkController extends IEEFOnClickController {
 	/**
 	 * Register a consumer which will be called with the new value of the hyperlink when it will change.
 	 *
