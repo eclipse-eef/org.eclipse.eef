@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getDisplayExpression <em>Display Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getOnClickExpression <em>On Click Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getImageExpression <em>Image Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getActions <em>Actions</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFListDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
@@ -101,6 +102,26 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	 * @ordered
 	 */
 	protected String onClickExpression = EEFListDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IMAGE_EXPRESSION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 *
+	 * @see #getImageExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected String imageExpression = EEFListDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list. <!-- begin-user-doc
@@ -223,6 +244,31 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION, oldOnClickExpression,
 					onClickExpression));
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public String getImageExpression() {
+		return imageExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public void setImageExpression(String newImageExpression) {
+		String oldImageExpression = imageExpression;
+		imageExpression = newImageExpression;
+		if (eNotificationRequired()) {
+			eNotify(new ENotificationImpl(this, Notification.SET, EefPackage.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION, oldImageExpression,
+					imageExpression));
 		}
 	}
 
@@ -368,6 +414,8 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return getDisplayExpression();
 		case EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION:
 			return getOnClickExpression();
+		case EefPackage.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION:
+			return getImageExpression();
 		case EefPackage.EEF_LIST_DESCRIPTION__ACTIONS:
 			return getActions();
 		case EefPackage.EEF_LIST_DESCRIPTION__STYLE:
@@ -398,6 +446,9 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return;
 		case EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION:
 			setOnClickExpression((String) newValue);
+			return;
+		case EefPackage.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION:
+			setImageExpression((String) newValue);
 			return;
 		case EefPackage.EEF_LIST_DESCRIPTION__ACTIONS:
 			getActions().clear();
@@ -431,6 +482,9 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		case EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION:
 			setOnClickExpression(EEFListDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT);
 			return;
+		case EefPackage.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION:
+			setImageExpression(EEFListDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT);
+			return;
 		case EefPackage.EEF_LIST_DESCRIPTION__ACTIONS:
 			getActions().clear();
 			return;
@@ -461,6 +515,9 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		case EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION:
 			return EEFListDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT == null ? onClickExpression != null
 					: !EEFListDescriptionImpl.ON_CLICK_EXPRESSION_EDEFAULT.equals(onClickExpression);
+		case EefPackage.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION:
+			return EEFListDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT == null ? imageExpression != null
+					: !EEFListDescriptionImpl.IMAGE_EXPRESSION_EDEFAULT.equals(imageExpression);
 		case EefPackage.EEF_LIST_DESCRIPTION__ACTIONS:
 			return actions != null && !actions.isEmpty();
 		case EefPackage.EEF_LIST_DESCRIPTION__STYLE:
@@ -489,6 +546,8 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 		result.append(displayExpression);
 		result.append(", onClickExpression: "); //$NON-NLS-1$
 		result.append(onClickExpression);
+		result.append(", imageExpression: "); //$NON-NLS-1$
+		result.append(imageExpression);
 		result.append(')');
 		return result.toString();
 	}

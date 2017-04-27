@@ -12,6 +12,7 @@ package org.eclipse.eef.ide.ui.internal;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.MessageFormat;
 import java.util.Optional;
 
@@ -35,25 +36,34 @@ public final class EEFImageUtils {
 	}
 
 	/**
-	 * Retrieve an image from a string path as '/resource/folder/image.png'.
+	 * Retrieve an image from a string path as '/resource/folder/image.png' or an URL.
 	 *
 	 * @param imgPath
 	 *            The image path
 	 * @return The image
 	 */
-	public static Optional<Image> getImage(String imgPath) {
-		final File imageFile = FileProvider.getDefault().getFile(new Path(imgPath));
-		if (imageFile != null && imageFile.exists() && imageFile.canRead()) {
-			try {
-				ImageDescriptor imageDescriptor = ImageDescriptor.createFromURL(imageFile.toURI().toURL());
-				return Optional.ofNullable(ExtendedImageRegistry.INSTANCE.getImage(imageDescriptor));
-			} catch (MalformedURLException e) {
-				EEFIdeUiPlugin.INSTANCE.log(e);
+	public static Optional<Image> getImage(Object imgPath) {
+		Optional<ImageDescriptor> imageDescriptor = Optional.empty();
+		if (imgPath instanceof String) {
+			final File imageFile = FileProvider.getDefault().getFile(new Path((String) imgPath));
+			if (imageFile != null && imageFile.exists() && imageFile.canRead()) {
+				try {
+					imageDescriptor = Optional.ofNullable(ImageDescriptor.createFromURL(imageFile.toURI().toURL()));
+				} catch (MalformedURLException e) {
+					EEFIdeUiPlugin.INSTANCE.log(e);
+				}
+			} else {
+				String message = MessageFormat.format(Messages.EEFIdeUiPlugin_fileNotFound, imgPath);
+				EEFIdeUiPlugin.getPlugin().error(message);
 			}
+		} else if (imgPath instanceof URL) {
+			imageDescriptor = Optional.ofNullable(ImageDescriptor.createFromURL((URL) imgPath));
 		} else {
 			String message = MessageFormat.format(Messages.EEFIdeUiPlugin_fileNotFound, imgPath);
 			EEFIdeUiPlugin.getPlugin().error(message);
 		}
-		return Optional.empty();
+
+		return imageDescriptor.map(desc -> ExtendedImageRegistry.INSTANCE.getImage(desc));
 	}
+
 }

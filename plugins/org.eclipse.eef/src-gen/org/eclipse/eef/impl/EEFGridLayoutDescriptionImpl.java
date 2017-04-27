@@ -19,12 +19,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#isMakeColumnsWithEqualWidth <em>Make Columns With Equal
  * Width</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

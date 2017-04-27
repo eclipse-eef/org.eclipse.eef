@@ -51,6 +51,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 			addValueExpressionPropertyDescriptor(object);
 			addDisplayExpressionPropertyDescriptor(object);
 			addOnClickExpressionPropertyDescriptor(object);
+			addImageExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,6 +93,19 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 				getResourceLocator(), getString("_UI_EEFListDescription_onClickExpression_feature"), //$NON-NLS-1$
 				getString("_UI_PropertyDescriptor_description", "_UI_EEFListDescription_onClickExpression_feature", "_UI_EEFListDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				EefPackage.Literals.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Image Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addImageExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFListDescription_imageExpression_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFListDescription_imageExpression_feature", "_UI_EEFListDescription_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				EefPackage.Literals.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
 				null));
 	}
 
@@ -174,6 +188,7 @@ public class EEFListDescriptionItemProvider extends EEFWidgetDescriptionItemProv
 		case EefPackage.EEF_LIST_DESCRIPTION__VALUE_EXPRESSION:
 		case EefPackage.EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION:
 		case EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION:
+		case EefPackage.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case EefPackage.EEF_LIST_DESCRIPTION__ACTIONS:

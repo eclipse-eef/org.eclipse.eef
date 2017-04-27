@@ -1838,13 +1838,22 @@ public interface EefPackage extends EPackage {
 	int EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Image Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 *
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LIST_DESCRIPTION__ACTIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 3;
+	int EEF_LIST_DESCRIPTION__ACTIONS = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
@@ -1853,7 +1862,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LIST_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
+	int EEF_LIST_DESCRIPTION__STYLE = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Styles</b></em>' containment reference list. <!-- begin-user-doc -->
@@ -1862,7 +1871,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LIST_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 5;
+	int EEF_LIST_DESCRIPTION__CONDITIONAL_STYLES = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>EEF List Description</em>' class. <!-- begin-user-doc --> <!--
@@ -1871,7 +1880,7 @@ public interface EefPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_LIST_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 6;
+	int EEF_LIST_DESCRIPTION_FEATURE_COUNT = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.impl.EEFWidgetStyleImpl <em>EEF Widget Style</em>}' class.
@@ -4514,6 +4523,17 @@ public interface EefPackage extends EPackage {
 	EAttribute getEEFListDescription_OnClickExpression();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.eef.EEFListDescription#getImageExpression <em>Image
+	 * Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @return the meta object for the attribute '<em>Image Expression</em>'.
+	 * @see org.eclipse.eef.EEFListDescription#getImageExpression()
+	 * @see #getEEFListDescription()
+	 * @generated
+	 */
+	EAttribute getEEFListDescription_ImageExpression();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.eef.EEFListDescription#getActions
 	 * <em>Actions</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
@@ -6288,6 +6308,14 @@ public interface EefPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION = EefPackage.eINSTANCE.getEEFListDescription_OnClickExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Image Expression</b></em>' attribute feature. <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION = EefPackage.eINSTANCE.getEEFListDescription_ImageExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Actions</b></em>' containment reference list feature. <!--

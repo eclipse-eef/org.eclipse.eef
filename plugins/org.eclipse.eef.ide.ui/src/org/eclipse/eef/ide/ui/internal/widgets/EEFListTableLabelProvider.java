@@ -17,7 +17,7 @@ import org.eclipse.eef.EEFListDescription;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.utils.EvalFactory;
-import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.eef.ide.ui.internal.EEFImageUtils;
 import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.ViewerCell;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
@@ -73,10 +73,16 @@ final class EEFListTableLabelProvider extends StyledCellLabelProvider {
 		variables.putAll(this.variableManager.getVariables());
 		variables.put(EEFExpressionUtils.EEFList.VALUE, element);
 
-		String expression = this.description.getDisplayExpression();
-		EAttribute eAttribute = EefPackage.Literals.EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION;
-		String value = EvalFactory.of(this.interpreter, variables).logIfInvalidType(String.class).logIfBlank(eAttribute).evaluate(expression);
+		String displayExpression = this.description.getDisplayExpression();
+		String value = EvalFactory.of(this.interpreter, variables).logIfInvalidType(String.class)
+				.logIfBlank(EefPackage.Literals.EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION).evaluate(displayExpression);
 		cell.setText(value);
+
+		String imageExpression = this.description.getImageExpression();
+		Object imagePath = EvalFactory.of(this.interpreter, variables).logIfInvalidType(Object.class)
+				.logIfBlank(EefPackage.Literals.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION).evaluate(imageExpression);
+		EEFImageUtils.getImage(imagePath).ifPresent(path -> cell.setImage(path));
+
 		super.update(cell);
 	}
 }
