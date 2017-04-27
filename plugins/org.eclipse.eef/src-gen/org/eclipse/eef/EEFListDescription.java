@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.eef.EEFListDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFListDescription#getDisplayExpression <em>Display Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFListDescription#getOnClickExpression <em>On Click Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.EEFListDescription#getImageExpression <em>Image Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFListDescription#getActions <em>Actions</em>}</li>
  * <li>{@link org.eclipse.eef.EEFListDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFListDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
@@ -102,6 +103,29 @@ public interface EEFListDescription extends EEFWidgetDescription {
 	 * @generated
 	 */
 	void setOnClickExpression(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Image Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * --> <!-- begin-model-doc --> The image of the action visible by the end-users. <!-- end-model-doc -->
+	 *
+	 * @return the value of the '<em>Image Expression</em>' attribute.
+	 * @see #setImageExpression(String)
+	 * @see org.eclipse.eef.EefPackage#getEEFListDescription_ImageExpression()
+	 * @model
+	 * @generated
+	 */
+	String getImageExpression();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.eef.EEFListDescription#getImageExpression <em>Image Expression</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the new value of the '<em>Image Expression</em>' attribute.
+	 * @see #getImageExpression()
+	 * @generated
+	 */
+	void setImageExpression(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list. The list contents are of type

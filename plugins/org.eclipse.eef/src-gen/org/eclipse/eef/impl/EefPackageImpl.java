@@ -1705,8 +1705,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFListDescription_Actions() {
-		return (EReference) eefListDescriptionEClass.getEStructuralFeatures().get(3);
+	public EAttribute getEEFListDescription_ImageExpression() {
+		return (EAttribute) eefListDescriptionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1715,7 +1715,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFListDescription_Style() {
+	public EReference getEEFListDescription_Actions() {
 		return (EReference) eefListDescriptionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1725,8 +1725,18 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEEFListDescription_ConditionalStyles() {
+	public EReference getEEFListDescription_Style() {
 		return (EReference) eefListDescriptionEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 */
+	@Override
+	public EReference getEEFListDescription_ConditionalStyles() {
+		return (EReference) eefListDescriptionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -2573,6 +2583,7 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		createEAttribute(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__DISPLAY_EXPRESSION);
 		createEAttribute(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__ON_CLICK_EXPRESSION);
+		createEAttribute(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__IMAGE_EXPRESSION);
 		createEReference(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__ACTIONS);
 		createEReference(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__STYLE);
 		createEReference(eefListDescriptionEClass, EefPackage.EEF_LIST_DESCRIPTION__CONDITIONAL_STYLES);
@@ -2904,8 +2915,8 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(getEEFGridLayoutDescription_NumberOfColumns(), theEcorePackage.getEInt(), "numberOfColumns", "1", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
 				EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
-		initEAttribute(getEEFGridLayoutDescription_MakeColumnsWithEqualWidth(), theEcorePackage.getEBoolean(), "makeColumnsWithEqualWidth", "1", 0, 1, //$NON-NLS-1$//$NON-NLS-2$
-				EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
+		initEAttribute(getEEFGridLayoutDescription_MakeColumnsWithEqualWidth(), theEcorePackage.getEBoolean(), "makeColumnsWithEqualWidth", "false", //$NON-NLS-1$//$NON-NLS-2$
+				0, 1, EEFGridLayoutDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 
 		initEClass(eefWidgetDescriptionEClass, EEFWidgetDescription.class, "EEFWidgetDescription", EPackageImpl.IS_ABSTRACT, //$NON-NLS-1$
@@ -3134,6 +3145,9 @@ public class EefPackageImpl extends EPackageImpl implements EefPackage {
 		initEAttribute(getEEFListDescription_OnClickExpression(), theEcorePackage.getEString(), "onClickExpression", null, 0, 1, //$NON-NLS-1$
 				EEFListDescription.class, !EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE,
 				!EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
+		initEAttribute(getEEFListDescription_ImageExpression(), ecorePackage.getEString(), "imageExpression", null, 0, 1, EEFListDescription.class, //$NON-NLS-1$
+				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, !EPackageImpl.IS_UNSETTABLE, !EPackageImpl.IS_ID,
+				EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED, EPackageImpl.IS_ORDERED);
 		initEReference(getEEFListDescription_Actions(), this.getEEFWidgetAction(), null, "actions", null, 0, -1, EEFListDescription.class, //$NON-NLS-1$
 				!EPackageImpl.IS_TRANSIENT, !EPackageImpl.IS_VOLATILE, EPackageImpl.IS_CHANGEABLE, EPackageImpl.IS_COMPOSITE,
 				EPackageImpl.IS_RESOLVE_PROXIES, !EPackageImpl.IS_UNSETTABLE, EPackageImpl.IS_UNIQUE, !EPackageImpl.IS_DERIVED,
