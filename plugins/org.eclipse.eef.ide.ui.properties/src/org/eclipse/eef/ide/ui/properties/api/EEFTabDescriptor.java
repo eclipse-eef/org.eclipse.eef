@@ -13,6 +13,7 @@ package org.eclipse.eef.ide.ui.properties.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.eef.EEFDynamicMappingFor;
 import org.eclipse.eef.EefPackage;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFGroup;
@@ -76,6 +77,14 @@ public class EEFTabDescriptor extends AbstractEEFTabDescriptor {
 			}
 			identifier.append(groupSemanticElement.hashCode());
 		}
+
+		// @formatter:off
+		groups.stream().map(EEFGroup::getDescription)
+			.flatMap(description -> description.getControls().stream())
+			.filter(EEFDynamicMappingFor.class::isInstance)
+			.findFirst()
+			.ifPresent(control -> identifier.append(System.currentTimeMillis()));
+		// @formatter:on
 
 		Object pageSemanticElement = this.eefPage.getVariableManager().getVariables().get(EEFExpressionUtils.SELF);
 		if (pageSemanticElement instanceof EObject) {
