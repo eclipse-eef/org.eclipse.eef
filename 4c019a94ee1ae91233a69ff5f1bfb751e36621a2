@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "87bd33cc_30ed4301",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/IEEFOnClickController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:42:00Z",
+      "side": 1,
+      "message": "Even better, why not a default method?",
+      "parentUuid": "87bd33cc_3dac3c24",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 1
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87bd33cc_5d2ad830",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
         "patchSetId": 1
