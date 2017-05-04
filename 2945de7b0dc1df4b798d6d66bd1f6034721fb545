@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87bd33cc_70e7bb1e",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/IEEFToolbarActionController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "default method?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 1
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_b0d9536c",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/internal/controllers/EEFGroupController.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "Java 8",
+      "range": {
+        "startLine": 129,
+        "startChar": 55,
+        "endLine": 131,
+        "endChar": 22
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_d0b5ef19",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "protected final??? private would be better :)",
+      "range": {
+        "startLine": 348,
+        "startChar": 1,
+        "endLine": 348,
+        "endChar": 17
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_50c1df74",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "no need here",
+      "range": {
+        "startLine": 349,
+        "startChar": 2,
+        "endLine": 349,
+        "endChar": 8
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_70d09b3f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "no need here",
+      "range": {
+        "startLine": 350,
+        "startChar": 2,
+        "endLine": 350,
+        "endChar": 7
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_10c04773",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "java8 :)",
+      "range": {
+        "startLine": 354,
+        "startChar": 29,
+        "endLine": 359,
+        "endChar": 3
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_5d565856",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "Why are we using this? Aren\u0027t we creating a toolbar manager line 215 to try to find it once again line 216?",
+      "range": {
+        "startLine": 363,
+        "startChar": 1,
+        "endLine": 380,
+        "endChar": 2
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_f0bcab06",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "Remove this",
+      "range": {
+        "startLine": 382,
+        "startChar": 1,
+        "endLine": 391,
+        "endChar": 66
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_30c62391",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "Java8 [stream][map][forEach]",
+      "range": {
+        "startLine": 394,
+        "startChar": 3,
+        "endLine": 397,
+        "endChar": 4
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_b0b23330",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFGroupLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "Move this code in createToolbarManager and remove this method",
+      "range": {
+        "startLine": 393,
+        "startChar": 3,
+        "endLine": 398,
+        "endChar": 31
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_90e2970b",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSectionLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "private",
+      "range": {
+        "startLine": 187,
+        "startChar": 1,
+        "endLine": 187,
+        "endChar": 10
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_b004f354",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFSectionLifecycleManager.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:16Z",
+      "side": 1,
+      "message": "this code is highly similar to the one in EEFGroupLifecycleManager, it may be moved in a common superclass or super interface.\n\nSomething like org.eclipse.eef.ide.ui.internal.widgets.IEEFToolbarLifecycleManager implemented by both class could be better.",
+      "range": {
+        "startLine": 188,
+        "startChar": 2,
+        "endLine": 202,
+        "endChar": 3
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
