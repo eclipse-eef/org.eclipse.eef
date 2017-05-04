@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87bd33cc_1dd060c1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:03:36Z",
+      "side": 1,
+      "message": "Just like in the Sirius one :)",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_3dac3c24",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/IEEFOnClickController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:03:36Z",
+      "side": 1,
+      "message": "I understand the introduction of this interface but in this case, a new superclass org.eclipse.eef.core.internal.controllers.AbstractEEFOnClickController should be available for EEFListController (which does not seems to have been updated), EEFHyperlinkController and EEFExtReferenceController to move the same code in one place.\n\nOr maybe I am missing something?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 1
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_5d2ad830",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:03:36Z",
+      "side": 1,
+      "message": "Why not having another SWT widget using a hyperlink? I don\u0027t see why we should setup something as configurable as the hyperlink widget since we won\u0027t leverage this ability.",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 63,
+        "endChar": 25
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_dd3ee875",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:03:36Z",
+      "side": 1,
+      "message": "If you want to keep a StyledText, you may want to override org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager.setLabelFontStyle() instead.",
+      "range": {
+        "startLine": 220,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 7
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_3d2fdc42",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:03:36Z",
+      "side": 1,
+      "message": "I don\u0027t think that we need this complex behavior if we work with a hyperlink SWT widget but with this approach, I am pretty sure that this won\u0027t work in a reference widget.\n\nThe code in this approach should be simpler because a specifier will not customize the style of the hyperlink of the reference widget and it should override setLabelFontStyle and call super.setLabelFontStyle which does most of the work anyway.",
+      "range": {
+        "startLine": 236,
+        "startChar": 29,
+        "endLine": 236,
+        "endChar": 46
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_5d03b8c6",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:03:36Z",
+      "side": 1,
+      "message": "See below to make things less complicated",
+      "range": {
+        "startLine": 295,
+        "startChar": 2,
+        "endLine": 295,
+        "endChar": 50
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_fd1e4420",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:03:36Z",
+      "side": 1,
+      "message": "I would remove this operation since the description can never be null (the object description is even final to men sure that no-one will touch it). You do not even need it twice (because you don\u0027t really use it in a similar fashion both times in this review).\n\nInstead of this operation and its usage with:\n\ngetOnClickExpression().ifPresent(expression -\u003e {\n    ....\n})\n\nI would use the simpler version :\nString onClickExpression \u003d Optional.ofNullable(this.description.getOnClickExpression()).orElse(\"\");\nif (!onClickExpression.isEmpty()) {\n    ...\n}",
+      "range": {
+        "startLine": 301,
+        "startChar": 1,
+        "endLine": 309,
+        "endChar": 2
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    }
+  ]
+}
