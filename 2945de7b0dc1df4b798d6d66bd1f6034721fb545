@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "87bd33cc_10120793",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1333
+      },
+      "writtenOn": "2017-05-04T09:47:37Z",
+      "side": 1,
+      "message": "Remove this",
+      "range": {
+        "startLine": 7,
+        "startChar": 9,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "2945de7b0dc1df4b798d6d66bd1f6034721fb545",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87bd33cc_70e7bb1e",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/IEEFToolbarActionController.java",
         "patchSetId": 4
