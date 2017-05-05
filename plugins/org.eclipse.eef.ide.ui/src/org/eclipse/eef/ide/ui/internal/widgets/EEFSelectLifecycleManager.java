@@ -38,8 +38,11 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.KeyAdapter;
+import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
@@ -94,6 +97,11 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	private ISelection referenceValue;
 
 	/**
+	 * The key listener on the combo.
+	 */
+	private AutoCompleteKeyAdapter keyListener;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -121,7 +129,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		this.comboViewer = new ComboViewer(parent, SWT.READ_ONLY);
+		this.comboViewer = new ComboViewer(parent, SWT.DROP_DOWN);
 		this.combo = comboViewer.getCombo();
 		GridData gridData = new GridData();
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
@@ -237,6 +245,9 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 				}
 			}
 		});
+
+		this.keyListener = new AutoCompleteKeyAdapter();
+		this.combo.addKeyListener(this.keyListener);
 	}
 
 	/**
@@ -250,6 +261,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 
 		if (!combo.isDisposed()) {
 			this.combo.removeSelectionListener(this.selectionListener);
+			this.combo.removeKeyListener(this.keyListener);
 		}
 		this.controller.removeNewValueConsumer();
 		this.controller.removeNewCandidatesConsumer();
@@ -285,6 +297,53 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 
 			return EvalFactory.of(EEFSelectLifecycleManager.this.interpreter, variables).logIfInvalidType(String.class).logIfBlank(eAttribute)
 					.evaluate(expression);
+		}
+	}
+
+	/**
+	 * Key adapter which propose auto completion in a combo.
+	 */
+	private class AutoCompleteKeyAdapter extends KeyAdapter {
+		@Override
+		public void keyReleased(KeyEvent keyEvent) {
+			Combo cmb = (Combo) keyEvent.getSource();
+			setClosestMatch(cmb);
+		}
+
+		// Move the highlight back by one character for backspace
+		@Override
+		public void keyPressed(KeyEvent keyEvent) {
+			if (keyEvent.keyCode == SWT.BS) {
+				Combo cmb = (Combo) keyEvent.getSource();
+				Point pt = cmb.getSelection();
+				cmb.setSelection(new Point(Math.max(0, pt.x - 1), pt.y));
+			}
+		}
+
+		/**
+		 * Set the closest match.
+		 *
+		 * @param cmb
+		 *            Combo
+		 */
+		private void setClosestMatch(Combo cmb) {
+			String str = cmb.getText();
+			String[] cItems = cmb.getItems();
+			// Find Item in Combo Items. If full match returns index
+			int index = -1;
+			for (int i = 0; i < cItems.length; i++) {
+				if (cItems[i].toLowerCase().startsWith(str.toLowerCase())) {
+					index = i;
+					break;
+				}
+			}
+
+			if (index != -1) {
+				Point pt = cmb.getSelection();
+				cmb.select(index);
+				cmb.setText(cItems[index]);
+				cmb.setSelection(new Point(pt.x, cItems[index].length()));
+			}
 		}
 	}
 }
