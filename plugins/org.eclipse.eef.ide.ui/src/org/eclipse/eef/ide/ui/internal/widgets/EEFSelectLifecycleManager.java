@@ -38,6 +38,8 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -89,6 +91,11 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	private SelectionListener selectionListener;
 
 	/**
+	 * The focus listener on the combo.
+	 */
+	private FocusListener focusListener;
+
+	/**
 	 * The reference value of the selection, as last rendered from the state of the actual model.
 	 */
 	private ISelection referenceValue;
@@ -121,8 +128,9 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		this.comboViewer = new ComboViewer(parent, SWT.READ_ONLY);
+		this.comboViewer = new ComboViewer(parent, SWT.DROP_DOWN);
 		this.combo = comboViewer.getCombo();
+		new ComboAutoCompleteField(this.combo);
 		GridData gridData = new GridData();
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		this.combo.setLayoutData(gridData);
@@ -201,6 +209,33 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		};
 		this.combo.addSelectionListener(this.selectionListener);
 
+		this.focusListener = new FocusListener() {
+
+			@Override
+			public void focusGained(FocusEvent e) {
+				// Nothing
+			}
+
+			@Override
+			public void focusLost(FocusEvent keyEvent) {
+				if (!EEFSelectLifecycleManager.this.container.isRenderingInProgress()) {
+					for (int i = 0; i < combo.getItems().length; i++) {
+						if (combo.getItem(i).equals(combo.getText())) {
+							IStatus result = controller.updateValue(comboViewer.getElementAt(i));
+							if (result != null && result.getSeverity() == IStatus.ERROR) {
+								EEFIdeUiPlugin.INSTANCE.log(result);
+								comboViewer.setSelection(referenceValue);
+							} else {
+								refresh();
+							}
+						}
+					}
+				}
+			}
+
+		};
+		this.combo.addFocusListener(this.focusListener);
+
 		// Set combo value
 		this.controller.onNewValue((value) -> {
 			if (!this.combo.isDisposed() && !(this.combo.getText() != null && this.combo.getText().equals(value))) {
@@ -250,6 +285,7 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 
 		if (!combo.isDisposed()) {
 			this.combo.removeSelectionListener(this.selectionListener);
+			this.combo.removeFocusListener(this.focusListener);
 		}
 		this.controller.removeNewValueConsumer();
 		this.controller.removeNewCandidatesConsumer();
