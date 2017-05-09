@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "87bd33cc_c9ec6a8a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87bd33cc_1dd060c1",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87bd33cc_3dac3c24",
         "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/IEEFOnClickController.java",
         "patchSetId": 1
@@ -72,6 +96,54 @@
     },
     {
       "key": {
+        "uuid": "87bd33cc_09010278",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/IEEFOnClickController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87bd33cc_3dac3c24",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 1
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87bd33cc_29f79eff",
+        "filename": "plugins/org.eclipse.eef.core/src/org/eclipse/eef/core/api/controllers/IEEFOnClickController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "How to create a default method whic can access to the filed as this.editingContextAdapter? I should create also getters in the interface but at the end I am not convinced as I expose uninteresting method in the API.",
+      "parentUuid": "87bd33cc_30ed4301",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 1
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87bd33cc_5d2ad830",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
         "patchSetId": 1
@@ -83,6 +155,30 @@
       "writtenOn": "2017-05-04T09:03:36Z",
       "side": 1,
       "message": "Why not having another SWT widget using a hyperlink? I don\u0027t see why we should setup something as configurable as the hyperlink widget since we won\u0027t leverage this ability.",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 63,
+        "endChar": 25
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "479dfb6e_5a1d0924",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87bd33cc_5d2ad830",
       "range": {
         "startLine": 63,
         "startChar": 1,
@@ -118,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "479dfb6e_7a22cd62",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87bd33cc_dd3ee875",
+      "range": {
+        "startLine": 220,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 7
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87bd33cc_3d2fdc42",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
         "patchSetId": 1
@@ -129,6 +249,30 @@
       "writtenOn": "2017-05-04T09:03:36Z",
       "side": 1,
       "message": "I don\u0027t think that we need this complex behavior if we work with a hyperlink SWT widget but with this approach, I am pretty sure that this won\u0027t work in a reference widget.\n\nThe code in this approach should be simpler because a specifier will not customize the style of the hyperlink of the reference widget and it should override setLabelFontStyle and call super.setLabelFontStyle which does most of the work anyway.",
+      "range": {
+        "startLine": 236,
+        "startChar": 29,
+        "endLine": 236,
+        "endChar": 46
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "479dfb6e_da10190a",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87bd33cc_3d2fdc42",
       "range": {
         "startLine": 236,
         "startChar": 29,
@@ -164,6 +308,30 @@
     },
     {
       "key": {
+        "uuid": "479dfb6e_fa0dddf2",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87bd33cc_5d03b8c6",
+      "range": {
+        "startLine": 295,
+        "startChar": 2,
+        "endLine": 295,
+        "endChar": 50
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "87bd33cc_fd1e4420",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
         "patchSetId": 1
@@ -175,6 +343,30 @@
       "writtenOn": "2017-05-04T09:03:36Z",
       "side": 1,
       "message": "I would remove this operation since the description can never be null (the object description is even final to men sure that no-one will touch it). You do not even need it twice (because you don\u0027t really use it in a similar fashion both times in this review).\n\nInstead of this operation and its usage with:\n\ngetOnClickExpression().ifPresent(expression -\u003e {\n    ....\n})\n\nI would use the simpler version :\nString onClickExpression \u003d Optional.ofNullable(this.description.getOnClickExpression()).orElse(\"\");\nif (!onClickExpression.isEmpty()) {\n    ...\n}",
+      "range": {
+        "startLine": 301,
+        "startChar": 1,
+        "endLine": 309,
+        "endChar": 2
+      },
+      "revId": "4c019a94ee1ae91233a69ff5f1bfb751e36621a2",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "479dfb6e_1a654194",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 4611
+      },
+      "writtenOn": "2017-05-09T15:53:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87bd33cc_fd1e4420",
       "range": {
         "startLine": 301,
         "startChar": 1,
