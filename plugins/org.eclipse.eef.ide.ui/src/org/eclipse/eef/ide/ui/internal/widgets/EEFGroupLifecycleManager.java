@@ -40,6 +40,8 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.ui.forms.events.ExpansionEvent;
+import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.Section;
 
 /**
@@ -85,6 +87,16 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	private Section section;
 
 	/**
+	 * The form container.
+	 */
+	private IEEFFormContainer form;
+
+	/**
+	 * The expansion listener.
+	 */
+	private IExpansionListener expansionListener;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -113,7 +125,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
 		super.createControl(parent, formContainer);
-
+		this.form = formContainer;
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		Composite groupComposite = widgetFactory.createComposite(parent);
@@ -288,6 +300,21 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
+		// Refresh the page when a group is expanded in order to force the computation of the properties view height.
+		this.expansionListener = new IExpansionListener() {
+
+			@Override
+			public void expansionStateChanging(ExpansionEvent e) {
+				// Nothing
+			}
+
+			@Override
+			public void expansionStateChanged(ExpansionEvent e) {
+				// form.refreshPage();
+			}
+		};
+		this.section.addExpansionListener(this.expansionListener);
+
 		this.controller.onNewLabel((value) -> Optional.ofNullable(value).ifPresent(this.section::setText));
 
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeShown);
@@ -315,6 +342,9 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager {
 		super.aboutToBeHidden();
 
 		this.controller.removeNewLabelConsumer();
+		if (!this.section.isDisposed()) {
+			this.section.removeExpansionListener(this.expansionListener);
+		}
 
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeHidden);
 	}
