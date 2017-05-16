@@ -12,7 +12,6 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFHyperlinkDescription;
@@ -104,16 +103,9 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#createMainControl(org.eclipse.swt.widgets.Composite,
 	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
-	@SuppressWarnings("boxing")
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		this.widgetFactory = formContainer.getWidgetFactory();
-
-		// if there is no actions defined the hyperlink does not need to grab all the horizontal space
-		if (this.description.getActions().size() == 0) {
-			Optional.ofNullable(parent.getLayoutData()).filter(GridData.class::isInstance).map(GridData.class::cast)
-					.map(gridData -> gridData.grabExcessHorizontalSpace = false);
-		}
 
 		// this is the parent composite
 		Composite hyperlinkComposite = this.widgetFactory.createFlatFormComposite(parent);
@@ -125,7 +117,6 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 
 		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, false, false);
 		hyperlinkComposite.setLayoutData(gridData);
-		gridData.grabExcessHorizontalSpace = false;
 
 		this.createHyperlink(hyperlinkComposite);
 		this.createWidgetActionButtons(hyperlinkComposite);
@@ -142,7 +133,7 @@ public class EEFHyperlinkLifecycleManager extends AbstractEEFWidgetLifecycleMana
 	 */
 	private void createHyperlink(Composite parent) {
 		this.hyperlink = widgetFactory.createStyledText(parent, SWT.READ_ONLY);
-		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, false, false);
+		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		this.hyperlink.setLayoutData(gridData);
 		this.hyperlink.setEditable(false);
