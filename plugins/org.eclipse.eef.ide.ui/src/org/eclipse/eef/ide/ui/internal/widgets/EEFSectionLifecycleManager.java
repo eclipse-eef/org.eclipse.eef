@@ -12,6 +12,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFGroup;
@@ -23,8 +24,13 @@ import org.eclipse.eef.core.api.controllers.IEEFSectionController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.internal.widgets.quickfix.EEFMessageHyperlinkListener;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.forms.events.IHyperlinkListener;
 
 /**
@@ -88,9 +94,6 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager impl
 
 			this.lifecycleManagers.add(groupLifecycleManager);
 		}
-
-		this.populateToolBar(formContainer.getForm().getToolBarManager(), this.eefPage.getDescription().getActions(), this.controller,
-				this.eefPage.getView().getContextAdapter(), this.eefPage.getInterpreter(), this.eefPage.getVariableManager());
 	}
 
 	/**
@@ -102,6 +105,8 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager impl
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
 
+		this.populateToolBar(this.container.getForm().getToolBarManager(), this.eefPage.getDescription().getActions(), this.controller,
+				this.eefPage.getView().getContextAdapter(), this.eefPage.getInterpreter(), this.eefPage.getVariableManager());
 		this.container.getForm().addMessageHyperlinkListener(this.hyperlinkListener);
 
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeShown);
@@ -135,9 +140,29 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager impl
 		if (!this.container.getForm().isDisposed()) {
 			this.container.getForm().removeMessageHyperlinkListener(this.hyperlinkListener);
 			this.container.getForm().getMessageManager().removeAllMessages();
+			clearToolBar(this.container.getForm().getToolBarManager());
 		}
 
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeHidden);
+	}
+
+	/**
+	 * Clear the toolbar.
+	 *
+	 * @param toolBarManager
+	 *            The tool bar manager
+	 */
+	private void clearToolBar(IToolBarManager toolBarManager) {
+		if (toolBarManager instanceof ToolBarManager) {
+			// For an unknown reason, the existing tool bar of the formContainer doesn't have a transparent background.
+			ToolBar toolBar = ((ToolBarManager) toolBarManager).getControl();
+			toolBar.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_TRANSPARENT));
+		}
+
+		Optional.ofNullable(toolBarManager).ifPresent(manager -> {
+			manager.removeAll();
+			manager.update(true);
+		});
 	}
 
 	/**
