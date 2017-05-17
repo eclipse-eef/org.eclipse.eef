@@ -62,7 +62,7 @@ public final class EEFImageUtils {
 
 	/**
 	 * Retrieve an image descriptor from a string path as '/resource/folder/image.png'.
-	 * 
+	 *
 	 * @param imgPath
 	 *            The image path
 	 * @return The image descriptor
@@ -84,5 +84,16 @@ public final class EEFImageUtils {
 
 			return optionalImageDescriptor;
 		});
+	}
+
+	/**
+	 * Retrieve an image descriptor from an image.
+	 *
+	 * @param img
+	 *            The image
+	 * @return The image descriptor
+	 */
+	public static Optional<ImageDescriptor> getImageDescriptor(Image img) {
+		return Optional.of(ImageDescriptor.createFromImage(img));
 	}
 }
