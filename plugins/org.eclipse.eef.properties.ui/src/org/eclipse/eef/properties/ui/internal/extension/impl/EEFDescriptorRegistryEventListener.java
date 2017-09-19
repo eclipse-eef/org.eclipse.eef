@@ -136,8 +136,14 @@ public class EEFDescriptorRegistryEventListener<T> extends AbstractRegistryEvent
 				EEFTabbedPropertyViewPlugin.getPlugin().error(message);
 			}
 		} catch (CoreException e) {
-			String message = MessageFormat.format(Messages.DescriptorRegistryEventListener_cannotInstantiateExtension,
-					configurationElement.getAttribute(IMPL_CLASS_DESCRIPTOR_ATTR));
+			String attr = configurationElement.getAttribute(IMPL_CLASS_DESCRIPTOR_ATTR);
+			String message;
+			if (attr != null) {
+				message = MessageFormat.format(Messages.DescriptorRegistryEventListener_cannotInstantiateExtension, attr);
+			} else {
+				message = MessageFormat.format(Messages.DescriptorRegistryEventListener_missingAttribute,
+						configurationElement.getNamespaceIdentifier(), IMPL_CLASS_DESCRIPTOR_ATTR);
+			}
 			EEFTabbedPropertyViewPlugin.getPlugin().error(message, e);
 			return false;
 		}
