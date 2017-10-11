@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
+import java.text.MessageFormat;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.core.runtime.IStatus;
@@ -20,6 +21,7 @@ import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
@@ -30,6 +32,9 @@ import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -44,6 +49,7 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -115,6 +121,76 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * Indicates that the text field is dirty.
 	 */
 	private boolean isDirty;
+
+	// CHECKSTYLE:OFF
+	/**
+	 * A simple data record to remember un-commited user input for recovery in case of concurrent changes that could
+	 * override this input.
+	 */
+	private static class Memento {
+		/**
+		 * The key used to attach the user input memento to the widget.
+		 */
+		public static final String KEY = "eef.widget.text.memento"; //$NON-NLS-1$
+
+		/**
+		 * The widget description that was current when the memento was created.
+		 */
+		public final EEFTextDescription description;
+		/**
+		 * The "self" target element that was current when the memento was created.
+		 */
+		public final Object self;
+		/**
+		 * The reference value corresponding to the pristine text computed from the model by the valueExpression.
+		 */
+		public final String referenceValue;
+		/**
+		 * The last (full) value of the text widget entered by the user but not commited yet.
+		 */
+		public final String userInput;
+
+		public Memento(EEFTextDescription description, Object self, String referenceValue, String userInpu) {
+			this.description = description;
+			this.self = self;
+			this.referenceValue = referenceValue;
+			this.userInput = userInpu;
+		}
+
+		public boolean appliesTo(EEFTextLifecycleManager lm) {
+			return this.description == lm.description && this.self == lm.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+		}
+
+		public void store(Widget w) {
+			w.setData(KEY, this);
+		}
+
+		public static Memento of(Widget w) {
+			Object data = w.getData(KEY);
+			if (data instanceof Memento) {
+				return (Memento) data;
+			} else {
+				return null;
+			}
+		}
+
+		public static void remove(Widget w) {
+			w.setData(KEY, null);
+		}
+
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			String newLine = "\n"; //$NON-NLS-1$
+			sb.append("Desc: " + EcoreUtil.getURI(description)).append(newLine); //$NON-NLS-1$
+			sb.append("Self: " + EcoreUtil.getURI((EObject) self)).append(newLine); //$NON-NLS-1$
+			sb.append("Reference Value: " + referenceValue).append(newLine); //$NON-NLS-1$
+			sb.append("User Input: " + userInput).append(newLine); //$NON-NLS-1$
+			sb.append(newLine);
+			return sb.toString();
+		}
+	}
+	// CHECKSTYLE:ON
 
 	/**
 	 * The constructor.
@@ -217,6 +293,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			public void modifyText(ModifyEvent e) {
 				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && !updateInProgress.get()) {
 					EEFTextLifecycleManager.this.isDirty = true;
+					Object self = EEFTextLifecycleManager.this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
+					String userInput = ((StyledText) e.widget).getText();
+					Memento memento = new Memento(EEFTextLifecycleManager.this.description, self, EEFTextLifecycleManager.this.referenceValue,
+							userInput);
+					memento.store(e.widget);
 				}
 			}
 		};
@@ -258,12 +339,9 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			@Override
 			public void apply(Object value) {
 				if (!text.isDisposed()) {
-					String display = ""; //$NON-NLS-1$
-					if (value != null) {
-						display = Util.firstNonNull(value.toString(), display);
-					}
-					if (!(text.getText() != null && text.getText().equals(display))) {
-						text.setText(display);
+					String newDisplayText = computeNewText(value);
+					if (!(text.getText() != null && text.getText().equals(newDisplayText))) {
+						text.setText(newDisplayText);
 						referenceValue = text.getText();
 					}
 					EEFTextLifecycleManager.this.setStyle();
@@ -272,7 +350,71 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 					}
 				}
 			}
+
 		});
+	}
+
+	/**
+	 * Determine the new textual value to display in the widget.
+	 *
+	 * @param value
+	 *            the value computed from the model.
+	 * @return the textual value to display in the widget.
+	 */
+	private String computeNewText(Object value) {
+		String[] newDisplayText = { "" }; //$NON-NLS-1$
+		if (value != null) {
+			newDisplayText[0] = Util.firstNonNull(value.toString(), newDisplayText[0]);
+		}
+		boolean enabled = "true".equals(System.getProperty("org.eclipse.eef.experimental.recoverLostTextInput", "false")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		Memento m = Memento.of(text);
+		if (m != null) {
+			boolean resettingToPreviousReferenceValue = equals(newDisplayText[0], m.referenceValue);
+			boolean userHasUncommitedInput = !equals(newDisplayText[0], m.userInput);
+			if (enabled && m.appliesTo(EEFTextLifecycleManager.this) && userHasUncommitedInput) {
+				if (resettingToPreviousReferenceValue) {
+					// Custom user input overrides resetting the same previous referenceValue.
+					newDisplayText[0] = m.userInput;
+				} else {
+					// The new model state produces a different value than the one the user saw when he
+					// started
+					// editing.
+					String msg = "The model has changed in an incompatible way while you were editing this widget.\nNew value from the model: {0}\nEdited version: {1}"; //$NON-NLS-1$
+					String[] choices = { "Use new value from the model", "Keep the edited version" }; //$NON-NLS-1$ //$NON-NLS-2$
+					// Can not use MessageDialog.open(kind, parent, title, message, style,
+					// dialogButtonLabels)
+					// with Neon...
+					MessageDialog dialog = new MessageDialog(EEFTextLifecycleManager.this.text.getShell(), "Model Changed During Edition", //$NON-NLS-1$
+							null, MessageFormat.format(msg, newDisplayText[0], m.userInput), MessageDialog.QUESTION, 0, choices);
+					switch (dialog.open()) {
+					case 0:
+						// Nothing to do, newDisplayText[0] is initialized with the value from the model.
+						break;
+					case 1:
+						// Override with user input.
+						newDisplayText[0] = m.userInput;
+						break;
+					default:
+						throw new IllegalStateException();
+					}
+				}
+			}
+			Memento.remove(text);
+		}
+		return newDisplayText[0];
+	}
+
+	/**
+	 * Tests two objects for equality, considering <code>null</code>.
+	 *
+	 * @param o1
+	 *            an object.
+	 * @param o2
+	 *            an object.
+	 * @return <code>true</code> if both objects are null or non-null and equal.
+	 */
+	private boolean equals(Object o1, Object o2) {
+		return (o1 == o2) || (o1 != null && o1.equals(o2));
 	}
 
 	/**
@@ -294,6 +436,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 					refresh();
 				}
 				this.isDirty = false;
+				Memento.remove(this.text);
 				this.setStyle();
 			} finally {
 				updateInProgress.set(false);
