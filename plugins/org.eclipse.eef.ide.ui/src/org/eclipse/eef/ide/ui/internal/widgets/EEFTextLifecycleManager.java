@@ -113,6 +113,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	private AtomicBoolean updateInProgress = new AtomicBoolean(false);
 
 	/**
+	 * .
+	 */
+	private AtomicBoolean lockedByOtherInProgress = new AtomicBoolean(false);
+
+	/**
 	 * The reference value of the text, as last rendered from the state of the actual model.
 	 */
 	private String referenceValue = ""; //$NON-NLS-1$
@@ -306,7 +311,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.focusListener = new FocusListener() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && EEFTextLifecycleManager.this.isDirty) {
+				if (!EEFTextLifecycleManager.this.lockedByOtherInProgress.get() && !EEFTextLifecycleManager.this.container.isRenderingInProgress()
+						&& EEFTextLifecycleManager.this.isDirty) {
 					EEFTextLifecycleManager.this.updateValue(false);
 				}
 			}
@@ -493,6 +499,16 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		if (!this.text.isDisposed() && this.description.getLineCount() <= 1) {
 			this.text.removeKeyListener(this.keyListener);
+		}
+	}
+
+	@Override
+	protected void lockedByOther() {
+		this.lockedByOtherInProgress.set(true);
+		try {
+			super.lockedByOther();
+		} finally {
+			this.lockedByOtherInProgress.set(false);
 		}
 	}
 
