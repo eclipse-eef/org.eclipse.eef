@@ -10,22 +10,38 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.internal;
 
+import org.eclipse.eef.common.api.utils.I18N;
+import org.eclipse.eef.common.api.utils.I18N.TranslatableMessage;
+
 /**
  * Utility class used to hold the messages of the bundle.
  *
  * @author mbats
  */
 public final class Messages {
+	static {
+		I18N.initializeMessages(Messages.class, EEFTabbedPropertyViewPlugin.INSTANCE);
+	}
 
 	// CHECKSTYLE:OFF
 
+	@TranslatableMessage
 	public static String DescriptorRegistryEventListener_missingAttribute;
 
+	@TranslatableMessage
 	public static String DescriptorRegistryEventListener_extensionAlreadyContributed;
 
+	@TranslatableMessage
 	public static String EEFTabbedPropertyRegistry_MissingSectionDescriptorId;
 
+	@TranslatableMessage
 	public static String DescriptorRegistryEventListener_cannotInstantiateExtension;
+
+	@TranslatableMessage
+	public static String EEFTopNavigationElement_noPropertiesAvailable;
+
+	@TranslatableMessage
+	public static String EEFTabbedPropertyList_propertiesNotAvailable;
 
 	// CHECKSTYLE:ON
 

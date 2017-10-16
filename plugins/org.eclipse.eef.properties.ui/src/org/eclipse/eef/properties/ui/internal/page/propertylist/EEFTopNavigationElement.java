@@ -13,6 +13,7 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.internal.page.propertylist;
 
+import org.eclipse.eef.properties.ui.internal.Messages;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
@@ -93,7 +94,7 @@ public class EEFTopNavigationElement extends Canvas {
 			int height = fm.getHeight();
 			int textMiddle = (bounds.height - height) / 2;
 			event.gc.setForeground(this.tabPropertyList.getColorHolder().getWidgetForeground());
-			String propertiesNotAvailable = "No properties available"; //$NON-NLS-1$
+			String propertiesNotAvailable = Messages.EEFTopNavigationElement_noPropertiesAvailable;
 			event.gc.drawText(propertiesNotAvailable, textIndent, textMiddle);
 		}
 
