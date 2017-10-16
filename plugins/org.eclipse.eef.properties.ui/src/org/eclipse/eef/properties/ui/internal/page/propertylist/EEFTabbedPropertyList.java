@@ -20,6 +20,7 @@ import java.util.Map;
 
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.properties.ui.api.IEEFTabItem;
+import org.eclipse.eef.properties.ui.internal.Messages;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.accessibility.ACC;
@@ -46,8 +47,8 @@ import org.eclipse.swt.widgets.Listener;
  * @author Anthony Hunter
  * @author Stephane Begaudeau
  */
-public class EEFTabbedPropertyList extends Composite {
 
+public class EEFTabbedPropertyList extends Composite {
 	/**
 	 * This constant is used to indicate NONE (for example the index of the currently selected tab).
 	 */
@@ -409,7 +410,7 @@ public class EEFTabbedPropertyList extends Composite {
 	public Point computeSize(int wHint, int hHint, boolean changed) {
 		Point result = super.computeSize(hHint, wHint, changed);
 		if (widestLabelIndex == -1) {
-			String propertiesNotAvailable = "Properties not available"; //$NON-NLS-1$
+			String propertiesNotAvailable = Messages.EEFTabbedPropertyList_propertiesNotAvailable;
 			result.x = getTextDimension(propertiesNotAvailable).x + INDENT;
 		} else {
 			/*
