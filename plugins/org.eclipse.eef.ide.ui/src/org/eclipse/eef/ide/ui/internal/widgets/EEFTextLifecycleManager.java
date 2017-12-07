@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Obeo.
+ * Copyright (c) 2015, 2017 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,6 +31,8 @@ import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.eef.ide.ui.internal.Messages;
+import org.eclipse.eef.ide.ui.internal.preferences.EEFPreferences;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -46,9 +48,11 @@ import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
@@ -58,6 +62,25 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
  * @author sbegaudeau
  */
 public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
+	/**
+	 * The different ways an edition conflict can be resolved. Used by the default implementation of
+	 * {@link EEFTextLifecycleManager#resolveEditionConflict(Shell, String, String, String)}.
+	 */
+	public static enum ConflictResolutionMode {
+		/**
+		 * Use the version being edited in the widget, overriding the new version computed from the current model state.
+		 */
+		USE_LOCAL_VERSION,
+		/**
+		 * Use the version computed from the current model state, replacing the text being edited by the user in the
+		 * widget.
+		 */
+		USE_MODEL_VERSION,
+		/**
+		 * Ask the user through a simple dialog which version to keep.
+		 */
+		ASK_USER
+	}
 
 	/**
 	 * This constant is used in order to tell SWT that the text area should be 300px wide even if it is not useful. The
@@ -65,12 +88,6 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * the width of the text area make it work. Don't ask me why :)
 	 */
 	private static final int TEXT_AREA_WIDTH_HINT = 300;
-
-	/**
-	 * Feature flag to enable experimental workaround for the text recovery in case of concurrent refresh.
-	 */
-	private static final boolean FLAG_RECOVER_TEXT_INPUT = "true" //$NON-NLS-1$
-			.equals(System.getProperty("org.eclipse.eef.experimental.recoverLostTextInput", "false")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The description.
@@ -318,15 +335,9 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		this.focusListener = new FocusListener() {
 			@Override
 			public void focusLost(FocusEvent e) {
-				if (FLAG_RECOVER_TEXT_INPUT) {
-					if (!EEFTextLifecycleManager.this.lockedByOtherInProgress.get() && !EEFTextLifecycleManager.this.container.isRenderingInProgress()
-							&& EEFTextLifecycleManager.this.isDirty) {
-						EEFTextLifecycleManager.this.updateValue(false);
-					}
-				} else {
-					if (!EEFTextLifecycleManager.this.container.isRenderingInProgress() && EEFTextLifecycleManager.this.isDirty) {
-						EEFTextLifecycleManager.this.updateValue(false);
-					}
+				if (!EEFTextLifecycleManager.this.lockedByOtherInProgress.get() && !EEFTextLifecycleManager.this.container.isRenderingInProgress()
+						&& EEFTextLifecycleManager.this.isDirty) {
+					EEFTextLifecycleManager.this.updateValue(false);
 				}
 			}
 
@@ -389,37 +400,97 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		if (m != null) {
 			boolean resettingToPreviousReferenceValue = equals(newDisplayText[0], m.referenceValue);
 			boolean userHasUncommitedInput = !equals(newDisplayText[0], m.userInput);
-			if (FLAG_RECOVER_TEXT_INPUT && m.appliesTo(EEFTextLifecycleManager.this) && userHasUncommitedInput) {
+			if (m.appliesTo(EEFTextLifecycleManager.this) && userHasUncommitedInput) {
 				if (resettingToPreviousReferenceValue) {
 					// Custom user input overrides resetting the same previous referenceValue.
 					newDisplayText[0] = m.userInput;
-				} else {
-					// The new model state produces a different value than the one the user saw when he
-					// started
-					// editing.
-					String msg = "The model has changed in an incompatible way while you were editing this widget.\nNew value from the model: {0}\nEdited version: {1}"; //$NON-NLS-1$
-					String[] choices = { "Use new value from the model", "Keep the edited version" }; //$NON-NLS-1$ //$NON-NLS-2$
-					// Can not use MessageDialog.open(kind, parent, title, message, style,
-					// dialogButtonLabels)
-					// with Neon...
-					MessageDialog dialog = new MessageDialog(EEFTextLifecycleManager.this.text.getShell(), "Model Changed During Edition", //$NON-NLS-1$
-							null, MessageFormat.format(msg, newDisplayText[0], m.userInput), MessageDialog.QUESTION, 0, choices);
-					switch (dialog.open()) {
-					case 0:
-						// Nothing to do, newDisplayText[0] is initialized with the value from the model.
-						break;
-					case 1:
-						// Override with user input.
-						newDisplayText[0] = m.userInput;
-						break;
-					default:
-						throw new IllegalStateException();
-					}
+				} else if (!equals(m.userInput, newDisplayText[0])) {
+					// Conflict must be resolved somehow.
+					newDisplayText[0] = resolveEditionConflict(EEFTextLifecycleManager.this.text.getShell(), m.referenceValue, m.userInput,
+							newDisplayText[0]);
 				}
 			}
 			Memento.remove(text);
 		}
 		return newDisplayText[0];
+	}
+
+	/**
+	 * Handle conflicts between un-commited changes in the widget and concurrent changes in the model that produce a
+	 * different value than the original one seen by the user.
+	 *
+	 * @param shell
+	 *            the shell to use if user interaction is needed.
+	 * @param originalValue
+	 *            the original, common value, before the user started editing and before the concurrent model change
+	 *            produced a new text.
+	 * @param localEditedVersion
+	 *            the value as edited by the user, and seen in the UI.
+	 * @param newValueFromModel
+	 *            the new value produced from the new model state.
+	 * @return the new value to use in the text field.
+	 */
+	protected String resolveEditionConflict(Shell shell, String originalValue, String localEditedVersion, final String newValueFromModel) {
+		String result;
+		switch (EEFPreferences.getTextConflictResolutionMode()) {
+		case USE_LOCAL_VERSION:
+			result = localEditedVersion;
+			break;
+		case USE_MODEL_VERSION:
+			result = newValueFromModel;
+			break;
+		case ASK_USER:
+			result = askUserToResolveConflict(shell, originalValue, localEditedVersion, newValueFromModel);
+			break;
+		default:
+			throw new IllegalStateException();
+		}
+		return result;
+	}
+
+	/**
+	 * Open a simple dialog to inform the user of a conflict and ask him which version to keep.
+	 *
+	 * @param shell
+	 *            the shell to use if user interaction is needed.
+	 * @param originalValue
+	 *            the original, common value, before the user started editing and before the concurrent model change
+	 *            produced a new text.
+	 * @param localEditedVersion
+	 *            the value as edited by the user, and seen in the UI.
+	 * @param newValueFromModel
+	 *            the new value produced from the new model state.
+	 * @return the value chosen by the user.
+	 */
+	protected String askUserToResolveConflict(final Shell shell, String originalValue, final String localEditedVersion,
+			final String newValueFromModel) {
+		final String[] result = { localEditedVersion };
+		// @formatter:off
+		final String[] choices = {
+				Messages.EEFTextLifecycleManager_conflictDialog_choiceNewModelValue,
+				Messages.EEFTextLifecycleManager_conflictDialog_choiceLocalEditedValue,
+		};
+		// @formatter:on
+		shell.getDisplay().syncExec(new Runnable() {
+			@Override
+			public void run() {
+				Image img = shell.getDisplay().getSystemImage(SWT.ICON_QUESTION);
+				MessageDialog dialog = new MessageDialog(shell, Messages.EEFTextLifecycleManager_conflictDialog_title, img,
+						MessageFormat.format(Messages.EEFTextLifecycleManager_conflictDialog_message, newValueFromModel, localEditedVersion),
+						MessageDialog.QUESTION, 0, choices);
+				switch (dialog.open()) {
+				case 0:
+					result[0] = newValueFromModel;
+					break;
+				case 1:
+					result[0] = localEditedVersion;
+					break;
+				default:
+					throw new IllegalStateException();
+				}
+			}
+		});
+		return result[0];
 	}
 
 	/**
@@ -516,15 +587,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 	@Override
 	protected void lockedByOther() {
-		if (FLAG_RECOVER_TEXT_INPUT) {
-			this.lockedByOtherInProgress.set(true);
-			try {
-				super.lockedByOther();
-			} finally {
-				this.lockedByOtherInProgress.set(false);
-			}
-		} else {
+		this.lockedByOtherInProgress.set(true);
+		try {
 			super.lockedByOther();
+		} finally {
+			this.lockedByOtherInProgress.set(false);
 		}
 	}
 
