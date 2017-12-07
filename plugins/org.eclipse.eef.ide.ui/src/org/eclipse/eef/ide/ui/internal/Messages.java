@@ -82,6 +82,18 @@ public final class Messages {
 	@TranslatableMessage
 	public static String AbstractEEFWidgetLifecycleManager_lockedNoWrite;
 
+	@TranslatableMessage
+	public static String EEFTextLifecycleManager_conflictDialog_title;
+
+	@TranslatableMessage
+	public static String EEFTextLifecycleManager_conflictDialog_message;
+
+	@TranslatableMessage
+	public static String EEFTextLifecycleManager_conflictDialog_choiceNewModelValue;
+
+	@TranslatableMessage
+	public static String EEFTextLifecycleManager_conflictDialog_choiceLocalEditedValue;
+
 	// CHECKSTYLE:ON
 
 	/**
