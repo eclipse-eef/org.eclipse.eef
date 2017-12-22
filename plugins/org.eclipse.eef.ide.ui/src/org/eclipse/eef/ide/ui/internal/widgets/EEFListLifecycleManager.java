@@ -30,7 +30,6 @@ import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -254,8 +253,7 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 */
 	private void setListValue(Object value) {
 		if (!this.tableViewer.getTable().isDisposed()) {
-			final ISelection selection = new StructuredSelection(value);
-			tableViewer.setSelection(selection);
+			final ISelection selection = this.tableViewer.getSelection();
 
 			List<Object> values = new ArrayList<Object>();
 			if (value instanceof Iterable<?>) {
@@ -266,6 +264,7 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 				values.add(value);
 			}
 			tableViewer.setInput(values.toArray());
+			tableViewer.setSelection(selection);
 		}
 	}
 
