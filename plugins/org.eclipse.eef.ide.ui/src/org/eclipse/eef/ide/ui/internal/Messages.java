@@ -97,6 +97,12 @@ public final class Messages {
 	@TranslatableMessage
 	public static String EEFTextLifecycleManager_conflictDialog_choiceLocalEditedValue;
 
+	@TranslatableMessage
+	public static String EEFTextLifecycleManager_textLossByLocking_title;
+
+	@TranslatableMessage
+	public static String EEFTextLifecycleManager_textLossByLocking_message;
+
 	// CHECKSTYLE:ON
 
 	/**

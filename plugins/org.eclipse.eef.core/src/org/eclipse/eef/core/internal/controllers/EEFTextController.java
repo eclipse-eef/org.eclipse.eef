@@ -84,7 +84,6 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	@Override
 	public void refresh() {
 		super.refresh();
-
 		String valueExpression = this.description.getValueExpression();
 		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
 			this.newEval().call(valueExpression, consumer);
