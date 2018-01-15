@@ -84,10 +84,19 @@ public class EEFTextController extends AbstractEEFWidgetController implements IE
 	@Override
 	public void refresh() {
 		super.refresh();
+		computeValue(this.newValueConsumer);
+	}
 
+	/**
+	 * Recompute the current value and provide it to the specified consumer.
+	 *
+	 * @param consumer
+	 *            the consumer for the current value.
+	 */
+	public void computeValue(Consumer<Object> consumer) {
 		String valueExpression = this.description.getValueExpression();
-		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
-			this.newEval().call(valueExpression, consumer);
+		Optional.ofNullable(consumer).ifPresent(c -> {
+			this.newEval().call(valueExpression, c);
 		});
 	}
 

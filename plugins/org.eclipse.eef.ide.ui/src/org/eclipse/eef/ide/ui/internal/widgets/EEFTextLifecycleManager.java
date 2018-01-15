@@ -28,6 +28,7 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.core.internal.controllers.EEFTextController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
@@ -42,6 +43,9 @@ import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.dnd.Clipboard;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyListener;
@@ -545,10 +549,63 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	protected void lockedByOther() {
 		this.lockedByOtherInProgress.set(true);
 		try {
+			/*
+			 * Disabling the widget will prevent the user to recover any local version of the text widget. Detect this
+			 * case and open a popup with the option to copy the local text to the clipboard.
+			 */
+			String textFromModel = computeTextFromModel();
+			Memento m = Memento.of(text);
+			if (m != null) {
+				boolean userHasUncommitedInput = !Objects.equals(textFromModel, m.userInput);
+				if (m.appliesTo(this) && userHasUncommitedInput) {
+					notifyTextLossOnLock(m.userInput, textFromModel);
+					// Update the displayed text to avoid confusion.
+					this.text.setText(textFromModel);
+				}
+				Memento.remove(text);
+			}
 			super.lockedByOther();
 		} finally {
 			this.lockedByOtherInProgress.set(false);
 		}
+	}
+
+	/**
+	 * Notify the end user that his current input will be lost as the underlying widget (and model element) has been
+	 * locked by a remote/async change.
+	 *
+	 * @param userInput
+	 *            the current text entered by the user.
+	 * @param textFromModel
+	 *            the text that will replace the current input.
+	 */
+	protected void notifyTextLossOnLock(String userInput, String textFromModel) {
+		Shell sh = this.text.getShell();
+		if (MessageDialog.openQuestion(sh, Messages.EEFTextLifecycleManager_textLossByLocking_title,
+				MessageFormat.format(Messages.EEFTextLifecycleManager_textLossByLocking_title, userInput))) {
+			Clipboard cp = new Clipboard(sh.getDisplay());
+			cp.setContents(new Object[] { userInput }, new Transfer[] { TextTransfer.getInstance() });
+			cp.dispose();
+		}
+	}
+
+	/**
+	 * Compute the text the widget should display given the current state of the underlying model (independently of any
+	 * potential user input in the widget).
+	 *
+	 * @return the text to display according to the model's current state.
+	 */
+	@SuppressWarnings("restriction")
+	private String computeTextFromModel() {
+		Object[] value = { null };
+		if (this.controller instanceof EEFTextController) {
+			((EEFTextController) this.controller).computeValue(v -> value[0] = v);
+		}
+		String result = ""; //$NON-NLS-1$
+		if (value[0] != null) {
+			result = Util.firstNonNull(value[0].toString(), result);
+		}
+		return result;
 	}
 
 	/**
