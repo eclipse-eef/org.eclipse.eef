@@ -89,76 +89,76 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * layout data should work by themselves but it seems that there is a bug with SWT so, this useless information on
 	 * the width of the text area make it work. Don't ask me why :)
 	 */
-	private static final int TEXT_AREA_WIDTH_HINT = 300;
+	protected static final int TEXT_AREA_WIDTH_HINT = 300;
 
 	/**
 	 * The description.
 	 */
-	private EEFTextDescription description;
+	protected EEFTextDescription description;
 
 	/**
 	 * The text.
 	 */
-	private StyledText text;
+	protected StyledText text;
 
 	/**
 	 * The controller.
 	 */
-	private IEEFTextController controller;
+	protected IEEFTextController controller;
 
 	/**
 	 * The listener on the text field.
 	 */
-	private FocusListener focusListener;
+	protected FocusListener focusListener;
 
 	/**
 	 * The key listener on the text field (unused for a multi-line text field).
 	 */
-	private KeyListener keyListener;
+	protected KeyListener keyListener;
 
 	/**
 	 * The widget factory.
 	 */
-	private EEFWidgetFactory widgetFactory;
+	protected EEFWidgetFactory widgetFactory;
 
 	/**
 	 * The default background color of the text field.
 	 */
-	private Color defaultBackgroundColor;
+	protected Color defaultBackgroundColor;
 
 	/**
 	 * The listener used to indicate that the text field is dirty.
 	 */
-	private ModifyListener modifyListener;
+	protected ModifyListener modifyListener;
 
 	/**
 	 * Used to make the SelectionListener reentrant, to avoid infinite loops when we need to revert the UI state on
 	 * error (as reverting the UI re-triggers the SelectionListener).
 	 */
-	private AtomicBoolean updateInProgress = new AtomicBoolean(false);
+	protected AtomicBoolean updateInProgress = new AtomicBoolean(false);
 
 	/**
 	 * True only while we are reacting to a notification that the underlying element has been locked by someone else.
 	 * When this is the case, we must avoid any attempt to apply our current widget state to the model (it will fail).
 	 */
-	private AtomicBoolean lockedByOtherInProgress = new AtomicBoolean(false);
+	protected AtomicBoolean lockedByOtherInProgress = new AtomicBoolean(false);
 
 	/**
 	 * The reference value of the text, as last rendered from the state of the actual model.
 	 */
-	private String referenceValue = ""; //$NON-NLS-1$
+	protected String referenceValue = ""; //$NON-NLS-1$
 
 	/**
 	 * Indicates that the text field is dirty.
 	 */
-	private boolean isDirty;
+	protected boolean isDirty;
 
 	// CHECKSTYLE:OFF
 	/**
 	 * A simple data record to remember un-commited user input for recovery in case of concurrent changes that could
 	 * override this input.
 	 */
-	private static class Memento {
+	protected static class Memento {
 		/**
 		 * The key used to attach the user input memento to the widget.
 		 */
