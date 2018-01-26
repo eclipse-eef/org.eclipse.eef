@@ -227,24 +227,61 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		this.controller.onNewCandidates(new IConsumer<List<Object>>() {
 			@Override
 			public void apply(List<Object> value) {
-				if (!combo.isDisposed()) {
-					if (value != null) {
-						Object[] candidates = value.toArray();
-						for (int i = 0; i < candidates.length; i++) {
-							if (candidates[i] == null) {
-								candidates[i] = NO_VALUE;
-							}
-						}
-						comboViewer.setInput(candidates);
-					} else {
-						comboViewer.setInput(null);
-					}
-					if (!combo.isEnabled()) {
-						combo.setEnabled(true);
-					}
-				}
+				onNewCandidates(value);
 			}
 		});
+	}
+
+	/**
+	 * Callback invoked when new candidate values are computed.
+	 *
+	 * @param value
+	 *            the new candidates.
+	 */
+	private void onNewCandidates(List<Object> value) {
+		if (!combo.isDisposed()) {
+			if (this.combo.getListVisible() && this.avoidUpdatingOpenedCombo()) {
+				return;
+			}
+			if (this.forceCloseToUpdateCombo()) {
+				this.combo.setListVisible(false);
+			}
+			if (value != null) {
+				Object[] candidates = value.toArray();
+				for (int i = 0; i < candidates.length; i++) {
+					if (candidates[i] == null) {
+						candidates[i] = NO_VALUE;
+					}
+				}
+				comboViewer.setInput(candidates);
+			} else {
+				comboViewer.setInput(null);
+			}
+			if (!combo.isEnabled()) {
+				combo.setEnabled(true);
+			}
+		}
+	}
+
+	/**
+	 * Needed to workaround https://bugs.eclipse.org/530181, which happens at least under to Windows 7.
+	 *
+	 * @return true if we should avoid accepting new/updated input while the combo is opened/visible.
+	 */
+	private boolean avoidUpdatingOpenedCombo() {
+		// Default to true under Windows 7.
+		boolean win7 = "Windows7".equals(System.getProperty("org.osgi.framework.os.name")); //$NON-NLS-1$ //$NON-NLS-2$
+		return Boolean.valueOf(System.getProperty("org.eclipse.eef.avoidUpdatingOpenedCombo", Boolean.toString(win7))).booleanValue(); //$NON-NLS-1$
+	}
+
+	/**
+	 * Checks configuration flag to see if we must close of already opened combos to update their contents (instead of
+	 * possibly displaying stale values on OSes that do not support updating opened combos).
+	 *
+	 * @return true if the combo must be force-closed for its content to be updated.
+	 */
+	private boolean forceCloseToUpdateCombo() {
+		return Boolean.valueOf(System.getProperty("org.eclipse.eef.forceCloseToUpdateCombo", Boolean.toString(false))).booleanValue(); //$NON-NLS-1$
 	}
 
 	/**
