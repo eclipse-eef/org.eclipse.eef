@@ -27,6 +27,7 @@ import org.eclipse.eef.core.api.controllers.EEFControllersFactory;
 import org.eclipse.eef.core.api.controllers.IConsumer;
 import org.eclipse.eef.core.api.controllers.IEEFTextController;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
+import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper;
 import org.eclipse.eef.ide.ui.api.widgets.EEFStyleHelper.IEEFTextStyleCallback;
@@ -34,13 +35,14 @@ import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.eef.ide.ui.internal.preferences.EEFPreferences;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.dnd.Clipboard;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.KeyEvent;
@@ -53,7 +55,6 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -150,76 +151,6 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * Indicates that the text field is dirty.
 	 */
 	private boolean isDirty;
-
-	// CHECKSTYLE:OFF
-	/**
-	 * A simple data record to remember un-commited user input for recovery in case of concurrent changes that could
-	 * override this input.
-	 */
-	private static class Memento {
-		/**
-		 * The key used to attach the user input memento to the widget.
-		 */
-		public static final String KEY = "eef.widget.text.memento"; //$NON-NLS-1$
-
-		/**
-		 * The widget description that was current when the memento was created.
-		 */
-		public final EEFTextDescription description;
-		/**
-		 * The "self" target element that was current when the memento was created.
-		 */
-		public final Object self;
-		/**
-		 * The reference value corresponding to the pristine text computed from the model by the valueExpression.
-		 */
-		public final String referenceValue;
-		/**
-		 * The last (full) value of the text widget entered by the user but not commited yet.
-		 */
-		public final String userInput;
-
-		public Memento(EEFTextDescription description, Object self, String referenceValue, String userInpu) {
-			this.description = description;
-			this.self = self;
-			this.referenceValue = referenceValue;
-			this.userInput = userInpu;
-		}
-
-		public boolean appliesTo(EEFTextLifecycleManager lm) {
-			return this.description == lm.description && this.self == lm.variableManager.getVariables().get(EEFExpressionUtils.SELF);
-		}
-
-		public void store(Widget w) {
-			w.setData(KEY, this);
-		}
-
-		public static Memento of(Widget w) {
-			Object data = w.getData(KEY);
-			if (data instanceof Memento) {
-				return (Memento) data;
-			} else {
-				return null;
-			}
-		}
-
-		public static void remove(Widget w) {
-			w.setData(KEY, null);
-		}
-
-		@Override
-		public String toString() {
-			StringBuilder sb = new StringBuilder();
-			String newLine = "\n"; //$NON-NLS-1$
-			sb.append("Desc: " + EcoreUtil.getURI(description)).append(newLine); //$NON-NLS-1$
-			sb.append("Self: " + EcoreUtil.getURI((EObject) self)).append(newLine); //$NON-NLS-1$
-			sb.append("Reference Value: " + referenceValue).append(newLine); //$NON-NLS-1$
-			sb.append("User Input: " + userInput).append(newLine); //$NON-NLS-1$
-			sb.append(newLine);
-			return sb.toString();
-		}
-	}
-	// CHECKSTYLE:ON
 
 	/**
 	 * The constructor.
@@ -324,8 +255,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 					EEFTextLifecycleManager.this.isDirty = true;
 					Object self = EEFTextLifecycleManager.this.variableManager.getVariables().get(EEFExpressionUtils.SELF);
 					String userInput = ((StyledText) e.widget).getText();
-					Memento memento = new Memento(EEFTextLifecycleManager.this.description, self, EEFTextLifecycleManager.this.referenceValue,
-							userInput);
+					EEFTextMemento memento = new EEFTextMemento(EEFTextLifecycleManager.this.description, self,
+							EEFTextLifecycleManager.this.referenceValue, userInput);
 					memento.store(e.widget);
 				}
 			}
@@ -396,21 +327,21 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		if (value != null) {
 			newDisplayText[0] = Util.firstNonNull(value.toString(), newDisplayText[0]);
 		}
-		Memento m = Memento.of(text);
-		if (m != null) {
-			boolean resettingToPreviousReferenceValue = equals(newDisplayText[0], m.referenceValue);
-			boolean userHasUncommitedInput = !equals(newDisplayText[0], m.userInput);
-			if (m.appliesTo(EEFTextLifecycleManager.this) && userHasUncommitedInput) {
+		EEFTextMemento memento = EEFTextMemento.of(text);
+		if (memento != null) {
+			boolean resettingToPreviousReferenceValue = equals(newDisplayText[0], memento.getReferenceValue());
+			boolean userHasUncommitedInput = !equals(newDisplayText[0], memento.getUserInput());
+			if (memento.appliesTo(this.description, this.variableManager.getVariables()) && userHasUncommitedInput) {
 				if (resettingToPreviousReferenceValue) {
 					// Custom user input overrides resetting the same previous referenceValue.
-					newDisplayText[0] = m.userInput;
-				} else if (!equals(m.userInput, newDisplayText[0])) {
+					newDisplayText[0] = memento.getUserInput();
+				} else if (!equals(memento.getUserInput(), newDisplayText[0])) {
 					// Conflict must be resolved somehow.
-					newDisplayText[0] = resolveEditionConflict(EEFTextLifecycleManager.this.text.getShell(), m.referenceValue, m.userInput,
+					newDisplayText[0] = resolveEditionConflict(this.text.getShell(), memento.getReferenceValue(), memento.getUserInput(),
 							newDisplayText[0]);
 				}
 			}
-			Memento.remove(text);
+			EEFTextMemento.remove(text);
 		}
 		return newDisplayText[0];
 	}
@@ -525,7 +456,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 					refresh();
 				}
 				this.isDirty = false;
-				Memento.remove(this.text);
+				EEFTextMemento.remove(this.text);
 				this.setStyle();
 			} finally {
 				updateInProgress.set(false);
@@ -589,9 +520,59 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	protected void lockedByOther() {
 		this.lockedByOtherInProgress.set(true);
 		try {
+			/*
+			 * Disabling the widget will prevent the user to recover any local version of the text widget. Detect this
+			 * case and open a popup with the option to copy the local text to the clipboard.
+			 */
+			String textFromModel = computeTextFromModel();
+			EEFTextMemento memento = EEFTextMemento.of(text);
+			if (memento != null) {
+				boolean userHasUncommitedInput = !equals(textFromModel, memento.getUserInput());
+				if (memento.appliesTo(this.description, this.variableManager.getVariables()) && userHasUncommitedInput) {
+					notifyTextLossOnLock(memento.getUserInput(), textFromModel);
+					// Update the displayed text to avoid confusion.
+					this.text.setText(textFromModel);
+				}
+				EEFTextMemento.remove(text);
+			}
 			super.lockedByOther();
 		} finally {
 			this.lockedByOtherInProgress.set(false);
+		}
+	}
+
+	/**
+	 * Notify the end user that his current input will be lost as the underlying widget (and model element) has been
+	 * locked by a remote/async change.
+	 *
+	 * @param userInput
+	 *            the current text entered by the user.
+	 * @param textFromModel
+	 *            the text that will replace the current input.
+	 */
+	protected void notifyTextLossOnLock(String userInput, String textFromModel) {
+		Shell shell = this.text.getShell();
+		if (MessageDialog.openQuestion(shell, Messages.EEFTextLifecycleManager_textLossByLocking_title,
+				MessageFormat.format(Messages.EEFTextLifecycleManager_textLossByLocking_message, userInput))) {
+			Clipboard clipboard = new Clipboard(shell.getDisplay());
+			clipboard.setContents(new Object[] { userInput }, new Transfer[] { TextTransfer.getInstance() });
+			clipboard.dispose();
+		}
+	}
+
+	/**
+	 * Compute the text the widget should display given the current state of the underlying model (independently of any
+	 * potential user input in the widget).
+	 *
+	 * @return the text to display according to the model's current state.
+	 */
+	private String computeTextFromModel() {
+		String valueExpression = this.description.getValueExpression();
+		Object result = EvalFactory.of(this.interpreter, this.variableManager).evaluate(valueExpression);
+		if (result instanceof String) {
+			return (String) result;
+		} else {
+			return ""; //$NON-NLS-1$
 		}
 	}
 
