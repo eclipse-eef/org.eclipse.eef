@@ -30,7 +30,7 @@ provided by the Hudson build.
 set -e
 
 # The full version (should be taken as an argument)
-export VERSION="1.9.2"
+export VERSION="1.9.3"
 export PLATFORM="neon"
 
 # The type of build being published
