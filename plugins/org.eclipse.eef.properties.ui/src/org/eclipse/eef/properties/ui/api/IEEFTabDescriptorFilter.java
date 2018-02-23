@@ -10,6 +10,8 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.api;
 
+import org.eclipse.jface.viewers.ISelection;
+
 /**
  * This interface is used to filter {@link IEEFTabDescriptor}.
  *
@@ -24,5 +26,19 @@ public interface IEEFTabDescriptorFilter {
 	 *
 	 * @return <code>true</code> if the tab descriptor should be used, <code>false</code> otherwise
 	 */
+	@Deprecated
 	boolean filter(IEEFTabDescriptor tabDescriptor);
+
+	/**
+	 * Returns if a tab descriptor must be filtered or not.
+	 *
+	 * @param tabDescriptor
+	 *            The tab descriptor
+	 * @param input
+	 *            The current selection
+	 * @return <code>true</code> if the tab descriptor should be used, <code>false</code> otherwise
+	 */
+	default boolean filter(IEEFTabDescriptor tabDescriptor, ISelection input) {
+		return filter(tabDescriptor);
+	}
 }
