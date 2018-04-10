@@ -65,7 +65,7 @@ public class EEFTab {
 	 *            The container of the whole form
 	 */
 	public void createControls(Composite parent, IEEFFormContainer container) {
-		EEFIdeUiPlugin.getPlugin().debug("EEFSection#createControls(...)"); //$NON-NLS-1$
+		EEFIdeUiPlugin.getPlugin().debug("EEFTab#createControls(...)"); //$NON-NLS-1$
 
 		Composite composite = container.getWidgetFactory().createComposite(parent);
 		composite.setLayout(new GridLayout(1, false));
@@ -80,7 +80,7 @@ public class EEFTab {
 	 * This method needs to be called before displaying the tab in the user interface.
 	 */
 	public void aboutToBeShown() {
-		EEFIdeUiPlugin.getPlugin().debug("EEFSection#aboutToBeShown(...)"); //$NON-NLS-1$
+		EEFIdeUiPlugin.getPlugin().debug("EEFTab#aboutToBeShown(...)"); //$NON-NLS-1$
 
 		this.lifecycleManager.aboutToBeShown();
 
@@ -96,7 +96,7 @@ public class EEFTab {
 	 *            The selection
 	 */
 	public void setInput(IWorkbenchPart part, ISelection selection) {
-		EEFIdeUiPlugin.getPlugin().debug("EEFSection#setInput(...)"); //$NON-NLS-1$
+		EEFIdeUiPlugin.getPlugin().debug("EEFTab#setInput(...)"); //$NON-NLS-1$
 
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection iStructuredSelection = (IStructuredSelection) selection;
@@ -116,7 +116,7 @@ public class EEFTab {
 	 * Refreshes the tab.
 	 */
 	public void refresh() {
-		EEFIdeUiPlugin.getPlugin().debug("EEFSection#refresh(...)"); //$NON-NLS-1$
+		EEFIdeUiPlugin.getPlugin().debug("EEFTab#refresh(...)"); //$NON-NLS-1$
 
 		this.lifecycleManager.refresh();
 	}
@@ -125,7 +125,7 @@ public class EEFTab {
 	 * This method needs to be called before hidding the tab.
 	 */
 	public void aboutToBeHidden() {
-		EEFIdeUiPlugin.getPlugin().debug("EEFSection#aboutToBeHidden(...)"); //$NON-NLS-1$
+		EEFIdeUiPlugin.getPlugin().debug("EEFTab#aboutToBeHidden(...)"); //$NON-NLS-1$
 
 		updater.disable();
 
@@ -136,7 +136,7 @@ public class EEFTab {
 	 * Disposes the tab.
 	 */
 	public void dispose() {
-		EEFIdeUiPlugin.getPlugin().debug("EEFSection#dispose(...)"); //$NON-NLS-1$
+		EEFIdeUiPlugin.getPlugin().debug("EEFTab#dispose(...)"); //$NON-NLS-1$
 
 		this.lifecycleManager.dispose();
 	}
