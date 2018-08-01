@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2017 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -94,7 +95,48 @@ public class LegacyPropertySectionRegistry implements IItemRegistry {
 				}
 			}
 		}
-		return new ArrayList<IEEFSectionDescriptor>(eefSectionDescriptors.values());
+		return new ArrayList<IEEFSectionDescriptor>(sortSectionsByAfterSection(eefSectionDescriptors.values()));
+	}
+
+	/**
+	 * Sort sections of a tab by after section.
+	 *
+	 * @param sectionList
+	 *            List of sections
+	 * @return List of sections sorted by after section
+	 */
+	private List<IEEFSectionDescriptor> sortSectionsByAfterSection(Collection<IEEFSectionDescriptor> sectionList) {
+		List<IEEFSectionDescriptor> sorted = new LinkedList<IEEFSectionDescriptor>();
+		for (IEEFSectionDescriptor section : sectionList) {
+			String afterSectionId = section.getAfterSection();
+			int indexOfAfterSection = -1;
+			if (afterSectionId != null && !afterSectionId.isEmpty()) {
+				IEEFSectionDescriptor afterSection = getSection(sectionList, afterSectionId);
+				if (afterSection != null) {
+					indexOfAfterSection = sorted.indexOf(afterSection);
+				}
+			}
+			sorted.add(indexOfAfterSection + 1, section);
+		}
+		return sorted;
+	}
+
+	/**
+	 * Get a section in a list of sections according to its id.
+	 *
+	 * @param sectionId
+	 *            The section id
+	 * @param sections
+	 *            The sections list
+	 * @return the Section
+	 */
+	private IEEFSectionDescriptor getSection(Collection<IEEFSectionDescriptor> sections, String sectionId) {
+		for (IEEFSectionDescriptor section : sections) {
+			if (sectionId.equals(section.getId())) {
+				return section;
+			}
+		}
+		return null;
 	}
 
 	/**
