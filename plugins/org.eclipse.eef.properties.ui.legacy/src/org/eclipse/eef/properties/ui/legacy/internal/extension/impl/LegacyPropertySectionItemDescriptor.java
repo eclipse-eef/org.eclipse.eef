@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -206,5 +206,20 @@ public class LegacyPropertySectionItemDescriptor extends AbstractEEFSectionDescr
 			inputTypes = sectionDescriptor.getInputTypes();
 		}
 		return inputTypes;
+	}
+
+	/**
+	 * Get the contributor Id of the section.
+	 *
+	 * @return the contributor Id of the section, or <code>null</code> if it doesn't exist.
+	 */
+	public String getContributionId() {
+		if (this.configurationElement != null) {
+			Object parent = this.configurationElement.getParent();
+			if (parent instanceof IConfigurationElement) {
+				return ((IConfigurationElement) parent).getAttribute(LegacyPropertySectionsRegistryEventListener.CONTRIBUTOR_ID_ATTR);
+			}
+		}
+		return null;
 	}
 }

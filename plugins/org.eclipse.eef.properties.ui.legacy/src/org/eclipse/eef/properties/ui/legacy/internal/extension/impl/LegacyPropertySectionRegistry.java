@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2017 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -86,9 +86,14 @@ public class LegacyPropertySectionRegistry implements IItemRegistry {
 
 		for (IItemDescriptor itemDescriptor : values) {
 			if (itemDescriptor instanceof IEEFSectionDescriptor) {
+				String legacyContributorId = null;
+				if (itemDescriptor instanceof LegacyPropertySectionItemDescriptor) {
+					legacyContributorId = ((LegacyPropertySectionItemDescriptor) itemDescriptor).getContributionId();
+				}
 				String tab = ((IEEFSectionDescriptor) itemDescriptor).getTargetTab();
 				String sectionTargetTabId = tab;
-				if (tabId.equals(sectionTargetTabId)) {
+				if (((legacyContributorId != null && legacyContributorId.equals(contributorId)) || legacyContributorId == null)
+						&& tabId.equals(sectionTargetTabId)) {
 					String key = sectionTargetTabId + itemDescriptor.getId();
 					eefSectionDescriptors.put(key, (IEEFSectionDescriptor) itemDescriptor);
 				}
