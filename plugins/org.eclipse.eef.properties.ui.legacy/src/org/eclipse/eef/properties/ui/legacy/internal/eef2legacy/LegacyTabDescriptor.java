@@ -1,14 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
-
 package org.eclipse.eef.properties.ui.legacy.internal.eef2legacy;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import org.eclipse.ui.views.properties.tabbed.TabContents;
 
 /**
  * Wraps an {@link IEEFTabDescriptor} to a {@link ITabDescriptor}.
- * 
+ *
  * @author mbats
  */
 public class LegacyTabDescriptor implements ITabDescriptor {
@@ -37,7 +37,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param eefTabDescriptor
 	 *            EEF tab descriptor
 	 */
@@ -47,7 +47,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#getImage()
 	 */
 	@Override
@@ -57,7 +57,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#getText()
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#isSelected()
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#isIndented()
 	 */
 	@Override
@@ -87,7 +87,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#createTab()
 	 */
 	@Override
@@ -107,7 +107,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#getAfterTab()
 	 */
 	@Override
@@ -117,7 +117,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#getCategory()
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#getId()
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#getLabel()
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class LegacyTabDescriptor implements ITabDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ITabDescriptor#getSectionDescriptors()
 	 */
 	@SuppressWarnings("rawtypes")

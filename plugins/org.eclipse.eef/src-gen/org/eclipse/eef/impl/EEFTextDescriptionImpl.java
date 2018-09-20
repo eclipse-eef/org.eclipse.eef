@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -43,7 +46,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -53,7 +56,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -63,7 +66,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -73,7 +76,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -83,7 +86,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The default value of the '{@link #getLineCount() <em>Line Count</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getLineCount()
 	 * @generated
 	 * @ordered
@@ -93,7 +96,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getLineCount() <em>Line Count</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getLineCount()
 	 * @generated
 	 * @ordered
@@ -103,7 +106,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -113,7 +116,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -122,7 +125,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFTextDescriptionImpl() {
@@ -131,7 +134,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -141,7 +144,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,7 +154,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -166,7 +169,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,7 +179,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,7 +194,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -201,7 +204,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -215,7 +218,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -243,7 +246,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFTextStyle basicGetStyle() {
@@ -252,7 +255,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFTextStyle newStyle, NotificationChain msgs) {
@@ -272,7 +275,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -298,13 +301,13 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFTextConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFTextConditionalStyle>(EEFTextConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFTextConditionalStyle.class, this,
 					EefPackage.EEF_TEXT_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -312,7 +315,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -328,7 +331,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -353,7 +356,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -382,7 +385,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -409,7 +412,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -433,7 +436,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -442,7 +445,7 @@ public class EEFTextDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$
 		result.append(valueExpression);
 		result.append(", editExpression: "); //$NON-NLS-1$

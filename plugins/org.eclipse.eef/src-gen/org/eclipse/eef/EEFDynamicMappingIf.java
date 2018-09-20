@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -31,7 +34,7 @@ public interface EEFDynamicMappingIf extends EObject {
 	 * Returns the value of the '<em><b>Predicate Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> The expression used to determine if we will use the widget. <!--
 	 * end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Predicate Expression</em>' attribute.
 	 * @see #setPredicateExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingIf_PredicateExpression()
@@ -41,9 +44,9 @@ public interface EEFDynamicMappingIf extends EObject {
 	String getPredicateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingIf#getPredicateExpression
-	 * <em>Predicate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingIf#getPredicateExpression <em>Predicate
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Predicate Expression</em>' attribute.
 	 * @see #getPredicateExpression()
@@ -55,7 +58,7 @@ public interface EEFDynamicMappingIf extends EObject {
 	 * Returns the value of the '<em><b>Widget</b></em>' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> The widget to create if the predicate expression is evaluated to true.
 	 * <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Widget</em>' containment reference.
 	 * @see #setWidget(EEFWidgetDescription)
 	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingIf_Widget()
@@ -67,7 +70,7 @@ public interface EEFDynamicMappingIf extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingIf#getWidget <em>Widget</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Widget</em>' containment reference.
 	 * @see #getWidget()

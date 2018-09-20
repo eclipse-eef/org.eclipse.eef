@@ -19,13 +19,13 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFListStyle} object. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFListStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFListStyleItemProvider(AdapterFactory adapterFactory) {
@@ -34,7 +34,7 @@ public class EEFListStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -48,7 +48,7 @@ public class EEFListStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * This returns EEFListStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class EEFListStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -68,21 +68,21 @@ public class EEFListStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFListStyle) object).getLabelFontNameExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFListStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFListStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFListStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFListStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class EEFListStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

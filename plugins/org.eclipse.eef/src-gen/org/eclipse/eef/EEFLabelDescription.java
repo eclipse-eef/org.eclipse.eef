@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -35,7 +38,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> The body of the label containing the meaningful content <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_ValueExpression()
@@ -47,7 +50,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getValueExpression <em>Value Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
@@ -58,7 +61,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> This function will return the label to display <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Display Expression</em>' attribute.
 	 * @see #setDisplayExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_DisplayExpression()
@@ -68,9 +71,9 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression
-	 * <em>Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getDisplayExpression <em>Display
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Display Expression</em>' attribute.
 	 * @see #getDisplayExpression()
@@ -81,7 +84,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> Defines the label style <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFLabelStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_Style()
@@ -93,7 +96,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFLabelDescription#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
@@ -105,7 +108,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
 	 * of type {@link org.eclipse.eef.EEFLabelConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> Defines the label style associated to a precondition <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_ConditionalStyles()
 	 * @model containment="true" resolveProxies="true"
@@ -121,7 +124,7 @@ public interface EEFLabelDescription extends EEFWidgetDescription {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFLabelDescription_Actions()
 	 * @model containment="true" resolveProxies="true"

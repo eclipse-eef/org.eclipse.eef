@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -33,7 +36,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * The default value of the '{@link #getTooltipExpression() <em>Tooltip Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getTooltipExpression()
 	 * @generated
 	 * @ordered
@@ -43,7 +46,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * The cached value of the '{@link #getTooltipExpression() <em>Tooltip Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getTooltipExpression()
 	 * @generated
 	 * @ordered
@@ -53,7 +56,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * The default value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getImageExpression()
 	 * @generated
 	 * @ordered
@@ -63,7 +66,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * The cached value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getImageExpression()
 	 * @generated
 	 * @ordered
@@ -73,7 +76,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * The default value of the '{@link #getActionExpression() <em>Action Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getActionExpression()
 	 * @generated
 	 * @ordered
@@ -83,7 +86,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * The cached value of the '{@link #getActionExpression() <em>Action Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getActionExpression()
 	 * @generated
 	 * @ordered
@@ -92,7 +95,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFToolbarActionImpl() {
@@ -101,7 +104,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,7 +114,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,7 +124,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -136,7 +139,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -146,7 +149,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,7 +164,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,7 +174,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,7 +189,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -204,7 +207,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -225,7 +228,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -246,7 +249,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -267,7 +270,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -276,7 +279,7 @@ public class EEFToolbarActionImpl extends MinimalEObjectImpl.Container implement
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (tooltipExpression: "); //$NON-NLS-1$
 		result.append(tooltipExpression);
 		result.append(", imageExpression: "); //$NON-NLS-1$

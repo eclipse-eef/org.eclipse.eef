@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
@@ -100,7 +101,7 @@ public class ToolbarAction extends Action {
 
 	/**
 	 * Computes the image descriptor to use for the given image path.
-	 * 
+	 *
 	 * @param imagePath
 	 *            The path of the image
 	 * @return The image descriptor for the image with the given path or a placeholder image if it could not be found

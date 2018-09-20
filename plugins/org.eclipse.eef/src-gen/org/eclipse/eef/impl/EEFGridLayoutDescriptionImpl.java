@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -22,8 +25,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#getNumberOfColumns <em>Number Of Columns</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#isMakeColumnsWithEqualWidth
- * <em>Make Columns With Equal Width</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFGridLayoutDescriptionImpl#isMakeColumnsWithEqualWidth <em>Make Columns With Equal
+ * Width</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,7 +35,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	/**
 	 * The default value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getNumberOfColumns()
 	 * @generated
 	 * @ordered
@@ -42,7 +45,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	/**
 	 * The cached value of the '{@link #getNumberOfColumns() <em>Number Of Columns</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getNumberOfColumns()
 	 * @generated
 	 * @ordered
@@ -52,17 +55,17 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 	/**
 	 * The default value of the '{@link #isMakeColumnsWithEqualWidth() <em>Make Columns With Equal Width</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isMakeColumnsWithEqualWidth()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT = false;
+	protected static final boolean MAKE_COLUMNS_WITH_EQUAL_WIDTH_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isMakeColumnsWithEqualWidth() <em>Make Columns With Equal Width</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isMakeColumnsWithEqualWidth()
 	 * @generated
 	 * @ordered
@@ -71,7 +74,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFGridLayoutDescriptionImpl() {
@@ -80,7 +83,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +93,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,7 +103,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -115,7 +118,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,7 +128,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -140,7 +143,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -156,7 +159,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -174,7 +177,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -192,7 +195,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -208,7 +211,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -217,7 +220,7 @@ public class EEFGridLayoutDescriptionImpl extends EEFLayoutDescriptionImpl imple
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (numberOfColumns: "); //$NON-NLS-1$
 		result.append(numberOfColumns);
 		result.append(", makeColumnsWithEqualWidth: "); //$NON-NLS-1$

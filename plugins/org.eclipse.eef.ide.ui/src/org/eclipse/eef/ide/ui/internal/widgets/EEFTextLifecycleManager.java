@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2017 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.ide.ui.internal.widgets;
 
@@ -68,19 +69,18 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * {@link EEFTextLifecycleManager#resolveEditionConflict(Shell, String, String, String)}.
 	 */
 	public enum ConflictResolutionMode {
-		/**
-		 * Use the version being edited in the widget, overriding the new version computed from the current model state.
-		 */
-		USE_LOCAL_VERSION,
-		/**
-		 * Use the version computed from the current model state, replacing the text being edited by the user in the
-		 * widget.
-		 */
-		USE_MODEL_VERSION,
-		/**
-		 * Ask the user through a simple dialog which version to keep.
-		 */
-		ASK_USER
+	/**
+	 * Use the version being edited in the widget, overriding the new version computed from the current model state.
+	 */
+	USE_LOCAL_VERSION,
+	/**
+	 * Use the version computed from the current model state, replacing the text being edited by the user in the widget.
+	 */
+	USE_MODEL_VERSION,
+	/**
+	 * Ask the user through a simple dialog which version to keep.
+	 */
+	ASK_USER
 	}
 
 	/**

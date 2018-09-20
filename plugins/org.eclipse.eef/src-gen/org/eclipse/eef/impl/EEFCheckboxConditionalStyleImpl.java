@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -33,7 +36,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -42,7 +45,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxConditionalStyleImpl() {
@@ -51,7 +54,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,7 +64,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +93,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFCheckboxStyle basicGetStyle() {
@@ -99,7 +102,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFCheckboxStyle newStyle, NotificationChain msgs) {
@@ -119,7 +122,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,7 +148,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -159,7 +162,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,7 +179,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,7 +194,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +209,7 @@ public class EEFCheckboxConditionalStyleImpl extends EEFConditionalStyleImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

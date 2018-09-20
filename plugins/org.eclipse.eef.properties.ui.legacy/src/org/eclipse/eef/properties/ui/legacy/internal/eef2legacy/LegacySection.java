@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.eef2legacy;
 
@@ -20,7 +21,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 /**
  * Wraps an {@link IEEFSection} to an {@link ISection}.
- * 
+ *
  * @author mbats
  */
 public class LegacySection implements ISection {
@@ -32,7 +33,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param eefSection
 	 *            An EEF section
 	 */
@@ -42,7 +43,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#createControls(Composite, TabbedPropertySheetPage)
 	 */
 	@Override
@@ -52,7 +53,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#setInput(IWorkbenchPart, ISelection)
 	 */
 	@Override
@@ -62,7 +63,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#aboutToBeShown()
 	 */
 	@Override
@@ -72,7 +73,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#aboutToBeHidden()
 	 */
 	@Override
@@ -82,7 +83,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#dispose()
 	 */
 	@Override
@@ -92,7 +93,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#getMinimumHeight()
 	 */
 	@Override
@@ -102,7 +103,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#shouldUseExtraSpace()
 	 */
 	@Override
@@ -112,7 +113,7 @@ public class LegacySection implements ISection {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISection#refresh()
 	 */
 	@Override

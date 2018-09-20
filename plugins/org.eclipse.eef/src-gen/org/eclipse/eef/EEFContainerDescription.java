@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -31,7 +34,7 @@ public interface EEFContainerDescription extends EEFControlDescription {
 	 * Returns the value of the '<em><b>Controls</b></em>' containment reference list. The list contents are of type
 	 * {@link org.eclipse.eef.EEFControlDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
 	 * --> References the widgets to hold. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Controls</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_Controls()
 	 * @model containment="true" resolveProxies="true" required="true"
@@ -42,7 +45,7 @@ public interface EEFContainerDescription extends EEFControlDescription {
 	/**
 	 * Returns the value of the '<em><b>Layout</b></em>' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> The layout of the container. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Layout</em>' containment reference.
 	 * @see #setLayout(EEFLayoutDescription)
 	 * @see org.eclipse.eef.EefPackage#getEEFContainerDescription_Layout()
@@ -54,7 +57,7 @@ public interface EEFContainerDescription extends EEFControlDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFContainerDescription#getLayout <em>Layout</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Layout</em>' containment reference.
 	 * @see #getLayout()

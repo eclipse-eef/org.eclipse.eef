@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -31,7 +34,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The default value of the '{@link #getAuditExpression() <em>Audit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAuditExpression()
 	 * @generated
 	 * @ordered
@@ -41,7 +44,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * The cached value of the '{@link #getAuditExpression() <em>Audit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAuditExpression()
 	 * @generated
 	 * @ordered
@@ -50,7 +53,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFRuleAuditDescriptionImpl() {
@@ -59,7 +62,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,7 +72,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -79,7 +82,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,7 +97,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,7 +111,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,7 +126,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -138,7 +141,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,7 +156,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -162,7 +165,7 @@ public class EEFRuleAuditDescriptionImpl extends MinimalEObjectImpl.Container im
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (auditExpression: "); //$NON-NLS-1$
 		result.append(auditExpression);
 		result.append(')');

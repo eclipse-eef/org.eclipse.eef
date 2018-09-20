@@ -23,13 +23,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFLabelStyle} object. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFLabelStyleItemProvider(AdapterFactory adapterFactory) {
@@ -38,7 +38,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Background Color Expression feature. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBackgroundColorExpressionPropertyDescriptor(Object object) {
@@ -72,7 +72,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Foreground Color Expression feature. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addForegroundColorExpressionPropertyDescriptor(Object object) {
@@ -86,7 +86,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Font Name Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFontNameExpressionPropertyDescriptor(Object object) {
@@ -100,7 +100,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Font Size Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFontSizeExpressionPropertyDescriptor(Object object) {
@@ -114,7 +114,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds a property descriptor for the Font Style Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addFontStyleExpressionPropertyDescriptor(Object object) {
@@ -127,7 +127,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * This returns EEFLabelStyle.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,21 +147,21 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFLabelStyle) object).getLabelFontNameExpression();
-		return label == null || label.length() == 0 ? getString("_UI_EEFLabelStyle_type") //$NON-NLS-1$
-				: getString("_UI_EEFLabelStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFLabelStyle_type") : //$NON-NLS-1$
+				getString("_UI_EEFLabelStyle_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +183,7 @@ public class EEFLabelStyleItemProvider extends EEFWidgetStyleItemProvider {
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

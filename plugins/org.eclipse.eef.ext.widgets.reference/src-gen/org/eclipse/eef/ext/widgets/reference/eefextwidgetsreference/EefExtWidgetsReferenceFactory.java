@@ -13,14 +13,14 @@ import org.eclipse.emf.ecore.EFactory;
 /**
  * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a create method for each non-abstract class of
  * the model. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferencePackage
  * @generated
  */
 public interface EefExtWidgetsReferenceFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	EefExtWidgetsReferenceFactory eINSTANCE = org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.impl.EefExtWidgetsReferenceFactoryImpl
@@ -38,7 +38,7 @@ public interface EefExtWidgetsReferenceFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>EEF Ext Reference Widget Style</em>'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return a new object of class '<em>EEF Ext Reference Widget Style</em>'.
 	 * @generated
 	 */
@@ -47,7 +47,7 @@ public interface EefExtWidgetsReferenceFactory extends EFactory {
 	/**
 	 * Returns a new object of class '<em>EEF Ext Reference Conditional Style</em>'. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @return a new object of class '<em>EEF Ext Reference Conditional Style</em>'.
 	 * @generated
 	 */
@@ -55,7 +55,7 @@ public interface EefExtWidgetsReferenceFactory extends EFactory {
 
 	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

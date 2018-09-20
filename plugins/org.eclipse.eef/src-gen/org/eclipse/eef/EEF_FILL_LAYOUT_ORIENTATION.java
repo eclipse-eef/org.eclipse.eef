@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -15,9 +18,9 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc --> A representation of the literals of the enumeration '
- * <em><b>EEF FILL LAYOUT ORIENTATION</b></em>', and utility methods for working with them. <!-- end-user-doc -->
- *
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>EEF FILL LAYOUT
+ * ORIENTATION</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * 
  * @see org.eclipse.eef.EefPackage#getEEF_FILL_LAYOUT_ORIENTATION()
  * @model
  * @generated
@@ -25,7 +28,7 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
 	 * The '<em><b>VERTICAL</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #VERTICAL_VALUE
 	 * @generated
 	 * @ordered
@@ -34,7 +37,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * The '<em><b>HORIZONTAL</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #HORIZONTAL_VALUE
 	 * @generated
 	 * @ordered
@@ -48,7 +51,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #VERTICAL
 	 * @model
 	 * @generated
@@ -63,7 +66,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #HORIZONTAL
 	 * @model
 	 * @generated
@@ -74,7 +77,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
 	 * An array of all the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' enumerators. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static final EEF_FILL_LAYOUT_ORIENTATION[] VALUES_ARRAY = new EEF_FILL_LAYOUT_ORIENTATION[] { VERTICAL, HORIZONTAL, };
@@ -82,7 +85,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
 	 * A public read-only list of all the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' enumerators. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final List<EEF_FILL_LAYOUT_ORIENTATION> VALUES = Collections
@@ -91,7 +94,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' literal with the specified literal value. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param literal
 	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
@@ -109,7 +112,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' literal with the specified name. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param name
 	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
@@ -127,7 +130,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF FILL LAYOUT ORIENTATION</b></em>' literal with the specified integer value. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
@@ -145,28 +148,28 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
 	 * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEF_FILL_LAYOUT_ORIENTATION(int value, String name, String literal) {
@@ -177,7 +180,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -187,7 +190,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -197,7 +200,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -208,7 +211,7 @@ public enum EEF_FILL_LAYOUT_ORIENTATION implements Enumerator {
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

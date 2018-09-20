@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -33,7 +36,7 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	 * Returns the value of the '<em><b>Iterator</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> The name of the variable which contain the current value of the iteration. <!-- end-model-doc
 	 * -->
-	 *
+	 * 
 	 * @return the value of the '<em>Iterator</em>' attribute.
 	 * @see #setIterator(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingFor_Iterator()
@@ -45,7 +48,7 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterator <em>Iterator</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Iterator</em>' attribute.
 	 * @see #getIterator()
@@ -57,7 +60,7 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	 * Returns the value of the '<em><b>Iterable Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> Used to compute the mappings to create by iterating on the result of
 	 * this expression. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Iterable Expression</em>' attribute.
 	 * @see #setIterableExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingFor_IterableExpression()
@@ -67,9 +70,9 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	String getIterableExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression
-	 * <em>Iterable Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#getIterableExpression <em>Iterable
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Iterable Expression</em>' attribute.
 	 * @see #getIterableExpression()
@@ -81,7 +84,7 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	 * Returns the value of the '<em><b>Force Refresh</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> Used to indicate if the runtime should consider that the presence of this dynamic
 	 * mapping should force the refresh of the user interface. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Force Refresh</em>' attribute.
 	 * @see #setForceRefresh(boolean)
 	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingFor_ForceRefresh()
@@ -93,7 +96,7 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFDynamicMappingFor#isForceRefresh <em>Force Refresh</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Force Refresh</em>' attribute.
 	 * @see #isForceRefresh()
@@ -105,7 +108,7 @@ public interface EEFDynamicMappingFor extends EEFControlDescription {
 	 * Returns the value of the '<em><b>Ifs</b></em>' containment reference list. The list contents are of type
 	 * {@link org.eclipse.eef.EEFDynamicMappingIf}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
 	 * --> Used to determine which widget to create. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Ifs</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFDynamicMappingFor_Ifs()
 	 * @model containment="true" resolveProxies="true" required="true"

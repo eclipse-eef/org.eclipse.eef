@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -42,7 +45,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	/**
 	 * The cached value of the '{@link #getCustomExpressions() <em>Custom Expressions</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCustomExpressions()
 	 * @generated
 	 * @ordered
@@ -52,7 +55,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -62,7 +65,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -71,7 +74,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCustomWidgetDescriptionImpl() {
@@ -80,7 +83,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,13 +93,13 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFCustomExpression> getCustomExpressions() {
 		if (customExpressions == null) {
-			customExpressions = new EObjectContainmentEList.Resolving<EEFCustomExpression>(EEFCustomExpression.class, this,
+			customExpressions = new EObjectContainmentEList.Resolving<>(EEFCustomExpression.class, this,
 					EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CUSTOM_EXPRESSIONS);
 		}
 		return customExpressions;
@@ -104,7 +107,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -133,7 +136,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFCustomWidgetStyle basicGetStyle() {
@@ -142,7 +145,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFCustomWidgetStyle newStyle, NotificationChain msgs) {
@@ -162,7 +165,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,13 +191,13 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFCustomWidgetConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFCustomWidgetConditionalStyle>(EEFCustomWidgetConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFCustomWidgetConditionalStyle.class, this,
 					EefPackage.EEF_CUSTOM_WIDGET_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -202,7 +205,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -220,7 +223,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -241,7 +244,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -265,7 +268,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -286,7 +289,7 @@ public class EEFCustomWidgetDescriptionImpl extends EEFWidgetDescriptionImpl imp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

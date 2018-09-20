@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -30,7 +33,7 @@ public interface EEFCustomExpression extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> Used to identify a specific widget. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFCustomExpression_Identifier()
@@ -42,7 +45,7 @@ public interface EEFCustomExpression extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -53,7 +56,7 @@ public interface EEFCustomExpression extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Custom Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> Defines the behavior associated to a custom expression. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Custom Expression</em>' attribute.
 	 * @see #setCustomExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFCustomExpression_CustomExpression()
@@ -63,9 +66,9 @@ public interface EEFCustomExpression extends EObject {
 	String getCustomExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom Expression</em>}
-	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFCustomExpression#getCustomExpression <em>Custom
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Custom Expression</em>' attribute.
 	 * @see #getCustomExpression()

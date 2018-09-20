@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -33,8 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getSeverity <em>Severity</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getMessageExpression <em>Message Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getMessageExpression <em>Message
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getAudits <em>Audits</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFValidationRuleDescriptionImpl#getFixes <em>Fixes</em>}</li>
  * </ul>
@@ -45,7 +48,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The default value of the '{@link #getSeverity() <em>Severity</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -55,7 +58,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The cached value of the '{@link #getSeverity() <em>Severity</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getSeverity()
 	 * @generated
 	 * @ordered
@@ -65,7 +68,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The default value of the '{@link #getMessageExpression() <em>Message Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMessageExpression()
 	 * @generated
 	 * @ordered
@@ -75,7 +78,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The cached value of the '{@link #getMessageExpression() <em>Message Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getMessageExpression()
 	 * @generated
 	 * @ordered
@@ -85,7 +88,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The cached value of the '{@link #getAudits() <em>Audits</em>}' containment reference list. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getAudits()
 	 * @generated
 	 * @ordered
@@ -95,7 +98,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 	/**
 	 * The cached value of the '{@link #getFixes() <em>Fixes</em>}' containment reference list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFixes()
 	 * @generated
 	 * @ordered
@@ -104,7 +107,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFValidationRuleDescriptionImpl() {
@@ -113,7 +116,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,7 +126,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -133,7 +136,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,7 +150,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -157,7 +160,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -172,13 +175,13 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFRuleAuditDescription> getAudits() {
 		if (audits == null) {
-			audits = new EObjectContainmentEList.Resolving<EEFRuleAuditDescription>(EEFRuleAuditDescription.class, this,
+			audits = new EObjectContainmentEList.Resolving<>(EEFRuleAuditDescription.class, this,
 					EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__AUDITS);
 		}
 		return audits;
@@ -186,13 +189,13 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFValidationFixDescription> getFixes() {
 		if (fixes == null) {
-			fixes = new EObjectContainmentEList.Resolving<EEFValidationFixDescription>(EEFValidationFixDescription.class, this,
+			fixes = new EObjectContainmentEList.Resolving<>(EEFValidationFixDescription.class, this,
 					EefPackage.EEF_VALIDATION_RULE_DESCRIPTION__FIXES);
 		}
 		return fixes;
@@ -200,7 +203,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -216,7 +219,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,7 +239,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -263,7 +266,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -287,7 +290,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -308,7 +311,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -317,7 +320,7 @@ public abstract class EEFValidationRuleDescriptionImpl extends MinimalEObjectImp
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (severity: "); //$NON-NLS-1$
 		result.append(severity);
 		result.append(", messageExpression: "); //$NON-NLS-1$

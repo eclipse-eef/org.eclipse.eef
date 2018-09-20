@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -33,8 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getCandidateDisplayExpression
- * <em>Candidate Display Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getCandidateDisplayExpression <em>Candidate Display
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFSelectDescriptionImpl#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -45,7 +48,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -55,7 +58,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -65,7 +68,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -75,7 +78,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -85,7 +88,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getCandidatesExpression() <em>Candidates Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidatesExpression()
 	 * @generated
 	 * @ordered
@@ -95,7 +98,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getCandidatesExpression() <em>Candidates Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidatesExpression()
 	 * @generated
 	 * @ordered
@@ -105,7 +108,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -115,7 +118,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getCandidateDisplayExpression() <em>Candidate Display Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getCandidateDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -125,7 +128,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -135,7 +138,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -144,7 +147,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFSelectDescriptionImpl() {
@@ -153,7 +156,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -163,7 +166,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,7 +176,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,7 +191,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -198,7 +201,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,7 +216,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,7 +226,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -238,7 +241,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -248,7 +251,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -263,7 +266,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -291,7 +294,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFSelectStyle basicGetStyle() {
@@ -300,7 +303,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFSelectStyle newStyle, NotificationChain msgs) {
@@ -320,7 +323,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -346,13 +349,13 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFSelectConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFSelectConditionalStyle>(EEFSelectConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFSelectConditionalStyle.class, this,
 					EefPackage.EEF_SELECT_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -360,7 +363,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -376,7 +379,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -403,7 +406,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -435,7 +438,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -465,7 +468,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -493,7 +496,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -502,7 +505,7 @@ public class EEFSelectDescriptionImpl extends EEFWidgetDescriptionImpl implement
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$
 		result.append(valueExpression);
 		result.append(", editExpression: "); //$NON-NLS-1$

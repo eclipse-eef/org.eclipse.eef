@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -35,7 +38,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The default value of the '{@link #getPredicateExpression() <em>Predicate Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPredicateExpression()
 	 * @generated
 	 * @ordered
@@ -45,7 +48,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getPredicateExpression() <em>Predicate Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPredicateExpression()
 	 * @generated
 	 * @ordered
@@ -55,7 +58,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getWidget() <em>Widget</em>}' containment reference. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getWidget()
 	 * @generated
 	 * @ordered
@@ -64,7 +67,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFDynamicMappingIfImpl() {
@@ -73,7 +76,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,7 +86,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,7 +96,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,7 +111,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,7 +140,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFWidgetDescription basicGetWidget() {
@@ -146,7 +149,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetWidget(EEFWidgetDescription newWidget, NotificationChain msgs) {
@@ -166,7 +169,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -192,7 +195,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,7 +209,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -225,7 +228,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -243,7 +246,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -261,7 +264,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -278,7 +281,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -287,7 +290,7 @@ public class EEFDynamicMappingIfImpl extends MinimalEObjectImpl.Container implem
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (predicateExpression: "); //$NON-NLS-1$
 		result.append(predicateExpression);
 		result.append(')');

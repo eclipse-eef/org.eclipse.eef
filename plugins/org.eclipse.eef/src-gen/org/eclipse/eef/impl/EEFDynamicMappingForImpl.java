@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -41,7 +44,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	/**
 	 * The default value of the '{@link #getIterator() <em>Iterator</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIterator()
 	 * @generated
 	 * @ordered
@@ -51,7 +54,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	/**
 	 * The cached value of the '{@link #getIterator() <em>Iterator</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIterator()
 	 * @generated
 	 * @ordered
@@ -61,7 +64,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	/**
 	 * The default value of the '{@link #getIterableExpression() <em>Iterable Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getIterableExpression()
 	 * @generated
 	 * @ordered
@@ -71,7 +74,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	/**
 	 * The cached value of the '{@link #getIterableExpression() <em>Iterable Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getIterableExpression()
 	 * @generated
 	 * @ordered
@@ -81,7 +84,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	/**
 	 * The default value of the '{@link #isForceRefresh() <em>Force Refresh</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isForceRefresh()
 	 * @generated
 	 * @ordered
@@ -91,7 +94,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	/**
 	 * The cached value of the '{@link #isForceRefresh() <em>Force Refresh</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #isForceRefresh()
 	 * @generated
 	 * @ordered
@@ -101,7 +104,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 	/**
 	 * The cached value of the '{@link #getIfs() <em>Ifs</em>}' containment reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getIfs()
 	 * @generated
 	 * @ordered
@@ -110,7 +113,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFDynamicMappingForImpl() {
@@ -119,7 +122,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -129,7 +132,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,7 +142,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,7 +156,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -163,7 +166,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -178,7 +181,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,7 +191,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,13 +205,13 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFDynamicMappingIf> getIfs() {
 		if (ifs == null) {
-			ifs = new EObjectContainmentEList.Resolving<EEFDynamicMappingIf>(EEFDynamicMappingIf.class, this,
+			ifs = new EObjectContainmentEList.Resolving<>(EEFDynamicMappingIf.class, this,
 					EefPackage.EEF_DYNAMIC_MAPPING_FOR__IFS);
 		}
 		return ifs;
@@ -216,7 +219,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -230,7 +233,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -250,7 +253,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -276,7 +279,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -300,7 +303,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -322,7 +325,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -331,7 +334,7 @@ public class EEFDynamicMappingForImpl extends EEFControlDescriptionImpl implemen
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (iterator: "); //$NON-NLS-1$
 		result.append(iterator);
 		result.append(", iterableExpression: "); //$NON-NLS-1$

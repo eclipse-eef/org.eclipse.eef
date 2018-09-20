@@ -33,14 +33,14 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFPageDescription} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFPageDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -49,7 +49,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This adds a property descriptor for the Identifier feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIdentifierPropertyDescriptor(Object object) {
@@ -82,7 +82,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This adds a property descriptor for the Label Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLabelExpressionPropertyDescriptor(Object object) {
@@ -95,7 +95,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This adds a property descriptor for the Domain Class feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDomainClassPropertyDescriptor(Object object) {
@@ -108,7 +108,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 	/**
 	 * This adds a property descriptor for the Semantic Candidate Expression feature. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSemanticCandidateExpressionPropertyDescriptor(Object object) {
@@ -123,7 +123,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 	/**
 	 * This adds a property descriptor for the Precondition Expression feature. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPreconditionExpressionPropertyDescriptor(Object object) {
@@ -137,7 +137,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This adds a property descriptor for the Groups feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addGroupsPropertyDescriptor(Object object) {
@@ -149,7 +149,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This adds a property descriptor for the Indented feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIndentedPropertyDescriptor(Object object) {
@@ -164,7 +164,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +179,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -192,7 +192,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This returns EEFPageDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -202,7 +202,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -212,21 +212,21 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFPageDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFPageDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFPageDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFPageDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFPageDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +253,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -269,7 +269,7 @@ public class EEFPageDescriptionItemProvider extends ItemProviderAdapter
 
 	/**
 	 * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

@@ -23,13 +23,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFGridLayoutDescription} object. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFGridLayoutDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -38,7 +38,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This adds a property descriptor for the Number Of Columns feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addNumberOfColumnsPropertyDescriptor(Object object) {
@@ -69,7 +69,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	/**
 	 * This adds a property descriptor for the Make Columns With Equal Width feature. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addMakeColumnsWithEqualWidthPropertyDescriptor(Object object) {
@@ -83,7 +83,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This returns EEFGridLayoutDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class EEFGridLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

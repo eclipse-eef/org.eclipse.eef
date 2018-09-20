@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -42,7 +45,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	/**
 	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -52,7 +55,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	/**
 	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -62,7 +65,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	/**
 	 * The default value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -72,7 +75,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	/**
 	 * The cached value of the '{@link #getEditExpression() <em>Edit Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getEditExpression()
 	 * @generated
 	 * @ordered
@@ -82,7 +85,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -92,7 +95,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -101,7 +104,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFCheckboxDescriptionImpl() {
@@ -110,7 +113,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -120,7 +123,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,7 +133,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,7 +148,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +158,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -170,7 +173,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -199,7 +202,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFCheckboxStyle basicGetStyle() {
@@ -208,7 +211,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFCheckboxStyle newStyle, NotificationChain msgs) {
@@ -228,7 +231,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -254,13 +257,13 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFCheckboxConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFCheckboxConditionalStyle>(EEFCheckboxConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFCheckboxConditionalStyle.class, this,
 					EefPackage.EEF_CHECKBOX_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -268,7 +271,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -284,7 +287,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -307,7 +310,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -333,7 +336,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -357,7 +360,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -379,7 +382,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -388,7 +391,7 @@ public class EEFCheckboxDescriptionImpl extends EEFWidgetDescriptionImpl impleme
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$
 		result.append(valueExpression);
 		result.append(", editExpression: "); //$NON-NLS-1$

@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -20,10 +23,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color Expression</em>}
- * </li>
- * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getBackgroundColorExpression <em>Background Color
+ * Expression</em>}</li>
+ * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getForegroundColorExpression <em>Foreground Color
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontNameExpression <em>Font Name Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontSizeExpression <em>Font Size Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFTextStyleImpl#getFontStyleExpression <em>Font Style Expression</em>}</li>
@@ -35,7 +38,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The default value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -45,7 +48,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The cached value of the '{@link #getBackgroundColorExpression() <em>Background Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getBackgroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -55,7 +58,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The default value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -65,7 +68,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The cached value of the '{@link #getForegroundColorExpression() <em>Foreground Color Expression</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getForegroundColorExpression()
 	 * @generated
 	 * @ordered
@@ -75,7 +78,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The default value of the '{@link #getFontNameExpression() <em>Font Name Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFontNameExpression()
 	 * @generated
 	 * @ordered
@@ -85,7 +88,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The cached value of the '{@link #getFontNameExpression() <em>Font Name Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFontNameExpression()
 	 * @generated
 	 * @ordered
@@ -95,7 +98,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The default value of the '{@link #getFontSizeExpression() <em>Font Size Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFontSizeExpression()
 	 * @generated
 	 * @ordered
@@ -105,7 +108,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The cached value of the '{@link #getFontSizeExpression() <em>Font Size Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFontSizeExpression()
 	 * @generated
 	 * @ordered
@@ -115,7 +118,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The default value of the '{@link #getFontStyleExpression() <em>Font Style Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFontStyleExpression()
 	 * @generated
 	 * @ordered
@@ -125,7 +128,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 	/**
 	 * The cached value of the '{@link #getFontStyleExpression() <em>Font Style Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFontStyleExpression()
 	 * @generated
 	 * @ordered
@@ -134,7 +137,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFTextStyleImpl() {
@@ -143,7 +146,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,7 +156,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -163,7 +166,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -178,7 +181,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,7 +191,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,7 +206,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,7 +216,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -228,7 +231,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -238,7 +241,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -253,7 +256,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -263,7 +266,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -278,7 +281,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -300,7 +303,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -327,7 +330,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -354,7 +357,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -381,7 +384,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -390,7 +393,7 @@ public class EEFTextStyleImpl extends EEFWidgetStyleImpl implements EEFTextStyle
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (backgroundColorExpression: "); //$NON-NLS-1$
 		result.append(backgroundColorExpression);
 		result.append(", foregroundColorExpression: "); //$NON-NLS-1$

@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -22,8 +25,8 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.eef.EEFPageDescription#getIdentifier <em>Identifier</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}</li>
- * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic Candidate
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getGroups <em>Groups</em>}</li>
  * <li>{@link org.eclipse.eef.EEFPageDescription#getSemanticValidationRules <em>Semantic Validation Rules</em>}</li>
@@ -39,7 +42,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> Used to identify a specific Page instance. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_Identifier()
@@ -51,7 +54,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -62,7 +65,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> The label of the Page visible by the end-users. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Label Expression</em>' attribute.
 	 * @see #setLabelExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_LabelExpression()
@@ -74,7 +77,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getLabelExpression <em>Label Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
@@ -85,7 +88,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Domain Class</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> The class of the EObject used as "self" in the page <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Domain Class</em>' attribute.
 	 * @see #setDomainClass(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_DomainClass()
@@ -97,7 +100,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getDomainClass <em>Domain Class</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Domain Class</em>' attribute.
 	 * @see #getDomainClass()
@@ -110,7 +113,7 @@ public interface EEFPageDescription extends EObject {
 	 * <code>""</code>. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc --> The elements that are
 	 * represented. If not specified, the EEF runtime reuses the context of the View for the Page. <!-- end-model-doc
 	 * -->
-	 *
+	 * 
 	 * @return the value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #setSemanticCandidateExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_SemanticCandidateExpression()
@@ -120,9 +123,9 @@ public interface EEFPageDescription extends EObject {
 	String getSemanticCandidateExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression
-	 * <em>Semantic Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getSemanticCandidateExpression <em>Semantic
+	 * Candidate Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Semantic Candidate Expression</em>' attribute.
 	 * @see #getSemanticCandidateExpression()
@@ -133,7 +136,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Precondition Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> Indicates if the page should be displayed. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Precondition Expression</em>' attribute.
 	 * @see #setPreconditionExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_PreconditionExpression()
@@ -143,9 +146,9 @@ public interface EEFPageDescription extends EObject {
 	String getPreconditionExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression
-	 * <em>Precondition Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#getPreconditionExpression <em>Precondition
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Precondition Expression</em>' attribute.
 	 * @see #getPreconditionExpression()
@@ -160,7 +163,7 @@ public interface EEFPageDescription extends EObject {
 	 * defined under the View containing the Page that have a domainClass which is equal or a super class of the
 	 * domainClass of the Page and use them following the order of the inheritance tree of the EObject. <!--
 	 * end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Groups</em>' reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_Groups()
 	 * @model
@@ -173,7 +176,7 @@ public interface EEFPageDescription extends EObject {
 	 * contents are of type {@link org.eclipse.eef.EEFSemanticValidationRuleDescription}. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> The validation rules used to validate the semantic element of the page.
 	 * <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Semantic Validation Rules</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_SemanticValidationRules()
 	 * @model containment="true" resolveProxies="true"
@@ -189,7 +192,7 @@ public interface EEFPageDescription extends EObject {
 	 * here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Indented</em>' attribute.
 	 * @see #setIndented(boolean)
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_Indented()
@@ -201,7 +204,7 @@ public interface EEFPageDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFPageDescription#isIndented <em>Indented</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Indented</em>' attribute.
 	 * @see #isIndented()
@@ -213,7 +216,7 @@ public interface EEFPageDescription extends EObject {
 	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list. The list contents are of type
 	 * {@link org.eclipse.eef.EEFToolbarAction}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * Defines the toolbar's actions of this page. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFPageDescription_Actions()
 	 * @model containment="true" resolveProxies="true"

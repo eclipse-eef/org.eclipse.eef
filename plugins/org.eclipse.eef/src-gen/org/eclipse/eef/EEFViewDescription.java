@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -36,7 +39,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Identifier</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * <!-- begin-model-doc --> Used to identify a specific View instance. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Identifier</em>' attribute.
 	 * @see #setIdentifier(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Identifier()
@@ -48,7 +51,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getIdentifier <em>Identifier</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Identifier</em>' attribute.
 	 * @see #getIdentifier()
@@ -59,7 +62,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Label Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> The label of the View visible by the end-users. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Label Expression</em>' attribute.
 	 * @see #setLabelExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_LabelExpression()
@@ -71,7 +74,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getLabelExpression <em>Label Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Label Expression</em>' attribute.
 	 * @see #getLabelExpression()
@@ -83,7 +86,7 @@ public interface EEFViewDescription extends EObject {
 	 * Returns the value of the '<em><b>Image Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> The expression used to compute the image of the View visible by the end-users. <!--
 	 * end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Image Expression</em>' attribute.
 	 * @see #setImageExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_ImageExpression()
@@ -95,7 +98,7 @@ public interface EEFViewDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFViewDescription#getImageExpression <em>Image Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Image Expression</em>' attribute.
 	 * @see #getImageExpression()
@@ -108,7 +111,7 @@ public interface EEFViewDescription extends EObject {
 	 * {@link org.eclipse.eef.EEFGroupDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
 	 * --> Contains all the defined Groups. It is defined under the View for reuasability reason and to be referenced
 	 * easily from any Page. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Groups</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Groups()
 	 * @model containment="true" resolveProxies="true"
@@ -120,7 +123,7 @@ public interface EEFViewDescription extends EObject {
 	 * Returns the value of the '<em><b>Pages</b></em>' containment reference list. The list contents are of type
 	 * {@link org.eclipse.eef.EEFPageDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
 	 * --> Defines the tabs that are represented in the View. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Pages</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_Pages()
 	 * @model containment="true" resolveProxies="true" required="true"
@@ -136,7 +139,7 @@ public interface EEFViewDescription extends EObject {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>EPackages</em>' reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFViewDescription_EPackages()
 	 * @model

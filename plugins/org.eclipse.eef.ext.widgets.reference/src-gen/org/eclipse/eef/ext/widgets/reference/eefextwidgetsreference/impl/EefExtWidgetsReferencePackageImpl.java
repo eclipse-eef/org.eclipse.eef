@@ -23,26 +23,26 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements EefExtWidgetsReferencePackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefExtReferenceDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefExtReferenceWidgetStyleEClass = null;
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EClass eefExtReferenceConditionalStyleEClass = null;
@@ -66,7 +66,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -90,13 +90,15 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 		}
 
 		// Obtain or create and register package
-		EefExtWidgetsReferencePackageImpl theEefExtWidgetsReferencePackage = (EefExtWidgetsReferencePackageImpl) (EPackage.Registry.INSTANCE
-				.get(EefExtWidgetsReferencePackage.eNS_URI) instanceof EefExtWidgetsReferencePackageImpl
-						? EPackage.Registry.INSTANCE.get(EefExtWidgetsReferencePackage.eNS_URI) : new EefExtWidgetsReferencePackageImpl());
+		Object registeredEefExtWidgetsReferencePackage = EPackage.Registry.INSTANCE.get(EefExtWidgetsReferencePackage.eNS_URI);
+		EefExtWidgetsReferencePackageImpl theEefExtWidgetsReferencePackage = registeredEefExtWidgetsReferencePackage instanceof EefExtWidgetsReferencePackageImpl
+				? (EefExtWidgetsReferencePackageImpl) registeredEefExtWidgetsReferencePackage
+				: new EefExtWidgetsReferencePackageImpl();
 
 		EefExtWidgetsReferencePackageImpl.isInited = true;
 
 		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 		EefPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -115,7 +117,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,7 +127,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,7 +137,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,7 +147,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +157,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,7 +167,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -175,7 +177,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -185,7 +187,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -195,7 +197,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -205,7 +207,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -215,7 +217,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -223,7 +225,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 	/**
 	 * Creates the meta-model objects for the package. This method is guarded to have no affect on any invocation but
 	 * its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
@@ -248,7 +250,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -256,7 +258,7 @@ public class EefExtWidgetsReferencePackageImpl extends EPackageImpl implements E
 	/**
 	 * Complete the initialization of the package and its meta-model. This method is guarded to have no affect on any
 	 * invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {

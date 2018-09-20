@@ -35,7 +35,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -44,7 +44,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFExtReferenceConditionalStyleImpl() {
@@ -53,7 +53,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,7 +63,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFExtReferenceWidgetStyle basicGetStyle() {
@@ -104,7 +104,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFExtReferenceWidgetStyle newStyle, NotificationChain msgs) {
@@ -124,7 +124,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,7 +153,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,7 +167,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -199,7 +199,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -214,7 +214,7 @@ public class EEFExtReferenceConditionalStyleImpl extends EEFConditionalStyleImpl
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

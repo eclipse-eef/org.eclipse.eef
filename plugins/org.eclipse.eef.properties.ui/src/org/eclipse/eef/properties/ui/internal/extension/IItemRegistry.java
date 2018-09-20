@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.internal.extension;
 
@@ -33,8 +34,7 @@ public interface IItemRegistry<T> {
 	 *
 	 * @param id
 	 *            The identifier
-	 * @return The {@link IItemDescriptor} with the given identifier or null if
-	 *         none could be found
+	 * @return The {@link IItemDescriptor} with the given identifier or null if none could be found
 	 */
 	IItemDescriptor<T> getItemDescriptor(String id);
 
@@ -43,9 +43,8 @@ public interface IItemRegistry<T> {
 	 *
 	 * @param descriptor
 	 *            The descriptior
-	 * @return The previous {@link IItemDescriptor} with the same identifier, or
-	 *         null if no registered {@link IItemDescriptor} had the same
-	 *         identifier
+	 * @return The previous {@link IItemDescriptor} with the same identifier, or null if no registered
+	 *         {@link IItemDescriptor} had the same identifier
 	 */
 	IItemDescriptor<T> add(IItemDescriptor<T> descriptor);
 
@@ -54,8 +53,8 @@ public interface IItemRegistry<T> {
 	 *
 	 * @param id
 	 *            The identifier
-	 * @return The {@link IItemDescriptor} removed or null if no registered
-	 *         {@link IItemDescriptor} had an identifier matching the given one
+	 * @return The {@link IItemDescriptor} removed or null if no registered {@link IItemDescriptor} had an identifier
+	 *         matching the given one
 	 */
 	IItemDescriptor<T> remove(String id);
 

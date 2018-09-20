@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -24,8 +27,8 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getValueExpression <em>Value Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getEditExpression <em>Edit Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression <em>Candidates Expression</em>}</li>
- * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate Display
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getStyle <em>Style</em>}</li>
  * <li>{@link org.eclipse.eef.EEFSelectDescription#getConditionalStyles <em>Conditional Styles</em>}</li>
  * </ul>
@@ -38,7 +41,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> Indicates how to display the input value. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_ValueExpression()
@@ -50,7 +53,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getValueExpression <em>Value Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
@@ -62,7 +65,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	 * Returns the value of the '<em><b>Edit Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> Defines the behavior executed when the end-user updates the value of the combo. <!--
 	 * end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Edit Expression</em>' attribute.
 	 * @see #setEditExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_EditExpression()
@@ -74,7 +77,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getEditExpression <em>Edit Expression</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Edit Expression</em>' attribute.
 	 * @see #getEditExpression()
@@ -85,7 +88,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Candidates Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> Defines the various proposals available. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Candidates Expression</em>' attribute.
 	 * @see #setCandidatesExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_CandidatesExpression()
@@ -95,9 +98,9 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	String getCandidatesExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression
-	 * <em>Candidates Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidatesExpression <em>Candidates
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Candidates Expression</em>' attribute.
 	 * @see #getCandidatesExpression()
@@ -108,7 +111,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Candidate Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> Indicates how to display the input value. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Candidate Display Expression</em>' attribute.
 	 * @see #setCandidateDisplayExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_CandidateDisplayExpression()
@@ -118,9 +121,9 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	String getCandidateDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression
-	 * <em>Candidate Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getCandidateDisplayExpression <em>Candidate
+	 * Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Candidate Display Expression</em>' attribute.
 	 * @see #getCandidateDisplayExpression()
@@ -131,7 +134,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> Defines the select style <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFSelectStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_Style()
@@ -143,7 +146,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFSelectDescription#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
@@ -155,7 +158,7 @@ public interface EEFSelectDescription extends EEFWidgetDescription {
 	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
 	 * of type {@link org.eclipse.eef.EEFSelectConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> Defines the select style associated to a precondition <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFSelectDescription_ConditionalStyles()
 	 * @model containment="true" resolveProxies="true"

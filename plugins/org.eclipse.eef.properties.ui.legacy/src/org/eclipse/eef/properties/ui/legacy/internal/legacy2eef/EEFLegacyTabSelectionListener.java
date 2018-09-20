@@ -1,14 +1,14 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
-
 package org.eclipse.eef.properties.ui.legacy.internal.legacy2eef;
 
 import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
@@ -18,7 +18,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabSelectionListener;
 
 /**
  * Wraps an {@link ITabSelectionListener} to an {@link IEEFTabSelectionListener}.
- * 
+ *
  * @author mbats
  */
 public class EEFLegacyTabSelectionListener implements IEEFTabSelectionListener {
@@ -30,7 +30,7 @@ public class EEFLegacyTabSelectionListener implements IEEFTabSelectionListener {
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param legacyTabSelectionListener
 	 *            A legacy tab selectionListener
 	 */
@@ -40,7 +40,7 @@ public class EEFLegacyTabSelectionListener implements IEEFTabSelectionListener {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see IEEFTabSelectionListener#tabSelected(IEEFTabDescriptor)
 	 */
 	@Override
@@ -50,7 +50,7 @@ public class EEFLegacyTabSelectionListener implements IEEFTabSelectionListener {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see IEEFTabSelectionListener#equals(Object)
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class EEFLegacyTabSelectionListener implements IEEFTabSelectionListener {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see IEEFTabSelectionListener#hashCode()
 	 */
 	@Override

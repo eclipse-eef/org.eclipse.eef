@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -30,8 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getButtonLabelExpression <em>Button Label Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getButtonLabelExpression <em>Button Label
+ * Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getImageExpression <em>Image Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getPushExpression <em>Push Expression</em>}</li>
  * <li>{@link org.eclipse.eef.impl.EEFButtonDescriptionImpl#getStyle <em>Style</em>}</li>
@@ -44,7 +47,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getButtonLabelExpression() <em>Button Label Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getButtonLabelExpression()
 	 * @generated
 	 * @ordered
@@ -54,7 +57,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getButtonLabelExpression() <em>Button Label Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getButtonLabelExpression()
 	 * @generated
 	 * @ordered
@@ -64,7 +67,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getImageExpression()
 	 * @generated
 	 * @ordered
@@ -74,7 +77,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getImageExpression() <em>Image Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getImageExpression()
 	 * @generated
 	 * @ordered
@@ -84,7 +87,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The default value of the '{@link #getPushExpression() <em>Push Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPushExpression()
 	 * @generated
 	 * @ordered
@@ -94,7 +97,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getPushExpression() <em>Push Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPushExpression()
 	 * @generated
 	 * @ordered
@@ -104,7 +107,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -114,7 +117,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -123,7 +126,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFButtonDescriptionImpl() {
@@ -132,7 +135,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -142,7 +145,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -152,7 +155,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,7 +170,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,7 +180,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -192,7 +195,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,7 +205,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -217,7 +220,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -245,7 +248,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFButtonStyle basicGetStyle() {
@@ -254,7 +257,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFButtonStyle newStyle, NotificationChain msgs) {
@@ -274,7 +277,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -300,13 +303,13 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFButtonConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFButtonConditionalStyle>(EEFButtonConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFButtonConditionalStyle.class, this,
 					EefPackage.EEF_BUTTON_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -314,7 +317,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -330,7 +333,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -355,7 +358,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -384,7 +387,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -411,7 +414,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -436,7 +439,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -445,7 +448,7 @@ public class EEFButtonDescriptionImpl extends EEFWidgetDescriptionImpl implement
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (buttonLabelExpression: "); //$NON-NLS-1$
 		result.append(buttonLabelExpression);
 		result.append(", imageExpression: "); //$NON-NLS-1$

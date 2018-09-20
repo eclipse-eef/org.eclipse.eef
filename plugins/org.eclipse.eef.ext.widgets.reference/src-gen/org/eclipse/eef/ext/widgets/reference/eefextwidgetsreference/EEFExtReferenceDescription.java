@@ -54,7 +54,7 @@ public interface EEFExtReferenceDescription extends EEFWidgetDescription {
 	 * Sets the value of the
 	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getReferenceNameExpression
 	 * <em>Reference Name Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Reference Name Expression</em>' attribute.
 	 * @see #getReferenceNameExpression()
@@ -79,7 +79,7 @@ public interface EEFExtReferenceDescription extends EEFWidgetDescription {
 	 * Sets the value of the
 	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getReferenceOwnerExpression
 	 * <em>Reference Owner Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Reference Owner Expression</em>' attribute.
 	 * @see #getReferenceOwnerExpression()
@@ -94,7 +94,7 @@ public interface EEFExtReferenceDescription extends EEFWidgetDescription {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>On Click Expression</em>' attribute.
 	 * @see #setOnClickExpression(String)
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferencePackage#getEEFExtReferenceDescription_OnClickExpression()
@@ -107,7 +107,7 @@ public interface EEFExtReferenceDescription extends EEFWidgetDescription {
 	 * Sets the value of the
 	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getOnClickExpression
 	 * <em>On Click Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>On Click Expression</em>' attribute.
 	 * @see #getOnClickExpression()
@@ -131,7 +131,7 @@ public interface EEFExtReferenceDescription extends EEFWidgetDescription {
 	 * Sets the value of the
 	 * '{@link org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription#getStyle
 	 * <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
@@ -148,7 +148,7 @@ public interface EEFExtReferenceDescription extends EEFWidgetDescription {
 	 * be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
 	 * @see org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferencePackage#getEEFExtReferenceDescription_ConditionalStyles()
 	 * @model containment="true" resolveProxies="true"

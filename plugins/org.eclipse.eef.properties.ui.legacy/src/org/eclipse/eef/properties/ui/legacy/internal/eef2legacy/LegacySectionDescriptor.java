@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.eef2legacy;
 
@@ -21,7 +22,7 @@ import org.eclipse.ui.views.properties.tabbed.ISectionDescriptor;
 
 /**
  * Wraps an {@link IEEFSectionDescriptor} to an {@link ISectionDescriptor}.
- * 
+ *
  * @author melanie
  */
 public class LegacySectionDescriptor implements ISectionDescriptor {
@@ -33,7 +34,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * The constructor.
-	 * 
+	 *
 	 * @param eefSectionDescriptor
 	 *            EEF section descriptor
 	 */
@@ -43,7 +44,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#getId()
 	 */
 	@Override
@@ -53,7 +54,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#getFilter()
 	 */
 	@Override
@@ -63,7 +64,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#getInputTypes()
 	 */
 	@SuppressWarnings("rawtypes")
@@ -74,7 +75,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#getSectionClass()
 	 */
 	@Override
@@ -84,7 +85,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#getTargetTab()
 	 */
 	@Override
@@ -94,7 +95,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#getEnablesFor()
 	 */
 	@Override
@@ -104,7 +105,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#appliesTo(IWorkbenchPart, ISelection)
 	 */
 	@Override
@@ -114,7 +115,7 @@ public class LegacySectionDescriptor implements ISectionDescriptor {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see ISectionDescriptor#getAfterSection()
 	 */
 	@Override

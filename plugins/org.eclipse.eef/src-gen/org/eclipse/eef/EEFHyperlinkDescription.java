@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -36,7 +39,7 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Value Expression</b></em>' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> Indicates how to display the input value. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Value Expression</em>' attribute.
 	 * @see #setValueExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription_ValueExpression()
@@ -46,9 +49,9 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	String getValueExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getValueExpression
-	 * <em>Value Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getValueExpression <em>Value
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Value Expression</em>' attribute.
 	 * @see #getValueExpression()
@@ -59,7 +62,7 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Display Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> This function will return the label to display <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Display Expression</em>' attribute.
 	 * @see #setDisplayExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription_DisplayExpression()
@@ -69,9 +72,9 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	String getDisplayExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression
-	 * <em>Display Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getDisplayExpression <em>Display
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Display Expression</em>' attribute.
 	 * @see #getDisplayExpression()
@@ -83,7 +86,7 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	 * Returns the value of the '<em><b>On Click Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> Defines the behavior executed when the end-user clicks on the
 	 * hyperlink. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>On Click Expression</em>' attribute.
 	 * @see #setOnClickExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription_OnClickExpression()
@@ -93,9 +96,9 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	String getOnClickExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression
-	 * <em>On Click Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getOnClickExpression <em>On Click
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>On Click Expression</em>' attribute.
 	 * @see #getOnClickExpression()
@@ -106,7 +109,7 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' containment reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * --> <!-- begin-model-doc --> Defines the hyperlink style <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Style</em>' containment reference.
 	 * @see #setStyle(EEFHyperlinkStyle)
 	 * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription_Style()
@@ -118,7 +121,7 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFHyperlinkDescription#getStyle <em>Style</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Style</em>' containment reference.
 	 * @see #getStyle()
@@ -130,7 +133,7 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	 * Returns the value of the '<em><b>Conditional Styles</b></em>' containment reference list. The list contents are
 	 * of type {@link org.eclipse.eef.EEFHyperlinkConditionalStyle}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> Defines the hyperlink style associated to a precondition <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Conditional Styles</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription_ConditionalStyles()
 	 * @model containment="true" resolveProxies="true"
@@ -146,7 +149,7 @@ public interface EEFHyperlinkDescription extends EEFWidgetDescription {
 	 * description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Actions</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFHyperlinkDescription_Actions()
 	 * @model containment="true" resolveProxies="true"

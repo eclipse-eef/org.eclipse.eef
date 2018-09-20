@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
 public class EEFExtReferenceWidgetStyleImpl extends EEFWidgetStyleImpl implements EEFExtReferenceWidgetStyle {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFExtReferenceWidgetStyleImpl() {
@@ -31,7 +31,7 @@ public class EEFExtReferenceWidgetStyleImpl extends EEFWidgetStyleImpl implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

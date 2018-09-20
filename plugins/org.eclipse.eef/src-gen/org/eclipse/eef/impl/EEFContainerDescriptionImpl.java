@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -40,7 +43,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 	/**
 	 * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getControls()
 	 * @generated
 	 * @ordered
@@ -50,7 +53,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 	/**
 	 * The cached value of the '{@link #getLayout() <em>Layout</em>}' containment reference. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getLayout()
 	 * @generated
 	 * @ordered
@@ -59,7 +62,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFContainerDescriptionImpl() {
@@ -68,7 +71,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,13 +81,13 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFControlDescription> getControls() {
 		if (controls == null) {
-			controls = new EObjectContainmentEList.Resolving<EEFControlDescription>(EEFControlDescription.class, this,
+			controls = new EObjectContainmentEList.Resolving<>(EEFControlDescription.class, this,
 					EefPackage.EEF_CONTAINER_DESCRIPTION__CONTROLS);
 		}
 		return controls;
@@ -92,7 +95,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,7 +124,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFLayoutDescription basicGetLayout() {
@@ -130,7 +133,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetLayout(EEFLayoutDescription newLayout, NotificationChain msgs) {
@@ -150,7 +153,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,7 +179,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -192,7 +195,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,7 +214,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -231,7 +234,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -249,7 +252,7 @@ public class EEFContainerDescriptionImpl extends EEFControlDescriptionImpl imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

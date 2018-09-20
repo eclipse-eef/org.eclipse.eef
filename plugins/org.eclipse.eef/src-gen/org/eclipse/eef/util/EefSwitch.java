@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.util;
@@ -68,21 +71,21 @@ import org.eclipse.emf.ecore.util.Switch;
  * {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object and proceeding up the inheritance hierarchy until a non-null result is
  * returned, which is the result of the switch. <!-- end-user-doc -->
- *
+ * 
  * @see org.eclipse.eef.EefPackage
  * @generated
  */
 public class EefSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected static EefPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EefSwitch() {
@@ -93,7 +96,7 @@ public class EefSwitch<T> extends Switch<T> {
 
 	/**
 	 * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param ePackage
 	 *            the package in question.
 	 * @return whether this is a switch for the given package.
@@ -107,7 +110,7 @@ public class EefSwitch<T> extends Switch<T> {
 	/**
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that
 	 * result. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -655,7 +658,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF View Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF View Description</em>'.
@@ -670,7 +673,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Page Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Page Description</em>'.
@@ -685,7 +688,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Validation Rule Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Validation Rule Description</em>'.
@@ -700,7 +703,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Rule Audit Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Rule Audit Description</em>'.
@@ -715,7 +718,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Validation Fix Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Validation Fix Description</em>'.
@@ -727,14 +730,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Property Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Property Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Property Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -743,14 +746,14 @@ public class EefSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EEF Semantic Validation Rule Description</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-	 *
+	 * Returns the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 * Description</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+	 * terminate the switch. <!-- end-user-doc -->
+	 * 
 	 * @param object
 	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EEF Semantic Validation Rule Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EEF Semantic Validation Rule
+	 *         Description</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -762,7 +765,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Group Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Group Description</em>'.
@@ -777,7 +780,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Toolbar Action</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Toolbar Action</em>'.
@@ -792,7 +795,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Control Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Control Description</em>'.
@@ -807,7 +810,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Container Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Container Description</em>'.
@@ -822,7 +825,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Layout Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Layout Description</em>'.
@@ -837,7 +840,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Fill Layout Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Fill Layout Description</em>'.
@@ -852,7 +855,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Grid Layout Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Grid Layout Description</em>'.
@@ -867,7 +870,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Widget Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Widget Description</em>'.
@@ -882,7 +885,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Text Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Text Description</em>'.
@@ -897,7 +900,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Label Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Label Description</em>'.
@@ -912,7 +915,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Button Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Button Description</em>'.
@@ -927,7 +930,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Checkbox Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Checkbox Description</em>'.
@@ -942,7 +945,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Select Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Select Description</em>'.
@@ -957,7 +960,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Radio Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Radio Description</em>'.
@@ -972,7 +975,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Hyperlink Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Hyperlink Description</em>'.
@@ -987,7 +990,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping For</em>'.
@@ -1002,7 +1005,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping If</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Dynamic Mapping If</em>'.
@@ -1017,7 +1020,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Description</em>'.
@@ -1032,7 +1035,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Expression</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Expression</em>'.
@@ -1047,7 +1050,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF List Description</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF List Description</em>'.
@@ -1062,7 +1065,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Widget Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Widget Style</em>'.
@@ -1077,7 +1080,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Text Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Text Style</em>'.
@@ -1092,7 +1095,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Label Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Label Style</em>'.
@@ -1107,7 +1110,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Button Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Button Style</em>'.
@@ -1122,7 +1125,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Checkbox Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Checkbox Style</em>'.
@@ -1137,7 +1140,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Select Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Select Style</em>'.
@@ -1152,7 +1155,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Radio Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Radio Style</em>'.
@@ -1167,7 +1170,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Hyperlink Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Hyperlink Style</em>'.
@@ -1182,7 +1185,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Style</em>'.
@@ -1197,7 +1200,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF List Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF List Style</em>'.
@@ -1212,7 +1215,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Group Style</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Group Style</em>'.
@@ -1227,7 +1230,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Conditional Style</em>'.
@@ -1242,7 +1245,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Text Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Text Conditional Style</em>'.
@@ -1257,7 +1260,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Button Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Button Conditional Style</em>'.
@@ -1272,7 +1275,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Label Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Label Conditional Style</em>'.
@@ -1287,7 +1290,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Checkbox Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Checkbox Conditional Style</em>'.
@@ -1302,7 +1305,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Select Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Select Conditional Style</em>'.
@@ -1317,7 +1320,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Radio Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Radio Conditional Style</em>'.
@@ -1332,7 +1335,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Hyperlink Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Hyperlink Conditional Style</em>'.
@@ -1347,7 +1350,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Custom Widget Conditional Style</em>'.
@@ -1362,7 +1365,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Widget Action</em>'. <!-- begin-user-doc
 	 * --> This implementation returns null; returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Widget Action</em>'.
@@ -1377,7 +1380,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF List Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF List Conditional Style</em>'.
@@ -1392,7 +1395,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EEF Group Conditional Style</em>'. <!--
 	 * begin-user-doc --> This implementation returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EEF Group Conditional Style</em>'.
@@ -1407,7 +1410,7 @@ public class EefSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'. <!-- begin-user-doc --> This
 	 * implementation returns null; returning a non-null result will terminate the switch, but this is the last case
 	 * anyway. <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.

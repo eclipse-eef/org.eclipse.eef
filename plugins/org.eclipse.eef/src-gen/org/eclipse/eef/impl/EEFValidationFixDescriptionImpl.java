@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -32,7 +35,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -42,7 +45,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 *
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,7 +55,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * The default value of the '{@link #getFixExpression() <em>Fix Expression</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFixExpression()
 	 * @generated
 	 * @ordered
@@ -62,7 +65,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 	/**
 	 * The cached value of the '{@link #getFixExpression() <em>Fix Expression</em>}' attribute. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getFixExpression()
 	 * @generated
 	 * @ordered
@@ -71,7 +74,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFValidationFixDescriptionImpl() {
@@ -80,7 +83,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,7 +93,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,7 +103,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,7 +117,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -124,7 +127,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,7 +142,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,7 +158,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -173,7 +176,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -191,7 +194,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -208,7 +211,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -217,7 +220,7 @@ public class EEFValidationFixDescriptionImpl extends MinimalEObjectImpl.Containe
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
 		result.append(", fixExpression: "); //$NON-NLS-1$

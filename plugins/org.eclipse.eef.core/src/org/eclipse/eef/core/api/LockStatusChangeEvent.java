@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.core.api;
 
@@ -26,22 +27,22 @@ public class LockStatusChangeEvent {
 	 * @author pcdavid
 	 */
 	public enum LockStatus {
-		/**
-		 * Status to indicate that a EObject is locked by the current editing context.
-		 */
-		LOCKED_BY_ME,
-		/**
-		 * Status to indicate that a EObject is locked by another editing context.
-		 */
-		LOCKED_BY_OTHER,
-		/**
-		 * Status to indicate that a EObject is locked because of a permission issue.
-		 */
-		LOCKED_PERMISSION,
-		/**
-		 * Status to indicate that a EObject is not locked.
-		 */
-		UNLOCKED
+	/**
+	 * Status to indicate that a EObject is locked by the current editing context.
+	 */
+	LOCKED_BY_ME,
+	/**
+	 * Status to indicate that a EObject is locked by another editing context.
+	 */
+	LOCKED_BY_OTHER,
+	/**
+	 * Status to indicate that a EObject is locked because of a permission issue.
+	 */
+	LOCKED_PERMISSION,
+	/**
+	 * Status to indicate that a EObject is not locked.
+	 */
+	UNLOCKED
 	}
 
 	/**

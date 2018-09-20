@@ -21,13 +21,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements EefExtWidgetsReferenceFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static EefExtWidgetsReferenceFactory init() {
@@ -45,7 +45,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EefExtWidgetsReferenceFactoryImpl() {
@@ -54,7 +54,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class EefExtWidgetsReferenceFactoryImpl extends EFactoryImpl implements E
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @deprecated
 	 * @generated
 	 */

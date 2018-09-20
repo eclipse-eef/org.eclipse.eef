@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -21,8 +24,8 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>EEF Property Validation Rule Description</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>EEF Property Validation Rule
+ * Description</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -36,7 +39,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 	/**
 	 * The cached value of the '{@link #getTargets() <em>Targets</em>}' reference list. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getTargets()
 	 * @generated
 	 * @ordered
@@ -45,7 +48,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFPropertyValidationRuleDescriptionImpl() {
@@ -54,7 +57,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,13 +67,13 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFWidgetDescription> getTargets() {
 		if (targets == null) {
-			targets = new EObjectWithInverseResolvingEList.ManyInverse<EEFWidgetDescription>(EEFWidgetDescription.class, this,
+			targets = new EObjectWithInverseResolvingEList.ManyInverse<>(EEFWidgetDescription.class, this,
 					EefPackage.EEF_PROPERTY_VALIDATION_RULE_DESCRIPTION__TARGETS, EefPackage.EEF_WIDGET_DESCRIPTION__PROPERTY_VALIDATION_RULES);
 		}
 		return targets;
@@ -78,7 +81,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -93,7 +96,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,7 +110,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,7 +124,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -138,7 +141,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,7 +156,7 @@ public class EEFPropertyValidationRuleDescriptionImpl extends EEFValidationRuleD
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

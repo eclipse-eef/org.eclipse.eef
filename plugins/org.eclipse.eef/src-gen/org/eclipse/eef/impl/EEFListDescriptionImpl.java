@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -45,7 +48,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -55,7 +58,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getValueExpression()
 	 * @generated
 	 * @ordered
@@ -65,7 +68,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The default value of the '{@link #getDisplayExpression() <em>Display Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -75,7 +78,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getDisplayExpression() <em>Display Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getDisplayExpression()
 	 * @generated
 	 * @ordered
@@ -85,7 +88,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The default value of the '{@link #getOnClickExpression() <em>On Click Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getOnClickExpression()
 	 * @generated
 	 * @ordered
@@ -95,7 +98,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getOnClickExpression() <em>On Click Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getOnClickExpression()
 	 * @generated
 	 * @ordered
@@ -105,7 +108,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getActions()
 	 * @generated
 	 * @ordered
@@ -115,7 +118,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -125,7 +128,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 	/**
 	 * The cached value of the '{@link #getConditionalStyles() <em>Conditional Styles</em>}' containment reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getConditionalStyles()
 	 * @generated
 	 * @ordered
@@ -134,7 +137,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFListDescriptionImpl() {
@@ -143,7 +146,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,7 +156,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -163,7 +166,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -178,7 +181,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,7 +191,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,7 +206,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,7 +216,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -228,20 +231,20 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFWidgetAction> getActions() {
 		if (actions == null) {
-			actions = new EObjectContainmentEList.Resolving<EEFWidgetAction>(EEFWidgetAction.class, this, EefPackage.EEF_LIST_DESCRIPTION__ACTIONS);
+			actions = new EObjectContainmentEList.Resolving<>(EEFWidgetAction.class, this, EefPackage.EEF_LIST_DESCRIPTION__ACTIONS);
 		}
 		return actions;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -269,7 +272,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public EEFListStyle basicGetStyle() {
@@ -278,7 +281,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetStyle(EEFListStyle newStyle, NotificationChain msgs) {
@@ -298,7 +301,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -324,13 +327,13 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EList<EEFListConditionalStyle> getConditionalStyles() {
 		if (conditionalStyles == null) {
-			conditionalStyles = new EObjectContainmentEList.Resolving<EEFListConditionalStyle>(EEFListConditionalStyle.class, this,
+			conditionalStyles = new EObjectContainmentEList.Resolving<>(EEFListConditionalStyle.class, this,
 					EefPackage.EEF_LIST_DESCRIPTION__CONDITIONAL_STYLES);
 		}
 		return conditionalStyles;
@@ -338,7 +341,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -356,7 +359,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -383,7 +386,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -416,7 +419,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -446,7 +449,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -473,7 +476,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -482,7 +485,7 @@ public class EEFListDescriptionImpl extends EEFWidgetDescriptionImpl implements 
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (valueExpression: "); //$NON-NLS-1$
 		result.append(valueExpression);
 		result.append(", displayExpression: "); //$NON-NLS-1$

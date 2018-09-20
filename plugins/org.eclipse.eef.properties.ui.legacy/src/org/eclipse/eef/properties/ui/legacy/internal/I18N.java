@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal;
 
@@ -40,7 +41,7 @@ public final class I18N {
 		/**
 		 * The (optional) value of the message key. If absent, the key is assumed to be the same as the Java field's
 		 * name.
-		 * 
+		 *
 		 * @return the message key, if different from the field name.
 		 */
 		String[] value() default {};

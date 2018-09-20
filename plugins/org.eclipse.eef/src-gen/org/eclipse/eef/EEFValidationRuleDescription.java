@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -34,7 +37,7 @@ public interface EEFValidationRuleDescription extends EObject {
 	 * Returns the value of the '<em><b>Severity</b></em>' attribute. The literals are from the enumeration
 	 * {@link org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> The severity of the validation rule. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Severity</em>' attribute.
 	 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
 	 * @see #setSeverity(EEF_VALIDATION_SEVERITY_DESCRIPTION)
@@ -47,7 +50,7 @@ public interface EEFValidationRuleDescription extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getSeverity <em>Severity</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Severity</em>' attribute.
 	 * @see org.eclipse.eef.EEF_VALIDATION_SEVERITY_DESCRIPTION
@@ -60,7 +63,7 @@ public interface EEFValidationRuleDescription extends EObject {
 	 * Returns the value of the '<em><b>Message Expression</b></em>' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc --> <!-- begin-model-doc --> The expression used to compute the message to display to the end user
 	 * in case of error. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Message Expression</em>' attribute.
 	 * @see #setMessageExpression(String)
 	 * @see org.eclipse.eef.EefPackage#getEEFValidationRuleDescription_MessageExpression()
@@ -70,9 +73,9 @@ public interface EEFValidationRuleDescription extends EObject {
 	String getMessageExpression();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression
-	 * <em>Message Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Sets the value of the '{@link org.eclipse.eef.EEFValidationRuleDescription#getMessageExpression <em>Message
+	 * Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @param value
 	 *            the new value of the '<em>Message Expression</em>' attribute.
 	 * @see #getMessageExpression()
@@ -85,7 +88,7 @@ public interface EEFValidationRuleDescription extends EObject {
 	 * {@link org.eclipse.eef.EEFRuleAuditDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> The audits to perform to ensure that the validation rule is valid or not. <!-- end-model-doc
 	 * -->
-	 *
+	 * 
 	 * @return the value of the '<em>Audits</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFValidationRuleDescription_Audits()
 	 * @model containment="true" resolveProxies="true"
@@ -97,7 +100,7 @@ public interface EEFValidationRuleDescription extends EObject {
 	 * Returns the value of the '<em><b>Fixes</b></em>' containment reference list. The list contents are of type
 	 * {@link org.eclipse.eef.EEFValidationFixDescription}. <!-- begin-user-doc --> <!-- end-user-doc --> <!--
 	 * begin-model-doc --> The quick fixes that can be used to fix invalid data. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @return the value of the '<em>Fixes</em>' containment reference list.
 	 * @see org.eclipse.eef.EefPackage#getEEFValidationRuleDescription_Fixes()
 	 * @model containment="true" resolveProxies="true"

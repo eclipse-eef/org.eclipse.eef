@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef;
@@ -15,18 +18,18 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc --> A representation of the literals of the enumeration '
- * <em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>', and utility methods for working with them. <!-- end-user-doc
- * -->
- *
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>EEF VALIDATION SEVERITY
+ * DESCRIPTION</b></em>', and utility methods for working with them. <!-- end-user-doc -->
+ * 
  * @see org.eclipse.eef.EefPackage#getEEF_VALIDATION_SEVERITY_DESCRIPTION()
  * @model
  * @generated
  */
 public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
-	 * The '<em><b>INFO</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>INFO</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
+	 * The severity used to describe a piece of information. <!-- end-model-doc -->
+	 * 
 	 * @see #INFO_VALUE
 	 * @generated
 	 * @ordered
@@ -34,8 +37,9 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	INFO(1, "INFO", "INFO"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>WARNING</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>WARNING</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
+	 * --> The severity used to describe a warning. <!-- end-model-doc -->
+	 * 
 	 * @see #WARNING_VALUE
 	 * @generated
 	 * @ordered
@@ -43,8 +47,9 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	WARNING(2, "WARNING", "WARNING"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>ERROR</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * The '<em><b>ERROR</b></em>' literal object. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
+	 * --> The severity used to describe an error. <!-- end-model-doc -->
+	 * 
 	 * @see #ERROR_VALUE
 	 * @generated
 	 * @ordered
@@ -54,7 +59,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * The '<em><b>INFO</b></em>' literal value. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * The severity used to describe a piece of information. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @see #INFO
 	 * @model
 	 * @generated
@@ -65,7 +70,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * The '<em><b>WARNING</b></em>' literal value. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc
 	 * --> The severity used to describe a warning. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @see #WARNING
 	 * @model
 	 * @generated
@@ -76,7 +81,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * The '<em><b>ERROR</b></em>' literal value. <!-- begin-user-doc --> <!-- end-user-doc --> <!-- begin-model-doc -->
 	 * The severity used to describe an error. <!-- end-model-doc -->
-	 *
+	 * 
 	 * @see #ERROR
 	 * @model
 	 * @generated
@@ -87,7 +92,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * An array of all the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' enumerators. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private static final EEF_VALIDATION_SEVERITY_DESCRIPTION[] VALUES_ARRAY = new EEF_VALIDATION_SEVERITY_DESCRIPTION[] { INFO, WARNING, ERROR, };
@@ -95,7 +100,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * A public read-only list of all the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' enumerators. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	public static final List<EEF_VALIDATION_SEVERITY_DESCRIPTION> VALUES = Collections
@@ -104,7 +109,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' literal with the specified literal value. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param literal
 	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
@@ -122,7 +127,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' literal with the specified name. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param name
 	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
@@ -140,7 +145,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * Returns the '<em><b>EEF VALIDATION SEVERITY DESCRIPTION</b></em>' literal with the specified integer value. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @param value
 	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
@@ -160,28 +165,28 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
 	 * Only this class can construct instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	private EEF_VALIDATION_SEVERITY_DESCRIPTION(int value, String name, String literal) {
@@ -192,7 +197,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -202,7 +207,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -212,7 +217,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -223,7 +228,7 @@ public enum EEF_VALIDATION_SEVERITY_DESCRIPTION implements Enumerator {
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override

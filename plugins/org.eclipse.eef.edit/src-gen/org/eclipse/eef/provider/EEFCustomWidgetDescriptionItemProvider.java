@@ -23,13 +23,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFCustomWidgetDescription} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFCustomWidgetDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -38,7 +38,7 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -55,7 +55,7 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,7 +84,7 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 
 	/**
 	 * This returns EEFCustomWidgetDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -104,21 +104,21 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFCustomWidgetDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFCustomWidgetDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFCustomWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,7 +138,7 @@ public class EEFCustomWidgetDescriptionItemProvider extends EEFWidgetDescription
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

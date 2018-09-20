@@ -1,12 +1,13 @@
 /*******************************************************************************
- * Copyright (c) 2016 Obeo.
+ * Copyright (c) 2016, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * https://www.eclipse.org/legal/epl-2.0
  *
- * Contributors:
- *    Obeo - initial API and implementation
+ * SPDX-License-Identifier: EPL-2.0
+ *
+ * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.documentation.export.internal;
 
@@ -114,6 +115,7 @@ public class Topic {
 	 */
 	@Override
 	public String toString() {
-		return "Topic [href=" + this.href + ", label=" + this.label + ", children=" + this.topics.stream().map(Object::toString).collect(Collectors.toList()) + "]"; //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$ //$NON-NLS-4$
+		return "Topic [href=" + this.href + ", label=" + this.label + ", children=" //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
+				+ this.topics.stream().map(Object::toString).collect(Collectors.toList()) + "]"; //$NON-NLS-1$
 	}
 }

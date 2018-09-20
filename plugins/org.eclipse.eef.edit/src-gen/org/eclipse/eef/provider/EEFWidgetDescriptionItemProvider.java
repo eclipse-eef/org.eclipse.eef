@@ -23,13 +23,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFWidgetDescription} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFWidgetDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -38,7 +38,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -56,7 +56,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This adds a property descriptor for the Label Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addLabelExpressionPropertyDescriptor(Object object) {
@@ -69,7 +69,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This adds a property descriptor for the Help Expression feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addHelpExpressionPropertyDescriptor(Object object) {
@@ -83,7 +83,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 	/**
 	 * This adds a property descriptor for the Is Enabled Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIsEnabledExpressionPropertyDescriptor(Object object) {
@@ -98,7 +98,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 	/**
 	 * This adds a property descriptor for the Property Validation Rules feature. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPropertyValidationRulesPropertyDescriptor(Object object) {
@@ -111,7 +111,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This returns EEFWidgetDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -131,21 +131,21 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFWidgetDescription) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFWidgetDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFWidgetDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFWidgetDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class EEFWidgetDescriptionItemProvider extends EEFControlDescriptionItemP
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

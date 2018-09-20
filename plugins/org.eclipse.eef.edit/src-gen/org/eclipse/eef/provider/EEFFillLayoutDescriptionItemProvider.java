@@ -24,13 +24,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFFillLayoutDescription} object. <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFFillLayoutDescriptionItemProvider(AdapterFactory adapterFactory) {
@@ -39,7 +39,7 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This adds a property descriptor for the Orientation feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addOrientationPropertyDescriptor(Object object) {
@@ -68,7 +68,7 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This returns EEFFillLayoutDescription.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,22 +88,22 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		EEF_FILL_LAYOUT_ORIENTATION labelValue = ((EEFFillLayoutDescription) object).getOrientation();
 		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_EEFFillLayoutDescription_type") //$NON-NLS-1$
-				: getString("_UI_EEFFillLayoutDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFFillLayoutDescription_type") : //$NON-NLS-1$
+				getString("_UI_EEFFillLayoutDescription_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,7 +121,7 @@ public class EEFFillLayoutDescriptionItemProvider extends EEFLayoutDescriptionIt
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

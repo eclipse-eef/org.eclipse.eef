@@ -1,9 +1,12 @@
 /**
- * Copyright (c) 2015 Obeo.
+ * Copyright (c) 2015, 2018 Obeo.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.htm
+ * https://www.eclipse.org/legal/epl-2.0
+ *
+ * SPDX-License-Identifier: EPL-2.0
+ *
  * Contributors: Obeo - initial API and implementation
  */
 package org.eclipse.eef.impl;
@@ -22,8 +25,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition Expression</em>}
- * </li>
+ * <li>{@link org.eclipse.eef.impl.EEFConditionalStyleImpl#getPreconditionExpression <em>Precondition
+ * Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,7 +35,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 	/**
 	 * The default value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPreconditionExpression()
 	 * @generated
 	 * @ordered
@@ -42,7 +45,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 	/**
 	 * The cached value of the '{@link #getPreconditionExpression() <em>Precondition Expression</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @see #getPreconditionExpression()
 	 * @generated
 	 * @ordered
@@ -51,7 +54,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	protected EEFConditionalStyleImpl() {
@@ -60,7 +63,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,7 +73,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,7 +83,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,7 +98,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,7 +112,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -124,7 +127,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,7 +142,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -154,7 +157,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -163,7 +166,7 @@ public abstract class EEFConditionalStyleImpl extends MinimalEObjectImpl.Contain
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (preconditionExpression: "); //$NON-NLS-1$
 		result.append(preconditionExpression);
 		result.append(')');

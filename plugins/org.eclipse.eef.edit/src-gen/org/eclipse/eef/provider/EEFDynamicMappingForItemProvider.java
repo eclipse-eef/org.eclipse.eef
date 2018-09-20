@@ -25,13 +25,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link org.eclipse.eef.EEFDynamicMappingFor} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEFDynamicMappingForItemProvider(AdapterFactory adapterFactory) {
@@ -40,7 +40,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -57,7 +57,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This adds a property descriptor for the Iterator feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIteratorPropertyDescriptor(Object object) {
@@ -70,7 +70,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	/**
 	 * This adds a property descriptor for the Iterable Expression feature. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIterableExpressionPropertyDescriptor(Object object) {
@@ -84,7 +84,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This adds a property descriptor for the Force Refresh feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addForceRefreshPropertyDescriptor(Object object) {
@@ -100,7 +100,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -127,7 +127,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This returns EEFDynamicMappingFor.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,21 +147,21 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((EEFDynamicMappingFor) object).getIdentifier();
-		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingFor_type") //$NON-NLS-1$
-				: getString("_UI_EEFDynamicMappingFor_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		return label == null || label.length() == 0 ? getString("_UI_EEFDynamicMappingFor_type") : //$NON-NLS-1$
+				getString("_UI_EEFDynamicMappingFor_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached children and by creating
 	 * a viewer notification, which it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class EEFDynamicMappingForItemProvider extends EEFControlDescriptionItemP
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that can be created
 	 * under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
