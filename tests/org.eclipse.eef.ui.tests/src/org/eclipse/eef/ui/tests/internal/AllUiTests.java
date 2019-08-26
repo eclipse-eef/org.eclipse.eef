@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018 Obeo.
+ * Copyright (c) 2018, 2019 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.junit.runners.Suite.SuiteClasses;
  * @author sbegaudeau
  */
 @RunWith(Suite.class)
-@SuiteClasses({ LegacyPropertySectionSorterTests.class })
+@SuiteClasses({ LegacyPropertySectionSorterTests.class, LegacyPropertyTabSorterTests.class })
 public final class AllUiTests {
 	/**
 	 * The constructor.
