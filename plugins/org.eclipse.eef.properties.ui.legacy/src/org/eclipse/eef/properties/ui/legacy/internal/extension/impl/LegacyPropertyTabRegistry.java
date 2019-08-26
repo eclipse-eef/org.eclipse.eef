@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2018 Obeo.
+ * Copyright (c) 2015, 2019 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -34,11 +33,6 @@ import org.eclipse.eef.properties.ui.legacy.internal.extension.IItemRegistry;
  * @author mbats
  */
 public class LegacyPropertyTabRegistry implements IItemRegistry {
-
-	/**
-	 * The after tab top value.
-	 */
-	private static final String TOP = "top"; //$NON-NLS-1$
 
 	/**
 	 * The map of the identifier of the description to the {@link LegacyPropertyTabItemDescriptor}.
@@ -112,31 +106,21 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 			return tabs;
 		}
 		List<IEEFTabDescriptor> sorted = new ArrayList<IEEFTabDescriptor>();
-		int categoryIndex = 0;
 		for (int i = 0; i < propertyCategories.size(); i++) {
 			// Get all the tabs of a category
 			final List<IEEFTabDescriptor> categoryList = new ArrayList<IEEFTabDescriptor>();
 			String category = propertyCategories.get(i);
-			int topOfCategory = categoryIndex;
-			int endOfCategory = categoryIndex;
-			while (endOfCategory < tabs.size() && tabs.get(endOfCategory).getCategory().equals(category)) {
-				endOfCategory++;
-			}
-			for (int j = topOfCategory; j < endOfCategory; j++) {
-				IEEFTabDescriptor tab = tabs.get(j);
-				if (tab.getAfterTab().equals(TOP)) {
-					categoryList.add(0, tabs.get(j));
-				} else {
-					categoryList.add(tabs.get(j));
+
+			for (IEEFTabDescriptor tab : tabs) {
+				if (category.equals(tab.getCategory())) {
+					categoryList.add(tab);
 				}
 			}
-
 			List<IEEFTabDescriptor> sortedTabs = sortCategoryTabsByAfterTab(categoryList);
 
 			for (int j = 0; j < sortedTabs.size(); j++) {
 				sorted.add(sortedTabs.get(j));
 			}
-			categoryIndex = endOfCategory;
 		}
 		return sorted;
 	}
@@ -149,37 +133,7 @@ public class LegacyPropertyTabRegistry implements IItemRegistry {
 	 * @return List of tabs sorted by after tab
 	 */
 	private List<IEEFTabDescriptor> sortCategoryTabsByAfterTab(List<IEEFTabDescriptor> categoryList) {
-		List<IEEFTabDescriptor> sorted = new LinkedList<IEEFTabDescriptor>();
-		for (IEEFTabDescriptor tab : categoryList) {
-			String afterTabId = tab.getAfterTab();
-			int indexOfAfterTab = -1;
-			if (afterTabId != null && !afterTabId.isEmpty()) {
-				IEEFTabDescriptor afterTab = getTab(categoryList, afterTabId);
-				if (afterTab != null) {
-					indexOfAfterTab = sorted.indexOf(afterTab);
-				}
-			}
-			sorted.add(indexOfAfterTab + 1, tab);
-		}
-		return sorted;
-	}
-
-	/**
-	 * Get a tab in a list of tabs according to its id.
-	 *
-	 * @param tabId
-	 *            The tab id
-	 * @param tabs
-	 *            The tabs list
-	 * @return the Tab
-	 */
-	private IEEFTabDescriptor getTab(List<IEEFTabDescriptor> tabs, String tabId) {
-		for (IEEFTabDescriptor tab : tabs) {
-			if (tabId.equals(tab.getId())) {
-				return tab;
-			}
-		}
-		return null;
+		return new LegacyPropertyTabSorter().sortTabsByAfterTab(categoryList);
 	}
 
 	/**
