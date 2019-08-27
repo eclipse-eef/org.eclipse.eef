@@ -21,8 +21,8 @@ Contributors: Obeo - initial API and implementation
   <name>EEF Parent</name>
 
   <properties>
-    <tycho-version>1.4.0-SNAPSHOT</tycho-version>
-    <tycho-extras-version>1.4.0-SNAPSHOT</tycho-extras-version>
+    <tycho-version>1.4.0</tycho-version>
+    <tycho-extras-version>1.4.0</tycho-extras-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <platform-version-name>2018-12</platform-version-name>
     <tycho.scmUrl>scm:git:http://git.eclipse.org/gitroot/eef/org.eclipse.eef.git</tycho.scmUrl>
