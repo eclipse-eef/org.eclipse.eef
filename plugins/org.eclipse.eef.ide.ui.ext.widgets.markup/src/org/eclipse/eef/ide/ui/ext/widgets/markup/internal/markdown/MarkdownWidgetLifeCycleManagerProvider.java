@@ -8,10 +8,10 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Obeo - initial API and implementation
- *
+ *    Israel Aerospace Industries - initial API and implementation
  */
-package org.eclipse.eef.ide.ui.ext.widgets.markup.internal;
+
+package org.eclipse.eef.ide.ui.ext.widgets.markup.internal.markdown;
 
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
@@ -21,6 +21,12 @@ import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
+/**
+ * IEEFLifecycleManagerProvider for Markdown widget.
+ *
+ * @author Arthur Daussy
+ *
+ */
 public class MarkdownWidgetLifeCycleManagerProvider implements IEEFLifecycleManagerProvider {
 
 	@Override
@@ -29,10 +35,9 @@ public class MarkdownWidgetLifeCycleManagerProvider implements IEEFLifecycleMana
 	}
 
 	@Override
-	public IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription,
-			IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
-		return new MarkdownWidgetLifeCycleManager((EEFExtMarkdownWidget) controlDescription, variableManager,
-				interpreter, editingContextAdapter);
+	public IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription, IVariableManager variableManager,
+			IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		return new MarkdownWidgetLifeCycleManager((EEFExtMarkdownWidget) controlDescription, variableManager, interpreter, editingContextAdapter);
 	}
 
 }

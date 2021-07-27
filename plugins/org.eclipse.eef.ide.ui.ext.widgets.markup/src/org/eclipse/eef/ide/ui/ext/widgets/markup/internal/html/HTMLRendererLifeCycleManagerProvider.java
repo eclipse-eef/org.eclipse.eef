@@ -8,11 +8,10 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Obeo - initial API and implementation
- *
+ *    Israel Aerospace Industries - initial API and implementation
  */
 
-package org.eclipse.eef.ide.ui.ext.widgets.markup.internal;
+package org.eclipse.eef.ide.ui.ext.widgets.markup.internal.html;
 
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.core.api.EditingContextAdapter;
@@ -22,7 +21,13 @@ import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
-public class HTMLLifeCycleManagerProvider implements IEEFLifecycleManagerProvider {
+/**
+ * IEEFLifecycleManagerProvider for HTML renderer widget.
+ *
+ * @author Arthur Daussy
+ *
+ */
+public class HTMLRendererLifeCycleManagerProvider implements IEEFLifecycleManagerProvider {
 
 	@Override
 	public boolean canHandle(EEFControlDescription controlDescription) {
@@ -30,10 +35,10 @@ public class HTMLLifeCycleManagerProvider implements IEEFLifecycleManagerProvide
 	}
 
 	@Override
-	public IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription,
-			IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
-		return new HTMLLifeCycleManager((EEFExtHTMLRendererDescription) controlDescription, variableManager,
-				interpreter, editingContextAdapter);
+	public IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription, IVariableManager variableManager,
+			IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		return new HTMLRendererLifeCycleManager((EEFExtHTMLRendererDescription) controlDescription, variableManager, interpreter,
+				editingContextAdapter);
 	}
 
 }

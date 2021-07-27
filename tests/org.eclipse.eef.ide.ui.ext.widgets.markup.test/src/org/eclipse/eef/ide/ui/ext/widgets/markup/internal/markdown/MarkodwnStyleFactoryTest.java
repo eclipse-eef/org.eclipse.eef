@@ -23,25 +23,24 @@ import com.vladsch.flexmark.parser.Parser;
 
 import java.util.List;
 
-import org.eclipse.eef.ide.ui.ext.widgets.markup.markdown.MarkdownService;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.StyleRange;
 import org.eclipse.swt.widgets.Display;
 import org.junit.Before;
 import org.junit.Test;
 
-public class StyleBuilderTest {
+public class MarkodwnStyleFactoryTest {
 
 	private Parser parser;
-	private StyleBuilder styleBuilder;
+	private MarkdownStyleBuilder styleBuilder;
 	private MarkodwnStyleFactory styleProvider;
 
 	@Before
 	public void before() {
-		parser = MarkdownService.builFlexdParser();
+		parser = FlexmarkUtil.builFlexParser();
 
 		styleProvider = new MarkodwnStyleFactory(Display.getDefault());
-		styleBuilder = new StyleBuilder(styleProvider);
+		styleBuilder = new MarkdownStyleBuilder(styleProvider);
 
 	}
 
@@ -448,7 +447,7 @@ public class StyleBuilderTest {
 			assertTrue("Style " + i + " " + style + " is out of range", style.start + style.length < input.length());
 			for (StyleRange other : styles) {
 				if (other != style) {
-					assertFalse(style + " overlaps with " + other, StyleBuilder.overlap(style, other));
+					assertFalse(style + " overlaps with " + other, MarkdownStyleBuilder.overlap(style, other));
 				}
 			}
 		}

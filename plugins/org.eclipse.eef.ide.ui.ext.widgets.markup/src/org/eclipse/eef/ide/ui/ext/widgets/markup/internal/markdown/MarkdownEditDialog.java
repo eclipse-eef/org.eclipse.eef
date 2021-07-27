@@ -8,8 +8,7 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Obeo - initial API and implementation
- *
+ *    Israel Aerospace Industries - initial API and implementation
  */
 
 package org.eclipse.eef.ide.ui.ext.widgets.markup.internal.markdown;
@@ -22,12 +21,44 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 
+/**
+ * Dialog used to edit a Markdown text.
+ *
+ * @author Arthur Daussy
+ *
+ */
 public class MarkdownEditDialog extends Dialog {
 
+	/**
+	 * Minimum screen height ratio to be used by this dialog.
+	 */
+	private static final double MIN_HEIGHT_RAIO = 0.8;
+
+	/**
+	 * The Markdown text current value.
+	 */
 	private String markdown;
+
+	/**
+	 * Holds <code>true</code> if the text to edit is multiline.
+	 */
 	private boolean multiLine;
+
+	/**
+	 * The Markdown widget.
+	 */
 	private MarkdownWidget markdownWidget;
 
+	/**
+	 * Simple constructor.
+	 *
+	 * @param parentShell
+	 *            the parent shell
+	 * @param multiLine
+	 *            holds <code>true</code> if the text to edit is multiline
+	 * @param markdown
+	 *            the initial content of the Markdown text
+	 */
 	public MarkdownEditDialog(Shell parentShell, boolean multiLine, String markdown) {
 		super(parentShell);
 		this.multiLine = multiLine;
@@ -49,14 +80,14 @@ public class MarkdownEditDialog extends Dialog {
 		final Composite composite = (Composite) super.createDialogArea(parent);
 		getShell().setText(Messages.MarkdownEditDialog_DialogTitle);
 
-		this.markdownWidget = new MarkdownWidget(parent.getDisplay(), markdown, multiLine, false, this::setMarkdown);
+		this.markdownWidget = new MarkdownWidget(parent.getDisplay(), markdown, multiLine).setValueConsumer(this::setMarkdown);
 		StyledText styledText = markdownWidget.buildWidget(composite);
 
 		markdownWidget.aboutToBeShown();
 		final GridData layoutData;
 		if (multiLine) {
 			layoutData = new GridData(GridData.FILL_BOTH);
-			layoutData.minimumHeight = (int) (getShell().getSize().y * 0.8);
+			layoutData.minimumHeight = (int) (getShell().getSize().y * MIN_HEIGHT_RAIO);
 			layoutData.minimumWidth = (int) (getShell().getSize().x * 0.5);
 		} else {
 			layoutData = new GridData(GridData.FILL_HORIZONTAL);

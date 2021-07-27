@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.eef.ide.ui.ext.widgets.markup;singleton:=true
 Bundle-Version: 2.1.6.qualifier
-Bundle-Activator: org.eclipse.eef.ide.ui.ext.widgets.markup.IDEUIExtWidgetHTMLRendererActivator
+Bundle-Activator: org.eclipse.eef.ide.ui.ext.widgets.markup.EEFExtMarkupUIPlugin$Implementation
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)",
  org.eclipse.eef;bundle-version="[2.1.5,3.0.0)",
  org.eclipse.eef.core;bundle-version="[2.1.5,3.0.0)",
@@ -14,7 +14,9 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.7.0,4.0.0)",
  org.eclipse.eef.ext.widgets.markup;bundle-version="[2.1.5,3.0.0)",
  org.eclipse.ui.workbench;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.jface;bundle-version="[3.0.0,4.0.0)",
- org.eclipse.ui.forms;bundle-version="[3.0.0,4.0.0)"
+ org.eclipse.ui.forms;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.eef.common;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.emf.common.ui;bundle-version="[2.8.0,3.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Localization: plugin
 Automatic-Module-Name: org.eclipse.eef.ide.ui.ext.widgets.markup

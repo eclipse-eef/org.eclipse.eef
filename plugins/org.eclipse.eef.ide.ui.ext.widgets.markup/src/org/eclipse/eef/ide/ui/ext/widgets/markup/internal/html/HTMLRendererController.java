@@ -8,11 +8,9 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Obeo - initial API and implementation
- *
+ *    Israel Aerospace Industries - initial API and implementation
  */
-
-package org.eclipse.eef.ide.ui.ext.widgets.markup.internal;
+package org.eclipse.eef.ide.ui.ext.widgets.markup.internal.html;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,16 +28,38 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
-public class HTMLController extends AbstractEEFWidgetController {
+/**
+ * Widget controller for the HTML widget.
+ *
+ * @author Arthur Daussy
+ *
+ */
+public class HTMLRendererController extends AbstractEEFWidgetController {
 
-	private static final String NEW_VALUE_EXPRESSION_NAME = "newValue"; //$NON-NLS-1$
-
+	/**
+	 * Control description.
+	 */
 	private EEFExtHTMLRendererDescription description;
 
+	/**
+	 * Consumer used for new values.
+	 */
 	private Consumer<Object> newValueConsumer;
 
-	public HTMLController(IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter editingContextAdapter, EEFExtHTMLRendererDescription description) {
+	/**
+	 * Simple constructor.
+	 *
+	 * @param variableManager
+	 *            the variable manager
+	 * @param interpreter
+	 *            the interpreter
+	 * @param editingContextAdapter
+	 *            an {@link EditingContextAdapter}
+	 * @param description
+	 *            the widget description
+	 */
+	public HTMLRendererController(IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter editingContextAdapter,
+			EEFExtHTMLRendererDescription description) {
 		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
 	}
@@ -55,6 +75,13 @@ public class HTMLController extends AbstractEEFWidgetController {
 		this.newEval().call(description.getValueExpression(), this.newValueConsumer);
 	}
 
+	/**
+	 * Update the value of the widget.
+	 *
+	 * @param text
+	 *            the new text
+	 * @return a {@link IStatus}
+	 */
 	public IStatus updateValue(final String text) {
 		return this.editingContextAdapter.performModelChange(() -> {
 			String editExpression = this.description.getEditExpression();
@@ -68,22 +95,19 @@ public class HTMLController extends AbstractEEFWidgetController {
 		});
 	}
 
-	public void handleEditEnd(Object object) {
-		this.editingContextAdapter.performModelChange(() -> {
-			String editExpression = description.getEditExpression();
-
-			Map<String, Object> variables = new HashMap<String, Object>();
-			variables.putAll(this.variableManager.getVariables());
-			variables.put(NEW_VALUE_EXPRESSION_NAME, object);
-
-			EvalFactory.of(this.interpreter, variables).call(editExpression);
-		});
-	}
-
+	/**
+	 * Sets the onNewValue consumer.
+	 *
+	 * @param consumer
+	 *            a non <code>null</code> consumer
+	 */
 	public void onNewValue(Consumer<Object> consumer) {
 		this.newValueConsumer = consumer;
 	}
 
+	/**
+	 * Remove the onValueConsumer.
+	 */
 	public void removeValueConsumer() {
 		this.newValueConsumer = null;
 	}

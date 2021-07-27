@@ -8,11 +8,10 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Obeo - initial API and implementation
- *
+ *    Israel Aerospace Industries - initial API and implementation
  */
 
-package org.eclipse.eef.ide.ui.ext.widgets.markup.internal;
+package org.eclipse.eef.ide.ui.ext.widgets.markup.internal.markdown;
 
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -21,8 +20,6 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ext.widgets.markup.MarkupWidgets.EEFExtMarkdownWidget;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
-import org.eclipse.eef.ide.ui.ext.widgets.markup.internal.markdown.MarkdownWidget;
-import org.eclipse.eef.ide.ui.ext.widgets.markup.internal.markdown.MarkdownWidgetController;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -32,15 +29,56 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
+/**
+ * AbstractEEFWidgetLifecycleManager for the Markdown widget.
+ *
+ * @author Arthur Daussy
+ *
+ */
 public class MarkdownWidgetLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
+	/**
+	 * Empty.
+	 */
 	private static final String EMPTY = ""; //$NON-NLS-1$
+
+	/**
+	 * Widget description.
+	 */
 	private EEFExtMarkdownWidget controlDescription;
+
+	/**
+	 * Widget controller.
+	 */
 	private MarkdownWidgetController controller;
+
+	/**
+	 * Widget Factory.
+	 */
 	private EEFWidgetFactory widgetFactory;
+
+	/**
+	 * Parent composite.
+	 */
 	private Composite composite;
+
+	/**
+	 * The widget.
+	 */
 	private MarkdownWidget mdWidget;
 
+	/**
+	 * Simple constructor.
+	 *
+	 * @param controlDescription
+	 *            the widget description
+	 * @param variableManager
+	 *            the variable manager
+	 * @param interpreter
+	 *            the interpreter
+	 * @param editingContextAdapter
+	 *            the editing context
+	 */
 	public MarkdownWidgetLifeCycleManager(EEFExtMarkdownWidget controlDescription, IVariableManager variableManager, IInterpreter interpreter,
 			EditingContextAdapter editingContextAdapter) {
 		super(variableManager, interpreter, editingContextAdapter);
@@ -77,9 +115,11 @@ public class MarkdownWidgetLifeCycleManager extends AbstractEEFWidgetLifecycleMa
 
 		int numberOfLine = controlDescription.getNumberOfLine();
 		boolean isMultiLine = numberOfLine > 1;
-		mdWidget = new MarkdownWidget(parent.getDisplay(), EMPTY, isMultiLine, true, v -> {
-			controller.updateValue(v);
-		});
+		mdWidget = new MarkdownWidget(parent.getDisplay(), EMPTY, isMultiLine)//
+				.setUpdateOnFocusLost(true)//
+				.setValueConsumer(v -> {
+					controller.updateValue(v);
+				});
 		mdWidget.buildWidget(composite);
 		GridData browserLayoutData = new GridData(GridData.FILL_BOTH);
 
@@ -97,6 +137,7 @@ public class MarkdownWidgetLifeCycleManager extends AbstractEEFWidgetLifecycleMa
 	@Override
 	public void aboutToBeHidden() {
 
+		this.controller.removeValueConsumer();
 		mdWidget.aboutToBeHidden();
 		super.aboutToBeHidden();
 	}
@@ -104,8 +145,6 @@ public class MarkdownWidgetLifeCycleManager extends AbstractEEFWidgetLifecycleMa
 	@Override
 	public void aboutToBeShown() {
 		super.aboutToBeShown();
-
-		mdWidget.aboutToBeShown();
 
 		this.controller.onNewValue((value) -> {
 			if (!mdWidget.getControl().isDisposed()) {
@@ -119,6 +158,8 @@ public class MarkdownWidgetLifeCycleManager extends AbstractEEFWidgetLifecycleMa
 			}
 
 		});
+
+		mdWidget.aboutToBeShown();
 
 	}
 

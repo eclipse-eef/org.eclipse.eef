@@ -8,14 +8,14 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Obeo - initial API and implementation
- *
+ *    Israel Aerospace Industries - initial API and implementation
  */
 
 package org.eclipse.eef.ide.ui.ext.widgets.markup.internal.markdown;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 import org.eclipse.core.runtime.IStatus;
@@ -30,16 +30,38 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 
+/**
+ * AbstractEEFWidgetController for Markdown widget.
+ *
+ * @author Arthur Daussy
+ *
+ */
 public class MarkdownWidgetController extends AbstractEEFWidgetController {
 
-	private static final String NEW_VALUE_EXPRESSION_NAME = "newValue"; //$NON-NLS-1$
-
+	/**
+	 * Control description.
+	 */
 	private EEFExtMarkdownWidget description;
 
+	/**
+	 * Value consumer.
+	 */
 	private Consumer<Object> newValueConsumer;
 
-	public MarkdownWidgetController(IVariableManager variableManager, IInterpreter interpreter,
-			EditingContextAdapter editingContextAdapter, EEFExtMarkdownWidget description) {
+	/**
+	 * Simple constructor.
+	 *
+	 * @param variableManager
+	 *            a {@link IVariableManager}
+	 * @param interpreter
+	 *            an {@link IInterpreter}
+	 * @param editingContextAdapter
+	 *            a {@link EditingContextAdapter}
+	 * @param description
+	 *            a EEFExtMarkdownWidget.
+	 */
+	public MarkdownWidgetController(IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter editingContextAdapter,
+			EEFExtMarkdownWidget description) {
 		super(variableManager, interpreter, editingContextAdapter);
 		this.description = description;
 	}
@@ -52,9 +74,21 @@ public class MarkdownWidgetController extends AbstractEEFWidgetController {
 	@Override
 	public void refresh() {
 		super.refresh();
-		this.newEval().call(description.getValueExpression(), this.newValueConsumer);
+
+		String valueExpression = this.description.getValueExpression();
+		Optional.ofNullable(this.newValueConsumer).ifPresent(consumer -> {
+			this.newEval().call(valueExpression, consumer);
+		});
+
 	}
 
+	/**
+	 * Updates the text of the widget.
+	 *
+	 * @param text
+	 *            the input value
+	 * @return a {@link IStatus}
+	 */
 	public IStatus updateValue(final String text) {
 		return this.editingContextAdapter.performModelChange(() -> {
 			String editExpression = this.description.getEditExpression();
@@ -68,22 +102,19 @@ public class MarkdownWidgetController extends AbstractEEFWidgetController {
 		});
 	}
 
-	public void handleEditEnd(Object object) {
-		this.editingContextAdapter.performModelChange(() -> {
-			String editExpression = description.getEditExpression();
-
-			Map<String, Object> variables = new HashMap<String, Object>();
-			variables.putAll(this.variableManager.getVariables());
-			variables.put(NEW_VALUE_EXPRESSION_NAME, object);
-
-			EvalFactory.of(this.interpreter, variables).call(editExpression);
-		});
-	}
-
+	/**
+	 * Set the new value consumer.
+	 *
+	 * @param consumer
+	 *            a non <code>null</code> consumer
+	 */
 	public void onNewValue(Consumer<Object> consumer) {
 		this.newValueConsumer = consumer;
 	}
 
+	/**
+	 * Remove the onValue consumer.
+	 */
 	public void removeValueConsumer() {
 		this.newValueConsumer = null;
 	}

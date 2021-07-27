@@ -8,11 +8,10 @@
  * SPDX-License-Identifier: EPL-2.0
  *
  * Contributors:
- *    Obeo - initial API and implementation
- *
+ *    Israel Aerospace Industries - initial API and implementation
  */
 
-package org.eclipse.eef.ide.ui.ext.widgets.markup.internal;
+package org.eclipse.eef.ide.ui.ext.widgets.markup.internal.html;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,7 +26,8 @@ import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.core.api.utils.EvalFactory;
 import org.eclipse.eef.ext.widgets.markup.MarkupWidgets.EEFExtHTMLRendererDescription;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
-import org.eclipse.eef.ide.ui.ext.widgets.markup.IDEUIExtWidgetHTMLRendererActivator;
+import org.eclipse.eef.ide.ui.ext.widgets.markup.EEFExtMarkupUIPlugin;
+import org.eclipse.eef.ide.ui.ext.widgets.markup.internal.Messages;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -46,19 +46,96 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
-public class HTMLLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
+/**
+ * AbstractEEFWidgetLifecycleManager for the HTML renderer widget.
+ *
+ * @author Arthur Daussy
+ *
+ */
+public class HTMLRendererLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
+	/**
+	 * Location listener that prevents changing the browser location and instead open an external browser.
+	 *
+	 * @author Arthur Daussy
+	 *
+	 */
+	private final class ExternalLinkHandler implements LocationListener {
+		@Override
+		public void changing(LocationEvent event) {
+			// Prevents any change of location except when location is "about:blank" since it is used by the
+			// browser.setText method. If a change to another location is required then open an external browser
+			String location = event.location;
+			if (!ABOUT_BLANK.equals(location)) {
+				try {
+					URL url = new URL(location);
+					PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(url);
+				} catch (MalformedURLException e) {
+					EEFExtMarkupUIPlugin.logWarning(MessageFormat.format(Messages.HTMLLifeCycleManager_Warning_InvalidURL, event.location), e);
+				} catch (PartInitException e) {
+					EEFExtMarkupUIPlugin.logError(MessageFormat.format(Messages.HTMLLifeCycleManager_Error_UnableToOpenURLInBrowser, location), e);
+				}
+				event.doit = false; // Prevent changing location
+			}
+
+		}
+
+		@Override
+		public void changed(LocationEvent event) {
+			// Nothing to do
+		}
+	}
+
+	/**
+	 * Input source default.
+	 */
 	private static final String ABOUT_BLANK = "about:blank"; //$NON-NLS-1$
+	/**
+	 * Widget description.
+	 */
 	private EEFExtHTMLRendererDescription controlDescription;
-	private HTMLController controller;
+	/**
+	 * The controller.
+	 */
+	private HTMLRendererController controller;
+	/**
+	 * The widget factory.
+	 */
 	private EEFWidgetFactory widgetFactory;
+	/**
+	 * The widget rendering the HTML content.
+	 */
 	private Browser browser;
+	/**
+	 * Parent composite.
+	 */
 	private Composite composite;
+	/**
+	 * Button to push to activate edit tool.
+	 */
 	private Button editButton;
+	/**
+	 * Edit button section adapter.
+	 */
 	private SelectionAdapter editButtonListener;
+	/**
+	 * Browser location change listener used to prevent changing location.
+	 */
 	private LocationListener locationChangeListener;
 
-	public HTMLLifeCycleManager(EEFExtHTMLRendererDescription controlDescription, IVariableManager variableManager, IInterpreter interpreter,
+	/**
+	 * Simple constructor.
+	 *
+	 * @param controlDescription
+	 *            the widget description
+	 * @param variableManager
+	 *            the variable manager
+	 * @param interpreter
+	 *            the {@link IInterpreter}
+	 * @param editingContextAdapter
+	 *            the {@link EditingContextAdapter}
+	 */
+	public HTMLRendererLifeCycleManager(EEFExtHTMLRendererDescription controlDescription, IVariableManager variableManager, IInterpreter interpreter,
 			EditingContextAdapter editingContextAdapter) {
 		super(variableManager, interpreter, editingContextAdapter);
 		this.controlDescription = controlDescription;
@@ -88,17 +165,20 @@ public class HTMLLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		boolean hasEditButton = controlDescription.getEditExpression() != null && !controlDescription.getEditExpression().isBlank();
 
-		GridLayout layout = new GridLayout(hasEditButton ? 2 : 1, false);
+		int nbColumns;
+		if (hasEditButton) {
+			nbColumns = 2;
+		} else {
+			nbColumns = 1;
+		}
+
+		GridLayout layout = new GridLayout(nbColumns, false);
 		composite.setLayout(layout);
 
 		GridData layoutData = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		composite.setLayoutData(layoutData);
 
 		browser = new Browser(composite, SWT.NONE);
-		/*
-		 * This widget is only used for rendering. We want to forbid the user from changing the location. Instead when
-		 * clicking into a external link it should open the external browser
-		 */
 		browser.setJavascriptEnabled(false);
 
 		GridData browserLayoutData = new GridData(GridData.FILL_BOTH);
@@ -110,18 +190,19 @@ public class HTMLLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		GC gc = new GC(parent.getShell().getDisplay());
 		gc.setFont(browser.getFont());
+
 		// Approximation here since the size of the font used in the renderer depends on
 		// the CSS
 		int fontHeight = gc.getFontMetrics().getHeight();
-		browserLayoutData.minimumHeight = (int) (fontHeight * controlDescription.getNumberOfLine() * 1.2);
+		browserLayoutData.minimumHeight = fontHeight * controlDescription.getNumberOfLine();
 
 		if (hasEditButton) {
 			editButton = widgetFactory.createButton(composite, "", SWT.PUSH); //$NON-NLS-1$
 			editButton.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false));
-			editButton.setImage(IDEUIExtWidgetHTMLRendererActivator.getDefault().getImage("icons/edit.png")); //$NON-NLS-1$
+			editButton.setImage(EEFExtMarkupUIPlugin.getPlugin().getImage("icons/edit.png")); //$NON-NLS-1$
 		}
 
-		this.controller = new HTMLController(variableManager, interpreter, editingContextAdapter, controlDescription);
+		this.controller = new HTMLRendererController(variableManager, interpreter, editingContextAdapter, controlDescription);
 
 	}
 
@@ -138,6 +219,9 @@ public class HTMLLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 		super.aboutToBeHidden();
 	}
 
+	/**
+	 * Remove location listener.
+	 */
 	private void removeLocationListener() {
 		if (browser != null & !browser.isDisposed() && locationChangeListener != null) {
 			browser.removeLocationListener(locationChangeListener);
@@ -150,7 +234,7 @@ public class HTMLLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		this.controller.onNewValue((value) -> {
 			if (!browser.isDisposed()) {
-				this.variableManager.put(EEFExpressionUtils.INPUT, value);
+				this.variableManager.put(EEFExpressionUtils.EEFText.NEW_VALUE, value);
 				String toHtmlExpression = this.controlDescription.getToHtmlExpression();
 				Object result = EvalFactory.of(this.interpreter, this.variableManager).evaluate(toHtmlExpression);
 				if (result instanceof String) {
@@ -158,24 +242,7 @@ public class HTMLLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 
 					String cssExpression = controlDescription.getCssExpression();
 					if (cssExpression != null && !cssExpression.isEmpty()) {
-						Object cssRsult = EvalFactory.of(this.interpreter, this.variableManager).evaluate(cssExpression);
-						if (cssRsult instanceof String) {
-							// IF css result a valid result then the toHTML expression is expected to return on the
-							// content of the body
-							String cssContent = (String) cssRsult;
-							if (!cssContent.isBlank()) {
-								htmlContent = "<!DOCTYPE html>\r\n" //$NON-NLS-1$
-										+ "<html>\r\n"//$NON-NLS-1$
-										+ "<head>\r\n" //$NON-NLS-1$
-										+ "<style>\r\n" //$NON-NLS-1$
-										+ cssContent + "\r\n" //$NON-NLS-1$
-										+ "</style>\r\n" //$NON-NLS-1$
-										+ "</head>\r\n" //$NON-NLS-1$
-										+ "<body>\r\n" //$NON-NLS-1$
-										+ htmlContent + "</body>\r\n" //$NON-NLS-1$
-										+ "</html>";//$NON-NLS-1$
-							}
-						}
+						htmlContent = aggregateCss(htmlContent, cssExpression);
 					}
 
 					browser.setText(htmlContent, false);
@@ -204,36 +271,47 @@ public class HTMLLifeCycleManager extends AbstractEEFWidgetLifecycleManager {
 		}
 	}
 
+	/**
+	 * Aggregate the CSS content to the given HTML body content.
+	 *
+	 * @param htmlContent
+	 *            the HTML body content
+	 * @param cssExpression
+	 *            the CSS Expression
+	 * @return a HTML document content
+	 */
+	private String aggregateCss(String htmlContent, String cssExpression) {
+		Object cssRsult = EvalFactory.of(this.interpreter, this.variableManager).evaluate(cssExpression);
+		if (cssRsult instanceof String) {
+			// If CSS result a valid result then the toHTML expression is expected to return on the
+			// content of the body
+			String cssContent = (String) cssRsult;
+			if (!cssContent.isBlank()) {
+				return "<!DOCTYPE html>\r\n" //$NON-NLS-1$
+						+ "<html>\r\n"//$NON-NLS-1$
+						+ "<head>\r\n" //$NON-NLS-1$
+						+ "<style>\r\n" //$NON-NLS-1$
+						+ cssContent + "\r\n" //$NON-NLS-1$
+						+ "</style>\r\n" //$NON-NLS-1$
+						+ "</head>\r\n" //$NON-NLS-1$
+						+ "<body>\r\n" //$NON-NLS-1$
+						+ htmlContent + "</body>\r\n" //$NON-NLS-1$
+						+ "</html>"; //$NON-NLS-1$
+			}
+		}
+		return htmlContent;
+	}
+
+	/**
+	 * Add a location listener.
+	 */
 	private void addLocationListener() {
 		if (browser != null & !browser.isDisposed()) {
-			this.locationChangeListener = new LocationListener() {
-
-				@Override
-				public void changing(LocationEvent event) {
-					// Prevents any change of location except when location is "about:blank" since it is used by the
-					// browser.setText method
-					String location = event.location;
-					if (!ABOUT_BLANK.equals(location)) {
-						try {
-							URL url = new URL(location);
-							PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(url);
-						} catch (MalformedURLException e) {
-							IDEUIExtWidgetHTMLRendererActivator
-									.logWarning(MessageFormat.format(Messages.HTMLLifeCycleManager_Warning_InvalidURL, event.location), e);
-						} catch (PartInitException e) {
-							IDEUIExtWidgetHTMLRendererActivator
-									.logError(MessageFormat.format(Messages.HTMLLifeCycleManager_Error_UnableToOpenURLInBrowser, location), e);
-						}
-						event.doit = false; // Prevent changing location
-					}
-
-				}
-
-				@Override
-				public void changed(LocationEvent event) {
-					// Nothing to do
-				}
-			};
+			/*
+			 * This widget is only used for rendering. We want to forbid the user from changing the location. Instead
+			 * when clicking into a external link it should open the external browser
+			 */
+			this.locationChangeListener = new ExternalLinkHandler();
 			browser.addLocationListener(locationChangeListener);
 		}
 	}
