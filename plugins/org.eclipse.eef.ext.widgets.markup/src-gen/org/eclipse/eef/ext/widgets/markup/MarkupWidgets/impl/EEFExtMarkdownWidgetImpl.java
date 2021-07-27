@@ -1,14 +1,15 @@
 /**
- * Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.
- * This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License 2.0
- * which accompanies this distribution, and is available at
- * https://www.eclipse.org/legal/epl-2.0/
+ *  Copyright (c) Obeo, Eclipse contributors and others 2021.
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
  * 
- * SPDX-License-Identifier: EPL-2.0
+ *  SPDX-License-Identifier: EPL-2.0
  * 
- * Contributors:
- *    Israel Aerospace Industries - initial API and implementation
+ *  Contributors:
+ *     Obeo and Israel Aerospace Industries - initial API and implementation
+ * 
  */
 package org.eclipse.eef.ext.widgets.markup.MarkupWidgets.impl;
 
@@ -44,7 +45,7 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.\nThis program and the accompanying materials\nare made available under the terms of the Eclipse Public License 2.0\nwhich accompanies this distribution, and is available at\nhttps://www.eclipse.org/legal/epl-2.0/\n\nSPDX-License-Identifier: EPL-2.0\n\nContributors:\n   Israel Aerospace Industries - initial API and implementation";
+	public static final String copyright = " Copyright (c) Obeo, Eclipse contributors and others 2021.\n This program and the accompanying materials\n are made available under the terms of the Eclipse Public License 2.0\n which accompanies this distribution, and is available at\n https://www.eclipse.org/legal/epl-2.0/\n\n SPDX-License-Identifier: EPL-2.0\n\n Contributors:\n    Obeo and Israel Aerospace Industries - initial API and implementation\n";
 
 	/**
 	 * The default value of the '{@link #getValueExpression() <em>Value Expression</em>}' attribute.
@@ -143,8 +144,7 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 		String oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__VALUE_EXPRESSION, oldValueExpression,
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__VALUE_EXPRESSION, oldValueExpression,
 					valueExpression));
 	}
 
@@ -166,8 +166,8 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 		int oldNumberOfLine = numberOfLine;
 		numberOfLine = newNumberOfLine;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__NUMBER_OF_LINE, oldNumberOfLine, numberOfLine));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__NUMBER_OF_LINE, oldNumberOfLine,
+					numberOfLine));
 	}
 
 	/**
@@ -188,8 +188,8 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 		String oldEditExpression = editExpression;
 		editExpression = newEditExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__EDIT_EXPRESSION, oldEditExpression, editExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__EDIT_EXPRESSION, oldEditExpression,
+					editExpression));
 	}
 
 	/**
@@ -206,8 +206,9 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 			return getNumberOfLine();
 		case MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__EDIT_EXPRESSION:
 			return getEditExpression();
+		default:
+			return super.eGet(featureID, resolve, coreType);
 		}
-		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
@@ -227,8 +228,10 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 		case MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__EDIT_EXPRESSION:
 			setEditExpression((String) newValue);
 			return;
+		default:
+			super.eSet(featureID, newValue);
+			return;
 		}
-		super.eSet(featureID, newValue);
 	}
 
 	/**
@@ -248,8 +251,10 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 		case MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__EDIT_EXPRESSION:
 			setEditExpression(EDIT_EXPRESSION_EDEFAULT);
 			return;
+		default:
+			super.eUnset(featureID);
+			return;
 		}
-		super.eUnset(featureID);
 	}
 
 	/**
@@ -261,15 +266,14 @@ public class EEFExtMarkdownWidgetImpl extends EEFWidgetDescriptionImpl implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__VALUE_EXPRESSION:
-			return VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-					: !VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			return VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null : !VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__NUMBER_OF_LINE:
 			return numberOfLine != NUMBER_OF_LINE_EDEFAULT;
 		case MarkupWidgetsPackage.EEF_EXT_MARKDOWN_WIDGET__EDIT_EXPRESSION:
-			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-					: !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null : !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+		default:
+			return super.eIsSet(featureID);
 		}
-		return super.eIsSet(featureID);
 	}
 
 	/**

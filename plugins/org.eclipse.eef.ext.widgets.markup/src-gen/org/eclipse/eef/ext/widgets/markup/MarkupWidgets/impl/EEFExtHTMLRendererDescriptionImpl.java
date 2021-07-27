@@ -1,14 +1,15 @@
 /**
- * Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.
- * This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License 2.0
- * which accompanies this distribution, and is available at
- * https://www.eclipse.org/legal/epl-2.0/
+ *  Copyright (c) Obeo, Eclipse contributors and others 2021.
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
  * 
- * SPDX-License-Identifier: EPL-2.0
+ *  SPDX-License-Identifier: EPL-2.0
  * 
- * Contributors:
- *    Israel Aerospace Industries - initial API and implementation
+ *  Contributors:
+ *     Obeo and Israel Aerospace Industries - initial API and implementation
+ * 
  */
 package org.eclipse.eef.ext.widgets.markup.MarkupWidgets.impl;
 
@@ -41,14 +42,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
-		implements EEFExtHTMLRendererDescription {
+public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl implements EEFExtHTMLRendererDescription {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.\nThis program and the accompanying materials\nare made available under the terms of the Eclipse Public License 2.0\nwhich accompanies this distribution, and is available at\nhttps://www.eclipse.org/legal/epl-2.0/\n\nSPDX-License-Identifier: EPL-2.0\n\nContributors:\n   Israel Aerospace Industries - initial API and implementation";
+	public static final String copyright = " Copyright (c) Obeo, Eclipse contributors and others 2021.\n This program and the accompanying materials\n are made available under the terms of the Eclipse Public License 2.0\n which accompanies this distribution, and is available at\n https://www.eclipse.org/legal/epl-2.0/\n\n SPDX-License-Identifier: EPL-2.0\n\n Contributors:\n    Obeo and Israel Aerospace Industries - initial API and implementation\n";
 
 	/**
 	 * The default value of the '{@link #getToHtmlExpression() <em>To Html Expression</em>}' attribute.
@@ -207,9 +207,8 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		String oldToHtmlExpression = toHtmlExpression;
 		toHtmlExpression = newToHtmlExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__TO_HTML_EXPRESSION, oldToHtmlExpression,
-					toHtmlExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__TO_HTML_EXPRESSION,
+					oldToHtmlExpression, toHtmlExpression));
 	}
 
 	/**
@@ -230,9 +229,8 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		String oldValueExpression = valueExpression;
 		valueExpression = newValueExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION, oldValueExpression,
-					valueExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION,
+					oldValueExpression, valueExpression));
 	}
 
 	/**
@@ -253,9 +251,8 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		int oldNumberOfLine = numberOfLine;
 		numberOfLine = newNumberOfLine;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE, oldNumberOfLine,
-					numberOfLine));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE,
+					oldNumberOfLine, numberOfLine));
 	}
 
 	/**
@@ -276,9 +273,8 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		String oldEditExpression = editExpression;
 		editExpression = newEditExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION, oldEditExpression,
-					editExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION,
+					oldEditExpression, editExpression));
 	}
 
 	/**
@@ -299,8 +295,7 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		String oldEditionToolExpression = editionToolExpression;
 		editionToolExpression = newEditionToolExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION,
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION,
 					oldEditionToolExpression, editionToolExpression));
 	}
 
@@ -322,9 +317,8 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		String oldCssExpression = cssExpression;
 		cssExpression = newCssExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION, oldCssExpression,
-					cssExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION,
+					oldCssExpression, cssExpression));
 	}
 
 	/**
@@ -347,8 +341,9 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 			return getEditionToolExpression();
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION:
 			return getCssExpression();
+		default:
+			return super.eGet(featureID, resolve, coreType);
 		}
-		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
@@ -377,8 +372,10 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION:
 			setCssExpression((String) newValue);
 			return;
+		default:
+			super.eSet(featureID, newValue);
+			return;
 		}
-		super.eSet(featureID, newValue);
 	}
 
 	/**
@@ -407,8 +404,10 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION:
 			setCssExpression(CSS_EXPRESSION_EDEFAULT);
 			return;
+		default:
+			super.eUnset(featureID);
+			return;
 		}
-		super.eUnset(featureID);
 	}
 
 	/**
@@ -420,24 +419,21 @@ public class EEFExtHTMLRendererDescriptionImpl extends EEFWidgetDescriptionImpl
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__TO_HTML_EXPRESSION:
-			return TO_HTML_EXPRESSION_EDEFAULT == null ? toHtmlExpression != null
-					: !TO_HTML_EXPRESSION_EDEFAULT.equals(toHtmlExpression);
+			return TO_HTML_EXPRESSION_EDEFAULT == null ? toHtmlExpression != null : !TO_HTML_EXPRESSION_EDEFAULT.equals(toHtmlExpression);
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION:
-			return VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null
-					: !VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
+			return VALUE_EXPRESSION_EDEFAULT == null ? valueExpression != null : !VALUE_EXPRESSION_EDEFAULT.equals(valueExpression);
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE:
 			return numberOfLine != NUMBER_OF_LINE_EDEFAULT;
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION:
-			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null
-					: !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
+			return EDIT_EXPRESSION_EDEFAULT == null ? editExpression != null : !EDIT_EXPRESSION_EDEFAULT.equals(editExpression);
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION:
 			return EDITION_TOOL_EXPRESSION_EDEFAULT == null ? editionToolExpression != null
 					: !EDITION_TOOL_EXPRESSION_EDEFAULT.equals(editionToolExpression);
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION:
-			return CSS_EXPRESSION_EDEFAULT == null ? cssExpression != null
-					: !CSS_EXPRESSION_EDEFAULT.equals(cssExpression);
+			return CSS_EXPRESSION_EDEFAULT == null ? cssExpression != null : !CSS_EXPRESSION_EDEFAULT.equals(cssExpression);
+		default:
+			return super.eIsSet(featureID);
 		}
-		return super.eIsSet(featureID);
 	}
 
 	/**

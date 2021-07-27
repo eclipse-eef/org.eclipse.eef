@@ -1,14 +1,15 @@
 /**
- * Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.
- * This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License 2.0
- * which accompanies this distribution, and is available at
- * https://www.eclipse.org/legal/epl-2.0/
+ *  Copyright (c) Obeo, Eclipse contributors and others 2021.
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
  * 
- * SPDX-License-Identifier: EPL-2.0
+ *  SPDX-License-Identifier: EPL-2.0
  * 
- * Contributors:
- *    Israel Aerospace Industries - initial API and implementation
+ *  Contributors:
+ *     Obeo and Israel Aerospace Industries - initial API and implementation
+ * 
  */
 package org.eclipse.eef.ext.widgets.markup.MarkupWidgets;
 
@@ -39,7 +40,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.\nThis program and the accompanying materials\nare made available under the terms of the Eclipse Public License 2.0\nwhich accompanies this distribution, and is available at\nhttps://www.eclipse.org/legal/epl-2.0/\n\nSPDX-License-Identifier: EPL-2.0\n\nContributors:\n   Israel Aerospace Industries - initial API and implementation";
+	String copyright = " Copyright (c) Obeo, Eclipse contributors and others 2021.\n This program and the accompanying materials\n are made available under the terms of the Eclipse Public License 2.0\n which accompanies this distribution, and is available at\n https://www.eclipse.org/legal/epl-2.0/\n\n SPDX-License-Identifier: EPL-2.0\n\n Contributors:\n    Obeo and Israel Aerospace Industries - initial API and implementation\n";
 
 	/**
 	 * The package name.
@@ -71,8 +72,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	MarkupWidgetsPackage eINSTANCE = org.eclipse.eef.ext.widgets.markup.MarkupWidgets.impl.MarkupWidgetsPackageImpl
-			.init();
+	MarkupWidgetsPackage eINSTANCE = org.eclipse.eef.ext.widgets.markup.MarkupWidgets.impl.MarkupWidgetsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.eef.ext.widgets.markup.MarkupWidgets.impl.EEFExtHTMLRendererDescriptionImpl <em>EEF Ext HTML Renderer Description</em>}' class.
@@ -172,8 +172,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT
-			+ 4;
+	int EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION = EefPackage.EEF_WIDGET_DESCRIPTION_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Css Expression</b></em>' attribute.
@@ -441,8 +440,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__TO_HTML_EXPRESSION = eINSTANCE
-				.getEEFExtHTMLRendererDescription_ToHtmlExpression();
+		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__TO_HTML_EXPRESSION = eINSTANCE.getEEFExtHTMLRendererDescription_ToHtmlExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Value Expression</b></em>' attribute feature.
@@ -450,8 +448,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION = eINSTANCE
-				.getEEFExtHTMLRendererDescription_ValueExpression();
+		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION = eINSTANCE.getEEFExtHTMLRendererDescription_ValueExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Number Of Line</b></em>' attribute feature.
@@ -459,8 +456,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE = eINSTANCE
-				.getEEFExtHTMLRendererDescription_NumberOfLine();
+		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE = eINSTANCE.getEEFExtHTMLRendererDescription_NumberOfLine();
 
 		/**
 		 * The meta object literal for the '<em><b>Edit Expression</b></em>' attribute feature.
@@ -468,8 +464,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION = eINSTANCE
-				.getEEFExtHTMLRendererDescription_EditExpression();
+		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION = eINSTANCE.getEEFExtHTMLRendererDescription_EditExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Edition Tool Expression</b></em>' attribute feature.
@@ -477,8 +472,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION = eINSTANCE
-				.getEEFExtHTMLRendererDescription_EditionToolExpression();
+		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION = eINSTANCE.getEEFExtHTMLRendererDescription_EditionToolExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Css Expression</b></em>' attribute feature.
@@ -486,8 +480,7 @@ public interface MarkupWidgetsPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION = eINSTANCE
-				.getEEFExtHTMLRendererDescription_CssExpression();
+		EAttribute EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION = eINSTANCE.getEEFExtHTMLRendererDescription_CssExpression();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.eef.ext.widgets.markup.MarkupWidgets.impl.EEFExtMarkdownWidgetImpl <em>EEF Ext Markdown Widget</em>}' class.

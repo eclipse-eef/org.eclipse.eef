@@ -17,6 +17,7 @@ import com.vladsch.flexmark.parser.Parser;
 import com.vladsch.flexmark.util.ast.Document;
 
 import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
@@ -121,6 +122,11 @@ public class MarkdownWidget {
 	private boolean hasChanged = true;
 
 	/**
+	 * Holds <code>true</code> if the value has changed but the consumer has not been called yet.
+	 */
+	private boolean needValueUpdate;
+
+	/**
 	 * Simple constructor.
 	 *
 	 * @param display
@@ -135,7 +141,6 @@ public class MarkdownWidget {
 		this.markdown = markdown;
 		this.multiLine = multiLine;
 		this.styleFactory = new MarkodwnStyleFactory(display);
-		this.executorService = Executors.newSingleThreadScheduledExecutor();
 	}
 
 	/**
@@ -166,6 +171,7 @@ public class MarkdownWidget {
 	 * To be called just before the widget is displayed.
 	 */
 	public void aboutToBeShown() {
+		final ScheduledExecutorService aExecutorService = Executors.newSingleThreadScheduledExecutor();
 
 		if (styledText != null && !styledText.isDisposed()) {
 			this.modifyListener = new ModifyListener() {
@@ -173,10 +179,12 @@ public class MarkdownWidget {
 				@Override
 				public void modifyText(ModifyEvent e) {
 					markdown = styledText.getText();
+					hasChanged = true;
+					needValueUpdate = true;
 					if (!updateOnFocusLost) {
 						valueConsumer.accept(markdown);
+						needValueUpdate = false;
 					}
-					hasChanged = true;
 				}
 
 			};
@@ -187,9 +195,7 @@ public class MarkdownWidget {
 
 				@Override
 				public void widgetDisposed(DisposeEvent e) {
-					if (executorService != null) {
-						executorService.shutdown();
-					}
+					shutdownExecutor(aExecutorService);
 				}
 			};
 			styledText.addDisposeListener(disposeListener);
@@ -200,6 +206,7 @@ public class MarkdownWidget {
 					@Override
 					public void focusLost(FocusEvent event) {
 						valueConsumer.accept(markdown);
+						needValueUpdate = false;
 					}
 				};
 				styledText.addFocusListener(focusListener);
@@ -208,7 +215,14 @@ public class MarkdownWidget {
 
 		computeAndSetStyles();
 
-		executorService.scheduleAtFixedRate(this::computeAndSetStyles, SYNTAX_REFRESH_PERIOD, SYNTAX_REFRESH_PERIOD, TimeUnit.MILLISECONDS);
+		executorService = aExecutorService;
+		if (!executorService.isShutdown()) {
+			try {
+				executorService.scheduleAtFixedRate(this::computeAndSetStyles, SYNTAX_REFRESH_PERIOD, SYNTAX_REFRESH_PERIOD, TimeUnit.MILLISECONDS);
+			} catch (RejectedExecutionException e) {
+				// Nothing to do. Just in case the executor is shutdown
+			}
+		}
 
 	}
 
@@ -216,6 +230,10 @@ public class MarkdownWidget {
 	 * To be called just before hiding the widget.
 	 */
 	public void aboutToBeHidden() {
+		// Only to handle case where the lost focus was
+		if (updateOnFocusLost && needValueUpdate && valueConsumer != null) {
+			valueConsumer.accept(markdown);
+		}
 
 		if (styledText != null && !styledText.isDisposed()) {
 			if (modifyListener != null) {
@@ -237,10 +255,21 @@ public class MarkdownWidget {
 			}
 		}
 
-		if (executorService != null) {
-			executorService.shutdown();
-		}
+		shutdownExecutor(executorService);
 
+	}
+
+	/**
+	 * Safely shutdown the executor.
+	 *
+	 * @param aExecutorService
+	 *            the executor to shutdown
+	 */
+	private void shutdownExecutor(ScheduledExecutorService aExecutorService) {
+		if (aExecutorService != null && !aExecutorService.isShutdown()) {
+			aExecutorService.shutdown();
+		}
+		executorService = null;
 	}
 
 	/**

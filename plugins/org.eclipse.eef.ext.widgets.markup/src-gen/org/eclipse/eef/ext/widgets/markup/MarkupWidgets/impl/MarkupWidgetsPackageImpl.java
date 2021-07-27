@@ -1,14 +1,15 @@
 /**
- * Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.
- * This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License 2.0
- * which accompanies this distribution, and is available at
- * https://www.eclipse.org/legal/epl-2.0/
+ *  Copyright (c) Obeo, Eclipse contributors and others 2021.
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
  * 
- * SPDX-License-Identifier: EPL-2.0
+ *  SPDX-License-Identifier: EPL-2.0
  * 
- * Contributors:
- *    Israel Aerospace Industries - initial API and implementation
+ *  Contributors:
+ *     Obeo and Israel Aerospace Industries - initial API and implementation
+ * 
  */
 package org.eclipse.eef.ext.widgets.markup.MarkupWidgets.impl;
 
@@ -38,7 +39,7 @@ public class MarkupWidgetsPackageImpl extends EPackageImpl implements MarkupWidg
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.\nThis program and the accompanying materials\nare made available under the terms of the Eclipse Public License 2.0\nwhich accompanies this distribution, and is available at\nhttps://www.eclipse.org/legal/epl-2.0/\n\nSPDX-License-Identifier: EPL-2.0\n\nContributors:\n   Israel Aerospace Industries - initial API and implementation";
+	public static final String copyright = " Copyright (c) Obeo, Eclipse contributors and others 2021.\n This program and the accompanying materials\n are made available under the terms of the Eclipse Public License 2.0\n which accompanies this distribution, and is available at\n https://www.eclipse.org/legal/epl-2.0/\n\n SPDX-License-Identifier: EPL-2.0\n\n Contributors:\n    Obeo and Israel Aerospace Industries - initial API and implementation\n";
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -255,8 +256,7 @@ public class MarkupWidgetsPackageImpl extends EPackageImpl implements MarkupWidg
 		createEAttribute(eefExtHTMLRendererDescriptionEClass, EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION);
 		createEAttribute(eefExtHTMLRendererDescriptionEClass, EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE);
 		createEAttribute(eefExtHTMLRendererDescriptionEClass, EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION);
-		createEAttribute(eefExtHTMLRendererDescriptionEClass,
-				EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION);
+		createEAttribute(eefExtHTMLRendererDescriptionEClass, EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION);
 		createEAttribute(eefExtHTMLRendererDescriptionEClass, EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION);
 
 		eefExtMarkdownWidgetEClass = createEClass(EEF_EXT_MARKDOWN_WIDGET);
@@ -302,38 +302,35 @@ public class MarkupWidgetsPackageImpl extends EPackageImpl implements MarkupWidg
 		eefExtMarkdownWidgetEClass.getESuperTypes().add(theEefPackage.getEEFWidgetDescription());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(eefExtHTMLRendererDescriptionEClass, EEFExtHTMLRendererDescription.class,
-				"EEFExtHTMLRendererDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFExtHTMLRendererDescription_ToHtmlExpression(), theEcorePackage.getEString(),
-				"toHtmlExpression", null, 1, 1, EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFExtHTMLRendererDescription_ValueExpression(), theEcorePackage.getEString(),
-				"valueExpression", null, 1, 1, EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFExtHTMLRendererDescription_NumberOfLine(), theEcorePackage.getEInt(), "numberOfLine", "5",
-				1, 1, EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
-				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFExtHTMLRendererDescription_EditExpression(), theEcorePackage.getEString(),
-				"editExpression", null, 0, 1, EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFExtHTMLRendererDescription_EditionToolExpression(), theEcorePackage.getEString(),
-				"editionToolExpression", null, 0, 1, EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFExtHTMLRendererDescription_CssExpression(), theEcorePackage.getEString(), "cssExpression",
-				null, 0, 1, EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(eefExtMarkdownWidgetEClass, EEFExtMarkdownWidget.class, "EEFExtMarkdownWidget", !IS_ABSTRACT,
+		initEClass(eefExtHTMLRendererDescriptionEClass, EEFExtHTMLRendererDescription.class, "EEFExtHTMLRendererDescription", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEEFExtMarkdownWidget_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null,
-				1, 1, EEFExtMarkdownWidget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFExtMarkdownWidget_NumberOfLine(), theEcorePackage.getEInt(), "numberOfLine", "5", 1, 1,
-				EEFExtMarkdownWidget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEEFExtMarkdownWidget_EditExpression(), theEcorePackage.getEString(), "editExpression", null,
-				0, 1, EEFExtMarkdownWidget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFExtHTMLRendererDescription_ToHtmlExpression(), theEcorePackage.getEString(), "toHtmlExpression", null, 1, 1,
+				EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFExtHTMLRendererDescription_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 1, 1,
+				EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFExtHTMLRendererDescription_NumberOfLine(), theEcorePackage.getEInt(), "numberOfLine", "5", 1, 1,
+				EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFExtHTMLRendererDescription_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1,
+				EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFExtHTMLRendererDescription_EditionToolExpression(), theEcorePackage.getEString(), "editionToolExpression", null, 0, 1,
+				EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getEEFExtHTMLRendererDescription_CssExpression(), theEcorePackage.getEString(), "cssExpression", null, 0, 1,
+				EEFExtHTMLRendererDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(eefExtMarkdownWidgetEClass, EEFExtMarkdownWidget.class, "EEFExtMarkdownWidget", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEEFExtMarkdownWidget_ValueExpression(), theEcorePackage.getEString(), "valueExpression", null, 1, 1,
+				EEFExtMarkdownWidget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFExtMarkdownWidget_NumberOfLine(), theEcorePackage.getEInt(), "numberOfLine", "5", 1, 1, EEFExtMarkdownWidget.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEEFExtMarkdownWidget_EditExpression(), theEcorePackage.getEString(), "editExpression", null, 0, 1,
+				EEFExtMarkdownWidget.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

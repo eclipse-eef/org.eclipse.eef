@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.eef.ext.widgets.markup-feature"
+      id="org.eclipse.eef.ext.widgets.markup.feature"
       label="%featureName"
       version="2.1.6.qualifier"
       provider-name="%featureProvider">

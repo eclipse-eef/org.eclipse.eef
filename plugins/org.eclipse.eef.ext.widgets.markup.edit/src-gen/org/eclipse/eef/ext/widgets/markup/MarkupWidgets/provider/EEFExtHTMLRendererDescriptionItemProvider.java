@@ -1,14 +1,15 @@
 /**
- * Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.
- * This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License 2.0
- * which accompanies this distribution, and is available at
- * https://www.eclipse.org/legal/epl-2.0/
+ *  Copyright (c) Obeo, Eclipse contributors and others 2021.
+ *  This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License 2.0
+ *  which accompanies this distribution, and is available at
+ *  https://www.eclipse.org/legal/epl-2.0/
  * 
- * SPDX-License-Identifier: EPL-2.0
+ *  SPDX-License-Identifier: EPL-2.0
  * 
- * Contributors:
- *    Israel Aerospace Industries - initial API and implementation
+ *  Contributors:
+ *     Obeo and Israel Aerospace Industries - initial API and implementation
+ * 
  */
 package org.eclipse.eef.ext.widgets.markup.MarkupWidgets.provider;
 
@@ -42,7 +43,7 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "Copyright (c) Israel Aerospace Industries, Eclipse contributors and others 2021.\nThis program and the accompanying materials\nare made available under the terms of the Eclipse Public License 2.0\nwhich accompanies this distribution, and is available at\nhttps://www.eclipse.org/legal/epl-2.0/\n\nSPDX-License-Identifier: EPL-2.0\n\nContributors:\n   Israel Aerospace Industries - initial API and implementation";
+	public static final String copyright = " Copyright (c) Obeo, Eclipse contributors and others 2021.\n This program and the accompanying materials\n are made available under the terms of the Eclipse Public License 2.0\n which accompanies this distribution, and is available at\n https://www.eclipse.org/legal/epl-2.0/\n\n SPDX-License-Identifier: EPL-2.0\n\n Contributors:\n    Obeo and Israel Aerospace Industries - initial API and implementation\n";
 
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -82,14 +83,12 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 	 * @generated
 	 */
 	protected void addToHtmlExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_toHtmlExpression_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_EEFExtHTMLRendererDescription_toHtmlExpression_feature",
-								"_UI_EEFExtHTMLRendererDescription_type"),
-						MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__TO_HTML_EXPRESSION, true,
-						false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_toHtmlExpression_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFExtHTMLRendererDescription_toHtmlExpression_feature",
+						"_UI_EEFExtHTMLRendererDescription_type"),
+				MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__TO_HTML_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -99,14 +98,12 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 	 * @generated
 	 */
 	protected void addValueExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_valueExpression_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_EEFExtHTMLRendererDescription_valueExpression_feature",
-								"_UI_EEFExtHTMLRendererDescription_type"),
-						MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION, true, false,
-						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_valueExpression_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFExtHTMLRendererDescription_valueExpression_feature",
+						"_UI_EEFExtHTMLRendererDescription_type"),
+				MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__VALUE_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -116,14 +113,12 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 	 * @generated
 	 */
 	protected void addNumberOfLinePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_numberOfLine_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_EEFExtHTMLRendererDescription_numberOfLine_feature",
-								"_UI_EEFExtHTMLRendererDescription_type"),
-						MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE, true, false,
-						false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_numberOfLine_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFExtHTMLRendererDescription_numberOfLine_feature",
+						"_UI_EEFExtHTMLRendererDescription_type"),
+				MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__NUMBER_OF_LINE, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -133,14 +128,12 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 	 * @generated
 	 */
 	protected void addEditExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_editExpression_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_EEFExtHTMLRendererDescription_editExpression_feature",
-								"_UI_EEFExtHTMLRendererDescription_type"),
-						MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION, true, false,
-						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_editExpression_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFExtHTMLRendererDescription_editExpression_feature",
+						"_UI_EEFExtHTMLRendererDescription_type"),
+				MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDIT_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -150,14 +143,12 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 	 * @generated
 	 */
 	protected void addEditionToolExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_EEFExtHTMLRendererDescription_editionToolExpression_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_EEFExtHTMLRendererDescription_editionToolExpression_feature",
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_editionToolExpression_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFExtHTMLRendererDescription_editionToolExpression_feature",
 						"_UI_EEFExtHTMLRendererDescription_type"),
-				MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION, true, false,
-				false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+				MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__EDITION_TOOL_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -167,14 +158,12 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 	 * @generated
 	 */
 	protected void addCssExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_cssExpression_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_EEFExtHTMLRendererDescription_cssExpression_feature",
-								"_UI_EEFExtHTMLRendererDescription_type"),
-						MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION, true, false,
-						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(), getString("_UI_EEFExtHTMLRendererDescription_cssExpression_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_EEFExtHTMLRendererDescription_cssExpression_feature",
+						"_UI_EEFExtHTMLRendererDescription_type"),
+				MarkupWidgetsPackage.Literals.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -221,8 +210,10 @@ public class EEFExtHTMLRendererDescriptionItemProvider extends EEFWidgetDescript
 		case MarkupWidgetsPackage.EEF_EXT_HTML_RENDERER_DESCRIPTION__CSS_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
+		default:
+			super.notifyChanged(notification);
+			return;
 		}
-		super.notifyChanged(notification);
 	}
 
 	/**
