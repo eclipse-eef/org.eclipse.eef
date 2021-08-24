@@ -179,6 +179,11 @@ Contributors: Obeo - initial API and implementation
     <module>../../plugins/org.eclipse.eef.ext.widgets.reference</module>
     <module>../../plugins/org.eclipse.eef.core.ext.widgets.reference</module>
     <module>../../plugins/org.eclipse.eef.ide.ui.ext.widgets.reference</module>
+	
+	<module>../../plugins/org.eclipse.eef.ext.widgets.markup</module>
+	<module>../../plugins/org.eclipse.eef.ide.ui.ext.widgets.markup</module>
+	<module>../../tests/org.eclipse.eef.ide.ui.ext.widgets.markup.test</module>
+	
 
     <module>../../tests/org.eclipse.eef.tests</module>
     <module>../../tests/org.eclipse.eef.ui.tests</module>
@@ -190,6 +195,7 @@ Contributors: Obeo - initial API and implementation
 
     <module>../../features/org.eclipse.eef.sdk-feature</module>
     <module>../../features/org.eclipse.eef.ext.widgets.reference-feature</module>
+    <module>../../features/org.eclipse.eef.ext.widgets.markup-feature</module>
 
     <module>../../releng/org.eclipse.eef.update</module>
   </modules>
