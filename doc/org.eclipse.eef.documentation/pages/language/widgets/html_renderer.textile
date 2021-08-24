@@ -1,0 +1,26 @@
+h2. HTML Renderer
+
+h3(#description). Description
+
+The HTML Renderer widget is used to display values that can be represented as HTML Content. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
+
+* _valueExpression_: This expression is used to compute the value that can be converted to HTML using _toHtmlExpression_. The computed result of the _valueExpression_ is a String which is not necessarily in HTML format. This expression must return a string.
+* _editExpression_: This expression will be executed when the user will click on the edit button. This expression is executed if an Operation is provided under the widget. This expression does not have to return anything. 
+* _toHtmlExpression_: This *mandatory* expression is used to compute the HTML content to display. It transforms the result of the _valueExpression_ (stored in @newValue@ variable) into HTML content. The computed result is a String in HTML format. This expression must return a string.
+* _editionToolExpression_ : This optional expression is used to open a tool to edit the original content (see @org.eclipse.eef.ide.ui.ext.widgets.markup.markdown.MarkdownService#editMarkdownExpression(String, boolean)@ for an example to edit Markdown content). A @newValue@ variable is available containing the result of _valueExpression_. If this expression is not provided then the _Edit Button_ is not displayed. This expression should return a String that is then given to the _editExpression_ to execute an action with the result.
+* _numberOfLine_ : The number of lines to be displayed, which determines the height of the _HTML Renderer_ widget. Be aware that this is an estimation. Indeed the text size modification done by CSS styling is not used here.
+* _cssExpression_: This optional expression is used to provide some CSS content. If this expression is used, the _toHtmlExpression_ should only return the content of a body.
+
+h3(#displayestringeattribute). Display an HTML content based on EString Attribute
+
+In order to display an HTML content in the user interface with the value of an EAttribute with the eType EString (i.e. the description of an EObject), you can create an _HTML Renderer_ widget with the following properties:
+
+!images/widget_html-renderer-creation-example.png(The HTML Renderer widget used to display a _description_ feature as HTML content with CSS)!
+
+!images/widget_html-renderer-editExpression-example.png(The _editExpression_ provided for the HTML Renderer widget to set the _description_ feature when the content is edited)!
+
+Here is a result of the displayed HTML Content with this widget in the Properties View:
+
+!images/widget_html-renderer-result-example.png(Display result)!
+
+EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations. The operation @eSet(java.lang.String, java.lang.Object)@ used in the example does not exist in AQL. You would have to create it yourself.

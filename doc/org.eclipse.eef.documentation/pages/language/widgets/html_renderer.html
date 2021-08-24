@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>html_renderer</title>
+		<link type="text/css" rel="stylesheet" href="../../assets/css/stylesheet.css"/>
+	</head>
+	<body>
+		<h2 id="HTMLRenderer">HTML Renderer</h2>
+		<h3 id="description">Description</h3>
+		<p>The HTML Renderer widget is used to display values that can be represented as HTML Content. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:</p>
+		<ul>
+			<li>
+				<em>valueExpression</em>: This expression is used to compute the value that can be converted to HTML using 
+				<em>toHtmlExpression</em>. The computed result of the 
+				<em>valueExpression</em> is a String which is not necessarily in HTML format. This expression must return a string.
+			</li>
+			<li>
+				<em>editExpression</em>: This expression will be executed when the user will click on the edit button. This expression is executed if an Operation is provided under the widget. This expression does not have to return anything. 
+			</li>
+			<li>
+				<em>toHtmlExpression</em>: This 
+				<strong>mandatory</strong> expression is used to compute the HTML content to display. It transforms the result of the 
+				<em>valueExpression</em> (stored in 
+				<code>newValue</code> variable) into HTML content. The computed result is a String in HTML format. This expression must return a string.
+			</li>
+			<li>
+				<em>editionToolExpression</em> : This optional expression is used to open a tool to edit the original content (see 
+				<code>org.eclipse.eef.ide.ui.ext.widgets.markup.markdown.MarkdownService#editMarkdownExpression(String, boolean)</code> for an example to edit Markdown content). A 
+				<code>newValue</code> variable is available containing the result of 
+				<em>valueExpression</em>. If this expression is not provided then the 
+				<em>Edit Button</em> is not displayed. This expression should return a String that is then given to the 
+				<em>editExpression</em> to execute an action with the result.
+			</li>
+			<li>
+				<em>numberOfLine</em> : The number of lines to be displayed, which determines the height of the 
+				<em>HTML Renderer</em> widget. Be aware that this is an estimation. Indeed the text size modification done by CSS styling is not used here.
+			</li>
+			<li>
+				<em>cssExpression</em>: This optional expression is used to provide some CSS content. If this expression is used, the 
+				<em>toHtmlExpression</em> should only return the content of a body.
+			</li>
+		</ul>
+		<h3 id="displayestringeattribute">Display an HTML content based on EString Attribute</h3>
+		<p>In order to display an HTML content in the user interface with the value of an EAttribute with the eType EString (i.e. the description of an EObject), you can create an 
+			<em>HTML Renderer</em> widget with the following properties:
+		</p>
+		<p>
+			<img alt="The HTML Renderer widget used to display a _description_ feature as HTML content with CSS" title="The HTML Renderer widget used to display a _description_ feature as HTML content with CSS" border="0" src="images/widget_html-renderer-creation-example.png"/>
+		</p>
+		<p>
+			<img alt="The _editExpression_ provided for the HTML Renderer widget to set the _description_ feature when the content is edited" title="The _editExpression_ provided for the HTML Renderer widget to set the _description_ feature when the content is edited" border="0" src="images/widget_html-renderer-editExpression-example.png"/>
+		</p>
+		<p>Here is a result of the displayed HTML Content with this widget in the Properties View:</p>
+		<p>
+			<img alt="Display result" title="Display result" border="0" src="images/widget_html-renderer-result-example.png"/>
+		</p>
+		<p>EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations. The operation 
+			<code>eSet(java.lang.String, java.lang.Object)</code> used in the example does not exist in AQL. You would have to create it yourself.
+		</p>
+	</body>
+</html>

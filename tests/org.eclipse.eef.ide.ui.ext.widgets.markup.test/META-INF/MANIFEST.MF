@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.eclipse.eef.ide.ui.ext.widgets.markup.test
+Bundle-Version: 2.1.6.qualifier
+Automatic-Module-Name: org.eclipse.eef.ide.ui.ext.widgets.markup.test
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Fragment-Host: org.eclipse.eef.ide.ui.ext.widgets.markup
+Require-Bundle: org.junit;bundle-version="[4.0.0,5.0.0)",
+ org.eclipse.swt;bundle-version="[3.0.0,4.0.0)"
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName

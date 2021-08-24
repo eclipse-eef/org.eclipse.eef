@@ -12,6 +12,8 @@ A "group":group.html or a "container":container.html can contain various widgets
 * "List":widgets/list.html
 * "Hyperlink":widgets/hyperlink.html
 * "Button":widgets/button.html
+* "HTML Renderer":widgets/html_renderer.html
+* "Markdown":widgets/markdown.html
 
 h3(#commonproperties). Common properties
 

@@ -36,6 +36,10 @@
         </topic>
         <topic href="pages/language/widgets/button.html" label="Button">
         </topic>
+        <topic href="pages/language/widgets/html_renderer.html" label="HTML Renderer">
+        </topic>
+        <topic href="pages/language/widgets/markdown.html" label="Markdown">
+        </topic>
         <topic href="pages/language/widgets.html#customwidgets" label="Custom Widgets">
         </topic>
         <anchor id="eefAdditionalWidgets"/>

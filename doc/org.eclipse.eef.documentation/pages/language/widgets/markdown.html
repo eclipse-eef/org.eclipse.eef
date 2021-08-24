@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>markdown</title>
+		<link type="text/css" rel="stylesheet" href="../../assets/css/stylesheet.css"/>
+	</head>
+	<body>
+		<h2 id="Markdown">Markdown</h2>
+		<h3 id="description">Description</h3>
+		<p>The Markdown widget is used to display values that can be represented as Markdown content. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:</p>
+		<ul>
+			<li>
+				<em>valueExpression</em>: This expression is used to compute the value to display. This expression must return a string.
+			</li>
+			<li>
+				<em>editExpression</em>: This expression will be executed when the user will change the focus after typing some content in the text field. This expression is executed if an Operation is provided under the widget. The current value of the text field will be accessible in a variable named 
+				<code>newValue</code>. The variable 
+				<code>newValue</code> is a 
+				<code>java.lang.String</code>. This expression does not have to return anything. 
+			</li>
+			<li>
+				<em>numberOfLine</em> : The number of lines to be displayed, which determines the height of the 
+				<em>Markdown</em> widget. Use 
+				<code>1</code> for a single line text field or 
+				<code>5</code> (for example) for a multiline text field.
+			</li>
+		</ul>
+		<h3 id="displayestringeattribute">Display a Markdown content based on EString EAttribute</h3>
+		<p>In order to display a Markdown content in the user interface with the value of an EAttribute with the eType EString (i.e. the description of an EObject), you can create a 
+			<em>Markdown</em> widget with the following properties:
+		</p>
+		<p>
+			<img alt="The Markdown widget used to display a _description_ feature as Markdown" title="The Markdown widget used to display a _description_ feature as Markdown" border="0" src="images/widget_markdown-creation-example.png"/>
+		</p>
+		<p>
+			<img alt="The _editExpression_ provided for the Markdown widget to set the _description_ feature when the content is edited" title="The _editExpression_ provided for the Markdown widget to set the _description_ feature when the content is edited" border="0" src="images/widget_markdown-editExpression-example.png"/>
+		</p>
+		<p>Here is a result of the displayed Markup Content with this widget in the Properties View:</p>
+		<p>
+			<img alt="Display result" title="Display result" border="0" src="images/widget_markdown-result-example.png"/>
+		</p>
+		<p>EEF does not provide a default interpreter but you can easily configure EEF to be used with the AQL interpreter. In the integration of EEF with the AQL interpreter, you can register additional services, written in Java, in which you can expose to AQL new operations. The operation 
+			<code>eSet(java.lang.String, java.lang.Object)</code> used in the example does not exist in AQL. You would have to create it yourself.
+		</p>
+	</body>
+</html>
