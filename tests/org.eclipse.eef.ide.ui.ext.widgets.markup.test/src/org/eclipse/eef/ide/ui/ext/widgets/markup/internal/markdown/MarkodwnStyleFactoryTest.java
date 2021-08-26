@@ -21,6 +21,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.vladsch.flexmark.parser.Parser;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
@@ -52,7 +53,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(//
+		assertStyle(Arrays.asList(//
 				styleProvider.buildListItemMarkerStyle(0, 2), // Bullet style 1.
 				styleProvider.buildListItemMarkerStyle(6, 2), // Bullet style 2.
 				styleProvider.buildListItemMarkerStyle(12, 2)// Bullet style 3.
@@ -68,7 +69,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(//
+		assertStyle(Arrays.asList(//
 				styleProvider.buildListItemMarkerStyle(0, 1), // Bullet style 1.
 				styleProvider.buildListItemMarkerStyle(5, 1), // Bullet style 2.
 				styleProvider.buildListItemMarkerStyle(10, 1)// Bullet style 3.
@@ -84,7 +85,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(//
+		assertStyle(Arrays.asList(//
 				styleProvider.buildListItemMarkerStyle(0, 1), // Bullet style 1.
 				styleProvider.buildListItemMarkerStyle(5, 1), // Bullet style 2.
 				styleProvider.buildListItemMarkerStyle(10, 1)// Bullet style 3.
@@ -102,7 +103,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(//
+		assertStyle(Arrays.asList(//
 				styleProvider.buildListItemMarkerStyle(0, 1), // Bullet style
 				styleProvider.buildCodeStyle(40, 3), // Code style +
 				styleProvider.buildCodeStyle(45, 3), // Code style -
@@ -118,7 +119,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(styleProvider.buildHeaderStyle(0, 10, 1), styleProvider.buildHeaderStyle(12, 11, 2)), style.getStyles());
+		assertStyle(Arrays.asList(styleProvider.buildHeaderStyle(0, 10, 1), styleProvider.buildHeaderStyle(12, 11, 2)), style.getStyles());
 	}
 
 	/**
@@ -131,7 +132,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(styleProvider.buildHeaderStyle(0, 9, 1), //
+		assertStyle(Arrays.asList(styleProvider.buildHeaderStyle(0, 9, 1), //
 				new StyleRange(9, 8, styleProvider.getHeadingColor(), null, SWT.BOLD), //
 				styleProvider.buildHeaderStyle(17, 5, 1), //
 				new StyleRange(22, 8, styleProvider.getHeadingColor(), null, SWT.ITALIC), //
@@ -149,7 +150,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(styleProvider.buildHeaderStyle(0, 9, 1), //
+		assertStyle(Arrays.asList(styleProvider.buildHeaderStyle(0, 9, 1), //
 				new StyleRange(9, 8, styleProvider.getHeadingColor(), null, SWT.BOLD), //
 				styleProvider.buildHeaderStyle(17, 5, 1), //
 				new StyleRange(22, 8, styleProvider.getHeadingColor(), null, SWT.ITALIC)), style.getStyles());
@@ -165,7 +166,7 @@ public class MarkodwnStyleFactoryTest {
 
 		StyleDescription style = buildStyles(input);
 
-		assertStyle(List.of(styleProvider.buildBoldStyle(0, 2), //
+		assertStyle(Arrays.asList(styleProvider.buildBoldStyle(0, 2), //
 				new StyleRange(2, 13, null, null, SWT.BOLD | SWT.ITALIC), //
 				styleProvider.buildBoldStyle(15, 2)), //
 				style.getStyles());

@@ -330,7 +330,7 @@ public class MarkdownWidget {
 							// only applied the style that are in range
 							StyleDescription filteredStyle = styleDescription.filterWithText(styledText.getText());
 
-							styledText.setStyleRanges(filteredStyle.getStyles().toArray(StyleRange[]::new));
+							styledText.setStyleRanges(filteredStyle.getStyles().toArray(new StyleRange[0]));
 
 							for (LineBackground lb : filteredStyle.getLineBackgrounds()) {
 								styledText.setLineBackground(lb.getStartLine(), lb.getEndLine() - lb.getStartLine() + 1, lb.getColor());

@@ -74,7 +74,7 @@ public class StyleDescription {
 			return EMPTY;
 		}
 
-		long nbLine = text.lines().count();
+		long nbLine = text.split("\\R").length; //$NON-NLS-1$
 
 		int length = text.length();
 		List<StyleRange> filteredStyle = styles.stream().filter(sr -> {

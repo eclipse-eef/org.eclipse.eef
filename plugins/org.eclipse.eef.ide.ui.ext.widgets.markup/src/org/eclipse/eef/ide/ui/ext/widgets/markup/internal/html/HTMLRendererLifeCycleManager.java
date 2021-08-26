@@ -163,7 +163,7 @@ public class HTMLRendererLifeCycleManager extends AbstractEEFWidgetLifecycleMana
 		widgetFactory = formContainer.getWidgetFactory();
 		composite = widgetFactory.createComposite(parent, SWT.NONE);
 
-		boolean hasEditButton = controlDescription.getEditExpression() != null && !controlDescription.getEditExpression().isBlank();
+		boolean hasEditButton = controlDescription.getEditExpression() != null && !controlDescription.getEditExpression().trim().isEmpty();
 
 		int nbColumns;
 		if (hasEditButton) {
@@ -288,7 +288,7 @@ public class HTMLRendererLifeCycleManager extends AbstractEEFWidgetLifecycleMana
 			// If CSS result a valid result then the toHTML expression is expected to return on the
 			// content of the body
 			String cssContent = (String) cssRsult;
-			if (!cssContent.isBlank()) {
+			if (!cssContent.trim().isEmpty()) {
 				return "<!DOCTYPE html>\r\n" //$NON-NLS-1$
 						+ "<html>\r\n"//$NON-NLS-1$
 						+ "<head>\r\n" //$NON-NLS-1$
