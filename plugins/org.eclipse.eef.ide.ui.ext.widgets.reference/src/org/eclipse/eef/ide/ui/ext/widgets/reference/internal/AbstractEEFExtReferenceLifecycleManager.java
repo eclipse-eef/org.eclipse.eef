@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Obeo.
+ * Copyright (c) 2016, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -191,7 +191,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	/**
 	 * Initializes the browse button.
 	 */
-	private void initializeBrowseButton() {
+	protected void initializeBrowseButton() {
 		this.browseButtonListener = new ButtonSelectionListener(this.editingContextAdapter, () -> this.browseButtonCallback());
 		this.browseButton.addSelectionListener(this.browseButtonListener);
 		this.browseButton.setToolTipText(Messages.ReferenceBrowseButton_tooltipText);
@@ -205,7 +205,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	/**
 	 * Initializes the add button.
 	 */
-	private void initializeAddButton() {
+	protected void initializeAddButton() {
 		this.addButtonListener = new ButtonSelectionListener(this.editingContextAdapter, () -> this.addButtonCallback());
 		this.addButton.addSelectionListener(this.addButtonListener);
 		this.addButton.setToolTipText(Messages.ReferenceAddButton_tooltipText);
@@ -219,7 +219,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	/**
 	 * Initializes the remove button.
 	 */
-	private void initializeRemoveButton() {
+	protected void initializeRemoveButton() {
 		this.removeButtonListener = new ButtonSelectionListener(this.editingContextAdapter, () -> this.removeButtonCallback());
 		this.removeButton.addSelectionListener(this.removeButtonListener);
 		if (this.eReference.isContainment()) {
@@ -313,7 +313,7 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	 *            The listener to remove
 	 */
 	protected void removeListener(Button button, ButtonSelectionListener listener) {
-		if (!button.isDisposed()) {
+		if (button != null && !button.isDisposed()) {
 			button.removeSelectionListener(listener);
 		}
 	}
