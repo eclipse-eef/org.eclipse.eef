@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Obeo.
+ * Copyright (c) 2016, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -61,17 +61,32 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	/**
 	 * The target.
 	 */
-	private EObject target;
+	protected EObject target;
 
 	/**
 	 * The EReference.
 	 */
-	private EReference eReference;
+	protected EReference eReference;
 
 	/**
 	 * The editing context adapter.
 	 */
-	private EditingContextAdapter editingContextAdapter;
+	protected EditingContextAdapter editingContextAdapter;
+
+	/**
+	 * The combo viewer used to select the EClass of the element to create.
+	 */
+	protected ComboViewer eClassInstanceComboViewer;
+
+	/**
+	 * The combo viewer used to select the containment reference to use for the creation of the EObject.
+	 */
+	protected ComboViewer eContainementReferenceComboViewer;
+
+	/**
+	 * The tree viewer used to select the container of the new EObject to create.
+	 */
+	protected TreeViewer eContainerTreeViewer;
 
 	/**
 	 * The {@link ComposedAdapterFactory} used to retrieve the label and image of the various EObjects visible in the
@@ -80,29 +95,14 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	private ComposedAdapterFactory composedAdapterFactory;
 
 	/**
-	 * The combo viewer used to select the EClass of the element to create.
-	 */
-	private ComboViewer eClassInstanceComboViewer;
-
-	/**
 	 * This listener will react to selection changes in the combo viewer.
 	 */
 	private ISelectionChangedListener eClassInstanceComboViewerListener;
 
 	/**
-	 * The tree viewer used to select the container of the new EObject to create.
-	 */
-	private TreeViewer eContainerTreeViewer;
-
-	/**
 	 * This listener will react to selection changes in the tree viewer.
 	 */
 	private ISelectionChangedListener eContainerTreeViewerListener;
-
-	/**
-	 * The combo viewer used to select the containment reference to use for the creation of the EObject.
-	 */
-	private ComboViewer eContainementReferenceComboViewer;
 
 	/**
 	 * This listener will react to selection changes in the combo viewer.
@@ -262,7 +262,7 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	 * @return The currently selected EObject in the given viewer, or <code>null</code> if the current selection is
 	 *         empty or not an EObject (for example an EResource)
 	 */
-	private EObject getEObject(StructuredViewer viewer) {
+	protected EObject getEObject(StructuredViewer viewer) {
 		ISelection selection = viewer.getSelection();
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
