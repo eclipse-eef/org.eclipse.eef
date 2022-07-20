@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Obeo.
+ * Copyright (c) 2016, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -49,22 +49,22 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	/**
 	 * The image of the current value.
 	 */
-	private Label image;
+	protected Label image;
 
 	/**
 	 * The label showing the current value.
 	 */
-	private Label text;
+	protected Label text;
 
 	/**
 	 * The hyperlink showing the current value.
 	 */
-	private Hyperlink hyperlink;
+	protected Hyperlink hyperlink;
 
 	/**
 	 * The listener on the hyperlink.
 	 */
-	private MouseListener hyperlinkListener;
+	protected MouseListener hyperlinkListener;
 
 	/**
 	 * The constructor.
