@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Obeo.
+ * Copyright (c) 2016, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -49,22 +49,22 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	/**
 	 * The image of the current value.
 	 */
-	private Label image;
+	protected Label image;
 
 	/**
 	 * The label showing the current value.
 	 */
-	private Label text;
+	protected Label text;
 
 	/**
 	 * The hyperlink showing the current value.
 	 */
-	private Hyperlink hyperlink;
+	protected Hyperlink hyperlink;
 
 	/**
 	 * The listener on the hyperlink.
 	 */
-	private MouseListener hyperlinkListener;
+	protected MouseListener hyperlinkListener;
 
 	/**
 	 * The constructor.
@@ -115,26 +115,47 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 		GridData buttonCompositeGridData = new GridData();
 		buttonsComposite.setLayoutData(buttonCompositeGridData);
 
-		if (!this.eReference.isContainment()) {
-			buttonsComposite.setLayout(new GridLayout(3, true));
+		this.createButtons(buttonsComposite);
 
+		this.widgetFactory.paintBordersFor(parent);
+
+		this.controller = new EEFExtReferenceController(this.description, this.variableManager, this.interpreter, this.editingContextAdapter);
+	}
+
+	/**
+	 *
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#createButtons(org.eclipse.swt.widgets.Composite)
+	 */
+	@Override
+	protected void createButtons(Composite parent) {
+		parent.setLayout(new GridLayout(getButtonsNumber(), true));
+		if (!this.eReference.isContainment()) {
 			Image browseImage = ExtendedImageRegistry.INSTANCE
 					.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH));
-			this.browseButton = this.createButton(buttonsComposite, browseImage);
-		} else {
-			buttonsComposite.setLayout(new GridLayout(2, true));
+			this.browseButton = this.createButton(parent, browseImage);
 		}
 
 		Image addImage = ExtendedImageRegistry.INSTANCE
 				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.ADD_ICON_PATH));
 		Image removeImage = ExtendedImageRegistry.INSTANCE
 				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.REMOVE_ICON_PATH));
-		this.addButton = this.createButton(buttonsComposite, addImage);
-		this.removeButton = this.createButton(buttonsComposite, removeImage);
+		this.addButton = this.createButton(parent, addImage);
+		this.removeButton = this.createButton(parent, removeImage);
+	}
 
-		this.widgetFactory.paintBordersFor(parent);
-
-		this.controller = new EEFExtReferenceController(this.description, this.variableManager, this.interpreter, this.editingContextAdapter);
+	/**
+	 * Get the number of buttons to layout the Reference widget.
+	 *
+	 * @return the number of buttons
+	 */
+	protected int getButtonsNumber() {
+		int nbButtons = 2; // The Add and Remove buttons are always enabled.
+		if (!this.eReference.isContainment()) {
+			nbButtons++;
+		}
+		return nbButtons;
 	}
 
 	/**
@@ -143,7 +164,7 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 * @param parent
 	 *            The parent composite
 	 */
-	private void createLabel(Composite parent) {
+	protected void createLabel(Composite parent) {
 		this.image = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
 
 		GridData gridData = new GridData();
