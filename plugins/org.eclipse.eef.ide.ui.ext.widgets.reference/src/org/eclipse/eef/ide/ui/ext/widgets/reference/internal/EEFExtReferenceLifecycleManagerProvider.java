@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Obeo.
+ * Copyright (c) 2016, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.eef.common.api.utils.Util;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EEFExtReferenceDescription;
+import org.eclipse.eef.ext.widgets.reference.eefextwidgetsreference.EefExtWidgetsReferencePackage;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
 import org.eclipse.emf.ecore.EObject;
@@ -41,7 +42,7 @@ public class EEFExtReferenceLifecycleManagerProvider implements IEEFLifecycleMan
 	 */
 	@Override
 	public boolean canHandle(EEFControlDescription controlDescription) {
-		return controlDescription instanceof EEFExtReferenceDescription;
+		return controlDescription != null && controlDescription.eClass() == EefExtWidgetsReferencePackage.Literals.EEF_EXT_REFERENCE_DESCRIPTION;
 	}
 
 	/**
