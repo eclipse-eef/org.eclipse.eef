@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Obeo.
+ * Copyright (c) 2016, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -33,22 +33,22 @@ public class EEFExtEObjectCreationWizard extends Wizard {
 	/**
 	 * The target.
 	 */
-	private EObject target;
+	protected EObject target;
 
 	/**
 	 * The EReference.
 	 */
-	private EReference eReference;
+	protected EReference eReference;
 
 	/**
 	 * The editing context adapter.
 	 */
-	private EditingContextAdapter editingContextAdapter;
+	protected EditingContextAdapter editingContextAdapter;
 
 	/**
 	 * The page used to create the new EObject.
 	 */
-	private EEFExtEObjectCreationPage eObjectCreationPage;
+	protected EEFExtEObjectCreationPage eObjectCreationPage;
 
 	/**
 	 * The constructor.

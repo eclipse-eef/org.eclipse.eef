@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2019 Obeo.
+ * Copyright (c) 2016, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -59,6 +59,11 @@ import org.eclipse.swt.widgets.Table;
 public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtReferenceLifecycleManager {
 
 	/**
+	 * Height of each button with the specified 16x16 images.
+	 */
+	private static final int BUTTON_HEIGHT = 26;
+
+	/**
 	 * Minimal height of the table widget.
 	 */
 	private static final int TABLE_MINIMAL_HEIGHT = 150;
@@ -66,32 +71,32 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	/**
 	 * The table viewer.
 	 */
-	private TableViewer tableViewer;
-
-	/**
-	 * The up button.
-	 */
-	private Button upButton;
-
-	/**
-	 * The listener for the up button.
-	 */
-	private ButtonSelectionListener upButtonListener;
-
-	/**
-	 * The down button.
-	 */
-	private Button downButton;
-
-	/**
-	 * The listener for the down button.
-	 */
-	private ButtonSelectionListener downButtonListener;
+	protected TableViewer tableViewer;
 
 	/**
 	 * The listener used to run the onClick expression when the user will click on the table.
 	 */
-	private SelectionListener tableSelectionListener;
+	protected SelectionListener tableSelectionListener;
+
+	/**
+	 * The up button.
+	 */
+	protected Button upButton;
+
+	/**
+	 * The listener for the up button.
+	 */
+	protected ButtonSelectionListener upButtonListener;
+
+	/**
+	 * The down button.
+	 */
+	protected Button downButton;
+
+	/**
+	 * The listener for the down button.
+	 */
+	protected ButtonSelectionListener downButtonListener;
 
 	/**
 	 * The constructor.
@@ -142,6 +147,21 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 		buttonCompositeGridLayout.marginHeight = 0;
 		buttonsComposite.setLayout(buttonCompositeGridLayout);
 
+		this.createButtons(buttonsComposite);
+
+		this.widgetFactory.paintBordersFor(parent);
+
+		this.controller = new EEFExtReferenceController(this.description, this.variableManager, this.interpreter, this.editingContextAdapter);
+	}
+
+	/**
+	 * Creates the buttons next to the table.
+	 *
+	 * @param buttonsComposite
+	 *            The parent composite
+	 */
+	@Override
+	protected void createButtons(Composite buttonsComposite) {
 		if (!this.eReference.isContainment()) {
 			Image browseImage = ExtendedImageRegistry.INSTANCE
 					.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH));
@@ -161,10 +181,6 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 		this.removeButton = this.createButton(buttonsComposite, removeImage);
 		this.upButton = this.createButton(buttonsComposite, upImage);
 		this.downButton = this.createButton(buttonsComposite, downImage);
-
-		this.widgetFactory.paintBordersFor(parent);
-
-		this.controller = new EEFExtReferenceController(this.description, this.variableManager, this.interpreter, this.editingContextAdapter);
 	}
 
 	/**
@@ -173,7 +189,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 * @param parent
 	 *            The parent composite
 	 */
-	private void createTable(Composite parent) {
+	protected void createTable(Composite parent) {
 		ScrolledComposite scrolledComposite = this.widgetFactory.createScrolledComposite(parent, SWT.NONE);
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = true;
@@ -202,10 +218,37 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 		scrolledComposite.setContent(table);
 
 		final int clientWidth = scrolledComposite.getClientArea().width;
-		this.tableViewer.getTable().setSize(clientWidth, TABLE_MINIMAL_HEIGHT);
+		this.tableViewer.getTable().setSize(clientWidth, Math.max(TABLE_MINIMAL_HEIGHT, getButtonsHeight()));
 
 		scrolledComposite.setExpandHorizontal(true);
 		scrolledComposite.setAlwaysShowScrollBars(true);
+	}
+
+	/**
+	 * Used to compute the vertical size of button panel, in order to align the table with the buttons if necessary.
+	 *
+	 * @return the height of buttons composite
+	 */
+	protected int getButtonsHeight() {
+		int nbButtons = getButtonsNumber();
+		int buttonHeigt = BUTTON_HEIGHT;
+		int interspace = 5;
+		return nbButtons * buttonHeigt + (nbButtons - 1) * interspace;
+	}
+
+	/**
+	 *
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.ext.widgets.reference.internal.AbstractEEFExtReferenceLifecycleManager#getButtonsNumber()
+	 */
+	@Override
+	protected int getButtonsNumber() {
+		int nbButtons = 4; // The Add, Remove, Up and Down buttons are always enabled.
+		if (!this.eReference.isContainment()) {
+			nbButtons++;
+		}
+		return nbButtons;
 	}
 
 	/**
@@ -295,7 +338,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 * @param direction
 	 *            The direction
 	 */
-	private void initializeMoveButton(final Direction direction) {
+	protected void initializeMoveButton(final Direction direction) {
 		ButtonSelectionListener listener = new ButtonSelectionListener(this.editingContextAdapter, () -> this.moveButtonCallback(direction));
 
 		if (direction == Direction.UP) {
@@ -316,7 +359,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 * @param direction
 	 *            The direction
 	 */
-	private void moveButtonCallback(Direction direction) {
+	protected void moveButtonCallback(Direction direction) {
 		List<Object> objects = this.selectionToList(this.tableViewer.getSelection());
 
 		EList<?> values = this.getValues();
@@ -423,7 +466,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 *
 	 * @author sbegaudeau
 	 */
-	private enum Direction {
+	protected enum Direction {
 		/**
 		 * Up.
 		 */
