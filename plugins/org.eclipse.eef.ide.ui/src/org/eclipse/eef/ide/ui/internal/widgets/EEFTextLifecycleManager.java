@@ -194,19 +194,18 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		int lineCount = description.getLineCount();
 
 		// Create text or text area according to the defined line count
+		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		if (lineCount > 1) {
 			this.text = widgetFactory.createStyledText(parent, SWT.H_SCROLL | SWT.V_SCROLL | SWT.WRAP | SWT.MULTI);
-			GridData gridData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+			gridData.verticalAlignment = SWT.BEGINNING;
 			gridData.heightHint = lineCount * text.getLineHeight();
 			gridData.widthHint = TEXT_AREA_WIDTH_HINT;
-			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
-			this.text.setLayoutData(gridData);
 		} else {
 			this.text = widgetFactory.createStyledText(parent, SWT.SINGLE);
-			GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
-			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
-			this.text.setLayoutData(gridData);
 		}
+
+		this.text.setLayoutData(gridData);
 
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -298,6 +297,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			}
 
 		});
+	}
+
+	@Override
+	protected boolean withBorder() {
+		return true;
 	}
 
 	/**

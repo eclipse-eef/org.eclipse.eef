@@ -38,6 +38,7 @@ import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.fieldassist.ControlDecoration;
+import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
@@ -51,7 +52,6 @@ import org.eclipse.swt.events.MouseTrackListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 
@@ -61,6 +61,10 @@ import org.eclipse.swt.widgets.Display;
  * @author sbegaudeau
  */
 public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifecycleManager {
+
+	/** Flag to detect specific parent: sub-element may twist some behavior */
+	protected static final String DEDICATED_GRIDPARENT = "EEFLifecycleManager#DedicateParent"; //$NON-NLS-1$
+
 	/**
 	 * The number of pixel of the additional gap necessary to draw the validation marker.
 	 */
@@ -127,7 +131,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *          org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
@@ -152,26 +156,44 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		// If we are not in a group, we will create a composite to hold all the label and help of the widget if
 		// necessary
-		if (!isInGroup && (needsLabel || needsHelp)) {
+		if (!isInGroup && (needsLabel || needsHelp || withBorder())) {
 			composite = widgetFactory.createComposite(parent);
 
 			// We will only create the necessary number of columns for this "invisible" composite
 			int numColumn = 1;
 			if (needsLabel) {
-				numColumn = numColumn + 1;
+				numColumn++;
 			}
 			if (needsHelp) {
-				numColumn = numColumn + 1;
+				numColumn++;
 			}
-			GridLayout layout = new GridLayout(numColumn, false);
-			// As this composite is "invisible", it must not add border.
-			layout.marginHeight = 0;
-			layout.marginWidth = 0;
-			composite.setLayout(layout);
 
-			GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
-			layoutData.horizontalSpan = 1;
-			composite.setLayoutData(layoutData);
+			// As this composite is "invisible",
+			// it must not add border
+			// unless a direct widget has border from widgetFactory.
+			// See in org.eclipse.ui.forms.widgets.FormToolkit#BorderPainter.paintControl(...)
+			// sometimes widget border is painted outside the component bounds.
+
+			int margin = 0;
+			if (withBorder()) {
+				// 2 is "magic" size of the extra border.
+				margin = 2;
+			}
+			int leftMargin = margin;
+			if (numColumn > 1) {
+				// only margin on left when 1 Column
+				leftMargin = 0;
+			}
+
+			composite.setLayout(GridLayoutFactory.swtDefaults()//
+					.numColumns(numColumn) //
+					.margins(0, 0).extendedMargins(leftMargin, margin, margin, margin)//
+					.create());
+
+			// This default behavior is abusive
+			// (for checkbox, button, select, ...).
+			composite.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+			composite.setData(DEDICATED_GRIDPARENT, Boolean.TRUE); // We can change it with this flag.
 		}
 
 		if (needsLabel) {
@@ -196,6 +218,18 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		this.controlDecoration = new ControlDecoration(this.getValidationControl(), SWT.TOP | SWT.LEFT);
 		this.checkLockStatus();
+	}
+
+	/**
+	 * Returns if inner widget use border.
+	 * <p>
+	 * FormToolkit draws border outside widget ! (so kidding). We need an hint to align widget at best.
+	 * </p>
+	 *
+	 * @return
+	 */
+	protected boolean withBorder() {
+		return false;
 	}
 
 	/**
