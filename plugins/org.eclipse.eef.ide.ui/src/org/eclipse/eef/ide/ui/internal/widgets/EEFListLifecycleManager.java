@@ -28,6 +28,7 @@ import org.eclipse.eef.core.api.controllers.IEEFWidgetController;
 import org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager;
 import org.eclipse.eef.ide.ui.api.widgets.EEFTableSelectionListener;
 import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
+import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -50,15 +51,11 @@ import org.eclipse.swt.widgets.Table;
  * @author sbegaudeau
  */
 public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
-	/**
-	 * Default height.
-	 */
-	private static final int DEFAULT_HEIGHT = 34;
 
 	/**
 	 * Minimal height of the table widget.
 	 */
-	private static final int TABLE_MINIMAL_HEIGHT = 100;
+	private static final int TABLE_MINIMAL_HEIGHT = 150;
 
 	/**
 	 * The description.
@@ -121,37 +118,58 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
-		widgetFactory = formContainer.getWidgetFactory();
 		defaultBackgroundColor = parent.getBackground();
+		widgetFactory = formContainer.getWidgetFactory();
 
-		// this is the parent composite
-		Composite list = widgetFactory.createFlatFormComposite(parent);
+		Composite main = widgetFactory.createComposite(parent);
+
 		GridLayout layout = new GridLayout(2, false);
-		list.setLayout(layout);
+		layout.marginWidth = 0; // align buttons with other widgets on right.
+		layout.marginHeight = 0;
+		main.setLayout(layout);
 
 		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
-		list.setLayoutData(gridData);
+		main.setLayoutData(gridData);
 
-		this.createListWidget(list);
-		this.createWidgetActionButtons(list);
+		ScrolledComposite scroller = createListWidget(main);
+		Composite buttons = createWidgetActionButtons(main);
 
-		widgetFactory.paintBordersFor(parent);
+		// Use the space of buttons if available
+		int buttonsHeight = buttons.computeSize(SWT.DEFAULT, SWT.DEFAULT).y;
+		int clientWidth = scroller.getClientArea().width;
+		this.tableViewer.getTable().setSize(clientWidth, Math.max(TABLE_MINIMAL_HEIGHT, buttonsHeight));
 
 		this.controller = new EEFControllersFactory().createListController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
 	}
 
 	/**
-	 * Create table widget.
+	 * Create widget action buttons.
 	 *
 	 * @param parent
 	 *            The parent composite
 	 */
-	private void createListWidget(Composite parent) {
+	protected void createButtons(Composite parent) {
+		// Buttons are visible only if an action is defined
+		for (EEFWidgetAction action : this.description.getActions()) {
+			ActionButton actionButton = new ActionButton(action, parent, widgetFactory, this.interpreter, this.variableManager);
+			actionButtons.add(actionButton);
+		}
+	}
+	
+	/**
+	 * Creates the table used to display elements.
+	 *
+	 * @param parent
+	 *            The parent composite
+	 */
+	private ScrolledComposite createListWidget(Composite parent) {
 		ScrolledComposite scrolledComposite = widgetFactory.createScrolledComposite(parent, SWT.NONE);
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = SWT.FILL;
+		gridData.verticalAlignment = SWT.BEGINNING;
+		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		scrolledComposite.setLayoutData(gridData);
 
 		// CHECKSTYLE:OFF
@@ -161,8 +179,7 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		Table table = widgetFactory.createTable(scrolledComposite, style);
 		this.tableViewer = new TableViewer(table);
 
-		GridData tableGridData = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
-		tableGridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+		GridData tableGridData = new GridData(SWT.FILL, SWT.TOP, true, true);
 		this.tableViewer.getTable().setLayoutData(tableGridData);
 
 		this.tableViewer.setContentProvider(ArrayContentProvider.getInstance());
@@ -170,17 +187,10 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 
 		scrolledComposite.setContent(table);
 
-		int widgetHeight = DEFAULT_HEIGHT;
-		List<EEFWidgetAction> actions = description.getActions();
-		if (actions != null && actions.size() > 0) {
-			widgetHeight = widgetHeight * (actions.size() + 1);
-		}
-
-		final int clientWidth = scrolledComposite.getClientArea().width;
-		this.tableViewer.getTable().setSize(clientWidth, Math.max(TABLE_MINIMAL_HEIGHT, widgetHeight));
-
 		scrolledComposite.setExpandHorizontal(true);
 		scrolledComposite.setAlwaysShowScrollBars(true);
+
+		return scrolledComposite;
 	}
 
 	/**
@@ -189,21 +199,18 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * @param parent
 	 *            The parent composite
 	 */
-	private void createWidgetActionButtons(Composite parent) {
-		Composite buttons = widgetFactory.createFlatFormComposite(parent);
+	private Composite createWidgetActionButtons(Composite parent) {
+		Composite buttons = widgetFactory.createComposite(parent);
 
 		GridData gridData = new GridData();
 		gridData.verticalAlignment = SWT.BEGINNING;
 		buttons.setLayoutData(gridData);
 
-		buttons.setLayout(new GridLayout(1, false));
+		buttons.setLayout(GridLayoutFactory.swtDefaults().margins(0, 0).create());
 
-		// Buttons are visible only if an action is defined
-		for (EEFWidgetAction action : this.description.getActions()) {
-			ActionButton actionButton = new ActionButton(action, buttons, widgetFactory, this.interpreter, this.variableManager);
-			actionButtons.add(actionButton);
-		}
+		createButtons(buttons);
 
+		return buttons;
 	}
 
 	/**
@@ -309,11 +316,10 @@ public class EEFListLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	public void aboutToBeHidden() {
 		super.aboutToBeHidden();
 
-		this.actionButtons.forEach(ActionButton::removeSelectionListener);
-
 		if (this.tableViewer != null && this.tableViewer.getTable() != null && !this.tableViewer.getTable().isDisposed()) {
 			this.tableViewer.getTable().removeSelectionListener(this.tableSelectionListener);
 		}
+		this.actionButtons.forEach(ActionButton::removeSelectionListener);
 		this.controller.removeNewValueConsumer();
 	}
 

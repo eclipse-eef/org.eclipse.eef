@@ -97,10 +97,11 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		this.widgetFactory = formContainer.getWidgetFactory();
 
-		Composite referenceComposite = this.widgetFactory.createFlatFormComposite(parent);
+		Composite referenceComposite = this.widgetFactory.createComposite(parent);
 		GridLayout gridLayout = new GridLayout(3, false);
 		gridLayout.verticalSpacing = 0;
 		gridLayout.marginHeight = 0;
+		gridLayout.marginWidth = 0;
 		referenceComposite.setLayout(gridLayout);
 
 		GridData referenceCompositeGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
@@ -111,11 +112,13 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 
 		this.createLabel(referenceComposite);
 
-		Composite buttonsComposite = this.widgetFactory.createFlatFormComposite(referenceComposite);
-		GridData buttonCompositeGridData = new GridData();
-		buttonsComposite.setLayoutData(buttonCompositeGridData);
-
+		Composite buttonsComposite = this.widgetFactory.createComposite(referenceComposite);
 		this.createButtons(buttonsComposite);
+
+		GridLayout layout = new GridLayout(parent.getChildren().length, true);
+		layout.marginHeight = 0;
+		layout.marginWidth = 0;
+		parent.setLayout(layout);
 
 		this.widgetFactory.paintBordersFor(parent);
 
@@ -130,7 +133,6 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	@Override
 	protected void createButtons(Composite parent) {
-		parent.setLayout(new GridLayout(getButtonsNumber(), true));
 		if (!this.eReference.isContainment()) {
 			Image browseImage = ExtendedImageRegistry.INSTANCE
 					.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH));
@@ -146,19 +148,6 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	}
 
 	/**
-	 * Get the number of buttons to layout the Reference widget.
-	 *
-	 * @return the number of buttons
-	 */
-	protected int getButtonsNumber() {
-		int nbButtons = 2; // The Add and Remove buttons are always enabled.
-		if (!this.eReference.isContainment()) {
-			nbButtons++;
-		}
-		return nbButtons;
-	}
-
-	/**
 	 * Creates the label showing the value of the reference.
 	 *
 	 * @param parent
@@ -166,11 +155,13 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	protected void createLabel(Composite parent) {
 		this.image = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
+		GridData imageGd = new GridData();
+		imageGd.horizontalIndent = VALIDATION_MARKER_OFFSET;
+		image.setLayoutData(imageGd);
 
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = SWT.FILL;
-
 		String onClickExpression = Optional.ofNullable(this.description.getOnClickExpression()).orElse(""); //$NON-NLS-1$
 		if (onClickExpression.isEmpty()) {
 			this.text = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
