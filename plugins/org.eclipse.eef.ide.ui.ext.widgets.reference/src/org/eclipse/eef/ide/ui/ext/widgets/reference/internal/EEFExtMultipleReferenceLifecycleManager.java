@@ -12,6 +12,7 @@
 package org.eclipse.eef.ide.ui.ext.widgets.reference.internal;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
@@ -31,6 +32,7 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.celleditor.FeatureEditorDialog;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.jface.viewers.DelegatingStyledCellLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -125,61 +127,27 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		this.widgetFactory = formContainer.getWidgetFactory();
 
-		Composite referenceComposite = this.widgetFactory.createFlatFormComposite(parent);
-		GridLayout referenceGridLayout = new GridLayout(2, false);
-		referenceComposite.setLayout(referenceGridLayout);
+		Composite main = widgetFactory.createComposite(parent);
 
-		GridData referenceCompositeGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
-		referenceComposite.setLayoutData(referenceCompositeGridData);
+		GridLayout layout = new GridLayout(2, false);
+		layout.marginWidth = 0; // align buttons with other widgets on right.
+		layout.marginHeight = 0;
+		main.setLayout(layout);
 
-		this.createTable(referenceComposite);
+		GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		main.setLayoutData(gridData);
 
-		Composite buttonsComposite = this.widgetFactory.createFlatFormComposite(referenceComposite);
-		GridData buttonCompositeGridData = new GridData();
-		buttonCompositeGridData.verticalAlignment = SWT.BEGINNING;
-		buttonsComposite.setLayoutData(buttonCompositeGridData);
+		ScrolledComposite scroller = this.createTable(main);
+		Composite buttons = this.createWidgetActionButtons(main);
 
-		GridLayout buttonCompositeGridLayout = new GridLayout(1, false);
-		buttonCompositeGridLayout.marginHeight = 0;
-		buttonsComposite.setLayout(buttonCompositeGridLayout);
-
-		this.createButtons(buttonsComposite);
-		Point computedSize = buttonsComposite.computeSize(-1, -1);
-		this.tableViewer.getTable().setSize(0, Math.max(TABLE_MINIMAL_HEIGHT, computedSize.y));
-
-		this.widgetFactory.paintBordersFor(parent);
+		// Use the space of buttons if available
+		int buttonsHeight = buttons.computeSize(SWT.DEFAULT, SWT.DEFAULT).y;
+		int clientWidth = scroller.getClientArea().width;
+		this.tableViewer.getTable().setSize(clientWidth, Math.max(TABLE_MINIMAL_HEIGHT, buttonsHeight));
 
 		this.controller = new EEFExtReferenceController(this.description, this.variableManager, this.interpreter, this.editingContextAdapter);
 	}
 
-	/**
-	 * Creates the buttons next to the table.
-	 *
-	 * @param buttonsComposite
-	 *            The parent composite
-	 */
-	@Override
-	protected void createButtons(Composite buttonsComposite) {
-		if (!this.eReference.isContainment()) {
-			Image browseImage = ExtendedImageRegistry.INSTANCE
-					.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH));
-			this.browseButton = this.createButton(buttonsComposite, browseImage);
-		}
-
-		Image addImage = ExtendedImageRegistry.INSTANCE
-				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.ADD_ICON_PATH));
-		Image removeImage = ExtendedImageRegistry.INSTANCE
-				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.REMOVE_ICON_PATH));
-		Image upImage = ExtendedImageRegistry.INSTANCE
-				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.UP_ICON_PATH));
-		Image downImage = ExtendedImageRegistry.INSTANCE
-				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.DOWN_ICON_PATH));
-
-		this.addButton = this.createButton(buttonsComposite, addImage);
-		this.removeButton = this.createButton(buttonsComposite, removeImage);
-		this.upButton = this.createButton(buttonsComposite, upImage);
-		this.downButton = this.createButton(buttonsComposite, downImage);
-	}
 
 	/**
 	 * Creates the table used to display the reference.
@@ -187,23 +155,23 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 * @param parent
 	 *            The parent composite
 	 */
-	protected void createTable(Composite parent) {
+	protected ScrolledComposite createTable(Composite parent) {
 		ScrolledComposite scrolledComposite = this.widgetFactory.createScrolledComposite(parent, SWT.NONE);
 		GridData gridData = new GridData();
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = SWT.FILL;
 		gridData.verticalAlignment = SWT.BEGINNING;
+		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		scrolledComposite.setLayoutData(gridData);
 
 		// CHECKSTYLE:OFF
 		int style = SWT.READ_ONLY | SWT.V_SCROLL | SWT.FULL_SELECTION | SWT.BORDER | SWT.SINGLE | SWT.VIRTUAL;
 		// CHECKSTYLE:ON
 
-		Table table = this.widgetFactory.createTable(scrolledComposite, style);
+		Table table = widgetFactory.createTable(scrolledComposite, style);
 		this.tableViewer = new TableViewer(table);
 
-		GridData tableGridData = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
-		tableGridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+		GridData tableGridData = new GridData(SWT.FILL, SWT.TOP, true, true);
 		this.tableViewer.getTable().setLayoutData(tableGridData);
 
 		this.composedAdapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
@@ -217,6 +185,34 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 
 		scrolledComposite.setExpandHorizontal(true);
 		scrolledComposite.setAlwaysShowScrollBars(true);
+
+		return scrolledComposite;
+	}
+
+	/**
+	 * Create widget action buttons.
+	 *
+	 * @param parent
+	 *            The parent composite
+	 */
+	private Composite createWidgetActionButtons(Composite parent) {
+		Composite buttons = widgetFactory.createComposite(parent);
+		GridData gridData = new GridData();
+		gridData.verticalAlignment = SWT.BEGINNING;
+		buttons.setLayoutData(gridData);
+
+		buttons.setLayout(GridLayoutFactory.swtDefaults().margins(0, 0).create());
+
+		if (!this.eReference.isContainment()) {
+			this.browseButton = this.createButton(buttons, EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH);
+		}
+
+		this.addButton = this.createButton(buttons, EEFExtReferenceUIPlugin.Implementation.ADD_ICON_PATH);
+		this.removeButton = this.createButton(buttons, EEFExtReferenceUIPlugin.Implementation.REMOVE_ICON_PATH);
+		this.upButton = this.createButton(buttons, EEFExtReferenceUIPlugin.Implementation.UP_ICON_PATH);
+		this.downButton = this.createButton(buttons, EEFExtReferenceUIPlugin.Implementation.DOWN_ICON_PATH);
+
+		return buttons;
 	}
 
 	/**
@@ -361,15 +357,13 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 *            The selection
 	 * @return The objects of the given selection
 	 */
+	@SuppressWarnings("unchecked") // Eclipse Legacy
 	private List<Object> selectionToList(ISelection selection) {
-		List<Object> objects = new ArrayList<>();
 		if (selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
-			for (Object object : structuredSelection.toArray()) {
-				objects.add(object);
-			}
+			return ((IStructuredSelection) selection).toList();
+
 		}
-		return objects;
+		return Collections.emptyList();
 	}
 
 	/**

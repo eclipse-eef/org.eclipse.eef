@@ -209,7 +209,6 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		}
 
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
 
 		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
@@ -298,6 +297,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			}
 
 		});
+	}
+
+	@Override
+	protected boolean withBorder() {
+		return true;
 	}
 
 	/**
