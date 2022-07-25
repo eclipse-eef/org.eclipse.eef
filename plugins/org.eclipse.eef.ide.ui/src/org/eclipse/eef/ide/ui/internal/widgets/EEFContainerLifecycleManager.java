@@ -25,10 +25,10 @@ import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
+import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
 /**
@@ -63,6 +63,8 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	 */
 	private List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
+	private Composite widgetContainer = null;
+
 	/**
 	 * The constructor.
 	 *
@@ -93,40 +95,39 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		Composite composite = null;
-
 		// If the container is directly under a group, we will create two empty labels for the first two columns of the
 		// layout (label & help)
-		if (this.description.eContainer() instanceof EEFGroupDescription) {
-			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
-			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
-		}
-		composite = widgetFactory.createComposite(parent);
+		widgetContainer = widgetFactory.createComposite(parent);
 		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
-		composite.setLayoutData(gridData);
-
-		GridLayout compositeLayout = new GridLayout(1, true);
-		compositeLayout.marginWidth = 1;
-
-		EEFLayoutDescription layout = this.description.getLayout();
-		if (layout instanceof EEFFillLayoutDescription) {
-			// The vertical layout is the default one, we will thus only handle the horizontal one
-			EEFFillLayoutDescription fillLayoutDescription = (EEFFillLayoutDescription) layout;
-			if (fillLayoutDescription.getOrientation() == EEF_FILL_LAYOUT_ORIENTATION.HORIZONTAL) {
-				compositeLayout = new GridLayout(this.description.getControls().size(), false);
-				compositeLayout.marginWidth = 1;
-			}
-		} else if (layout instanceof EEFGridLayoutDescription) {
-			EEFGridLayoutDescription gridLayoutDescription = (EEFGridLayoutDescription) layout;
-			compositeLayout = new GridLayout(gridLayoutDescription.getNumberOfColumns(), gridLayoutDescription.isMakeColumnsWithEqualWidth());
-			compositeLayout.marginWidth = 1;
+		if (this.description.eContainer() instanceof EEFGroupDescription) {
+			// No need to evaluate 'For' containment,
+			// 'For' cannot contain 'Container' only 'Group' can.
+			gridData.horizontalSpan = 3; // Use label+help space to improve alignment.
 		}
-		composite.setLayout(compositeLayout);
+		widgetContainer.setLayoutData(gridData);
+
+		GridLayoutFactory layout = GridLayoutFactory.swtDefaults().margins(0, 0).equalWidth(true);
+
+		EEFLayoutDescription layoutDescr = this.description.getLayout();
+		if (layoutDescr instanceof EEFFillLayoutDescription) {
+			// The vertical layout is the default one, we will thus only handle the horizontal one
+			EEFFillLayoutDescription fillLayoutDescription = (EEFFillLayoutDescription) layoutDescr;
+			if (fillLayoutDescription.getOrientation() == EEF_FILL_LAYOUT_ORIENTATION.HORIZONTAL) {
+				layout.numColumns(this.description.getControls().size());
+				layout.equalWidth(false);
+			}
+		} else if (layoutDescr instanceof EEFGridLayoutDescription) {
+			EEFGridLayoutDescription gridLayoutDescription = (EEFGridLayoutDescription) layoutDescr;
+			layout.numColumns(gridLayoutDescription.getNumberOfColumns());
+			layout.equalWidth(gridLayoutDescription.isMakeColumnsWithEqualWidth());
+		}
+		// layout.margins(1, 0); // ?.
+		widgetContainer.setLayout(layout.create());
 
 		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.contextAdapter);
 		List<EEFControlDescription> controls = this.description.getControls();
 		for (EEFControlDescription eefControlDescription : controls) {
-			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(composite, formContainer, eefControlDescription, this.variableManager));
+			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(widgetContainer, formContainer, eefControlDescription, this.variableManager));
 		}
 	}
 
@@ -148,6 +149,7 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	@Override
 	public void refresh() {
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::refresh);
+		widgetContainer.requestLayout();
 	}
 
 	/**

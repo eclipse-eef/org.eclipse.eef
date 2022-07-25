@@ -102,6 +102,11 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		this.checkbox.setLayoutData(gridData);
 
+		if (Boolean.TRUE.equals(parent.getData(DEDICATED_GRIDPARENT))) {
+			parent.setLayoutData(new GridData()); // No excessive grab
+			// When using checkbox in a container, this prevent SWT to allocated empty space on right.
+		}
+
 		this.controller = new EEFControllersFactory().createCheckboxController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
 	}

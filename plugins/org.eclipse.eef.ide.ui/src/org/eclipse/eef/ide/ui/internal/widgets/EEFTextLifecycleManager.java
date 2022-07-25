@@ -69,18 +69,19 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * {@link EEFTextLifecycleManager#resolveEditionConflict(Shell, String, String, String)}.
 	 */
 	public enum ConflictResolutionMode {
-	/**
-	 * Use the version being edited in the widget, overriding the new version computed from the current model state.
-	 */
-	USE_LOCAL_VERSION,
-	/**
-	 * Use the version computed from the current model state, replacing the text being edited by the user in the widget.
-	 */
-	USE_MODEL_VERSION,
-	/**
-	 * Ask the user through a simple dialog which version to keep.
-	 */
-	ASK_USER
+		/**
+		 * Use the version being edited in the widget, overriding the new version computed from the current model state.
+		 */
+		USE_LOCAL_VERSION,
+		/**
+		 * Use the version computed from the current model state, replacing the text being edited by the user in the
+		 * widget.
+		 */
+		USE_MODEL_VERSION,
+		/**
+		 * Ask the user through a simple dialog which version to keep.
+		 */
+		ASK_USER
 	}
 
 	/**
@@ -200,7 +201,6 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 		}
 
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
 
 		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
@@ -289,6 +289,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			}
 
 		});
+	}
+
+	@Override
+	protected boolean withBorder() {
+		return true;
 	}
 
 	/**

@@ -100,13 +100,22 @@ public class EEFButtonLifecycleManager extends AbstractEEFWidgetLifecycleManager
 
 		GridData gridData = new GridData();
 		gridData.minimumWidth = MINIMUM_BUTTON_WIDTH;
-		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+
 		this.button.setLayoutData(gridData);
 
-		widgetFactory.paintBordersFor(parent);
+		if (Boolean.TRUE.equals(parent.getData(DEDICATED_GRIDPARENT))) {
+			parent.setLayoutData(new GridData()); // No excessive grab
+			// When using button in a container, this prevent SWT to allocated empty space on right.
+		}
 
 		this.controller = new EEFControllersFactory().createButtonController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
+
+		if (controller.isValidationAnchor()) {
+			// Removing useless indentation allow regularity in widget layout.
+			// Most of time, buttons are not used to show validation.
+			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+		}
 	}
 
 	/**
