@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
@@ -149,6 +150,20 @@ public abstract class AbstractEEFExtReferenceLifecycleManager extends AbstractEE
 	@Override
 	protected EEFWidgetDescription getWidgetDescription() {
 		return this.description;
+	}
+
+	/**
+	 * Creates a button used to edit the reference using local image.
+	 *
+	 * @param parent
+	 *            The parent composite
+	 * @param image
+	 *            The image of the button
+	 * @return The button created
+	 */
+	protected Button createButton(Composite parent, String imageLocalPath) {
+		Image image = ExtendedImageRegistry.INSTANCE.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(imageLocalPath));
+		return createButton(parent, image);
 	}
 
 	/**

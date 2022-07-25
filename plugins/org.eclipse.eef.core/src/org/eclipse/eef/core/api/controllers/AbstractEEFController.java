@@ -12,6 +12,7 @@
 package org.eclipse.eef.core.api.controllers;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -113,8 +114,7 @@ public abstract class AbstractEEFController implements IEEFController {
 	 */
 	@Override
 	public void refresh() {
-		List<IValidationRuleResult> validationRuleResults = this.getValidationRuleResults(this.getValidationRulesContainer(),
-				this.getValidationRulesReference());
+		List<IValidationRuleResult> validationRuleResults = this.getValidationRuleResults();
 		Optional.ofNullable(this.validationConsumer).ifPresent(consumer -> consumer.accept(validationRuleResults));
 	}
 
@@ -133,26 +133,47 @@ public abstract class AbstractEEFController implements IEEFController {
 	protected abstract EReference getValidationRulesReference();
 
 	/**
-	 * Computes the result of the execution of all the validation rules.
+	 * Fetches all the validation rules of this controller.
 	 *
-	 * @param eObject
-	 *            The EObject containing the validation rules
-	 * @param validationRulesReference
-	 *            The reference used to contain the validation rules (semantic or property based)
 	 * @return The list of the validation rule results
 	 */
-	private List<IValidationRuleResult> getValidationRuleResults(EObject eObject, EReference validationRulesReference) {
-		List<IValidationRuleResult> validationRuleResults = new ArrayList<IValidationRuleResult>();
+	@SuppressWarnings("unchecked")
+	private List<EEFValidationRuleDescription> getValidationRules() {
+		EReference rulesReference = this.getValidationRulesReference();
+		// Common fast case.
+		if (rulesReference.isMany() //
+				&& EefPackage.Literals.EEF_VALIDATION_RULE_DESCRIPTION.isSuperTypeOf(rulesReference.getEReferenceType())) {
+			return (List<EEFValidationRuleDescription>) getValidationRulesContainer().eGet(rulesReference);
+		}
 
-		List<EEFValidationRuleDescription> descriptions = new ArrayList<EEFValidationRuleDescription>();
-		Object validationRules = eObject.eGet(validationRulesReference);
-		if (validationRules instanceof Iterable<?>) {
-			for (Object validationRule : (Iterable<?>) validationRules) {
-				if (validationRule instanceof EEFValidationRuleDescription) {
-					descriptions.add((EEFValidationRuleDescription) validationRule);
-				}
+		// Extensible case
+		Object rules = this.getValidationRulesContainer().eGet(this.getValidationRulesReference());
+		if (!(rules instanceof Iterable<?>)) {
+			return Collections.emptyList();
+		}
+		List<EEFValidationRuleDescription> result = new ArrayList<EEFValidationRuleDescription>();
+		for (Object rule : (Iterable<?>) rules) {
+			if (rule instanceof EEFValidationRuleDescription) {
+				result.add((EEFValidationRuleDescription) rule);
 			}
 		}
+		return result;
+	}
+
+	@Override
+	public boolean isValidationAnchor() {
+		return !getValidationRules().isEmpty();
+	}
+
+	/**
+	 * Computes the result of the execution of all the validation rules.
+	 *
+	 * @return The list of the validation rule results
+	 */
+	private List<IValidationRuleResult> getValidationRuleResults() {
+		List<IValidationRuleResult> validationRuleResults = new ArrayList<IValidationRuleResult>();
+
+		List<EEFValidationRuleDescription> descriptions = getValidationRules();
 
 		EAttribute auditEAttribute = EefPackage.Literals.EEF_RULE_AUDIT_DESCRIPTION__AUDIT_EXPRESSION;
 		EAttribute messageEAttribute = EefPackage.Literals.EEF_VALIDATION_RULE_DESCRIPTION__MESSAGE_EXPRESSION;

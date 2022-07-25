@@ -97,10 +97,11 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		this.widgetFactory = formContainer.getWidgetFactory();
 
-		Composite referenceComposite = this.widgetFactory.createFlatFormComposite(parent);
+		Composite referenceComposite = this.widgetFactory.createComposite(parent);
 		GridLayout gridLayout = new GridLayout(3, false);
 		gridLayout.verticalSpacing = 0;
 		gridLayout.marginHeight = 0;
+		gridLayout.marginWidth = 0;
 		referenceComposite.setLayout(gridLayout);
 
 		GridData referenceCompositeGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
@@ -111,19 +112,21 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 
 		this.createLabel(referenceComposite);
 
-		Composite buttonsComposite = this.widgetFactory.createFlatFormComposite(referenceComposite);
+		Composite buttonsComposite = this.widgetFactory.createComposite(referenceComposite);
 		GridData buttonCompositeGridData = new GridData();
 		buttonsComposite.setLayoutData(buttonCompositeGridData);
 
+		GridLayout buttonsLayout = new GridLayout(1, true);
+		buttonsLayout.marginHeight = 0;
+		buttonsLayout.marginWidth = 0;
+
 		if (!this.eReference.isContainment()) {
-			buttonsComposite.setLayout(new GridLayout(3, true));
 
 			Image browseImage = ExtendedImageRegistry.INSTANCE
 					.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.BROWSE_ICON_PATH));
 			this.browseButton = this.createButton(buttonsComposite, browseImage);
-		} else {
-			buttonsComposite.setLayout(new GridLayout(2, true));
 		}
+		buttonsComposite.setLayout(buttonsLayout);
 
 		Image addImage = ExtendedImageRegistry.INSTANCE
 				.getImage(EEFExtReferenceUIPlugin.getPlugin().getImage(EEFExtReferenceUIPlugin.Implementation.ADD_ICON_PATH));
@@ -132,7 +135,7 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 		this.addButton = this.createButton(buttonsComposite, addImage);
 		this.removeButton = this.createButton(buttonsComposite, removeImage);
 
-		this.widgetFactory.paintBordersFor(parent);
+		buttonsLayout.numColumns = buttonsComposite.getChildren().length;
 
 		this.controller = new EEFExtReferenceController(this.description, this.variableManager, this.interpreter, this.editingContextAdapter);
 	}
@@ -145,18 +148,17 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 	 */
 	private void createLabel(Composite parent) {
 		this.image = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
-
-		GridData gridData = new GridData();
-		gridData.grabExcessHorizontalSpace = true;
-		gridData.horizontalAlignment = SWT.FILL;
+		GridData imageGd = new GridData();
+		imageGd.horizontalIndent = VALIDATION_MARKER_OFFSET;
+		image.setLayoutData(imageGd);
 
 		String onClickExpression = Optional.ofNullable(this.description.getOnClickExpression()).orElse(""); //$NON-NLS-1$
 		if (onClickExpression.isEmpty()) {
 			this.text = this.widgetFactory.createLabel(parent, "", SWT.NONE); //$NON-NLS-1$
-			this.text.setLayoutData(gridData);
+			this.text.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		} else {
 			this.hyperlink = this.widgetFactory.createHyperlink(parent, "", SWT.NONE); //$NON-NLS-1$
-			this.hyperlink.setLayoutData(gridData);
+			this.hyperlink.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		}
 
 	}
