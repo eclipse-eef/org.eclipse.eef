@@ -37,4 +37,16 @@ public interface IEEFController {
 	 * Refresh the controller.
 	 */
 	void refresh();
+
+	/**
+	 * Indicates if the associated widget is used to show validation rules.
+	 * <p>
+	 * This indication may be required for widget layout.
+	 * </p>
+	 *
+	 * @return true if some validation may be displayed
+	 */
+	default boolean isValidationAnchor() {
+		return true;
+	}
 }
