@@ -125,7 +125,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implem
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *          org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
@@ -350,6 +350,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implem
 		super.refresh();
 
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::refresh);
+		this.section.requestLayout();
 	}
 
 	/**

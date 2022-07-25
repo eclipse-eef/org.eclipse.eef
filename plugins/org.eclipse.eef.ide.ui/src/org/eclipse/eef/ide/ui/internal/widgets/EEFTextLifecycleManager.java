@@ -206,10 +206,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			GridData gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
 			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 			this.text.setLayoutData(gridData);
+			text.addFocusListener(FocusListener.focusLostAdapter(evt -> {
+				System.out.print("Focus is on " + text.getDisplay().getFocusControl()); //$NON-NLS-1$
+			}));
 		}
 
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
 
 		this.controller = new EEFControllersFactory().createTextController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
@@ -298,6 +300,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			}
 
 		});
+	}
+
+	@Override
+	protected boolean withBorder() {
+		return true;
 	}
 
 	/**

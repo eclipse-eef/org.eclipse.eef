@@ -18,7 +18,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.eef.EEFSelectDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EefPackage;
-import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
 import org.eclipse.eef.common.ui.api.IEEFFormContainer;
 import org.eclipse.eef.core.api.EEFExpressionUtils;
 import org.eclipse.eef.core.api.EEFExpressionUtils.EEFSelect;
@@ -120,8 +119,6 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	 */
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
-		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
-
 		this.comboViewer = new ComboViewer(parent, SWT.READ_ONLY);
 		this.combo = comboViewer.getCombo();
 		GridData gridData = new GridData();
@@ -129,9 +126,12 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 		this.combo.setLayoutData(gridData);
 		this.comboViewer.setContentProvider(ArrayContentProvider.getInstance());
 		this.comboViewer.setLabelProvider(new EEFSelectLabelProvider());
-
 		this.comboViewer.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
-		widgetFactory.paintBordersFor(parent);
+
+		if (Boolean.TRUE.equals(parent.getData(DEDICATED_GRIDPARENT))) {
+			parent.setLayoutData(new GridData()); // No excessive grab
+			// When using combo in a container, this prevent SWT to allocated empty space.
+		}
 
 		this.controller = new EEFControllersFactory().createSelectController(this.description, this.variableManager, this.interpreter,
 				this.editingContextAdapter);
@@ -145,6 +145,16 @@ public class EEFSelectLifecycleManager extends AbstractEEFWidgetLifecycleManager
 	@Override
 	protected IEEFWidgetController getController() {
 		return this.controller;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getLabelVerticalAlignment()
+	 */
+	@Override
+	protected int getLabelVerticalAlignment() {
+		return GridData.VERTICAL_ALIGN_CENTER;
 	}
 
 	/**
