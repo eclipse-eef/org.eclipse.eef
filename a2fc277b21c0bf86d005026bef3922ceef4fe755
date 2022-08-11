@@ -49,6 +49,53 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7c75cbd7_2e7c0090",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtMultipleReferenceLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 7229
+      },
+      "writtenOn": "2022-08-11T10:14:49Z",
+      "side": 1,
+      "message": "ok keep it in protected",
+      "parentUuid": "d0d8c880_b4c57571",
+      "range": {
+        "startLine": 233,
+        "startChar": 1,
+        "endLine": 233,
+        "endChar": 11
+      },
+      "revId": "a2fc277b21c0bf86d005026bef3922ceef4fe755",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "567e7c8d_3b9fead6",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtMultipleReferenceLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 7229
+      },
+      "writtenOn": "2022-08-11T10:14:49Z",
+      "side": 1,
+      "message": "you can add a comment here to precise that there are always add/remove/arrows button by default for multiple reference",
+      "range": {
+        "startLine": 234,
+        "startChar": 18,
+        "endLine": 234,
+        "endChar": 19
+      },
+      "revId": "a2fc277b21c0bf86d005026bef3922ceef4fe755",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a424211b_4fac0e03",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
         "patchSetId": 3
