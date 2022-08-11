@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0d8c880_b4c57571",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtMultipleReferenceLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 7229
+      },
+      "writtenOn": "2022-08-11T09:30:03Z",
+      "side": 1,
+      "message": "private?",
+      "range": {
+        "startLine": 233,
+        "startChar": 1,
+        "endLine": 233,
+        "endChar": 11
+      },
+      "revId": "a2fc277b21c0bf86d005026bef3922ceef4fe755",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec746397_4650668c",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtMultipleReferenceLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 7229
+      },
+      "writtenOn": "2022-08-11T09:30:03Z",
+      "side": 1,
+      "message": "javadoc",
+      "range": {
+        "startLine": 233,
+        "startChar": 15,
+        "endLine": 233,
+        "endChar": 31
+      },
+      "revId": "a2fc277b21c0bf86d005026bef3922ceef4fe755",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a424211b_4fac0e03",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7229
+      },
+      "writtenOn": "2022-08-11T09:30:03Z",
+      "side": 1,
+      "message": "javadoc?",
+      "range": {
+        "startLine": 125,
+        "startChar": 1,
+        "endLine": 125,
+        "endChar": 59
+      },
+      "revId": "a2fc277b21c0bf86d005026bef3922ceef4fe755",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    }
+  ]
+}
