@@ -5,19 +5,19 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: EEF Checkstyle 6
-    Description: 
-EEF Checkstyle 6 configuration.
+    Checkstyle-Configuration: EEF Checkstyle 10
+    Description:
+EEF Checkstyle 10 configuration.
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
   <module name="TreeWalker">
     <module name="SuppressionCommentFilter"/>
     <module name="SuppressWarningsHolder"/>
-    <module name="JavadocMethod">
+    <module name="MissingJavadocMethodCheck">
       <property name="severity" value="error"/>
+      <property name="scope" value="protected"/>
       <property name="allowMissingPropertyJavadoc" value="true"/>
-      <property name="suppressLoadErrors" value="true"/>
     </module>
     <module name="JavadocStyle">
       <property name="severity" value="error"/>
