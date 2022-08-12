@@ -5,8 +5,8 @@
     This configuration file was written by the eclipse-cs plugin configuration editor
 -->
 <!--
-    Checkstyle-Configuration: EEF CS5
-    Description: Checkstyle 5.0 compatible
+    Checkstyle-Configuration: EEF CS10
+    Description: Checkstyle 10 compatible
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
@@ -31,10 +31,10 @@
       <property name="message" value="These are for debug/batch applications launches only. Remove them from production build."/>
       <property name="ignoreComments" value="true"/>
     </module>
-    <module name="JavadocMethod">
+    <module name="MissingJavadocMethodCheck">
       <property name="severity" value="error"/>
+      <property name="scope" value="protected"/>
       <property name="allowMissingPropertyJavadoc" value="true"/>
-      <property name="suppressLoadErrors" value="true"/>
     </module>
     <module name="JavadocStyle">
       <property name="severity" value="error"/>
@@ -132,7 +132,6 @@
     </module>
     <module name="TypecastParenPad">
       <property name="severity" value="error"/>
-      <property name="tokens" value="RPAREN,TYPECAST"/>
     </module>
     <module name="WhitespaceAfter">
       <property name="severity" value="error"/>
