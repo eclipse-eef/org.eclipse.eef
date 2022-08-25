@@ -41,27 +41,27 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 	/**
 	 * The variable manager.
 	 */
-	private IVariableManager variableManager;
+	protected IVariableManager variableManager;
 
 	/**
 	 * The interpreter.
 	 */
-	private IInterpreter interpreter;
+	protected IInterpreter interpreter;
 
 	/**
 	 * The editing context adapter.
 	 */
-	private EditingContextAdapter contextAdapter;
+	protected EditingContextAdapter contextAdapter;
 
 	/**
 	 * The description of the container.
 	 */
-	private EEFContainerDescription description;
+	protected EEFContainerDescription description;
 
 	/**
 	 * The lifecycle managers of the child of the container.
 	 */
-	private List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
+	protected List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
 
 	/**
 	 * The constructor.
