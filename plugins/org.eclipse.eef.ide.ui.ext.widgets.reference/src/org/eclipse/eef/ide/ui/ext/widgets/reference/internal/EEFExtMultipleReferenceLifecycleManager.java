@@ -49,6 +49,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Table;
 
 /**
@@ -59,9 +60,9 @@ import org.eclipse.swt.widgets.Table;
 public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtReferenceLifecycleManager {
 
 	/**
-	 * Height of each button with the specified 16x16 images.
+	 * Button height ratio compare with screen height resolution.
 	 */
-	private static final int BUTTON_HEIGHT = 26;
+	private static final double RATIO_BUTTON_HEIGHT = 0.0241;
 
 	/**
 	 * Minimal height of the table widget.
@@ -230,8 +231,9 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	 * @return the height of buttons composite
 	 */
 	protected int getButtonsHeight() {
+		int heightScreen = Display.getCurrent().getBounds().height;
 		int nbButtons = getButtonsNumber();
-		int buttonHeigt = BUTTON_HEIGHT;
+		int buttonHeigt = (int) (RATIO_BUTTON_HEIGHT * heightScreen);
 		int interspace = 5;
 		return nbButtons * buttonHeigt + (nbButtons - 1) * interspace;
 	}
