@@ -27,6 +27,7 @@ import org.eclipse.eef.core.api.EditingContextAdapter;
 import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -39,24 +40,24 @@ import org.eclipse.swt.widgets.Composite;
 public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 
 	/**
-	 * The variable manager.
+	 * The description of the container.
 	 */
-	private IVariableManager variableManager;
+	protected EEFContainerDescription description;
 
 	/**
 	 * The interpreter.
 	 */
-	private IInterpreter interpreter;
+	protected IInterpreter interpreter;
+
+	/**
+	 * The variable manager.
+	 */
+	protected IVariableManager variableManager;
 
 	/**
 	 * The editing context adapter.
 	 */
 	private EditingContextAdapter contextAdapter;
-
-	/**
-	 * The description of the container.
-	 */
-	private EEFContainerDescription description;
 
 	/**
 	 * The lifecycle managers of the child of the container.
@@ -94,6 +95,7 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
 		Composite composite = null;
+		GridData gridData = null;
 
 		// If the container is directly under a group, we will create two empty labels for the first two columns of the
 		// layout (label & help)
@@ -101,10 +103,17 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
 			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
 		}
-		composite = widgetFactory.createComposite(parent);
-		GridData gridData = new GridData(GridData.FILL_HORIZONTAL);
-		composite.setLayoutData(gridData);
 
+		if (isBorderedContainer()) {
+			String borderLabel = getBorderLabel();
+			composite = widgetFactory.createGroup(parent, borderLabel);
+			gridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
+		} else {
+			composite = widgetFactory.createComposite(parent);
+			gridData = new GridData(GridData.FILL_HORIZONTAL);
+		}
+
+		composite.setLayoutData(gridData);
 		GridLayout compositeLayout = new GridLayout(1, true);
 		compositeLayout.marginWidth = 1;
 
@@ -128,6 +137,24 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 		for (EEFControlDescription eefControlDescription : controls) {
 			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(composite, formContainer, eefControlDescription, this.variableManager));
 		}
+	}
+
+	/**
+	 * Get label of the border if a border is drawn for the container.
+	 *
+	 * @return the label of the border if a border is drawn for the container.
+	 */
+	protected String getBorderLabel() {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * Check if a border around the container should be displayed.
+	 *
+	 * @return <code>true</code> if the container should have a border, <code>false</code> otherwise.
+	 */
+	protected boolean isBorderedContainer() {
+		return false;
 	}
 
 	/**
