@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50fd6e21_f3078bed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2022-08-31T06:51:57Z",
+      "side": 1,
+      "message": "Matches what we have on Sirius Desktop: https://git.eclipse.org/c/sirius/org.eclipse.sirius.git/tree/releng/org.eclipse.sirius.settings/CheckstyleConfiguration.xml",
+      "revId": "bd0b3898a3a6ef6dd6699c85a74fe1abbecf2773",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    }
+  ]
+}
