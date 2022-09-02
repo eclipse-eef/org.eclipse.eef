@@ -16,6 +16,24 @@
       "message": "Use SWT APIs, not AWT. See Display, propably something like Display.getCurrent().getBounds().height (to be tested).",
       "revId": "2b2b28399b2984cdd41ff43554386e7731d0f0c7",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "420af49b_227e3fb0",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtMultipleReferenceLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-02T16:06:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb031955_856ae6dc",
+      "revId": "2b2b28399b2984cdd41ff43554386e7731d0f0c7",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
