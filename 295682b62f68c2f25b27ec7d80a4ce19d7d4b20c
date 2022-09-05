@@ -16,6 +16,24 @@
       "message": "Result does not work",
       "revId": "295682b62f68c2f25b27ec7d80a4ce19d7d4b20c",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57d2245c_96f765e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2022-09-05T09:14:26Z",
+      "side": 1,
+      "message": "In my own context (single screen, 100% zoom, Linux), both methods return the same values:\n\n  org.eclipse.swt.widgets.Display.getCurrent().getBounds()\n\t (org.eclipse.swt.graphics.Rectangle) Rectangle {0, 0, 3840, 2160}\n\n  java.awt.Toolkit.getDefaultToolkit().getScreenSize()\n\t (java.awt.Dimension) java.awt.Dimension[width\u003d3840,height\u003d2160]\n\t \nWhat is returned by these in your context that would explain the difference in behavior?",
+      "parentUuid": "02ca90d3_5aa96a37",
+      "revId": "295682b62f68c2f25b27ec7d80a4ce19d7d4b20c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
