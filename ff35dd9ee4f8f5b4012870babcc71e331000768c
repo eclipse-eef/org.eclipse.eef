@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e46c83b5_a9c331a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2022-09-05T15:33:15Z",
+      "side": 1,
+      "message": "I don\u0027t understand what the screen size/resolution has to do with the size of the widgets/buttons. Can you clarify?\n",
+      "revId": "ff35dd9ee4f8f5b4012870babcc71e331000768c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    }
+  ]
+}
