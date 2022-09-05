@@ -52,6 +52,29 @@
       "parentUuid": "57d2245c_96f765e7",
       "revId": "295682b62f68c2f25b27ec7d80a4ce19d7d4b20c",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f5100ab_ee76e281",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtMultipleReferenceLifecycleManager.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2022-09-05T15:30:34Z",
+      "side": 1,
+      "message": "Where does this magic value come from?",
+      "range": {
+        "startLine": 65,
+        "startChar": 29,
+        "endLine": 65,
+        "endChar": 57
+      },
+      "revId": "295682b62f68c2f25b27ec7d80a4ce19d7d4b20c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
