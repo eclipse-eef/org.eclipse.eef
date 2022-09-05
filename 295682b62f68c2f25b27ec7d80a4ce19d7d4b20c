@@ -34,6 +34,24 @@
       "parentUuid": "02ca90d3_5aa96a37",
       "revId": "295682b62f68c2f25b27ec7d80a4ce19d7d4b20c",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "868bba72_435db8f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7229
+      },
+      "writtenOn": "2022-09-05T12:14:39Z",
+      "side": 1,
+      "message": "In fact, my 2 screens were not perfectly aligned. So the computed height coresponds to the sum of my first screen size and the vertical difference with the second screen.Problem can also occurs when a user has 2 screen displayed vertically.\n\nI propose : \n\u003ccode\u003e\n@SuppressWarnings(\"boxing\")\n\tprotected int getButtonsHeight() {\n\t\tInteger maxPositionNeg \u003d 0; // maximum value of negative position of any screen\n\t\tInteger maxPositionPos \u003d 0; // maximum value of positive position of any screen\n\t\tfor (Monitor monitor : tableViewer.getTable().getDisplay().getMonitors()) {\n\t\t\tint y \u003d monitor.getBounds().y;\n\t\t\tif (y \u003c\u003d 0) {\n\t\t\t\tmaxPositionNeg \u003d Math.max(maxPositionNeg, Math.abs(y));\n\t\t\t} else {\n\t\t\t\tmaxPositionPos \u003d Math.max(maxPositionPos, y);\n\t\t\t}\n\t\t}\n\t\tint heightScreen \u003d Display.getCurrent().getBounds().height - (maxPositionPos + maxPositionNeg);\n\t\tint nbButtons \u003d getButtonsNumber();\n\t\tint buttonHeigt \u003d (int) (RATIO_BUTTON_HEIGHT * heightScreen);\n\t\tint interspace \u003d 5;\n\t\treturn nbButtons * buttonHeigt + (nbButtons - 1) * interspace;\n\t}\n\u003c/code\u003e",
+      "parentUuid": "57d2245c_96f765e7",
+      "revId": "295682b62f68c2f25b27ec7d80a4ce19d7d4b20c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
