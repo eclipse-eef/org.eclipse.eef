@@ -16,6 +16,24 @@
       "message": "I don\u0027t understand what the screen size/resolution has to do with the size of the widgets/buttons. Can you clarify?\n",
       "revId": "ff35dd9ee4f8f5b4012870babcc71e331000768c",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20356074_491dae54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7229
+      },
+      "writtenOn": "2022-09-05T15:39:32Z",
+      "side": 1,
+      "message": "We try to adjust the size of the table (which contain references) according to number of buttons. At the begining, the size of the table was fix to 150 px. With 5 buttons, the size of the table was perfectly aligned with the last button.\nAfter adding a button, the table size does not change (fix to 150), but the last added button was outside of the table size. We have decided to adjust the size of the table with the number of button by supposing that size of button was 26 px (found on screen with 1080 px). After this change, we have seen that for screen with different size, the table was still not adjusted. We supposed that size of button is evolving according to screen size which explain our last changes.",
+      "parentUuid": "e46c83b5_a9c331a1",
+      "revId": "ff35dd9ee4f8f5b4012870babcc71e331000768c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
