@@ -16,6 +16,23 @@
       "message": "I see nothing \"wrong\" with this patch, but I\u0027m not sure yet if its the best (least invasive) way to support the downstream requirement. Will need to check in context.",
       "revId": "cbec78b28647ac057587522f577efe2db125a604",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8427bd8_d40e4860",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2022-09-06T07:05:33Z",
+      "side": 1,
+      "message": "This one is taken as a constructor argument, so subclasses which need to access it could store it in their own field.",
+      "revId": "cbec78b28647ac057587522f577efe2db125a604",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
