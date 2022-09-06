@@ -32,6 +32,20 @@ public interface IEEFLifecycleManager {
 	void createControl(Composite parent, IEEFFormContainer formContainer);
 
 	/**
+	 * Creates the controls for the description.
+	 *
+	 * @param parent
+	 *            The composite parent
+	 * @param formContainer
+	 *            The form container
+	 * @param isEnabled
+	 *            the boolean used to enabled or disable widgets
+	 */
+	default void createControl(Composite parent, IEEFFormContainer formContainer, boolean isEnabled) {
+		createControl(parent, formContainer);
+	}
+
+	/**
 	 * Prepares for the widgets to be shown.
 	 */
 	void aboutToBeShown();

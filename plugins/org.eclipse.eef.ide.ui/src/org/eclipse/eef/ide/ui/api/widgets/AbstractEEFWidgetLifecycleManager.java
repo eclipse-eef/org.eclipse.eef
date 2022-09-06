@@ -92,6 +92,11 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected CLabel help;
 
 	/**
+	 * The boolean used to enable or disable Widgets. Widgets are enabled by default.
+	 */
+	protected boolean enableWidgets = true;
+
+	/**
 	 * The listener on the help.
 	 */
 	private MouseTrackListener mouseTrackListener;
@@ -126,8 +131,20 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer, boolean)
+	 */
+	@Override
+	public void createControl(Composite parent, IEEFFormContainer formContainer, boolean isEnabled) {
+		super.createControl(parent, formContainer, isEnabled);
+		this.enableWidgets = isEnabled;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *          org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
@@ -442,7 +459,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	protected boolean isEnabled() {
 		Boolean result = EvalFactory.of(interpreter, variableManager).logIfInvalidType(Boolean.class).defaultValue(Boolean.TRUE)
 				.evaluate(getWidgetDescription().getIsEnabledExpression());
-		return result.booleanValue();
+		return result.booleanValue() && this.enableWidgets;
 	}
 
 	/**

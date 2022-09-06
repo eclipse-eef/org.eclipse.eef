@@ -66,12 +66,26 @@ public class EEFTab {
 	 *            The container of the whole form
 	 */
 	public void createControls(Composite parent, IEEFFormContainer container) {
+		this.createControls(parent, container, true);
+	}
+
+	/**
+	 * Creates the controls of the tab.
+	 *
+	 * @param parent
+	 *            The parent container
+	 * @param container
+	 *            The container of the whole form
+	 * @param isEnabled
+	 *            the boolean used to enable or disable widgets
+	 */
+	public void createControls(Composite parent, IEEFFormContainer container, boolean isEnabled) {
 		EEFIdeUiPlugin.getPlugin().debug("EEFTab#createControls(...)"); //$NON-NLS-1$
 
 		Composite composite = container.getWidgetFactory().createComposite(parent);
 		composite.setLayout(new GridLayout(1, false));
 
-		this.lifecycleManager.createControl(composite, container);
+		this.lifecycleManager.createControl(composite, container, isEnabled);
 		parent.layout();
 
 		this.updater = new Updater(this, container);

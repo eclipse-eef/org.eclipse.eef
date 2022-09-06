@@ -79,6 +79,17 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager impl
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
+		this.createControl(parent, formContainer, true);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 */
+	@Override
+	public void createControl(Composite parent, IEEFFormContainer formContainer, boolean isEnabled) {
 		super.createControl(parent, formContainer);
 
 		this.hyperlinkListener = new EEFMessageHyperlinkListener(formContainer.getShell());
@@ -91,7 +102,7 @@ public class EEFSectionLifecycleManager extends AbstractEEFLifecycleManager impl
 			EditingContextAdapter contextAdapter = eefGroup.getPage().getView().getContextAdapter();
 			EEFGroupLifecycleManager groupLifecycleManager = new EEFGroupLifecycleManager(eefGroup.getDescription(), eefGroup.getVariableManager(),
 					eefGroup.getInterpreter(), contextAdapter);
-			groupLifecycleManager.createControl(parent, formContainer);
+			groupLifecycleManager.createControl(parent, formContainer, isEnabled);
 
 			this.lifecycleManagers.add(groupLifecycleManager);
 		}

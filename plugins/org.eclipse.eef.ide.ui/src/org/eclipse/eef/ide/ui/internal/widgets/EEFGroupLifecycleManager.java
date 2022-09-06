@@ -125,10 +125,15 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implem
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *          org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
+		this.createControl(parent, formContainer, true);
+	}
+
+	@Override
+	public void createControl(Composite parent, IEEFFormContainer formContainer, boolean isEnabled) {
 		super.createControl(parent, formContainer);
 		this.eefFormContainer = formContainer;
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
@@ -230,7 +235,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implem
 		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.editingContextAdapter);
 		List<EEFControlDescription> controls = this.description.getControls();
 		for (EEFControlDescription eefControlDescription : controls) {
-			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(group, formContainer, eefControlDescription, this.variableManager));
+			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(group, formContainer, eefControlDescription, this.variableManager, isEnabled));
 		}
 	}
 
