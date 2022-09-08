@@ -24,6 +24,30 @@
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1485d77_9f0eea78",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationWizard.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-08T13:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3c25e67_1e5ec923",
+      "range": {
+        "startLine": 36,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 55
+      },
+      "revId": "8df2fa8b7106e5fad5e5999b8b916eebdf3919d4",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fb582960_a5531fa4",
@@ -47,6 +71,30 @@
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e5f6455_0cce5903",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationWizard.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-08T13:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb582960_a5531fa4",
+      "range": {
+        "startLine": 51,
+        "startChar": 1,
+        "endLine": 51,
+        "endChar": 57
+      },
+      "revId": "8df2fa8b7106e5fad5e5999b8b916eebdf3919d4",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b71d548_94e90bea",
@@ -60,6 +108,24 @@
       "writtenOn": "2022-09-07T11:59:11Z",
       "side": 1,
       "message": "Use \u0027\u003d\u003d\u0027 for comparing EClasses/EObjects. It\u0027s what EObject#equals() does anyway, and prevents possible NPEs.\nSpeaking of NPEs, the `eClass` call itself can trigger one.\n\n  controlDescription !\u003d null \u0026\u0026 controlDescription.eClass() \u003d\u003d EefExtWidgetsReferencePackage.Literals.EEF_EXT_REFERENCE_DESCRIPTION",
+      "revId": "8df2fa8b7106e5fad5e5999b8b916eebdf3919d4",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa6051da_b2f56104",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtReferenceLifecycleManagerProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-08T13:01:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b71d548_94e90bea",
       "revId": "8df2fa8b7106e5fad5e5999b8b916eebdf3919d4",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
