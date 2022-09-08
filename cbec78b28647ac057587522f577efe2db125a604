@@ -51,6 +51,24 @@
       "parentUuid": "a8427bd8_d40e4860",
       "revId": "cbec78b28647ac057587522f577efe2db125a604",
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b399efc_8f8eeb9a",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFContainerLifecycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-08T13:05:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76c8929b_fc63a5f1",
+      "revId": "cbec78b28647ac057587522f577efe2db125a604",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
