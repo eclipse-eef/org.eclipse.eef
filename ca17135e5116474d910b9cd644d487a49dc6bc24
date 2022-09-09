@@ -24,6 +24,30 @@
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4fc60c5_199a27e1",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/AbstractEEFExtReferenceLifecycleManager.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-09T07:14:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52a37d83_bc0fef98",
+      "range": {
+        "startLine": 188,
+        "startChar": 1,
+        "endLine": 188,
+        "endChar": 43
+      },
+      "revId": "ca17135e5116474d910b9cd644d487a49dc6bc24",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0dc10839_0895fbf5",
@@ -47,6 +71,30 @@
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa4f1089_8cadef8a",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtEObjectCreationWizard.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-09T07:14:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dc10839_0895fbf5",
+      "range": {
+        "startLine": 2,
+        "startChar": 24,
+        "endLine": 2,
+        "endChar": 32
+      },
+      "revId": "ca17135e5116474d910b9cd644d487a49dc6bc24",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7f2db77_1ded2334",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-09-08T15:37:58Z",
       "side": 1,
       "message": "to remove?",
+      "range": {
+        "startLine": 229,
+        "startChar": 15,
+        "endLine": 229,
+        "endChar": 31
+      },
+      "revId": "ca17135e5116474d910b9cd644d487a49dc6bc24",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "438499ca_e69509f3",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtMultipleReferenceLifecycleManager.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-09-09T07:14:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7f2db77_1ded2334",
       "range": {
         "startLine": 229,
         "startChar": 15,
