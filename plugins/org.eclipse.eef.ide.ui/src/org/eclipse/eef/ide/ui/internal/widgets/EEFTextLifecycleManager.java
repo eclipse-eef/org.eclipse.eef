@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2018 Obeo.
+ * Copyright (c) 2015, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -56,6 +56,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.forms.FormColors;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -64,24 +65,36 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
  * @author sbegaudeau
  */
 public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
+
 	/**
 	 * The different ways an edition conflict can be resolved. Used by the default implementation of
 	 * {@link EEFTextLifecycleManager#resolveEditionConflict(Shell, String, String, String)}.
 	 */
 	public enum ConflictResolutionMode {
-	/**
-	 * Use the version being edited in the widget, overriding the new version computed from the current model state.
-	 */
-	USE_LOCAL_VERSION,
-	/**
-	 * Use the version computed from the current model state, replacing the text being edited by the user in the widget.
-	 */
-	USE_MODEL_VERSION,
-	/**
-	 * Ask the user through a simple dialog which version to keep.
-	 */
-	ASK_USER
+		/**
+		 * Use the version being edited in the widget, overriding the new version computed from the current model state.
+		 */
+		USE_LOCAL_VERSION,
+		/**
+		 * Use the version computed from the current model state, replacing the text being edited by the user in the
+		 * widget.
+		 */
+		USE_MODEL_VERSION,
+		/**
+		 * Ask the user through a simple dialog which version to keep.
+		 */
+		ASK_USER
 	}
+
+	/**
+	 * Key for the background of the disabled text widget.
+	 */
+	private static final String TEXT_DISABLED_BG = "TEXT_DISABLED_BG"; //$NON-NLS-1$
+
+	/**
+	 * Key for the foreground of the disabled text widget.
+	 */
+	private static final String TEXT_DISABLED_FG = "TEXT_DISABLED_FG"; //$NON-NLS-1$
 
 	/**
 	 * This constant is used in order to tell SWT that the text area should be 300px wide even if it is not useful. The
@@ -124,6 +137,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * The default background color of the text field.
 	 */
 	private Color defaultBackgroundColor;
+
+	/**
+	 * The default foreground color of the text field.
+	 */
+	private Color defaultForegroundColor;
 
 	/**
 	 * The listener used to indicate that the text field is dirty.
@@ -180,6 +198,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		widgetFactory = formContainer.getWidgetFactory();
 		defaultBackgroundColor = parent.getBackground();
+		defaultForegroundColor = parent.getForeground();
 
 		// Get text area line count
 		int lineCount = description.getLineCount();
@@ -550,6 +569,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			this.text.setEnabled(isEnabled);
 			this.text.setEditable(isEnabled);
 			this.text.setBackground(this.getBackgroundColor(isEnabled));
+			this.text.setForeground(this.getForegroundColor(isEnabled));
 		}
 	}
 
@@ -564,7 +584,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	private Color getBackgroundColor(boolean isEnabled) {
 		Color color = defaultBackgroundColor;
 		if (!isEnabled) {
-			color = widgetFactory.getColors().getInactiveBackground();
+			FormColors colors = this.widgetFactory.getColors();
+			color = colors.createColor(TEXT_DISABLED_BG, colors.getSystemColor(SWT.COLOR_TEXT_DISABLED_BACKGROUND));
 		} else {
 			EEFWidgetStyle widgetStyle = new EEFStyleHelper(this.interpreter, this.variableManager).getWidgetStyle(this.description);
 			if (widgetStyle instanceof EEFTextStyle) {
@@ -573,6 +594,33 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 				if (!Util.isBlank(backgroundColorCode)) {
 					EEFColor backgroundColor = new EEFColor(backgroundColorCode);
 					color = backgroundColor.getColor();
+				}
+			}
+		}
+		return color;
+	}
+
+	/**
+	 * Get the foreground color according to the current valid style.
+	 *
+	 * @param isEnabled
+	 *            <code>true</code> to indicate that the widget is currently enabled, <code>false</code> otherwise
+	 *
+	 * @return The foreground color to use in the text field.
+	 */
+	private Color getForegroundColor(boolean isEnabled) {
+		Color color = defaultForegroundColor;
+		if (!isEnabled) {
+			FormColors colors = this.widgetFactory.getColors();
+			color = colors.createColor(TEXT_DISABLED_FG, colors.getSystemColor(SWT.COLOR_WIDGET_DISABLED_FOREGROUND));
+		} else {
+			EEFWidgetStyle widgetStyle = new EEFStyleHelper(this.interpreter, this.variableManager).getWidgetStyle(this.description);
+			if (widgetStyle instanceof EEFTextStyle) {
+				EEFTextStyle style = (EEFTextStyle) widgetStyle;
+				String foregroundColorCode = style.getForegroundColorExpression();
+				if (!Util.isBlank(foregroundColorCode)) {
+					EEFColor foregroundColor = new EEFColor(foregroundColorCode);
+					color = foregroundColor.getColor();
 				}
 			}
 		}
