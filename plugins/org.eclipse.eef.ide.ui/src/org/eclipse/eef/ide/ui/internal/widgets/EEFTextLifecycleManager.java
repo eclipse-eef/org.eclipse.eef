@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2018 Obeo.
+ * Copyright (c) 2015, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -38,6 +38,7 @@ import org.eclipse.eef.ide.ui.internal.EEFIdeUiPlugin;
 import org.eclipse.eef.ide.ui.internal.Messages;
 import org.eclipse.eef.ide.ui.internal.preferences.EEFPreferences;
 import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFColor;
+import org.eclipse.eef.ide.ui.internal.widgets.styles.EEFFont;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.common.interpreter.api.IInterpreter;
 import org.eclipse.sirius.common.interpreter.api.IVariableManager;
@@ -64,23 +65,25 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
  * @author sbegaudeau
  */
 public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
+
 	/**
 	 * The different ways an edition conflict can be resolved. Used by the default implementation of
 	 * {@link EEFTextLifecycleManager#resolveEditionConflict(Shell, String, String, String)}.
 	 */
 	public enum ConflictResolutionMode {
-	/**
-	 * Use the version being edited in the widget, overriding the new version computed from the current model state.
-	 */
-	USE_LOCAL_VERSION,
-	/**
-	 * Use the version computed from the current model state, replacing the text being edited by the user in the widget.
-	 */
-	USE_MODEL_VERSION,
-	/**
-	 * Ask the user through a simple dialog which version to keep.
-	 */
-	ASK_USER
+		/**
+		 * Use the version being edited in the widget, overriding the new version computed from the current model state.
+		 */
+		USE_LOCAL_VERSION,
+		/**
+		 * Use the version computed from the current model state, replacing the text being edited by the user in the
+		 * widget.
+		 */
+		USE_MODEL_VERSION,
+		/**
+		 * Ask the user through a simple dialog which version to keep.
+		 */
+		ASK_USER
 	}
 
 	/**
@@ -124,6 +127,11 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	 * The default background color of the text field.
 	 */
 	private Color defaultBackgroundColor;
+
+	/**
+	 * The default foreground color of the text field.
+	 */
+	private Color defaultForegroundColor;
 
 	/**
 	 * The listener used to indicate that the text field is dirty.
@@ -180,6 +188,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		widgetFactory = formContainer.getWidgetFactory();
 		defaultBackgroundColor = parent.getBackground();
+		defaultForegroundColor = parent.getForeground();
 
 		// Get text area line count
 		int lineCount = description.getLineCount();
@@ -429,14 +438,27 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	private void setStyle() {
 		EEFStyleHelper styleHelper = new EEFStyleHelper(this.interpreter, this.variableManager);
 		EEFWidgetStyle widgetStyle = styleHelper.getWidgetStyle(this.description);
-		if (widgetStyle instanceof EEFTextStyle) {
-			EEFTextStyle textStyle = (EEFTextStyle) widgetStyle;
+		IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.text);
+		if (widgetStyle != null) {
+			if (widgetStyle instanceof EEFTextStyle) {
+				EEFTextStyle textStyle = (EEFTextStyle) widgetStyle;
 
-			Font defaultFont = this.text.getShell().getFont();
+				Font defaultFont = this.text.getShell().getFont();
 
-			IEEFTextStyleCallback callback = new EEFStyledTextStyleCallback(this.text);
-			styleHelper.applyTextStyle(textStyle.getFontNameExpression(), textStyle.getFontSizeExpression(), textStyle.getFontStyleExpression(),
-					defaultFont, textStyle.getBackgroundColorExpression(), textStyle.getForegroundColorExpression(), callback);
+				styleHelper.applyTextStyle(textStyle.getFontNameExpression(), textStyle.getFontSizeExpression(), textStyle.getFontStyleExpression(),
+						defaultFont, textStyle.getBackgroundColorExpression(), textStyle.getForegroundColorExpression(), callback);
+			}
+		} else {
+			// Set everything back to the default value
+			callback.applyForegroundColor(new EEFColor((Color) null));
+			callback.applyBackgroundColor(new EEFColor((Color) null));
+			callback.applyFontStyle(false, false);
+			callback.applyFont(new EEFFont(null, 0, 0) {
+				@Override
+				public Font getFont() {
+					return null;
+				}
+			});
 		}
 	}
 
@@ -547,9 +569,10 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	@Override
 	protected void setEnabled(boolean isEnabled) {
 		if (!this.text.isDisposed()) {
-			this.text.setEnabled(isEnabled);
 			this.text.setEditable(isEnabled);
+			this.text.setEnabled(isEnabled);
 			this.text.setBackground(this.getBackgroundColor(isEnabled));
+			this.text.setForeground(this.getForegroundColor(isEnabled));
 		}
 	}
 
@@ -564,7 +587,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	private Color getBackgroundColor(boolean isEnabled) {
 		Color color = defaultBackgroundColor;
 		if (!isEnabled) {
-			color = widgetFactory.getColors().getInactiveBackground();
+			color = this.widgetFactory.getColors().getInactiveBackground();
 		} else {
 			EEFWidgetStyle widgetStyle = new EEFStyleHelper(this.interpreter, this.variableManager).getWidgetStyle(this.description);
 			if (widgetStyle instanceof EEFTextStyle) {
@@ -573,6 +596,32 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 				if (!Util.isBlank(backgroundColorCode)) {
 					EEFColor backgroundColor = new EEFColor(backgroundColorCode);
 					color = backgroundColor.getColor();
+				}
+			}
+		}
+		return color;
+	}
+
+	/**
+	 * Get the foreground color according to the current valid style.
+	 *
+	 * @param isEnabled
+	 *            <code>true</code> to indicate that the widget is currently enabled, <code>false</code> otherwise
+	 *
+	 * @return The foreground color to use in the text field.
+	 */
+	private Color getForegroundColor(boolean isEnabled) {
+		Color color = defaultForegroundColor;
+		if (!isEnabled) {
+			color = this.text.getDisplay().getSystemColor(SWT.COLOR_WIDGET_DISABLED_FOREGROUND);
+		} else {
+			EEFWidgetStyle widgetStyle = new EEFStyleHelper(this.interpreter, this.variableManager).getWidgetStyle(this.description);
+			if (widgetStyle instanceof EEFTextStyle) {
+				EEFTextStyle style = (EEFTextStyle) widgetStyle;
+				String foregroundColorCode = style.getForegroundColorExpression();
+				if (!Util.isBlank(foregroundColorCode)) {
+					EEFColor foregroundColor = new EEFColor(foregroundColorCode);
+					color = foregroundColor.getColor();
 				}
 			}
 		}
