@@ -20,7 +20,7 @@ location Eclipse-Shared-License "http://download.eclipse.org/cbi/updates/license
 	org.eclipse.license.feature.group lazy
 }
 
-location Sirius "http://download.eclipse.org/sirius/updates/releases/6.3.0/photon" {
+location Sirius "http://archive.eclipse.org/sirius/updates/releases/6.3.0/photon" {
 	org.eclipse.sirius.interpreter.feature.feature.group lazy
 	org.eclipse.sirius.runtime.feature.group lazy
 }
