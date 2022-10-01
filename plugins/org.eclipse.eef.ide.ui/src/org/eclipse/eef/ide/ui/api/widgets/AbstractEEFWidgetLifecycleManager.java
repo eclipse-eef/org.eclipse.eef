@@ -47,6 +47,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseTrackListener;
 import org.eclipse.swt.graphics.Color;
@@ -188,12 +189,16 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		}
 
 		if (needsLabel) {
-			this.label = widgetFactory.createStyledText(composite, SWT.READ_ONLY);
+			this.label = widgetFactory.createStyledText(composite, SWT.READ_ONLY | SWT.NO_FOCUS);
 			this.label.setEditable(false);
 			this.label.setCaret(null);
 			this.label.setCursor(Display.getCurrent().getSystemCursor(SWT.CURSOR_ARROW));
 			this.label.setDoubleClickEnabled(false);
 			this.label.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
+
+			// Avoid keeping the focus,
+			// this works both ways (with or without 'shift').
+			this.label.addFocusListener(FocusListener.focusGainedAdapter(evt -> this.label.traverse(SWT.TRAVERSE_TAB_NEXT)));
 		}
 
 		if (needsHelp) {
