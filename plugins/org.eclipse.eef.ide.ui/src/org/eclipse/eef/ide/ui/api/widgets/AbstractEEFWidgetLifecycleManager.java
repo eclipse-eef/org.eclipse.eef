@@ -48,7 +48,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.FocusListener;
-import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseTrackListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -63,13 +62,21 @@ import org.eclipse.swt.widgets.Display;
  */
 public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifecycleManager {
 
-	/** Flag to detect specific parent: sub-element may twist some behavior */
+	/** Flag to detect specific parent: sub-element may twist some behavior. */
 	protected static final String DEDICATED_GRIDPARENT = "EEFLifecycleManager#DedicateParent"; //$NON-NLS-1$
 
 	/**
 	 * The number of pixel of the additional gap necessary to draw the validation marker.
 	 */
 	protected static final int VALIDATION_MARKER_OFFSET = 5;
+
+	/** Font for style-less label. */
+	private static final EEFFont NO_STYLE_FONT = new EEFFont(null, 0, 0) {
+		@Override
+		public Font getFont() {
+			return null;
+		}
+	};
 
 	/**
 	 * The variable manager.
@@ -140,8 +147,6 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		Composite composite = parent;
-
 		// If we are in a group, we will always create a label (empty or not) for the 3 columns layout of the group.
 		boolean isInGroup = this.isInGroup();
 
@@ -157,72 +162,86 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		// If we are not in a group, we will create a composite to hold all the label and help of the widget if
 		// necessary
+		Composite composite = parent;
 		if (!isInGroup && (needsLabel || needsHelp || withBorder())) {
-			composite = widgetFactory.createComposite(parent);
-
-			// We will only create the necessary number of columns for this "invisible" composite
-			int numColumn = 1;
-			if (needsLabel) {
-				numColumn++;
-			}
-			if (needsHelp) {
-				numColumn++;
-			}
-
-			// As this composite is "invisible",
-			// it must not add border
-			// unless a direct widget has border from widgetFactory.
-			// See in org.eclipse.ui.forms.widgets.FormToolkit#BorderPainter.paintControl(...)
-			// sometimes widget border is painted outside the component bounds.
-
-			int margin = 0;
-			if (withBorder()) {
-				// 2 is "magic" size of the extra border.
-				margin = 2;
-			}
-			int leftMargin = margin;
-			if (numColumn > 1) {
-				// only margin on left when 1 Column
-				leftMargin = 0;
-			}
-
-			composite.setLayout(GridLayoutFactory.swtDefaults()//
-					.numColumns(numColumn) //
-					.margins(0, 0).extendedMargins(leftMargin, margin, margin, margin)//
-					.create());
-
-			// This default behavior is abusive
-			// (for checkbox, button, select, ...).
-			composite.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-			composite.setData(DEDICATED_GRIDPARENT, Boolean.TRUE); // We can change it with this flag.
+			composite = createSpecificComposite(parent, widgetFactory, needsLabel, needsHelp);
 		}
 
 		if (needsLabel) {
-			this.label = widgetFactory.createStyledText(composite, SWT.READ_ONLY | SWT.NO_FOCUS);
-			this.label.setEditable(false);
-			this.label.setCaret(null);
-			this.label.setCursor(Display.getCurrent().getSystemCursor(SWT.CURSOR_ARROW));
-			this.label.setDoubleClickEnabled(false);
-			this.label.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
-
-			// Avoid keeping the focus,
-			// this works both ways (with or without 'shift').
-			this.label.addFocusListener(FocusListener.focusGainedAdapter(evt -> this.label.traverse(SWT.TRAVERSE_TAB_NEXT)));
+			createLabel(widgetFactory, composite);
 		}
 
 		if (needsHelp) {
-			this.help = widgetFactory.createCLabel(composite, ""); //$NON-NLS-1$
-			if (!Util.isBlank(this.getWidgetDescription().getHelpExpression())) {
-				this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));
-				this.help.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
-				this.help.setToolTipText(""); //$NON-NLS-1$
-			}
+			createHelpHint(widgetFactory, composite);
 		}
 
 		this.createMainControl(composite, formContainer);
 
 		this.controlDecoration = new ControlDecoration(this.getValidationControl(), SWT.TOP | SWT.LEFT);
 		this.checkLockStatus();
+	}
+
+	private void createHelpHint(EEFWidgetFactory widgetFactory, Composite composite) {
+		this.help = widgetFactory.createCLabel(composite, ""); //$NON-NLS-1$
+		if (!Util.isBlank(this.getWidgetDescription().getHelpExpression())) {
+			this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));
+			this.help.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
+			this.help.setToolTipText(""); //$NON-NLS-1$
+		}
+	}
+
+	private void createLabel(EEFWidgetFactory widgetFactory, Composite composite) {
+		this.label = widgetFactory.createStyledText(composite, SWT.READ_ONLY | SWT.NO_FOCUS);
+		this.label.setEditable(false);
+		this.label.setCaret(null);
+		this.label.setCursor(Display.getCurrent().getSystemCursor(SWT.CURSOR_ARROW));
+		this.label.setDoubleClickEnabled(false);
+		this.label.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
+
+		// Avoid keeping the focus,
+		// this works both ways (with or without 'shift').
+		this.label.addFocusListener(FocusListener.focusGainedAdapter(evt -> this.label.traverse(SWT.TRAVERSE_TAB_NEXT)));
+	}
+
+	private Composite createSpecificComposite(Composite parent, EEFWidgetFactory widgetFactory, boolean needsLabel, boolean needsHelp) {
+		Composite composite;
+		composite = widgetFactory.createComposite(parent);
+
+		// We will only create the necessary number of columns for this "invisible" composite
+		int numColumn = 1;
+		if (needsLabel) {
+			numColumn++;
+		}
+		if (needsHelp) {
+			numColumn++;
+		}
+
+		// As this composite is "invisible",
+		// it must not add border
+		// unless a direct widget has border from widgetFactory.
+		// See in org.eclipse.ui.forms.widgets.FormToolkit#BorderPainter.paintControl(...)
+		// sometimes widget border is painted outside the component bounds.
+
+		int margin = 0;
+		if (withBorder()) {
+			// 2 is "magic" size of the extra border.
+			margin = 2;
+		}
+		int leftMargin = margin;
+		if (numColumn > 1) {
+			// only margin on left when 1 Column
+			leftMargin = 0;
+		}
+		composite.setLayout(GridLayoutFactory.swtDefaults() //
+				.numColumns(numColumn) //
+				.extendedMargins(leftMargin, margin, margin, margin) //
+				.create());
+
+		// Note: This default behavior is legacy but abusive
+		// (for checkbox, button, select, ...).
+		composite.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		composite.setData(DEDICATED_GRIDPARENT, Boolean.TRUE); // We can change it with this flag.
+		return composite;
 	}
 
 	/**
@@ -338,34 +357,26 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		});
 
 		if (this.help != null) {
-			this.mouseTrackListener = new MouseTrackListener() {
-
-				@Override
-				public void mouseHover(MouseEvent e) {
-					// Defer the computation of the help message when the user hovers the Help label
-					getController().computeHelp();
-				}
-
-				@Override
-				public void mouseExit(MouseEvent e) {
-					// Nothing todo
-				}
-
-				@Override
-				public void mouseEnter(MouseEvent e) {
-					// Nothing todo
-				}
-			};
+			// Defer the computation of the help message when the user hovers the Help label
+			this.mouseTrackListener = MouseTrackListener.mouseHoverAdapter(evt -> getController().computeHelp());
 			this.help.addMouseTrackListener(mouseTrackListener);
 		}
 
-		this.lockStatusChangedListener = (events) -> {
-			Display.getDefault().asyncExec(() -> {
-				events.stream().filter(event -> this.getWidgetSemanticElement().equals(event.getElement()))
-						.forEach(event -> this.handleLockStatus(event.getStatus()));
-			});
-		};
+		this.lockStatusChangedListener = (events) -> handleLockStatus(events);
 		this.editingContextAdapter.addLockStatusChangedListener(this.lockStatusChangedListener);
+	}
+
+	/**
+	 * Handles Status Changed for any kind of processing.
+	 *
+	 * @param events
+	 *            to handle
+	 */
+	private void handleLockStatus(Collection<LockStatusChangeEvent> events) {
+		Display.getDefault().asyncExec(() -> events.stream() // Only for this context
+				.filter(event -> getWidgetSemanticElement().equals(event.getElement()))
+				// Handle one element.
+				.forEach(event -> handleLockStatus(event.getStatus())));
 	}
 
 	/**
@@ -499,12 +510,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			callback.applyForegroundColor(new EEFColor((Color) null));
 			callback.applyBackgroundColor(new EEFColor((Color) null));
 			callback.applyFontStyle(false, false);
-			callback.applyFont(new EEFFont(null, 0, 0) {
-				@Override
-				public Font getFont() {
-					return null;
-				}
-			});
+			callback.applyFont(NO_STYLE_FONT);
 		}
 	}
 
