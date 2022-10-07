@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4ab19ef_4809e231",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-10-07T14:45:39Z",
+      "side": 1,
+      "message": "Please note that I only reviewed the reference widgets changes. Except for a few comments, it\u0027s OK for me on that point.",
+      "revId": "467f8106684aa1b674248912917ea975c6c47a4c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "878ec210_57e07a5e",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-10-07T14:45:39Z",
+      "side": 1,
+      "message": "GridLayout layout \u003d new GridLayout(buttonsComposite.getChildren().length, true);\n\t\tlayout.marginHeight \u003d 0;\n\t\tlayout.marginWidth \u003d 0;\n\t\tbuttonsComposite.setLayout(layout);",
+      "range": {
+        "startLine": 118,
+        "startChar": 2,
+        "endLine": 122,
+        "endChar": 0
+      },
+      "revId": "467f8106684aa1b674248912917ea975c6c47a4c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c256d18f_5cc00b70",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-10-07T14:45:39Z",
+      "side": 1,
+      "message": "I think you should either include your commit \"Remove CS warning and decrease method complexity.\" here, or keep your 2nd commit and fix CS issues.",
+      "range": {
+        "startLine": 177,
+        "startChar": 3,
+        "endLine": 178,
+        "endChar": 79
+      },
+      "revId": "467f8106684aa1b674248912917ea975c6c47a4c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    }
+  ]
+}
