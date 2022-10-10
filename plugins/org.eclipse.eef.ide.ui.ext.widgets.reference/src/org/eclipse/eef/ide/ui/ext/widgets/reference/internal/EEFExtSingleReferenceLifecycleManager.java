@@ -250,6 +250,8 @@ public class EEFExtSingleReferenceLifecycleManager extends AbstractEEFExtReferen
 				this.hyperlink.setText(Messages.SingleReference_noValue);
 			}
 		}
+		// When image is set or unset, parent layout must be reset.
+		image.getParent().requestLayout();
 	}
 
 	/**
