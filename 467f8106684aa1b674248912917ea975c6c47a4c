@@ -41,6 +41,30 @@
       "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78dee00b_74b97aac",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.reference/src/org/eclipse/eef/ide/ui/ext/widgets/reference/internal/EEFExtSingleReferenceLifecycleManager.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 240536
+      },
+      "writtenOn": "2022-10-10T11:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "878ec210_57e07a5e",
+      "range": {
+        "startLine": 118,
+        "startChar": 2,
+        "endLine": 122,
+        "endChar": 0
+      },
+      "revId": "467f8106684aa1b674248912917ea975c6c47a4c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c256d18f_5cc00b70",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-10-07T14:45:39Z",
       "side": 1,
       "message": "I think you should either include your commit \"Remove CS warning and decrease method complexity.\" here, or keep your 2nd commit and fix CS issues.",
+      "range": {
+        "startLine": 177,
+        "startChar": 3,
+        "endLine": 178,
+        "endChar": 79
+      },
+      "revId": "467f8106684aa1b674248912917ea975c6c47a4c",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a71f4224_bf536326",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 240536
+      },
+      "writtenOn": "2022-10-10T11:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c256d18f_5cc00b70",
       "range": {
         "startLine": 177,
         "startChar": 3,
