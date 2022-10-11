@@ -148,16 +148,26 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 		this.composedAdapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 		this.composedAdapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
+		this.createReferenceContentPage(control);
+		this.determinePageCompletion();
+	}
+
+	/**
+	 * Create the content of the wizard page depending on the containment attribute of the reference.
+	 *
+	 * @param parent
+	 *            the parent composite
+	 */
+	protected void createReferenceContentPage(Composite parent) {
 		if (this.eReference.isContainment()) {
-			this.createEObjectEClassComboViewer(control);
+			this.createEObjectEClassComboViewer(parent);
 			this.initializeContainmentInput(this.target, this.eReference);
 		} else {
-			this.createContainerTreeViewer(control);
-			this.createContainmentFeatureComboViewer(control);
-			this.createEObjectEClassComboViewer(control);
+			this.createContainerTreeViewer(parent);
+			this.createContainmentFeatureComboViewer(parent);
+			this.createEObjectEClassComboViewer(parent);
 			this.initializeNonContainmentInput();
 		}
-		this.determinePageCompletion();
 	}
 
 	/**
@@ -168,7 +178,7 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	 * @param eContainementReference
 	 *            The containment EReference to consider
 	 */
-	private void initializeContainmentInput(EObject eObject, EReference eContainementReference) {
+	protected void initializeContainmentInput(EObject eObject, EReference eContainementReference) {
 		List<Object> values = new ArrayList<>();
 		Adapter adapter = this.composedAdapterFactory.adapt(eObject, IEditingDomainItemProvider.class);
 		if (adapter instanceof IEditingDomainItemProvider) {
@@ -303,7 +313,7 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	 * @param parent
 	 *            The parent composite
 	 */
-	private void createContainmentFeatureComboViewer(Composite parent) {
+	protected void createContainmentFeatureComboViewer(Composite parent) {
 		Label label = new Label(parent, SWT.NONE);
 		label.setText(Messages.ReferenceCreationWizardPage_eContainerToUseLabel);
 		label.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false));
@@ -342,7 +352,7 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	 * @param parent
 	 *            The parent composite
 	 */
-	private void createEObjectEClassComboViewer(Composite parent) {
+	protected void createEObjectEClassComboViewer(Composite parent) {
 		Label label = new Label(parent, SWT.NONE);
 		label.setText(Messages.ReferenceCreationWizardPage_eClassToCreateLabel);
 		label.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false));
@@ -375,7 +385,7 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	/**
 	 * Determines if the page is complete or not.
 	 */
-	private void determinePageCompletion() {
+	protected void determinePageCompletion() {
 		this.setMessage(null);
 
 		boolean isPageComplete = false;
@@ -404,7 +414,7 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	 *            The error message
 	 * @return <code>true</code> if the wizard is currently complete and the viewer too, <code>false</code> otherwise
 	 */
-	private boolean isCompleteViewer(boolean isCurrentlyComplete, StructuredViewer viewer, String errorMessage) {
+	protected boolean isCompleteViewer(boolean isCurrentlyComplete, StructuredViewer viewer, String errorMessage) {
 		boolean isComplete = isCurrentlyComplete;
 		if (isCurrentlyComplete) {
 			boolean isViewerComplete = this.getEObject(viewer) != null;
