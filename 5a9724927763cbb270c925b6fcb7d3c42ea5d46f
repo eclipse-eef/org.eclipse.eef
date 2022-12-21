@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a48a8944_d92cd521",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2022-12-21T10:14:36Z",
+      "side": 1,
+      "message": "Maybe this commit should be splitted in 4: \n* refactor, simplifies and harmonized existing code (ReferenceWidget). You could also include your commit \"Remove CS warning and decrease method complexity.\" by creating methods \"createSpecificComposite, createLabel, createHelpHint\"\n* fix color issue in MultipleReference\n* fix layout issues\n* fix validation decorator layout issues",
+      "revId": "5a9724927763cbb270c925b6fcb7d3c42ea5d46f",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    }
+  ]
+}
