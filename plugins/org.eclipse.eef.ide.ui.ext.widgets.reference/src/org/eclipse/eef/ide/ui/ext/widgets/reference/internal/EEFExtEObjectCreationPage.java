@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2022 Obeo.
+ * Copyright (c) 2016, 2023 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ package org.eclipse.eef.ide.ui.ext.widgets.reference.internal;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -179,7 +180,7 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 	 *            The containment EReference to consider
 	 */
 	protected void initializeContainmentInput(EObject eObject, EReference eContainementReference) {
-		List<Object> values = new ArrayList<>();
+		List<EObject> values = new ArrayList<>();
 		Adapter adapter = this.composedAdapterFactory.adapt(eObject, IEditingDomainItemProvider.class);
 		if (adapter instanceof IEditingDomainItemProvider) {
 			IEditingDomainItemProvider itemProviderAdapter = (IEditingDomainItemProvider) adapter;
@@ -191,12 +192,12 @@ public class EEFExtEObjectCreationPage extends WizardPage {
 					Object value = commandParameter.getValue();
 					if (commandParameter.getEReference().equals(eContainementReference) && value instanceof EObject
 							&& this.eReference.getEReferenceType().isSuperTypeOf(((EObject) value).eClass())) {
-						values.add(commandParameter.getValue());
+						values.add((EObject) value);
 					}
 				}
 			}
 		}
-
+		values.sort(Comparator.comparing(eObj -> eObj.eClass().getName()));
 		this.eClassInstanceComboViewer.setInput(values);
 		if (values.size() > 0) {
 			this.eClassInstanceComboViewer.setSelection(new StructuredSelection(values.get(0)));
