@@ -113,6 +113,22 @@ public class EEFControlSwitch {
 		} else if (controlDescription instanceof EEFDynamicMappingFor) {
 			lifecycleManagers
 					.addAll(this.createDynamicMappingControl(parent, formContainer, (EEFDynamicMappingFor) controlDescription, variableManager));
+		} else {
+			lifecycleManagers.addAll(this.createControl(parent, formContainer, controlDescription, variableManager.createChild()));
+		}
+		return lifecycleManagers;
+	}
+
+	private List<IEEFLifecycleManager> createControl(Composite parent, IEEFFormContainer formContainer, EEFControlDescription controlDescription,
+			IVariableManager childVariableManager) {
+		List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
+		IEEFLifecycleManager eefControlLifecycleManager = null;
+		IEEFLifecycleManagerProvider eefLifecycleManagerProvider = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManagerProvider(controlDescription);
+		if (eefLifecycleManagerProvider != null) {
+			eefControlLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(controlDescription, childVariableManager, interpreter,
+					this.editingContextAdapter);
+			eefControlLifecycleManager.createControl(parent, formContainer);
+			lifecycleManagers.add(eefControlLifecycleManager);
 		}
 		return lifecycleManagers;
 	}
