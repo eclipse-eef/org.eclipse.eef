@@ -428,7 +428,7 @@ public class EEFTabbedPropertySheetPage extends Page implements IPropertySheetPa
 		 * we want to send aboutToBeHidden() and aboutToBeShown() when the property sheet is hidden or shown.
 		 */
 		IContributedContentsView view = null;
-		if (!thisActivated && !matchesContributor(part) && !part.getSite().getId().equals(contributor.getContributorId())) {
+		if (!thisActivated && !matchesContributor(part) && !contributor.getContributorIds().contains(part.getSite().getId())) {
 			/*
 			 * Is the part is a IContributedContentsView for the contributor, for example, outline view.
 			 */

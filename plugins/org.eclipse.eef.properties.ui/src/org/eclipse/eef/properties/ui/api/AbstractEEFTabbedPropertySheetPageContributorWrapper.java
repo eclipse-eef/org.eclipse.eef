@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Obeo.
+ * Copyright (c) 2016, 2023 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,10 @@
  * Contributors: Obeo - initial API and implementation
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.api;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Wrapper for contributors who want to use this version of the framework but can not have a hard dependency (via
@@ -29,6 +33,11 @@ public abstract class AbstractEEFTabbedPropertySheetPageContributorWrapper imple
 	protected final String contributorId;
 
 	/**
+	 * The list of contributor ids.
+	 */
+	private final List<String> contributorIds = new ArrayList<>();
+
+	/**
 	 * Creates a wrapper.
 	 *
 	 * @param realContributor
@@ -39,11 +48,36 @@ public abstract class AbstractEEFTabbedPropertySheetPageContributorWrapper imple
 	public AbstractEEFTabbedPropertySheetPageContributorWrapper(Object realContributor, String contributorId) {
 		this.realContributor = realContributor;
 		this.contributorId = contributorId;
+		this.contributorIds.add(contributorId);
+	}
+
+	/**
+	 * Creates a wrapper.
+	 *
+	 * @param realContributor
+	 *            the original contributor object.
+	 * @param contributorIds
+	 *            the list of contributor ids
+	 */
+	public AbstractEEFTabbedPropertySheetPageContributorWrapper(Object realContributor, List<String> contributorIds) {
+		Objects.requireNonNull(contributorIds);
+		this.realContributor = realContributor;
+		this.contributorIds.addAll(contributorIds);
+		if (!contributorIds.isEmpty()) {
+			this.contributorId = contributorIds.get(0);
+		} else {
+			this.contributorId = null;
+		}
 	}
 
 	@Override
 	public String getContributorId() {
 		return contributorId;
+	}
+
+	@Override
+	public List<String> getContributorIds() {
+		return this.contributorIds;
 	}
 
 	/**
