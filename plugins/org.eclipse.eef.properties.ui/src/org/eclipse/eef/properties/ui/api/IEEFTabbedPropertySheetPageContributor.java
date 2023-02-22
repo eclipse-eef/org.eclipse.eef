@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2001, 2015 IBM Corporation and others.
+ * Copyright (c) 2001, 2023 IBM Corporation and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,6 +10,8 @@
  *     Obeo - Contribution to the EEF project
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.api;
+
+import java.util.List;
 
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.forms.widgets.Form;
@@ -38,6 +40,13 @@ public interface IEEFTabbedPropertySheetPageContributor {
 	 * @return the contributor ID for the tabbed property sheet page.
 	 */
 	String getContributorId();
+
+	/**
+	 * Return the list of contributor ids.
+	 *
+	 * @return the list of contributor ids
+	 */
+	List<String> getContributorIds();
 
 	/**
 	 * Updates the text and label.

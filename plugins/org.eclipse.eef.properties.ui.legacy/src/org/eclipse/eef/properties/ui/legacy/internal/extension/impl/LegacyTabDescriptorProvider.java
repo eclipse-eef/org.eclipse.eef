@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2018 Obeo.
+ * Copyright (c) 2015, 2023 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.eef.properties.ui.legacy.internal.extension.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -39,7 +40,10 @@ public class LegacyTabDescriptorProvider implements IEEFTabDescriptorProvider {
 	public Collection<IEEFTabDescriptor> get(IWorkbenchPart part, ISelection selection, IEEFTabbedPropertySheetPageContributor contributor) {
 		// Get legacy tab descriptors
 		LegacyPropertyTabRegistry legacyTabDescriptorRegistry = EEFPropertiesUiLegacyPlugin.getImplementation().getTabbedPropertyTabsRegistry();
-		List<IEEFTabDescriptor> legacyEefTabDescriptors = legacyTabDescriptorRegistry.getPropertyTabs(contributor.getContributorId());
+		List<IEEFTabDescriptor> legacyEefTabDescriptors = new ArrayList<>();
+		for (String contributorId : contributor.getContributorIds()) {
+			legacyEefTabDescriptors.addAll(legacyTabDescriptorRegistry.getPropertyTabs(contributorId));
+		}
 		return legacyEefTabDescriptors;
 	}
 }
