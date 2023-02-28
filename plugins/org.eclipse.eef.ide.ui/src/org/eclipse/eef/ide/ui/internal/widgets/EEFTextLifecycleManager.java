@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2022 Obeo.
+ * Copyright (c) 2015, 2023 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -570,7 +570,6 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	protected void setEnabled(boolean isEnabled) {
 		if (!this.text.isDisposed()) {
 			this.text.setEditable(isEnabled);
-			this.text.setEnabled(isEnabled);
 			this.text.setBackground(this.getBackgroundColor(isEnabled));
 			this.text.setForeground(this.getForegroundColor(isEnabled));
 		}
