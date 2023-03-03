@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "5a9e72e4_f437777c",
         "filename": "features/org.eclipse.eef.ext.widgets.markup-feature/feature.properties",
@@ -20,10 +21,34 @@
         "endChar": 26
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e00b2b5_45cd7b02",
+        "filename": "features/org.eclipse.eef.ext.widgets.markup-feature/feature.properties",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a9e72e4_f437777c",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 26
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "3e695d0e_de3b4ec3",
         "filename": "features/org.eclipse.eef.ext.widgets.markup-feature/feature.xml",
@@ -43,10 +68,10 @@
         "endChar": 30
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "4e6a8a8a_50289480",
         "filename": "features/org.eclipse.eef.ext.widgets.markup-feature/pom.xml",
@@ -66,10 +91,34 @@
         "endChar": 30
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c97ea055_b443d981",
+        "filename": "features/org.eclipse.eef.ext.widgets.markup-feature/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e6a8a8a_50289480",
+      "range": {
+        "startLine": 3,
+        "startChar": 14,
+        "endLine": 3,
+        "endChar": 30
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "f50a0afa_daddd928",
         "filename": "plugins/org.eclipse.eef.ext.widgets.markup.edit/.project",
@@ -83,10 +132,28 @@
       "side": 1,
       "message": "Do you need the .edit project? The \"reference\" widget shipped with EEF does not have one.",
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72e64cde_2f0ee883",
+        "filename": "plugins/org.eclipse.eef.ext.widgets.markup.edit/.project",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f50a0afa_daddd928",
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "2ac77de2_50735f06",
         "filename": "plugins/org.eclipse.eef.ext.widgets.markup.edit/plugin.properties",
@@ -106,10 +173,34 @@
         "endChar": 1
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69639446_c8d29176",
+        "filename": "plugins/org.eclipse.eef.ext.widgets.markup.edit/plugin.properties",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ac77de2_50735f06",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 1
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "3ef8cc77_71756d6c",
         "filename": "plugins/org.eclipse.eef.ext.widgets.markup.edit/plugin.properties",
@@ -123,10 +214,28 @@
       "side": 1,
       "message": "If the project is kept, this should be modified to \"Eclipse Modeling Project\"",
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7be3f000_9656d879",
+        "filename": "plugins/org.eclipse.eef.ext.widgets.markup.edit/plugin.properties",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ef8cc77_71756d6c",
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "02ccb9ac_8077ca49",
         "filename": "plugins/org.eclipse.eef.ext.widgets.markup/model/MarkupWidgets.aird",
@@ -140,10 +249,28 @@
       "side": 1,
       "message": "Not sure this file is needed.",
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "066ef4cb_80a513c2",
+        "filename": "plugins/org.eclipse.eef.ext.widgets.markup/model/MarkupWidgets.aird",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02ccb9ac_8077ca49",
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "71251c16_40b35b34",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
@@ -163,10 +290,34 @@
         "endChar": 15
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a77b32d0_0d4c052a",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71251c16_40b35b34",
+      "range": {
+        "startLine": 163,
+        "startChar": 2,
+        "endLine": 163,
+        "endChar": 15
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "70588647_ff6192aa",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
@@ -186,10 +337,34 @@
         "endChar": 123
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c3b32c2_af1c53d2",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done previously, but I guess it should be reverted because we now use Java 11.",
+      "parentUuid": "70588647_ff6192aa",
+      "range": {
+        "startLine": 166,
+        "startChar": 116,
+        "endLine": 166,
+        "endChar": 123
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "0cdb0abe_96d20d22",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
@@ -209,10 +384,34 @@
         "endChar": 17
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "184c43e0_95c661ce",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0cdb0abe_96d20d22",
+      "range": {
+        "startLine": 286,
+        "startChar": 9,
+        "endLine": 286,
+        "endChar": 17
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "ea30d447_1e66fa32",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
@@ -226,10 +425,10 @@
       "side": 1,
       "message": "It there is no CSS shouldn\u0027t we still wrap the htmlContent into a proper document?",
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "f667cc27_bdb07cf5",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
@@ -243,10 +442,28 @@
       "side": 1,
       "message": "String.isBlank() is from Java 11. The equivalent in Java 8 is .trim().isEmpty()",
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e6d7975_d6d2b79f",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/html/HTMLRendererLifeCycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done previously, but I guess it should be reverted because we now use Java 11.",
+      "parentUuid": "f667cc27_bdb07cf5",
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "d6591ffd_b6727734",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownStyleBuilder.java",
@@ -266,10 +483,34 @@
         "endChar": 71
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc2434ca_f0199914",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownStyleBuilder.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6591ffd_b6727734",
+      "range": {
+        "startLine": 60,
+        "startChar": 61,
+        "endLine": 60,
+        "endChar": 71
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "95fe9861_458e7d60",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownWidget.java",
@@ -289,10 +530,34 @@
         "endChar": 85
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c10024a9_de152814",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownWidget.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95fe9861_458e7d60",
+      "range": {
+        "startLine": 333,
+        "startChar": 58,
+        "endLine": 333,
+        "endChar": 85
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "3109eecf_29125898",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownWidgetLifeCycleManager.java",
@@ -312,10 +577,34 @@
         "endChar": 15
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8ed3289_98c13447",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownWidgetLifeCycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3109eecf_29125898",
+      "range": {
+        "startLine": 105,
+        "startChar": 2,
+        "endLine": 105,
+        "endChar": 15
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "93e94c23_59ba0a33",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownWidgetLifeCycleManager.java",
@@ -335,10 +624,34 @@
         "endChar": 11
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "58d3c781_5ae917d6",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkdownWidgetLifeCycleManager.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93e94c23_59ba0a33",
+      "range": {
+        "startLine": 106,
+        "startChar": 2,
+        "endLine": 106,
+        "endChar": 11
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "6131f3ed_ded534bf",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkodwnStyleFactory.java",
@@ -352,10 +665,28 @@
       "side": 1,
       "message": "Typo in the filename: Markodwn \u003d\u003e Markdown",
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c117514c_f1056994",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkodwnStyleFactory.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6131f3ed_ded534bf",
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "d498f1fb_1b2fecad",
         "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/StyleDescription.java",
@@ -375,10 +706,34 @@
         "endChar": 28
       },
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a5dcb05_affb5ab4",
+        "filename": "plugins/org.eclipse.eef.ide.ui.ext.widgets.markup/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/StyleDescription.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d498f1fb_1b2fecad",
+      "range": {
+        "startLine": 77,
+        "startChar": 16,
+        "endLine": 77,
+        "endChar": 28
+      },
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "4bff3160_05c050fd",
         "filename": "tests/org.eclipse.eef.ide.ui.ext.widgets.markup.test/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkodwnStyleFactoryTest.java",
@@ -392,8 +747,25 @@
       "side": 1,
       "message": "Typo in the file name: Markodwn \u003d\u003e Markdown",
       "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
-      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31",
-      "unresolved": true
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69c59026_10c5d007",
+        "filename": "tests/org.eclipse.eef.ide.ui.ext.widgets.markup.test/src/org/eclipse/eef/ide/ui/ext/widgets/markup/internal/markdown/MarkodwnStyleFactoryTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 275979
+      },
+      "writtenOn": "2023-03-03T16:34:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bff3160_05c050fd",
+      "revId": "8307f2746a8a1012192762a4c8661111f9c47a9e",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
     }
   ]
 }
