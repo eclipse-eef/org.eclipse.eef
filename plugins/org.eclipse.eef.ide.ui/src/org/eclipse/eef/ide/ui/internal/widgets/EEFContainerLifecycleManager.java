@@ -18,7 +18,6 @@ import org.eclipse.eef.EEFContainerDescription;
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFFillLayoutDescription;
 import org.eclipse.eef.EEFGridLayoutDescription;
-import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFLayoutDescription;
 import org.eclipse.eef.EEF_FILL_LAYOUT_ORIENTATION;
 import org.eclipse.eef.common.ui.api.EEFWidgetFactory;
@@ -97,13 +96,6 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 		Composite composite = null;
 		GridData gridData = null;
 
-		// If the container is directly under a group, we will create two empty labels for the first two columns of the
-		// layout (label & help)
-		if (this.description.eContainer() instanceof EEFGroupDescription) {
-			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
-			widgetFactory.createLabel(parent, ""); //$NON-NLS-1$
-		}
-
 		if (isBorderedContainer()) {
 			String borderLabel = getBorderLabel();
 			composite = widgetFactory.createGroup(parent, borderLabel);
@@ -113,30 +105,50 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 			gridData = new GridData(GridData.FILL_HORIZONTAL);
 		}
 
+		// Because the parent layout has 3 columns, span this composite over 3 columns.
+		gridData.horizontalSpan = 3;
 		composite.setLayoutData(gridData);
-		GridLayout compositeLayout = new GridLayout(1, true);
-		compositeLayout.marginWidth = 1;
+
+		int numColumns = 1;
+		boolean makeColumnsEqualWidth = true;
 
 		EEFLayoutDescription layout = this.description.getLayout();
 		if (layout instanceof EEFFillLayoutDescription) {
-			// The vertical layout is the default one, we will thus only handle the horizontal one
+			// The vertical layout is the default one, we thus only handle the horizontal one
 			EEFFillLayoutDescription fillLayoutDescription = (EEFFillLayoutDescription) layout;
 			if (fillLayoutDescription.getOrientation() == EEF_FILL_LAYOUT_ORIENTATION.HORIZONTAL) {
-				compositeLayout = new GridLayout(this.description.getControls().size(), false);
-				compositeLayout.marginWidth = 1;
+				numColumns = this.description.getControls().size();
 			}
 		} else if (layout instanceof EEFGridLayoutDescription) {
 			EEFGridLayoutDescription gridLayoutDescription = (EEFGridLayoutDescription) layout;
-			compositeLayout = new GridLayout(gridLayoutDescription.getNumberOfColumns(), gridLayoutDescription.isMakeColumnsWithEqualWidth());
-			compositeLayout.marginWidth = 1;
+			numColumns = gridLayoutDescription.getNumberOfColumns();
+			makeColumnsEqualWidth = gridLayoutDescription.isMakeColumnsWithEqualWidth();
 		}
+
+		GridLayout compositeLayout = new GridLayout(numColumns, makeColumnsEqualWidth);
+		compositeLayout.marginWidth = 1;
+
 		composite.setLayout(compositeLayout);
 
-		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.contextAdapter);
 		List<EEFControlDescription> controls = this.description.getControls();
-		for (EEFControlDescription eefControlDescription : controls) {
-			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(composite, formContainer, eefControlDescription, this.variableManager));
+		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.contextAdapter);
+		// Create an invisible composite for each column
+		for (int columnIndex = 0; columnIndex < numColumns; columnIndex++) {
+			Composite column = widgetFactory.createComposite(composite);
+			GridData columnLayoutData = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+			column.setLayoutData(columnLayoutData);
+
+			// Three columns: label, help, widget
+			GridLayout columnLayout = new GridLayout(3, false);
+			column.setLayout(columnLayout);
+
+			// Pick the right controls for the given column index in the controls flat list
+			for (int controlIndex = columnIndex; controlIndex < controls.size(); controlIndex += numColumns) {
+				EEFControlDescription eefControlDescription = controls.get(controlIndex);
+				this.lifecycleManagers.addAll(eefControlSwitch.doCreate(column, formContainer, eefControlDescription, this.variableManager));
+			}
 		}
+
 	}
 
 	/**

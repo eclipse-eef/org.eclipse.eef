@@ -15,9 +15,6 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-import org.eclipse.eef.EEFDynamicMappingFor;
-import org.eclipse.eef.EEFDynamicMappingIf;
-import org.eclipse.eef.EEFGroupDescription;
 import org.eclipse.eef.EEFWidgetDescription;
 import org.eclipse.eef.EEFWidgetStyle;
 import org.eclipse.eef.common.api.utils.Util;
@@ -51,7 +48,6 @@ import org.eclipse.swt.events.MouseTrackListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 
@@ -127,7 +123,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *          org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
@@ -135,64 +131,26 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 
 		EEFWidgetFactory widgetFactory = formContainer.getWidgetFactory();
 
-		Composite composite = parent;
+		// Because the parent layout has 3 columns, always create 3 widgets.
 
-		// If we are in a group, we will always create a label (empty or not) for the 3 columns layout of the group.
-		boolean isInGroup = this.isInGroup();
+		// The label (even if empty)
+		this.label = widgetFactory.createStyledText(parent, SWT.READ_ONLY);
+		this.label.setEditable(false);
+		this.label.setCaret(null);
+		this.label.setCursor(Display.getCurrent().getSystemCursor(SWT.CURSOR_ARROW));
+		this.label.setDoubleClickEnabled(false);
+		this.label.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
 
-		// Some widgets (like a checkbox) will not have a separated "label" widget for their label. Those widgets will
-		// thus never create another widget expect in the group (for the layout).
-		boolean needsSeparatedLabel = this.needSeparatedLabel();
-
-		// Finally if the label expression is blank, we will not create a label inside of a group (for the layout).
-		boolean isBlankLabel = Util.isBlank(this.getWidgetDescription().getLabelExpression());
-
-		boolean needsLabel = isInGroup || (!isBlankLabel && needsSeparatedLabel);
-		boolean needsHelp = isInGroup || !Util.isBlank(this.getWidgetDescription().getHelpExpression());
-
-		// If we are not in a group, we will create a composite to hold all the label and help of the widget if
-		// necessary
-		if (!isInGroup && (needsLabel || needsHelp)) {
-			composite = widgetFactory.createComposite(parent);
-
-			// We will only create the necessary number of columns for this "invisible" composite
-			int numColumn = 1;
-			if (needsLabel) {
-				numColumn = numColumn + 1;
-			}
-			if (needsHelp) {
-				numColumn = numColumn + 1;
-			}
-			GridLayout layout = new GridLayout(numColumn, false);
-			// As this composite is "invisible", it must not add border.
-			layout.marginHeight = 0;
-			layout.marginWidth = 0;
-			composite.setLayout(layout);
-
-			GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
-			layoutData.horizontalSpan = 1;
-			composite.setLayoutData(layoutData);
+		// The help bullet (even if no help is available)
+		this.help = widgetFactory.createCLabel(parent, ""); //$NON-NLS-1$
+		if (!Util.isBlank(this.getWidgetDescription().getHelpExpression())) {
+			this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));
+			this.help.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
+			this.help.setToolTipText(""); //$NON-NLS-1$
 		}
 
-		if (needsLabel) {
-			this.label = widgetFactory.createStyledText(composite, SWT.READ_ONLY);
-			this.label.setEditable(false);
-			this.label.setCaret(null);
-			this.label.setCursor(Display.getCurrent().getSystemCursor(SWT.CURSOR_ARROW));
-			this.label.setDoubleClickEnabled(false);
-			this.label.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
-		}
-
-		if (needsHelp) {
-			this.help = widgetFactory.createCLabel(composite, ""); //$NON-NLS-1$
-			if (!Util.isBlank(this.getWidgetDescription().getHelpExpression())) {
-				this.help.setImage(EEFIdeUiPlugin.getPlugin().getImageRegistry().get(Icons.HELP));
-				this.help.setLayoutData(new GridData(this.getLabelVerticalAlignment()));
-				this.help.setToolTipText(""); //$NON-NLS-1$
-			}
-		}
-
-		this.createMainControl(composite, formContainer);
+		// The main control (delegated to the concrete Lifecycle Manager)
+		this.createMainControl(parent, formContainer);
 
 		this.controlDecoration = new ControlDecoration(this.getValidationControl(), SWT.TOP | SWT.LEFT);
 		this.checkLockStatus();
@@ -207,33 +165,6 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 			LockStatus status = this.editingContextAdapter.getLockStatus((EObject) self);
 			this.handleLockStatus(status);
 		}
-	}
-
-	/**
-	 * Indicates if the widget description is located directly under a group or if it is under a container.
-	 *
-	 * @return <code>true</code> if the widget description is directly under a group, <code>false</code> otherwise
-	 */
-	private boolean isInGroup() {
-		EObject eContainer = this.getWidgetDescription().eContainer();
-
-		// Test if the widget description is in a dynamic mapping directly under a group
-		if (eContainer instanceof EEFDynamicMappingIf && eContainer.eContainer() instanceof EEFDynamicMappingFor) {
-			EEFDynamicMappingFor dynamicMappingFor = (EEFDynamicMappingFor) eContainer.eContainer();
-			return dynamicMappingFor.eContainer() instanceof EEFGroupDescription;
-		}
-
-		// Otherwise, let's test if it is directly under a group
-		return eContainer instanceof EEFGroupDescription;
-	}
-
-	/**
-	 * Indicates if the widget should create a label widget for its label.
-	 *
-	 * @return <code>true</code> if a label should be created, <code>false</code> otherwise.
-	 */
-	protected boolean needSeparatedLabel() {
-		return true;
 	}
 
 	/**

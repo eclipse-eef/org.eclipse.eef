@@ -109,16 +109,6 @@ public class EEFCheckboxLifecycleManager extends AbstractEEFWidgetLifecycleManag
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#needSeparatedLabel()
-	 */
-	@Override
-	protected boolean needSeparatedLabel() {
-		return false;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFWidgetLifecycleManager#getController()
 	 */
 	@Override
