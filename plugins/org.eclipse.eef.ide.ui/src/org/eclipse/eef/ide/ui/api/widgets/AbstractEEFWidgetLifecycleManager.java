@@ -127,7 +127,7 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *          org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
@@ -164,9 +164,6 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 				numColumn = numColumn + 1;
 			}
 			GridLayout layout = new GridLayout(numColumn, false);
-			// As this composite is "invisible", it must not add border.
-			layout.marginHeight = 0;
-			layout.marginWidth = 0;
 			composite.setLayout(layout);
 
 			GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
