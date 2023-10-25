@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "609d5e0b_3bf3d40f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2023-10-25T07:36:38Z",
+      "side": 1,
+      "message": "Not sure I understand what this is trying to solve.\n\nThe existing code explicitly handles the 3 existing sub-types of EEFControlDescription (EEFContainerDescription, EEFWidgetDescription and EEFDynamicMappingFor). I guess the new code can only happen in the presence of metamodel extensions?\nThe code added seems to perform almost the same as for the EEFContainerDescription case but for some reason returns a list which can have at most one element?\n\nCan you clarify the use case?",
+      "revId": "48c2f11b822b583273277141c41de96321a869b9",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    }
+  ]
+}
