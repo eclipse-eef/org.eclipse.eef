@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1beefd21_c4b6f544",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/api/widgets/AbstractEEFWidgetLifecycleManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2023-10-25T07:19:06Z",
+      "side": 1,
+      "message": "This should be tested first. If it\u0027s false, we can completely avoid the evaluation of the `iseEnabledExpression` above.",
+      "range": {
+        "startLine": 462,
+        "startChar": 34,
+        "endLine": 462,
+        "endChar": 52
+      },
+      "revId": "557e51e49d58738285687560e0c8a3365f99af59",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "106e0388_cf2a904f",
+        "filename": "plugins/org.eclipse.eef.ide.ui/src/org/eclipse/eef/ide/ui/internal/widgets/EEFControlSwitch.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1408
+      },
+      "writtenOn": "2023-10-25T07:19:06Z",
+      "side": 1,
+      "message": "Shouldn\u0027t `isEnabled` also be propagated inside \"Dyanmic For?",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 130
+      },
+      "revId": "557e51e49d58738285687560e0c8a3365f99af59",
+      "serverId": "97ee7c02-f12f-4043-b43e-dea463d88b31"
+    }
+  ]
+}
