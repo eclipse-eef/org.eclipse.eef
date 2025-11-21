@@ -50,4 +50,8 @@ public interface IEEFLifecycleManager {
 	 * Disposes the content created. The widgets created under the composite will be disposed by SWT already.
 	 */
 	void dispose();
+
+	default boolean isCompatible(IEEFLifecycleManager other) {
+		return false;
+	}
 }

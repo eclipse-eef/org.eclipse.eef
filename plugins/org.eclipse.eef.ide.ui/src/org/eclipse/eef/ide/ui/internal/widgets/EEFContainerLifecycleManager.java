@@ -209,4 +209,10 @@ public class EEFContainerLifecycleManager implements IEEFLifecycleManager {
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::dispose);
 	}
 
+	@Override
+	public boolean isCompatible(IEEFLifecycleManager other) {
+		return other instanceof EEFContainerLifecycleManager
+
+				&& variableManager.getVariables().equals(((EEFContainerLifecycleManager) other).variableManager.getVariables());
+	}
 }

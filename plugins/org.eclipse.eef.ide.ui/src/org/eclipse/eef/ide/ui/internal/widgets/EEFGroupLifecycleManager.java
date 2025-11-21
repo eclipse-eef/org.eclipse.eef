@@ -14,6 +14,7 @@ package org.eclipse.eef.ide.ui.internal.widgets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.eclipse.eef.EEFControlDescription;
 import org.eclipse.eef.EEFGroupConditionalStyle;
@@ -125,7 +126,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implem
 	 * {@inheritDoc}
 	 *
 	 * @see org.eclipse.eef.ide.ui.api.widgets.AbstractEEFLifecycleManager#createControl(org.eclipse.swt.widgets.Composite,
-	 *          org.eclipse.eef.common.ui.api.IEEFFormContainer)
+	 *      org.eclipse.eef.common.ui.api.IEEFFormContainer)
 	 */
 	@Override
 	public void createControl(Composite parent, IEEFFormContainer formContainer) {
@@ -227,11 +228,7 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implem
 			this.createSectionToolBar(this.section, this.description.getActions());
 		}
 
-		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.editingContextAdapter);
-		List<EEFControlDescription> controls = this.description.getControls();
-		for (EEFControlDescription eefControlDescription : controls) {
-			this.lifecycleManagers.addAll(eefControlSwitch.doCreate(group, formContainer, eefControlDescription, this.variableManager));
-		}
+		lifecycleManagers = computeLifeCycleManagers(true);
 	}
 
 	/**
@@ -349,7 +346,48 @@ public class EEFGroupLifecycleManager extends AbstractEEFLifecycleManager implem
 	public void refresh() {
 		super.refresh();
 
+		List<IEEFLifecycleManager> newLifecycleManagers = this.computeLifeCycleManagers(false);
+
+		if (!isManagersCompatible(newLifecycleManagers)) {
+			Composite group = (Composite) section.getClient();
+
+			// controls previously built are invalid, they should be dispose and rebuild.
+			Stream.of(group.getChildren()).forEach(Control::dispose);
+			this.lifecycleManagers.forEach(IEEFLifecycleManager::dispose);
+			lifecycleManagers = newLifecycleManagers;
+			// recreate controls
+			lifecycleManagers.forEach(lm -> {
+				lm.createControl(group, eefFormContainer);
+			});
+			section.pack();
+			lifecycleManagers.forEach(IEEFLifecycleManager::aboutToBeShown);
+		}
 		this.lifecycleManagers.forEach(IEEFLifecycleManager::refresh);
+	}
+
+	private boolean isManagersCompatible(List<IEEFLifecycleManager> newLifecycleManagers) {
+		if (newLifecycleManagers.size() != this.lifecycleManagers.size()) {
+			return false;
+		}
+		for (int i = 0; i < this.lifecycleManagers.size(); i++) {
+			IEEFLifecycleManager oldManager = this.lifecycleManagers.get(i);
+			IEEFLifecycleManager newManager = newLifecycleManagers.get(i);
+			if (!oldManager.isCompatible(newManager)) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	private List<IEEFLifecycleManager> computeLifeCycleManagers(boolean createControls) {
+		List<IEEFLifecycleManager> result = new ArrayList<>();
+		EEFControlSwitch eefControlSwitch = new EEFControlSwitch(this.interpreter, this.editingContextAdapter, createControls);
+		List<EEFControlDescription> controls = this.description.getControls();
+		for (EEFControlDescription eefControlDescription : controls) {
+			result.addAll(eefControlSwitch.doCreate((Composite) section.getClient(), eefFormContainer, eefControlDescription, this.variableManager));
+		}
+		return result;
 	}
 
 	/**

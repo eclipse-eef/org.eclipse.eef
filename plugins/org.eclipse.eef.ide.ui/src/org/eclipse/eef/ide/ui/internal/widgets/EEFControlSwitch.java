@@ -63,6 +63,11 @@ public class EEFControlSwitch {
 	private EditingContextAdapter editingContextAdapter;
 
 	/**
+	 * The flag to allow automatic control creation or not. Default behavior is creating controls.
+	 */
+	private boolean shouldCreateControl = true;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param interpreter
@@ -70,9 +75,15 @@ public class EEFControlSwitch {
 	 * @param editingContextAdapter
 	 *            The editing context adapter
 	 */
+
 	public EEFControlSwitch(IInterpreter interpreter, EditingContextAdapter editingContextAdapter) {
+		this(interpreter, editingContextAdapter, true);
+	}
+
+	public EEFControlSwitch(IInterpreter interpreter, EditingContextAdapter editingContextAdapter, boolean shouldCreateControl) {
 		this.interpreter = interpreter;
 		this.editingContextAdapter = editingContextAdapter;
+		this.shouldCreateControl = shouldCreateControl;
 	}
 
 	/**
@@ -105,7 +116,9 @@ public class EEFControlSwitch {
 						this.interpreter, this.editingContextAdapter);
 			}
 
-			eefContainerLifecycleManager.createControl(parent, formContainer);
+			if (this.shouldCreateControl) {
+				eefContainerLifecycleManager.createControl(parent, formContainer);
+			}
 			lifecycleManagers.add(eefContainerLifecycleManager);
 		} else if (controlDescription instanceof EEFWidgetDescription) {
 			lifecycleManagers.addAll(
@@ -133,17 +146,16 @@ public class EEFControlSwitch {
 	private List<IEEFLifecycleManager> createWidgetControl(Composite parent, IEEFFormContainer formContainer, EEFWidgetDescription widgetDescription,
 			IVariableManager childVariableManager) {
 		List<IEEFLifecycleManager> lifecycleManagers = new ArrayList<IEEFLifecycleManager>();
+		IEEFLifecycleManager eefLifecycleManager = null;
 
 		// First, let's see if an external contributor does not want to handle this description
 		IEEFLifecycleManagerProvider eefLifecycleManagerProvider = EEFIdeUiPlugin.getPlugin().getEEFLifecycleManagerProvider(widgetDescription);
+
 		if (eefLifecycleManagerProvider != null) {
 			// We have a lifecycle manager provider, let's use it
-			IEEFLifecycleManager eefLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(widgetDescription, childVariableManager,
-					interpreter, this.editingContextAdapter);
-			if (eefLifecycleManager != null) {
-				eefLifecycleManager.createControl(parent, formContainer);
-				lifecycleManagers.add(eefLifecycleManager);
-			}
+
+			eefLifecycleManager = eefLifecycleManagerProvider.getLifecycleManager(widgetDescription, childVariableManager, interpreter,
+					editingContextAdapter);
 		} else if (widgetDescription instanceof EEFCustomWidgetDescription) {
 			// A custom widget cannot be supported if the lifecycle manager retrieved is null
 			String message = MessageFormat.format(Messages.EEFIdeUiPlugin_lifecycleManagerNotFound, widgetDescription.getIdentifier());
@@ -152,71 +164,38 @@ public class EEFControlSwitch {
 			// We have not found a custom lifecycle manager, fallback to the default behavior
 			if (widgetDescription instanceof EEFTextDescription) {
 				EEFTextDescription eefTextDescription = (EEFTextDescription) widgetDescription;
-
-				EEFTextLifecycleManager eefTextLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter,
-						this.editingContextAdapter);
-				eefTextLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefTextLifecycleManager);
+				eefLifecycleManager = new EEFTextLifecycleManager(eefTextDescription, childVariableManager, interpreter, editingContextAdapter);
 			} else if (widgetDescription instanceof EEFLabelDescription) {
 				EEFLabelDescription eefLabelDescription = (EEFLabelDescription) widgetDescription;
-
-				EEFLabelLifecycleManager eefLabelLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager,
-						interpreter, this.editingContextAdapter);
-				eefLabelLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefLabelLifecycleManager);
+				eefLifecycleManager = new EEFLabelLifecycleManager(eefLabelDescription, childVariableManager, interpreter, editingContextAdapter);
 			} else if (widgetDescription instanceof EEFSelectDescription) {
 				EEFSelectDescription eefSelectDescription = (EEFSelectDescription) widgetDescription;
-
-				EEFSelectLifecycleManager eefSelectLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager,
-						interpreter, this.editingContextAdapter);
-				eefSelectLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefSelectLifecycleManager);
+				eefLifecycleManager = new EEFSelectLifecycleManager(eefSelectDescription, childVariableManager, interpreter, editingContextAdapter);
 			} else if (widgetDescription instanceof EEFRadioDescription) {
 				EEFRadioDescription eefRadioDescription = (EEFRadioDescription) widgetDescription;
-
-				EEFRadioLifecycleManager eefRadioLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager,
-						interpreter, this.editingContextAdapter);
-				eefRadioLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefRadioLifecycleManager);
+				eefLifecycleManager = new EEFRadioLifecycleManager(eefRadioDescription, childVariableManager, interpreter, editingContextAdapter);
 			} else if (widgetDescription instanceof EEFCheckboxDescription) {
 				EEFCheckboxDescription eefCheckboxDescription = (EEFCheckboxDescription) widgetDescription;
-
-				EEFCheckboxLifecycleManager eefCheckboxLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription,
-						childVariableManager, interpreter, this.editingContextAdapter);
-				eefCheckboxLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefCheckboxLifecycleManager);
+				eefLifecycleManager = new EEFCheckboxLifecycleManager(eefCheckboxDescription, childVariableManager, interpreter,
+						editingContextAdapter);
 			} else if (widgetDescription instanceof EEFButtonDescription) {
 				EEFButtonDescription eefButtonDescription = (EEFButtonDescription) widgetDescription;
-
-				EEFButtonLifecycleManager eefButtonLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager,
-						interpreter, this.editingContextAdapter);
-				eefButtonLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefButtonLifecycleManager);
+				eefLifecycleManager = new EEFButtonLifecycleManager(eefButtonDescription, childVariableManager, interpreter, editingContextAdapter);
 			} else if (widgetDescription instanceof EEFListDescription) {
 				EEFListDescription eefListDescription = (EEFListDescription) widgetDescription;
-
-				IEEFLifecycleManager eefListLifecycleManager = new EEFListLifecycleManager(eefListDescription, childVariableManager, interpreter,
-						this.editingContextAdapter);
-				eefListLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefListLifecycleManager);
+				eefLifecycleManager = new EEFListLifecycleManager(eefListDescription, childVariableManager, interpreter, editingContextAdapter);
 			} else if (widgetDescription instanceof EEFHyperlinkDescription) {
 				EEFHyperlinkDescription eefHyperlinkDescription = (EEFHyperlinkDescription) widgetDescription;
-
-				EEFHyperlinkLifecycleManager eefHyperlinkLifecycleManager = new EEFHyperlinkLifecycleManager(eefHyperlinkDescription,
-						childVariableManager, interpreter, this.editingContextAdapter);
-				eefHyperlinkLifecycleManager.createControl(parent, formContainer);
-
-				lifecycleManagers.add(eefHyperlinkLifecycleManager);
+				eefLifecycleManager = new EEFHyperlinkLifecycleManager(eefHyperlinkDescription, childVariableManager, interpreter,
+						editingContextAdapter);
 			}
 		}
-
+		if (eefLifecycleManager != null) {
+			if (shouldCreateControl) {
+				eefLifecycleManager.createControl(parent, formContainer);
+			}
+			lifecycleManagers.add(eefLifecycleManager);
+		}
 		return lifecycleManagers;
 	}
 

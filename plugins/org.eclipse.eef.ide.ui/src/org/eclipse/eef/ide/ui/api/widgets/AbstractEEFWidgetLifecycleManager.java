@@ -468,4 +468,14 @@ public abstract class AbstractEEFWidgetLifecycleManager extends AbstractEEFLifec
 		throw new ClassCastException(Messages.AbstractEEFWidgetLifecycleManager_invalidSelectionType);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @see org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager#isCompatible(org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager)
+	 */
+	@Override
+	public boolean isCompatible(IEEFLifecycleManager other) {
+		return other.getClass() == getClass()
+				&& variableManager.getVariables().equals(((AbstractEEFWidgetLifecycleManager) other).variableManager.getVariables());
+	}
 }
