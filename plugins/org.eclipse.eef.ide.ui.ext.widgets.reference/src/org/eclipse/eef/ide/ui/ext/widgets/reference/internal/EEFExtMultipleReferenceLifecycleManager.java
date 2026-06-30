@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2022 Obeo.
+ * Copyright (c) 2016, 2026 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -43,6 +43,7 @@ import org.eclipse.sirius.common.interpreter.api.IVariableManager;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
@@ -60,9 +61,9 @@ import org.eclipse.swt.widgets.Table;
 public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtReferenceLifecycleManager {
 
 	/**
-	 * Minimal height of the table widget.
+	 * Minimal height of the table widget. 5 Action buttons and almost 7 lines.
 	 */
-	private static final int TABLE_MINIMAL_HEIGHT = 150;
+	private static final int TABLE_MINIMAL_HEIGHT = 140; // Consistent with EEFListLifecycleManager
 
 	/**
 	 * The table viewer.
@@ -95,6 +96,11 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	protected ButtonSelectionListener downButtonListener;
 
 	/**
+	 * The default background color of the text field.
+	 */
+	private Color defaultBackgroundColor;
+
+	/**
 	 * The constructor.
 	 *
 	 * @param description
@@ -124,9 +130,14 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	@Override
 	protected void createMainControl(Composite parent, IEEFFormContainer formContainer) {
 		this.widgetFactory = formContainer.getWidgetFactory();
+		defaultBackgroundColor = parent.getBackground();
 
 		Composite referenceComposite = this.widgetFactory.createFlatFormComposite(parent);
 		GridLayout referenceGridLayout = new GridLayout(2, false);
+		referenceGridLayout.marginHeight = 0;
+		referenceGridLayout.marginWidth = 0;
+		// Table border need an extra pixel.
+		referenceGridLayout.marginBottom = 1;
 		referenceComposite.setLayout(referenceGridLayout);
 
 		GridData referenceCompositeGridData = new GridData(SWT.FILL, SWT.CENTER, true, false);
@@ -141,6 +152,8 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 
 		GridLayout buttonCompositeGridLayout = new GridLayout(1, false);
 		buttonCompositeGridLayout.marginHeight = 0;
+		buttonCompositeGridLayout.marginWidth = 0;
+
 		buttonsComposite.setLayout(buttonCompositeGridLayout);
 
 		this.createButtons(buttonsComposite);
@@ -193,6 +206,7 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = SWT.FILL;
 		gridData.verticalAlignment = SWT.BEGINNING;
+		gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		scrolledComposite.setLayoutData(gridData);
 
 		// CHECKSTYLE:OFF
@@ -203,7 +217,6 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 		this.tableViewer = new TableViewer(table);
 
 		GridData tableGridData = new GridData(SWT.FILL, SWT.TOP, true, false, 1, 1);
-		tableGridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 		this.tableViewer.getTable().setLayoutData(tableGridData);
 
 		this.composedAdapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
@@ -394,12 +407,32 @@ public class EEFExtMultipleReferenceLifecycleManager extends AbstractEEFExtRefer
 	protected void setEnabled(boolean isEnabled) {
 		super.setEnabled(isEnabled);
 
+		if (this.tableViewer != null && this.tableViewer.getTable() != null && !this.tableViewer.getTable().isDisposed()) {
+			// Background color is handled like List widget
+			this.tableViewer.getTable().setBackground(this.getBackgroundColor(isEnabled));
+		}
 		if (this.upButton != null && !this.upButton.isDisposed()) {
 			this.upButton.setEnabled(isEnabled);
 		}
 		if (this.downButton != null && !this.downButton.isDisposed()) {
 			this.downButton.setEnabled(isEnabled);
 		}
+	}
+
+	/**
+	 * Get the background color according to the current valid style.
+	 *
+	 * @param isEnabled
+	 *            <code>true</code> if the widget is enabled, <code>false</code> otherwise
+	 *
+	 * @return The background color to use in the text field.
+	 */
+	private Color getBackgroundColor(boolean isEnabled) {
+		Color color = defaultBackgroundColor;
+		if (!isEnabled) {
+			color = widgetFactory.getColors().getInactiveBackground();
+		}
+		return color;
 	}
 
 	/**

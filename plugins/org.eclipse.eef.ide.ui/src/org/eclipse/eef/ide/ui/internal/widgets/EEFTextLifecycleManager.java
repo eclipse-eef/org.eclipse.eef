@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2022 Obeo.
+ * Copyright (c) 2015, 2026 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -200,6 +200,12 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			gridData.heightHint = lineCount * text.getLineHeight();
 			gridData.widthHint = TEXT_AREA_WIDTH_HINT;
 			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
+
+			// Styled Text use 2 pixels outside of its bounds to drawn borders and scrollbar.
+			// The space with previous widget disappear.
+			// verticalIndent only mitigates this issue.
+			// Using space with another composite introduces other alignment issues.
+			gridData.verticalIndent = 4;
 			this.text.setLayoutData(gridData);
 		} else {
 			this.text = widgetFactory.createStyledText(parent, SWT.SINGLE);
@@ -207,7 +213,7 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 			gridData.horizontalIndent = VALIDATION_MARKER_OFFSET;
 			this.text.setLayoutData(gridData);
 		}
-
+		this.text.setMargins(5, 0, 5, 0); // These margins match the margins of lists.
 		this.text.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
 
@@ -570,7 +576,8 @@ public class EEFTextLifecycleManager extends AbstractEEFWidgetLifecycleManager {
 	protected void setEnabled(boolean isEnabled) {
 		if (!this.text.isDisposed()) {
 			this.text.setEditable(isEnabled);
-			this.text.setEnabled(isEnabled);
+			// text must not be disabled.
+			// User need to scroll for text area or copy content.
 			this.text.setBackground(this.getBackgroundColor(isEnabled));
 			this.text.setForeground(this.getForegroundColor(isEnabled));
 		}
