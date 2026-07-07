@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<eef-views:Toolkit xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/toolkits/1.0.0">
-  <widgets name="RichText"/>
-</eef-views:Toolkit>
